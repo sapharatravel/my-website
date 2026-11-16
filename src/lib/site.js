@@ -279,7 +279,7 @@ export const travelAgencyLd = () => ({
   legalName: "Saphara Travel Group Ltd",
   url: SITE + "/",
   logo: SITE + "/img/icons/icon-512.png",
-  image: SITE + "/img/og-image.jpg",
+  image: SITE + "/img/og-home.jpg",
   email: "hello@sapharatravel.co.uk",
   telephone: "+447887353457",
   contactPoint: { "@type": "ContactPoint", contactType: "customer service", telephone: "+447887353457", email: "hello@sapharatravel.co.uk", url: WA_BASE, availableLanguage: "en-GB" },
