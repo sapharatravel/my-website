@@ -3,7 +3,7 @@
 import { Page, header, footer, sticky, igStrip, esc, keepWhatsAppTogether, keepTogether, PROTOTYPE, C, cleanLinks, waLinks, travelAgencyLd, websiteLd, breadcrumbLd, ldScript } from "../lib/site.js";
 
 interface Props { path: string; title: string; desc: string; og?: string; hero?: boolean; ld?: object | null }
-const { path, title, og = "og-image.jpg", hero = false, ld = null } = Astro.props;
+const { path, title, og = "og-home.jpg", hero = false, ld = null } = Astro.props;
 const pg = new Page(path);
 const desc = C.DESC_OVERRIDES[path] ?? Astro.props.desc;
 const noindex = PROTOTYPE || path === "404.html" || path === "thank-you.html";
