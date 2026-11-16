@@ -1,0 +1,34 @@
+/* Price check form: builds a WhatsApp message with an STG-PC- reference. Nothing is stored on the website. */
+(function () {
+  var f = document.getElementById("pcForm"); if (!f) return;
+  var ref = "STG-PC-" + String(Math.floor(1000 + Math.random() * 9000));
+  var $ = function (id) { return document.getElementById(id); };
+  var kids = $("pc-children"), agesWrap = $("pcAgesWrap");
+  function syncAges() { agesWrap.hidden = !(+kids.value > 0); }
+  kids.addEventListener("input", syncAges); syncAges();
+  var required = [["pc-hotel", "Slight delay. Just add the hotel name."], ["pc-in", "Slight delay. Just add your check-in date."], ["pc-out", "Slight delay. Just add your check-out date."], ["pc-price", "Slight delay. Just add the price you found."]];
+  function fmtDate(v) { if (!v) return ""; var d = new Date(v + "T12:00:00"); return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }); }
+  function nights() { var a = $("pc-in").value, b = $("pc-out").value; if (!a || !b) return ""; var n = Math.round((new Date(b) - new Date(a)) / 864e5); return n > 0 ? " (" + n + (n === 1 ? " night)" : " nights)") : ""; }
+  function message() {
+    var v = function (id) { return ($(id).value || "").trim(); };
+    var L = ["Salaams, could you check this hotel price for me?", "Ref: " + ref, "Hotel: " + v("pc-hotel") + (v("pc-dest") ? " · " + v("pc-dest") : ""), "Dates: " + fmtDate(v("pc-in")) + " to " + fmtDate(v("pc-out")) + nights()];
+    var ad = +v("pc-adults") || 0, ch = +v("pc-children") || 0;
+    L.push("Guests: " + ad + (ad === 1 ? " adult" : " adults") + (ch ? ", " + ch + (ch === 1 ? " child" : " children") + (v("pc-ages") ? " (" + (/[ ,&]|and/.test(v("pc-ages")) ? "ages " : "age ") + v("pc-ages") + ")" : "") : "") + " · " + (v("pc-rooms") || "1") + (v("pc-rooms") === "1" || !v("pc-rooms") ? " room" : " rooms"));
+    if (v("pc-room") || v("pc-board")) L.push((v("pc-room") ? "Room: " + v("pc-room") : "") + (v("pc-room") && v("pc-board") ? " · " : "") + (v("pc-board") ? "Board: " + v("pc-board") : ""));
+    L.push("Price found: " + v("pc-currency") + " " + v("pc-price") + (v("pc-where") ? " on " + v("pc-where") : ""));
+    if (v("pc-link")) L.push("Link: " + v("pc-link"));
+    L.push("I'll send a screenshot in this chat.", "(Sent from sapharatravel.co.uk)");
+    return L.join("\n");
+  }
+  f.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var first = null;
+    required.forEach(function (r) { var el = $(r[0]), er = $(r[0] + "-e"), bad = !el.value.trim(); er.hidden = !bad; er.textContent = bad ? r[1] : ""; el.setAttribute("aria-invalid", bad ? "true" : "false"); if (bad && !first) first = el; });
+    if ($("pc-in").value && $("pc-out").value && $("pc-out").value <= $("pc-in").value) { var eo = $("pc-out-e"); eo.hidden = false; eo.textContent = "Slight delay. Just check your check-out date is after check-in."; $("pc-out").setAttribute("aria-invalid", "true"); if (!first) first = $("pc-out"); }
+    if (first) { first.focus(); return; }
+    var url = "https://wa.me/447887353457?text=" + encodeURIComponent(message());
+    $("pcSent").hidden = false;
+    window.open(url, "_blank", "noopener");
+  });
+  window.pcForm = { message: message, ref: ref };
+})();

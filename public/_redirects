@@ -1,0 +1,33 @@
+# Redirects for Cloudflare (Workers and Pages). One rule per line: old address, new address, status.
+# www goes to the main address. (If Cloudflare ignores this line, use the Redirect Rule in HOSTING-HANDOVER.md.)
+https://www.sapharatravel.co.uk/* https://sapharatravel.co.uk/:splat 301
+
+# The same pages at the short addresses planned in the SEO notes
+/honeymoons /trips/honeymoons 301
+/beach-and-island /trips/beach-and-island 301
+/family-holidays /trips/family-holidays 301
+/family /trips/family-holidays 301
+/hotels /trips/hotels 301
+/business /trips/business 301
+/umrah /destinations/makkah-and-madinah 301
+/makkah-and-madinah /destinations/makkah-and-madinah 301
+/zanzibar /destinations/zanzibar 301
+/doha /destinations/doha 301
+/dubai /destinations/dubai 301
+/oman /destinations/oman 301
+/kuala-lumpur /destinations/kuala-lumpur 301
+/langkawi /destinations/langkawi 301
+/sarajevo /guides/sarajevo 301
+/malta /guides/malta 301
+
+# Other likely old or guessed addresses
+/terms /booking-terms 301
+/terms-and-conditions /booking-terms 301
+/privacy-policy /privacy 301
+/atol /atol-and-financial-protection 301
+/contact /plan-my-trip 301
+/enquire /plan-my-trip 301
+/book /plan-my-trip 301
+/about /why-saphara 301
+/about-us /why-saphara 301
+/links /plan-my-trip 301

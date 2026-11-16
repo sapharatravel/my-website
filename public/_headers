@@ -1,0 +1,47 @@
+# Headers for Cloudflare (Workers and Pages).
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Strict-Transport-Security: max-age=31536000
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://use.typekit.net https://p.typekit.net; font-src 'self' data: https://use.typekit.net; img-src 'self' data: https://p.typekit.net; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'
+
+# Pages: always check for a fresh copy (they're small)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Site files that keep the same name when they change: re-check each day
+/assets/site.css
+  Cache-Control: public, max-age=86400, must-revalidate
+/assets/site.js
+  Cache-Control: public, max-age=86400, must-revalidate
+/assets/price-check.js
+  Cache-Control: public, max-age=86400, must-revalidate
+/site.webmanifest
+  Cache-Control: public, max-age=86400
+
+# Built files with a fingerprint in the name never change
+/assets/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images: a week
+/img/*
+  Cache-Control: public, max-age=604800
+
+# Keep the 404 and thank-you pages out of search results
+/404.html
+  X-Robots-Tag: noindex
+/thank-you.html
+  X-Robots-Tag: noindex
+
+# Keep the free preview address (pages.dev) out of search results so only sapharatravel.co.uk is listed
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+/video/*
+  Cache-Control: public, max-age=604800
