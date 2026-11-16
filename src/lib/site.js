@@ -277,6 +277,7 @@ export const travelAgencyLd = () => ({
   "@id": ORG_ID,
   name: "Saphara Travel",
   legalName: "Saphara Travel Group Ltd",
+  description: "Saphara Travel is a Muslim-owned UK travel company arranging Muslim-friendly holidays, honeymoons and hotel stays, with personalised travel planning and support.",
   url: SITE + "/",
   logo: SITE + "/img/icons/icon-512.png",
   image: SITE + "/img/og-home.jpg",
