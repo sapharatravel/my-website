@@ -1,0 +1,54 @@
+---
+// Every page: head and metadata, header and phone menu, Instagram strip, footer, sticky bar and the shared script.
+import { Page, header, footer, sticky, igStrip, esc, keepWhatsAppTogether, keepTogether, PROTOTYPE, C, cleanLinks, waLinks, travelAgencyLd, websiteLd, breadcrumbLd, ldScript } from "../lib/site.js";
+
+interface Props { path: string; title: string; desc: string; og?: string; hero?: boolean; ld?: object | null }
+const { path, title, og = "og-image.jpg", hero = false, ld = null } = Astro.props;
+const pg = new Page(path);
+const desc = C.DESC_OVERRIDES[path] ?? Astro.props.desc;
+const noindex = PROTOTYPE || path === "404.html" || path === "thank-you.html";
+// Clean URLs: Cloudflare serves privacy.html at /privacy and guides/index.html at /guides/, so the canonical matches what people see.
+const canon = "https://sapharatravel.co.uk/" + path.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "");
+// Internal links go straight to the clean addresses (no redirect through .html), see cleanLinks in site.js.
+// WhatsApp buttons get the page's own opener and tag (waLinks in site.js).
+const tidy = (html) => waLinks(cleanLinks(keepTogether(html), path), path);
+const body = waLinks(cleanLinks(keepWhatsAppTogether(await Astro.slots.render("default")), path), path);
+// Structured data: TravelAgency and WebSite on the homepage, BreadcrumbList from the visible breadcrumb, plus any page extra (Article on guides).
+const isHome = path === "index.html";
+const ldHtml = noindex ? "" : ldScript([isHome && travelAgencyLd(), isHome && websiteLd(), breadcrumbLd(body, path, canon), ld]);
+const bodyClass = (hero ? "has-hero" : "no-hero") + (path === "index.html" ? " home" : "");
+const head = `<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(desc)}">
+${noindex ? '<meta name="robots" content="noindex, nofollow">\n' : ""}
+<link rel="canonical" href="${canon}">
+<meta name="theme-color" content="#F5EFE4">
+<link rel="icon" href="${pg.img("icons/favicon.svg")}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${pg.img("icons/apple-touch-icon.png")}">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Saphara Travel">
+<meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}">
+<meta property="og:url" content="${canon}"><meta property="og:image" content="https://sapharatravel.co.uk/img/${og}">
+<meta property="og:locale" content="en_GB"><meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="${pg.u("assets/fonts/inter-400-latin.woff2")}" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="${pg.u("assets/fonts/inter-500-latin.woff2")}" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/swo1kcy.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://use.typekit.net/swo1kcy.css"></noscript>
+<link rel="stylesheet" href="${pg.u("assets/site.css")}">${ldHtml ? "\n" + ldHtml : ""}`;
+---
+<html lang="en-GB">
+<head>
+<Fragment set:html={head} />
+</head>
+<body class={bodyClass}>
+<div class="scroll-progress" id="progress" aria-hidden="true"></div>
+<Fragment set:html={tidy(header(pg))} />
+<main id="main" tabindex="-1">
+<Fragment set:html={body} />
+</main>
+<Fragment set:html={path === "index.html" ? "" : tidy(igStrip(pg))} />
+<Fragment set:html={tidy(footer(pg))} />
+<Fragment set:html={tidy(sticky(pg))} />
+<script is:inline src={pg.u("assets/site.js")}></script>
+</body>
+</html>

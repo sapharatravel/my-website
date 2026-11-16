@@ -1,0 +1,6 @@
+---
+import Base from "../layouts/Base.astro";
+import { travelEssentials } from "../lib/pages.js";
+const p = travelEssentials();
+---
+<Base path={p.path} title={p.title} desc={p.desc} hero={p.hero} og={p.og}><Fragment set:html={p.body} /></Base>

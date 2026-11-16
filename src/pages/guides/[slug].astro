@@ -1,0 +1,8 @@
+---
+import Base from "../../layouts/Base.astro";
+import { guidePage } from "../../lib/pages.js";
+import { C } from "../../lib/site.js";
+export function getStaticPaths() { return C.GUIDES.map((g) => ({ params: { slug: g.slug } })); }
+const p = guidePage(Astro.params.slug);
+---
+<Base path={p.path} title={p.title} desc={p.desc} hero={p.hero} og={p.og} ld={p.ld}><Fragment set:html={p.body} /></Base>

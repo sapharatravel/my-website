@@ -1,0 +1,7 @@
+---
+import Base from "../layouts/Base.astro";
+import { legalPage, LEGAL_PATHS } from "../lib/pages.js";
+export function getStaticPaths() { return LEGAL_PATHS.map((p) => ({ params: { legal: p.replace(".html", "") } })); }
+const p = legalPage(Astro.params.legal + ".html");
+---
+<Base path={p.path} title={p.title} desc={p.desc} hero={p.hero}><Fragment set:html={p.body} /></Base>

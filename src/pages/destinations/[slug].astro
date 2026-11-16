@@ -1,0 +1,8 @@
+---
+import Base from "../../layouts/Base.astro";
+import { destinationPage } from "../../lib/pages.js";
+import { C } from "../../lib/site.js";
+export function getStaticPaths() { return C.DESTS.map((d) => ({ params: { slug: d.slug } })); }
+const p = destinationPage(Astro.params.slug);
+---
+<Base path={p.path} title={p.title} desc={p.desc} hero={p.hero} og={p.og}><Fragment set:html={p.body} /></Base>

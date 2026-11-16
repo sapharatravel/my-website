@@ -1,0 +1,32 @@
+{
+  "_how_to_edit": "The homepage section 'Pack light. Leave the baggage with us.' is built from this file. Change the questions below (keep the quote marks and commas), add or remove lines, then rebuild with: cd astro && npm run build. Numbering is automatic.",
+  "headline": [
+    "Pack light.",
+    "Leave the baggage with us."
+  ],
+  "intro": "The questions we ask hotels, so you don't have to. Every hotel answers differently. We ask before you book, and we tell you plainly what they said.",
+  "groups": [
+    {
+      "title": "The practical ones",
+      "questions": [
+        "Can our rooms be next to each other, or connecting?",
+        "What beds are actually in the room, and is the extra bed or cot included?",
+        "Up to what age do children stay free?",
+        "Will the pool be open during our stay, or is any work planned?",
+        "We land at 4:30am. Will the room be ready, or should we book the night before?",
+        "Can we have a higher floor, close to the lifts, for elderly parents?"
+      ]
+    },
+    {
+      "title": "The ones that matter to us",
+      "questions": [
+        "Can we have a room facing the Haram?",
+        "Is the food halal-certified, or halal on request?",
+        "Can we have a quiet room away from the bar, with the minibar cleared?",
+        "Is there a prayer room, or a mosque nearby?",
+        "Is the pool private, or mixed?",
+        "Is alcohol served by the pool?"
+      ]
+    }
+  ]
+}
