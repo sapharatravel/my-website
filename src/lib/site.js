@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { join as joinPath } from "node:path";
 // Shared building blocks for every page. Ported one-for-one from tools/site_lib.py and tools/build_site.py
 // so the Astro build outputs the same markup as the prototype. Content lives in src/data/content.json.
 import C from "../data/content.json";
@@ -345,3 +348,6 @@ export const ldScript = (nodes) => {
   if (!graph.length) return "";
   return `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c")}</script>`;
 };
+
+// 21 Nov 2026: version tag for site files that keep their name (site.css, site.js, price-check.js), so browsers fetch the new file after every change instead of using a cached copy for up to a day (see public/_headers)
+export const assetV = (f) => { try { return createHash("md5").update(readFileSync(joinPath(process.cwd(), "public", "assets", f))).digest("hex").slice(0, 8); } catch (e) { return String(Date.now()); } };
