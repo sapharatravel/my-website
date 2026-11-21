@@ -10,6 +10,7 @@ import priceCheck from "../components/home/03-price-check.html?raw";
 import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
 import declaration from "../components/home/06-declaration.html?raw";
+// import compare from "../components/home/06b-compare.html?raw"; // parked 21 Nov 2026
 import reviews from "../components/home/07-reviews.html?raw";
 import quote from "../components/home/08-quote.html?raw";
 import business from "../components/home/09-business.html?raw";
@@ -66,16 +67,16 @@ const join = (...parts) => parts.join("\n");
 // ---------- home ----------
 // Cards on the homepage to the pages that hold what used to be on it.
 const MORE_CARDS = [
-  ["trips/business.html", "business-doha-mia.webp", "Business travel", "Hotels and flights for staff and clients, one invoice per booking."],
-  ["price-check.html", "hero-b-m.webp", "Price check", "Found a hotel? We compare it like for like, free."],
-  ["why-saphara.html", "why-salwa.webp", "How we work", "Four steps on WhatsApp, pay later and no service fee."],
-  ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Muslim-friendly guides to Malta, Sarajevo and New York."],
-  ["reviews.html", "moment-kaya-pool.webp", "Reviews", "What our travellers say after they're home."],
-  ["faq.html", "trip-hotel-room.webp", "FAQs", "Payments, halal food, prayer rooms and ATOL."],
+  ["price-check.html", "hero-b-m.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
+  ["reviews.html", "moment-kaya-pool.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
+  ["why-saphara.html", "why-salwa.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
+  ["trips/business.html", "business-doha-mia.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
+  ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
+  ["faq.html", "trip-hotel-room.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
 ];
 const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 function moreCards(pg) {
-  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">More from SAPHARA.</h2></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
+  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">Still deciding?</h2></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
 }
 // Proof under the hero (16 Nov 2026, Huzaifa): the Trustpilot line and one real review, lifted from the reviews block so the wording can't drift.
 function heroProof(pg) {
@@ -107,6 +108,8 @@ export function home() {
   void guides;
   // 16 Nov 2026 (Huzaifa): proof under the hero, then the FAQ teaser and the check-in form ("Bismillah. Let's plan it.") back at the end, with a WhatsApp button.
   const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<div class="actions final-wa">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
+  // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
+  // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
   const body = toPlan(join(hero, hotelNames, heroProof(pg), trips, destinations, declaration, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
 }
@@ -139,6 +142,8 @@ export function tripPage(slug) {
   let close = cta(pg, t.cta, "Tell us roughly when and where, and we'll come back with two or three options compared like for like.", t.btn, { cls: "white continue", trip: t.trip });
   // the closing card never repeats the hero headline (business page): it asks the next step instead
   if (t.cta.join(" ") === tl.join(" ")) close = close.replace(/<h2 class="display d-m">[\s\S]*?<\/h2>/, '<h2 class="display d-m">' + beats(["Talk to us about", "your next trip."]) + "</h2>");
+  // 21 Nov 2026: one real review and the Trustpilot line before the closing card, so every trip page has proof (it had none)
+  body += heroProof(pg).replace('class="band white proof-band"', 'class="band sand proof-band"');
   body += close;
   return { path: pg.path, title: t.title, desc: t.desc, hero: true, body };
 }
@@ -155,21 +160,53 @@ export function destinationsIndex() {
 export function destinationPage(slug) {
   const d = D[slug];
   const pg = new Page(`destinations/${slug}.html`);
+  const g = d.page || null; // the fuller destination template (21 Nov 2026); destinations without `page` keep the short layout
   const fromMan = " From Manchester.";
   const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--ink)">${d.code}</span><span>${d.flight_long}${fromMan}</span></div>`;
-  let body = photoHero(pg, d.img, d.alt, [d.short || d.name], d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
+  let body = photoHero(pg, (g && g.hero) || d.img, (g && g.hero_alt) || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
   body += crumbBar(pg, [["Destinations", "destinations/index.html"], [d.name, `destinations/${slug}.html`]]);
-  let facts = [["Flight time", d.flight_long + fromMan], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
+  let facts = (g && g.facts) || [["Flight time", d.flight_long + fromMan], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
   if (slug === "makkah-and-madinah") facts = facts.filter((f) => f[0] !== "Food and alcohol");
-  body += band("white", intro(["Good to know."]) + '<dl class="facts rv" style="margin-top:var(--intro-content)">' + facts.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("") + '</dl><p class="small-print">Flight times are approximate and depend on the route and airline.</p>');
+  const checked = g && g.checked ? `<p class="updated dp-checked">Last checked: ${g.checked[1]}</p>` : "";
+  const factsNote = (g && g.facts_note) || "Flight times are approximate and depend on the route and airline.";
+  body += band("white", intro(["Good to know."], g && g.facts_intro ? g.facts_intro : "", null, checked) + '<dl class="facts rv" style="margin-top:var(--intro-content)">' + facts.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("") + `</dl><p class="small-print">${factsNote}</p>`);
   const whyHead = slug === "makkah-and-madinah" ? ["How we help."] : [d.name.length < 10 ? `Why ${d.name}.` : "Why go."];
   body += band("sand", intro(whyHead) + '<div class="why6" style="margin-top:var(--intro-content)">' + d.why.map(([a, b], k) => `<div class="rv">${ico(C.DEST_ICONS[slug][k])}<div><h3>${a}</h3><p>${b}</p></div></div>`).join("") + "</div>");
+  if (g) body += destDetail(pg, d, g);
   body += band("white", intro(["Trips that suit it."]) + '<div class="cards3" style="margin-top:var(--intro-content)">' + C.TRIPS.filter(([s]) => d.trips.includes(s)).map(([s, n, img, l]) => tripCard(pg, s, n, img, l, "")).join("") + "</div>");
-  body += cta(pg, [d.name.length < 10 ? `${d.name}, sorted.` : "Sorted."], "Tell us when you'd like to go and who's coming, and we'll send options compared like for like.", "Plan my trip", { cls: "white continue" });
+  body += cta(pg, [d.name.length < 10 ? `${d.name}, sorted.` : "Sorted."], (g && g.cta) || "Tell us when you'd like to go and who's coming, and we'll send options compared like for like.", "Plan my trip", { cls: "white continue" });
   const q = "?dest=" + d.name.replace(/ /g, "+") + (slug === "makkah-and-madinah" ? "&amp;trip=Umrah+hotels" : "");
   body = body.split('href="../plan-my-trip.html"').join('href="../plan-my-trip.html' + q + '"');
   // Titles and descriptions are set per destination (title in DESTS, description in DESC_OVERRIDES); the stitched fallback stays for a new destination only.
-  return { path: pg.path, title: d.title || `${d.name} holidays and hotels | Saphara Travel`, desc: `${d.name}: ${d.intro} ${d.flight_long}`, hero: true, body };
+  return { path: pg.path, title: d.title || `${d.name} holidays and hotels | Saphara Travel`, desc: `${d.name}: ${d.intro} ${d.flight_long}`, hero: true, body, og: g && g.og ? g.og : undefined };
+}
+
+/**
+ * The fuller destination sections (21 Nov 2026, Zanzibar first). Each block shows only if its data is in the
+ * destination's `page` object in content.json:
+ *   areas  Where to stay: one card per area (name, where, best for, a line, and a tide or practical note)
+ *   week   A sample week, day by day, in the style of our client itineraries (a theme per day, a few plain lines)
+ *   tips   Before you go: short grouped notes (getting there, entry, money, prayer, Ramadan...)
+ *   faq    Questions people ask about the place
+ * Bands keep alternating white and sand after "Why ...".
+ */
+function destDetail(pg, d, g) {
+  let out = "";
+  if (g.areas) {
+    const cards = g.areas.items.map((a) => `<article class="area rv"><div class="area-top"><h3>${a.name}</h3><p class="area-where">${ico("pin")}${a.where}</p></div><p class="area-best"><span>Best for</span> ${a.best}</p><p class="area-line">${a.line}</p>${a.note ? `<p class="area-note">${a.note}</p>` : ""}</article>`).join("");
+    out += band("white", intro(g.areas.head, g.areas.intro) + `<div class="areas">${cards}</div>` + (g.areas.foot ? `<p class="small-print">${g.areas.foot}</p>` : ""), "where-to-stay");
+  }
+  if (g.week) {
+    const days = g.week.days.map(([, t, items], i) => `<li class="day rv"><p class="day-n"><small>Day</small> ${i + 1}</p><div class="day-b"><h3>${t}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></li>`).join("");
+    const side = `<div class="sticky-col">${intro(g.week.head, g.week.intro)}${g.week.handle ? `<div class="week-handle rv"><p class="pc-k">${g.week.handle_head}</p>${chips(g.week.handle)}</div>` : ""}</div>`;
+    out += band("sand", `<div class="split-cols week">${side}<ol class="days">${days}</ol></div>`, "sample-week");
+  }
+  if (g.tips) {
+    const blocks = g.tips.items.map(([icon, h, items]) => `<div class="tip rv">${ico(icon)}<div><h3>${h}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></div>`).join("");
+    out += band("white", intro(g.tips.head, g.tips.intro) + `<div class="tips">${blocks}</div>` + (g.tips.foot ? `<p class="small-print">${g.tips.foot}</p>` : ""), "before-you-go");
+  }
+  if (g.faq) out += band("sand", intro(g.faq.head) + `<div style="margin-top:var(--intro-content)">${faq(g.faq.items)}</div>`, "questions");
+  return out;
 }
 
 // ---------- guides ----------
@@ -234,7 +271,7 @@ export function reviewsPage() {
   let body = photoHero(pg, "moment-kaya-pool.webp", "A garden pool with sun loungers", ["Word travels."], "What clients say on Trustpilot. Every quote is real and shown in full.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Reviews", "reviews.html"]]);
   body += band("white after-head", rv);
   body += cta(pg, ["Your turn."], "Tell us where you'd like to go. We'll take it from there.", "Plan my trip");
-  return { path: pg.path, title: "Reviews | Saphara Travel", desc: "What clients say about Saphara Travel on Trustpilot. Real quotes, shown in full.", hero: true, body };
+  return { path: pg.path, title: "Saphara Travel reviews from real travellers", desc: "What travellers say after booking hotels and holidays with Saphara Travel, a Muslim-owned travel company. Real Trustpilot reviews, shown in full.", hero: true, body };
 }
 
 // ---------- FAQ ----------
@@ -254,7 +291,7 @@ export function planMyTrip() {
     .replace(/(<section class="band sand form-wrap" id="enquire">\s*<div class="col">\s*)<div class="intro">[\s\S]*?<\/div>\s*/, "$1")
         .replace('<div class="checkin">', '<h2 class="sr-only">Your trip request</h2><div class="checkin">');
   const body = head + form + "\n" + band("white", intro(["Prefer to talk?"], 'Message us on WhatsApp with where, roughly when and who\'s coming, or email <a href="mailto:hello@sapharatravel.co.uk">hello@sapharatravel.co.uk</a>. Nothing you type in the form is stored on our website; it opens WhatsApp with your message written out.', null, '<div class="actions" style="margin-top:var(--body-btn)">' + split("Message us on " + waGlyph() + "WhatsApp", waMark("talk")) + "</div>"));
-  return { path: pg.path, title: "Plan my trip | Saphara Travel", desc: "A few quick questions. Your trip request builds as you go, then opens in WhatsApp, ready to send.", hero: true, body };
+  return { path: pg.path, title: "Plan a Muslim-friendly trip | Saphara Travel", desc: "Tell us where, when and who's coming in a few quick questions. Your trip request opens in WhatsApp, ready to send. Nothing is booked until you say yes.", hero: true, body };
 }
 
 // ---------- price check ----------

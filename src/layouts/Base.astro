@@ -1,6 +1,6 @@
 ---
 // Every page: head and metadata, header and phone menu, Instagram strip, footer, sticky bar and the shared script.
-import { Page, header, footer, sticky, igStrip, esc, keepWhatsAppTogether, keepTogether, PROTOTYPE, C, cleanLinks, waLinks, travelAgencyLd, websiteLd, breadcrumbLd, ldScript } from "../lib/site.js";
+import { Page, header, footer, sticky, igStrip, esc, keepWhatsAppTogether, keepTogether, PROTOTYPE, C, cleanLinks, waLinks, travelAgencyLd, websiteLd, breadcrumbLd, ldScript, responsiveImgs } from "../lib/site.js";
 
 interface Props { path: string; title: string; desc: string; og?: string; hero?: boolean; ld?: object | null }
 const { path, title, og = "og-home.jpg", hero = false, ld = null } = Astro.props;
@@ -11,8 +11,9 @@ const noindex = PROTOTYPE || path === "404.html" || path === "thank-you.html";
 const canon = "https://sapharatravel.co.uk/" + path.replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "");
 // Internal links go straight to the clean addresses (no redirect through .html), see cleanLinks in site.js.
 // WhatsApp buttons get the page's own opener and tag (waLinks in site.js).
-const tidy = (html) => waLinks(cleanLinks(keepTogether(html), path), path);
-const body = waLinks(cleanLinks(keepWhatsAppTogether(await Astro.slots.render("default")), path), path);
+// Photos get srcset and sizes from src/data/img-sizes.json (responsiveImgs in site.js, 21 Nov 2026).
+const tidy = (html) => responsiveImgs(waLinks(cleanLinks(keepTogether(html), path), path));
+const body = responsiveImgs(waLinks(cleanLinks(keepWhatsAppTogether(await Astro.slots.render("default")), path), path));
 // Structured data: TravelAgency and WebSite on the homepage, BreadcrumbList from the visible breadcrumb, plus any page extra (Article on guides).
 const isHome = path === "index.html";
 const ldHtml = noindex ? "" : ldScript([isHome && travelAgencyLd(), isHome && websiteLd(), breadcrumbLd(body, path, canon), ld]);

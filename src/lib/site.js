@@ -1,6 +1,7 @@
 // Shared building blocks for every page. Ported one-for-one from tools/site_lib.py and tools/build_site.py
 // so the Astro build outputs the same markup as the prototype. Content lives in src/data/content.json.
 import C from "../data/content.json";
+import IMGS from "../data/img-sizes.json";
 
 export const PROTOTYPE = false; // true keeps every page out of search engines; false is the live build (set 14 Nov 2026 for launch)
 export const WA_BASE = "https://wa.me/447887353457";
@@ -74,15 +75,16 @@ export function header(pg) {
 <header class="header" id="hdr">
   <div class="col">
     <a href="${pg.u("")}" aria-label="Saphara Travel, home">
-      <img class="logo logo-light" src="${pg.img("saphara-logo-light.svg")}" alt="Saphara Travel" width="120" height="35">
+      <img class="logo logo-light" src="${pg.img("saphara-logo-sand.svg")}" alt="Saphara Travel" width="120" height="35">
       <img class="logo logo-dark" src="${pg.img("saphara-logo-dark.svg")}" alt="" width="120" height="35">
     </a>
     <div class="hnav">
       <nav class="desk-links" aria-label="Main">
+        <a class="nl nl-pc" href="${pg.u("price-check.html")}">Price check <span class="nl-free">Free</span></a>
         <div class="dd"><button class="nl dd-btn" type="button" aria-expanded="false" aria-controls="tripsMenu">Trips<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
         <div class="dd-panel" id="tripsMenu" role="region" aria-label="Trips"><div class="dd-head"><span class="dd-k">Trips we plan</span><a class="dd-all" href="${pg.u("trips/index.html")}">See all trips${ARROW}</a></div>${tiles}${extra}
         </div></div>
-        <a class="nl nl-pc" href="${pg.u("price-check.html")}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>Price check</a><a class="nl" href="${pg.u("destinations/index.html")}">Destinations</a><a class="nl" href="${pg.u("guides/index.html")}">Guides</a><a class="nl" href="${pg.u("why-saphara.html")}">Why Saphara</a>
+        <a class="nl" href="${pg.u("destinations/index.html")}">Destinations</a><a class="nl" href="${pg.u("guides/index.html")}">Guides</a><a class="nl" href="${pg.u("why-saphara.html")}">Why Saphara</a>
       </nav>
       <a class="hwa" href="${waMark("header")}" aria-label="WhatsApp us">${waGlyph("")}</a>
       <a class="split hsplit" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a>
@@ -93,8 +95,9 @@ export function header(pg) {
 <div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="mm-top"><img src="${pg.img("saphara-logo-dark.svg")}" alt="Saphara Travel" width="120" height="35"><button class="mm-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <nav aria-label="Menu">
+    <a class="mm-pc" href="${pg.u("price-check.html")}">Price check <span class="mm-tag">Free</span></a>
     <div class="mm-trips"><span>Trips</span><div class="mm-sub">${C.TRIPS.map(([s2, n2]) => `<a href="${pg.u("trips/" + s2 + ".html")}">${n2}</a>`).join("")}${(C.MENU_EXTRA || []).map((m) => `<a href="${pg.u(m.href)}">${m.name}</a>`).join("")}</div></div>
-    <a class="mm-pc" href="${pg.u("price-check.html")}">Price check <span class="mm-tag">Free</span></a><a href="${pg.u("destinations/index.html")}">Destinations</a><a href="${pg.u("guides/index.html")}">Guides</a><a href="${pg.u("why-saphara.html")}">Why Saphara</a>
+    <a href="${pg.u("destinations/index.html")}">Destinations</a><a href="${pg.u("guides/index.html")}">Guides</a><a href="${pg.u("why-saphara.html")}">Why Saphara</a>
   </nav>
   <div class="mm-actions"><a class="textlink" href="${waMark("menu")}">${waGlyph()}WhatsApp us</a><a class="split" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
 </div>`;
@@ -187,11 +190,50 @@ export const keepWhatsAppTogether = (html) => keepTogether(html).replace(/(<svg 
 // ---------- page blocks ----------
 export const beats = (lines, toneLast = false) => lines.map((l, i) => `<span class="${toneLast && i === lines.length - 1 && lines.length > 1 ? "beat tone" : "beat"}">${l}</span>`).join(" ");
 
+// ---------- responsive images (21 Nov 2026) ----------
+// Smaller copies live in img/r/ and are listed in src/data/img-sizes.json (made by tools/images/responsive.py).
+// `sizes` says how wide each kind of photo shows, so the browser picks the right copy. Order matters: first match wins.
+const SIZES = [
+  [/^dest-/, "(min-width: 1440px) 340px, (min-width: 1024px) 24vw, 50vw"],
+  [/^guides\/guide-/, "(min-width: 1440px) 400px, (min-width: 768px) 33vw, 90vw"],
+  [/^trip-/, "(min-width: 1440px) 420px, (min-width: 1024px) 31vw, (min-width: 768px) 48vw, 92vw"],
+  [/^hero-/, "100vw"],
+];
+const SIZES_DEFAULT = "(min-width: 1024px) 50vw, 100vw";
+const stemOf = (name) => name.replace(/\.[a-z]+$/i, "");
+/** srcset for a photo in img/ (pre is the "../" prefix the page already uses), or "" when it has no smaller copies. */
+export const srcsetFor = (pre, name) => {
+  const e = IMGS.photos[name];
+  if (!e || !e.w.length) return "";
+  return e.w.map((w) => `${pre}img/r/${stemOf(name)}-${w}.webp ${w}w`).concat(`${pre}img/${name} ${e.full}w`).join(", ");
+};
+/** Adds srcset and sizes to every <img src=".../img/..."> that has smaller copies and no srcset yet. Runs on every page in Base.astro. */
+export const responsiveImgs = (html) => html.replace(/<img\b([^>]*?)\ssrc="((?:\.\.\/|\/)*)img\/([^"]+)"([^>]*)>/g, (all, a, pre, name, b) => {
+  if (/\ssrcset=/.test(a + b)) return all;
+  const ss = srcsetFor(pre, name);
+  if (!ss) return all;
+  const sz = (SIZES.find(([re]) => re.test(name)) || [null, SIZES_DEFAULT])[1];
+  return `<img${a} src="${pre}img/${name}" srcset="${ss}" sizes="${sz}"${b}>`;
+});
+/** Hero photo. A destination hero set (IMGS.heroes) gets a landscape set from 768px and a portrait crop on phones. */
+function heroPicture(pg, img, alt) {
+  const pre = pg.u("img/x").slice(0, -"img/x".length);
+  const h = IMGS.heroes[img];
+  if (h) {
+    const set = (k) => h[k].w.map((w) => `${pre}img/r/${img}-${k}-${w}.webp ${w}w`).join(", ");
+    const dims = (k, w) => `width="${w}" height="${Math.round((w * h[k].ratio[1]) / h[k].ratio[0])}"`;
+    const mMax = h.m.w[h.m.w.length - 1], dMax = h.d.w[h.d.w.length - 1];
+    return `<picture><source media="(min-width: 768px)" srcset="${set("d")}" sizes="100vw" ${dims("d", dMax)}><img src="${pre}img/r/${img}-m-${mMax}.webp" srcset="${set("m")}" sizes="100vw" ${dims("m", mMax)} alt="${alt}" fetchpriority="high" decoding="async"></picture>`;
+  }
+  const ss = srcsetFor(pre, img);
+  return `<picture><img src="${pg.img(img)}"${ss ? ` srcset="${ss}" sizes="100vw"` : ""} alt="${alt}" fetchpriority="high" decoding="async"></picture>`;
+}
+
 export function photoHero(pg, img, alt, h1Lines, lead, btn = "Plan my trip", extra = "", fit = null, actions = null) {
   const fitS = fit ? ` style="--fit:${typeof fit === "number" && Number.isInteger(fit) ? fit.toFixed(1) : fit}"` : "";
   const h1 = h1Lines.map((l, i) => `<span${i === h1Lines.length - 1 && h1Lines.length > 1 ? ' class="tone"' : ""}>${l}</span>`).join(" ");
   return `<section class="hero" id="hero" aria-label="Introduction">
-  <picture><img src="${pg.img(img)}" alt="${alt}" fetchpriority="high" decoding="async"></picture>
+  ${heroPicture(pg, img, alt)}
   <div class="col">
     <h1 class="display"${fitS}>${h1}</h1>
     <p class="lead">${lead}</p>${extra}

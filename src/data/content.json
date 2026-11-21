@@ -67,7 +67,276 @@
     "beach-and-island"
    ],
    "city": "Zanzibar",
-   "title": "Muslim-friendly Zanzibar holidays and hotels | Saphara Travel"
+   "title": "Muslim-friendly Zanzibar holidays and hotels | Saphara Travel",
+   "page": {
+    "hero": "dest-hero-zanzibar",
+    "hero_alt": "A dhow under sail at sunset off Zanzibar",
+    "checked": [
+     "2026-11-21",
+     "21 November 2026"
+    ],
+    "facts": [
+     [
+      "Flight time",
+      "About 13 hours with one stop from Manchester."
+     ],
+     [
+      "Best time to go",
+      "June to October, and December to February."
+     ],
+     [
+      "Time difference",
+      "Three hours ahead of home in winter, two in summer."
+     ],
+     [
+      "Money",
+      "Tanzanian shillings. Hotels and trips are often priced in US dollars."
+     ],
+     [
+      "Entry",
+      "A visa and Zanzibar's own travel insurance. Details below."
+     ],
+     [
+      "Suits",
+      "Honeymooners, couples and slow beach holidays"
+     ],
+     [
+      "Prayer",
+      "A mostly Muslim island. You'll hear the adhan across Stone Town."
+     ],
+     [
+      "Food and alcohol",
+      "We check each hotel and tell you plainly."
+     ]
+    ],
+    "facts_note": "Flight times are approximate and depend on the route and airline.",
+    "areas": {
+     "head": [
+      "Where to stay."
+     ],
+     "intro": "The coast you pick matters more than you'd think. On the east coast the tide goes out a long way, so the sea can be a walk away for part of the day. The north stays swimmable.",
+     "items": [
+      {
+       "name": "Kendwa",
+       "where": "North-west coast",
+       "best": "swimming at any time of day",
+       "line": "A long, soft beach where the water stays deep close to shore. Sunsets over the sea.",
+       "note": "Tide: hardly changes the swimming."
+      },
+      {
+       "name": "Nungwi",
+       "where": "Northern tip",
+       "best": "first visits, boat trips and sunsets",
+       "line": "Livelier, with more places to eat and dhows coming and going. Busy in parts, so where the hotel sits on the beach matters.",
+       "note": "Tide: small, swimmable most of the day."
+      },
+      {
+       "name": "Matemwe and Pongwe",
+       "where": "North-east coast",
+       "best": "quiet stays for couples",
+       "line": "Calm villages, palm-lined sand and the closest beaches to Mnemba Atoll for snorkelling.",
+       "note": "Tide: plan your swims around high tide."
+      },
+      {
+       "name": "Paje and Jambiani",
+       "where": "South-east coast",
+       "best": "kitesurfing and beach cafes",
+       "line": "Wide white beaches and a shallow turquoise lagoon. Lovely at high tide; at low tide you walk out across the sand.",
+       "note": "Tide: big. The sea goes out a long way."
+      },
+      {
+       "name": "Michamvi",
+       "where": "East coast peninsula",
+       "best": "sunsets on the east side",
+       "line": "A narrow strip with the ocean on one side and a calm bay on the other, so you can watch the sun go down over the water.",
+       "note": "Tide: big on both sides."
+      },
+      {
+       "name": "Stone Town",
+       "where": "West coast, near the airport",
+       "best": "a night or two of history and food",
+       "line": "Narrow streets, carved doors, markets and mosques. Most people stay one or two nights, then head to the beach.",
+       "note": "A short drive from the airport."
+      }
+     ],
+     "foot": "Tides change every day and are biggest around the full and new moon."
+    },
+    "week": {
+     "head": [
+      "A week in Zanzibar."
+     ],
+     "intro": "A sample plan to show how a trip can flow: two nights in Stone Town, then five on the beach. We shape it around your dates, your pace and your hotel.",
+     "handle_head": "What we sort for you",
+     "handle": [
+      "Airport and hotel transfers",
+      "A private guide in Stone Town",
+      "Requests to the hotel, from a honeymoon set-up to a quiet room",
+      "Questions about meat, alcohol and privacy, asked before you book"
+     ],
+     "days": [
+      [
+       "Day 1",
+       "Arrive and slow down",
+       [
+        "Land and transfer to your Stone Town hotel, a short drive away.",
+        "Freshen up, pray and rest.",
+        "Walk to Forodhani Gardens near sunset for the evening food stalls by the water."
+       ]
+      ],
+      [
+       "Day 2",
+       "Stone Town on foot",
+       [
+        "A morning walk with a private guide: the Old Fort, the carved doors and the narrow lanes.",
+        "Darajani Market for spices, fruit and the morning bustle.",
+        "An afternoon boat to Prison Island to see the giant tortoises.",
+        "Maghrib by the sea, then dinner in town."
+       ]
+      ],
+      [
+       "Day 3",
+       "Spices, forest, then the coast",
+       [
+        "A spice farm tour on the way out of town: cloves, cinnamon, vanilla and fresh fruit.",
+        "Jozani Forest to see the red colobus monkeys.",
+        "Check in at your beach hotel in the afternoon."
+       ]
+      ],
+      [
+       "Day 4",
+       "Nothing planned",
+       [
+        "Breakfast, the pool, the beach. That's the plan.",
+        "On the east coast, check the tide times and swim at high water.",
+        "A quiet dinner, or an early night."
+       ]
+      ],
+      [
+       "Day 5",
+       "Out on the water",
+       [
+        "A snorkelling trip to Mnemba Atoll, where you may see dolphins on the way out.",
+        "Or a dhow day with a sandbank stop and lunch on the boat."
+       ]
+      ],
+      [
+       "Day 6",
+       "Your choice",
+       [
+        "A sunset dhow cruise, a spa afternoon or a first kitesurfing lesson in Paje.",
+        "If it's a Friday, ask us about Jumu'ah near your hotel."
+       ]
+      ],
+      [
+       "Day 7",
+       "Last full day",
+       [
+        "A slow morning, a long lunch and one more swim.",
+        "Pick up spices or a kanga cloth to take home."
+       ]
+      ],
+      [
+       "Day 8",
+       "Home",
+       [
+        "We can ask the hotel for a late check-out.",
+        "Allow about an hour or more to reach the airport from the north and east coasts."
+       ]
+      ]
+     ]
+    },
+    "tips": {
+     "head": [
+      "Before you go."
+     ],
+     "intro": "The practical bits, in one place.",
+     "items": [
+      [
+       "flights",
+       "Getting there",
+       [
+        "There are no direct flights from Manchester. Most routes change once, in Doha, Dubai, Muscat or Istanbul.",
+        "The airport is just outside Stone Town. Transfers to the north and east coasts take about an hour or more."
+       ]
+      ],
+      [
+       "shield",
+       "Visa and insurance",
+       [
+        "British passport holders need a visa. The e-visa is the easiest way: apply online before you fly.",
+        "Your passport needs at least six months left from the day you arrive, and a blank page.",
+        "If you land in Zanzibar first, you also need the government's inbound travel insurance from the Zanzibar Insurance Corporation, even if you have your own policy. Buy it only from the official site, <a href=\"https://www.visitzanzibar.go.tz\">visitzanzibar.go.tz</a>.",
+        "Rules change, so check <a href=\"https://www.gov.uk/foreign-travel-advice/tanzania/entry-requirements\">GOV.UK</a> before you travel."
+       ]
+      ],
+      [
+       "fee",
+       "Money",
+       [
+        "The local currency is the Tanzanian shilling.",
+        "Hotels, transfers and trips are often priced in US dollars.",
+        "Keep some small notes for markets, tips and taxis."
+       ]
+      ],
+      [
+       "beach",
+       "Weather",
+       [
+        "June to October is dry, sunny and a little cooler.",
+        "December to February is hot and humid, and it's the busiest time.",
+        "The long rains fall in April and May, when some hotels close. Shorter rains come around November."
+       ]
+      ],
+      [
+       "pray",
+       "Prayer and Ramadan",
+       [
+        "There are masjids across Stone Town and in the villages. Ask your hotel for the qibla and a prayer mat, or we can request one before you arrive.",
+        "In Ramadan, many cafes and restaurants outside hotels close in the day and open after sunset. Hotels serve guests as normal.",
+        "Ramadan 2027 is expected to begin around 8 February, depending on the moon sighting."
+       ]
+      ],
+      [
+       "people",
+       "Dress and manners",
+       [
+        "Modest dress is expected in Stone Town and the villages, for men and women.",
+        "Keep swimwear for the beach and the pool.",
+        "A few words go a long way: jambo (hello), asante (thank you), karibu (welcome)."
+       ]
+      ]
+     ],
+     "foot": "Entry details checked against GOV.UK travel advice on 21 November 2026. Rules, prices and opening times change."
+    },
+    "faq": {
+     "head": [
+      "Questions."
+     ],
+     "items": [
+      [
+       "Is Zanzibar good for a Muslim honeymoon?",
+       "For many couples, yes. It's a mostly Muslim island with quiet villas, private pools and long beaches. Many resorts serve alcohol and cater to international guests, so we check each hotel and tell you plainly what to expect."
+      ],
+      [
+       "Is the food halal?",
+       "Most people on the island are Muslim, but resorts cater to international guests, so it's best not to assume. We ask each hotel about its meat and kitchens before you book and tell you what we find."
+      ],
+      [
+       "Which side of the island should we stay on?",
+       "If you want to swim whenever you like, the north: Kendwa or Nungwi. If you'd rather have quiet, wide beaches and don't mind planning around the tide, the east. Splitting your stay between the two works well."
+      ],
+      [
+       "What do we need before we fly?",
+       "A visa (the e-visa is easiest), a passport with at least six months left, and Zanzibar's government travel insurance if you land there first. Rules change, so check GOV.UK before you travel."
+      ],
+      [
+       "Can we add another stop?",
+       "Yes. Stone Town and a beach is the classic pairing, and a stopover in Doha or Dubai works well on the way. Tell us what you have in mind."
+      ]
+     ]
+    },
+    "cta": "Tell us when you'd like to go and who's coming. We'll suggest the right coast and hotels, compared like for like."
+   }
   },
   {
    "slug": "doha",
