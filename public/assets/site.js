@@ -536,3 +536,25 @@
     drift();
   }
 })();
+
+/* Homepage hero slider (21 Nov 2026) */
+(function () {
+  var hero = document.querySelector(".hero.hd"); if (!hero) return;
+  var slides = hero.querySelectorAll(".hs-slide"), dots = hero.querySelectorAll(".hs-dot");
+  if (slides.length < 2) return;
+  var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function load() {
+    hero.querySelectorAll("source[data-srcset]").forEach(function (s) { s.srcset = s.getAttribute("data-srcset"); s.removeAttribute("data-srcset"); });
+    hero.querySelectorAll("img[data-src]").forEach(function (im) { im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); });
+  }
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle("is-on", k === i); if (k === i) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
+    dots.forEach(function (d, k) { d.classList.toggle("is-on", k === i); d.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+  }
+  function start() { stop(); if (!reduce) timer = setInterval(function () { if (!document.hidden) show(i + 1); }, 6000); }
+  function stop() { if (timer) clearInterval(timer); timer = null; }
+  dots.forEach(function (d, k) { d.addEventListener("click", function () { load(); show(k); start(); }); });
+  if (document.readyState === "complete") { load(); start(); }
+  else window.addEventListener("load", function () { load(); start(); });
+})();

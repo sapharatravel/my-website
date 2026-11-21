@@ -1,11 +1,24 @@
 <!-- 1 HERO: the promise. Inset photo, three trip cards over its bottom edge, an illustrative price check (approved 15 Nov 2026) -->
 <div class="hd-wrap">
 <section class="hero hd" id="hero" aria-label="Welcome">
-  <picture>
+  <!-- 21 Nov 2026 (Huzaifa): hero slider, three Adobe Stock photos with the Saphara warm grade baked in. Slides 2 and 3 load after the page; reduced motion shows the first photo only. -->
+  <picture class="hs-slide is-on">
     <source media="(min-width: 768px)" srcset="img/st-hero-home-d.webp" width="2000" height="1125">
     <img src="img/st-hero-home-m.webp" alt="An overwater villa with a private pool at sunset in the Maldives" width="900" height="1600" fetchpriority="high" decoding="async">
   </picture>
-  <!-- 21 Nov 2026 (Huzaifa): Adobe Stock, Maldives overwater villa at sunset (licensed) -->
+  <picture class="hs-slide" aria-hidden="true">
+    <source media="(min-width: 768px)" data-srcset="img/st-hero-dubai-d.webp" width="2000" height="1125">
+    <img data-src="img/st-hero-dubai-m.webp" alt="The Dubai skyline and Burj Khalifa at sunset, seen across the water" width="900" height="1600" decoding="async">
+  </picture>
+  <picture class="hs-slide" aria-hidden="true">
+    <source media="(min-width: 768px)" data-srcset="img/st-hero-phuket-d.webp" width="2000" height="1125">
+    <img data-src="img/st-hero-phuket-m.webp" alt="Promthep Cape and the Phuket coastline from above at sunset" width="900" height="1600" decoding="async">
+  </picture>
+  <div class="hs-dots" role="group" aria-label="Hero photos">
+    <button type="button" class="hs-dot is-on" aria-label="Photo 1: Maldives" aria-pressed="true"></button>
+    <button type="button" class="hs-dot" aria-label="Photo 2: Dubai" aria-pressed="false"></button>
+    <button type="button" class="hs-dot" aria-label="Photo 3: Phuket" aria-pressed="false"></button>
+  </div>
   <div class="col">
     <h1 class="display"><span>Muslim-friendly holidays.</span> <span class="tone">More value.</span></h1>
     <p class="lead">Muslim-owned. We find the right hotel, deal with them for you and stay with you on WhatsApp.</p>
