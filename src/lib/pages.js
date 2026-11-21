@@ -10,6 +10,7 @@ import priceCheck from "../components/home/03-price-check.html?raw";
 import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
 import declaration from "../components/home/06-declaration.html?raw";
+import moment from "../components/home/05b-moment.html?raw";
 // import compare from "../components/home/06b-compare.html?raw"; // parked 21 Nov 2026
 import reviews from "../components/home/07-reviews.html?raw";
 import quote from "../components/home/08-quote.html?raw";
@@ -71,7 +72,7 @@ const MORE_CARDS = [
   ["price-check.html", "hero-b-m.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
   ["reviews.html", "hero-m.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
   ["why-saphara.html", "why-salwa.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
-  ["trips/business.html", "home-business-bahrain.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
+  ["trips/business.html", "st-card-business.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
   ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
   ["faq.html", "home-faq-terrace.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
 ];
@@ -111,14 +112,14 @@ export function home() {
   const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
   // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
   // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
-  const body = toPlan(join(hero, hotelNames, heroProof(pg), trips, destinations, declaration, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
+  const body = toPlan(join(hero, hotelNames, heroProof(pg), trips, destinations, moment, declaration, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
 }
 
 // ---------- trips ----------
 export function tripsIndex() {
   const pg = new Page("trips/index.html");
-  let body = photoHero(pg, "moment-beach-swing.webp", "A wooden swing over a calm sea", ["Trips we arrange.", "Or just the bits you need."], "Honeymoons, beach and island resorts, family holidays, multi-city trips, hotel-only stays and business travel. Tell us what you need and we'll do the rest.", "Plan my trip", "", 6.3, undefined) + crumbBar(pg, [["Trips", "trips/index.html"]]);
+  let body = photoHero(pg, "page-hero-trips", "A palm-lined lane on La Digue in the Seychelles", ["Trips we arrange.", "Or just the bits you need."], "Honeymoons, beach and island resorts, family holidays, multi-city trips, hotel-only stays and business travel. Tell us what you need and we'll do the rest.", "Plan my trip", "", 6.3, undefined) + crumbBar(pg, [["Trips", "trips/index.html"]]);
   body += band("white after-head", '<h2 class="sr-only">All trips</h2><div class="cards3">' + C.TRIPS.map(([s, n, img, l]) => tripCard(pg, s, n, img, l, C.TRIP_LINES[s])).join("") + "</div>");
   body += band("sand", intro(["How it works."], "Four steps, all in one WhatsApp chat.") + '<ol class="steps" style="margin-top:var(--intro-content)"><li><span class="n">01</span><h3>Tell us the trip</h3><p>Where, roughly when and who\'s coming.</p></li><li><span class="n">02</span><h3>Choose from options</h3><p>Two or three hotels we\'d book ourselves, compared like for like.</p></li><li><span class="n">03</span><h3>We book and brief the hotel</h3><p>Your requests passed on and confirmed, everything in one place.</p></li><li><span class="n">04</span><h3>We stay with you</h3><p>On WhatsApp throughout your stay, and after you\'re home.</p></li></ol>');
   body += cta(pg, ["Not sure which?", "Start anyway."], "Tell us roughly what you'd like and we'll suggest the rest.", "Plan my trip");
@@ -152,7 +153,7 @@ export function tripPage(slug) {
 // ---------- destinations ----------
 export function destinationsIndex() {
   const pg = new Page("destinations/index.html");
-  let body = photoHero(pg, "hero-z-d.webp", "A dhow on the water off Zanzibar at sunset", ["Pick a place.", "We'll handle the rest."], "Places our clients go back to, from Zanzibar and Langkawi to Makkah and Madinah. Flight times are from Manchester and approximate.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Destinations", "destinations/index.html"]]);
+  let body = photoHero(pg, "page-hero-destinations", "An island ringed by reef in the Maldives", ["Pick a place.", "We'll handle the rest."], "Places our clients go back to, from Zanzibar and Langkawi to Makkah and Madinah. Flight times are from Manchester and approximate.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Destinations", "destinations/index.html"]]);
   body += band("white after-head", '<h2 class="sr-only">All destinations</h2><div class="dests" style="margin-top:0">' + C.DESTS.map((d) => destCard(pg, d)).join("") + "</div>");
   body += cta(pg, ["Somewhere else?", "Ask us."], "These are the places we're asked about most, not the only ones. Tell us where you're thinking.", "Plan my trip");
   return { path: pg.path, title: "Muslim-friendly destinations | Saphara Travel", desc: "Zanzibar, Doha, Dubai, Oman, Makkah and Madinah, Kuala Lumpur and Langkawi: hotels and trips booked and looked after on WhatsApp.", hero: true, body };
@@ -164,7 +165,7 @@ export function destinationPage(slug) {
   const g = d.page || null; // the fuller destination template (21 Nov 2026); destinations without `page` keep the short layout
   const fromMan = " From Manchester.";
   const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--ink)">${d.code}</span><span>${d.flight_long}${fromMan}</span></div>`;
-  let body = photoHero(pg, (g && g.hero) || d.img, (g && g.hero_alt) || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
+  let body = photoHero(pg, (g && g.hero) || d.hero || d.img, (g && g.hero_alt) || d.hero_alt || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
   body += crumbBar(pg, [["Destinations", "destinations/index.html"], [d.name, `destinations/${slug}.html`]]);
   let facts = (g && g.facts) || [["Flight time", d.flight_long + fromMan], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
   if (slug === "makkah-and-madinah") facts = facts.filter((f) => f[0] !== "Food and alcohol");

@@ -41,8 +41,8 @@
    "name": "Zanzibar",
    "country": "Tanzania",
    "code": "ZNZ",
-   "img": "dest-zanzibar.webp",
-   "alt": "A dhow at sunset off Zanzibar",
+   "img": "st-dest-zanzibar.webp",
+   "alt": "A white sandbar and island in turquoise water off Zanzibar",
    "flight": "13h · 1 stop",
    "flight_long": "About 13 hours with one stop.",
    "intro": "White sand, warm water and dhows on the horizon, with Stone Town's old streets a short drive away.",
@@ -70,7 +70,7 @@
    "title": "Muslim-friendly Zanzibar holidays and hotels | Saphara Travel",
    "page": {
     "hero": "dest-hero-zanzibar",
-    "hero_alt": "A dhow under sail at sunset off Zanzibar",
+    "hero_alt": "A bicycle by a carved wooden door in Stone Town, Zanzibar",
     "checked": [
      "2026-11-21",
      "21 November 2026"
@@ -343,8 +343,8 @@
    "name": "Doha",
    "country": "Qatar",
    "code": "DOH",
-   "img": "dest-doha-bi.webp",
-   "alt": "A spa room with a view over the sea",
+   "img": "st-dest-doha.webp",
+   "alt": "A spiral minaret at dusk in Doha",
    "flight": "7h direct",
    "flight_long": "About 7 hours direct.",
    "intro": "Desert, sea and some of the best hotels in the Gulf, about seven hours from Manchester.",
@@ -369,7 +369,9 @@
     "business"
    ],
    "city": "Doha",
-   "title": "Muslim-friendly Doha holidays and hotels | Saphara Travel"
+   "title": "Muslim-friendly Doha holidays and hotels | Saphara Travel",
+   "hero": "dest-hero-doha",
+   "hero_alt": "A quiet lane in Souq Waqif, Doha"
   },
   {
    "slug": "dubai",
@@ -409,8 +411,8 @@
    "name": "Oman",
    "country": "Oman",
    "code": "MCT",
-   "img": "dest-oman.webp",
-   "alt": "Muscat at sunset, white houses below the mountains",
+   "img": "st-dest-oman.webp",
+   "alt": "A terraced village on Jebel Akhdar in Oman",
    "flight": "7h direct",
    "flight_long": "About 7 hours direct to Muscat.",
    "intro": "Mountains, wadis and a calm coastline, with Muscat's mosques and souqs close by.",
@@ -435,7 +437,9 @@
     "honeymoons"
    ],
    "city": "Muscat",
-   "title": "Muslim-friendly Oman holidays and hotels | Saphara Travel"
+   "title": "Muslim-friendly Oman holidays and hotels | Saphara Travel",
+   "hero": "dest-hero-oman",
+   "hero_alt": "The Mutrah corniche in Muscat below the mountains"
   },
   {
    "slug": "makkah-and-madinah",
@@ -476,9 +480,9 @@
    "name": "Kuala Lumpur",
    "country": "Malaysia",
    "code": "KUL",
-   "img": "business-doha-mia.webp",
+   "img": "st-dest-kuala-lumpur.webp",
    "warm": true,
-   "alt": "A city museum at dusk",
+   "alt": "Masjid Jamek in Kuala Lumpur",
    "flight": "15h · 1 stop",
    "flight_long": "About 15 hours with one stop.",
    "intro": "Malaysia's capital: city hotels, mosques and markets, with Langkawi a short flight away.",
@@ -503,7 +507,9 @@
     "business"
    ],
    "city": "Kuala Lumpur",
-   "title": "Muslim-friendly Kuala Lumpur holidays | Saphara Travel"
+   "title": "Muslim-friendly Kuala Lumpur holidays | Saphara Travel",
+   "hero": "dest-hero-kuala-lumpur",
+   "hero_alt": "The Sultan Abdul Samad Building in Kuala Lumpur"
   },
   {
    "slug": "langkawi",
@@ -544,9 +550,8 @@
    "name": "Maldives",
    "country": "Maldives",
    "code": "MLE",
-   "img": "hero-b-m.webp",
-   "warm": true,
-   "alt": "A resort pool with palm trees",
+   "img": "st-dest-maldives.webp",
+   "alt": "An island ringed by reef in the Maldives",
    "flight": "12h · 1 stop",
    "flight_long": "About 12 hours with one stop.",
    "city": "Malé"
@@ -555,8 +560,8 @@
    "name": "Seychelles",
    "country": "Seychelles",
    "code": "SEZ",
-   "img": "moment-beach-swing.webp",
-   "alt": "A wooden swing on a quiet beach",
+   "img": "st-dest-seychelles.webp",
+   "alt": "A palm-lined lane on La Digue in the Seychelles",
    "flight": "13h · 1 stop",
    "flight_long": "About 13 hours with one stop.",
    "city": "Mahé"
@@ -565,8 +570,8 @@
    "name": "Zanzibar",
    "country": "Tanzania",
    "code": "ZNZ",
-   "img": "dest-zanzibar.webp",
-   "alt": "A dhow at sunset off Zanzibar",
+   "img": "st-dest-zanzibar.webp",
+   "alt": "A white sandbar and island in turquoise water off Zanzibar",
    "flight": "13h · 1 stop",
    "flight_long": "About 13 hours with one stop.",
    "slug": "zanzibar",
@@ -577,8 +582,8 @@
   "honeymoons": {
    "name": "Honeymoon",
    "trip": "Honeymoon",
-   "img": "trip-honeymoon-canopy.webp",
-   "alt": "A bright hotel bedroom with a white canopy bed",
+   "img": "page-hero-honeymoons",
+   "alt": "Steps from an overwater villa down into a clear lagoon",
    "title": "Muslim-friendly honeymoons | Saphara Travel",
    "desc": "Honeymoons planned around the two of you: private villas, quiet rooms and set-ups confirmed with the hotel. We check food, alcohol and privacy for you.",
    "lead": "Your honeymoon, planned around the two of you. We find the room, ask the hotel for the details that matter and get them confirmed before you land.",
@@ -650,8 +655,8 @@
   "beach-and-island": {
    "name": "Beach and island",
    "trip": "Beach and island",
-   "img": "moment-beach-swing.webp",
-   "alt": "A wooden swing on a quiet beach",
+   "img": "page-hero-beach",
+   "alt": "A longtail boat in a turquoise bay below limestone cliffs",
    "title": "Muslim-friendly beach and island holidays | Saphara Travel",
    "desc": "Beach and island resorts we've booked before, compared like for like, with the transfers sorted. We check the beach, the food and what's included.",
    "lead": "Beach and island resorts we've booked before, with the transfers sorted and the room chosen properly. Tell us how you like to spend the day and we'll find the place that fits.",
@@ -871,8 +876,8 @@
   "business": {
    "name": "Business",
    "trip": "Business travel",
-   "img": "business-doha-mia.webp",
-   "alt": "The Museum of Islamic Art in Doha at dusk",
+   "img": "page-hero-business",
+   "alt": "Arched windows framing the Doha skyline at the Museum of Islamic Art",
    "warm": true,
    "title": "Business travel bookings | Saphara Travel",
    "desc": "Hotels and flights for staff and clients, team and group trips, one point of contact on WhatsApp and an invoice for every booking.",
@@ -946,8 +951,8 @@
   "multi-city": {
    "name": "Multi-city trip",
    "trip": "Multi-city",
-   "img": "trip-japan-fuji.webp",
-   "alt": "A red pagoda and cherry blossom with Mount Fuji behind",
+   "img": "page-hero-multicity",
+   "alt": "Old Town shophouses in Phuket",
    "title": "Multi-city trips and packages | Saphara Travel",
    "desc": "Multi-city trips planned as one: flights, hotels and transfers for every leg, booked together and looked after on WhatsApp.",
    "lead": "Tokyo, Kyoto and Osaka, or a city and then a beach. We put the whole route together: the flights, a hotel in each place and the transfers in between, booked as one trip.",
@@ -1019,12 +1024,12 @@
  },
  "RPIMG": {
   "honeymoons": [
-   "dest-zanzibar.webp",
-   "A dhow at sunset off Zanzibar"
+   "st-panel-honeymoon.webp",
+   "A shaded path through granite boulders to the beach"
   ],
   "beach-and-island": [
-   "hero-b-m.webp",
-   "A resort pool with palm trees"
+   "st-panel-beach.webp",
+   "A headland at sunset in Phuket"
   ],
   "family-holidays": [
    "dest-qatar.webp",
@@ -1035,8 +1040,8 @@
    "The Haram seen from a hotel window in Makkah"
   ],
   "business": [
-   "dest-doha-bi.webp",
-   "A spa room with a view over the sea"
+   "st-panel-business.webp",
+   "A marble arched corridor in Muscat"
   ],
   "multi-city": [
    "japan-miyajima.webp",
@@ -1157,7 +1162,7 @@
   [
    "honeymoons",
    "Honeymoon",
-   "trip-honeymoon-canopy.webp",
+   "st-card-honeymoon.webp",
    [
     "Just married.",
     "Do not disturb."
@@ -1166,7 +1171,7 @@
   [
    "beach-and-island",
    "Beach and island",
-   "moment-beach-swing.webp",
+   "st-card-beach.webp",
    [
     "Beach and island resorts.",
     "Transfers sorted."
@@ -1184,7 +1189,7 @@
   [
    "multi-city",
    "Multi-city",
-   "trip-japan-fuji.webp",
+   "st-card-multicity.webp",
    [
     "Multi-city trips.",
     "Planned as one."
@@ -1202,7 +1207,7 @@
   [
    "business",
    "Business",
-   "business-doha-mia.webp",
+   "st-card-business.webp",
    [
     "Business trips.",
     "Minus the admin."

@@ -2023,3 +2023,107 @@ html { overflow-x: clip; }
   .final-wa-link.mob-only { display: block; }
   .final-wa-link .textlink { display: inline-flex; vertical-align: baseline; }
 }
+/* ===== Form: tighter and easier to follow (21 Nov 2026, Huzaifa: "so much unnecessary blank space") ===== */
+.flow { padding: 24px; }
+@media (min-width: 768px) { .flow { padding: 28px 32px 32px; } }
+.flow-top { gap: 14px; min-height: 36px; }
+.flow-top .back { min-height: 36px; flex: none; }
+.flow-top .back[disabled] { display: none; }
+.prog { flex: 1; height: 4px; border-radius: 4px; background: rgba(0,0,0,.08); overflow: hidden; }
+.prog-fill { display: block; height: 100%; width: 0; border-radius: inherit; background: var(--ink); transition: width 420ms var(--ease); }
+.flow-top .count { flex: none; font-family: var(--body); text-transform: none; letter-spacing: 0; font-size: 13px; font-weight: 500; color: var(--grey); }
+.final-band .flow-top .count { color: #5E5747; }
+.stage { margin-top: 18px; }
+.fstep .body { margin-top: 16px; gap: 16px; }
+.fstep .foot { padding-top: 20px; }
+.opt-tile { min-height: 56px; }
+@media (min-width: 1024px) { .fstep h3, .fstep .fstep-q { font-size: 34px; } }
+@media (prefers-reduced-motion: reduce) { .prog-fill { transition: none; } }
+
+/* ======================================================================
+   EDITORIAL PREVIEW (branch preview/editorial, 21 Nov 2026). Not live.
+   1 header, 2 big photos, 3 varied layouts, 4 swipe rows, 5 motion, 6 fewer boxes, plus tighter spacing.
+   ====================================================================== */
+/* Tighter rhythm */
+:root { --section: 48px; --intro-content: 28px; }
+@media (min-width: 768px) { :root { --section: 64px; --intro-content: 36px; } }
+@media (min-width: 1280px) { :root { --section: 80px; --intro-content: 40px; } }
+
+/* 1 Header: clear over the homepage photo; white with the dark logo once you scroll, and on every other page */
+html body.home .header:not(.slim) { background: transparent; box-shadow: none; color: #fff; }
+html body.home .header:not(.slim)::before { display: block; opacity: 1; inset: 0 0 -60px; background: linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,0)); }
+html .header.slim, html body:not(.home) .header { background: #fff; color: var(--ink); box-shadow: 0 1px 0 rgba(0,0,0,.08); }
+html .header.slim .logo.logo-light, html body:not(.home) .header .logo.logo-light { opacity: 0; }
+html .header.slim .logo.logo-dark, html body:not(.home) .header .logo.logo-dark { display: block; opacity: 1; height: var(--logo-h); }
+html .header.slim .hwa, html .header.slim .mbtn, html body:not(.home) .header .hwa, html body:not(.home) .header .mbtn { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px rgba(0,0,0,.14); }
+html .header.slim .hsplit, html body:not(.home) .header .hsplit { background: var(--ink); color: #fff; --arrow-bg: var(--sand); --arrow-fg: var(--ink); }
+html .header.slim .hsplit .split-label, html body:not(.home) .header .hsplit .split-label { color: #fff; }
+html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-btn, html body:not(.home) .header .dd-btn { color: var(--ink); }
+/* Desktop: the homepage photo runs to the top of the screen, under the clear header */
+@media (min-width: 768px) {
+  body.home .hd-wrap { --hd-h: max(620px, 92svh); }
+  body.home .hero.hd { margin-top: 0; padding-top: calc(var(--logo-h) + var(--header-top) + var(--header-bottom) + 24px); }
+}
+
+/* 2 Big photo moment */
+.moment { position: relative; overflow: hidden; isolation: isolate; min-height: 78svh; display: flex; align-items: flex-end; color: #fff; }
+.moment-ph { position: absolute; inset: -12% 0; z-index: -2; will-change: transform; }
+.moment-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.moment::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.6) 100%); }
+.moment .col { padding-block: var(--section); width: 100%; }
+.moment h2 { color: #fff; max-width: 12em; }
+.moment p { margin-top: 12px; max-width: 34em; color: rgba(255,255,255,.9); font-size: var(--fs-lead); }
+.moment-link { display: inline-flex; margin-top: 16px; color: #fff; border-bottom-color: rgba(255,255,255,.6); }
+@media (min-width: 1024px) { .moment { min-height: 86svh; } }
+
+/* 3 Varied layouts (desktop) */
+@media (min-width: 1024px) {
+  /* trip types keep the tall expanding row (hover opens a card) */
+  /* destinations staggered */
+  #destinations .dests { align-items: start; }
+  #destinations .dests > :nth-child(even) { margin-top: 56px; }
+  /* declaration: the headline stays pinned while the receipt scrolls past */
+  #why .decl-wrap { align-items: start; }
+  #why .decl-wrap > .intro { position: sticky; top: calc(var(--header-slim) + 32px); }
+}
+
+/* 4 Swipe rows on phones: trips and destinations scroll sideways instead of stacking */
+@media (max-width: 767px) {
+  #trips .trips, #destinations .dests { display: flex; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; gap: 12px; margin-inline: calc(-1 * var(--margin)); padding: 4px var(--margin) 8px; scroll-padding-inline: var(--margin); scrollbar-width: none; }
+  #trips .trips::-webkit-scrollbar, #destinations .dests::-webkit-scrollbar { display: none; }
+  #trips .trips > * { flex: 0 0 78%; scroll-snap-align: start; min-height: 0; }
+  #destinations .dests > * { flex: 0 0 60%; scroll-snap-align: start; }
+  #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
+  #trips .trips .pcard.trip p { display: none; }
+}
+
+/* 5 Motion: photos open up as they come into view (reduced motion: no change) */
+@media (prefers-reduced-motion: no-preference) {
+  .js .pcard.rv > img { transition: clip-path 1100ms var(--ease), transform 1400ms var(--ease), opacity 600ms; }
+  .js .pcard.rv:not(.in) > img { clip-path: inset(14% 0 0 0); transform: scale(1.1); }
+  .js .moment h2, .js .moment p, .js .moment-link { animation: none; }
+}
+
+/* 6 Fewer boxes */
+.pcard, .more-card { box-shadow: none; }
+.flow, .final-band .flow { box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+.hd-cards { box-shadow: 0 10px 30px -12px rgba(0,0,0,.25); }
+/* Footer edge to edge (editorial preview): no inset card, content lines up with the page columns */
+.sf-wrap { padding: 0; box-shadow: none; background: var(--sand-deep); }
+.sf { border-radius: 0; max-width: none; padding: var(--sf-pad-top) max(var(--margin), calc((100% - var(--content)) / 2)) calc(24px + env(safe-area-inset-bottom, 0px)); }
+/* Mobile polish (editorial preview) */
+@media (max-width: 767px) {
+  /* swipe row sits fully inside the sand band; no half-overlap into destinations */
+  #trips .overlap { margin-bottom: 0; }
+  #destinations { padding-top: var(--section); }
+  /* tap targets */
+  .decl-atol .more { min-height: 44px; display: inline-flex; align-items: center; }
+  /* small print no smaller than 13px */
+  .decl-fn, .hd-calm .fn { font-size: 13px; }
+}
+/* Big photo: enough bleed that the drift never shows an edge */
+.moment-ph { inset: -18% 0; }
+@media (max-width: 767px) {
+  /* hero cards and the price check card line up with every other card on the page (24px) */
+  .hd-wrap > :not(.hero) { margin-left: var(--margin) !important; margin-right: var(--margin) !important; }
+}

@@ -256,14 +256,14 @@
   }
   function routeProgress() {
     /* 21 Nov 2026 (Huzaifa): the moving plane strip was removed from the forms; the step count stays */
-    if (!routeFill || !routePlane) return;
+    if (!routeFill) return;
     var s = seq(), i = s.indexOf(current), frac = (current === "preview" || current === "sent") ? 1 : Math.max(0, i) / s.length;
     routeFill.style.width = (frac * 100) + "%";
-    routePlane.style.left = "calc(" + (frac * 100) + "% - " + (frac * (routePlane.offsetWidth || 24)) + "px)";
+    if (routePlane) routePlane.style.left = "calc(" + (frac * 100) + "% - " + (frac * (routePlane.offsetWidth || 24)) + "px)";
   }
   function updateTop() {
     var s = seq(), i = s.indexOf(current);
-    countEl.textContent = (current === "preview" || current === "sent") ? "Ready to send" : (i + 1) + " of " + s.length;
+    countEl.textContent = (current === "preview" || current === "sent") ? "Ready to send" : "Step " + (i + 1) + " of " + s.length;
     backBtn.disabled = current === "type" || current === "sent";
     routeProgress(); updatePass(current === "preview" || current === "sent");
   }
@@ -513,4 +513,26 @@
     es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
   }, { threshold: .35 });
   Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+
+})();
+
+(function () {
+  /* Editorial preview (21 Nov 2026): big photos drift gently as you scroll. Off for reduced motion. */
+  var px = document.querySelectorAll("[data-parallax]");
+  if (px.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    var ticking = false;
+    function drift() {
+      ticking = false;
+      var vh = window.innerHeight;
+      Array.prototype.forEach.call(px, function (el) {
+        var r = el.parentElement.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) return;
+        var off = ((r.top + r.height / 2) - vh / 2) * -0.08;
+        el.style.transform = "translate3d(0," + off.toFixed(1) + "px,0)";
+      });
+    }
+    window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(drift); } }, { passive: true });
+    window.addEventListener("resize", drift);
+    drift();
+  }
 })();
