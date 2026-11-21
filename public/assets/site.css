@@ -1945,3 +1945,11 @@ html { overflow-x: clip; }
 .hero-cap svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.8; }
 @media (min-width: 768px) { .hero-cap { top: 24px; right: max(var(--col-left), 24px); } }
 .hero-cap { padding: 5px 10px 5px 8px; border-radius: 999px; background: rgba(0,0,0,.32); color: #fff; text-shadow: none; }
+/* 21 Nov (later): a band marked "continue" only drops its top padding when the band above is the same colour; after a different colour it keeps normal spacing */
+.band.continue { padding-top: var(--section); }
+.band.white + .band.white.continue, .band.sand + .band.sand.continue { padding-top: 0; }
+/* Arches: true half-circle tops (vertical radius = 50% x width / height) */
+.rbox img { border-radius: 50% 50% var(--r-small) var(--r-small) / 62.5% 62.5% var(--r-small) var(--r-small); }
+.gphoto { border-radius: 50% 50% var(--r-card) var(--r-card) / 40% 40% var(--r-card) var(--r-card); }
+/* Reduced motion: the Instagram photos sit in a still three-column grid that fits the screen (phones were cut off), 21 Nov */
+@media (prefers-reduced-motion: reduce) { .igm .igm-track a { width: auto; } .igm .igm-track a[aria-hidden="true"] { display: none; } }
