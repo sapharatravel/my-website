@@ -3,6 +3,10 @@
 (function () {
   var root = document.documentElement, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   root.classList.add("js");
+  /* 21 Nov 2026 (Huzaifa): iOS Safari can ring a heading that the form focuses by script after a tap.
+     While the last input was a pointer, those headings get no outline; any key press brings keyboard focus styles back. */
+  document.addEventListener("pointerdown", function () { root.classList.add("pointer-input"); }, true);
+  document.addEventListener("keydown", function () { root.classList.remove("pointer-input"); }, true);
   /* a page opened from a link always starts at the top (some in-app viewers carry the old scroll position over); back and forward keep theirs */
   (function () {
     var nav = window.performance && performance.getEntriesByType ? performance.getEntriesByType("navigation")[0] : null;
@@ -22,7 +26,7 @@
     "Honeymoon": '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10.5 5.5 12 4l1.5 1.5L12 7z"/>',
     "Beach and island": '<path d="M4 11a8 8 0 0 1 16 0z"/><path d="M12 11v8"/><path d="M3 21c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0"/>',
     "Family holiday": '<circle cx="6.5" cy="6.5" r="2.5"/><path d="M3 20v-5a3.5 3.5 0 0 1 7 0v5"/><circle cx="14" cy="6.5" r="2.5"/><path d="M10.5 20v-5a3.5 3.5 0 0 1 7 0v5"/><circle cx="20" cy="11.5" r="1.6"/><path d="M18 20v-3a2 2 0 0 1 4 0v3"/>',
-    "City or multi-centre": '<path d="M3 21h18"/><path d="M5 21V9h5v12"/><path d="M10 21V4h5v17"/><path d="M15 21v-9h4v9"/><path d="M12 8h1M12 11h1M12 14h1M7 12h1M7 15h1"/>',
+    "Multi-city": '<path d="M3 21h18"/><path d="M5 21V9h5v12"/><path d="M10 21V4h5v17"/><path d="M15 21v-9h4v9"/><path d="M12 8h1M12 11h1M12 14h1M7 12h1M7 15h1"/>',
     "Umrah hotels": '<path d="M12 3v2"/><path d="M7 13c0-3.2 2.6-4.6 5-7 2.4 2.4 5 3.8 5 7"/><path d="M5 13h14v8H5z"/><path d="M10.5 21v-3a1.5 1.5 0 0 1 3 0v3"/>',
     "Business travel": '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3 12.5h18"/>',
     "Hotel only": '<path d="M3 6v14"/><path d="M3 15h18v5"/><path d="M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="12" r="1.8"/>',
@@ -185,7 +189,7 @@
   var NIGHT = ["Under £150", "£150 to £300", "£300 to £500", "£500 and over", "Not sure"];
   var TRIP = ["Under £2,000", "£2,000 to £4,000", "£4,000 to £7,000", "£7,000 and over", "Not sure"];
   var BOARDS = ["Room only", "Breakfast", "Half board", "Full board", "All inclusive", "Not sure"];
-  var TYPES = ["Honeymoon", "Beach and island", "Family holiday", "City or multi-centre", "Umrah hotels", "Business travel", "Hotel only", "Something else"];
+  var TYPES = ["Honeymoon", "Beach and island", "Family holiday", "Multi-city", "Umrah hotels", "Business travel", "Hotel only", "Something else"];
   var ARRANGE = [["Hotels", "Hotel only"], ["Airport transfers", "transfers"], ["Tour guides", "guides"], ["Excursions", "excursions"], ["Something else", "Something else"]];
   /* real IATA codes for places we're asked about; otherwise the country or place name */
   var PLACES = [["zanzibar","ZNZ","Zanzibar"],["maldives","MLE","Maldives"],["male","MLE","Maldives"],["doha","DOH","Doha"],["qatar","DOH","Doha, Qatar"],["salwa","DOH","Doha, Qatar"],["dubai","DXB","Dubai"],["abu dhabi","AUH","Abu Dhabi"],["ras al khaimah","RKT","Ras Al Khaimah"],["makkah","JED","Jeddah for Makkah"],["mecca","JED","Jeddah for Makkah"],["madinah","MED","Madinah"],["medina","MED","Madinah"],["jeddah","JED","Jeddah"],["riyadh","RUH","Riyadh"],["oman","MCT","Muscat, Oman"],["muscat","MCT","Muscat, Oman"],["seychelles","SEZ","Seychelles"],["mauritius","MRU","Mauritius"],["langkawi","LGK","Langkawi"],["kuala lumpur","KUL","Kuala Lumpur"],["malaysia","KUL","Kuala Lumpur"],["singapore","SIN","Singapore"],["phuket","HKT","Phuket"],["bali","DPS","Bali"],["lombok","LOP","Lombok"],["istanbul","IST","Istanbul"],["oludeniz","DLM","Dalaman for Ölüdeniz"],["ölüdeniz","DLM","Dalaman for Ölüdeniz"],["dalaman","DLM","Dalaman"],["antalya","AYT","Antalya"],["marrakech","RAK","Marrakech"],["agadir","AGA","Agadir"],["sarajevo","SJJ","Sarajevo"],["bosnia","SJJ","Sarajevo"],["cape town","CPT","Cape Town"],["bahrain","BAH","Bahrain"],["japan","TYO","Tokyo"],["tokyo","TYO","Tokyo"],["sri lanka","CMB","Colombo"],["malta","MLA","Malta"],["amsterdam","AMS","Amsterdam"]];
@@ -238,7 +242,7 @@
     setField("to", d ? d.code : ""); setField("toName", d ? d.name : (touched ? "Somewhere we'll suggest" : ""));
     pass.querySelectorAll('[data-f="to"]').forEach(function (el) { var n = d ? d.code.length : 1; el.style.fontSize = n <= 3 ? "" : n <= 5 ? "48px" : n <= 7 ? "38px" : "30px"; });
     if (!d) pass.querySelectorAll('[data-f="to"]').forEach(function (el) { el.textContent = "?"; el.classList.remove("empty"); });
-    routeTo.textContent = d ? (d.code.length > 5 ? d.code.slice(0, 5) : d.code) : "?"; routeTo.classList.toggle("pending", !d);
+    if (routeTo) routeTo.textContent = d ? (d.code.length > 5 ? d.code.slice(0, 5) : d.code) : "?"; if (routeTo) routeTo.classList.toggle("pending", !d);
     setField("when", shortMonth() ? shortMonth() + (document.getElementById("f-flex").checked ? " · Flex" : "") : "");
     var whoDone = seq().indexOf(current) > seq().indexOf("who") || current === "preview" || current === "sent";
     setField("travellers", whoDone ? travellers() : "");
@@ -251,6 +255,8 @@
     flip(hotelMode());
   }
   function routeProgress() {
+    /* 21 Nov 2026 (Huzaifa): the moving plane strip was removed from the forms; the step count stays */
+    if (!routeFill || !routePlane) return;
     var s = seq(), i = s.indexOf(current), frac = (current === "preview" || current === "sent") ? 1 : Math.max(0, i) / s.length;
     routeFill.style.width = (frac * 100) + "%";
     routePlane.style.left = "calc(" + (frac * 100) + "% - " + (frac * (routePlane.offsetWidth || 24)) + "px)";
@@ -356,7 +362,6 @@
     L.push("Notes: " + val("f-notes"));
     L.push("Email: " + val("f-email"));
     L.push("Ref: " + REF);
-    L.push("(Sent from sapharatravel.co.uk)");
     document.getElementById("preview").textContent = L.join("\n");
   }
   var showMsg = document.getElementById("showMsg");

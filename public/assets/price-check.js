@@ -21,7 +21,7 @@
     if (v("pc-room") || v("pc-board")) L.push((v("pc-room") ? "Room: " + v("pc-room") : "") + (v("pc-room") && v("pc-board") ? " · " : "") + (v("pc-board") ? "Board: " + v("pc-board") : ""));
     L.push("Price found: " + money(v("pc-currency"), v("pc-price")) + (v("pc-where") ? " on " + v("pc-where") : ""));
     if (v("pc-link")) L.push("Link: " + v("pc-link"));
-    L.push("I'll send a screenshot in this chat.", "(Sent from sapharatravel.co.uk)");
+    L.push("I'll send a screenshot in this chat.");
     return L.join("\n");
   }
   f.addEventListener("submit", function (e) {

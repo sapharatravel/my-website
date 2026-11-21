@@ -1953,3 +1953,73 @@ html { overflow-x: clip; }
 .gphoto { border-radius: 50% 50% var(--r-card) var(--r-card) / 40% 40% var(--r-card) var(--r-card); }
 /* Reduced motion: the Instagram photos sit in a still three-column grid that fits the screen (phones were cut off), 21 Nov */
 @media (prefers-reduced-motion: reduce) { .igm .igm-track a { width: auto; } .igm .igm-track a[aria-hidden="true"] { display: none; } }
+/* ===== Mobile hero and header fixes (21 Nov 2026, Huzaifa) ===== */
+/* Header: one logo size and one button style on every page and scroll state, matching the homepage */
+.header.slim .logo, .no-hero .header .logo { height: var(--logo-h); }
+.header .mbtn, .header.slim .mbtn, .no-hero .header .mbtn, .header:not(.slim) .mbtn,
+.header .hwa, .header.slim .hwa, .no-hero .header .hwa { background: rgba(255,255,255,.18); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,.35); }
+/* Headings focused by script (Plan my trip steps) get no ring; keyboard focus keeps :focus-visible */
+[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
+/* Hero caption pill retired */
+.hero-cap { display: none; }
+/* Hero ticks: two short ticks on one line */
+.hd-trust ul { flex-wrap: nowrap; }
+.hd-trust li { white-space: nowrap; }
+@media (max-width: 767px) {
+  .hd-trust ul { gap: 14px; }
+  .hd-trust li { font-size: 13px; }
+  /* everything above the fold on 390x844, with the first trip card peeking in */
+  body.home .hero.hd { min-height: 88svh; }
+  body.home .hero.hd .col { padding-bottom: calc(var(--hd-overlap) + var(--s-24, 24px)); }
+  body.home .hero.hd .lead { margin-top: 12px; }
+  body.home .hero.hd .actions { margin-top: 18px; }
+  body.home .hero.hd .hd-trust { margin-top: 14px; }
+  /* stronger bottom gradient for text contrast on the brighter photo */
+  body.home .hero.hd::after { background: linear-gradient(180deg, rgba(6,26,44,.30) 0%, rgba(6,26,44,0) 18%, rgba(6,26,44,0) 30%, rgba(6,26,44,.55) 50%, rgba(6,26,44,.82) 72%, rgba(6,26,44,.92) 100%); }
+}
+/* ===== Second round of mobile fixes (21 Nov 2026, Huzaifa) ===== */
+/* Script-focused headings after a tap or click (set in site.js): no ring, on any browser. Keyboard users keep :focus-visible. */
+.pointer-input [tabindex="-1"]:focus { outline: none; }
+/* Final section: the form leads; WhatsApp is a small text link on phones */
+.final-wa-link { margin: var(--s-16) 0 0; font-size: 15px; color: var(--grey); }
+.final-wa-link .textlink { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+.final-wa-link .wa-glyph { width: 16px; height: 16px; }
+@media (min-width: 768px) { .final-wa-link { display: none; } }
+@media (max-width: 767px) {
+  .final-wa.not-mob { display: none; }
+  /* Nothing to declare: its inline buttons sit behind the sticky bar on phones */
+  #why .actions { display: none; }
+  /* Testimonial: about half the height */
+  .proof-band { padding-block: var(--s-40, 40px); }
+  .proof-band .proof-mark { font-size: 56px; line-height: .6; height: 28px; margin-bottom: 4px; }
+  .proof-band .proof blockquote { margin-top: 8px; }
+  /* Still deciding: compact rows with a small thumbnail */
+  .more-cards { gap: 0; grid-template-columns: minmax(0, 1fr); }
+  .more-cards li + li { border-top: 1px solid var(--rule); }
+  .more-card { display: grid; grid-template-columns: 64px minmax(0, 1fr) 24px; align-items: center; gap: 14px; padding: 12px 0; background: none; box-shadow: none; border-radius: 0; min-height: 0; }
+  .more-card img { width: 64px; height: 64px; aspect-ratio: 1; object-fit: cover; border-radius: 12px; position: static; }
+  .more-card .mc-tx { padding: 0; position: static; color: var(--ink); }
+  .more-card .mc-t { font-size: 20px; }
+  .more-card .mc-d { font-size: 14px; line-height: 1.4; color: var(--grey); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .more-card .mc-a { position: static; width: 24px; height: 24px; background: none; box-shadow: none; color: var(--ink); }
+  .more-card::after, .more-card::before { display: none; }
+}
+@media (max-width: 767px) {
+  .more-card img { z-index: auto; transform: none; }
+  .proof-band .proof blockquote { font-size: 26px; line-height: 1.12; }
+  .proof-band .proof figcaption { margin-top: var(--s-16); }
+  .proof-band .proof-tp { margin-top: var(--s-16); }
+}
+/* Sticky bar: fully hidden until past the hero (iOS toolbars could leave the old 110% offset peeking) */
+.sticky:not(.on) { transform: translateY(calc(100% + 40px)); visibility: hidden; transition: transform 300ms var(--ease), visibility 0s 300ms; }
+.sticky.on { visibility: visible; transition: transform 300ms var(--ease), visibility 0s; }
+@media (max-width: 767px) {
+  .proof-band { padding-block: 28px; }
+  .proof-band .proof-mark { font-size: 44px; height: 20px; }
+  .proof-band .proof-stars { margin-top: 0; }
+  .proof-band .proof blockquote { font-size: 24px; }
+  .proof-band .proof figcaption { margin-top: 10px; font-size: 14px; }
+  .proof-band .proof-tp { margin-top: 14px; padding-top: 12px; gap: 4px 14px; font-size: 14px; }
+  .final-wa-link.mob-only { display: block; }
+  .final-wa-link .textlink { display: inline-flex; vertical-align: baseline; }
+}

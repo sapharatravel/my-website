@@ -66,13 +66,14 @@ const join = (...parts) => parts.join("\n");
 
 // ---------- home ----------
 // Cards on the homepage to the pages that hold what used to be on it.
+// 21 Nov 2026 (Huzaifa): no photo used twice on the homepage; Reviews, Business and FAQs got their own photos (IMAGES.md).
 const MORE_CARDS = [
   ["price-check.html", "hero-b-m.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
-  ["reviews.html", "moment-kaya-pool.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
+  ["reviews.html", "hero-m.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
   ["why-saphara.html", "why-salwa.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
-  ["trips/business.html", "business-doha-mia.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
+  ["trips/business.html", "home-business-bahrain.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
   ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
-  ["faq.html", "trip-hotel-room.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
+  ["faq.html", "home-faq-terrace.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
 ];
 const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 function moreCards(pg) {
@@ -107,7 +108,7 @@ export function home() {
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
   void guides;
   // 16 Nov 2026 (Huzaifa): proof under the hero, then the FAQ teaser and the check-in form ("Bismillah. Let's plan it.") back at the end, with a WhatsApp button.
-  const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<div class="actions final-wa">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
+  const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
   // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
   // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
   const body = toPlan(join(hero, hotelNames, heroProof(pg), trips, destinations, declaration, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;

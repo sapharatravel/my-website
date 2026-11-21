@@ -9,15 +9,10 @@ import IMGS from "../data/img-sizes.json";
 export const PROTOTYPE = false; // true keeps every page out of search engines; false is the live build (set 14 Nov 2026 for launch)
 export const WA_BASE = "https://wa.me/447887353457";
 // WhatsApp openers (16 Nov 2026, Huzaifa): every plain WhatsApp button opens one short, natural line that fits the page,
-// plus a quiet tag saying which page and button started the chat (the forms keep their own filled-in message and STG ref).
+// (21 Nov 2026: the page and button tag was removed at Huzaifa's request; the forms keep their own filled-in message and STG ref).
 // In the markup a button links to waMark("spot"); waLinks() in Base.astro swaps it for the real link once the page is known.
 export const waMark = (spot) => WA_BASE + "?wa=" + spot;
 const WA_TRIP = { honeymoons: "a honeymoon", "beach-and-island": "a beach or island holiday", "family-holidays": "a family holiday", "multi-city": "a multi-city trip", hotels: "a hotel stay" };
-const pageTag = (path) => {
-  const p = path.replace(/\.html$/, "").replace(/\/index$/, "");
-  if (p === "index") return "home";
-  return p.replace(/^trips\//, "").replace(/^destinations\//, "").replace(/^guides\//, "guide-").replace(/\//g, "-");
-};
 export function waOpener(path, spot) {
   const [sect, slug] = path.replace(/\.html$/, "").split("/");
   const dest = sect === "destinations" && C.DESTS.find((d) => d.slug === slug);
@@ -26,15 +21,16 @@ export function waOpener(path, spot) {
   if (spot === "faq") return "Salaams, I have a question.";
   if (spot === "business" || (sect === "trips" && slug === "business")) return "Salaams, I'd like to talk to you about business travel.";
   if (spot === "guide" && guide) return `Salaams, please send me the ${guide.name} guide.`;
-  if (sect === "trips" && WA_TRIP[slug]) return `Salaams, I'd like some help planning ${WA_TRIP[slug]}.`;
+  if (sect === "trips" && WA_TRIP[slug]) return `Salaams, I'm interested in ${WA_TRIP[slug]}. Could you help?`;
   if (dest && slug === "makkah-and-madinah") return "Salaams, I'd like some help with Umrah hotels in Makkah and Madinah.";
-  if (dest) return `Salaams, I'm thinking about a trip to ${dest.name}.`;
+  if (dest) return `Salaams, I'm interested in a trip to ${dest.name}. Could you help?`;
   if (guide) return `Salaams, I've been reading your ${guide.name} guide and I'd like some help planning a trip.`;
   if (path === "faq.html") return "Salaams, I have a question.";
-  if (path === "price-check.html") return "Salaams, I've found a hotel and I'd like you to compare it.";
-  return "Salaams, I'd like some help planning a trip.";
+  if (path === "price-check.html") return "Salaams, could you do a price check on a hotel I've found?";
+  return "Salaams, I'm planning a trip and would like some help.";
 }
-export const waHref = (path, spot) => WA_BASE + "?text=" + encodeURIComponent(waOpener(path, spot) + "\n\n(Sent from sapharatravel.co.uk, " + pageTag(path) + "-" + spot + ")");
+// 21 Nov 2026 (Huzaifa): the page and button tag after the message was removed; the opener itself says what the chat is about
+export const waHref = (path, spot) => WA_BASE + "?text=" + encodeURIComponent(waOpener(path, spot));
 export const waLinks = (html, path) => html.replace(/https:\/\/wa\.me\/447887353457\?wa=([a-z0-9-]+)/g, (m, spot) => waHref(path, spot).replace(/&/g, "&amp;"));
 export const WA = waMark("link"); // fallback spot; most buttons pass their own
 export const ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
