@@ -378,8 +378,10 @@
    "name": "Dubai",
    "country": "UAE",
    "code": "DXB",
-   "img": "moment-kaya-pool.webp",
-   "alt": "A private pool in a sunny garden",
+   "img": "st-dubai-creek.webp",
+   "alt": "Abra boats on Dubai Creek in golden light",
+   "hero": "dest-hero-dubai",
+   "hero_alt": "The Dubai skyline and Burj Khalifa at sunset, seen across the water",
    "flight": "7h direct",
    "flight_long": "About 7 hours direct.",
    "intro": "Beach resorts, city hotels and Ras Al Khaimah an hour up the coast for something quieter.",
@@ -446,8 +448,10 @@
    "name": "Makkah and Madinah",
    "country": "Saudi Arabia",
    "code": "JED · MED",
-   "img": "dest-makkah.webp",
-   "alt": "The Haram seen from a hotel window in Makkah",
+   "img": "st-madinah-nabawi.webp",
+   "alt": "Masjid an-Nabawi in Madinah at golden hour",
+   "hero": "dest-hero-makkah",
+   "hero_alt": "Masjid an-Nabawi in Madinah at golden hour",
    "flight": "6h 30m to Jeddah",
    "flight_long": "About 6 and a half hours direct to Jeddah. For Madinah, via Jeddah or one stop.",
    "intro": "Hotels in Makkah and Madinah for Umrah, chosen for the walk to the Haram and the people you're travelling with.",
@@ -516,8 +520,10 @@
    "name": "Langkawi",
    "country": "Malaysia",
    "code": "LGK",
-   "img": "moment-beach-swing.webp",
-   "alt": "A wooden swing on a quiet beach",
+   "img": "st-langkawi-skybridge.webp",
+   "alt": "The Langkawi Sky Bridge above the rainforest",
+   "hero": "dest-hero-langkawi",
+   "hero_alt": "The Langkawi Sky Bridge curving over the rainforest",
    "flight": "17h · 2 stops",
    "flight_long": "About 17 hours, with a stop in the Gulf and a short flight from Kuala Lumpur.",
    "intro": "Rainforest down to the sea, quiet beaches and pool villas, with Kuala Lumpur on the way.",
@@ -729,8 +735,8 @@
   "family-holidays": {
    "name": "Family",
    "trip": "Family holiday",
-   "img": "moment-kaya-pool.webp",
-   "alt": "A private pool in a sunny garden",
+   "img": "page-hero-family",
+   "alt": "A family in white walking along a beach at sunset",
    "title": "Muslim-friendly family holidays | Saphara Travel",
    "desc": "Family holidays with the right rooms, the right pool and an easy transfer. Connecting rooms requested with the hotel, and food checked for halal needs.",
    "lead": "Family holidays with the right rooms, the right pool and an easy transfer. We ask the questions you'd ask if you had the time, then book what works for everyone.",
@@ -802,8 +808,8 @@
   "hotels": {
    "name": "Hotel only",
    "trip": "Hotel only",
-   "img": "trip-hotel-room.webp",
-   "alt": "A calm, sunlit hotel room",
+   "img": "page-hero-hotels",
+   "alt": "A bright hotel suite with a sea view",
    "title": "Hotel bookings and price checks | Saphara Travel",
    "desc": "Already booked your flights? We book the hotel, transfers and tours around them, and we'll compare any hotel price you've found, like for like.",
    "lead": "Already booked your flights? We'll book the hotel, the transfer and the tours around them. Found a hotel yourself? Send it over: second opinions are free.",
@@ -1032,20 +1038,20 @@
    "A headland at sunset in Phuket"
   ],
   "family-holidays": [
-   "dest-qatar.webp",
-   "A resort pool with palm trees near Doha"
+   "st-family-pool.webp",
+   "A family by a resort pool, seen from behind"
   ],
   "hotels": [
-   "dest-makkah.webp",
-   "The Haram seen from a hotel window in Makkah"
+   "st-hotel-balcony.webp",
+   "A white bed beside a balcony with a sea view"
   ],
   "business": [
    "st-panel-business.webp",
    "A marble arched corridor in Muscat"
   ],
   "multi-city": [
-   "japan-miyajima.webp",
-   "The floating torii gate at Miyajima at sunset"
+   "st-dubai-fahidi.webp",
+   "A quiet lane in the Al Fahidi historic district, Dubai"
   ]
  },
  "TRIP_HEADS": {
@@ -1180,7 +1186,7 @@
   [
    "family-holidays",
    "Family",
-   "moment-kaya-pool.webp",
+   "st-family-beach.webp",
    [
     "Connecting rooms.",
     "Not just connecting flights."
@@ -1198,7 +1204,7 @@
   [
    "hotels",
    "Hotel only",
-   "trip-hotel-room.webp",
+   "st-hotel-suite.webp",
    [
     "Got your flights?",
     "We'll do the rest."
@@ -1801,7 +1807,7 @@
   {
    "name": "Umrah",
    "href": "destinations/makkah-and-madinah.html",
-   "thumb": "thumb-dest-makkah.jpg",
+   "thumb": "thumb-st-madinah-nabawi.webp",
    "lines": [
     "Umrah hotels.",
     "Makkah and Madinah."
