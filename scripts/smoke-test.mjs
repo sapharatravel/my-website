@@ -13,6 +13,9 @@ const css = page("dist/assets/site.css");
 
 assert.match(home, /class="hs-toggle"/, "Homepage must render the hero pause control");
 assert.match(home, /Still deciding\?/, "Homepage secondary navigation should render");
+assert.equal((home.match(/class="more-card rv"/g) || []).length, 5, "Homepage should have five secondary navigation cards");
+assert.match(home, /aria-label="Explore honeymoons"/, "Trip card links should have descriptive accessible names");
+assert.match(home, /saphara-logo-sand\.svg/, "Footer should use the pale logo on rust");
 assert.match(price, /id="pcForm"/, "Price Check form must be present");
 assert.match(price, /Tap Send in WhatsApp to complete your price check/, "Price Check must explain the WhatsApp handoff");
 assert.match(readFileSync("public/assets/price-check.js", "utf8"), /new URL\(rawLink\)/, "Price Check must validate optional hotel links");
