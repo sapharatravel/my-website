@@ -2143,7 +2143,10 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 }
 @media (min-width: 1024px) { .sf-top { grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); } }
 
-/* Secondary links: five useful routes, with the final desktop card centred. */
+/* Secondary links: keep the fifth card balanced at tablet and desktop widths. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .more-cards > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 8px); justify-self: center; }
+}
 @media (min-width: 1024px) { .more-cards > :last-child:nth-child(odd) { grid-column: 2 / 3; } }
 
 /* Mobile homepage: remove horizontal swipe tracks so a gesture continues down the page. */
