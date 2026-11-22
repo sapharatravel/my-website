@@ -2156,6 +2156,10 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #trips .trips > *, #destinations .dests > * { flex: initial; width: auto; min-width: 0; scroll-snap-align: none; }
   #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
   #trips .trips .pcard.trip p { display: none; }
+  #trips .trips .pcard.trip .body { padding: 16px; }
+  #trips .trips .pcard.trip .actions { margin-top: 12px; gap: 0; }
+  #trips .trips .pcard.trip .actions .split { width: 100%; min-height: 44px; }
+  #trips .trips .pcard.trip .enq { display: none; }
   #destinations .dests > .pcard.dest { aspect-ratio: 3 / 4; }
   #trips .trips > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 6px); justify-self: center; }
   #trips .overlap { margin-bottom: 0; }
