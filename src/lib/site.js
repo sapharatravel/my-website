@@ -66,9 +66,27 @@ export const shareBtn = (label = "Share this guide") =>
 
 export const planLink = (pg) => (pg.path === "plan-my-trip.html" ? "#enquire" : pg.u("plan-my-trip.html")); // the form lives only on Plan my trip (slim homepage, 15 Nov)
 
+// Phone menu trips (22 Nov 2026 evening, Huzaifa): a row per trip with a small rounded thumbnail, the name and its pun line.
+const mmTrip = (href, img, name, line) => `<a class="mm-trip-card" href="${href}"><span class="mm-trip-img"><img src="${img}" alt="" width="400" height="300" loading="lazy" decoding="async"></span><span class="mm-trip-copy"><b>${name}</b><small>${line}</small></span></a>`;
+
 export function header(pg) {
-  const tiles = C.TRIPS.map(([s, n, img, [a, b]]) => `\n          <a class="dd-tile" href="${pg.u("trips/" + s + ".html")}" aria-label="${n}: ${a} ${b}"><span class="ph"><img data-src="${pg.img("thumb-" + img)}" alt="" width="400" height="300" decoding="async"${s === "business" ? ' class="warm"' : ""}></span><b class="dd-name">${n}${ARROW}</b><span class="dd-sub">${a} ${b}</span></a>`).join("");
-  const extra = (C.MENU_EXTRA || []).map((m) => `\n          <a class="dd-tile" href="${pg.u(m.href)}" aria-label="${m.name}: ${m.lines[0]} ${m.lines[1]}"><span class="ph"><img data-src="${pg.img(m.thumb)}" alt="" width="400" height="300" decoding="async"></span><b class="dd-name">${m.name}${ARROW}</b><span class="dd-sub">${m.lines[0]} ${m.lines[1]}</span></a>`).join("");
+  // 22 Nov 2026 (late night, Huzaifa): Trips dropdown is option B: "Holidays" and "Just the hotel" lists with small photos, the free price check card on the right, centred under the menu.
+  const THUMB = { honeymoons: "r/st-reviews-maldives-400.webp", "multi-city": "r/st-howwework-kl-400.webp" };
+  const thumbOf = (s, img) => THUMB[s] || "thumb-" + img;
+  const row = (href, img, name, line, warm) => `\n            <a class="ddb-row" href="${href}"><span class="ph"><img data-src="${pg.img(img)}" alt="" width="400" height="300" decoding="async"${warm ? ' class="warm"' : ""}></span><span class="ddb-tx"><b>${name}</b><span>${line}</span></span></a>`;
+  const T = Object.fromEntries(C.TRIPS.map((t) => [t[0], t]));
+  const tripRow = (s) => { const [, n, img, [a, b]] = T[s]; return row(pg.u("trips/" + s + ".html"), thumbOf(s, img), n, a + " " + b, s === "business"); };
+  const extraRows = (C.MENU_EXTRA || []).map((m) => row(pg.u(m.href), m.thumb, m.name, m.lines[0] + " " + m.lines[1], false)).join("");
+  const holidays = ["honeymoons", "beach-and-island", "family-holidays", "multi-city"].filter((s) => T[s]).map(tripRow).join("");
+  const hotelish = ["hotels"].filter((s) => T[s]).map(tripRow).join("") + extraRows + ["business"].filter((s) => T[s]).map(tripRow).join("");
+  const ddPanel = `<div class="dd-panel ddb" id="tripsMenu" role="region" aria-label="Trips">
+          <div class="ddb-col"><p class="dd-k">Holidays</p>${holidays}
+          </div>
+          <div class="ddb-col"><p class="dd-k">Just the hotel</p>${hotelish}
+          </div>
+          <a class="ddb-promo" href="${pg.u("price-check.html")}"><span class="nl-free">Free</span><b>Found a hotel already?</b><span class="ddb-p">Send us the hotel and price. We'll compare the same room, dates and terms, and tell you honestly if we can do better.</span><span class="ddb-cta">Get a free price check${ARROW}</span></a>
+          <div class="ddb-foot"><a class="dd-all" href="${pg.u("trips/index.html")}">See all trips${ARROW}</a></div>
+        </div>`;
   const pl = planLink(pg), dp = pl === "#enquire" ? " data-plan" : "";
   return `<a class="skip" href="#main">Skip to content</a>
 <header class="header" id="hdr">
@@ -79,10 +97,9 @@ export function header(pg) {
     </a>
     <div class="hnav">
       <nav class="desk-links" aria-label="Main">
-        <a class="nl nl-pc" href="${pg.u("price-check.html")}">Price check <span class="nl-free">Free</span></a>
+        <a class="nl nl-pc" href="${pg.u("price-check.html")}"><span class="nl-free">Free</span> Price check</a>
         <div class="dd"><button class="nl dd-btn" type="button" aria-expanded="false" aria-controls="tripsMenu">Trips<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
-        <div class="dd-panel" id="tripsMenu" role="region" aria-label="Trips"><div class="dd-head"><span class="dd-k">Trips we plan</span><a class="dd-all" href="${pg.u("trips/index.html")}">See all trips${ARROW}</a></div>${tiles}${extra}
-        </div></div>
+        ${ddPanel}</div>
         <a class="nl" href="${pg.u("destinations/index.html")}">Destinations</a><a class="nl" href="${pg.u("guides/index.html")}">Guides</a><a class="nl" href="${pg.u("why-saphara.html")}">Why Saphara</a>
       </nav>
       <a class="hwa" href="${waMark("header")}" aria-label="WhatsApp us">${waGlyph("")}</a>
@@ -94,8 +111,8 @@ export function header(pg) {
 <div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="mm-top"><img src="${pg.img("saphara-logo-dark.svg")}" alt="Saphara Travel" width="120" height="35"><button class="mm-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <nav aria-label="Menu">
-    <a class="mm-pc" href="${pg.u("price-check.html")}">Price check <span class="mm-tag">Free</span></a>
-    <div class="mm-trips"><span>Trips</span><div class="mm-sub">${C.TRIPS.map(([s2, n2]) => `<a href="${pg.u("trips/" + s2 + ".html")}">${n2}</a>`).join("")}${(C.MENU_EXTRA || []).map((m) => `<a href="${pg.u(m.href)}">${m.name}</a>`).join("")}</div></div>
+    <a class="mm-pc" href="${pg.u("price-check.html")}"><span class="mm-tag">Free</span> Price check</a>
+    <div class="mm-trips"><span>Trips</span><div class="mm-sub">${C.TRIPS.map(([s2, n2, img2, [a2, b2]]) => mmTrip(pg.u("trips/" + s2 + ".html"), pg.img("thumb-" + img2), n2, a2 + " " + b2)).join("")}${(C.MENU_EXTRA || []).map((m) => mmTrip(pg.u(m.href), pg.img(m.thumb), m.name, m.lines[0] + " " + m.lines[1])).join("")}</div></div>
     <a href="${pg.u("destinations/index.html")}">Destinations</a><a href="${pg.u("guides/index.html")}">Guides</a><a href="${pg.u("why-saphara.html")}">Why Saphara</a>
   </nav>
   <div class="mm-actions"><a class="textlink" href="${waMark("menu")}">${waGlyph()}WhatsApp us</a><a class="split" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>

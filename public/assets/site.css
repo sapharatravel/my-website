@@ -1936,6 +1936,24 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .pl2-h .tone { color: var(--sand-deep); }
 .pl2-note svg { stroke: var(--sand-deep); }
 .pl2-steps small { color: var(--grey); }
+/* Homepage pay later (22 Nov 2026, Huzaifa): replaces the declaration. Photo instead of the Due today card, running to the panel edges:
+   under the copy on phones and tablets, the right half from 1024px. */
+#pay-later .pl2.pl2-img { padding-bottom: 0; }
+.pl2-ph { position: relative; z-index: 1; display: block; margin: 0 -20px; aspect-ratio: 4 / 3; overflow: hidden; }
+.pl2-ph img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
+@media (min-width: 768px) { .pl2-ph { margin: 0 -48px; aspect-ratio: 16 / 9; } }
+@media (min-width: 1024px) {
+  #pay-later .pl2.pl2-img { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; gap: 0; padding: 0; }
+  .pl2-img .pl2-copy { align-self: center; padding: 64px 64px 64px 72px; }
+  .pl2-img .pl2-ph { margin: 0; aspect-ratio: auto; min-height: 520px; }
+  .pl2-img .pl2-ph img { position: absolute; inset: 0; } /* the copy sets the panel height, not the portrait photo */
+  .pl2-img .pl2-orb { right: auto; left: -160px; }
+}
+@media (min-width: 1024px) and (max-height: 820px) { .pl2-img .pl2-copy { padding-block: 48px; } .pl2-img .pl2-ph { min-height: 460px; } }
+@media (prefers-reduced-motion: no-preference) {
+  .pl2-anim .pl2-ph img { opacity: 0; transform: scale(1.06); transition: opacity 600ms var(--ease) 120ms, transform 600ms var(--ease) 120ms; }
+  .pl2-anim.in .pl2-ph img { opacity: 1; transform: none; }
+}
 /* Three destination arches on a trip page fill the row instead of leaving a gap */
 @media (min-width: 1024px) { .dests:has(> :nth-child(3):last-child) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 /* Last line of defence against sideways scroll on phones (photo drift and moving strips), 21 Nov. clip, not hidden, so sticky elements keep working */
@@ -2184,6 +2202,186 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   .header .hnav { gap: 12px; }
   .header .hwa { margin-left: 28px; }
 }
+
+/* 22 Nov 2026 (evening, Huzaifa): Cloudflare preview review. Only the preview changes that were kept.
+   Hero: no trip cards under the hero on any screen, so nothing overlaps it; the desktop price check card inside the hero stays.
+   Hero text: a soft shadow for legibility on bright photos; inner-page heroes get a slightly darker gradient.
+   Desktop nav: Kensington Demi 25px, Title Case.
+   Trips dropdown: Hotel Only is the featured tile on the left, the other six trips sit in a 3 by 2 grid.
+   Phone menu: each trip is a row with a small rounded photo, its name and its pun line.
+   Homepage arches: Title Case names in Kensington. FAQ links stacked on desktop. */
+.hd-wrap { --hd-overlap: 0px; }
+@media (min-width: 768px) { .hd-wrap { --hd-overlap: 0px; } }
+@media (min-width: 1024px) { .hd-wrap { --hd-overlap: 0px; } }
+.hero h1 { text-shadow: 0 2px 28px rgba(0,0,0,.38); }
+.hero .lead { text-shadow: 0 1px 14px rgba(0,0,0,.45); }
+body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.28) 0%, rgba(0,0,0,0) 24%, rgba(0,0,0,.3) 46%, rgba(0,0,0,.72) 74%, rgba(0,0,0,.86) 100%); }
+@media (min-width: 768px) { body:not(.home) .hero::after { background: radial-gradient(75% 95% at 18% 78%, rgba(0,0,0,.8) 0%, rgba(0,0,0,.55) 45%, rgba(0,0,0,.08) 88%), linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.55) 100%); } }
+
+@media (min-width: 1024px) {
+  .header .desk-links > a.nl, .header .desk-links .dd > .dd-btn { font-family: var(--display); font-weight: 600; letter-spacing: 0; text-transform: none; font-size: 25px; line-height: 1; }
+  .desk-links .nl::after { bottom: 3px; }
+
+  .dd-panel { grid-template-columns: minmax(230px, .95fr) repeat(3, minmax(0, 1fr)); grid-template-rows: auto repeat(2, 132px); grid-auto-rows: 132px; gap: 12px 16px; align-content: start; }
+  .dd-head { grid-column: 1 / -1; }
+  .dd-tile { min-width: 0; }
+  .dd-tile .dd-sub { display: none; }
+  .dd-tile.dd-featured { position: relative; grid-column: 1; grid-row: 2 / span 2; display: block; height: 100%; min-height: 0; padding: 0; overflow: hidden; border-radius: var(--r-small); }
+  .dd-tile.dd-featured .ph { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; margin: 0; border-radius: inherit; }
+  .dd-tile.dd-featured .ph::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,.72) 100%); }
+  .dd-tile.dd-featured .dd-name { position: absolute; z-index: 1; left: 16px; right: 12px; bottom: 16px; color: #fff; font-size: 30px; line-height: 1; padding: 0; }
+  .dd-tile.dd-featured .dd-name svg { stroke: #fff; }
+  .dd-tile:not(.dd-featured) .ph { height: 94px; flex: 0 0 94px; aspect-ratio: auto; margin-bottom: 0; }
+  .dd-tile:not(.dd-featured) .dd-name { font-size: 20px; line-height: 1.05; }
+  @media (hover: hover) { .dd-tile.dd-featured:hover .dd-name { color: #fff; } }
+
+  #faq .actions { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-12); }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .header .desk-links > a.nl, .header .desk-links .dd > .dd-btn { font-size: 22px; }
+}
+
+.mm-sub { grid-template-columns: minmax(0, 1fr); gap: 0; padding-bottom: var(--s-8); }
+.mm-sub a.mm-trip-card { display: grid; grid-template-columns: 56px minmax(0, 1fr); align-items: center; gap: 14px; min-height: 68px; padding: 6px 0; }
+.mm-sub a.mm-trip-card + a.mm-trip-card { border-top: 1px solid var(--rule); }
+.mm-trip-img { width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: var(--sand-deep); }
+.mm-trip-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mm-trip-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.mm-trip-copy b { font: 600 20px/1.05 var(--display); color: var(--ink); }
+.mm-trip-copy small { font-size: 13.5px; line-height: 1.35; color: var(--grey); }
+.mm-trip-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 12px; }
+
+/* Arch names on every page (22 Nov 2026, Huzaifa): Title Case in Kensington, matching the homepage. */
+.dest h3 { font-family: var(--display); font-weight: 600; text-transform: none; letter-spacing: 0; }
+/* Arch photos zoom in slowly on hover. Uses the separate scale property, because the scroll parallax writes an inline transform on the same image, which used to cancel the hover zoom. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .dest > img, .js-motion .pcard.dest.rv.in > img { transition: transform 700ms var(--ease), scale 1600ms cubic-bezier(.2,.7,.2,1), opacity 500ms var(--ease); }
+  .dest:hover > img, .js-motion .pcard.dest.rv.in:hover > img { scale: 1.08; }
+}
+
+/* 22 Nov 2026 (mobile audit, Huzaifa): agreed fixes.
+   Pay later banner on the homepage: full-width sand band, dark text, the dark Plan my trip button; the "Due today" card from 768px only, so phones stay short. Why Saphara keeps the black panel.
+   Reviews: the three Trustpilot reviews rotate (stacked in one grid cell so the height never jumps); 44px dots with a small visible dot.
+   Tablet (768 to 1023px): trip cards become the same swipe row as phones; "A little more" shows three across.
+   Phones: the More descriptions get three lines; form fields keep the step heading clear of the sticky header when focused. */
+#pay-later.pl-home .pl2 { background: none; color: var(--ink); padding: 0; border-radius: 0; overflow: visible; }
+#pay-later.pl-home .pl2-orb { display: none; }
+#pay-later.pl-home .pl2-h { color: var(--ink); }
+#pay-later.pl-home .pl2-h .tone { color: var(--tone); }
+#pay-later.pl-home .pl2-lead { color: var(--ink); }
+#pay-later.pl-home .pl2-note { background: var(--paper); border-color: var(--rule); color: var(--grey); }
+#pay-later.pl-home .pl2-note b { color: var(--ink); }
+#pay-later.pl-home .pl2-note svg { stroke: var(--ink); }
+#pay-later.pl-home .pl2-card { box-shadow: 0 24px 50px -24px rgba(46,24,4,.28), 0 2px 6px rgba(46,24,4,.06); }
+@media (max-width: 767px) { #pay-later.pl-home .pl2-card { display: none; } #pay-later.pl-home .pl2 { gap: 0; } }
+@media (min-width: 768px) { #pay-later.pl-home .pl2 { padding: 0; } }
+@media (min-width: 1024px) { #pay-later.pl-home .pl2 { padding: 0; } }
+@media (min-width: 1024px) and (max-height: 820px) { #pay-later.pl-home .pl2 { padding: 0; } }
+
+.proof-slides { display: grid; }
+.proof-slide { grid-area: 1 / 1; transition: opacity 600ms var(--ease), visibility 0s linear 600ms; }
+.proof-slide:not(.is-on) { opacity: 0; visibility: hidden; }
+.proof-slide.is-on { transition-delay: 0s; }
+.proof-band.sand .proof-mark { color: var(--accent); }
+.proof-dots { display: flex; justify-content: center; gap: 0; margin-top: var(--s-8); }
+.proof-dot { width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+.proof-dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--rule); transition: background 300ms, transform 300ms; }
+.proof-dot.is-on::before { background: var(--ink); transform: scale(1.2); }
+.proof-dot:focus-visible { outline: 2px solid var(--ink); outline-offset: -8px; border-radius: 50%; }
+@media (prefers-reduced-motion: reduce) { .proof-slide { transition: none; } }
+.proof-band .proof-tp { margin-top: var(--s-16); }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #trips .trips { display: flex; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; gap: 16px; margin-inline: calc(-1 * var(--margin)); padding: 4px 0 8px var(--margin); scroll-padding-inline: var(--margin); scrollbar-width: none; }
+  #trips .trips::after { content: ""; flex: 0 0 calc(var(--margin) - 16px); }
+  #trips .trips::-webkit-scrollbar { display: none; }
+  #trips .trips > .rv { opacity: 1; transform: none; transition: none; }
+  #trips .trips > .pcard > img { clip-path: none; transform: none; }
+  #trips .trips > * { flex: 0 0 calc((100% - var(--margin)) * .46); scroll-snap-align: start; min-height: 0; }
+  #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; min-height: 0; }
+  #trips .trips .pcard.trip p { display: none; }
+  .more-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-16); }
+  .more-card { min-height: 280px; padding: var(--s-16); }
+  .hs-dot { width: 44px; height: 44px; }
+}
+@media (max-width: 767px) { .more-card .mc-d { -webkit-line-clamp: 3; } }
+.fstep input, .fstep textarea, .fstep select { scroll-margin-top: 150px; }
+/* Trip cards hang into the next band on desktop (--overlap), so the pay later banner starts below them. Tablet swipe row sits fully inside its band, as on phones. */
+@media (min-width: 1024px) { #pay-later.pl-home { padding-top: calc(var(--overlap) + var(--section)); } }
+@media (min-width: 768px) and (max-width: 1023px) { #trips .overlap { margin-bottom: 0; } }
+
+/* 22 Nov 2026 (night, Huzaifa): round 3 */
+/* Free tag sits before "Price check" */
+.header .nl-free { margin-left: 0; }
+/* Hotel strip: never pauses on hover; keyboard focus still pauses it. Logos in one grey, names in the same tone */
+.marquee:hover .marquee-track, .marquee.paused .marquee-track { animation-play-state: running; }
+.marquee:focus-visible .marquee-track { animation-play-state: paused; }
+.marquee-track { align-items: center; gap: 56px; }
+.marquee-track .mq-logo, .marquee-track .mq-word { display: inline-flex; align-items: center; flex: none; height: 48px; }
+.marquee-track .mq-logo::after, .marquee-track .mq-word::after { display: none; }
+.marquee-track .mq-logo img { display: block; height: 40px; width: auto; max-width: 180px; object-fit: contain; filter: grayscale(1) brightness(.45) contrast(1.2); opacity: .7; }
+.marquee-track .mq-word { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 22px; letter-spacing: .08em; color: var(--grey); white-space: nowrap; }
+@media (max-width: 767px) { .marquee-track { gap: 40px; } .marquee-track .mq-logo img { height: 32px; } .marquee-track .mq-word { font-size: 18px; } }
+/* Hero fills the whole screen on laptops and desktops (MacBook) */
+@media (min-width: 1024px) { body.home .hd-wrap { --hd-h: 100svh; } body.home .hero.hd { min-height: 100svh; } }
+/* The hero button: light cream pill, a touch larger, so it stands out on the photo */
+.hero.hd .actions .hero-cta .split-label { font-weight: 600; }
+@media (min-width: 768px) { .hero.hd .actions .hero-cta { min-height: 56px; padding-left: 26px; } }
+/* Trips and pay later read as two sections: the trip cards no longer hang over into the sand band */
+body.home #trips .overlap { margin-bottom: 0; }
+body.home #pay-later.pl-home { padding-top: var(--section); }
+
+/* 22 Nov 2026 (late night, Huzaifa): round 4 */
+/* FREE sits on the optical centre of the Price check capitals (Kensington's caps sit low in their line box) */
+.header .nl-free { transform: translateY(1.5px); }
+.mm-pc .mm-tag { transform: translateY(2px); }
+/* Reserve now: equal space above and below, and the copy and card centred as one group */
+body.home #pay-later.pl-home { padding-block: var(--section); }
+@media (min-width: 1024px) {
+  body.home #pay-later.pl-home .pl2 { grid-template-columns: minmax(0, 560px) minmax(0, 440px); justify-content: center; column-gap: 96px; align-items: center; }
+}
+/* How booking with Saphara works (homepage): shorter, scannable steps and a smaller phone */
+#how.how-home .steps li { grid-template-columns: 44px 1fr; column-gap: 12px; row-gap: 4px; align-items: baseline; }
+#how.how-home .steps .n { grid-row: span 2; }
+#how.how-home .steps h3 { font-size: 24px; }
+#how.how-home .steps p { grid-column: 2; margin: 0; }
+@media (max-width: 1023px) {
+  #how.how-home .how { gap: var(--s-24); }
+  #how.how-home .phone-wrap { max-width: 230px; }
+  #how.how-home .phone { aspect-ratio: 9 / 13; border-width: 8px; border-radius: 32px; }
+  #how.how-home .bub { max-width: 170px; font-size: 12.5px; padding: 9px 12px; border-radius: 14px; }
+  #how.how-home .bub:nth-child(2), #how.how-home .bub:nth-child(3) { display: none; }
+  #how.how-home .bub:nth-child(1) { top: 16%; left: -10px; }
+  #how.how-home .bub:nth-child(4) { top: 56%; right: -10px; }
+  #how.how-home .steps { grid-template-columns: 1fr; gap: 0; }
+  #how.how-home .steps li { padding: 14px 0; }
+}
+@media (min-width: 768px) and (max-width: 1023px) { #how.how-home .steps { grid-template-columns: 1fr 1fr; column-gap: var(--s-32); } }
+@media (min-width: 1024px) {
+  #how.how-home .how { grid-template-columns: 300px minmax(0, 640px); justify-content: center; column-gap: 96px; row-gap: var(--s-32); align-items: center; grid-template-areas: "phone intro" "phone steps"; }
+  #how.how-home .how .intro { align-self: end; }
+  #how.how-home .how .steps { align-self: start; grid-template-columns: 1fr 1fr; gap: 8px 40px; }
+  #how.how-home .steps li { padding: 16px 0; }
+  #how.how-home .phone-wrap { max-width: 280px; }
+  #how.how-home .phone { aspect-ratio: 9 / 16; }
+  #how.how-home .bub { max-width: 200px; font-size: 13px; }
+  #how.how-home .bub:nth-child(1) { top: 16%; } #how.how-home .bub:nth-child(2) { top: 34%; } #how.how-home .bub:nth-child(3) { top: 55%; } #how.how-home .bub:nth-child(4) { top: 72%; }
+}
+/* Hotel strip: logos and remaining names in black */
+.marquee-track .mq-logo img { filter: brightness(0); opacity: 1; }
+.marquee-track .mq-word { color: var(--ink); }
+/* Stacked and square logos need more height to read at the same visual size as the wide wordmarks */
+.marquee-track .mq-logo img { height: 30px; max-width: 150px; }
+.marquee-track .mq-waldorf-astoria img, .marquee-track .mq-mandarin-oriental img, .marquee-track .mq-rixos img { height: 52px; }
+.marquee-track .mq-fairmont img { height: 34px; }
+.marquee-track .mq-logo, .marquee-track .mq-word { height: 56px; }
+@media (max-width: 767px) {
+  .marquee-track .mq-logo img { height: 24px; }
+  .marquee-track .mq-waldorf-astoria img, .marquee-track .mq-mandarin-oriental img, .marquee-track .mq-rixos img { height: 42px; }
+}
+.marquee-track .mq-rixos img { height: 34px; }
+@media (max-width: 767px) { .marquee-track .mq-rixos img { height: 26px; } }
+#how.how-home .steps li { align-content: start; }
 
 /* ---------- Why Saphara redesign (23 Nov 2026, preview for Huzaifa) ----------
    Only classes prefixed ws- (used on why-saphara only). Tokens, type sizes, radii, buttons, accordion and reveal come from the system above. */

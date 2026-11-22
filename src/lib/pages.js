@@ -68,29 +68,39 @@ const join = (...parts) => parts.join("\n");
 // ---------- home ----------
 // Cards on the homepage to the pages that hold what used to be on it.
 // 21 Nov 2026 (Huzaifa): no photo used twice on the homepage; Reviews, Business and FAQs got their own photos (IMAGES.md).
+// 22 Nov 2026 (evening, Huzaifa, Cloudflare preview review): "A little more about SAPHARA." with three cards replaces "Still deciding?".
 const MORE_CARDS = [
-  ["price-check.html", "st-price-infinity.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
-  ["reviews.html", "st-reviews-praslin.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
-  ["why-saphara.html", "st-howwework-kl.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
-  ["trips/business.html", "st-card-business.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
-  ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
-  ["faq.html", "st-faq-terrace.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
+  ["reviews.html", "st-reviews-praslin.webp", "Client Reviews", "Read what travellers have said after booking with Saphara."],
+  ["why-saphara.html", "st-card-multicity.webp", "How We Work", "A small team, honest hotel comparisons and support on WhatsApp."],
+  ["guides/index.html", "guides/guide-malta.webp", "Travel Guides", "Practical notes on where to eat, pray, stay and explore."],
 ];
 const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 function moreCards(pg) {
-  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">Still deciding?</h2></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
+  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">A little more about SAPHARA.</h2><p>Useful things to look through while you\'re deciding.</p></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
 }
 // Proof under the hero (16 Nov 2026, Huzaifa): the Trustpilot line and one real review, lifted from the reviews block so the wording can't drift.
-function heroProof(pg) {
-  // Redesigned 16 Nov (Huzaifa: "show the review bigger in Kensington"): one large quote, then the Trustpilot line.
-  const rv = reviews.match(/<figure class="rv-card rv">[\s\S]*?<blockquote>“([^”]+)”<\/blockquote>[\s\S]*?<b>([^<]+)<\/b><small>([^<]+)<\/small>/);
-  const [, quote, who, when] = rv || ["", "", "", ""];
+// Reviews under the hotel names (22 Nov 2026 audit, Huzaifa): the three real Trustpilot reviews rotate, lifted from the reviews block so the wording can't drift.
+function proofReviews() {
+  // 22 Nov 2026 (night, Huzaifa: "show the clients first name on the trustpilot reviews"). Real Trustpilot reviews whose public display name gives a first name,
+  // quoted as written (Maroof's is an excerpt). "AS" and "Shmikkyy" are initials and a username on Trustpilot, so they stay on the Reviews page only.
+  return [
+    { quote: "One of the smoothest, most well organised holidays we’ve ever had.", who: "Maroof", when: "Honeymoon in Seychelles and Oman · Trustpilot, July 2026" },
+    { quote: "Just returned from an incredible trip to Malaysia and Japan, all thanks to Saphara Travel Group!", who: "Hamza", when: "Trustpilot, July 2026" },
+    { quote: "The Saphara lads have made holiday planning the most seamless thing ever.", who: "Umair", when: "Trustpilot, May 2026" },
+    { quote: "First time using these guys and I will definitely be using them again.", who: "Uwaisse", when: "Trustpilot, May 2026" },
+  ];
+}
+function heroProof(pg, bandClass = "white") {
+  // Redesigned 16 Nov (Huzaifa: "show the review bigger in Kensington"): large quote in Kensington, then the Trustpilot line. 22 Nov 2026: rotates through four reviews, first names shown.
+  const rvs = proofReviews();
   const STAR = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.6 6.3 6.8.5-5.2 4.4 1.6 6.6L12 17l-5.8 3.6 1.6-6.6-5.2-4.4 6.8-.5z"/></svg>';
-  return `<section class="band white proof-band" id="proof" aria-label="What our travellers say"><div class="col"><figure class="proof rv">
+  const slides = rvs.map((r, k) => `<div class="proof-slide${k === 0 ? " is-on" : ""}" id="proofSlide${k}" role="group" aria-roledescription="review" aria-label="Review ${k + 1} of ${rvs.length}"${k === 0 ? "" : ' aria-hidden="true"'}><blockquote>${r.quote}</blockquote><figcaption><span class="proof-who">${r.who}</span><span class="proof-src">${r.when}</span></figcaption></div>`).join("");
+  const dots = rvs.length > 1 ? `<div class="proof-dots" role="group" aria-label="Choose a review">${rvs.map((r, k) => `<button type="button" class="proof-dot${k === 0 ? " is-on" : ""}" aria-label="Review ${k + 1}" aria-controls="proofSlide${k}" aria-pressed="${k === 0}"></button>`).join("")}</div>` : "";
+  return `<section class="band ${bandClass} proof-band" id="proof" aria-label="What our travellers say"><div class="col"><figure class="proof rv" data-proof>
   <span class="proof-mark" aria-hidden="true">“</span>
   <span class="proof-stars" role="img" aria-label="5 out of 5 stars">${STAR.repeat(5)}</span>
-  <blockquote>${quote}</blockquote>
-  <figcaption><span class="proof-who">${who}</span><span class="proof-src">${when}</span></figcaption>
+  <div class="proof-slides" aria-live="polite">${slides}</div>
+  ${dots}
   <p class="proof-tp"><b>Rated Excellent on Trustpilot</b><a class="textlink" href="${pg.u("reviews.html")}">Read our reviews <span aria-hidden="true">→</span></a></p>
 </figure></div></section>`;
 }
@@ -112,7 +122,43 @@ export function home() {
   const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
   // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
   // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
-  const body = toPlan(join(hero, hotelNames, heroProof(pg), trips, destinations, moment, declaration, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
+  // 22 Nov 2026 (Huzaifa): the pay later block replaced the declaration; 22 Nov 2026 (evening, Cloudflare preview review): the declaration is back. Pay later stays in 03b-pay-later.html (Why Saphara).
+  // 22 Nov 2026 (mobile audit, Huzaifa): the full-width sand pay later banner replaces the declaration (declaration parked in 06-declaration.html); reviews move up under the hotel names and rotate.
+  // Order: hero, hotel names, reviews, trips, pay later, destinations, big photo, FAQ, A little more, form. Bands: names white, reviews sand, trips white, pay later sand, destinations white, FAQ sand, More white.
+  // Phones drop the "Due today" card so the banner stays short.
+  const payLaterHome = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#enquire" data-plan>');
+  void declaration;
+  // Superseded the same day: 22 Nov 2026 (later, Huzaifa): reordered so the trip cards and the destination arches are not side by side.
+  // Flow: what we arrange (trips), why it costs you nothing extra (declaration), where we know (destinations), a client's words, the big photo with its call to action, questions answered, more to read, then the form.
+  // Bands re-alternate: hotel names white, trips sand, declaration white, destinations sand, testimonial white, FAQ sand, More white.
+  // 22 Nov 2026 (night, Huzaifa): the big photo ("Somewhere worth the journey.", parked in 05b-moment.html) is replaced by How booking with Saphara works.
+  // Bands: names white, reviews sand, trips white, pay later sand, destinations white, how it works sand, FAQ white, More sand.
+  void moment;
+  // 22 Nov 2026 (late night, Huzaifa: "tighter and easy to digest"): homepage How it works uses shorter steps; Why Saphara keeps the full version.
+  const howHome = how.replace('<section class="band sand" id="how">', '<section class="band sand how-home" id="how">')
+    .replace("<p>Four steps, all in one WhatsApp chat.</p>", "<p>Four steps, one WhatsApp chat.</p>")
+    // 22 Nov 2026 (late night, Huzaifa): the phone graphic is replaced by WhatsApp-style chat bubbles.
+    .replace(/<div class="phone-wrap" data-bubbles>[\s\S]*?<\/div>\s*<\/div>(?=\s*<ol class="steps">)/, `<div class="wa-chat" data-bubbles>
+        <div class="wa-top" aria-hidden="true"><span class="wa-av">S</span><span class="wa-who"><b>SAPHARA</b><small>WhatsApp</small></span></div>
+        <div class="wa-msgs" role="img" aria-label="Example messages: a couple asks about a Zanzibar honeymoon, Saphara sends options, and later sorts a room that wasn't ready">
+          <p class="bub wa them">Salaam. Honeymoon in Zanzibar in March?<span class="wa-t">10:02</span></p>
+          <p class="bub wa us">Congratulations. Here are three villas we'd book, compared like for like.<span class="wa-t">10:14 <span class="wa-ticks">\u2713\u2713</span></span></p>
+          <p class="wa-day" aria-hidden="true">March</p>
+          <p class="bub wa them">We've landed but the room isn't ready.<span class="wa-t">11:40</span></p>
+          <p class="bub wa us">Spoken to the hotel. Ready by 1pm, and the pool is yours till then.<span class="wa-t">11:46 <span class="wa-ticks">\u2713\u2713</span></span></p>
+        </div>
+      </div>`)
+    .replace(/<ol class="steps">[\s\S]*?<\/ol>/, `<ol class="steps">
+        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-4.5 3.5V16.5H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"/><path d="M7.5 10h9M7.5 13h5.5"/></svg></span><span class="n">01</span><h3>Tell us the trip</h3><p>Where, when and who's coming.</p></li>
+        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18.5V7M3 14h18v4.5M21 14v-2.5a3 3 0 0 0-3-3h-6.5V14"/><circle cx="7" cy="10.8" r="1.8"/></svg></span><span class="n">02</span><h3>Pick a hotel</h3><p>Two or three we'd book ourselves, compared like for like.</p></li>
+        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span><span class="n">03</span><h3>We book it</h3><p>Your requests passed to the hotel and confirmed.</p></li>
+        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M21 16.5v-1.8l-7.5-4.6V5a1.5 1.5 0 0 0-3 0v5.1L3 14.7v1.8l7.5-2.2v4.4l-2 1.5V21l3.5-1 3.5 1v-.8l-2-1.5v-4.4z"/></svg></span><span class="n">04</span><h3>We stay with you</h3><p>On WhatsApp until you're home.</p></li>
+      </ol>`);
+  const body = toPlan(join(hero, hotelNames, heroProof(pg, "sand"),
+    trips.replace('<section class="band sand" id="trips">', '<section class="band white" id="trips">'),
+    payLaterHome, destinations, howHome,
+    faqTeaser,
+    moreCards(pg).replace('class="band white more-band"', 'class="band sand more-band"'))) + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
 }
 
@@ -341,35 +387,35 @@ export function priceCheckPage() {
 <form class="pc-form pc-card rv" id="pcForm" novalidate aria-labelledby="pcFormTitle">
   <h2 class="display d-l" id="pcFormTitle">Check my price.</h2>
   <p class="pc-intro">Four details and we'll take it from there. Your message opens in WhatsApp, ready to send. Nothing is stored on this website.</p>
-  <fieldset class="pc-group"><legend><span class="pc-n">1</span>The hotel</legend>
+  <fieldset class="pc-group"><legend><span class="pc-n">1</span>The Hotel</legend>
     <div class="pc-row">
-      <div class="fq"><label for="pc-hotel">Hotel name</label><input class="field" id="pc-hotel" type="text" maxlength="120" autocomplete="off" placeholder="As it's listed" aria-describedby="pc-hotel-e"><p class="err" id="pc-hotel-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-hotel">Hotel Name</label><input class="field" id="pc-hotel" type="text" maxlength="120" autocomplete="off" placeholder="As it's listed" aria-describedby="pc-hotel-e"><p class="err" id="pc-hotel-e" role="alert" hidden></p></div>
       <div class="fq"><label for="pc-dest">Destination <span class="opt">(optional)</span></label><input class="field" id="pc-dest" type="text" maxlength="80" placeholder="For example Zanzibar"></div>
     </div>
   </fieldset>
-  <fieldset class="pc-group"><legend><span class="pc-n">2</span>Your stay</legend>
+  <fieldset class="pc-group"><legend><span class="pc-n">2</span>Your Stay</legend>
     <div class="pc-row">
-      <div class="fq"><label for="pc-in">Check-in</label><input class="field" id="pc-in" type="date" aria-describedby="pc-in-e"><p class="err" id="pc-in-e" role="alert" hidden></p></div>
-      <div class="fq"><label for="pc-out">Check-out</label><input class="field" id="pc-out" type="date" aria-describedby="pc-out-e"><p class="err" id="pc-out-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-in">Check-In</label><input class="field" id="pc-in" type="date" aria-describedby="pc-in-e"><p class="err" id="pc-in-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-out">Check-Out</label><input class="field" id="pc-out" type="date" aria-describedby="pc-out-e"><p class="err" id="pc-out-e" role="alert" hidden></p></div>
     </div>
     <div class="pc-row pc-row-sm">
       <div class="fq"><label for="pc-adults">Adults</label><input class="field" id="pc-adults" type="number" min="1" max="20" value="2" inputmode="numeric"></div>
       <div class="fq"><label for="pc-children">Children</label><input class="field" id="pc-children" type="number" min="0" max="12" value="0" inputmode="numeric"></div>
       <div class="fq"><label for="pc-rooms">Rooms</label><input class="field" id="pc-rooms" type="number" min="1" max="10" value="1" inputmode="numeric"></div>
     </div>
-    <div class="fq" id="pcAgesWrap" hidden><label for="pc-ages">Children's ages <span class="opt">(optional)</span></label><input class="field" id="pc-ages" type="text" maxlength="60" placeholder="For example 4 and 7"></div>
+    <div class="fq" id="pcAgesWrap" hidden><label for="pc-ages">Children's Ages <span class="opt">(optional)</span></label><input class="field" id="pc-ages" type="text" maxlength="60" placeholder="For example 4 and 7"></div>
   </fieldset>
-  <fieldset class="pc-group"><legend><span class="pc-n">3</span>The price you found</legend>
+  <fieldset class="pc-group"><legend><span class="pc-n">3</span>The Price You Found</legend>
     <div class="pc-row">
-      <div class="fq"><label for="pc-price">Total price</label><div class="pc-money"><select class="field" id="pc-currency" aria-label="Currency"><option>GBP</option><option>USD</option><option>EUR</option><option>SAR</option><option>AED</option><option>QAR</option></select><input class="field" id="pc-price" type="text" inputmode="decimal" maxlength="12" placeholder="For the whole stay" aria-describedby="pc-price-e"></div><p class="err" id="pc-price-e" role="alert" hidden></p></div>
-      <div class="fq"><label for="pc-where">Where you found it <span class="opt">(optional)</span></label><input class="field" id="pc-where" type="text" maxlength="60" placeholder="A website or app"></div>
+      <div class="fq"><label for="pc-price">Total Price</label><div class="pc-money"><select class="field" id="pc-currency" aria-label="Currency"><option>GBP</option><option>USD</option><option>EUR</option><option>SAR</option><option>AED</option><option>QAR</option></select><input class="field" id="pc-price" type="text" inputmode="decimal" maxlength="12" placeholder="For the whole stay" aria-describedby="pc-price-e"></div><p class="err" id="pc-price-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-where">Where You Found It <span class="opt">(optional)</span></label><input class="field" id="pc-where" type="text" maxlength="60" placeholder="A website or app"></div>
     </div>
   </fieldset>
   <details class="pc-more">
     <summary>Add room, board and link <span class="opt">(optional, helps us match it exactly)</span></summary>
     <div class="pc-row">
-      <div class="fq"><label for="pc-room">Room type</label><input class="field" id="pc-room" type="text" maxlength="80" placeholder="As shown where you found it"></div>
-      <div class="fq"><label for="pc-board">Board</label><select class="field" id="pc-board"><option value="">Not sure</option><option>Room only</option><option>Breakfast</option><option>Half board</option><option>Full board</option><option>All inclusive</option></select></div>
+      <div class="fq"><label for="pc-room">Room Type</label><input class="field" id="pc-room" type="text" maxlength="80" placeholder="As shown where you found it"></div>
+      <div class="fq"><label for="pc-board">Board</label><select class="field" id="pc-board"><option value="">Not Sure</option><option value="Room only">Room Only</option><option>Breakfast</option><option value="Half board">Half Board</option><option value="Full board">Full Board</option><option value="All inclusive">All Inclusive</option></select></div>
     </div>
     <div class="fq"><label for="pc-link">Link</label><input class="field" id="pc-link" type="url" maxlength="400" placeholder="Paste the link if you have it"></div>
   </details>

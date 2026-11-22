@@ -74,7 +74,7 @@
   }
 
   /* hotel names: tap or click pauses and resumes */
-  var mq = document.querySelector(".marquee"); if (mq) mq.addEventListener("click", function () { mq.classList.toggle("paused"); });
+  /* 22 Nov 2026 (night, Huzaifa): the hotel strip no longer pauses on tap or click */
 
   /* Trips dropdown: opens on hover and click, closes on Escape, outside click or when focus leaves */
   var dd = document.querySelector(".dd"), ddBtn = dd.querySelector(".dd-btn"), ddT;
@@ -322,7 +322,9 @@
   flow.querySelectorAll("[data-next]").forEach(function (b) { b.addEventListener("click", next); });
   function auto(fn) { setTimeout(fn, reduce ? 0 : 380); }
   function pressOnly(c, btn) { c.querySelectorAll("button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === btn)); }); }
-  function tile(label, icon, id) { var b = document.createElement("button"); b.type = "button"; b.className = "opt-tile"; b.id = id; b.setAttribute("aria-pressed", "false"); b.setAttribute("data-label", label); b.innerHTML = (icon ? svg(icon) : "") + "<span>" + label.replace(/-/g, "\u2011") + "</span>"; return b; }
+  // 22 Nov 2026 (Huzaifa): tile labels are shown in Title Case. Only the display changes; data-label and the WhatsApp message keep the original values.
+  function titleCase(s) { if (s === "Beach and island") return "Beach & Island"; return s.replace(/[A-Za-z]+/g, function (w, i) { return i > 0 && /^(and|to|of|or)$/.test(w) ? w : w.charAt(0).toUpperCase() + w.slice(1); }); }
+  function tile(label, icon, id) { var b = document.createElement("button"); b.type = "button"; b.className = "opt-tile"; b.id = id; b.setAttribute("aria-pressed", "false"); b.setAttribute("data-label", label); b.innerHTML = (icon ? svg(icon) : "") + "<span>" + titleCase(label).replace(/-/g, "\u2011") + "</span>"; return b; }
   var typeTiles = document.getElementById("typeTiles");
   TYPES.forEach(function (t, i) { var b = tile(t, t, "tile-" + i); b.addEventListener("click", function () { st.type = t; pressOnly(typeTiles, b); updatePass(); auto(next); }); typeTiles.appendChild(b); });
   steps.flights.querySelectorAll("[data-fl]").forEach(function (b) { b.addEventListener("click", function () { st.flights = b.getAttribute("data-fl"); pressOnly(b.parentNode, b); b.parentNode.setAttribute("data-v", st.flights); updatePass(); auto(next); }); });
@@ -553,9 +555,45 @@
     slides.forEach(function (s, k) { s.classList.toggle("is-on", k === i); if (k === i) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
     dots.forEach(function (d, k) { d.classList.toggle("is-on", k === i); d.setAttribute("aria-pressed", k === i ? "true" : "false"); });
   }
-  function start() { stop(); if (!reduce) timer = setInterval(function () { if (!document.hidden) show(i + 1); }, 6000); }
+  // 22 Nov 2026 (evening): the slider also pauses while anything in the hero has keyboard focus, and while the tab is hidden.
+  var focusPaused = false;
+  function start() { stop(); if (!reduce && !focusPaused && !document.hidden) timer = setInterval(function () { show(i + 1); }, 6000); }
   function stop() { if (timer) clearInterval(timer); timer = null; }
   dots.forEach(function (d, k) { d.addEventListener("click", function () { load(); show(k); start(); }); });
+  hero.addEventListener("focusin", function () { focusPaused = true; start(); });
+  hero.addEventListener("focusout", function (e) { if (!hero.contains(e.relatedTarget)) { focusPaused = false; start(); } });
+  document.addEventListener("visibilitychange", start);
   if (document.readyState === "complete") { load(); start(); }
   else window.addEventListener("load", function () { load(); start(); });
+})();
+
+/* Homepage reviews (22 Nov 2026, mobile audit, Huzaifa): the three Trustpilot reviews rotate every 7 seconds.
+   Pauses while hovered, while anything inside has keyboard focus and while the tab is hidden; no auto-rotation with reduced motion. Dots and a sideways swipe change it by hand. */
+(function () {
+  var box = document.querySelector("[data-proof]"); if (!box) return;
+  var slides = box.querySelectorAll(".proof-slide"), dots = box.querySelectorAll(".proof-dot");
+  if (slides.length < 2) return;
+  var i = 0, timer = null, hover = false, focus = false, seen = false;
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function show(n) {
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function (s, k) { s.classList.toggle("is-on", k === i); if (k === i) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
+    dots.forEach(function (d, k) { d.classList.toggle("is-on", k === i); d.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+  }
+  function sync() { if (timer) clearInterval(timer); timer = null; if (!reduce && seen && !hover && !focus && !document.hidden) timer = setInterval(function () { show(i + 1); }, 7000); }
+  dots.forEach(function (d, k) { d.addEventListener("click", function () { show(k); sync(); }); });
+  box.addEventListener("mouseenter", function () { hover = true; sync(); });
+  box.addEventListener("mouseleave", function () { hover = false; sync(); });
+  box.addEventListener("focusin", function () { focus = true; sync(); });
+  box.addEventListener("focusout", function (e) { if (!box.contains(e.relatedTarget)) { focus = false; sync(); } });
+  document.addEventListener("visibilitychange", sync);
+  var x0 = null, y0 = null, wrap = box.querySelector(".proof-slides");
+  wrap.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  wrap.addEventListener("touchend", function (e) {
+    if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) { show(i + (dx < 0 ? 1 : -1)); sync(); }
+  }, { passive: true });
+  /* only start rotating once the reviews have been on screen */
+  if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { es.forEach(function (e) { seen = e.isIntersecting; sync(); }); }, { threshold: .4 }).observe(box);
+  else { seen = true; sync(); }
 })();
