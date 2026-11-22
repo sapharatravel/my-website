@@ -27,6 +27,7 @@ assert.match(plan, /Tap Send in WhatsApp to complete your\s+enquiry/, "Trip enqu
 assert.doesNotMatch(plan, /You're checked in/, "Trip enquiry must not claim a request was received");
 assert.match(css, /#trips \.trips, #destinations \.dests \{\s*display: grid/, "Mobile trip and destination cards must use a grid, not horizontal swipe tracks");
 assert.match(css, /#trips \.trips \.pcard\.trip \.enq \{ display: none; \}/, "Mobile trip cards should keep one clear action");
+assert.match(css, /min-width: 0; min-height: 0; scroll-snap-align: none/, "Mobile cards must not inherit oversized desktop minimum heights");
 assert.doesNotMatch(css, /EDITORIAL PREVIEW/, "Obsolete preview CSS must not ship");
 assert.match(css, /--footer-rust: #8A3B2E/, "Footer rust colour token must be present");
 assert.match(css, /background: var\(--footer-rust\)/, "Footer must use the dedicated rust token");
