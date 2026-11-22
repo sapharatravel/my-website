@@ -24,11 +24,51 @@
     L.push("I'll send a screenshot in this chat.");
     return L.join("\n");
   }
+  function errorFor(el, message) {
+    var er = $(el.id + "-e");
+    if (!er) {
+      er = document.createElement("p"); er.className = "err"; er.id = el.id + "-e"; er.setAttribute("role", "alert"); er.hidden = true;
+      el.closest(".fq").appendChild(er);
+      var described = (el.getAttribute("aria-describedby") || "").trim();
+      el.setAttribute("aria-describedby", (described ? described + " " : "") + er.id);
+    }
+    er.textContent = message || ""; er.hidden = !message;
+    el.setAttribute("aria-invalid", message ? "true" : "false");
+    return !!message;
+  }
   f.addEventListener("submit", function (e) {
     e.preventDefault();
     var first = null;
-    required.forEach(function (r) { var el = $(r[0]), er = $(r[0] + "-e"), bad = !el.value.trim(); er.hidden = !bad; er.textContent = bad ? r[1] : ""; el.setAttribute("aria-invalid", bad ? "true" : "false"); if (bad && !first) first = el; });
-    if ($("pc-in").value && $("pc-out").value && $("pc-out").value <= $("pc-in").value) { var eo = $("pc-out-e"); eo.hidden = false; eo.textContent = "Slight delay. Just check your check-out date is after check-in."; $("pc-out").setAttribute("aria-invalid", "true"); if (!first) first = $("pc-out"); }
+    required.forEach(function (r) {
+      var el = $(r[0]), bad = !el.value.trim();
+      errorFor(el, bad ? r[1] : "");
+      if (bad && !first) first = el;
+    });
+    var today = new Date(), todayIso = new Date(today.getTime() - today.getTimezoneOffset() * 6e4).toISOString().slice(0, 10);
+    var checkin = $("pc-in"), checkout = $("pc-out");
+    if (checkin.value && checkin.value < todayIso) {
+      errorFor(checkin, "Choose today or a future check-in date.");
+      if (!first) first = checkin;
+    }
+    if (checkin.value && checkout.value && checkout.value <= checkin.value) {
+      errorFor(checkout, "Check-out must be after check-in.");
+      if (!first) first = checkout;
+    } else if (checkout.value && checkout.value < todayIso) {
+      errorFor(checkout, "Choose a future check-out date.");
+      if (!first) first = checkout;
+    } else if (checkout.value) errorFor(checkout, "");
+    var price = $("pc-price"), rawPrice = price.value.trim().replace(/[£$€,\s]/g, "");
+    if (rawPrice && (!/^\d+(?:\.\d{1,2})?$/.test(rawPrice) || !Number.isFinite(Number(rawPrice)) || Number(rawPrice) <= 0)) {
+      errorFor(price, "Enter a valid total price greater than zero.");
+      if (!first) first = price;
+    } else if (rawPrice) errorFor(price, "");
+    [["pc-adults",1,20,"adults"],["pc-children",0,12,"children"],["pc-rooms",1,10,"rooms"]].forEach(function (r) {
+      var el = $(r[0]), raw = el.value.trim(), ok = raw !== "" && Number.isInteger(Number(raw)) && Number(raw) >= r[1] && Number(raw) <= r[2];
+      if (!ok) {
+        errorFor(el, "Enter a whole number from " + r[1] + " to " + r[2] + " " + r[3] + ".");
+        if (!first) first = el;
+      } else errorFor(el, "");
+    });
     if (first) { first.focus(); return; }
     var url = "https://wa.me/447887353457?text=" + encodeURIComponent(message());
     $("pcSent").hidden = false;
