@@ -2184,3 +2184,63 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   .header .hnav { gap: 12px; }
   .header .hwa { margin-left: 28px; }
 }
+
+
+/* UX refinement, Nov 2026: remove nested horizontal swipe tracks on phones.
+   A two-column card layout keeps the page moving vertically and avoids sideways page-drag confusion. */
+@media (max-width: 767px) {
+  body.home .hero.hd { min-height: 80svh; }
+  #trips .trips, #destinations .dests {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    scroll-snap-type: none;
+  }
+  #trips .trips::after, #destinations .dests::after { display: none; }
+  #trips .trips > *, #destinations .dests > * {
+    flex: initial;
+    width: auto;
+    min-width: 0;
+    scroll-snap-align: none;
+  }
+  #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
+  #trips .trips .pcard.trip p { display: none; }
+  #destinations .dests > .pcard.dest { aspect-ratio: 3 / 4; }
+}
+
+/* Hero photo controls: always give people control over automatic movement. */
+.hs-dots { align-items: center; }
+.hs-toggle {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 999px;
+  background: rgba(0,0,0,.28);
+  color: #fff;
+  font: 500 12px/1 var(--body);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+.hs-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+@media (max-width: 767px) {
+  .hero .hs-dots {
+    display: flex;
+    top: auto;
+    right: 20px;
+    bottom: 18px;
+    left: auto;
+    flex-direction: row;
+    transform: none;
+  }
+  .hero .hs-dots .hs-dot { display: none; }
+  .hero .hs-toggle { min-height: 36px; }
+}
+@media (min-width: 768px) {
+  .hero .hs-dots { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hs-toggle { display: none; }
+}
