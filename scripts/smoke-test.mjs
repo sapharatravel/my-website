@@ -19,8 +19,9 @@ assert.match(home, /A second opinion, on us/, "Homepage Price Check should be co
 assert.doesNotMatch(home, /Illustrative example|pcx-verdict|pcx-grid/, "Homepage should not repeat the full comparison example");
 assert.doesNotMatch(home, /id="compare"|id="business"|id="pay-later"/, "Comparison matrix, Business Travel and separate Pay Later sections should stay off the homepage");
 assert.match(home, /trips\/business/, "Business Travel should remain accessible through the Trips navigation");
-const homeOrder = ["id=\"how\"", "id=\"trips\"", "id=\"destinations\"", "id=\"price-check\"", "id=\"why\"", "id=\"reviews\"", "id=\"faq\"", "id=\"enquire\""];
+const homeOrder = ["id=\"proof\"", "id=\"trips\"", "id=\"destinations\"", "momentH", "id=\"why\"", "id=\"price-check\"", "id=\"faq\"", "id=\"enquire\""];
 assert.ok(homeOrder.every((marker, i) => i === 0 || home.indexOf(homeOrder[i - 1]) < home.indexOf(marker)), "Homepage sections must follow the agreed decision journey");
+assert.doesNotMatch(home, /Hotels our clients have stayed with|From ‘Where to\?’/, "Homepage should not contain the hotel-name strip or From Where To section");
 
 assert.match(css, /--section: 56px; --intro-content: 28px/, "Mobile spacing tokens must be explicitly defined");
 assert.match(css, /--section: 72px; --intro-content: 36px/, "Tablet spacing tokens must be explicitly defined");
