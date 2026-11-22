@@ -74,7 +74,6 @@ const MORE_CARDS = [
   ["why-saphara.html", "st-howwework-kl.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
   ["trips/business.html", "st-card-business.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
   ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
-  ["faq.html", "st-faq-terrace.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
 ];
 const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 function moreCards(pg) {
