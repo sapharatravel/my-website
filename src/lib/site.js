@@ -114,7 +114,7 @@ export function igStrip(pg) {
 }
 
 export function footer(pg) {
-  // Rounded inset sand-deep panel (approved 15 Nov 2026), on a white surround. Styles: "Footer" block at the end of site.css.
+  // Rounded inset rust panel, on a pale surround. The footer uses its own rust token so the rest of the site's rust accents stay unchanged.
   const L = (t, h) => `<li><a href="${pg.u(h)}">${t}</a></li>`;
   const pl = planLink(pg);
   const MAIL = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>`;
