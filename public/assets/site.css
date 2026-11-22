@@ -2220,3 +2220,9 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #how .steps p { font-size: 14.5px; }
   #reviews .rv-stack .rv-card:nth-child(2) { display: flex; }
 }
+
+
+/* Compact homepage Price Check invitation. */
+.pc-band .intro { max-width: 720px; }
+.pc-band .pc-k { margin-top: 0; }
+.pc-band .actions { margin-top: var(--body-btn); }
