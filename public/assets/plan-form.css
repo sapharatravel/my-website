@@ -233,7 +233,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .pf .pf-disc > summary::after { content: "+"; font-size: 22px; transition: transform 200ms var(--ease); }
 .pf .pf-disc[open] > summary::after { transform: rotate(45deg); }
 .pf .pf-disc-body { padding-bottom: var(--s-24); }
-.pf .pf-welcome .pf-lead { color: var(--grey); margin-top: var(--s-12); font-size: 17px; max-width: 30em; }
+.pf .pf-welcome .pf-lead { color: var(--grey); margin-top: var(--s-12); font-size: 17px; }
 .pf .pf-welcome ol { list-style: none; padding: 0; margin: var(--s-24) 0 0; display: flex; flex-direction: column; gap: var(--s-12); counter-reset: w; }
 .pf .pf-welcome li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--s-12); align-items: baseline; counter-increment: w; }
 .pf .pf-welcome li::before { content: counter(w); width: 28px; height: 28px; border-radius: 50%; background: var(--cream); display: grid; place-items: center; font-size: 13px; font-weight: 600; }
@@ -263,3 +263,5 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .pf-steps li::before { background: var(--f-tile); }
 .final-band .pf .pf-steps li.done::before, .final-band .pf .pf-steps li.on::before { background: var(--ink); }
 .final-band .pf .rv-sec, .final-band .pf .rv-sec-h, .final-band .pf .sum li, .final-band .pf .pf-disc { border-color: var(--f-line); }
+/* Paragraphs in the form card use the card width (the site-wide 31em cap broke short lines early on desktop, 22 Nov 2026) */
+.pf .pf-card p { max-width: none; }
