@@ -22,7 +22,7 @@ export function waOpener(path, spot) {
   if (spot === "business" || (sect === "trips" && slug === "business")) return "Salaams, I'd like to talk to you about business travel.";
   if (spot === "guide" && guide) return `Salaams, please send me the ${guide.name} guide.`;
   if (sect === "trips" && WA_TRIP[slug]) return `Salaams, I'm interested in ${WA_TRIP[slug]}. Could you help?`;
-  if (dest && slug === "makkah-and-madinah") return "Salaams, I'd like some help with Umrah hotels in Makkah and Madinah.";
+  if (dest && slug === "makkah-and-madinah") return "Salaams, I'd like some help with Umrah hotels.";
   if (dest) return `Salaams, I'm interested in a trip to ${dest.name}. Could you help?`;
   if (guide) return `Salaams, I've been reading your ${guide.name} guide and I'd like some help planning a trip.`;
   if (path === "faq.html") return "Salaams, I have a question.";
