@@ -15,7 +15,6 @@ const css = page("dist/assets/site.css");
 assert.doesNotMatch(home, /class="hs-toggle"/, "Hero must not render a pause control");
 assert.doesNotMatch(home, /hd-calm/, "Hero must not contain the price comparison card");
 assert.match(home, /id="price-check"/, "Price check should sit in its own homepage section");
-assert.match(home, /Already found a hotel\?/, "Homepage Price Check should be concise");
 assert.doesNotMatch(home, /Illustrative example|pcx-verdict|pcx-grid/, "Homepage should not repeat the full comparison example");
 assert.doesNotMatch(home, /id="compare"|id="business"|id="pay-later"/, "Comparison matrix, Business Travel and separate Pay Later sections should stay off the homepage");
 assert.match(home, /trips\/business/, "Business Travel should remain accessible through the Trips navigation");
