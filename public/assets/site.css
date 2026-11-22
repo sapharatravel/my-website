@@ -783,7 +783,7 @@ main { padding-bottom: 0; }
   .trips.xp .trip.on .actions { max-height: 80px; opacity: 1; margin-top: var(--s-24); transition-delay: 160ms; }
 }
 @media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: reduce) { .trips.xp .trip, .trips.xp .trip p, .trips.xp .trip .actions { transition: none; } }
-/* ---------- Arch-topped destination cards (approved 13 Nov, sparingly: destination cards and the rust panel only) ---------- */
+/* ---------- Arch-topped destination cards (approved 13 Nov, sparingly: destination cards and the dark panel only) ---------- */
 .dest { border-radius: 50% 50% var(--r-card) var(--r-card) / 34% 34% var(--r-card) var(--r-card); }
 .dest .code { top: var(--s-16); left: 0; right: 0; margin-inline: auto; width: fit-content; }
 .dest .pin { position: relative; top: auto; left: auto; align-self: flex-start; margin-bottom: var(--s-4); }
@@ -1617,7 +1617,7 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .decl-rows .decl-why { grid-column: 1 / -1; margin-top: 3px; text-align: left; font-size: 12.5px; font-weight: 400; line-height: 1.4; letter-spacing: 0; text-transform: none; color: var(--grey); }
 @media (min-width: 768px) { .decl-stamp { top: -44px; bottom: auto; right: 50%; left: auto; margin: 0 -52px 0 0; } }
 
-/* Final call to action: its own rust band, centred */
+/* Final call to action: its own black band, centred */
 .final-band { background: var(--ink); --notch: var(--ink); }
 .final-band .intro { color: #FFFDF8; }
 .final-band.form-wrap .intro { text-align: center; margin-inline: auto; max-width: 720px; }

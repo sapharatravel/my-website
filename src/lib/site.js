@@ -114,7 +114,7 @@ export function igStrip(pg) {
 }
 
 export function footer(pg) {
-  // Rounded inset rust panel, on a pale surround. The footer uses its own rust token so the rest of the site's rust accents stay unchanged.
+  // Rounded inset black panel, on a pale surround. Sand is used for the small accents.
   const L = (t, h) => `<li><a href="${pg.u(h)}">${t}</a></li>`;
   const pl = planLink(pg);
   const MAIL = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>`;
@@ -258,7 +258,7 @@ export function intro(h2Lines, p = "", fit = null, extra = "") {
 }
 export const why = (items) => '<div class="why6">' + items.map(([i, t, d]) => `<div class="rv">${ico(i)}<div><h3>${t}</h3><p>${d}</p></div></div>`).join("") + "</div>";
 
-export function rustPanel(pg, label, lines, text, img, alt, items, btn = null, trip = null, fit = null) {
+export function featurePanel(pg, label, lines, text, img, alt, items, btn = null, trip = null, fit = null) {
   const rows = items.map(([, t, d]) => `<li><span class="tick">${CHECK}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join("");
   let b = "";
   if (btn) { const href = pg.u("plan-my-trip.html") + (trip ? "?trip=" + trip.replace(/ /g, "+") : ""); b = `<div class="actions" style="margin-top:var(--s-24)">${split(btn, href)}</div>`; }

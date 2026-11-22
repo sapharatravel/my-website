@@ -1,5 +1,5 @@
 // Page bodies, ported from build() in tools/build_site.py. Each function returns { path, title, desc, hero, og, body }.
-import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, destCard, placeCard, gcard, ico, igStrip } from "./site.js";
+import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, featurePanel, chips, faq, cta, tripCard, destCard, placeCard, gcard, ico, igStrip } from "./site.js";
 
 import hero from "../components/home/00-hero.html?raw";
 import hotelNames from "../components/home/01-hotel-names.html?raw";
@@ -134,7 +134,7 @@ export function tripPage(slug) {
   const [rimg, ralt] = C.RPIMG[slug];
   const heads = C.TRIP_HEADS[slug];
   if (slug === "business") body += business.replace('id="business"', 'id="business-service"').replace(/<h2 class="display d-l"[^>]*>[\s\S]*?<\/h2>\s*/, '<h2 class="sr-only">What we handle</h2>').split('src="img/').join('src="' + pg.img(""));
-  else body += band("white", rustPanel(pg, "What we arrange", heads[0], "Tell us what you'd like us to handle. We book it, confirm the details with the hotel and stay on WhatsApp while you're away.", rimg, ralt, t.arrange));
+  else body += band("white", featurePanel(pg, "What we arrange", heads[0], "Tell us what you'd like us to handle. We book it, confirm the details with the hotel and stay on WhatsApp while you're away.", rimg, ralt, t.arrange));
   if (slug === "hotels") body += moreThanBooking("white continue");
   body += band("sand", `<div class="split-cols"><div class="intro sticky-col"><h2 class="display d-l">${beats(heads[1])}</h2><p>Every hotel is different, so we ask, and we tell you plainly what we find.</p></div><div class="rv">${chips(t.checks)}</div></div>`);
   body += band("white", '<div class="dest-head"><div class="intro"><h2 class="display d-l">' + beats(heads[2]) + '</h2></div><a class="textlink" href="' + pg.u("destinations/index.html") + '">All destinations <span aria-hidden="true">→</span></a></div><div class="dests">' + t.dests.map((s) => destCard(pg, D[s])).join("") + "</div>");
@@ -255,7 +255,7 @@ export function whySaphara() {
   body += how + hotelQuestions(); // moved from the homepage (15 Nov)
   // "Who you'll talk to" removed 14 Nov 2026 (Mubarak off the site for now; may return). Huzaifa's personal quote stays below.
   body += tripStories(pg);
-  body += band("sand", rustPanel(pg, "Why Saphara", ["Nothing to declare.", "Including hidden fees."], "Why people book with us instead of doing it all themselves.", "st-howwework-kl.webp", "The Petronas Towers rising through the morning mist in Kuala Lumpur", C.WHY_ITEMS, "Plan my trip", null, 5.8));
+  body += band("sand", featurePanel(pg, "Why Saphara", ["Nothing to declare.", "Including hidden fees."], "Why people book with us instead of doing it all themselves.", "st-howwework-kl.webp", "The Petronas Towers rising through the morning mist in Kuala Lumpur", C.WHY_ITEMS, "Plan my trip", null, 5.8));
   body += payLater; // moved from the homepage (15 Nov)
   body += moreThanBooking("white");
   body += band("sand", '<div class="pq"><div><blockquote>“You\'ll have our WhatsApp, not a call centre. If the room isn\'t right, message us and we\'ll sort it with the hotel. That\'s the job.”</blockquote><p class="by"><b>Huzaifa</b><span>Travel Advisor</span></p></div><div class="pcard photo rv" data-move><img class="fade warm" src="' + pg.img("st-quote-muscat.webp") + '" alt="Sunset over a breakwater and mountains on the coast near Muscat" loading="lazy"></div></div>');
