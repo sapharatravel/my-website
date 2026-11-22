@@ -11,7 +11,6 @@ import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
 import declaration from "../components/home/06-declaration.html?raw";
 import moment from "../components/home/05b-moment.html?raw";
-import compare from "../components/home/06b-compare.html?raw";
 import reviews from "../components/home/07-reviews.html?raw";
 import quote from "../components/home/08-quote.html?raw";
 import business from "../components/home/09-business.html?raw";
@@ -107,22 +106,18 @@ export function home() {
   // Slim homepage (15 Nov, Huzaifa): hero, trip types, destinations and the USPs, then cards to everything that moved to its own page.
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
   void guides;
-  // 22 Nov 2026: homepage follows the agreed decision journey: process, comparison, trip types, destinations, price check, trust, reviews and FAQs.
+  // 22 Nov 2026: keep the homepage focused on leisure-trip decisions. Business travel stays in the Trips navigation; Price Check carries the like-for-like comparison.
   const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
-  // Comparison and how-it-works sections are restored to the homepage decision journey.
+  // Keep the homepage to the core leisure-travel decision journey; business travel is in the Trips menu.
   const body = toPlan(join(
     hero,
     hotelNames,
     how,
-    compare,
     trips,
     destinations,
     priceCheck,
     declaration,
-    payLater,
-    reviews,
-    business,
-    moreCards(pg)
+    reviews
   )) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
 }
