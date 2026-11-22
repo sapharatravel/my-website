@@ -62,6 +62,15 @@
       errorFor(price, "Enter a valid total price greater than zero.");
       if (!first) first = price;
     } else if (rawPrice) errorFor(price, "");
+    var link = $("pc-link"), rawLink = link.value.trim();
+    if (rawLink) {
+      var validLink = false;
+      try { var parsedLink = new URL(rawLink); validLink = parsedLink.protocol === "https:" || parsedLink.protocol === "http:"; } catch (err) {}
+      if (!validLink) {
+        errorFor(link, "Paste a full web address starting with https://.");
+        if (!first) first = link;
+      } else errorFor(link, "");
+    } else errorFor(link, "");
     [["pc-adults",1,20,"adults"],["pc-children",0,12,"children"],["pc-rooms",1,10,"rooms"]].forEach(function (r) {
       var el = $(r[0]), raw = el.value.trim(), ok = raw !== "" && Number.isInteger(Number(raw)) && Number(raw) >= r[1] && Number(raw) <= r[2];
       if (!ok) {
