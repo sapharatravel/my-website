@@ -20,7 +20,7 @@
 :root {
   --weight-demi: 600; --weight-regular: 400; --head-lh: 1.05; --head-hero: clamp(58px, 16vw, 140px); --head-section: clamp(50px, 12.5vw, 100px); --head-panel: clamp(40px, 10vw, 64px); --head-step: 28px; --head-question: 34px; --head-closer: 38px; --head-stat: 44px; --sign-dest: clamp(28px, 7.5vw, 40px); --ls-sign-dest: .04em; --sign-strip: 24px; --ls-sign-strip: .08em; --fs-display-min: 22px; --ls-display-min: .07em; --btn-dark: linear-gradient(180deg, #2B2925 0%, #111111 100%); --btn-dark-hover: linear-gradient(180deg, #34312C 0%, #111111 100%); --btn-dark-pressed: #111111; --btn-dark-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 1px 2px rgba(86,60,30,.06), 0 2px 8px rgba(86,60,30,.05); --btn-dark-shadow-hover: inset 0 1px 0 rgba(255,255,255,.14), 0 4px 12px rgba(86,60,30,.08), 0 1px 2px rgba(86,60,30,.05); --btn-dark-shadow-pressed: inset 0 1px 0 rgba(255,255,255,.04), 0 1px 2px rgba(86,60,30,.06); --btn-light: linear-gradient(180deg, #FFFFFF 0%, #F5EFE4 100%); --btn-light-hover: linear-gradient(180deg, #FFFFFF 0%, #F8F4EC 100%); --btn-light-pressed: #F5EFE4; --btn-light-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 2px rgba(86,60,30,.06), 0 2px 8px rgba(86,60,30,.05); --btn-light-shadow-hover: inset 0 1px 0 #FFFFFF, 0 4px 12px rgba(86,60,30,.08), 0 1px 2px rgba(86,60,30,.05); --btn-light-shadow-pressed: 0 1px 2px rgba(0,0,0,.2);
   --paper: #FFFFFF; --linen: #FAF6EF; --cream: #F3ECDF; --sand: #F5EFE4; --sand-deep: #E7DCC5;
-  --ink: #111111; --rust: #000000; --gold: #6B6457; --tone: #8A8070; --black: #000000; --grey: #66604F; --rule: #DDD4C3; --accent: #C9B48A;
+  --ink: #111111; --rust: #8A3B2E; --gold: #6B6457; --tone: #8A8070; --black: #000000; --grey: #66604F; --rule: #DDD4C3; --accent: #C9B48A;
   --on-dark: #F6F3ED; --on-dark-muted: #D3CFC6; --on-dark-gold: #E7DCC5;
   --s-4: 4px; --s-8: 8px; --s-12: 12px; --s-16: 16px; --s-24: 24px; --s-32: 32px; --s-40: 40px; --s-56: 56px; --s-80: 80px; --s-120: 120px;
   --margin: 24px; --section: 80px; --label-head: 16px; --head-body: 16px; --body-btn: 32px; --block: 24px; --intro-content: 40px; --small-gap: 12px; --card-pad: 24px; --overlap: 96px;
@@ -2057,15 +2057,16 @@ html { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) { .prog-fill { transition: none; } }
 
 /* ======================================================================
-   EDITORIAL PREVIEW (branch preview/editorial, 21 Nov 2026). Not live.
-   1 header, 2 big photos, 3 varied layouts, 4 swipe rows, 5 motion, 6 fewer boxes, plus tighter spacing.
+   RESPONSIVE ART DIRECTION
+   Consolidated 22 Nov 2026. These are live rules, not a preview override.
    ====================================================================== */
-/* Tighter rhythm */
-:root { --section: 48px; --intro-content: 28px; }
-@media (min-width: 768px) { :root { --section: 64px; --intro-content: 36px; } }
-@media (min-width: 1280px) { :root { --section: 80px; --intro-content: 40px; } }
+:root { --section: 56px; --intro-content: 28px; }
+@media (min-width: 768px) { :root { --section: 72px; --intro-content: 36px; } }
+@media (min-width: 1024px) { :root { --section: 88px; --intro-content: 48px; } }
+@media (min-width: 1280px) { :root { --section: 96px; --intro-content: 56px; } }
+@media (min-width: 1600px) { :root { --section: 104px; --intro-content: 64px; } }
 
-/* 1 Header: clear over the homepage photo; white with the dark logo once you scroll, and on every other page */
+/* Header: transparent over the homepage photograph; solid after scroll and on interior pages. */
 html body.home .header:not(.slim) { background: transparent; box-shadow: none; color: #fff; }
 html body.home .header:not(.slim)::before { display: block; opacity: 1; inset: 0 0 -60px; background: linear-gradient(180deg, rgba(0,0,0,.42), rgba(0,0,0,0)); }
 html .header.slim, html body:not(.home) .header { background: #fff; color: var(--ink); box-shadow: 0 1px 0 rgba(0,0,0,.08); }
@@ -2075,96 +2076,124 @@ html .header.slim .hwa, html .header.slim .mbtn, html body:not(.home) .header .h
 html .header.slim .hsplit, html body:not(.home) .header .hsplit { background: var(--ink); color: #fff; --arrow-bg: var(--sand); --arrow-fg: var(--ink); }
 html .header.slim .hsplit .split-label, html body:not(.home) .header .hsplit .split-label { color: #fff; }
 html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-btn, html body:not(.home) .header .dd-btn { color: var(--ink); }
-/* Desktop: the homepage photo runs to the top of the screen, under the clear header */
 @media (min-width: 768px) {
   body.home .hd-wrap { --hd-h: max(620px, 92svh); }
   body.home .hero.hd { margin-top: 0; padding-top: calc(var(--logo-h) + var(--header-top) + var(--header-bottom) + 24px); }
 }
 
-/* 2 Big photo moment */
+/* Editorial image moment and restrained staggered layouts. */
 .moment { position: relative; overflow: hidden; isolation: isolate; min-height: 78svh; display: flex; align-items: flex-end; color: #fff; }
-.moment-ph { position: absolute; inset: -12% 0; z-index: -2; will-change: transform; }
+.moment-ph { position: absolute; inset: -18% 0; z-index: -2; will-change: transform; }
 .moment-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .moment::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.6) 100%); }
 .moment .col { padding-block: var(--section); width: 100%; }
 .moment h2 { color: #fff; max-width: 12em; }
 .moment p { margin-top: 12px; max-width: 34em; color: rgba(255,255,255,.9); font-size: var(--fs-lead); }
 .moment-link { display: inline-flex; margin-top: 16px; color: #fff; border-bottom-color: rgba(255,255,255,.6); }
-@media (min-width: 1024px) { .moment { min-height: 86svh; } }
-
-/* 3 Varied layouts (desktop) */
 @media (min-width: 1024px) {
-  /* trip types keep the tall expanding row (hover opens a card) */
-  /* destinations staggered */
+  .moment { min-height: 86svh; }
   #destinations .dests { align-items: start; }
   #destinations .dests > :nth-child(even) { margin-top: 56px; }
-  /* declaration: the headline stays pinned while the receipt scrolls past */
   #why .decl-wrap { align-items: start; }
   #why .decl-wrap > .intro { position: sticky; top: calc(var(--header-slim) + 32px); }
 }
-
-/* 4 Swipe rows on phones: trips and destinations scroll sideways instead of stacking */
-@media (max-width: 767px) {
-  /* Mobile audit 22 Nov 2026: overflow-y hidden, because overflow-x: auto alone makes the row scroll vertically too
-     (it was 8px taller than its box), so a vertical swipe that started on a card moved the row, not the page.
-     The end spacer replaces end padding, which some Safari versions drop from a flex scroller. */
-  #trips .trips, #destinations .dests { display: flex; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; gap: 12px; margin-inline: calc(-1 * var(--margin)); padding: 4px 0 8px var(--margin); scroll-padding-inline: var(--margin); scrollbar-width: none; }
-  #trips .trips::after, #destinations .dests::after { content: ""; flex: 0 0 calc(var(--margin) - 12px); }
-  #trips .trips::-webkit-scrollbar, #destinations .dests::-webkit-scrollbar { display: none; }
-  /* Cards in a swipe row are shown as they are: no per-card fade, rise or photo reveal, which only played as each card was swiped in */
-  #trips .trips > .rv, #destinations .dests > .rv { opacity: 1; transform: none; transition: none; }
-  #trips .trips > .pcard > img, #destinations .dests > .pcard > img { clip-path: none; transform: none; }
-  #trips .trips > * { flex: 0 0 calc((100% - var(--margin)) * .78); scroll-snap-align: start; min-height: 0; }
-  #destinations .dests > * { flex: 0 0 calc((100% - var(--margin)) * .6); scroll-snap-align: start; }
-  #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
-  #trips .trips .pcard.trip p { display: none; }
-}
-
-/* 5 Motion: photos open up as they come into view (reduced motion: no change) */
 @media (prefers-reduced-motion: no-preference) {
   .js .pcard.rv > img { transition: clip-path 1100ms var(--ease), transform 1400ms var(--ease), opacity 600ms; }
   .js .pcard.rv:not(.in) > img { clip-path: inset(14% 0 0 0); transform: scale(1.1); }
   .js .moment h2, .js .moment p, .js .moment-link { animation: none; }
 }
-
-/* 6 Fewer boxes */
 .pcard, .more-card { box-shadow: none; }
 .flow, .final-band .flow { box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 .hd-cards { box-shadow: 0 10px 30px -12px rgba(0,0,0,.25); }
-/* Footer edge to edge (editorial preview): no inset card, content lines up with the page columns */
-.sf-wrap { padding: 0; box-shadow: none; background: var(--sand-deep); }
-.sf { border-radius: 0; max-width: none; padding: var(--sf-pad-top) max(var(--margin), calc((100% - var(--content)) / 2)) calc(24px + env(safe-area-inset-bottom, 0px)); }
-/* Mobile polish (editorial preview) */
+
+/* Footer: inset rounded rust panel, pale Saphara mark and high-contrast text. */
+.sf-wrap {
+  --sf-inset: 12px; --sf-r: 24px; --sf-pad-x: 24px; --sf-pad-top: 40px;
+  background: var(--paper); box-shadow: inset 0 1px 0 rgba(221,212,195,.75);
+  padding: var(--sf-inset) var(--sf-inset) calc(var(--sf-inset) + env(safe-area-inset-bottom, 0px));
+}
+@media (min-width: 768px) { .sf-wrap { --sf-inset: 16px; --sf-r: 28px; --sf-pad-x: 40px; --sf-pad-top: 56px; } }
+@media (min-width: 1024px) { .sf-wrap { --sf-inset: var(--hero-x); --sf-r: 32px; --sf-pad-x: 56px; --sf-pad-top: 64px; } }
+@media (min-width: 1280px) { .sf-wrap { --sf-pad-x: 72px; --sf-pad-top: 72px; } }
+@media (min-width: 1600px) { .sf-wrap { --sf-pad-x: 96px; --sf-pad-top: 80px; } }
+.sf {
+  position: relative; isolation: isolate; overflow: hidden; background: var(--rust);
+  border-radius: var(--sf-r); color: #FFFDF8; padding: var(--sf-pad-top) var(--sf-pad-x) 0;
+  max-width: calc(var(--content) + 2 * var(--margin) + 240px); margin-inline: auto;
+}
+.sf > * { position: relative; z-index: 1; }
+.sf .sf-statement, .sf-help p { color: rgba(255,253,248,.84); }
+.sf-h { color: #E7DCC5; }
+.sf-links a, .sf-contact a, .sf-legal, .sf-legal a { color: rgba(255,253,248,.94); }
+.sf-contact .ic, .sf-social a { background: rgba(255,255,255,.13); color: #FFFDF8; box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); }
+.sf-legal { border-top-color: rgba(255,253,248,.28); padding-bottom: var(--s-24); }
+.sf .sf-sky { display: none; }
+@media (hover: hover) {
+  .sf a:not(.split):hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .sf-social a:hover { background: rgba(255,255,255,.24); }
+}
 @media (max-width: 767px) {
-  /* swipe row sits fully inside the sand band; no half-overlap into destinations */
+  .sf-wrap { --sf-inset: 12px; }
+  .sf-closer { font-size: 32px; }
+  .sf-cta .split { width: 100%; }
+  .sf-cta .split .split-label { flex: 1; justify-content: flex-start; }
+  .sf-top { gap: var(--s-32); }
+  .sf-nav, .sf-help { padding-top: var(--s-32); border-top: 1px solid rgba(255,253,248,.22); }
+  .sf-nav { gap: var(--s-16); }
+  .sf-legal { margin-top: var(--s-32); padding-bottom: var(--s-24); }
+  .sf-legal ul { gap: 0 var(--s-16); }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sf-top { grid-template-columns: 1fr 1fr; column-gap: var(--s-40); }
+  .sf-brand { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; column-gap: var(--s-40); align-items: end; }
+  .sf-brand .sf-cta { grid-column: 2; grid-row: 1 / span 3; align-self: end; }
+}
+@media (min-width: 1024px) { .sf-top { grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr); } }
+
+/* Secondary links: five useful routes, with the final desktop card centred. */
+@media (min-width: 1024px) { .more-cards > :last-child:nth-child(odd) { grid-column: 2 / 3; } }
+
+/* Mobile homepage: remove horizontal swipe tracks so a gesture continues down the page. */
+@media (max-width: 767px) {
+  body.home .hero.hd { min-height: 80svh; }
+  #trips .trips, #destinations .dests {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;
+    overflow: visible; margin: 0; padding: 0; scroll-snap-type: none;
+  }
+  #trips .trips::after, #destinations .dests::after { display: none; }
+  #trips .trips > *, #destinations .dests > * { flex: initial; width: auto; min-width: 0; scroll-snap-align: none; }
+  #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
+  #trips .trips .pcard.trip p { display: none; }
+  #destinations .dests > .pcard.dest { aspect-ratio: 3 / 4; }
+  #trips .trips > :last-child:nth-child(odd) { grid-column: 1 / -1; width: calc(50% - 6px); justify-self: center; }
   #trips .overlap { margin-bottom: 0; }
   #destinations { padding-top: var(--section); }
-  /* tap targets */
   .decl-atol .more { min-height: 44px; display: inline-flex; align-items: center; }
-  /* small print no smaller than 13px */
   .decl-fn, .hd-calm .fn { font-size: 13px; }
-}
-/* Big photo: enough bleed that the drift never shows an edge */
-.moment-ph { inset: -18% 0; }
-@media (max-width: 767px) {
-  /* hero cards and the price check card line up with every other card on the page (24px) */
+  .hero .hs-dots { display: flex; top: auto; right: 20px; bottom: 18px; left: auto; flex-direction: row; transform: none; }
+  .hero .hs-dots .hs-dot { display: none; }
+  .hero .hs-toggle { min-height: 36px; }
   .hd-wrap > :not(.hero) { margin-left: var(--margin) !important; margin-right: var(--margin) !important; }
 }
+@media (min-width: 768px) { .hero .hs-dots { gap: 8px; } }
+@media (prefers-reduced-motion: reduce) { .hs-toggle { display: none; } }
 
-/* Homepage hero slider (21 Nov 2026): three photos crossfade every 6 seconds. */
+/* Homepage hero slider. */
 .hero .hs-slide { opacity: 0; transition: opacity 1400ms var(--ease, ease); }
 .hero .hs-slide.is-on { opacity: 1; }
-.hs-dots { position: absolute; z-index: 3; right: 12px; top: 30%; display: flex; flex-direction: column; gap: 4px; }
+.hs-dots { position: absolute; z-index: 3; right: 12px; top: 30%; display: flex; flex-direction: column; gap: 4px; align-items: center; }
 .hs-dot { width: 28px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
 .hs-dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.55); box-shadow: 0 1px 6px rgba(20,12,4,.35); transition: background 300ms, transform 300ms; }
 .hs-dot.is-on::before { background: #fff; transform: scale(1.25); }
 .hs-dot:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 50%; }
-@media (min-width: 768px) { .hs-dots { top: auto; right: auto; left: 50%; bottom: 84px; transform: translateX(-50%); flex-direction: row; } }
+.hs-toggle {
+  min-height: 32px; padding: 0 10px; border: 1px solid rgba(255,255,255,.55);
+  border-radius: 999px; background: rgba(0,0,0,.28); color: #fff;
+  font: 500 12px/1 var(--body); cursor: pointer; backdrop-filter: blur(8px);
+}
+.hs-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 
-/* 22 Nov 2026 (Huzaifa): desktop header and hero spacing.
-   Header: the photo hero is edge to edge, so the logo and the Plan my trip pill line up with the hero text and the price check card (--col-left), not the old inset edge.
-   Nav: links 36px apart; the WhatsApp circle and the pill form their own group, 40px after the last link and 12px apart; pill gets more room inside; FREE tag 10px from its label.
-   Hero: ticks removed; 48px between the hero content and the trip cards, with the slider dots centred in that gap. */
+/* Desktop header and hero alignment. */
 @media (min-width: 768px) {
   body:has(.hero, .ghero) .header .col { padding-left: max(var(--col-left), env(safe-area-inset-left, 0px)); padding-right: max(var(--col-left), env(safe-area-inset-right, 0px)); }
 }
@@ -2183,73 +2212,4 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   .header .desk-links { gap: 36px; }
   .header .hnav { gap: 12px; }
   .header .hwa { margin-left: 28px; }
-}
-
-
-/* UX refinement, Nov 2026: remove nested horizontal swipe tracks on phones.
-   A two-column card layout keeps the page moving vertically and avoids sideways page-drag confusion. */
-@media (max-width: 767px) {
-  body.home .hero.hd { min-height: 80svh; }
-  #trips .trips, #destinations .dests {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    overflow: visible;
-    margin: 0;
-    padding: 0;
-    scroll-snap-type: none;
-  }
-  #trips .trips::after, #destinations .dests::after { display: none; }
-  #trips .trips > *, #destinations .dests > * {
-    flex: initial;
-    width: auto;
-    min-width: 0;
-    scroll-snap-align: none;
-  }
-  #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
-  #trips .trips .pcard.trip p { display: none; }
-  #destinations .dests > .pcard.dest { aspect-ratio: 3 / 4; }
-}
-
-/* Hero photo controls: always give people control over automatic movement. */
-.hs-dots { align-items: center; }
-.hs-toggle {
-  min-height: 32px;
-  padding: 0 10px;
-  border: 1px solid rgba(255,255,255,.55);
-  border-radius: 999px;
-  background: rgba(0,0,0,.28);
-  color: #fff;
-  font: 500 12px/1 var(--body);
-  cursor: pointer;
-  backdrop-filter: blur(8px);
-}
-.hs-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
-@media (max-width: 767px) {
-  .hero .hs-dots {
-    display: flex;
-    top: auto;
-    right: 20px;
-    bottom: 18px;
-    left: auto;
-    flex-direction: row;
-    transform: none;
-  }
-  .hero .hs-dots .hs-dot { display: none; }
-  .hero .hs-toggle { min-height: 36px; }
-}
-@media (min-width: 768px) {
-  .hero .hs-dots { gap: 8px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hs-toggle { display: none; }
-}
-
-@media (max-width: 767px) {
-  /* The fifth trip card sits centred rather than leaving an orphaned half-row. */
-  #trips .trips > :last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    width: calc(50% - 6px);
-    justify-self: center;
-  }
 }
