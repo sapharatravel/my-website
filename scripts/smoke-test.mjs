@@ -17,7 +17,7 @@ assert.match(home, /id="price-check"/, "Price check should sit in its own homepa
 assert.match(home, /id="how"/, "Homepage should explain the booking process");
 assert.doesNotMatch(home, /id="compare"|id="business"|id="pay-later"/, "Comparison matrix, Business Travel and separate Pay Later sections should stay off the homepage");
 assert.match(home, /trips\/business/, "Business Travel should remain accessible through the Trips navigation");
-const homeOrder = ["id=\\"how\\"", "id=\\"trips\\"", "id=\\"destinations\\"", "id=\\"price-check\\"", "id=\\"why\\"", "id=\\"reviews\\"", "id=\\"faq\\"", "id=\\"enquire\\""];
+const homeOrder = ["id=\"how\"", "id=\"trips\"", "id=\"destinations\"", "id=\"price-check\"", "id=\"why\"", "id=\"reviews\"", "id=\"faq\"", "id=\"enquire\""];
 assert.ok(homeOrder.every((marker, i) => i === 0 || home.indexOf(homeOrder[i - 1]) < home.indexOf(marker)), "Homepage sections must follow the agreed decision journey");
 assert.ok(home.indexOf('id="how"') < home.indexOf('id="price-check"'), "Price Check must not interrupt the hero or opening explanation");
 assert.match(css, /--section: 56px; --intro-content: 28px/, "Mobile spacing tokens must be explicitly defined");
