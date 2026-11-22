@@ -2596,38 +2596,47 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 }
 
 
-/* 22 Nov 2026: restore the deliberately oversized Hotel Only feature card. */
+/* 22 Nov 2026: one authoritative desktop treatment for the featured Hotel Only card. */
 @media (min-width: 1024px) {
   #trips .trips {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) repeat(4, minmax(0, 1fr));
     gap: 16px;
     align-items: stretch;
   }
-  #trips .trip-featured {
-    grid-column: span 2;
+  #trips .trips > .trip {
+    grid-column: auto;
+    order: initial;
+    width: auto;
+    min-width: 0;
+    min-height: 420px;
+    height: 420px;
+    aspect-ratio: auto;
+  }
+  #trips .trips > .trip-featured {
+    grid-column: auto;
     order: -1;
+    min-width: 0;
     min-height: 420px;
     height: 420px;
   }
-  #trips .trip:not(.trip-featured) {
-    grid-column: span 1;
-    min-height: 420px;
-    height: 420px;
-  }
+  #trips .trip .body { padding: 20px 18px; }
   #trips .trip-featured .body { padding: 28px 24px; }
+  #trips .trip h3 { max-width: 14ch; font-size: clamp(21px, 1.7vw, 27px); line-height: 1; }
   #trips .trip-featured h3 { max-width: 13ch; font-size: clamp(30px, 2.6vw, 40px); }
+  #trips .trip p { font-size: 13px; line-height: 1.35; }
   #trips .trip-featured p { max-width: 36ch; font-size: 15px; }
+  #trips .trip .actions { margin-top: 12px; }
 }
 
-/* Destination arch images respond gently to hover and keyboard focus. */
+/* Match the destination image hover to the site's existing card-image zoom. */
+#destinations .dest > img {
+  transform: scale(1);
+  transition: transform 580ms var(--ease);
+}
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  #destinations .dest > img {
-    transform: scale(1);
-    transition: transform 650ms cubic-bezier(.2,.7,.2,1);
-    will-change: transform;
-  }
   #destinations .dest:hover > img,
   #destinations .dest:focus-visible > img {
-    transform: scale(1.055);
+    transform: scale(1.04);
   }
 }
