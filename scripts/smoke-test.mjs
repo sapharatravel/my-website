@@ -10,6 +10,16 @@ const home = page("dist/index.html");
 const price = page("dist/price-check.html");
 const plan = page("dist/plan-my-trip.html");
 const css = page("dist/assets/site.css");
+console.log("Smoke-test diagnostics:", {
+  homeLength: home.length,
+  priceLength: price.length,
+  planLength: plan.length,
+  planHasEnquiry: plan.includes('id="enquire"'),
+  planHasFlow: plan.includes('class="flow"'),
+  planHasSentStep: plan.includes('data-step="sent"'),
+  planHasNewCopy: plan.includes("Your message is ready."),
+  planHasOldCopy: plan.includes("You're checked in.")
+});
 
 assert.match(home, /class="hs-toggle"/, "Homepage must render the hero pause control");
 assert.match(home, /Still deciding\?/, "Homepage secondary navigation should render");
