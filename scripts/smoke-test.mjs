@@ -14,24 +14,28 @@ const css = page("dist/assets/site.css");
 
 assert.doesNotMatch(home, /class="hs-toggle"/, "Hero must not render a pause control");
 assert.doesNotMatch(home, /hd-calm/, "Hero must not contain the price comparison card");
-assert.match(home, /id="price-check"/, "Price check should sit in its own homepage section");
+assert.doesNotMatch(home, /id="price-check"|Before you book, let us check/, "Price Check should stay in the main navigation, not repeat on the homepage");
 assert.doesNotMatch(home, /Illustrative example|pcx-verdict|pcx-grid/, "Homepage should not repeat the full comparison example");
 assert.doesNotMatch(home, /id="compare"|id="business"|id="pay-later"/, "Comparison matrix, Business Travel and separate Pay Later sections should stay off the homepage");
 assert.match(home, /trips\/business/, "Business Travel should remain accessible through the Trips navigation");
-const homeOrder = ["id=\"proof\"", "id=\"trips\"", "id=\"destinations\"", "id=\"why\"", "id=\"price-check\"", "id=\"more\"", "id=\"faq\"", "id=\"enquire\""];
+const homeOrder = ["id=\"proof\"", "id=\"trips\"", "id=\"destinations\"", "id=\"why\"", "id=\"more\"", "id=\"faq\"", "id=\"enquire\""];
 assert.ok(homeOrder.every((marker, i) => i === 0 || home.indexOf(homeOrder[i - 1]) < home.indexOf(marker)), "Homepage sections must follow the agreed decision journey");
 assert.doesNotMatch(home, /Hotels our clients have stayed with|From ‘Where to\?’|momentH|Somewhere worth the journey/, "Homepage should not contain the hotel-name strip, From Where To or editorial moment");
 assert.match(home, /href="\/reviews"/, "Homepage should link to client reviews");
 assert.match(home, /href="\/why-saphara"/, "Homepage should link to How we work");
 assert.match(home, /href="\/guides\/?"/, "Homepage should link to travel guides");
-assert.match(home, /href="\/faq"/, "Homepage should link to FAQs");
-assert.match(home, /trip-featured/, "Hotel-only should be the featured homepage trip");
+assert.match(home, /id="faq"/, "FAQs should remain on the homepage");
+assert.doesNotMatch(home.match(/<ul class="more-cards">[\\s\\S]*?<\\/ul>/)?.[0] || "", /Common questions|faq\.html/, "More from Saphara should not duplicate the FAQ section");
+assert.match(home, /class="pcard trip trip-featured on rv"/, "Hotel-only should be the first and pre-opened featured homepage trip");
+const tripCards = [...home.matchAll(/<article class="pcard trip[\\s\\S]*?<\\/article>/g)].map(m => m[0]);
+assert.equal(tripCards.length, 5, "Homepage should show five trip types");
+assert.ok(tripCards.every(card => (card.match(/class="split light"/g) || []).length === 1), "Each homepage trip card should have exactly one CTA");
 assert.match(home, /class="mm-trip-card"/, "Mobile Trips menu should use visual image cards");
-assert.match(css, /grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/, "Desktop Trips dropdown should use fewer, larger image cards");
+assert.match(css, /\.dd-tile\.dd-featured \{ grid-column: span 2; grid-row: span 2;/, "Hotel-only should be the single featured Trips dropdown tile");
+assert.match(css, /\.header \.desk-links > a\.nl[\\s\\S]*font-family: var\\(--display\\)/, "Desktop navigation should use the Kensington display font");
 assert.match(css, /\.mm-trip-img/, "Mobile Trips menu should include image thumbnails");
 assert.doesNotMatch(home, /href="\/trips\/business"/, "Business Travel should not return as a homepage card");
-assert.match(home, /A free hotel price check|Before you book/, "Homepage Price Check should have a clear, distinctive invitation");
-assert.match(home, /Same room type|Same dates and guests|Same meal plan|Same cancellation terms/, "Homepage Price Check should explain what is compared");
+
 
 assert.match(css, /--section: 56px; --intro-content: 28px/, "Mobile spacing tokens must be explicitly defined");
 assert.match(css, /--section: 72px; --intro-content: 36px/, "Tablet spacing tokens must be explicitly defined");
@@ -51,7 +55,8 @@ assert.match(plan, /Your message is\s+ready\./, "Trip enquiry must not claim the
 assert.match(plan, /Tap Send in WhatsApp to complete your\s+enquiry/, "Trip enquiry must explain the final send step");
 assert.doesNotMatch(plan, /You're checked in/, "Trip enquiry must not claim a request was received");
 assert.match(css, /#trips \.trips, #destinations \.dests \{\s*display: grid/, "Mobile trip and destination cards must use a grid, not horizontal swipe tracks");
-assert.match(css, /#trips \.trips \.pcard\.trip \.enq \{ display: none; \}/, "Mobile trip cards should keep one clear action");
+assert.match(css, /#trips \.trip-featured h3 \{ position: static;/, "Featured hotel-only card should be open on mobile");
+assert.match(css, /#destinations \.dest:nth-child\(even\) \{ margin-top:/, "Destination cards should retain the staggered arch layout");
 assert.match(css, /min-width: 0; min-height: 0; scroll-snap-align: none/, "Mobile cards must not inherit oversized desktop minimum heights");
 assert.doesNotMatch(css, /EDITORIAL PREVIEW/, "Obsolete preview CSS must not ship");
 assert.match(css, /--footer-ink: #111111/, "Footer must use the black brand surface");
