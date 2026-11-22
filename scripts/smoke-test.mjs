@@ -56,7 +56,8 @@ assert.match(plan, /Your message is\s+ready\./, "Trip enquiry must not claim the
 assert.match(plan, /Tap Send in WhatsApp to complete your\s+enquiry/, "Trip enquiry must explain the final send step");
 assert.doesNotMatch(plan, /You're checked in/, "Trip enquiry must not claim a request was received");
 assert.match(css, /#trips \.trips, #destinations \.dests \{\s*display: grid/, "Mobile trip and destination cards must use a grid, not horizontal swipe tracks");
-assert.match(css, /#trips \.trip-featured h3 \{ position: static;/, "Featured hotel-only card should be open on mobile");
+assert.match(css, /#trips \.trip h3,[\s\S]*?#trips \.trip-featured h3 \{\s*position: static;/, "Trip card headings, including the featured hotel-only card, should remain visible on mobile");
+assert.match(css, /#trips \.trip \.actions > \.split \{\s*position: static;/, "Trip card CTAs should sit in the card content on mobile, not float in the corner");
 assert.match(css, /#destinations \.dest:nth-child\(even\) \{ margin-top:/, "Destination cards should retain the staggered arch layout");
 assert.match(css, /min-width: 0; min-height: 0; scroll-snap-align: none/, "Mobile cards must not inherit oversized desktop minimum heights");
 assert.doesNotMatch(css, /EDITORIAL PREVIEW/, "Obsolete preview CSS must not ship");
