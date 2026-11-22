@@ -11,11 +11,15 @@ const price = page("dist/price-check.html");
 const plan = page("dist/plan-my-trip.html");
 const css = page("dist/assets/site.css");
 
-assert.match(home, /class="hs-toggle"/, "Homepage must render the hero pause control");
+assert.doesNotMatch(home, /class="hs-toggle"/, "Hero must not render a pause control");
+assert.doesNotMatch(home, /hd-calm/, "Hero must not contain the price comparison card");
+assert.match(home, /id="price-check"/, "Price check should sit in its own homepage section");
+assert.equal((home.match(/class="rv-card rv"/g) || []).length, 2, "Homepage review section should show two text reviews on desktop");
+assert.match(home, /class="rv-photo rv"/, "Homepage review section should include the featured photo review");
 assert.match(home, /Still deciding\?/, "Homepage secondary navigation should render");
 assert.equal((home.match(/class="more-card rv"/g) || []).length, 5, "Homepage should have five secondary navigation cards");
 assert.match(home, /aria-label="Explore honeymoons"/, "Trip card links should have descriptive accessible names");
-assert.match(home, /saphara-logo-sand\.svg/, "Footer should use the pale logo on rust");
+assert.match(home, /saphara-logo-sand\.svg/, "Footer should use the sand logo on black");
 assert.match(price, /id="pcForm"/, "Price Check form must be present");
 assert.match(home, /Illustrative example/, "Homepage comparison must be labelled illustrative");
 assert.match(price, /Illustrative example/, "Price Check comparison must be labelled illustrative");
@@ -29,7 +33,9 @@ assert.match(css, /#trips \.trips, #destinations \.dests \{\s*display: grid/, "M
 assert.match(css, /#trips \.trips \.pcard\.trip \.enq \{ display: none; \}/, "Mobile trip cards should keep one clear action");
 assert.match(css, /min-width: 0; min-height: 0; scroll-snap-align: none/, "Mobile cards must not inherit oversized desktop minimum heights");
 assert.doesNotMatch(css, /EDITORIAL PREVIEW/, "Obsolete preview CSS must not ship");
-assert.match(css, /--footer-rust: #8A3B2E/, "Footer rust colour token must be present");
-assert.match(css, /background: var\(--footer-rust\)/, "Footer must use the dedicated rust token");
+assert.match(css, /--footer-ink: #111111/, "Footer must use the black brand surface");
+assert.match(css, /background: var\(--footer-ink\)/, "Footer must use the black brand surface");
+assert.doesNotMatch(css, /#8A3B2E|#1E7A4C|#E7F3EB|#14563A|#BFE6CC/, "Rust and green brand colours must not ship");
+assert.match(css, /\.bento \.rv-stack \{ grid-column: 2; grid-row: 1; display: grid;/, "Desktop reviews must use a real two-column review grid");
 
 console.log("Saphara smoke tests passed.");

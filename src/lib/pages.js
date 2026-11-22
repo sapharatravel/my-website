@@ -107,11 +107,11 @@ export function home() {
   // Slim homepage (15 Nov, Huzaifa): hero, trip types, destinations and the USPs, then cards to everything that moved to its own page.
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
   void guides;
-  // 16 Nov 2026 (Huzaifa): proof under the hero, then the FAQ teaser and the check-in form ("Bismillah. Let's plan it.") back at the end, with a WhatsApp button.
+  // 22 Nov 2026: the hero is kept clean; the full review section and price check now sit in the main page flow.
   const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
   // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
   // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
-  const body = toPlan(join(hero, hotelNames, heroProof(pg), trips, destinations, moment, declaration, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
+  const body = toPlan(join(hero, hotelNames, trips, destinations, priceCheck, moment, declaration, reviews, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
 }
 

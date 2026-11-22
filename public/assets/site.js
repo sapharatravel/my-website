@@ -538,13 +538,13 @@
   }
 })();
 
-/* Homepage hero slider: pause/resume control, pauses on hover/focus and when the tab is hidden. */
+/* Homepage hero slider: automatic rotation; pauses while focused or when the tab is hidden. */
 (function () {
   var hero = document.querySelector(".hero.hd"); if (!hero) return;
-  var slides = hero.querySelectorAll(".hs-slide"), dots = hero.querySelectorAll(".hs-dot"), toggle = hero.querySelector(".hs-toggle");
+  var slides = hero.querySelectorAll(".hs-slide"), dots = hero.querySelectorAll(".hs-dot");
   if (slides.length < 2) return;
   var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var userPaused = false, focusPaused = false;
+  var focusPaused = false;
   function load() {
     hero.querySelectorAll("source[data-srcset]").forEach(function (s) { s.srcset = s.getAttribute("data-srcset"); s.removeAttribute("data-srcset"); });
     hero.querySelectorAll("img[data-src]").forEach(function (im) { im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); });
@@ -557,16 +557,11 @@
   function stop() { if (timer) clearInterval(timer); timer = null; }
   function sync() {
     stop();
-    if (!reduce && !userPaused && !focusPaused && !document.hidden) {
+    if (!reduce && !focusPaused && !document.hidden) {
       timer = setInterval(function () { show(i + 1); }, 6000);
-    }
-    if (toggle) {
-      toggle.setAttribute("aria-label", userPaused ? "Play photo changes" : "Pause photo changes");
-      toggle.textContent = userPaused ? "Play photos" : "Pause photos";
     }
   }
   dots.forEach(function (d, k) { d.addEventListener("click", function () { load(); show(k); sync(); }); });
-  if (toggle) toggle.addEventListener("click", function () { userPaused = !userPaused; if (!userPaused) focusPaused = false; sync(); });
   hero.addEventListener("focusin", function () { focusPaused = true; sync(); });
   hero.addEventListener("focusout", function (e) { if (!hero.contains(e.relatedTarget)) { focusPaused = false; sync(); } });
   document.addEventListener("visibilitychange", sync);
