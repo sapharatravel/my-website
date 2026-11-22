@@ -2184,3 +2184,164 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   .header .hnav { gap: 12px; }
   .header .hwa { margin-left: 28px; }
 }
+
+/* ---------- Why Saphara redesign (23 Nov 2026, preview for Huzaifa) ----------
+   Only classes prefixed ws- (used on why-saphara only). Tokens, type sizes, radii, buttons, accordion and reveal come from the system above. */
+.ws-intro .prose > p { margin-top: var(--s-16); }
+.ws-intro .split-cols { gap: var(--s-24); } .ws-intro .split-cols > .intro + * { margin-top: 0; }
+@media (min-width: 1024px) { .ws-intro .split-cols { gap: var(--s-56); } }
+.ws-intro .prose > p:first-child { margin-top: 0; }
+@media (min-width: 1024px) { .ws-intro .prose > p:not(.ws-aside) { font-size: var(--fs-lead); } }
+.ws-aside { color: var(--grey); }
+/* 3. The Saphara difference: hairline columns */
+.ws-diff { list-style: none; margin: var(--intro-content) 0 0; padding: 0; display: grid; gap: var(--s-32); }
+.ws-diff li { position: relative; }
+.ws-diff-ph { margin: 0; border-radius: var(--r-card); overflow: hidden; aspect-ratio: 3 / 2; background: var(--sand-deep); }
+.ws-diff-ph img { width: 100%; height: 100%; object-fit: cover; }
+.ws-diff .ws-badge { position: relative; z-index: 1; margin: -28px 0 0 var(--s-16); }
+.ws-diff h3 { margin-top: var(--s-16); font: 600 var(--head-question)/var(--head-lh) var(--display); letter-spacing: 0; text-wrap: balance; }
+.ws-diff p { margin-top: var(--s-12); color: var(--grey); }
+@media (min-width: 768px) { .ws-diff { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-32); } }
+@media (min-width: 1024px) { .ws-diff { gap: var(--s-40); } }
+/* 4. What Muslim-friendly means */
+.ws-mf { display: grid; gap: var(--s-32); }
+.ws-mf-photo { margin: 0; border-radius: var(--r-card); overflow: hidden; aspect-ratio: 4 / 3; background: var(--sand); }
+.ws-mf-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; }
+.ws-mf-copy .faq { max-width: 640px; }
+.ws-mf-copy .faq .ans { max-width: 34em; }
+@media (min-width: 768px) { .ws-mf-photo { aspect-ratio: 16 / 10; } }
+@media (min-width: 1024px) {
+  .ws-mf { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-80); align-items: center; }
+  .ws-mf-photo { aspect-ratio: 4 / 5; }
+  .ws-mf-photo img { object-position: 50% 50%; }
+}
+/* 5. Good advice. No extra fee. Black panel, photo to the panel edges (same build as the homepage pay later photo panel) */
+.ws-money { position: relative; overflow: hidden; display: grid; border-radius: var(--r-card); background: var(--black); color: #fff; }
+.ws-money-copy { padding: var(--s-40) 20px var(--s-32); }
+.ws-money h2 { color: #fff; }
+.ws-money h2 .tone { color: var(--sand-deep); }
+.ws-money-copy > p { margin-top: var(--head-body); color: rgba(255,255,255,.88); max-width: 30em; }
+@media (min-width: 1024px) { .ws-money-copy > p { font-size: var(--fs-lead); } }
+.ws-pay { margin-top: var(--s-32); padding-top: var(--s-24); border-top: 1px solid rgba(255,255,255,.18); max-width: 30em; }
+.ws-pay h3 { font: 500 17px/1.35 var(--body); color: #fff; }
+.ws-pay > p:not(.pl2-note) { margin-top: var(--s-8); color: rgba(255,255,255,.8); font-size: 15px; }
+.ws-pay .pl2-note { margin-top: var(--s-16); }
+.ws-money .actions { margin-top: var(--s-32); }
+.ws-money .split.light:focus-visible .split-label, .ws-money .split.light:focus-visible .split-arrow { outline-color: var(--sand-deep); }
+.ws-money-ph { position: relative; margin: 0; aspect-ratio: 4 / 3; overflow: hidden; }
+.ws-money-ph img { width: 100%; height: 100%; object-fit: cover; object-position: 60% 60%; }
+@media (min-width: 768px) { .ws-money-copy { padding: var(--s-56) 48px var(--s-40); } .ws-money-ph { aspect-ratio: 16 / 9; } }
+@media (min-width: 1024px) {
+  .ws-money { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; }
+  .ws-money-copy { align-self: center; padding: 64px 64px 64px 72px; }
+  .ws-money-ph { aspect-ratio: auto; min-height: 560px; }
+  .ws-money-ph img { position: absolute; inset: 0; } /* the copy sets the panel height */
+}
+/* 6. The practical bits: four facts on hairlines */
+.ws-facts { list-style: none; margin: var(--intro-content) 0 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--rule); }
+.ws-facts li { padding: var(--s-16) 0; border-bottom: 1px solid var(--rule); }
+.ws-facts h3 { font: 600 var(--head-step)/var(--head-lh) var(--display); letter-spacing: 0; }
+.ws-facts p { margin-top: var(--s-8); color: var(--grey); font-size: 15px; }
+@media (min-width: 768px) { .ws-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--s-40); border-top: 0; } .ws-facts li { border-bottom: 0; border-top: 1px solid var(--rule); padding: var(--s-24) 0 var(--s-8); } }
+@media (min-width: 1024px) { .ws-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: var(--s-40); } }
+/* 7. Quote photo: the door is portrait, so keep its arch in frame */
+.ws-quote-band .pq .photo img { object-position: 50% 30%; }
+@media (max-width: 1023px) { .ws-quote-band .pq .photo { aspect-ratio: 1 / 1; } }
+/* 22 Nov 2026 (late night, Huzaifa): bigger hotel strip, new brand list (Commons SVGs plus Kempinski, Jumeirah and The Chedi from the Adobe Stock folder) */
+.strip { padding-block: 32px; }
+.marquee-track { gap: 72px; }
+.marquee-track .mq-logo, .marquee-track .mq-word { height: 76px; }
+.marquee-track .mq-logo img { height: 40px; max-width: 220px; }
+.marquee-track .mq-waldorf-astoria img, .marquee-track .mq-mandarin-oriental img { height: 70px; }
+.marquee-track .mq-fairmont img, .marquee-track .mq-rixos img { height: 46px; }
+.marquee-track .mq-the-chedi img { height: 26px; }
+.marquee-track .mq-jumeirah img { height: 36px; }
+.marquee-track .mq-sofitel img { height: 34px; }
+.marquee-track .mq-word { font-size: 28px; }
+@media (max-width: 767px) {
+  .strip { padding-block: 24px; }
+  .marquee-track { gap: 48px; }
+  .marquee-track .mq-logo, .marquee-track .mq-word { height: 60px; }
+  .marquee-track .mq-logo img { height: 30px; max-width: 170px; }
+  .marquee-track .mq-waldorf-astoria img, .marquee-track .mq-mandarin-oriental img { height: 54px; }
+  .marquee-track .mq-fairmont img, .marquee-track .mq-rixos img { height: 36px; }
+  .marquee-track .mq-the-chedi img { height: 20px; }
+  .marquee-track .mq-jumeirah img { height: 28px; }
+  .marquee-track .mq-sofitel img { height: 26px; }
+  .marquee-track .mq-word { font-size: 22px; }
+}
+.marquee-track .mq-the-chedi img { height: 19px; }
+.marquee-track .mq-kempinski img { height: 56px; }
+@media (max-width: 767px) { .marquee-track .mq-the-chedi img { height: 15px; } .marquee-track .mq-kempinski img { height: 44px; } }
+/* Trips dropdown, option B (22 Nov 2026 late night, Huzaifa): two lists and the free price check on the right, centred on the page */
+.dd-panel.ddb { width: min(940px, calc(100% - 2 * var(--margin))); left: 0; right: 0; margin-inline: auto; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 270px; grid-template-rows: auto auto; grid-auto-rows: auto; gap: 0 28px; padding: 24px 24px 0; align-content: start; }
+.ddb-col { display: flex; flex-direction: column; gap: 2px; }
+.ddb-col .dd-k { margin: 0 0 10px; }
+.ddb-row { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 14px; align-items: center; padding: 8px; margin-inline: -8px; border-radius: 14px; color: var(--ink); text-decoration: none; transition: background-color var(--t-fast); }
+.ddb-row .ph { width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: var(--sand); }
+.ddb-row .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ddb-tx b { display: block; font: 600 22px/1.05 var(--display); }
+.ddb-tx span { display: block; margin-top: 3px; font-size: 13px; line-height: 1.35; color: var(--grey); }
+@media (hover: hover) { .ddb-row:hover { background: var(--sand); } }
+.ddb-row:focus-visible, .ddb-promo:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+.ddb-promo { grid-row: 1; grid-column: 3; display: flex; flex-direction: column; gap: 10px; background: var(--sand); border-radius: 16px; padding: 22px; color: var(--ink); text-decoration: none; align-self: stretch; }
+.ddb-promo .nl-free { align-self: flex-start; transform: none; }
+.ddb-promo b { font: 600 28px/1.05 var(--display); }
+.ddb-p { font-size: 13.5px; line-height: 1.45; color: var(--grey); }
+.ddb-cta { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; }
+.ddb-cta svg { width: 15px; height: 15px; stroke: currentColor; stroke-width: 1.8; fill: none; transition: transform var(--t-fast) var(--ease); }
+@media (hover: hover) { .ddb-promo:hover .ddb-cta { text-decoration: underline; text-underline-offset: 4px; } .ddb-promo:hover .ddb-cta svg { transform: translate(2px, -2px); } }
+.ddb-foot { grid-column: 1 / -1; display: flex; justify-content: flex-start; margin-top: 16px; padding: 14px 0 16px; border-top: 1px solid var(--rule); }
+@media (max-width: 1199px) { .dd-panel.ddb { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 230px; gap: 0 20px; } .ddb-tx b { font-size: 20px; } }
+/* How it works (homepage): WhatsApp-style chat instead of the phone graphic (22 Nov 2026, late night, Huzaifa) */
+#how.how-home .how { grid-template-areas: "intro" "phone" "steps"; }
+#how.how-home .wa-chat { grid-area: phone; width: 100%; max-width: 440px; margin-inline: auto; background: #EFE7DA; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 50px -28px rgba(46,24,4,.35), 0 1px 0 rgba(0,0,0,.04); }
+.wa-top { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #fff; border-bottom: 1px solid var(--rule); }
+.wa-av { width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: var(--sand); display: grid; place-items: center; font: 600 18px/1 var(--display); }
+.wa-who b { display: block; font: 600 18px/1 var(--display); letter-spacing: .06em; }
+.wa-who small { display: block; margin-top: 3px; font-size: 12px; color: var(--grey); }
+.wa-msgs { display: flex; flex-direction: column; gap: 8px; padding: 18px 16px 20px; }
+#how .bub.wa { position: relative; inset: auto; top: auto; left: auto; right: auto; rotate: none; max-width: 82%; margin: 0; padding: 9px 12px 20px; border-radius: 14px; font-size: 14.5px; line-height: 1.4; box-shadow: 0 1px 1px rgba(0,0,0,.08); display: block; }
+#how .bub.wa.them { align-self: flex-start; background: #fff; color: var(--ink); border-top-left-radius: 4px; }
+#how .bub.wa.us { align-self: flex-end; background: #D9FDD3; color: var(--ink); border-top-right-radius: 4px; }
+.wa-t { position: absolute; right: 10px; bottom: 5px; font-size: 11px; color: rgba(0,0,0,.45); white-space: nowrap; }
+.wa-ticks { color: #53BDEB; letter-spacing: -2px; margin-left: 2px; }
+.wa-day { align-self: center; margin: 6px 0 2px; padding: 4px 10px; border-radius: 8px; background: rgba(255,255,255,.75); font-size: 11.5px; color: var(--grey); }
+@media (min-width: 1024px) {
+  #how.how-home .how { grid-template-columns: 420px minmax(0, 640px); grid-template-areas: "phone intro" "phone steps"; }
+  #how.how-home .wa-chat { max-width: 420px; align-self: center; }
+}
+@media (max-width: 767px) { #how .bub.wa { font-size: 14px; } }
+#how.how-home .wa-msgs .bub.wa { display: block; position: relative; top: auto; left: auto; right: auto; bottom: auto; max-width: 82%; }
+/* Round 2 (23 Nov 2026, Huzaifa: icons and more photos). Icons are the site set (content.json ICO) in a round badge. */
+.ws-badge { display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
+.ws-badge .ico { width: 26px; height: 26px; }
+.ws-q { display: inline-flex; align-items: center; gap: var(--s-12); }
+.ws-q .ico { color: var(--gold); }
+.ws-pay h3 { display: flex; align-items: center; gap: 10px; }
+.ws-pay h3 .ico { width: 22px; height: 22px; color: var(--sand-deep); }
+.ws-facts .ws-badge { background: var(--sand); }
+.ws-facts h3 { margin-top: var(--s-16); }
+@media (max-width: 767px) {
+  .ws-facts li { display: grid; grid-template-columns: 56px minmax(0, 1fr); column-gap: var(--s-16); align-items: center; }
+  .ws-facts .ws-badge { grid-row: span 2; align-self: start; }
+  .ws-facts h3 { margin-top: 0; }
+  .ws-facts p { margin-top: var(--s-4); }
+}
+@media (max-width: 767px) { .ws-diff-ph { aspect-ratio: 16 / 9; } .ws-diff { gap: var(--s-40); } }
+.faq details[open] summary .ws-q .ico, .faq summary .ws-q .ico { transform: none; transition: none; } /* the open-state 45deg turn is for the plus sign only */
+/* Round 3 (23 Nov 2026, Huzaifa): quote fills its section, panorama removed, closing CTA headline at section size, plain "What happens next" label */
+.ws-quote-band .pq blockquote { font-size: clamp(36px, 9.5vw, 44px); }
+.ws-quote-band .pq .by { margin-top: var(--s-32); font-size: 17px; }
+@media (min-width: 768px) { .ws-quote-band .pq blockquote { font-size: clamp(52px, 6.5vw, 64px); } }
+@media (min-width: 1024px) { .ws-quote-band .pq { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-56); } .ws-quote-band .pq blockquote { font-size: clamp(56px, 5.2vw, 76px); } .ws-quote-band .pq .photo { aspect-ratio: 1 / 1; } }
+.ws-cta-band .price-card h2 { --tier: var(--head-section); }
+.ws-cta-band .pc-k { font: 500 17px/1.35 var(--body); letter-spacing: 0; text-transform: none; }
+@media (min-width: 768px) and (max-width: 1023px) { .ws-quote-band .pq .photo { aspect-ratio: 4 / 3; } }
+/* How it works (homepage): an icon on each step (22 Nov 2026, late night, Huzaifa) */
+#how.how-home .steps li { grid-template-columns: 52px minmax(0, 1fr); column-gap: 16px; row-gap: 2px; align-items: start; }
+#how.how-home .steps .step-ico { grid-row: 1 / span 3; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; background: var(--paper); color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
+#how.how-home .steps .step-ico .ico { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+#how.how-home .steps .n { grid-row: auto; grid-column: 2; }
+#how.how-home .steps h3, #how.how-home .steps p { grid-column: 2; }
+@media (max-width: 767px) { #how.how-home .steps li { grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; } #how.how-home .steps .step-ico { width: 44px; height: 44px; } #how.how-home .steps .step-ico .ico { width: 21px; height: 21px; } }

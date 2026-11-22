@@ -251,16 +251,52 @@ export function guidePage(slug) {
 // ---------- why saphara ----------
 export function whySaphara() {
   const pg = new Page("why-saphara.html");
-  let body = photoHero(pg, "page-hero-why", "The Doha skyline reflected in the water at dusk", ["Real people.", "Actual answers."], "Saphara Travel is an independent, Muslim-owned travel company. We book honeymoons, beach and family holidays, hotel stays and business trips, and we stay on WhatsApp from the first question to the flight home.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Why Saphara", "why-saphara.html"]]);
-  body += band("white after-head", '<div class="split-cols editorial"><div class="intro sticky-col"><h2 class="display d-l">' + beats(["How we work."]) + '</h2></div><div class="prose rv"><p>You tell us roughly where, when and who\'s coming. We come back with two or three hotels we\'d book ourselves, compared like for like: the same room type, board basis, cancellation terms and extras, so the difference is clear.</p><p>When you choose, we book it and brief the hotel: your requests, your arrival time, anything that matters. Then we stay on WhatsApp while you\'re away. If the room isn\'t right or a driver doesn\'t turn up, you message us and we deal with the hotel.</p><h3>What we don\'t do</h3><ul><li>We don\'t charge a service fee.</li><li>We don\'t promise to beat every price. We compare honestly and tell you.</li><li>We don\'t call a hotel halal or alcohol-free unless we\'ve checked.</li><li>We don\'t book Umrah flights, though we\'ll help you find a good itinerary.</li></ul></div></div>');
-  body += how + hotelQuestions(); // moved from the homepage (15 Nov)
-  // "Who you'll talk to" removed 14 Nov 2026 (Mubarak off the site for now; may return). Huzaifa's personal quote stays below.
-  body += tripStories(pg);
-  body += band("sand", rustPanel(pg, "Why Saphara", ["Nothing to declare.", "Including hidden fees."], "Why people book with us instead of doing it all themselves.", "st-howwework-kl.webp", "The Petronas Towers rising through the morning mist in Kuala Lumpur", C.WHY_ITEMS, "Plan my trip", null, 5.8));
-  body += payLater; // moved from the homepage (15 Nov)
-  body += moreThanBooking("white");
-  body += band("sand", '<div class="pq"><div><blockquote>“You\'ll have our WhatsApp, not a call centre. If the room isn\'t right, message us and we\'ll sort it with the hotel. That\'s the job.”</blockquote><p class="by"><b>Huzaifa</b><span>Travel Advisor</span></p></div><div class="pcard photo rv" data-move><img class="fade warm" src="' + pg.img("st-quote-muscat.webp") + '" alt="Sunset over a breakwater and mountains on the coast near Muscat" loading="lazy"></div></div>');
-  body += cta(pg, ["Try us with", "one question."], "No forms to fill in for the sake of it. Message us and see how we work.", "Message us on " + waGlyph() + "WhatsApp", { cls: "white", href: waMark("cta") });
+  // 23 Nov 2026 redesign (preview for Huzaifa, from why-saphara-design-prototype.html): eight sections, one job each.
+  // Hero, intro, the Saphara difference, what Muslim-friendly means (accordion), Good advice. No extra fee. (black panel),
+  // the practical bits, Huzaifa's quote, closing WhatsApp CTA. Bands alternate white and sand. Styles: "Why Saphara redesign" at the end of site.css.
+  // Replaced on this page: "How we work." prose, How booking with Saphara works (02-how-it-works), Pack light (hotel questions),
+  // the rust panel list, the pay later block and More than just a booking. All of those components still exist for other pages.
+  let body = photoHero(pg, "page-hero-why", "The Doha skyline reflected in the water at dusk", ["Travel, with", "someone in your corner."], "Good trips take more than finding a hotel. We compare the details, ask the questions that matter to you and stay with you long after you've booked.", "Plan my trip", "", 6.2, undefined) + crumbBar(pg, [["Why Saphara", "why-saphara.html"]]);
+
+  // 2. Introduction
+  body += band("white after-head ws-intro", '<div class="split-cols editorial"><div class="intro"><h2 class="display d-l">' + beats(["The difference", "is in the details."]) + '</h2></div><div class="prose rv"><p>Saphara Travel is an independent, Muslim-owned travel company. We help you understand exactly what you\'re booking, compare the details that matter and feel looked after from the first message to the flight home.</p><p>That might mean asking what halal food a hotel really serves, how private a pool villa is, or checking that two rooms are genuinely comparable before you choose.</p><p class="ws-aside">No big promises. Clear answers, and a real person to talk to.</p></div></div>');
+
+  // 3. The Saphara difference: three editorial columns on hairlines, not cards
+  // Round 2 (23 Nov, Huzaifa: "it needs icons and more images"): each column gets a photo and an icon badge from the site icon set. The panorama under the intro was tried and removed the same day.
+  const DIFF = [
+    ["We look beyond the headline price.", "Room type, board basis, location and cancellation terms. We line options up like for like, so you can see what a difference in price actually buys.", "compare", "st-why-room.webp", "A freshly slept-in white bed by a window over a city at sunrise"],
+    ["We check what matters to you.", "Halal food, alcohol, privacy, prayer space or family set-ups. We ask the hotel rather than assume, then tell you what they said.", "pray", "st-why-mosque.webp", "Masjid Jamek in Kuala Lumpur, its minarets and domes in golden evening light"],
+    ["We stay involved after booking.", "Requests, changes and questions while you\'re away. You message the same small team on WhatsApp, and we deal with the hotel.", "chat", "st-why-beach.webp", "An empty sandy beach and turquoise sea below dry hills in Oman"],
+  ];
+  body += band("sand ws-diff-band", intro(["A little more thought", "goes into your trip."], "Not a complicated process. Just the things we\'d want someone to do for us.") + '<ol class="ws-diff">' + DIFF.map(([t, d, i, img, alt], k) => `<li class="rv" style="--i:${k}"><figure class="ws-diff-ph"><img class="fade" src="${pg.img(img)}" alt="${alt}" width="1200" height="800" loading="lazy" decoding="async"></figure><span class="ws-badge">${ico(i)}</span><h3>${t}</h3><p>${d}</p></li>`).join("") + "</ol>");
+
+  // 4. What Muslim-friendly means: photo beside the existing calm accordion (one open at a time). Wording never implies a hotel is halal, alcohol-free or private unless confirmed.
+  const MF = [
+    ["dining|Food and dining", "Is halal food available, is it certified, and is it served across the hotel or only on request? We ask, and pass on exactly what the hotel tells us. We never describe a hotel as halal unless that has been confirmed."],
+    ["lounge|Alcohol and shared spaces", "Many hotels serve alcohol somewhere. We can ask where it\'s served, whether that includes the main restaurants, and what the pool and shared areas are like, so nothing comes as a surprise."],
+    ["pool|Privacy and pools", "For pool villas and terraces, we ask about screening, neighbouring rooms and whether the pool is overlooked, and about women-only pool or gym times where a hotel offers them. We share what the hotel confirms and never promise complete privacy without it."],
+    ["pray|Prayer and family needs", "We can ask about prayer mats, qibla direction, a quiet place to pray, connecting rooms, cots and children\'s facilities. If a hotel can\'t help with something, we\'ll tell you before you book."],
+  ];
+  const mfFaq = faq(MF.map(([q, a]) => { const [i, t] = q.split("|"); return [`<span class="ws-q">${ico(i)}<span>${t}</span></span>`, a]; })).replace('<details class="rv">', '<details class="rv" open>');
+  body += band("white ws-mf-band", `<div class="ws-mf"><figure class="ws-mf-photo rv"><img class="fade" src="${pg.img("st-why-corridor.webp")}" alt="A long hotel corridor of carved arches, lanterns and polished marble" width="1200" height="1500" loading="lazy" decoding="async"></figure><div class="ws-mf-copy">${intro(["What does", "“Muslim-friendly”", "mean to you?"], "It means different things to different travellers. We don\'t make assumptions. We ask what matters to you, put specific questions to the hotel and tell you exactly what they confirm.", 4.8)}${mfFaq}</div></div>`, "muslim-friendly");
+
+  // 5. Good advice. No extra fee. The black panel (kept on Why Saphara, LOCKED 22 Nov), photo running to the panel edges.
+  body += band("sand ws-money-band", `<div class="ws-money rv"><div class="ws-money-copy"><h2 class="display d-l">${beats(["Good advice.", "No extra fee."], true)}</h2><p>There\'s no Saphara service fee. We compare options like for like and show you where the differences are. If we can\'t improve on a price you\'ve found, we\'ll say so.</p><div class="ws-pay"><h3>${ico("paylater")}<span>Reserve now, pay closer to your holiday</span></h3><p>On eligible free cancellation rates, there\'s nothing to pay when you book. You pay by the payment date on your confirmation, before you travel.</p><p class="pl2-note"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span><b>Eligible free cancellation rates only.</b> Non-refundable rates have different terms and are usually paid when you book.</span></p></div><div class="actions">${split("Plan my trip", planLink(pg), true)}</div></div><figure class="ws-money-ph"><img class="fade" src="${pg.img("st-why-terrace.webp")}" alt="Iron chairs on a sunny terrace above a wide blue bay" width="1400" height="1400" loading="lazy" decoding="async"></figure></div>`, "no-extra-fee");
+
+  // 6. The practical bits: four short facts, each with an icon badge. ATOL wording per brief section 9 (eligible flights and packages only, never hotel-only).
+  const FACTS = [
+    ["fee", "No service fee", "The price we quote is the price you pay. Nothing is added for our help."],
+    ["compare", "Honest comparisons", "The same room, board and cancellation terms side by side, and a straight answer on which is better value."],
+    ["people", "Personal WhatsApp support", "Message the people who booked your trip, before you go, while you\'re away and after you\'re home."],
+    ["shield", "ATOL on eligible bookings", "Eligible flights and flight-inclusive packages we book are ATOL protected, with an ATOL Certificate. Hotel-only bookings are not ATOL protected."],
+  ];
+  body += band("white ws-facts-band", intro(["Clear about", "what you’re getting."], "We\'d rather explain exactly what we do than make promises that don\'t hold up.") + '<ul class="ws-facts">' + FACTS.map(([i, t, d], k) => `<li class="rv" style="--i:${k}"><span class="ws-badge">${ico(i)}</span><h3>${t}</h3><p>${d}</p></li>`).join("") + "</ul>");
+
+  // 7. Personal touch: Huzaifa's quote (existing .pq component)
+  body += band("sand ws-quote-band", '<div class="pq"><div><blockquote>“You\'ll have our WhatsApp, not a call centre. If the room isn\'t right, message us and we\'ll speak to the hotel. That\'s the job.”</blockquote><p class="by"><b>Huzaifa</b><span>Travel Advisor</span></p></div><div class="pcard photo rv" data-move><img class="fade" src="' + pg.img("st-why-door.webp") + '" alt="A carved wooden door with brass studs, framed by two orange pots, in Stone Town, Zanzibar" width="1100" height="1375" loading="lazy" decoding="async"></div></div>');
+
+  // 8. Closing CTA (existing component, WhatsApp)
+  body += cta(pg, ["Let’s start with", "one question."], "Tell us what you\'re considering. We\'ll give you an honest answer, with no pressure to book.", "Message us on " + waGlyph() + "WhatsApp", { cls: "white ws-cta-band", href: waMark("cta") });
   return { path: pg.path, title: "Why book with Saphara Travel | Muslim-owned travel company", desc: "An independent, Muslim-owned travel company. No service fee, honest comparisons, and real people on WhatsApp from the first question to the flight home.", hero: true, body };
 }
 
