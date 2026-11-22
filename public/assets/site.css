@@ -43,8 +43,8 @@
   --hbtn-h: 44px; --hbtn-fs: 15px; --hbtn-pad: 18px; --hbtn-arrow: 36px; --hbtn-gap: 10px;
   color-scheme: light;
 }
-@media (min-width: 768px) { :root { --margin: 40px; --card-pad: 32px; } }
-@media (min-width: 1024px) { :root { --margin: 64px; --head-body: 24px; --block: 32px; --card-pad: 40px; --overlap: 160px; --logo-h: 34px; --logo-slim: 25px; --header-top: 40px; --header-slim: 72px; --fs-body: 17px; --lh-body: 1.55; --fs-lead: 19px; } }
+@media (min-width: 768px) { :root { --margin: 40px; --card-pad: 32px; --section: 72px; --intro-content: 36px; } }
+@media (min-width: 1024px) { :root { --section: 88px; --intro-content: 48px; --margin: 64px; --head-body: 24px; --block: 32px; --card-pad: 40px; --overlap: 160px; --logo-h: 34px; --logo-slim: 25px; --header-top: 40px; --header-slim: 72px; --fs-body: 17px; --lh-body: 1.55; --fs-lead: 19px; } }
 :root { --content: 1200px; --col-left: max(var(--margin), calc((100% - var(--content)) / 2)); --hero-min: 16px; --hero-x: max(var(--hero-min), calc(var(--col-left) - 56px)); --hero-top: 16px; --fs-caption: 14px; --fs-label: 12px; --head-stat: 44px; }
 /* Tablet and desktop type scale (13 Nov): hero is the only big moment. Phones keep their sizes. */
 @media (min-width: 768px) { :root { --head-hero: clamp(64px, 6.5vw, 96px); --head-section: clamp(48px, 4.4vw, 64px); --head-panel: clamp(32px, 2.8vw, 40px); --head-stat: 40px; } }
@@ -2157,4 +2157,67 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   .header .desk-links { gap: 36px; }
   .header .hnav { gap: 12px; }
   .header .hwa { margin-left: 28px; }
+}
+
+
+/* 22 Nov 2026: mobile section rhythm and button sizing.
+   Keep spacing tokens explicit and make every CTA fit its own content column. */
+@media (max-width: 767px) {
+  .band { padding-block: var(--section); }
+  .intro + *, .intro + noscript + * { margin-top: var(--intro-content); }
+  .actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: var(--s-12);
+  }
+  .actions > .split,
+  .actions > .btn {
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
+  }
+  .actions > .split {
+    justify-content: stretch;
+    padding-left: 0;
+    gap: var(--s-8);
+  }
+  .actions > .split .split-label {
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 56px;
+    padding: 10px 16px;
+    white-space: normal;
+    line-height: 1.2;
+    text-align: left;
+  }
+  .actions > .split .split-arrow {
+    width: 48px;
+    min-height: 48px;
+    flex: 0 0 48px;
+  }
+  .actions > .btn {
+    min-height: 52px;
+    padding: 12px 16px;
+    white-space: normal;
+    line-height: 1.25;
+  }
+  .actions > .textlink {
+    align-self: flex-start;
+    width: auto;
+    max-width: 100%;
+  }
+  .hero .actions { width: 100%; align-items: flex-start; }
+  .hero .actions > * { flex: 0 1 auto; min-width: 0; }
+  .hero .actions .split { width: min(100%, 360px); }
+  .trips .trip .actions { width: auto; flex-direction: row; }
+  .trips .trip .actions > .split { width: auto; max-width: none; }
+  .trips .trip .split-label { white-space: nowrap; }
+  #how .steps { grid-template-columns: 1fr; gap: 0; }
+  #how .steps li { padding: var(--s-16) 0; }
+  #how .steps h3 { font-size: 20px; }
+  #how .steps p { font-size: 14.5px; }
+  #reviews .rv-stack .rv-card:nth-child(2) { display: flex; }
 }
