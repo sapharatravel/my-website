@@ -35,7 +35,7 @@ assert.match(css, /min-width: 0; min-height: 0; scroll-snap-align: none/, "Mobil
 assert.doesNotMatch(css, /EDITORIAL PREVIEW/, "Obsolete preview CSS must not ship");
 assert.match(css, /--footer-ink: #111111/, "Footer must use the black brand surface");
 assert.match(css, /background: var\(--footer-ink\)/, "Footer must use the black brand surface");
-assert.doesNotMatch(css, /#8A3B2E|#1E7A4C|#E7F3EB|#14563A|#BFE6CC/, "Rust and green brand colours must not ship");
+assert.doesNotMatch(css, /#8A3B2E|#1E7A4C|#E7F3EB|#14563A|#BFE6CC|#b9874c|#5c4a22|#2B2925|#34312C|#E9DCC0|#CDBFA5/, "Rust, green and warm brown brand colours must not ship");
 assert.match(css, /\.bento \.rv-stack \{ grid-column: 2; grid-row: 1; display: grid;/, "Desktop reviews must use a real two-column review grid");
 
 console.log("Saphara smoke tests passed.");
