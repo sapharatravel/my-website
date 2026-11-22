@@ -124,7 +124,7 @@ export function footer(pg) {
 <footer class="sf">
   <div class="sf-top">
     <div class="sf-brand">
-      <img class="logo" src="${pg.img("saphara-logo-dark.svg")}" alt="Saphara Travel" width="120" height="35" loading="lazy">
+      <img class="logo" src="${pg.img("saphara-logo-sand.svg")}" alt="Saphara Travel" width="120" height="35" loading="lazy">
       <p class="sf-closer"><span class="beat">Safe travels.</span> <span class="beat">And send pictures.</span></p>
       <p class="sf-statement">We take the stress out of booking hotels and holidays. We speak to the hotel for you, compare prices like for like, and we're there if anything goes wrong.</p>
       <div class="sf-cta"><a class="split" href="${pl}"${pl === "#enquire" ? " data-plan" : ""}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
