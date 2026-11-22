@@ -65,8 +65,7 @@ const MORE_CARDS = [
   ["reviews.html", "st-reviews-praslin.webp", "Client reviews", "Read what travellers have said after booking with Saphara."],
   ["why-saphara.html", "st-howwework-kl.webp", "How we work", "A small team, honest hotel comparisons and support on WhatsApp."],
   ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Practical notes on where to eat, pray, stay and explore."],
-  ["faq.html", "st-faq-terrace.webp", "Common questions", "Straight answers on bookings, payments, hotel checks and protection."]
-];
+  ];
 const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 function moreCards(pg) {
   return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">A little more about Saphara.</h2><p>Useful things to look through while you're deciding.</p></div><ul class="more-cards">${MORE_CARDS.map(([href, img, title, desc]) => `<li><a class="more-card rv" href="${pg.u(href)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${title}</span><span class="mc-d">${desc}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
@@ -113,7 +112,6 @@ export function home() {
     trips,
     destinations,
     declaration,
-    priceCheck,
     moreCards(pg)
   )) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
