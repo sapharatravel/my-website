@@ -30,5 +30,11 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Check browser scripts parse
+        run: |
+          node --check public/assets/site.js
+          node --check public/assets/price-check.js
       - name: Build website
         run: npm run build
+      - name: Smoke test built pages
+        run: node scripts/smoke-test.mjs
