@@ -460,7 +460,7 @@
    "d": {
     "ratio": [
      2400,
-     1545
+     1600
     ],
     "w": [
      800,
@@ -471,8 +471,8 @@
    },
    "m": {
     "ratio": [
-     869,
-     1545
+     900,
+     1600
     ],
     "w": [
      480,
@@ -484,7 +484,7 @@
    "d": {
     "ratio": [
      2400,
-     1602
+     1382
     ],
     "w": [
      800,
@@ -495,8 +495,8 @@
    },
    "m": {
     "ratio": [
-     901,
-     1602
+     777,
+     1382
     ],
     "w": [
      480,
@@ -556,7 +556,7 @@
    "d": {
     "ratio": [
      2400,
-     1340
+     1600
     ],
     "w": [
      800,
@@ -567,8 +567,8 @@
    },
    "m": {
     "ratio": [
-     754,
-     1340
+     900,
+     1600
     ],
     "w": [
      480,
@@ -927,7 +927,7 @@
     800
    ]
   },
-  "st-dubai-creek.webp": {
+  "st-dubai-alfahidi.webp": {
    "full": 900,
    "h": 1125,
    "w": [
@@ -936,16 +936,7 @@
     800
    ]
   },
-  "st-dubai-fahidi.webp": {
-   "full": 900,
-   "h": 1200,
-   "w": [
-    400,
-    600,
-    800
-   ]
-  },
-  "st-family-beach.webp": {
+  "st-family-lazio.webp": {
    "full": 1000,
    "h": 1250,
    "w": [
@@ -954,7 +945,7 @@
     800
    ]
   },
-  "st-family-pool.webp": {
+  "st-family-phiphi.webp": {
    "full": 900,
    "h": 1200,
    "w": [
@@ -1050,7 +1041,7 @@
     800
    ]
   },
-  "st-howwework.webp": {
+  "st-howwework-kl.webp": {
    "full": 1200,
    "h": 960,
    "w": [
@@ -1097,6 +1088,15 @@
     800
    ]
   },
+  "st-multi-westbay.webp": {
+   "full": 900,
+   "h": 1200,
+   "w": [
+    400,
+    600,
+    800
+   ]
+  },
   "st-panel-beach.webp": {
    "full": 900,
    "h": 1125,
@@ -1124,7 +1124,7 @@
     800
    ]
   },
-  "st-price-laptop.webp": {
+  "st-price-infinity.webp": {
    "full": 1600,
    "h": 1067,
    "w": [
@@ -1134,7 +1134,7 @@
     1200
    ]
   },
-  "st-price-pool.webp": {
+  "st-quote-muscat.webp": {
    "full": 1000,
    "h": 952,
    "w": [
@@ -1143,16 +1143,16 @@
     800
    ]
   },
-  "st-reviews-couple.webp": {
-   "full": 1080,
-   "h": 1350,
+  "st-reviews-maldives.webp": {
+   "full": 1069,
+   "h": 1336,
    "w": [
     400,
     600,
     800
    ]
   },
-  "st-reviews-family.webp": {
+  "st-reviews-mayabay.webp": {
    "full": 1080,
    "h": 1350,
    "w": [

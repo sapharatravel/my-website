@@ -170,7 +170,8 @@
     if (ring) ring.style.rotate = (y * .1).toFixed(1) + "deg";
     var par = bigMouse.matches;
     movers.forEach(function (m) {
-      if (!m.on) return;
+      /* Phones and tablets: photos stay still (mobile audit 22 Nov 2026). The scale-on-scroll made every card photo grow and shrink while you scrolled or swiped. LOCKED: parallax in photo cards is for desktop with a mouse only. */
+      if (!m.on || !par) return;
       var r = m.el.getBoundingClientRect();
       var c = clamp(((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2), -1, 1);
       m.img.style.transform = par ? "translate3d(0," + (c * r.height * .06).toFixed(1) + "px,0) scale(1.14)" : "scale(" + (1 + Math.abs(c) * .06).toFixed(4) + ")";
@@ -542,6 +543,7 @@
   var hero = document.querySelector(".hero.hd"); if (!hero) return;
   var slides = hero.querySelectorAll(".hs-slide"), dots = hero.querySelectorAll(".hs-dot");
   if (slides.length < 2) return;
+  if (window.matchMedia("(max-width: 767px)").matches) return; /* phones: one still photo, the other slides never load (22 Nov 2026) */
   var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function load() {
     hero.querySelectorAll("source[data-srcset]").forEach(function (s) { s.srcset = s.getAttribute("data-srcset"); s.removeAttribute("data-srcset"); });

@@ -69,9 +69,9 @@ const join = (...parts) => parts.join("\n");
 // Cards on the homepage to the pages that hold what used to be on it.
 // 21 Nov 2026 (Huzaifa): no photo used twice on the homepage; Reviews, Business and FAQs got their own photos (IMAGES.md).
 const MORE_CARDS = [
-  ["price-check.html", "st-price-laptop.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
-  ["reviews.html", "st-reviews-family.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
-  ["why-saphara.html", "st-howwework.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
+  ["price-check.html", "st-price-infinity.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
+  ["reviews.html", "st-reviews-maldives.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
+  ["why-saphara.html", "st-howwework-kl.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
   ["trips/business.html", "st-card-business.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
   ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
   ["faq.html", "st-faq-terrace.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
@@ -251,15 +251,15 @@ export function guidePage(slug) {
 // ---------- why saphara ----------
 export function whySaphara() {
   const pg = new Page("why-saphara.html");
-  let body = photoHero(pg, "page-hero-why", "A travel planning flat lay with a passport, map and notebook", ["Real people.", "Actual answers."], "Saphara Travel is an independent, Muslim-owned travel company. We book honeymoons, beach and family holidays, hotel stays and business trips, and we stay on WhatsApp from the first question to the flight home.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Why Saphara", "why-saphara.html"]]);
+  let body = photoHero(pg, "page-hero-why", "The Doha skyline reflected in the water at dusk", ["Real people.", "Actual answers."], "Saphara Travel is an independent, Muslim-owned travel company. We book honeymoons, beach and family holidays, hotel stays and business trips, and we stay on WhatsApp from the first question to the flight home.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Why Saphara", "why-saphara.html"]]);
   body += band("white after-head", '<div class="split-cols editorial"><div class="intro sticky-col"><h2 class="display d-l">' + beats(["How we work."]) + '</h2></div><div class="prose rv"><p>You tell us roughly where, when and who\'s coming. We come back with two or three hotels we\'d book ourselves, compared like for like: the same room type, board basis, cancellation terms and extras, so the difference is clear.</p><p>When you choose, we book it and brief the hotel: your requests, your arrival time, anything that matters. Then we stay on WhatsApp while you\'re away. If the room isn\'t right or a driver doesn\'t turn up, you message us and we deal with the hotel.</p><h3>What we don\'t do</h3><ul><li>We don\'t charge a service fee.</li><li>We don\'t promise to beat every price. We compare honestly and tell you.</li><li>We don\'t call a hotel halal or alcohol-free unless we\'ve checked.</li><li>We don\'t book Umrah flights, though we\'ll help you find a good itinerary.</li></ul></div></div>');
   body += how + hotelQuestions(); // moved from the homepage (15 Nov)
   // "Who you'll talk to" removed 14 Nov 2026 (Mubarak off the site for now; may return). Huzaifa's personal quote stays below.
   body += tripStories(pg);
-  body += band("sand", rustPanel(pg, "Why Saphara", ["Nothing to declare.", "Including hidden fees."], "Why people book with us instead of doing it all themselves.", "st-howwework.webp", "A travel planning flat lay with a passport, map and notebook", C.WHY_ITEMS, "Plan my trip", null, 5.8));
+  body += band("sand", rustPanel(pg, "Why Saphara", ["Nothing to declare.", "Including hidden fees."], "Why people book with us instead of doing it all themselves.", "st-howwework-kl.webp", "The Petronas Towers rising through the morning mist in Kuala Lumpur", C.WHY_ITEMS, "Plan my trip", null, 5.8));
   body += payLater; // moved from the homepage (15 Nov)
   body += moreThanBooking("white");
-  body += band("sand", '<div class="pq"><div><blockquote>“You\'ll have our WhatsApp, not a call centre. If the room isn\'t right, message us and we\'ll sort it with the hotel. That\'s the job.”</blockquote><p class="by"><b>Huzaifa</b><span>Travel Advisor</span></p></div><div class="pcard photo rv" data-move><img class="fade warm" src="' + pg.img("st-price-pool.webp") + '" alt="An infinity pool with palm trees by the sea" loading="lazy"></div></div>');
+  body += band("sand", '<div class="pq"><div><blockquote>“You\'ll have our WhatsApp, not a call centre. If the room isn\'t right, message us and we\'ll sort it with the hotel. That\'s the job.”</blockquote><p class="by"><b>Huzaifa</b><span>Travel Advisor</span></p></div><div class="pcard photo rv" data-move><img class="fade warm" src="' + pg.img("st-quote-muscat.webp") + '" alt="Sunset over a breakwater and mountains on the coast near Muscat" loading="lazy"></div></div>');
   body += cta(pg, ["Try us with", "one question."], "No forms to fill in for the sake of it. Message us and see how we work.", "Message us on " + waGlyph() + "WhatsApp", { cls: "white", href: waMark("cta") });
   return { path: pg.path, title: "Why book with Saphara Travel | Muslim-owned travel company", desc: "An independent, Muslim-owned travel company. No service fee, honest comparisons, and real people on WhatsApp from the first question to the flight home.", hero: true, body };
 }
@@ -270,7 +270,7 @@ export function reviewsPage() {
   let rv = reviews.slice(reviews.indexOf('<div class="bento">'));
   rv = rv.slice(0, rv.lastIndexOf("</div>\n  </div>\n</section>"));
   rv = rv.replace(/<a class="textlink mob-only rv-all"[^>]*>[\s\S]*?<\/a>\s*/, "").split('href="reviews.html"').join('href="https://www.trustpilot.com/review/sapharatravel.co.uk"');
-  let body = photoHero(pg, "page-hero-reviews", "A couple watching the sunset by the sea, seen from behind", ["Word travels."], "What clients say on Trustpilot. Every quote is real and shown in full.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Reviews", "reviews.html"]]);
+  let body = photoHero(pg, "page-hero-reviews", "Palm trees and granite boulders at Anse Lazio, Seychelles, in soft evening light", ["Word travels."], "What clients say on Trustpilot. Every quote is real and shown in full.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Reviews", "reviews.html"]]);
   body += band("white after-head", rv);
   body += cta(pg, ["Your turn."], "Tell us where you'd like to go. We'll take it from there.", "Plan my trip");
   return { path: pg.path, title: "Saphara Travel reviews from real travellers", desc: "What travellers say after booking hotels and holidays with Saphara Travel, a Muslim-owned travel company. Real Trustpilot reviews, shown in full.", hero: true, body };
@@ -299,7 +299,7 @@ export function planMyTrip() {
 // ---------- price check ----------
 export function priceCheckPage() {
   const pg = new Page("price-check.html");
-  let body = photoHero(pg, "page-hero-pricecheck", "Hands browsing hotel options on a laptop", ["Already found a hotel?", "Second opinions are free."], "Send it over and we'll compare it like for like, and tell you honestly if we can get you a better rate.", "Plan my trip", "", "6.6", split("Check my price", "#check")) + crumbBar(pg, [["Price check", "price-check.html"]]);
+  let body = photoHero(pg, "page-hero-pricecheck", "An infinity pool with palm trees by the sea", ["Already found a hotel?", "Second opinions are free."], "Send it over and we'll compare it like for like, and tell you honestly if we can get you a better rate.", "Plan my trip", "", "6.6", split("Check my price", "#check")) + crumbBar(pg, [["Price check", "price-check.html"]]);
   const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
   body += band("white after-head", `<div class="pc-layout">
 <form class="pc-form pc-card rv" id="pcForm" novalidate aria-labelledby="pcFormTitle">

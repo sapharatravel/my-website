@@ -378,8 +378,8 @@
    "name": "Dubai",
    "country": "UAE",
    "code": "DXB",
-   "img": "st-dubai-creek.webp",
-   "alt": "Abra boats on Dubai Creek in golden light",
+   "img": "st-dubai-alfahidi.webp",
+   "alt": "A quiet lane of traditional buildings in Al Fahidi, Dubai",
    "hero": "dest-hero-dubai",
    "hero_alt": "The Dubai skyline and Burj Khalifa at sunset, seen across the water",
    "flight": "7h direct",
@@ -736,7 +736,7 @@
    "name": "Family",
    "trip": "Family holiday",
    "img": "page-hero-family",
-   "alt": "A family in white walking along a beach at sunset",
+   "alt": "Granite boulders and clear water at Anse Source d'Argent, Seychelles",
    "title": "Muslim-friendly family holidays | Saphara Travel",
    "desc": "Family holidays with the right rooms, the right pool and an easy transfer. Connecting rooms requested with the hotel, and food checked for halal needs.",
    "lead": "Family holidays with the right rooms, the right pool and an easy transfer. We ask the questions you'd ask if you had the time, then book what works for everyone.",
@@ -1038,8 +1038,8 @@
    "A headland at sunset in Phuket"
   ],
   "family-holidays": [
-   "st-family-pool.webp",
-   "A family by a resort pool, seen from behind"
+   "st-family-phiphi.webp",
+   "The Phi Phi islands from above, with turquoise bays between the cliffs"
   ],
   "hotels": [
    "st-hotel-balcony.webp",
@@ -1050,8 +1050,8 @@
    "A marble arched corridor in Muscat"
   ],
   "multi-city": [
-   "st-dubai-fahidi.webp",
-   "A quiet lane in the Al Fahidi historic district, Dubai"
+   "st-multi-westbay.webp",
+   "The Doha skyline across the water from a quiet beach"
   ]
  },
  "TRIP_HEADS": {
@@ -1186,7 +1186,7 @@
   [
    "family-holidays",
    "Family",
-   "st-family-beach.webp",
+   "st-family-lazio.webp",
    [
     "Connecting rooms.",
     "Not just connecting flights."

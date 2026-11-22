@@ -57,7 +57,7 @@
 [hidden] { display: none !important; }
 html, body { margin: 0; padding: 0; background: var(--paper); }
 html { scroll-padding-top: calc(var(--header-slim) + var(--s-16)); -webkit-tap-highlight-color: transparent; }
-body { color: var(--ink); font-family: var(--body); font-size: var(--fs-body); line-height: var(--lh-body); -webkit-text-size-adjust: 100%; overflow-x: hidden; touch-action: manipulation; }
+body { color: var(--ink); font-family: var(--body); font-size: var(--fs-body); line-height: var(--lh-body); -webkit-text-size-adjust: 100%; touch-action: manipulation; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
@@ -632,7 +632,7 @@ main { padding-bottom: 0; }
   .words:not(.words-in) .w > span { transform: translateY(110%); }
   .js-motion [data-move] img { will-change: transform; }
 }
-.trip.rv:active, .dest.rv:active { transform: scale(.985); transition-delay: 0s; }
+@media (hover: hover) { .trip.rv:active, .dest.rv:active { transform: scale(.985); transition-delay: 0s; } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 @media (prefers-reduced-motion: reduce) {
   .marquee-track { animation: none; flex-wrap: wrap; width: auto; gap: var(--s-8) var(--s-24); }
@@ -724,7 +724,7 @@ main { padding-bottom: 0; }
 .prose ul.list li { padding: var(--s-12) 0; border-bottom: 1px solid var(--rule); }
 .prose ul.list li b { font-weight: 500; }
 .prose .faq { margin-top: var(--s-16); max-width: none; }
-.prose.legal .table-wrap { margin-top: var(--s-16); overflow-x: auto; }
+.prose.legal .table-wrap { margin-top: var(--s-16); overflow-x: auto; overflow-y: hidden; }
 .prose.legal table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; }
 .prose.legal th, .prose.legal td { text-align: left; vertical-align: top; padding: var(--s-12) var(--s-16) var(--s-12) 0; border-bottom: 1px solid var(--rule); }
 .prose.legal th { font-weight: 500; border-bottom-color: var(--ink); }
@@ -1402,7 +1402,7 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .sf-cta { margin-top: var(--s-24); display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-12) var(--s-24); }
 .sf-h { margin: 0 0 var(--s-12); font: 600 11.5px var(--mono); letter-spacing: .12em; text-transform: uppercase; color: #4E4839; }
 .sf ul { list-style: none; margin: 0; padding: 0; }
-.sf-links a { display: inline-flex; align-items: center; min-height: 44px; text-decoration: none; font-size: 15px; }
+.sf-links a { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; text-decoration: none; font-size: 15px; }
 @media (hover: hover) { .sf a:not(.split):hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; } }
 .sf-nav { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-24); }
 .sf-help p { font-size: 15px; line-height: 1.55; color: #4E4839; max-width: 26em; }
@@ -1965,6 +1965,19 @@ html { overflow-x: clip; }
 .hero-cap { display: none; }
 /* Hero ticks: two short ticks on one line */
 .hd-trust ul { flex-wrap: nowrap; }
+@media (max-width: 374px) { .hd-trust ul { flex-wrap: wrap; row-gap: 6px; } } /* 320px: "WhatsApp" was cut off (mobile audit 22 Nov 2026) */
+/* Phone hero (22 Nov 2026, Huzaifa): no card panel overlapping the photo and no ticks under the button. Tablet and desktop unchanged. */
+@media (max-width: 767px) {
+  .hd-wrap { --hd-overlap: 0px; }
+  .hd-cards, .hd-trust { display: none; }
+  .hd-wrap > .hd-calm-m { margin-top: var(--s-32); }
+  /* one still photo (the first slide), no dots; the slider runs from 768px */
+  .hero .hs-slide:not(:first-of-type), .hero .hs-dots { display: none; }
+  /* full-width WhatsApp us button */
+  .hero.hd .actions .split.mob-only { flex: 1 1 auto; width: 100%; justify-content: space-between; }
+  /* header: logo and menu only (WhatsApp is in the hero, the sticky bar and the menu) */
+  .header .hwa { display: none; }
+}
 .hd-trust li { white-space: nowrap; }
 @media (max-width: 767px) {
   .hd-trust ul { gap: 14px; }
@@ -2090,10 +2103,17 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 
 /* 4 Swipe rows on phones: trips and destinations scroll sideways instead of stacking */
 @media (max-width: 767px) {
-  #trips .trips, #destinations .dests { display: flex; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; gap: 12px; margin-inline: calc(-1 * var(--margin)); padding: 4px var(--margin) 8px; scroll-padding-inline: var(--margin); scrollbar-width: none; }
+  /* Mobile audit 22 Nov 2026: overflow-y hidden, because overflow-x: auto alone makes the row scroll vertically too
+     (it was 8px taller than its box), so a vertical swipe that started on a card moved the row, not the page.
+     The end spacer replaces end padding, which some Safari versions drop from a flex scroller. */
+  #trips .trips, #destinations .dests { display: flex; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; gap: 12px; margin-inline: calc(-1 * var(--margin)); padding: 4px 0 8px var(--margin); scroll-padding-inline: var(--margin); scrollbar-width: none; }
+  #trips .trips::after, #destinations .dests::after { content: ""; flex: 0 0 calc(var(--margin) - 12px); }
   #trips .trips::-webkit-scrollbar, #destinations .dests::-webkit-scrollbar { display: none; }
-  #trips .trips > * { flex: 0 0 78%; scroll-snap-align: start; min-height: 0; }
-  #destinations .dests > * { flex: 0 0 60%; scroll-snap-align: start; }
+  /* Cards in a swipe row are shown as they are: no per-card fade, rise or photo reveal, which only played as each card was swiped in */
+  #trips .trips > .rv, #destinations .dests > .rv { opacity: 1; transform: none; transition: none; }
+  #trips .trips > .pcard > img, #destinations .dests > .pcard > img { clip-path: none; transform: none; }
+  #trips .trips > * { flex: 0 0 calc((100% - var(--margin)) * .78); scroll-snap-align: start; min-height: 0; }
+  #destinations .dests > * { flex: 0 0 calc((100% - var(--margin)) * .6); scroll-snap-align: start; }
   #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
   #trips .trips .pcard.trip p { display: none; }
 }
