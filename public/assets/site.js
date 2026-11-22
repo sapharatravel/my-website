@@ -561,7 +561,6 @@
       timer = setInterval(function () { show(i + 1); }, 6000);
     }
     if (toggle) {
-      toggle.setAttribute("aria-pressed", String(userPaused));
       toggle.setAttribute("aria-label", userPaused ? "Play photo changes" : "Pause photo changes");
       toggle.textContent = userPaused ? "Play photos" : "Pause photos";
     }
