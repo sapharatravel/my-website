@@ -1,17 +1,16 @@
 // Page bodies, ported from build() in tools/build_site.py. Each function returns { path, title, desc, hero, og, body }.
-import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, destCard, placeCard, gcard, ico, igStrip } from "./site.js";
+import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, featurePanel, chips, faq, cta, tripCard, destCard, placeCard, gcard, ico, igStrip } from "./site.js";
 
 import hero from "../components/home/00-hero.html?raw";
 import hotelNames from "../components/home/01-hotel-names.html?raw";
 import how from "../components/home/02-how-it-works.html?raw";
 import HQ from "../data/hotel-questions.json";
-import payLater from "../components/home/03b-pay-later.html?raw";
 import priceCheck from "../components/home/03-price-check.html?raw";
+import priceCheckExample from "../components/home/03-price-check-example.html?raw";
+import payLater from "../components/home/03b-pay-later.html?raw";
 import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
 import declaration from "../components/home/06-declaration.html?raw";
-import moment from "../components/home/05b-moment.html?raw";
-// import compare from "../components/home/06b-compare.html?raw"; // parked 21 Nov 2026
 import reviews from "../components/home/07-reviews.html?raw";
 import quote from "../components/home/08-quote.html?raw";
 import business from "../components/home/09-business.html?raw";
@@ -62,24 +61,20 @@ function moreThanBooking(cls = "sand") {
   return band(cls, `<div class="split-cols"><div class="intro"><h2 class="display d-l">${beats(["More than just a booking."])}</h2><p>When we book your hotel, we don't just send the reservation. We ask the hotel for the things that make a stay: early check-in after an overnight flight, a room upgrade if one's free, a honeymoon touch, a cot ready on arrival, a driver at arrivals. Then we tell you exactly what they've agreed to before you travel.</p></div><div class="rv"><p class="pc-k">Requested, not guaranteed</p>${chips(["Early check-in, requested", "Upgrades, asked for", "Honeymoon touches, arranged where the hotel can", "Transfers, booked and confirmed"])}<p class="small-print">Some hotels say yes, some can't. We'll never promise anything a hotel hasn't confirmed.</p></div></div>`, "more-than-booking");
 }
 
+const MORE_CARDS = [
+  ["reviews.html", "st-reviews-praslin.webp", "Client Reviews", "Read what travellers have said after booking with Saphara."],
+  ["why-saphara.html", "st-howwework-kl.webp", "How We Work", "A small team, honest hotel comparisons and support on WhatsApp."],
+  ["guides/index.html", "guides/guide-malta.webp", "Travel Guides", "Practical notes on where to eat, pray, stay and explore."],
+  ];
+const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+function moreCards(pg) {
+  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">A little more about SAPHARA.</h2><p>Useful things to look through while you're deciding.</p></div><ul class="more-cards">${MORE_CARDS.map(([href, img, title, desc]) => `<li><a class="more-card rv" href="${pg.u(href)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${title}</span><span class="mc-d">${desc}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
+}
+
 const D = Object.fromEntries(C.DESTS.map((d) => [d.slug, d]));
 const join = (...parts) => parts.join("\n");
 
 // ---------- home ----------
-// Cards on the homepage to the pages that hold what used to be on it.
-// 21 Nov 2026 (Huzaifa): no photo used twice on the homepage; Reviews, Business and FAQs got their own photos (IMAGES.md).
-const MORE_CARDS = [
-  ["price-check.html", "st-price-infinity.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
-  ["reviews.html", "st-reviews-praslin.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
-  ["why-saphara.html", "st-howwework-kl.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
-  ["trips/business.html", "st-card-business.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
-  ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
-  ["faq.html", "st-faq-terrace.webp", "FAQs", "Halal food, prayer rooms, payments and ATOL, answered plainly."],
-];
-const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-function moreCards(pg) {
-  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">Still deciding?</h2></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
-}
 // Proof under the hero (16 Nov 2026, Huzaifa): the Trustpilot line and one real review, lifted from the reviews block so the wording can't drift.
 function heroProof(pg) {
   // Redesigned 16 Nov (Huzaifa: "show the review bigger in Kensington"): one large quote, then the Trustpilot line.
@@ -105,14 +100,20 @@ export function home() {
   </div>
 </section>
 `;
-  // Slim homepage (15 Nov, Huzaifa): hero, trip types, destinations and the USPs, then cards to everything that moved to its own page.
+  // 22 Nov 2026: keep the homepage concise. Lead with customer proof, then trip types, destinations, one editorial pause, the Saphara proposition and a short Price Check invitation.
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
-  void guides;
-  // 16 Nov 2026 (Huzaifa): proof under the hero, then the FAQ teaser and the check-in form ("Bismillah. Let's plan it.") back at the end, with a WhatsApp button.
+  void guides; // Full guide cards stay on the Guides page; the homepage links to them from navigation.
+  // 22 Nov 2026: keep the homepage focused on leisure-trip decisions. Business travel stays in the Trips navigation; Price Check carries the like-for-like comparison.
   const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
-  // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
-  // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
-  const body = toPlan(join(hero, hotelNames, heroProof(pg), trips, destinations, moment, declaration, moreCards(pg))) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
+  // Keep the homepage to the core leisure-travel decision journey; business travel is in the Trips menu.
+  const body = toPlan(join(
+    hero,
+    heroProof(pg),
+    trips,
+    destinations,
+    declaration,
+    moreCards(pg)
+  )) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
 }
 
@@ -135,7 +136,7 @@ export function tripPage(slug) {
   const [rimg, ralt] = C.RPIMG[slug];
   const heads = C.TRIP_HEADS[slug];
   if (slug === "business") body += business.replace('id="business"', 'id="business-service"').replace(/<h2 class="display d-l"[^>]*>[\s\S]*?<\/h2>\s*/, '<h2 class="sr-only">What we handle</h2>').split('src="img/').join('src="' + pg.img(""));
-  else body += band("white", rustPanel(pg, "What we arrange", heads[0], "Tell us what you'd like us to handle. We book it, confirm the details with the hotel and stay on WhatsApp while you're away.", rimg, ralt, t.arrange));
+  else body += band("white", featurePanel(pg, "What we arrange", heads[0], "Tell us what you'd like us to handle. We book it, confirm the details with the hotel and stay on WhatsApp while you're away.", rimg, ralt, t.arrange));
   if (slug === "hotels") body += moreThanBooking("white continue");
   body += band("sand", `<div class="split-cols"><div class="intro sticky-col"><h2 class="display d-l">${beats(heads[1])}</h2><p>Every hotel is different, so we ask, and we tell you plainly what we find.</p></div><div class="rv">${chips(t.checks)}</div></div>`);
   body += band("white", '<div class="dest-head"><div class="intro"><h2 class="display d-l">' + beats(heads[2]) + '</h2></div><a class="textlink" href="' + pg.u("destinations/index.html") + '">All destinations <span aria-hidden="true">→</span></a></div><div class="dests">' + t.dests.map((s) => destCard(pg, D[s])).join("") + "</div>");
@@ -153,10 +154,10 @@ export function tripPage(slug) {
 // ---------- destinations ----------
 export function destinationsIndex() {
   const pg = new Page("destinations/index.html");
-  let body = photoHero(pg, "page-hero-destinations", "An island ringed by reef in the Maldives", ["Pick a place.", "We'll handle the rest."], "Places our clients go back to, from Zanzibar and Langkawi to Makkah and Madinah. Flight times are from Manchester and approximate.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Destinations", "destinations/index.html"]]);
+  let body = photoHero(pg, "page-hero-destinations", "An island ringed by reef in the Maldives", ["Pick a place.", "We'll handle the rest."], "Places our clients go back to, from Zanzibar and Langkawi to Umrah. Flight times are from Manchester and approximate.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Destinations", "destinations/index.html"]]);
   body += band("white after-head", '<h2 class="sr-only">All destinations</h2><div class="dests" style="margin-top:0">' + C.DESTS.map((d) => destCard(pg, d)).join("") + "</div>");
   body += cta(pg, ["Somewhere else?", "Ask us."], "These are the places we're asked about most, not the only ones. Tell us where you're thinking.", "Plan my trip");
-  return { path: pg.path, title: "Muslim-friendly destinations | Saphara Travel", desc: "Zanzibar, Doha, Dubai, Oman, Makkah and Madinah, Kuala Lumpur and Langkawi: hotels and trips booked and looked after on WhatsApp.", hero: true, body };
+  return { path: pg.path, title: "Muslim-friendly destinations | Saphara Travel", desc: "Zanzibar, Doha, Dubai, Oman, Umrah, Kuala Lumpur and Langkawi: hotels and trips booked and looked after on WhatsApp.", hero: true, body };
 }
 
 export function destinationPage(slug) {
@@ -251,16 +252,13 @@ export function guidePage(slug) {
 // ---------- why saphara ----------
 export function whySaphara() {
   const pg = new Page("why-saphara.html");
-  let body = photoHero(pg, "page-hero-why", "The Doha skyline reflected in the water at dusk", ["Real people.", "Actual answers."], "Saphara Travel is an independent, Muslim-owned travel company. We book honeymoons, beach and family holidays, hotel stays and business trips, and we stay on WhatsApp from the first question to the flight home.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Why Saphara", "why-saphara.html"]]);
-  body += band("white after-head", '<div class="split-cols editorial"><div class="intro sticky-col"><h2 class="display d-l">' + beats(["How we work."]) + '</h2></div><div class="prose rv"><p>You tell us roughly where, when and who\'s coming. We come back with two or three hotels we\'d book ourselves, compared like for like: the same room type, board basis, cancellation terms and extras, so the difference is clear.</p><p>When you choose, we book it and brief the hotel: your requests, your arrival time, anything that matters. Then we stay on WhatsApp while you\'re away. If the room isn\'t right or a driver doesn\'t turn up, you message us and we deal with the hotel.</p><h3>What we don\'t do</h3><ul><li>We don\'t charge a service fee.</li><li>We don\'t promise to beat every price. We compare honestly and tell you.</li><li>We don\'t call a hotel halal or alcohol-free unless we\'ve checked.</li><li>We don\'t book Umrah flights, though we\'ll help you find a good itinerary.</li></ul></div></div>');
+  let body = photoHero(pg, "page-hero-why", "The Doha skyline reflected in the water at dusk", ["Travel, with", "someone in your corner."], "Independent and Muslim-owned. We compare hotels honestly, check the details that matter to you and stay in touch on WhatsApp throughout your trip.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Why Saphara", "why-saphara.html"]]);
+  body += band("white after-head", '<div class="split-cols editorial"><div class="intro sticky-col"><h2 class="display d-l">' + beats(["How we work."]) + '</h2></div><div class="prose rv"><p>Tell us where you want to go, when and who is travelling. We will suggest a small selection of hotels and make the differences clear, including room type, meal plan and cancellation terms.</p><p>Once you choose, we make the booking and pass your requests to the hotel. You can reach the same small team on WhatsApp before, during and after your stay.</p><h3>What we don\'t do</h3><ul><li>We don\'t charge a service fee.</li><li>We don\'t promise to beat every price. We compare honestly and tell you.</li><li>We don\'t call a hotel halal or alcohol-free unless we\'ve checked.</li><li>We don\'t book Umrah flights, though we\'ll help you find a good itinerary.</li></ul></div></div>');
   body += how + hotelQuestions(); // moved from the homepage (15 Nov)
   // "Who you'll talk to" removed 14 Nov 2026 (Mubarak off the site for now; may return). Huzaifa's personal quote stays below.
-  body += tripStories(pg);
-  body += band("sand", rustPanel(pg, "Why Saphara", ["Nothing to declare.", "Including hidden fees."], "Why people book with us instead of doing it all themselves.", "st-howwework-kl.webp", "The Petronas Towers rising through the morning mist in Kuala Lumpur", C.WHY_ITEMS, "Plan my trip", null, 5.8));
-  body += payLater; // moved from the homepage (15 Nov)
-  body += moreThanBooking("white");
+  body += band("sand", featurePanel(pg, "The Saphara difference", ["Good advice.", "No extra fee."], "A real person, a clear comparison and support that does not stop at check-in.", "st-howwework-kl.webp", "The Petronas Towers rising through the morning mist in Kuala Lumpur", C.WHY_ITEMS.filter(([key]) => key !== "paylater"), "Plan my trip", null, 5.8));
   body += band("sand", '<div class="pq"><div><blockquote>“You\'ll have our WhatsApp, not a call centre. If the room isn\'t right, message us and we\'ll sort it with the hotel. That\'s the job.”</blockquote><p class="by"><b>Huzaifa</b><span>Travel Advisor</span></p></div><div class="pcard photo rv" data-move><img class="fade warm" src="' + pg.img("st-quote-muscat.webp") + '" alt="Sunset over a breakwater and mountains on the coast near Muscat" loading="lazy"></div></div>');
-  body += cta(pg, ["Try us with", "one question."], "No forms to fill in for the sake of it. Message us and see how we work.", "Message us on " + waGlyph() + "WhatsApp", { cls: "white", href: waMark("cta") });
+  body += cta(pg, ["Start with", "one question."], "Tell us what you are considering. We will give you an honest answer, with no pressure to book.", "Message us on " + waGlyph() + "WhatsApp", { cls: "white", href: waMark("cta") });
   return { path: pg.path, title: "Why book with Saphara Travel | Muslim-owned travel company", desc: "An independent, Muslim-owned travel company. No service fee, honest comparisons, and real people on WhatsApp from the first question to the flight home.", hero: true, body };
 }
 
@@ -338,7 +336,7 @@ export function priceCheckPage() {
     <div class="fq"><label for="pc-link">Link</label><input class="field" id="pc-link" type="url" maxlength="400" placeholder="Paste the link if you have it"></div>
   </details>
   <div class="actions pc-actions"><button class="split" type="submit"><span class="split-label">Send on ${waGlyph()}WhatsApp</span><span class="split-arrow">${arrow}</span></button><p class="caption">Send your screenshot in the same chat.</p></div>
-  <p class="small-print" id="pcSent" hidden role="status">WhatsApp should now be open with your message. If it didn't open, message us on +44 7887 353457 and paste the details.</p>
+  <p class="small-print" id="pcSent" hidden role="status">WhatsApp should open with your message ready. Tap Send in WhatsApp to complete your price check. If it doesn't open, message us on +44 7887 353457 and paste the details.</p>
 </form>
 <aside class="pc-side">
   <div class="pc-quick"><p class="pc-k">Only have a screenshot?</p><p>Send it straight to us on WhatsApp and we'll do the rest.</p>${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}</div>
@@ -347,7 +345,7 @@ export function priceCheckPage() {
 </aside>
 </div>
 <script src="assets/price-check.js?v=${assetV("price-check.js")}" defer></script>`, "check");
-  const example = (priceCheck.match(/<div class="pc-example pcx-home rv"[\s\S]*?<p class="pcx-more">[^<]*<\/p>\s*<\/div>/) || [""])[0].split("pcxTitle").join("pcxTitle2");
+  const example = priceCheckExample.split("pcxTitle").join("pcxTitle2");
   body += band("pc-band pc-result", `<div class="pc2"><div class="intro"><h2 class="display d-l">${beats(["What you get back."])}</h2><p>We reply on WhatsApp with a plain comparison like this one: the price you found, what we found, and what's different.</p><p class="pc-fine">We can't beat every price and we won't promise to. It's a free second opinion from people with access to good rates.</p><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div><div class="pcx-wrap">${example}</div></div>`);
   return { path: pg.path, title: "Hotel price check | Saphara Travel", desc: "Found a hotel already? Send it over and we'll compare it like for like and tell you honestly if we can get a better rate.", hero: true, body };
 }

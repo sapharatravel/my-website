@@ -22,7 +22,7 @@ export function waOpener(path, spot) {
   if (spot === "business" || (sect === "trips" && slug === "business")) return "Salaams, I'd like to talk to you about business travel.";
   if (spot === "guide" && guide) return `Salaams, please send me the ${guide.name} guide.`;
   if (sect === "trips" && WA_TRIP[slug]) return `Salaams, I'm interested in ${WA_TRIP[slug]}. Could you help?`;
-  if (dest && slug === "makkah-and-madinah") return "Salaams, I'd like some help with Umrah hotels in Makkah and Madinah.";
+  if (dest && slug === "makkah-and-madinah") return "Salaams, I'd like some help with Umrah hotels.";
   if (dest) return `Salaams, I'm interested in a trip to ${dest.name}. Could you help?`;
   if (guide) return `Salaams, I've been reading your ${guide.name} guide and I'd like some help planning a trip.`;
   if (path === "faq.html") return "Salaams, I have a question.";
@@ -67,7 +67,7 @@ export const shareBtn = (label = "Share this guide") =>
 export const planLink = (pg) => (pg.path === "plan-my-trip.html" ? "#enquire" : pg.u("plan-my-trip.html")); // the form lives only on Plan my trip (slim homepage, 15 Nov)
 
 export function header(pg) {
-  const tiles = C.TRIPS.map(([s, n, img, [a, b]]) => `\n          <a class="dd-tile" href="${pg.u("trips/" + s + ".html")}" aria-label="${n}: ${a} ${b}"><span class="ph"><img data-src="${pg.img("thumb-" + img)}" alt="" width="400" height="300" decoding="async"${s === "business" ? ' class="warm"' : ""}></span><b class="dd-name">${n}${ARROW}</b><span class="dd-sub">${a} ${b}</span></a>`).join("");
+  const tiles = C.TRIPS.map(([s, n, img, [a, b]]) => `\n          <a class="dd-tile${s === "hotels" ? " dd-featured" : ""}" href="${pg.u("trips/" + s + ".html")}" aria-label="${n}: ${a} ${b}"><span class="ph"><img data-src="${pg.img("thumb-" + img)}" alt="" width="400" height="300" decoding="async"${s === "business" ? ' class="warm"' : ""}></span><b class="dd-name">${n}${ARROW}</b><span class="dd-sub">${a} ${b}</span></a>`).join("");
   const extra = (C.MENU_EXTRA || []).map((m) => `\n          <a class="dd-tile" href="${pg.u(m.href)}" aria-label="${m.name}: ${m.lines[0]} ${m.lines[1]}"><span class="ph"><img data-src="${pg.img(m.thumb)}" alt="" width="400" height="300" decoding="async"></span><b class="dd-name">${m.name}${ARROW}</b><span class="dd-sub">${m.lines[0]} ${m.lines[1]}</span></a>`).join("");
   const pl = planLink(pg), dp = pl === "#enquire" ? " data-plan" : "";
   return `<a class="skip" href="#main">Skip to content</a>
@@ -95,7 +95,7 @@ export function header(pg) {
   <div class="mm-top"><img src="${pg.img("saphara-logo-dark.svg")}" alt="Saphara Travel" width="120" height="35"><button class="mm-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
   <nav aria-label="Menu">
     <a class="mm-pc" href="${pg.u("price-check.html")}">Price check <span class="mm-tag">Free</span></a>
-    <div class="mm-trips"><span>Trips</span><div class="mm-sub">${C.TRIPS.map(([s2, n2]) => `<a href="${pg.u("trips/" + s2 + ".html")}">${n2}</a>`).join("")}${(C.MENU_EXTRA || []).map((m) => `<a href="${pg.u(m.href)}">${m.name}</a>`).join("")}</div></div>
+    <div class="mm-trips"><span>Trips</span><div class="mm-sub">${C.TRIPS.map(([s2, n2, img2, lines2]) => `<a class="mm-trip-card" href="${pg.u("trips/" + s2 + ".html")}"><span class="mm-trip-img"><img src="${pg.img("thumb-" + img2)}" alt="" width="400" height="300" loading="lazy" decoding="async"></span><span class="mm-trip-copy"><b>${n2}</b><small>${lines2[0]} ${lines2[1]}</small></span></a>`).join("")}${(C.MENU_EXTRA || []).map((m) => `<a class="mm-trip-card" href="${pg.u(m.href)}"><span class="mm-trip-img"><img src="${pg.img(m.thumb)}" alt="" width="400" height="300" loading="lazy" decoding="async"></span><span class="mm-trip-copy"><b>${m.name}</b><small>${m.lines[0]} ${m.lines[1]}</small></span></a>`).join("")}</div></div>
     <a href="${pg.u("destinations/index.html")}">Destinations</a><a href="${pg.u("guides/index.html")}">Guides</a><a href="${pg.u("why-saphara.html")}">Why Saphara</a>
   </nav>
   <div class="mm-actions"><a class="textlink" href="${waMark("menu")}">${waGlyph()}WhatsApp us</a><a class="split" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
@@ -114,7 +114,7 @@ export function igStrip(pg) {
 }
 
 export function footer(pg) {
-  // Rounded inset sand-deep panel (approved 15 Nov 2026), on a white surround. Styles: "Footer" block at the end of site.css.
+  // Rounded inset black panel, on a pale surround. Sand is used for the small accents.
   const L = (t, h) => `<li><a href="${pg.u(h)}">${t}</a></li>`;
   const pl = planLink(pg);
   const MAIL = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>`;
@@ -124,7 +124,7 @@ export function footer(pg) {
 <footer class="sf">
   <div class="sf-top">
     <div class="sf-brand">
-      <img class="logo" src="${pg.img("saphara-logo-dark.svg")}" alt="Saphara Travel" width="120" height="35" loading="lazy">
+      <img class="logo" src="${pg.img("saphara-logo-sand.svg")}" alt="Saphara Travel" width="120" height="35" loading="lazy">
       <p class="sf-closer"><span class="beat">Safe travels.</span> <span class="beat">And send pictures.</span></p>
       <p class="sf-statement">We take the stress out of booking hotels and holidays. We speak to the hotel for you, compare prices like for like, and we're there if anything goes wrong.</p>
       <div class="sf-cta"><a class="split" href="${pl}"${pl === "#enquire" ? " data-plan" : ""}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
@@ -258,7 +258,7 @@ export function intro(h2Lines, p = "", fit = null, extra = "") {
 }
 export const why = (items) => '<div class="why6">' + items.map(([i, t, d]) => `<div class="rv">${ico(i)}<div><h3>${t}</h3><p>${d}</p></div></div>`).join("") + "</div>";
 
-export function rustPanel(pg, label, lines, text, img, alt, items, btn = null, trip = null, fit = null) {
+export function featurePanel(pg, label, lines, text, img, alt, items, btn = null, trip = null, fit = null) {
   const rows = items.map(([, t, d]) => `<li><span class="tick">${CHECK}</span><div><h3>${t}</h3><p>${d}</p></div></li>`).join("");
   let b = "";
   if (btn) { const href = pg.u("plan-my-trip.html") + (trip ? "?trip=" + trip.replace(/ /g, "+") : ""); b = `<div class="actions" style="margin-top:var(--s-24)">${split(btn, href)}</div>`; }
