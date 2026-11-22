@@ -15,7 +15,7 @@ assert.doesNotMatch(home, /class="hs-toggle"/, "Hero must not render a pause con
 assert.doesNotMatch(home, /hd-calm/, "Hero must not contain the price comparison card");
 assert.match(home, /id="price-check"/, "Price check should sit in its own homepage section");
 assert.equal((home.match(/class="rv-card rv"/g) || []).length, 2, "Homepage review section should show two text reviews on desktop");
-assert.match(home, /class="rv-photo rv"/, "Homepage review section should include the featured photo review");
+assert.match(home, /class="pcard rv-photo rv"/, "Homepage review section should include the featured photo review");
 assert.match(home, /Still deciding\?/, "Homepage secondary navigation should render");
 assert.equal((home.match(/class="more-card rv"/g) || []).length, 5, "Homepage should have five secondary navigation cards");
 assert.match(home, /aria-label="Explore honeymoons"/, "Trip card links should have descriptive accessible names");
