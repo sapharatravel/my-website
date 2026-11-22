@@ -586,7 +586,7 @@
  ],
  "TRIP_PAGES": {
   "honeymoons": {
-   "name": "Honeymoon",
+   "name": "Honeymoons",
    "trip": "Honeymoon",
    "img": "page-hero-honeymoons",
    "alt": "Steps from an overwater villa down into a clear lagoon",
@@ -659,7 +659,7 @@
    "btn": "Plan a honeymoon"
   },
   "beach-and-island": {
-   "name": "Beach and island",
+   "name": "Beach & Island",
    "trip": "Beach and island",
    "img": "page-hero-beach",
    "alt": "A longtail boat in a turquoise bay below limestone cliffs",
@@ -733,7 +733,7 @@
    "btn": "Plan a beach trip"
   },
   "family-holidays": {
-   "name": "Family",
+   "name": "Family Holidays",
    "trip": "Family holiday",
    "img": "page-hero-family",
    "alt": "Granite boulders and clear water at Anse Source d'Argent, Seychelles",
@@ -806,7 +806,7 @@
    "btn": "Plan a family trip"
   },
   "hotels": {
-   "name": "Hotel only",
+   "name": "Hotel Only",
    "trip": "Hotel only",
    "img": "page-hero-hotels",
    "alt": "A bright hotel suite with a sea view",
@@ -880,7 +880,7 @@
    "btn": "Plan a hotel stay"
   },
   "business": {
-   "name": "Business",
+   "name": "Business Travel",
    "trip": "Business travel",
    "img": "page-hero-business",
    "alt": "Arched windows framing the Doha skyline at the Museum of Islamic Art",
@@ -956,7 +956,7 @@
   },
   "multi-city": {
    "name": "Multi-city trip",
-   "trip": "Multi-city",
+   "trip": "Multi-City",
    "img": "page-hero-multicity",
    "alt": "Old Town shophouses in Phuket",
    "title": "Multi-city trips and packages | Saphara Travel",
