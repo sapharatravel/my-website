@@ -2594,3 +2594,40 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #trips .trip .actions,
   #trips .trip-featured .actions { margin-top: 12px; }
 }
+
+
+/* 22 Nov 2026: restore the deliberately oversized Hotel Only feature card. */
+@media (min-width: 1024px) {
+  #trips .trips {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 16px;
+    align-items: stretch;
+  }
+  #trips .trip-featured {
+    grid-column: span 2;
+    order: -1;
+    min-height: 420px;
+    height: 420px;
+  }
+  #trips .trip:not(.trip-featured) {
+    grid-column: span 1;
+    min-height: 420px;
+    height: 420px;
+  }
+  #trips .trip-featured .body { padding: 28px 24px; }
+  #trips .trip-featured h3 { max-width: 13ch; font-size: clamp(30px, 2.6vw, 40px); }
+  #trips .trip-featured p { max-width: 36ch; font-size: 15px; }
+}
+
+/* Destination arch images respond gently to hover and keyboard focus. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  #destinations .dest > img {
+    transform: scale(1);
+    transition: transform 650ms cubic-bezier(.2,.7,.2,1);
+    will-change: transform;
+  }
+  #destinations .dest:hover > img,
+  #destinations .dest:focus-visible > img {
+    transform: scale(1.055);
+  }
+}
