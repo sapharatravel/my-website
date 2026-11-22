@@ -587,7 +587,7 @@
  "TRIP_PAGES": {
   "honeymoons": {
    "name": "Honeymoons",
-   "trip": "Honeymoon",
+   "trip": "Honeymoons",
    "img": "page-hero-honeymoons",
    "alt": "Steps from an overwater villa down into a clear lagoon",
    "title": "Muslim-friendly honeymoons | Saphara Travel",
@@ -660,7 +660,7 @@
   },
   "beach-and-island": {
    "name": "Beach & Island",
-   "trip": "Beach and island",
+   "trip": "Beach & Island",
    "img": "page-hero-beach",
    "alt": "A longtail boat in a turquoise bay below limestone cliffs",
    "title": "Muslim-friendly beach and island holidays | Saphara Travel",
@@ -807,7 +807,7 @@
   },
   "hotels": {
    "name": "Hotel Only",
-   "trip": "Hotel only",
+   "trip": "Hotel Only",
    "img": "page-hero-hotels",
    "alt": "A bright hotel suite with a sea view",
    "title": "Hotel bookings and price checks | Saphara Travel",
@@ -1185,7 +1185,7 @@
   ],
   [
    "family-holidays",
-   "Family",
+   "Family Holidays",
    "st-family-lazio.webp",
    [
     "Connecting rooms.",
@@ -1194,7 +1194,7 @@
   ],
   [
    "multi-city",
-   "Multi-city",
+   "Multi-City",
    "st-card-multicity.webp",
    [
     "Multi-city trips.",
@@ -1212,7 +1212,7 @@
   ],
   [
    "business",
-   "Business",
+   "Business Travel",
    "st-card-business.webp",
    [
     "Business trips.",
