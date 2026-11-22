@@ -23,7 +23,7 @@
   --ink: #111111; --rust: #000000; --gold: #6B6457; --tone: #8A8070; --black: #000000; --grey: #66604F; --rule: #DDD4C3; --accent: #C9B48A;
   --on-dark: #F6F3ED; --on-dark-muted: #D3CFC6; --on-dark-gold: #E7DCC5;
   --s-4: 4px; --s-8: 8px; --s-12: 12px; --s-16: 16px; --s-24: 24px; --s-32: 32px; --s-40: 40px; --s-56: 56px; --s-80: 80px; --s-120: 120px;
-  --margin: 24px; --section: 80px; --label-head: 16px; --head-body: 16px; --body-btn: 32px; --block: 24px; --intro-content: 40px; --small-gap: 12px; --card-pad: 24px; --overlap: 96px;
+  --margin: 24px; --label-head: 16px; --head-body: 16px; --body-btn: 32px; --block: 24px; --small-gap: 12px; --card-pad: 24px; --overlap: 96px;
   --logo-h: 28px; --logo-slim: 22px; --header-top: 32px; --header-bottom: 24px; --header-slim: 64px;
   --r-card: 20px; --r-small: 14px; --r-pill: 999px;
   --shadow-sm: 0 1px 2px rgba(86,60,30,.06), 0 2px 8px rgba(86,60,30,.05);
@@ -43,7 +43,7 @@
   color-scheme: light;
 }
 @media (min-width: 768px) { :root { --margin: 40px; --card-pad: 32px; } }
-@media (min-width: 1024px) { :root { --margin: 64px; --section: 96px; --head-body: 24px; --block: 32px; --intro-content: 56px; --card-pad: 40px; --overlap: 160px; --logo-h: 34px; --logo-slim: 25px; --header-top: 40px; --header-slim: 72px; --fs-body: 17px; --lh-body: 1.55; --fs-lead: 19px; } }
+@media (min-width: 1024px) { :root { --margin: 64px; --head-body: 24px; --block: 32px; --card-pad: 40px; --overlap: 160px; --logo-h: 34px; --logo-slim: 25px; --header-top: 40px; --header-slim: 72px; --fs-body: 17px; --lh-body: 1.55; --fs-lead: 19px; } }
 :root { --content: 1200px; --col-left: max(var(--margin), calc((100% - var(--content)) / 2)); --hero-min: 16px; --hero-x: max(var(--hero-min), calc(var(--col-left) - 56px)); --hero-top: 16px; --fs-caption: 14px; --fs-label: 12px; --head-stat: 44px; }
 /* Tablet and desktop type scale (13 Nov): hero is the only big moment. Phones keep their sizes. */
 @media (min-width: 768px) { :root { --head-hero: clamp(64px, 6.5vw, 96px); --head-section: clamp(48px, 4.4vw, 64px); --head-panel: clamp(32px, 2.8vw, 40px); --head-stat: 40px; } }
@@ -934,7 +934,6 @@ html.mm-open, html.mm-open body { overflow: hidden; }
 .decl-stamp { top: -26px; right: var(--s-16); }
 @media (max-width: 767px) {
   .decl-stamp { top: -22px; right: var(--s-8); }
-  :root { --section: 64px; }
   #how .steps { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-16) var(--s-16); }
   #how .steps li { border-top: 1px solid var(--rule); padding-top: var(--s-12); }
   #how .steps h3 { font-size: 22px; }
@@ -1369,7 +1368,7 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
    Wide moments: the hero, the business panel and the footer reach close to the screen edge. Everything else stays in the column,
    with paragraphs at about 65 characters. */
 @media (min-width: 1280px) {
-  :root { --content: 1440px; --margin: 80px; --section: 112px; --intro-content: 64px; --card-pad: 44px; --wide-inset: 24px;
+  :root { --content: 1440px; --margin: 80px; --card-pad: 44px; --wide-inset: 24px;
     --hero-x: max(var(--wide-inset), calc(var(--col-left) - 120px)); }
   p { max-width: 33em; }
   .intro { max-width: 760px; }
@@ -1378,7 +1377,7 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
   .rv-grid { gap: var(--s-24); }
 }
 @media (min-width: 1600px) {
-  :root { --margin: 96px; --section: 128px; --intro-content: 72px; --head-body: 28px; --card-pad: 48px; --wide-inset: 32px; }
+  :root { --margin: 96px; --head-body: 28px; --card-pad: 48px; --wide-inset: 32px; }
 }
 
 /* ---------- Footer (approved 15 Nov 2026): rounded inset sand-deep panel on a white surround, Doha skyline inside it ----------
@@ -1644,13 +1643,6 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .ns-mob { margin-top: var(--s-40); }
 @media (min-width: 1024px) { .ns-mob { display: none; } }
 
-/* ---------- Tighter round (16 Nov 2026, Huzaifa) ---------- */
-/* Section padding a step tighter: 56 phone, 72 tablet, 80 desktop, 88 from 1280, 96 from 1600 */
-:root { --section: 72px; }
-@media (max-width: 767px) { :root { --section: 56px; } }
-@media (min-width: 1024px) { :root { --section: 80px; } }
-@media (min-width: 1280px) { :root { --section: 88px; } }
-@media (min-width: 1600px) { :root { --section: 96px; } }
 /* Footer: no skyline, so no room kept for it */
 .sf .sf-sky { display: none; }
 .sf-legal { margin-top: var(--s-40); padding-bottom: var(--s-32); }
@@ -2175,7 +2167,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   .hero .hs-toggle { min-height: 36px; }
   .hd-wrap > :not(.hero) { margin-left: var(--margin) !important; margin-right: var(--margin) !important; }
 }
-@media (min-width: 768px) { .hero .hs-dots { gap: 8px; } }
+@media (min-width: 768px) { .hero .hs-dots { top: auto; right: auto; left: 50%; bottom: 84px; transform: translateX(-50%); flex-direction: row; gap: 8px; } }
 @media (prefers-reduced-motion: reduce) { .hs-toggle { display: none; } }
 
 /* Homepage hero slider. */
