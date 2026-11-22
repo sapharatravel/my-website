@@ -725,7 +725,7 @@ window.UK_AIRPORTS = [
     if (i < 0) { welcome(); return; }
     cur = i; var st = STEPS[i], el = h("section", { class: "pf-panel", "aria-labelledby": "pf-h-" + st.id }), parts = {}, nextBtn;
     header(i).forEach(function (n) { el.appendChild(n); });
-    var groups = h("div", { class: "groups" }), check = function () { return true; };
+    var groups = h("div", { class: "groups g-" + st.id }), check = function () { return true; };
     if (st.id === "trip") {
       el.appendChild(h("h3", { class: "q", id: "pf-h-trip", tabindex: "-1", text: "What are you planning?" }));
       var destBox = h("div", { hidden: !S.type || null });

@@ -2173,10 +2173,15 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 .hero .hs-slide { opacity: 0; transition: opacity 1400ms var(--ease, ease); }
 .hero .hs-slide.is-on { opacity: 1; }
 .hs-dots { position: absolute; z-index: 3; right: 12px; top: 30%; display: flex; flex-direction: column; gap: 4px; }
-.hs-dot { width: 28px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
-.hs-dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.55); box-shadow: 0 1px 6px rgba(20,12,4,.35); transition: background 300ms, transform 300ms; }
-.hs-dot.is-on::before { background: #fff; transform: scale(1.25); }
-.hs-dot:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 50%; }
+/* 22 Nov 2026 (Huzaifa): lines instead of dots; the current line fills over the slide's time (static when the slider is paused or with reduced motion) */
+.hs-dot { position: relative; width: 56px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; }
+.hs-dot::before, .hs-dot::after { content: ""; position: absolute; left: 6px; right: 6px; top: 50%; height: 3px; margin-top: -1.5px; border-radius: 2px; }
+.hs-dot::before { background: rgba(255,255,255,.4); box-shadow: 0 1px 6px rgba(20,12,4,.3); }
+.hs-dot::after { background: #fff; transform: scaleX(0); transform-origin: left center; }
+.hs-dot.is-done::after, .hs-dot.is-on::after { transform: scaleX(1); }
+.hs-dots.is-run .hs-dot.is-on::after { animation: hsFill var(--hs-dur, 6000ms) linear both; }
+@keyframes hsFill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.hs-dot:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 4px; }
 @media (min-width: 768px) { .hs-dots { top: auto; right: auto; left: 50%; bottom: 84px; transform: translateX(-50%); flex-direction: row; } }
 
 /* 22 Nov 2026 (Huzaifa): desktop header and hero spacing.
@@ -2302,7 +2307,7 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.2
   #trips .trips .pcard.trip p { display: none; }
   .more-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-16); }
   .more-card { min-height: 280px; padding: var(--s-16); }
-  .hs-dot { width: 44px; height: 44px; }
+  .hs-dot { width: 64px; height: 44px; }
 }
 @media (max-width: 767px) { .more-card .mc-d { -webkit-line-clamp: 3; } }
 .fstep input, .fstep textarea, .fstep select { scroll-margin-top: 150px; }

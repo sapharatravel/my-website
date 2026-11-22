@@ -208,8 +208,8 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf { max-width: none; grid-template-columns: minmax(0, 640px) minmax(0, 400px); justify-content: center; column-gap: var(--s-56); }
   .pf .pf-aside { display: flex; flex-direction: column; gap: var(--s-8); position: sticky; top: calc(var(--header-slim) + var(--s-24)); }
   .pf .pf-aside .next-steps { margin-top: var(--s-24); }
-  .pf .pf-pass-mob { display: none; }
 }
+@media (min-width: 1360px) { .pf .pf-pass-mob { display: none; } }
 .pf .pf-top { display: flex; align-items: center; justify-content: space-between; min-height: 44px; margin-bottom: var(--s-8); }
 .pf .pf-count { font-size: 13px; font-weight: 500; color: var(--grey); font-variant-numeric: tabular-nums; }
 .pf .pf-back { background: none; border: 0; padding: 0 var(--s-8) 0 0; min-height: 44px; font: 500 15px var(--body); color: var(--grey); cursor: pointer; display: inline-flex; align-items: center; gap: var(--s-8); }
@@ -265,3 +265,45 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .rv-sec, .final-band .pf .rv-sec-h, .final-band .pf .sum li, .final-band .pf .pf-disc { border-color: var(--f-line); }
 /* Paragraphs in the form card use the card width (the site-wide 31em cap broke short lines early on desktop, 22 Nov 2026) */
 .pf .pf-card p { max-width: none; }
+
+/* Desktop (22 Nov 2026, Huzaifa: "use the full width of the page so the user isn't required to scroll down to click the next buttons"):
+   the form takes the page width, and each step's groups sit side by side so Continue stays on screen. */
+@media (min-width: 1024px) {
+  .pf { max-width: 1320px; grid-template-columns: minmax(0, 1fr) 360px; column-gap: var(--s-40); }
+  .final-band .pf { max-width: 1200px; grid-template-columns: minmax(0, 1fr); }
+  .pf .pf-card { padding: var(--s-32) var(--s-40) var(--s-40); }
+  /* one header row: Back, the step bar, Step x of 4 */
+  .pf .pf-panel { position: relative; }
+  .pf .pf-top { margin-bottom: var(--s-16); }
+  .pf .pf-steps { position: absolute; top: 4px; left: 120px; right: 120px; margin: 0; }
+  .pf .sub { margin-top: var(--s-4); }
+  .pf .groups { margin-top: var(--s-16); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-24) var(--s-40); align-items: start; }
+  .pf .groups > .err, .pf .groups > .pf-disc, .pf .groups > .linkbtn, .pf .groups > .wa-preview, .pf .groups > .pf-pass-mob, .pf .g-you > * { grid-column: 1 / -1; }
+  .pf .g-trip { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
+  .pf .g-trip > .grid2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pf .g-trip > .grid2 .tile.wide { grid-column: auto; }
+  .pf .g-you { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
+  .pf .pf-review { gap: var(--s-16) var(--s-24); }
+  .pf .tile { min-height: 52px; padding-block: var(--s-8); }
+  .pf .gq { gap: var(--s-8); }
+  .pf .foot { margin-top: var(--s-24); }
+  .pf .foot:has(> .btn-block:only-child) { flex-direction: row; justify-content: flex-end; }
+  .pf .foot > .btn-block:only-child { width: auto; min-width: 280px; }
+  .pf .pf-welcome { max-width: 720px; }
+  .pf .g-extras > .gq:last-of-type .grid2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .pf .g-extras > .gq:last-of-type .grid2 .tile.wide { grid-column: span 3; }
+  .pf .pf-disc-body > .fq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: var(--s-24) var(--s-32); align-items: start; }
+  .pf .pf-disc-body > .fq > .fq { margin: 0; }
+}
+/* small laptops: the form takes the whole width; the trip pass appears in the review instead of beside the form */
+@media (min-width: 1024px) and (max-width: 1359px) {
+  .pf { grid-template-columns: minmax(0, 1fr); max-width: 1100px; }
+  .pf .pf-aside { display: none; }
+}
+@media (min-width: 1024px) {
+  .pf .mtile { min-height: 46px; }
+  /* review: label and answer on one line */
+  .pf .rv-sec .sum li { grid-template-columns: 112px minmax(0, 1fr); align-items: baseline; padding: var(--s-8) 0; }
+  .pf .rv-sec .sum .k { font-size: 11px; }
+  .pf .rv-sec-h { min-height: 44px; }
+}

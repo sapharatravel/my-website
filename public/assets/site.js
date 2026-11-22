@@ -322,12 +322,17 @@
   function show(n) {
     i = (n + slides.length) % slides.length;
     slides.forEach(function (s, k) { s.classList.toggle("is-on", k === i); if (k === i) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
-    dots.forEach(function (d, k) { d.classList.toggle("is-on", k === i); d.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+    dots.forEach(function (d, k) { d.classList.toggle("is-on", k === i); d.classList.toggle("is-done", k < i); d.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+    restartFill();
   }
+  // 22 Nov 2026 (Huzaifa): the dots are lines; the current one fills over the slide's time while the slider runs.
+  var bar = hero.querySelector(".hs-dots"), DUR = 6000;
+  if (bar) bar.style.setProperty("--hs-dur", DUR + "ms");
+  function restartFill() { if (!bar) return; bar.classList.remove("is-run"); void bar.offsetWidth; if (timer) bar.classList.add("is-run"); }
   // 22 Nov 2026 (evening): the slider also pauses while anything in the hero has keyboard focus, and while the tab is hidden.
   var focusPaused = false;
-  function start() { stop(); if (!reduce && !focusPaused && !document.hidden) timer = setInterval(function () { show(i + 1); }, 6000); }
-  function stop() { if (timer) clearInterval(timer); timer = null; }
+  function start() { stop(); if (!reduce && !focusPaused && !document.hidden) timer = setInterval(function () { show(i + 1); }, DUR); restartFill(); }
+  function stop() { if (timer) clearInterval(timer); timer = null; if (bar) bar.classList.remove("is-run"); }
   dots.forEach(function (d, k) { d.addEventListener("click", function () { load(); show(k); start(); }); });
   hero.addEventListener("focusin", function () { focusPaused = true; start(); });
   hero.addEventListener("focusout", function (e) { if (!hero.contains(e.relatedTarget)) { focusPaused = false; start(); } });
