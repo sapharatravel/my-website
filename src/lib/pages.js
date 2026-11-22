@@ -62,11 +62,11 @@ function moreThanBooking(cls = "sand") {
 }
 
 const MORE_CARDS = [
-  ["reviews.html", "st-reviews-praslin.webp", "Client reviews", "Read what travellers have said after booking with Saphara."],
-  ["why-saphara.html", "st-howwework-kl.webp", "How we work", "A small team, honest hotel comparisons and support on WhatsApp."],
-  ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Practical notes on where to eat, pray, stay and explore."],
+  ["reviews.html", "st-reviews-praslin.webp", "Client Reviews", "Read what travellers have said after booking with Saphara."],
+  ["why-saphara.html", "st-howwework-kl.webp", "How We Work", "A small team, honest hotel comparisons and support on WhatsApp."],
+  ["guides/index.html", "guides/guide-malta.webp", "Travel Guides", "Practical notes on where to eat, pray, stay and explore."],
   ];
-const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
 function moreCards(pg) {
   return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">A little more about SAPHARA.</h2><p>Useful things to look through while you're deciding.</p></div><ul class="more-cards">${MORE_CARDS.map(([href, img, title, desc]) => `<li><a class="more-card rv" href="${pg.u(href)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${title}</span><span class="mc-d">${desc}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
 }
