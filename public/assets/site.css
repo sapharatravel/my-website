@@ -2549,3 +2549,24 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
   body.home .hero.hd { min-height: 100vh; min-height: 100svh; }
   body.home .hero.hd .col { padding-bottom: 40px; }
 }
+
+/* 22 Nov 2026 (Huzaifa, iPhone review): phones only. "Hotels our clients have stayed with" is centred, the logos are about a third bigger, and the rotating review quote is bigger. */
+@media (max-width: 767px) {
+  .strip .col { justify-content: center; }
+  .strip .strip-label { width: 100%; text-align: center; }
+  .marquee-track .mq-logo, .marquee-track .mq-word { height: 80px; }
+  .marquee-track .mq-logo img { height: 40px; max-width: 230px; }
+  .marquee-track .mq-waldorf-astoria img, .marquee-track .mq-mandarin-oriental img { height: 72px; }
+  .marquee-track .mq-fairmont img, .marquee-track .mq-rixos img { height: 48px; }
+  .marquee-track .mq-the-chedi img { height: 21px; }
+  .marquee-track .mq-jumeirah img { height: 38px; }
+  .marquee-track .mq-kempinski img { height: 60px; }
+  .marquee-track .mq-sofitel img { height: 34px; }
+  .marquee-track .mq-word { font-size: 28px; }
+  .proof .proof-slide blockquote { font-size: 32px; line-height: 1.1; }
+}
+/* 22 Nov 2026: on phones the reviewer's name and the source sit on two lines, so the source loses its leading dot. */
+@media (max-width: 767px) {
+  .proof figcaption .proof-who, .proof figcaption .proof-src { display: block; width: 100%; text-align: center; }
+  .proof figcaption .proof-src::before { content: none; }
+}
