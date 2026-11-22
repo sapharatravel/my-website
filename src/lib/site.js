@@ -75,7 +75,7 @@ export function header(pg) {
   <div class="col">
     <a href="${pg.u("")}" aria-label="Saphara Travel, home">
       <img class="logo logo-light" src="${pg.img("saphara-logo-sand.svg")}" alt="Saphara Travel" width="120" height="35">
-      <img class="logo logo-dark" src="${pg.img("saphara-logo-dark.svg")}" alt="" width="120" height="35">
+      <img class="logo logo-dark" src="${pg.img("saphara-logo-sand.svg")}" alt="" width="120" height="35">
     </a>
     <div class="hnav">
       <nav class="desk-links" aria-label="Main">
