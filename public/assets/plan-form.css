@@ -289,7 +289,13 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf .foot { margin-top: var(--s-24); }
   .pf .foot:has(> .btn-block:only-child) { flex-direction: row; justify-content: flex-end; }
   .pf .foot > .btn-block:only-child { width: auto; min-width: 280px; }
-  .pf .pf-welcome { max-width: 720px; }
+  /* welcome: heading, intro and Start on the left, the four steps on the right */
+  .pf .pf-welcome { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "h ol" "lead ol" "foot ol"; grid-template-rows: auto auto 1fr; column-gap: var(--s-56); align-items: start; }
+  .pf .pf-welcome > .q { grid-area: h; }
+  .pf .pf-welcome > .pf-lead { grid-area: lead; text-wrap: balance; }
+  .pf .pf-welcome > ol { grid-area: ol; margin: 0; align-self: center; padding: var(--s-24); border-radius: var(--r-small); background: color-mix(in srgb, var(--cream) 45%, transparent); gap: var(--s-16); }
+  .pf .pf-welcome > .foot { grid-area: foot; align-self: end; }
+  .pf .pf-welcome > .foot > .btn-block { width: 100%; }
   .pf .g-extras > .gq:last-of-type .grid2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .pf .g-extras > .gq:last-of-type .grid2 .tile.wide { grid-column: span 3; }
   .pf .pf-disc-body > .fq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: var(--s-24) var(--s-32); align-items: start; }
