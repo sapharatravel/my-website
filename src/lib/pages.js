@@ -90,21 +90,20 @@ export function home() {
   </div>
 </section>
 `;
-  // Slim homepage (15 Nov, Huzaifa): hero, trip types, destinations and the USPs, then cards to everything that moved to its own page.
+  // 22 Nov 2026: keep the homepage concise. Lead with customer proof, then trip types, destinations, one editorial pause, the Saphara proposition and a short Price Check invitation.
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
-  void guides;
+  void guides; // Full guide cards stay on the Guides page; the homepage links to them from navigation.
   // 22 Nov 2026: keep the homepage focused on leisure-trip decisions. Business travel stays in the Trips navigation; Price Check carries the like-for-like comparison.
   const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
   // Keep the homepage to the core leisure-travel decision journey; business travel is in the Trips menu.
   const body = toPlan(join(
     hero,
-    hotelNames,
-    how,
+    heroProof(pg),
     trips,
     destinations,
-    priceCheck,
+    moment,
     declaration,
-    reviews
+    priceCheck
   )) + "\n" + faqTeaser.replace('class="band white" id="faq"', 'class="band sand" id="faq"') + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
 }
