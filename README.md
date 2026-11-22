@@ -3,12 +3,15 @@
 Replaces the Python generator in `tools/` (kept until the switch is approved). Same pages, same URLs, same markup.
 
 ## Build
+Run these commands from the repository root:
 ```
-cd astro
-npm install
-npm run build      # outputs dist/ (31 pages, one .html file each, clean root links to pages)
+npm ci
+npm run build      # outputs dist/ (one .html file per page)
 npm run dev        # local preview with live reload
+npm run preview    # preview the production build locally
 ```
+
+The build is also checked by GitHub Actions. The workflow checks the shared browser scripts, builds the site, and runs a small smoke test against the generated homepage, Price Check page and trip enquiry page.
 
 ## Where things live
 - `src/data/hotel-questions.json`: the homepage "Pack light." list of questions we ask hotels. Edit the questions, then rebuild.
