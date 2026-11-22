@@ -2570,3 +2570,13 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
   .proof figcaption .proof-who, .proof figcaption .proof-src { display: block; width: 100%; text-align: center; }
   .proof figcaption .proof-src::before { content: none; }
 }
+
+/* 22 Nov 2026 (mobile test): the business section's single column could grow past a 320px screen (14px sideways scroll on the Business page). Keep it to the screen width below laptop size. */
+@media (max-width: 1023px) { .biz2 { grid-template-columns: minmax(0, 1fr); } }
+/* 22 Nov 2026 (mobile test): on narrow phones a long button label ("Talk to us about business travel") may wrap instead of pushing the page sideways. Page buttons only; the sticky bar keeps its own sizing. */
+@media (max-width: 479px) {
+  .actions .split, .sf-cta .split { flex: 0 1 auto; max-width: 100%; min-width: 0; }
+  .actions .split .split-label, .sf-cta .split .split-label { white-space: normal; line-height: 1.25; padding-block: 8px; min-width: 0; text-align: left; }
+}
+/* 22 Nov 2026 (mobile test): on the smallest phones (under 360px) page headings shrink a touch so joined last words ("financial protection") stay inside the margins. */
+@media (max-width: 359px) { h1.display { font-size: min(58px, 16.5vw); } }
