@@ -11,7 +11,7 @@ import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
 import declaration from "../components/home/06-declaration.html?raw";
 import moment from "../components/home/05b-moment.html?raw";
-// import compare from "../components/home/06b-compare.html?raw"; // parked 21 Nov 2026
+import compare from "../components/home/06b-compare.html?raw";
 import reviews from "../components/home/07-reviews.html?raw";
 import quote from "../components/home/08-quote.html?raw";
 import business from "../components/home/09-business.html?raw";
