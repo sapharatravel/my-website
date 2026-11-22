@@ -18,6 +18,7 @@ assert.match(price, /Tap Send in WhatsApp to complete your price check/, "Price 
 assert.match(plan, /Your message is ready\./, "Trip enquiry must not claim the enquiry was received");
 assert.match(plan, /Tap Send in WhatsApp to complete your enquiry/, "Trip enquiry must explain the final send step");
 assert.doesNotMatch(css, /EDITORIAL PREVIEW/, "Obsolete preview CSS must not ship");
-assert.match(css, /background: #8A3B2E/, "Footer rust background must be present");
+assert.match(css, /--footer-rust: #8A3B2E/, "Footer rust colour token must be present");
+assert.match(css, /background: var\\(--footer-rust\\)/, "Footer must use the dedicated rust token");
 
 console.log("Saphara smoke tests passed.");
