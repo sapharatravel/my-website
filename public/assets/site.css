@@ -2543,3 +2543,9 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 #how.how-home .steps .n { grid-row: auto; grid-column: 2; }
 #how.how-home .steps h3, #how.how-home .steps p { grid-column: 2; }
 @media (max-width: 767px) { #how.how-home .steps li { grid-template-columns: 44px minmax(0, 1fr); column-gap: 14px; } #how.how-home .steps .step-ico { width: 44px; height: 44px; } #how.how-home .steps .step-ico .ico { width: 21px; height: 21px; } }
+
+/* 22 Nov 2026 (Huzaifa, after go-live): on phones the homepage hero fills the visible screen (Chrome and Safari on iPhone, toolbars showing), so no white strip shows under it. svh is the height with the browser bars visible. */
+@media (max-width: 767px) {
+  body.home .hero.hd { min-height: 100vh; min-height: 100svh; }
+  body.home .hero.hd .col { padding-bottom: 40px; }
+}
