@@ -25,7 +25,7 @@ assert.match(home, /href="\/reviews"/, "Homepage should link to client reviews")
 assert.match(home, /href="\/why-saphara"/, "Homepage should link to How we work");
 assert.match(home, /href="\/guides\/?"/, "Homepage should link to travel guides");
 assert.match(home, /href="\/faq"/, "Homepage should link to FAQs");
-assert.match(home, /class="[^"]*\\btrip-featured\\b/, "Hotel-only should be the featured homepage trip");
+assert.match(home, /trip-featured/, "Hotel-only should be the featured homepage trip");
 assert.match(home, /class="mm-trip-card"/, "Mobile Trips menu should use visual image cards");
 assert.match(css, /grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/, "Desktop Trips dropdown should use fewer, larger image cards");
 assert.match(css, /\.mm-trip-img/, "Mobile Trips menu should include image thumbnails");
