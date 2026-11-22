@@ -2258,7 +2258,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   .dd-tile .ph { aspect-ratio: 16 / 10; margin: 0 0 2px; }
   .dd-tile .dd-name { font-size: 22px; line-height: 1.02; }
   .dd-tile .dd-sub { font-size: 13px; line-height: 1.35; }
-  .dd-tile.dd-featured { grid-column: span 2; grid-row: span 2; }
+  .dd-tile.dd-featured { order: -1; grid-column: span 2; grid-row: span 2; }
   .dd-tile.dd-featured .ph { flex: 1; min-height: 250px; aspect-ratio: auto; }
   .dd-tile.dd-featured .dd-name { font-size: 34px; }
   .dd-tile.dd-featured .dd-sub { max-width: 30ch; font-size: 15px; }
