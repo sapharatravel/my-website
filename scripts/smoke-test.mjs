@@ -17,6 +17,9 @@ assert.equal((home.match(/class="more-card rv"/g) || []).length, 5, "Homepage sh
 assert.match(home, /aria-label="Explore honeymoons"/, "Trip card links should have descriptive accessible names");
 assert.match(home, /saphara-logo-sand\.svg/, "Footer should use the pale logo on rust");
 assert.match(price, /id="pcForm"/, "Price Check form must be present");
+assert.match(home, /Illustrative example/, "Homepage comparison must be labelled illustrative");
+assert.match(price, /Illustrative example/, "Price Check comparison must be labelled illustrative");
+assert.match(price, /supplier allows a change/, "Price Check must qualify rebooking on supplier conditions");
 assert.match(price, /Tap Send in WhatsApp to complete your price check/, "Price Check must explain the WhatsApp handoff");
 assert.match(readFileSync("public/assets/price-check.js", "utf8"), /new URL\(rawLink\)/, "Price Check must validate optional hotel links");
 assert.match(plan, /Your message is\s+ready\./, "Trip enquiry must not claim the enquiry was received");
