@@ -18,9 +18,16 @@ assert.match(home, /id="price-check"/, "Price check should sit in its own homepa
 assert.doesNotMatch(home, /Illustrative example|pcx-verdict|pcx-grid/, "Homepage should not repeat the full comparison example");
 assert.doesNotMatch(home, /id="compare"|id="business"|id="pay-later"/, "Comparison matrix, Business Travel and separate Pay Later sections should stay off the homepage");
 assert.match(home, /trips\/business/, "Business Travel should remain accessible through the Trips navigation");
-const homeOrder = ["id=\"proof\"", "id=\"trips\"", "id=\"destinations\"", "momentH", "id=\"why\"", "id=\"price-check\"", "id=\"faq\"", "id=\"enquire\""];
+const homeOrder = ["id=\"proof\"", "id=\"trips\"", "id=\"destinations\"", "id=\"why\"", "id=\"price-check\"", "id=\"more\"", "id=\"faq\"", "id=\"enquire\""];
 assert.ok(homeOrder.every((marker, i) => i === 0 || home.indexOf(homeOrder[i - 1]) < home.indexOf(marker)), "Homepage sections must follow the agreed decision journey");
-assert.doesNotMatch(home, /Hotels our clients have stayed with|From ‘Where to\?’/, "Homepage should not contain the hotel-name strip or From Where To section");
+assert.doesNotMatch(home, /Hotels our clients have stayed with|From ‘Where to\?’|momentH|Somewhere worth the journey/, "Homepage should not contain the hotel-name strip, From Where To or editorial moment");
+assert.match(home, /href="reviews\.html"/, "Homepage should link to client reviews");
+assert.match(home, /href="why-saphara\.html"/, "Homepage should link to How we work");
+assert.match(home, /href="guides\/index\.html"/, "Homepage should link to travel guides");
+assert.match(home, /href="faq\.html"/, "Homepage should link to FAQs");
+assert.doesNotMatch(home, /href="trips\/business\.html"/, "Business Travel should not return as a homepage card");
+assert.match(home, /A free hotel price check|Before you book/, "Homepage Price Check should have a clear, distinctive invitation");
+assert.match(home, /Same room type|Same dates and guests|Same meal plan|Same cancellation terms/, "Homepage Price Check should explain what is compared");
 
 assert.match(css, /--section: 56px; --intro-content: 28px/, "Mobile spacing tokens must be explicitly defined");
 assert.match(css, /--section: 72px; --intro-content: 36px/, "Tablet spacing tokens must be explicitly defined");
