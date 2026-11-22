@@ -21,11 +21,15 @@ assert.match(home, /trips\/business/, "Business Travel should remain accessible 
 const homeOrder = ["id=\"proof\"", "id=\"trips\"", "id=\"destinations\"", "id=\"why\"", "id=\"price-check\"", "id=\"more\"", "id=\"faq\"", "id=\"enquire\""];
 assert.ok(homeOrder.every((marker, i) => i === 0 || home.indexOf(homeOrder[i - 1]) < home.indexOf(marker)), "Homepage sections must follow the agreed decision journey");
 assert.doesNotMatch(home, /Hotels our clients have stayed with|From ‘Where to\?’|momentH|Somewhere worth the journey/, "Homepage should not contain the hotel-name strip, From Where To or editorial moment");
-assert.match(home, /href="reviews\.html"/, "Homepage should link to client reviews");
-assert.match(home, /href="why-saphara\.html"/, "Homepage should link to How we work");
-assert.match(home, /href="guides\/index\.html"/, "Homepage should link to travel guides");
-assert.match(home, /href="faq\.html"/, "Homepage should link to FAQs");
-assert.doesNotMatch(home, /href="trips\/business\.html"/, "Business Travel should not return as a homepage card");
+assert.match(home, /href="\/reviews"/, "Homepage should link to client reviews");
+assert.match(home, /href="\/why-saphara"/, "Homepage should link to How we work");
+assert.match(home, /href="\/guides\/?"/, "Homepage should link to travel guides");
+assert.match(home, /href="\/faq"/, "Homepage should link to FAQs");
+assert.match(home, /class="trip-featured"/, "Hotel-only should be the featured homepage trip");
+assert.match(home, /class="mm-trip-card"/, "Mobile Trips menu should use visual image cards");
+assert.match(css, /grid-template-columns: repeat\(4, minmax\(0, 1fr\)\)/, "Desktop Trips dropdown should use fewer, larger image cards");
+assert.match(css, /\.mm-trip-img/, "Mobile Trips menu should include image thumbnails");
+assert.doesNotMatch(home, /href="\/trips\/business"/, "Business Travel should not return as a homepage card");
 assert.match(home, /A free hotel price check|Before you book/, "Homepage Price Check should have a clear, distinctive invitation");
 assert.match(home, /Same room type|Same dates and guests|Same meal plan|Same cancellation terms/, "Homepage Price Check should explain what is compared");
 
