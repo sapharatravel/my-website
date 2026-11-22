@@ -338,7 +338,7 @@ export function priceCheckPage() {
     <div class="fq"><label for="pc-link">Link</label><input class="field" id="pc-link" type="url" maxlength="400" placeholder="Paste the link if you have it"></div>
   </details>
   <div class="actions pc-actions"><button class="split" type="submit"><span class="split-label">Send on ${waGlyph()}WhatsApp</span><span class="split-arrow">${arrow}</span></button><p class="caption">Send your screenshot in the same chat.</p></div>
-  <p class="small-print" id="pcSent" hidden role="status">WhatsApp should now be open with your message. If it didn't open, message us on +44 7887 353457 and paste the details.</p>
+  <p class="small-print" id="pcSent" hidden role="status">WhatsApp should open with your message ready. Tap Send in WhatsApp to complete your price check. If it doesn't open, message us on +44 7887 353457 and paste the details.</p>
 </form>
 <aside class="pc-side">
   <div class="pc-quick"><p class="pc-k">Only have a screenshot?</p><p>Send it straight to us on WhatsApp and we'll do the rest.</p>${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}</div>
