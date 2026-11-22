@@ -2070,27 +2070,6 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   body.home .hero.hd { margin-top: 0; padding-top: calc(var(--logo-h) + var(--header-top) + var(--header-bottom) + 24px); }
 }
 
-/* Editorial image moment and restrained staggered layouts. */
-.moment { position: relative; overflow: hidden; isolation: isolate; min-height: 78svh; display: flex; align-items: flex-end; color: #fff; }
-.moment-ph { position: absolute; inset: -18% 0; z-index: -2; will-change: transform; }
-.moment-ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.moment::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,.6) 100%); }
-.moment .col { padding-block: var(--section); width: 100%; }
-.moment h2 { color: #fff; max-width: 12em; }
-.moment p { margin-top: 12px; max-width: 34em; color: rgba(255,255,255,.9); font-size: var(--fs-lead); }
-.moment-link { display: inline-flex; margin-top: 16px; color: #fff; border-bottom-color: rgba(255,255,255,.6); }
-@media (min-width: 1024px) {
-  .moment { min-height: 86svh; }
-  #destinations .dests { align-items: start; }
-  #destinations .dests > :nth-child(even) { margin-top: 56px; }
-  #why .decl-wrap { align-items: start; }
-  #why .decl-wrap > .intro { position: sticky; top: calc(var(--header-slim) + 32px); }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .js .pcard.rv > img { transition: clip-path 1100ms var(--ease), transform 1400ms var(--ease), opacity 600ms; }
-  .js .pcard.rv:not(.in) > img { clip-path: inset(14% 0 0 0); transform: scale(1.1); }
-  .js .moment h2, .js .moment p, .js .moment-link { animation: none; }
-}
 .pcard, .more-card { box-shadow: none; }
 .flow, .final-band .flow { box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 .hd-cards { box-shadow: 0 10px 30px -12px rgba(0,0,0,.25); }
@@ -2222,7 +2201,27 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 }
 
 
-/* Compact homepage Price Check invitation. */
-.pc-band .intro { max-width: 720px; }
-.pc-band .pc-k { margin-top: 0; }
-.pc-band .actions { margin-top: var(--body-btn); }
+
+/* Homepage Price Check: a clear, useful feature rather than a plain text banner. */
+.pc-band { background: var(--ink); color: #fff; }
+.pc-promo { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr); gap: clamp(32px, 7vw, 100px); align-items: center; }
+.pc-promo-copy { max-width: 680px; }
+.pc-promo-copy .pc-k { color: var(--sand); }
+.pc-promo-copy h2 { color: #fff; max-width: 10em; }
+.pc-promo-copy > p:not(.pc-k) { max-width: 36em; color: rgba(255,255,255,.82); font-size: var(--fs-lead); }
+.pc-promo-copy .actions { margin-top: var(--body-btn); }
+.pc-promo-copy .split { background: var(--sand); color: var(--ink); }
+.pc-promo-copy .split-arrow { background: #fff; color: var(--ink); }
+.pc-promo-card { padding: clamp(24px, 3vw, 40px); border-radius: var(--r-card); background: #fff; color: var(--ink); }
+.pc-promo-card .pc-k { margin: 0 0 20px; color: var(--muted); }
+.pc-promo-card ul { list-style: none; margin: 0; padding: 0; }
+.pc-promo-card li { display: flex; gap: 16px; align-items: center; padding: 14px 0; border-top: 1px solid rgba(0,0,0,.1); font-size: clamp(16px, 1.5vw, 19px); }
+.pc-promo-card li span { font-family: var(--mono); font-size: 11px; letter-spacing: .08em; color: var(--muted); }
+.pc-promo-note { margin: 20px 0 0; padding-top: 16px; border-top: 1px solid rgba(0,0,0,.1); color: var(--muted); font-size: 14px; }
+@media (max-width: 767px) {
+  .pc-promo { grid-template-columns: minmax(0,1fr); gap: 32px; }
+  .pc-promo-copy h2 { max-width: 12em; }
+  .pc-promo-copy .actions { align-items: flex-start; }
+  .pc-promo-copy .actions .split { width: min(100%, 360px); }
+  .pc-promo-card { padding: 22px; }
+}
