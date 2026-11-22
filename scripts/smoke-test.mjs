@@ -19,8 +19,8 @@ assert.match(home, /saphara-logo-sand\.svg/, "Footer should use the pale logo on
 assert.match(price, /id="pcForm"/, "Price Check form must be present");
 assert.match(price, /Tap Send in WhatsApp to complete your price check/, "Price Check must explain the WhatsApp handoff");
 assert.match(readFileSync("public/assets/price-check.js", "utf8"), /new URL\(rawLink\)/, "Price Check must validate optional hotel links");
-assert.match(plan, /Your message is\\s+ready\\./, "Trip enquiry must not claim the enquiry was received");
-assert.match(plan, /Tap Send in WhatsApp to complete your\\s+enquiry/, "Trip enquiry must explain the final send step");
+assert.match(plan, /Your message is\s+ready\./, "Trip enquiry must not claim the enquiry was received");
+assert.match(plan, /Tap Send in WhatsApp to complete your\s+enquiry/, "Trip enquiry must explain the final send step");
 assert.doesNotMatch(css, /EDITORIAL PREVIEW/, "Obsolete preview CSS must not ship");
 assert.match(css, /--footer-rust: #8A3B2E/, "Footer rust colour token must be present");
 assert.match(css, /background: var\(--footer-rust\)/, "Footer must use the dedicated rust token");
