@@ -6,6 +6,7 @@ import hotelNames from "../components/home/01-hotel-names.html?raw";
 import how from "../components/home/02-how-it-works.html?raw";
 import HQ from "../data/hotel-questions.json";
 import priceCheck from "../components/home/03-price-check.html?raw";
+import priceCheckExample from "../components/home/03-price-check-example.html?raw";
 import payLater from "../components/home/03b-pay-later.html?raw";
 import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
@@ -336,7 +337,7 @@ export function priceCheckPage() {
 </aside>
 </div>
 <script src="assets/price-check.js?v=${assetV("price-check.js")}" defer></script>`, "check");
-  const example = (priceCheck.match(/<div class="pc-example pcx-home rv"[\s\S]*?<p class="pcx-more">[^<]*<\/p>\s*<\/div>/) || [""])[0].split("pcxTitle").join("pcxTitle2");
+  const example = priceCheckExample.split("pcxTitle").join("pcxTitle2");
   body += band("pc-band pc-result", `<div class="pc2"><div class="intro"><h2 class="display d-l">${beats(["What you get back."])}</h2><p>We reply on WhatsApp with a plain comparison like this one: the price you found, what we found, and what's different.</p><p class="pc-fine">We can't beat every price and we won't promise to. It's a free second opinion from people with access to good rates.</p><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div><div class="pcx-wrap">${example}</div></div>`);
   return { path: pg.path, title: "Hotel price check | Saphara Travel", desc: "Found a hotel already? Send it over and we'll compare it like for like and tell you honestly if we can get a better rate.", hero: true, body };
 }
