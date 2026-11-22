@@ -70,7 +70,7 @@ const join = (...parts) => parts.join("\n");
 // 21 Nov 2026 (Huzaifa): no photo used twice on the homepage; Reviews, Business and FAQs got their own photos (IMAGES.md).
 const MORE_CARDS = [
   ["price-check.html", "st-price-infinity.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
-  ["reviews.html", "st-reviews-maldives.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
+  ["reviews.html", "st-reviews-praslin.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
   ["why-saphara.html", "st-howwework-kl.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
   ["trips/business.html", "st-card-business.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
   ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],

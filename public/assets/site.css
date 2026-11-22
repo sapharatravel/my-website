@@ -1969,12 +1969,14 @@ html { overflow-x: clip; }
 /* Phone hero (22 Nov 2026, Huzaifa): no card panel overlapping the photo and no ticks under the button. Tablet and desktop unchanged. */
 @media (max-width: 767px) {
   .hd-wrap { --hd-overlap: 0px; }
-  .hd-cards, .hd-trust { display: none; }
-  .hd-wrap > .hd-calm-m { margin-top: var(--s-32); }
-  /* one still photo (the first slide), no dots; the slider runs from 768px */
-  .hero .hs-slide:not(:first-of-type), .hero .hs-dots { display: none; }
-  /* full-width WhatsApp us button */
-  .hero.hd .actions .split.mob-only { flex: 1 1 auto; width: 100%; justify-content: space-between; }
+  .hd-trust { display: none; }
+  /* the trip cards sit under the photo instead of over it */
+  .hd-wrap > .hd-cards { margin-top: var(--s-24); }
+  .hd-wrap > .hd-calm-m { margin-top: var(--s-16); }
+  /* the photos crossfade on their own; no dots on phones (they floated mid-photo and were 28px targets) */
+  .hero .hs-dots { display: none; }
+  /* full-width Plan my trip button */
+  .hero.hd .actions .split { flex: 1 1 auto; width: 100%; justify-content: space-between; }
   /* header: logo and menu only (WhatsApp is in the hero, the sticky bar and the menu) */
   .header .hwa { display: none; }
 }
@@ -2158,3 +2160,27 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 .hs-dot.is-on::before { background: #fff; transform: scale(1.25); }
 .hs-dot:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 50%; }
 @media (min-width: 768px) { .hs-dots { top: auto; right: auto; left: 50%; bottom: 84px; transform: translateX(-50%); flex-direction: row; } }
+
+/* 22 Nov 2026 (Huzaifa): desktop header and hero spacing.
+   Header: the photo hero is edge to edge, so the logo and the Plan my trip pill line up with the hero text and the price check card (--col-left), not the old inset edge.
+   Nav: links 36px apart; the WhatsApp circle and the pill form their own group, 40px after the last link and 12px apart; pill gets more room inside; FREE tag 10px from its label.
+   Hero: ticks removed; 48px between the hero content and the trip cards, with the slider dots centred in that gap. */
+@media (min-width: 768px) {
+  body:has(.hero, .ghero) .header .col { padding-left: max(var(--col-left), env(safe-area-inset-left, 0px)); padding-right: max(var(--col-left), env(safe-area-inset-right, 0px)); }
+}
+@media (min-width: 1024px) {
+  .header .nl { white-space: nowrap; }
+  .header .desk-links { gap: 22px; }
+  .header .hnav { gap: 10px; }
+  .header .hwa { margin-left: 14px; width: 48px; height: 48px; }
+  .header .hsplit { min-height: 48px; padding: 5px 5px 5px 22px; gap: 14px; }
+  .header .hsplit .split-arrow { width: 38px; height: 38px; }
+  .header .nl-free { margin-left: 2px; }
+  body.home .hero.hd { padding-bottom: calc(var(--hd-overlap) + 48px); }
+  body.home .hero.hd .hs-dots { bottom: calc(var(--hd-overlap) + 18px); }
+}
+@media (min-width: 1200px) {
+  .header .desk-links { gap: 36px; }
+  .header .hnav { gap: 12px; }
+  .header .hwa { margin-left: 28px; }
+}

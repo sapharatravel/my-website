@@ -543,7 +543,6 @@
   var hero = document.querySelector(".hero.hd"); if (!hero) return;
   var slides = hero.querySelectorAll(".hs-slide"), dots = hero.querySelectorAll(".hs-dot");
   if (slides.length < 2) return;
-  if (window.matchMedia("(max-width: 767px)").matches) return; /* phones: one still photo, the other slides never load (22 Nov 2026) */
   var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function load() {
     hero.querySelectorAll("source[data-srcset]").forEach(function (s) { s.srcset = s.getAttribute("data-srcset"); s.removeAttribute("data-srcset"); });
