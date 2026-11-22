@@ -17,6 +17,8 @@ const body = responsiveImgs(waLinks(cleanLinks(keepWhatsAppTogether(await Astro.
 // Structured data: TravelAgency and WebSite on the homepage, BreadcrumbList from the visible breadcrumb, plus any page extra (Article on guides).
 const isHome = path === "index.html";
 const ldHtml = noindex ? "" : ldScript([isHome && travelAgencyLd(), isHome && websiteLd(), breadcrumbLd(body, path, canon), ld]);
+// The Plan my trip form (Concept C, 22 Nov 2026) loads its own styles and script, only on pages that have it.
+const planForm = body.includes('id="planForm"');
 const bodyClass = (hero ? "has-hero" : "no-hero") + (path === "index.html" ? " home" : "");
 const head = `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -35,7 +37,7 @@ ${noindex ? '<meta name="robots" content="noindex, nofollow">\n' : ""}
 <link rel="preload" as="font" type="font/woff2" href="${pg.u("assets/fonts/inter-500-latin.woff2")}" crossorigin>
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/swo1kcy.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://use.typekit.net/swo1kcy.css"></noscript>
-<link rel="stylesheet" href="${pg.u("assets/site.css")}?v=${assetV("site.css")}">${ldHtml ? "\n" + ldHtml : ""}`;
+<link rel="stylesheet" href="${pg.u("assets/site.css")}?v=${assetV("site.css")}">${planForm ? `\n<link rel="stylesheet" href="${pg.u("assets/plan-form.css")}?v=${assetV("plan-form.css")}">` : ""}${ldHtml ? "\n" + ldHtml : ""}`;
 ---
 <html lang="en-GB">
 <head>
@@ -51,5 +53,6 @@ ${noindex ? '<meta name="robots" content="noindex, nofollow">\n' : ""}
 <Fragment set:html={tidy(footer(pg))} />
 <Fragment set:html={tidy(sticky(pg))} />
 <script is:inline src={pg.u("assets/site.js") + "?v=" + assetV("site.js")}></script>
+{planForm && <script is:inline src={pg.u("assets/plan-form.js") + "?v=" + assetV("plan-form.js")}></script>}
 </body>
 </html>

@@ -5,98 +5,12 @@
       <h2 class="display d-l"><span class="beat">Bismillah.</span> <span class="beat">Let's plan it.</span></h2>
       <p>A few quick questions. Your trip request builds as you go, then opens in WhatsApp, ready to send. We'll get back to you as soon as we&nbsp;can.</p>
     </div>
-    <noscript><div class="price-card" style="margin-bottom:var(--s-32)"><div class="intro"><h3 class="display d-m">Message us directly</h3><p>Tell us where, roughly when and who's coming.</p><div class="actions"><a class="split" href="https://wa.me/447887353457?wa=noscript"><span class="split-label">WhatsApp us</span><span class="split-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a><a class="textlink" href="mailto:hello@sapharatravel.co.uk">Email hello@sapharatravel.co.uk</a></div></div></div><style>.checkin{display:none!important}</style></noscript>
-<div class="checkin">
-      <div class="flow" id="flow">
-        <div class="flow-top"><button class="back" id="back" type="button" disabled><span aria-hidden="true">←</span> Back</button><span class="prog" aria-hidden="true"><span class="prog-fill" id="routeFill"></span></span><span class="count" id="count" aria-live="polite">Step 1 of 6</span></div>
-        <div class="stage" id="stage">
-          <section class="fstep on" data-step="type" aria-labelledby="h-type"><p class="fstep-q" id="h-type" tabindex="-1">What kind of trip?</p><div class="body"><div class="grid2" id="typeTiles" role="group" aria-labelledby="h-type"></div></div></section>
-          <section class="fstep" data-step="flights" aria-labelledby="h-flights"><p class="fstep-q" id="h-flights" tabindex="-1">Have you already booked your flights?</p>
-            <div class="body"><div class="seg" role="group" aria-labelledby="h-flights"><span class="seg-thumb" aria-hidden="true"></span><button type="button" id="fl-yes" data-fl="yes" aria-pressed="false">Yes</button><button type="button" id="fl-no" data-fl="no" aria-pressed="false">No</button></div></div></section>
-          <section class="fstep" data-step="arrange" aria-labelledby="h-arrange"><p class="fstep-q" id="h-arrange" tabindex="-1">What would you like us to arrange?</p><p class="sub">Choose as many as you like.</p>
-            <div class="body"><div class="grid2" id="arrangeTiles" role="group" aria-labelledby="h-arrange"></div></div>
-            <div class="foot"><button class="btn btn-primary" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div></section>
-          <section class="fstep" data-step="wherewhen" aria-labelledby="h-ww"><p class="fstep-q" id="h-ww" tabindex="-1">Where and when?</p>
-            <div class="body">
-              <p class="note" id="umrahNote" hidden><span data-ico="flights"></span><span>We can help you find a good flight itinerary for Umrah, but we don't book Umrah flights.</span></p>
-              <div class="fq"><label for="f-where">Where to? <span class="opt">(optional)</span></label><input class="field" type="text" id="f-where" maxlength="120" placeholder="A place, a few ideas, or not sure yet"></div>
-              <div class="fq" id="fromWrap" hidden><label for="f-from">Flying from? <span class="opt">(optional)</span></label><input class="field" type="text" id="f-from" maxlength="60" placeholder="For example Heathrow or Manchester"></div>
-              <div class="fq"><span class="ql" id="when-l">When?</span>
-                <label class="toggle"><span>My dates are flexible</span><input type="checkbox" id="f-flex"><span class="sw-track" aria-hidden="true"></span></label>
-                <div class="months" id="months" role="group" aria-labelledby="when-l"></div></div>
-              <div class="fq"><label for="f-dates">Exact Dates <span class="opt">(optional)</span></label><input class="field" type="text" id="f-dates" maxlength="60" placeholder="For example 12 to 19 March"></div>
-            </div>
-            <div class="foot"><button class="btn btn-primary" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div></section>
-          <section class="fstep" data-step="who" aria-labelledby="h-who"><p class="fstep-q" id="h-who" tabindex="-1">Who's travelling?</p>
-            <div class="body"><div class="steppers">
-              <div class="stepper"><span>Adults</span><span class="ctrl"><button type="button" data-step-n="adults" data-d="-1" aria-label="One fewer adult">−</button><output id="o-adults">2</output><button type="button" data-step-n="adults" data-d="1" aria-label="One more adult">+</button></span></div>
-              <div class="stepper"><span>Children</span><span class="ctrl"><button type="button" data-step-n="children" data-d="-1" aria-label="One fewer child" disabled>−</button><output id="o-children">0</output><button type="button" data-step-n="children" data-d="1" aria-label="One more child">+</button></span></div></div>
-              <p class="sr-only" id="whoLive" aria-live="polite"></p><div class="fq" id="agesWrap" hidden><label for="f-ages">Children's Ages <span class="opt">(optional)</span></label><input class="field" type="text" id="f-ages" maxlength="60" placeholder="For example 4 and 7"></div></div>
-            <div class="foot"><button class="btn btn-primary" type="button" data-next>Continue <span aria-hidden="true">→</span></button></div></section>
-          <section class="fstep" data-step="budget" aria-labelledby="h-budget"><p class="fstep-q" id="h-budget" tabindex="-1">Rough budget?</p><p class="sub" id="budgetSub">For the whole trip. Optional.</p>
-            <div class="body"><div class="grid2" id="budgetTiles" role="group" aria-labelledby="h-budget"></div></div>
-            <div class="foot"><button class="skip" type="button" data-next>Skip this one</button></div></section>
-          <section class="fstep" data-step="board" aria-labelledby="h-board"><p class="fstep-q" id="h-board" tabindex="-1">Which meal plan?</p><p class="sub">Optional. We'll compare like for like.</p>
-            <div class="body"><div class="grid2" id="boardTiles" role="group" aria-labelledby="h-board"></div></div>
-            <div class="foot"><button class="skip" type="button" data-next>Skip this one</button></div></section>
-          <section class="fstep" data-step="name" aria-labelledby="h-name"><p class="fstep-q" id="h-name" tabindex="-1">Who should we ask for?</p>
-            <div class="body">
-              <div class="fq"><label for="f-name">Your Name</label><input class="field" type="text" id="f-name" maxlength="60" autocomplete="given-name" placeholder="Your first name" aria-required="true" aria-describedby="e-name"><span class="err" id="e-name" role="alert" hidden>Slight delay. Just add your first name.</span></div>
-              <div class="fq"><label for="f-notes">Anything we should know? <span class="opt">(optional)</span></label><textarea class="field" id="f-notes" maxlength="500" placeholder="Special requests, a quiet room, an early check-in"></textarea></div>
-              <div class="fq"><label for="f-email">Email <span class="opt">(optional)</span></label><input class="field" type="email" id="f-email" maxlength="120" autocomplete="email" placeholder="Only if you'd like options by email"></div>
-            </div>
-            <div class="foot"><button class="btn btn-primary" type="button" data-next>Review my request <span aria-hidden="true">→</span></button></div></section>
-          <section class="fstep" data-step="preview" aria-labelledby="h-preview"><p class="fstep-q" id="h-preview" tabindex="-1">Ready to send</p><p class="sub">Your trip request opens in WhatsApp. You can still change anything before you press send.</p>
-            <div class="body"><div class="pass-slot" id="passSlot"></div>
-              <button class="show-msg" type="button" id="showMsg" aria-expanded="false" aria-controls="preview">Show the message</button>
-              <div class="wa-preview" id="preview" hidden></div></div>
-            <div class="foot"><button class="btn btn-wa" type="button" id="send"><svg class="wai" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg>Send on WhatsApp</button><p class="caption">Nothing is stored on our website. WhatsApp (Meta) carries the message.</p></div></section>
-          <section class="fstep" data-step="sent" aria-labelledby="h-sent"><h3 id="h-sent" tabindex="-1"><span class="beat">Your message is ready.</span> <span class="beat">One last tap.</span></h3><p class="sub">WhatsApp should have opened with your trip request. Tap Send in WhatsApp to complete your enquiry. We won't receive it until you send it.</p>
-            <div class="body"><div class="pass-slot" id="passSlot2"></div><div><p class="caption"><svg class="wai" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg>WhatsApp didn't open?</p><div class="fallbacks"><button type="button" id="copyMsg">Copy message</button><button type="button" id="emailMsg">Email it instead</button><a href="https://wa.me/447887353457" id="waNumber">+44 7887 353457</a></div><p class="sr-only" id="copyStatus" role="status"></p><p class="caption inapp-tip" hidden>Inside Instagram? If WhatsApp doesn't open, tap the three dots and choose Open in browser.</p></div></div></section>
-        </div>
-      </div>
-      <aside class="pass-col" id="passCol">
-        <div class="pass-wrap" id="passWrap" aria-hidden="true">
-          <div class="pass" id="pass">
-            <div class="bp">
-              <div class="bp-main">
-                <div class="bp-top"><span class="bp-brand">Saphara</span><span class="bp-kind">Your trip request</span></div>
-                <div class="bp-route">
-                  <div class="end"><b class="code">HOME</b><small>Wherever you are</small></div>
-                  <svg class="arc" viewBox="0 0 120 44" preserveAspectRatio="none"><path d="M4 40 Q60 -8 116 40"/></svg>
-                  <div class="end to"><b class="code" data-f="to">?</b><small data-f="toName">Where to?</small></div>
-                </div>
-                <dl class="bp-grid">
-                  <div><dt>When</dt><dd data-f="when"></dd></div>
-                  <div><dt>Travellers</dt><dd data-f="travellers"></dd></div>
-                  <div><dt>Board</dt><dd data-f="board"></dd></div>
-                  <div><dt>Trip</dt><dd data-f="trip"></dd></div>
-                  <div><dt>Budget</dt><dd data-f="budget"></dd></div>
-                  <div><dt>Flights</dt><dd data-f="flights"></dd></div>
-                </dl>
-              </div>
-              <div class="bp-perf"></div>
-              <div class="bp-stub" id="stub">
-                <dl><div><dt>Ref</dt><dd data-f="ref"></dd></div><div><dt>Route</dt><dd data-f="route"></dd></div></dl>
-                <div class="barcode-wrap"><svg class="barcode" id="barcode" viewBox="0 0 120 36" preserveAspectRatio="none"></svg><span class="bism">Bismillah</span></div>
-              </div>
-            </div>
-            <div class="kc">
-              <span class="kc-slot"></span>
-              <span class="kc-kind">Room request</span>
-              <p class="kc-big">Stay · <span data-f="to">?</span><small data-f="toName">Where to?</small></p>
-              <dl class="kc-grid">
-                <div><dt>Check-in</dt><dd data-f="when"></dd></div>
-                <div><dt>Nights</dt><dd data-f="nights"></dd></div>
-                <div><dt>Guests</dt><dd data-f="travellers"></dd></div>
-                <div><dt>Board</dt><dd data-f="board"></dd></div>
-              </dl>
-              <dl class="kc-ref"><div><dt>Ref</dt><dd data-f="ref"></dd></div><span class="bism">Bismillah</span></dl>
-              <div class="kc-stripe"></div>
-            </div>
-            <span class="done-stamp">Checked in</span>
-          </div>
-        </div>
+    <noscript><div class="price-card" style="margin-bottom:var(--s-32)"><div class="intro"><h3 class="display d-m">Message us directly</h3><p>Tell us where, roughly when and who's coming.</p><div class="actions"><a class="split" href="https://wa.me/447887353457?wa=noscript"><span class="split-label">WhatsApp us</span><span class="split-arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a><a class="textlink" href="mailto:hello@sapharatravel.co.uk">Email hello@sapharatravel.co.uk</a></div></div></div><style>.pf{display:none!important}</style></noscript>
+<!-- Plan my trip form (Concept C, approved 22 Nov 2026): built by assets/plan-form.js; styles in assets/plan-form.css -->
+    <div class="pf" id="planForm">
+      <div class="pf-card"><div id="pfStage" class="swap-box" aria-live="off"></div></div>
+      <aside class="pf-aside" aria-label="Your trip request so far">
+        <div id="pfPass"></div>
         <div class="next-steps">
           <p class="ns-h">What happens next</p>
           <ol>
@@ -115,6 +29,5 @@
             <li><b>You book when you're happy</b><span>No service fee, and nothing to pay upfront on eligible free cancellation rates.</span></li>
           </ol>
         </div>
-    <p class="sr-only" id="passSummary" aria-live="polite"></p>
   </div>
 </section>
