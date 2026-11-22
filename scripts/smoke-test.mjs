@@ -30,7 +30,7 @@ assert.match(home, /class="pcard trip trip-featured on rv"/, "Hotel-only should 
 const tripCards = [...home.matchAll(/<article class="pcard trip[\s\S]*?<\/article>/g)].map(m => m[0]);
 assert.equal(tripCards.length, 5, "Homepage should show five trip types");
 assert.ok(tripCards.every(card => (card.match(/class="split light"/g) || []).length === 1), "Each homepage trip card should have exactly one CTA");
-assert.match(tripCards[0], /href="trips\/hotels\.html"/, "Hotel-only must be the first featured trip card");
+assert.match(tripCards[0], /href="\/trips\/hotels"/, "Hotel-only must be the first featured trip card");
 assert.match(home, /class="mm-trip-card"/, "Mobile Trips menu should use visual image cards");
 assert.match(css, /\.dd-tile\.dd-featured \{ grid-column: span 2; grid-row: span 2;/, "Hotel-only should be the single featured Trips dropdown tile");
 assert.match(css, /\.header \.desk-links > a\.nl[\s\S]*font-family: var\(--display\)/, "Desktop navigation should use the Kensington display font");
