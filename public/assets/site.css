@@ -2170,7 +2170,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #destinations { padding-top: var(--section); }
   .decl-atol .more { min-height: 44px; display: inline-flex; align-items: center; }
   .decl-fn, .hd-calm .fn { font-size: 13px; }
-  .hero .hs-dots { display: flex; top: auto; right: 20px; bottom: 18px; left: auto; flex-direction: row; transform: none; }
+  .hero .hs-dots { display: flex; top: calc(var(--header-top) + var(--logo-h) + var(--header-bottom) + 8px); right: 20px; bottom: auto; left: auto; flex-direction: row; transform: none; }
   .hero .hs-dots .hs-dot { display: none; }
   .hero .hs-toggle { min-height: 36px; }
   .hd-wrap > :not(.hero) { margin-left: var(--margin) !important; margin-right: var(--margin) !important; }
