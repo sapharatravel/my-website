@@ -2369,3 +2369,8 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #trips .trip-featured h3 { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; margin-top: 0; }
   #trips .trip-featured p { display: block; }
 }
+
+/* The lead trip is expanded by default on touch devices and tablet widths; desktop hover keeps its one-at-a-time interaction. */
+.trips:not(.xp) .trip-featured .trip-name { display: none; }
+.trips:not(.xp) .trip-featured h3 { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; }
+.trips:not(.xp) .trip-featured p { display: block; }
