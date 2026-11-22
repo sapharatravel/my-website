@@ -6,6 +6,7 @@ import hotelNames from "../components/home/01-hotel-names.html?raw";
 import how from "../components/home/02-how-it-works.html?raw";
 import HQ from "../data/hotel-questions.json";
 import priceCheck from "../components/home/03-price-check.html?raw";
+import payLater from "../components/home/03b-pay-later.html?raw";
 import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
 import declaration from "../components/home/06-declaration.html?raw";
