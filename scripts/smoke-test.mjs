@@ -32,7 +32,7 @@ assert.equal(tripCards.length, 5, "Homepage should show five trip types");
 assert.ok(tripCards.every(card => (card.match(/class="split light"/g) || []).length === 1), "Each homepage trip card should have exactly one CTA");
 assert.match(home, /class="mm-trip-card"/, "Mobile Trips menu should use visual image cards");
 assert.match(css, /\.dd-tile\.dd-featured \{ grid-column: span 2; grid-row: span 2;/, "Hotel-only should be the single featured Trips dropdown tile");
-assert.match(css, /\.header \.desk-links > a\.nl[\s\S]*font-family: var\\(--display\\)/, "Desktop navigation should use the Kensington display font");
+assert.match(css, /\.header \.desk-links > a\.nl[\s\S]*font-family: var\(--display\)/, "Desktop navigation should use the Kensington display font");
 assert.match(css, /\.mm-trip-img/, "Mobile Trips menu should include image thumbnails");
 assert.doesNotMatch(home, /href="\/trips\/business"/, "Business Travel should not return as a homepage card");
 
