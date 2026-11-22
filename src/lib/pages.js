@@ -5,7 +5,6 @@ import hero from "../components/home/00-hero.html?raw";
 import hotelNames from "../components/home/01-hotel-names.html?raw";
 import how from "../components/home/02-how-it-works.html?raw";
 import HQ from "../data/hotel-questions.json";
-import payLater from "../components/home/03b-pay-later.html?raw";
 import priceCheck from "../components/home/03-price-check.html?raw";
 import trips from "../components/home/04-trips.html?raw";
 import destinations from "../components/home/05-destinations.html?raw";
@@ -65,19 +64,6 @@ const D = Object.fromEntries(C.DESTS.map((d) => [d.slug, d]));
 const join = (...parts) => parts.join("\n");
 
 // ---------- home ----------
-// Cards on the homepage to the pages that hold what used to be on it.
-// 21 Nov 2026 (Huzaifa): no photo used twice on the homepage; Reviews, Business and FAQs got their own photos (IMAGES.md).
-const MORE_CARDS = [
-  ["price-check.html", "st-price-infinity.webp", "Price check", "Found a hotel online? Send it to us. We'll compare the same room, dates and terms, free."],
-  ["reviews.html", "st-reviews-praslin.webp", "Reviews", "Real reviews from people we've booked for, in their own words."],
-  ["why-saphara.html", "st-howwework-kl.webp", "How we work", "One WhatsApp chat from first question to flight home. No service fee."],
-  ["trips/business.html", "st-card-business.webp", "Business travel", "Trips for staff and clients, booked properly, with an invoice for every booking."],
-  ["guides/index.html", "guides/guide-malta.webp", "Travel guides", "Where we ate, prayed and stayed in Malta, Sarajevo and New York."],
-];
-const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
-function moreCards(pg) {
-  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">Still deciding?</h2></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
-}
 // Proof under the hero (16 Nov 2026, Huzaifa): the Trustpilot line and one real review, lifted from the reviews block so the wording can't drift.
 function heroProof(pg) {
   // Redesigned 16 Nov (Huzaifa: "show the review bigger in Kensington"): one large quote, then the Trustpilot line.
