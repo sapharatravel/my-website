@@ -2580,3 +2580,6 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 }
 /* 22 Nov 2026 (mobile test): on the smallest phones (under 360px) page headings shrink a touch so joined last words ("financial protection") stay inside the margins. */
 @media (max-width: 359px) { h1.display { font-size: min(58px, 16.5vw); } }
+/* 22 Nov 2026 (Huzaifa): The Ritz-Carlton logo (lion and crown lockup, from the Adobe Stock folder) replaces the typed name in the hotel strip. */
+.marquee-track .mq-ritz-carlton img { height: 62px; max-width: 200px; }
+@media (max-width: 767px) { .marquee-track .mq-ritz-carlton img { height: 64px; max-width: 200px; } }
