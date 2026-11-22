@@ -2110,7 +2110,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
     overflow: visible; margin: 0; padding: 0; scroll-snap-type: none;
   }
   #trips .trips::after, #destinations .dests::after { display: none; }
-  #trips .trips > *, #destinations .dests > * { flex: initial; width: auto; min-width: 0; scroll-snap-align: none; }
+  #trips .trips > *, #destinations .dests > * { flex: initial; width: auto; min-width: 0; min-height: 0; scroll-snap-align: none; }
   #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
   #trips .trips .pcard.trip p { display: none; }
   #trips .trips .pcard.trip .body { padding: 16px; }
