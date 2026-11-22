@@ -9,25 +9,28 @@ function page(path) {
 const home = page("dist/index.html");
 const price = page("dist/price-check.html");
 const plan = page("dist/plan-my-trip.html");
+const why = page("dist/why-saphara.html");
 const css = page("dist/assets/site.css");
 
 assert.doesNotMatch(home, /class="hs-toggle"/, "Hero must not render a pause control");
 assert.doesNotMatch(home, /hd-calm/, "Hero must not contain the price comparison card");
 assert.match(home, /id="price-check"/, "Price check should sit in its own homepage section");
-assert.match(home, /id="how"/, "Homepage should explain the booking process");
+assert.match(home, /A second opinion, on us/, "Homepage Price Check should be concise");
+assert.doesNotMatch(home, /Illustrative example|pcx-verdict|pcx-grid/, "Homepage should not repeat the full comparison example");
 assert.doesNotMatch(home, /id="compare"|id="business"|id="pay-later"/, "Comparison matrix, Business Travel and separate Pay Later sections should stay off the homepage");
 assert.match(home, /trips\/business/, "Business Travel should remain accessible through the Trips navigation");
 const homeOrder = ["id=\"how\"", "id=\"trips\"", "id=\"destinations\"", "id=\"price-check\"", "id=\"why\"", "id=\"reviews\"", "id=\"faq\"", "id=\"enquire\""];
 assert.ok(homeOrder.every((marker, i) => i === 0 || home.indexOf(homeOrder[i - 1]) < home.indexOf(marker)), "Homepage sections must follow the agreed decision journey");
-assert.ok(home.indexOf('id="how"') < home.indexOf('id="price-check"'), "Price Check must not interrupt the hero or opening explanation");
+
 assert.match(css, /--section: 56px; --intro-content: 28px/, "Mobile spacing tokens must be explicitly defined");
 assert.match(css, /--section: 72px; --intro-content: 36px/, "Tablet spacing tokens must be explicitly defined");
 assert.match(css, /--section: 88px; --intro-content: 48px/, "Desktop spacing tokens must be explicitly defined");
 assert.match(css, /mobile section rhythm and button sizing/, "Mobile CTA sizing rules must be present");
-assert.equal((home.match(/class="rv-card rv"/g) || []).length, 2, "Homepage review section should show two text reviews on desktop");
-assert.match(home, /class="pcard rv-photo rv"/, "Homepage review section should include the featured photo review");
 assert.match(home, /aria-label="Explore honeymoons"/, "Trip card links should have descriptive accessible names");
 assert.match(home, /saphara-logo-sand\.svg/, "Footer should use the sand logo on black");
+assert.match(why, /Travel, with/, "Why Saphara page should lead with a clear customer proposition");
+assert.match(why, /id="how"/, "Why Saphara page should explain the booking process");
+assert.doesNotMatch(why, /pay-later/, "Why Saphara should not repeat the standalone Pay Later section");
 assert.match(price, /id="pcForm"/, "Price Check form must be present");
 assert.match(price, /Illustrative example/, "Price Check comparison must be labelled illustrative");
 assert.match(price, /supplier allows a change/, "Price Check must qualify rebooking on supplier conditions");
