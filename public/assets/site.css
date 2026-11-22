@@ -2428,3 +2428,84 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #destinations .dest:nth-child(even) { margin-top: 20px; }
   #destinations .dest h3 { font-size: clamp(25px, 7vw, 34px); }
 }
+
+
+/* 22 Nov 2026: desktop refinements requested by Huzaifa.
+   Kept inside desktop breakpoints where requested; mobile layout is untouched. */
+@media (min-width: 1024px) {
+  /* Give the navigation underline more breathing room below the lettering. */
+  .desk-links .nl::after { bottom: 3px; }
+
+  /* Fit the complete Trips menu in one view: Hotel only at left, six image-and-title links at right. */
+  .dd-panel {
+    width: min(1320px, calc(100vw - 2 * var(--margin)));
+    max-height: none;
+    overflow: visible;
+    overscroll-behavior: auto;
+    grid-template-columns: minmax(245px, 1.05fr) repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 142px;
+    gap: 14px 18px;
+    padding: 22px 26px 24px;
+    align-content: start;
+  }
+  .dd-head { grid-column: 1 / -1; }
+  .dd-tile { min-width: 0; display: flex; flex-direction: column; gap: 7px; }
+  .dd-tile .ph { width: 100%; height: 104px; flex: 0 0 104px; aspect-ratio: auto; }
+  .dd-tile .dd-name { font-size: 22px; line-height: 1; }
+  .dd-tile .dd-sub { display: none; }
+  .dd-tile.dd-featured {
+    order: -1;
+    grid-column: 1;
+    grid-row: span 2;
+    gap: 10px;
+  }
+  .dd-tile.dd-featured .ph { height: 286px; min-height: 286px; flex: 0 0 286px; aspect-ratio: auto; }
+  .dd-tile.dd-featured .dd-name { font-size: 29px; }
+
+  /* Return the homepage trip cards to a compact, equal-card treatment. */
+  #trips .trips {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+  }
+  #trips .trip,
+  #trips .trip-featured {
+    grid-column: auto;
+    order: initial;
+    min-height: 320px;
+    height: 320px;
+    aspect-ratio: auto;
+  }
+  #trips .trip .body,
+  #trips .trip-featured .body { max-width: none; padding: 24px; }
+  #trips .trip h3,
+  #trips .trip-featured h3 { max-width: 16ch; font-size: clamp(26px, 2.4vw, 34px); line-height: 1; }
+  #trips .trip p,
+  #trips .trip-featured p { max-width: 34ch; font-size: 14px; }
+  #trips .trip .actions,
+  #trips .trip-featured .actions { margin-top: 16px; }
+
+  /* All three More from Saphara cards sit on one row, with no orphaned third card. */
+  #more .more-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-24); }
+  #more .more-cards > :last-child:nth-child(odd) { grid-column: auto; width: auto; justify-self: stretch; }
+
+  /* Stack the FAQ actions vertically on desktop, as requested. */
+  #faq .actions { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-12); }
+}
+
+/* Footer now runs edge-to-edge rather than sitting inside a rounded inset. */
+@media (min-width: 768px) {
+  .sf-wrap {
+    --sf-inset: 0px;
+    --sf-r: 0px;
+    padding-inline: 0;
+    padding-bottom: 0;
+  }
+  .sf {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+    border-radius: 0;
+  }
+}
