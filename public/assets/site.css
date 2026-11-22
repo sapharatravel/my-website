@@ -22,6 +22,7 @@
   --paper: #FFFFFF; --linen: #FAF6EF; --cream: #F3ECDF; --sand: #F5EFE4; --sand-deep: #E7DCC5;
   --ink: #111111; --rust: #000000; --gold: #6B6457; --tone: #8A8070; --black: #000000; --grey: #66604F; --rule: #DDD4C3; --accent: #C9B48A;
   --on-dark: #F6F3ED; --on-dark-muted: #D3CFC6; --on-dark-gold: #E7DCC5;
+  --footer-rust: #8A3B2E;
   --s-4: 4px; --s-8: 8px; --s-12: 12px; --s-16: 16px; --s-24: 24px; --s-32: 32px; --s-40: 40px; --s-56: 56px; --s-80: 80px; --s-120: 120px;
   --margin: 24px; --label-head: 16px; --head-body: 16px; --body-btn: 32px; --block: 24px; --small-gap: 12px; --card-pad: 24px; --overlap: 96px;
   --logo-h: 28px; --logo-slim: 22px; --header-top: 32px; --header-bottom: 24px; --header-slim: 64px;
@@ -2109,7 +2110,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 @media (min-width: 1280px) { .sf-wrap { --sf-pad-x: 72px; --sf-pad-top: 72px; } }
 @media (min-width: 1600px) { .sf-wrap { --sf-pad-x: 96px; --sf-pad-top: 80px; } }
 .sf {
-  position: relative; isolation: isolate; overflow: hidden; background: #8A3B2E;
+  position: relative; isolation: isolate; overflow: hidden; background: var(--footer-rust);
   border-radius: var(--sf-r); color: #FFFDF8; padding: var(--sf-pad-top) var(--sf-pad-x) 0;
   max-width: calc(var(--content) + 2 * var(--margin) + 240px); margin-inline: auto;
 }
