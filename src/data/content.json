@@ -1167,7 +1167,7 @@
  "TRIPS": [
   [
    "honeymoons",
-   "Honeymoon",
+   "Honeymoons",
    "st-card-honeymoon.webp",
    [
     "Just married.",
@@ -1176,7 +1176,7 @@
   ],
   [
    "beach-and-island",
-   "Beach and island",
+   "Beach & Island",
    "st-card-beach.webp",
    [
     "Beach and island resorts.",
@@ -1203,7 +1203,7 @@
   ],
   [
    "hotels",
-   "Hotel only",
+   "Hotel Only",
    "st-hotel-suite.webp",
    [
     "Got your flights?",
