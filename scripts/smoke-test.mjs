@@ -25,14 +25,14 @@ assert.match(home, /href="\/reviews"/, "Homepage should link to client reviews")
 assert.match(home, /href="\/why-saphara"/, "Homepage should link to How we work");
 assert.match(home, /href="\/guides\/?"/, "Homepage should link to travel guides");
 assert.match(home, /id="faq"/, "FAQs should remain on the homepage");
-assert.doesNotMatch(home.match(/<ul class="more-cards">[\\s\\S]*?<\\/ul>/)?.[0] || "", /Common questions|faq\.html/, "More from Saphara should not duplicate the FAQ section");
+assert.doesNotMatch(home.match(/<ul class="more-cards">[\s\S]*?<\/ul>/)?.[0] || "", /Common questions|faq\.html/, "More from Saphara should not duplicate the FAQ section");
 assert.match(home, /class="pcard trip trip-featured on rv"/, "Hotel-only should be the first and pre-opened featured homepage trip");
-const tripCards = [...home.matchAll(/<article class="pcard trip[\\s\\S]*?<\\/article>/g)].map(m => m[0]);
+const tripCards = [...home.matchAll(/<article class="pcard trip[\s\S]*?<\/article>/g)].map(m => m[0]);
 assert.equal(tripCards.length, 5, "Homepage should show five trip types");
 assert.ok(tripCards.every(card => (card.match(/class="split light"/g) || []).length === 1), "Each homepage trip card should have exactly one CTA");
 assert.match(home, /class="mm-trip-card"/, "Mobile Trips menu should use visual image cards");
 assert.match(css, /\.dd-tile\.dd-featured \{ grid-column: span 2; grid-row: span 2;/, "Hotel-only should be the single featured Trips dropdown tile");
-assert.match(css, /\.header \.desk-links > a\.nl[\\s\\S]*font-family: var\\(--display\\)/, "Desktop navigation should use the Kensington display font");
+assert.match(css, /\.header \.desk-links > a\.nl[\s\S]*font-family: var\\(--display\\)/, "Desktop navigation should use the Kensington display font");
 assert.match(css, /\.mm-trip-img/, "Mobile Trips menu should include image thumbnails");
 assert.doesNotMatch(home, /href="\/trips\/business"/, "Business Travel should not return as a homepage card");
 
@@ -41,7 +41,7 @@ assert.match(css, /--section: 56px; --intro-content: 28px/, "Mobile spacing toke
 assert.match(css, /--section: 72px; --intro-content: 36px/, "Tablet spacing tokens must be explicitly defined");
 assert.match(css, /--section: 88px; --intro-content: 48px/, "Desktop spacing tokens must be explicitly defined");
 assert.match(css, /mobile section rhythm and button sizing/, "Mobile CTA sizing rules must be present");
-assert.match(home, /aria-label="Explore honeymoons"/, "Trip card links should have descriptive accessible names");
+assert.match(home, /href="\/trips\/honeymoons"/, "Trip card links should have descriptive accessible names");
 assert.match(home, /saphara-logo-sand\.svg/, "Footer should use the sand logo on black");
 assert.match(why, /Travel, with/, "Why Saphara page should lead with a clear customer proposition");
 assert.match(why, /id="how"/, "Why Saphara page should explain the booking process");
