@@ -2244,3 +2244,12 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 @media (prefers-reduced-motion: reduce) {
   .hs-toggle { display: none; }
 }
+
+@media (max-width: 767px) {
+  /* The fifth trip card sits centred rather than leaving an orphaned half-row. */
+  #trips .trips > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: calc(50% - 6px);
+    justify-self: center;
+  }
+}
