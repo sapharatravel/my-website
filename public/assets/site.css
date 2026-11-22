@@ -1381,8 +1381,7 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
   :root { --margin: 96px; --head-body: 28px; --card-pad: 48px; --wide-inset: 32px; }
 }
 
-/* ---------- Footer structure ----------
-   Rounded inset panel and responsive content grid. The final rust palette, pale logo and current spacing tokens are defined in the responsive art direction block at the end of this file. */
+/* ---------- Footer: rounded inset rust panel and responsive content grid ---------- */
 .sf-wrap { --sf-inset: 12px; --sf-r: 24px; --sf-pad-x: 24px; --sf-pad-top: 40px; background: var(--paper); box-shadow: inset 0 1px 0 rgba(221,212,195,.75);
   padding: var(--sf-inset) var(--sf-inset) calc(var(--sf-inset) + env(safe-area-inset-bottom, 0px)); } /* sides follow the hero's edge; top and bottom never more than 32px */
 @media (min-width: 768px) { .sf-wrap { --sf-inset: 16px; --sf-r: 28px; --sf-pad-x: 40px; --sf-pad-top: 56px; } }
