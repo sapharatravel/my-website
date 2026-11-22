@@ -544,7 +544,7 @@
   var slides = hero.querySelectorAll(".hs-slide"), dots = hero.querySelectorAll(".hs-dot"), toggle = hero.querySelector(".hs-toggle");
   if (slides.length < 2) return;
   var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var userPaused = false, hoverPaused = false, focusPaused = false;
+  var userPaused = false, focusPaused = false;
   function load() {
     hero.querySelectorAll("source[data-srcset]").forEach(function (s) { s.srcset = s.getAttribute("data-srcset"); s.removeAttribute("data-srcset"); });
     hero.querySelectorAll("img[data-src]").forEach(function (im) { im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); });
@@ -557,7 +557,7 @@
   function stop() { if (timer) clearInterval(timer); timer = null; }
   function sync() {
     stop();
-    if (!reduce && !userPaused && !hoverPaused && !focusPaused && !document.hidden) {
+    if (!reduce && !userPaused && !focusPaused && !document.hidden) {
       timer = setInterval(function () { show(i + 1); }, 6000);
     }
     if (toggle) {
@@ -567,9 +567,7 @@
     }
   }
   dots.forEach(function (d, k) { d.addEventListener("click", function () { load(); show(k); sync(); }); });
-  if (toggle) toggle.addEventListener("click", function () { userPaused = !userPaused; sync(); });
-  hero.addEventListener("mouseenter", function () { hoverPaused = true; sync(); });
-  hero.addEventListener("mouseleave", function () { hoverPaused = false; sync(); });
+  if (toggle) toggle.addEventListener("click", function () { userPaused = !userPaused; if (!userPaused) focusPaused = false; sync(); });
   hero.addEventListener("focusin", function () { focusPaused = true; sync(); });
   hero.addEventListener("focusout", function (e) { if (!hero.contains(e.relatedTarget)) { focusPaused = false; sync(); } });
   document.addEventListener("visibilitychange", sync);
