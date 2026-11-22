@@ -2311,3 +2311,55 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #trips .trip-featured p { display: block; max-width: 34ch; }
   #trips .trip-featured .actions { margin-top: 14px; }
 }
+
+/* 22 Nov: final homepage hierarchy corrections. */
+@media (min-width: 1024px) {
+  /* Hotel-only is the single feature tile. The other six are intentionally quieter. */
+  .dd-panel { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px 16px; }
+  .dd-tile:not(.dd-featured) .ph { aspect-ratio: 16 / 9; }
+  .dd-tile:not(.dd-featured) .dd-name { font-size: 21px; }
+  .dd-tile:not(.dd-featured) .dd-sub { font-size: 13px; line-height: 1.35; }
+  .dd-tile.dd-featured { grid-column: span 2; grid-row: span 2; }
+  .dd-tile.dd-featured .ph { flex: 1; min-height: 250px; aspect-ratio: auto; }
+  .dd-tile.dd-featured .dd-name { font-size: 34px; }
+  .dd-tile.dd-featured .dd-sub { font-size: 16px; max-width: 30ch; }
+  /* Kensington is the display voice across desktop navigation, as it is on mobile. */
+  .header .desk-links > a.nl,
+  .header .desk-links .dd > .dd-btn {
+    font-family: var(--display);
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    font-size: 25px;
+  }
+}
+/* Destination cards return to the staggered arch treatment. */
+.dest { border-radius: 50% 50% var(--r-card) var(--r-card) / 24% 24% var(--r-card) var(--r-card); overflow: hidden; }
+.dest h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: .98;
+  font-size: clamp(30px, 3.1vw, 42px);
+}
+@media (min-width: 1024px) {
+  #destinations .dests { align-items: start; }
+  #destinations .dest:nth-child(even) { margin-top: 52px; }
+  #destinations .dest:nth-child(odd) { margin-top: 0; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  #destinations .dest:nth-child(even) { margin-top: 28px; }
+}
+@media (max-width: 767px) {
+  #destinations .dest:nth-child(even) { margin-top: 20px; }
+  #destinations .dest h3 { font-size: clamp(26px, 7vw, 34px); }
+  /* One action per trip card, consistently anchored at the bottom of the text block. */
+  #trips .trip .body { width: 100%; min-height: 100%; justify-content: flex-end; }
+  #trips .trip .actions { width: 100%; display: flex; flex-direction: row; justify-content: flex-start; align-items: flex-start; margin-top: 14px; }
+  #trips .trip .actions > .split { width: min(100%, 220px); max-width: 220px; min-height: 44px; }
+  #trips .trip .actions > .split .split-label { min-height: 44px; }
+  #trips .trip .actions > .split .split-arrow { width: 40px; min-height: 40px; flex-basis: 40px; }
+  #trips .trip-featured .actions > .split { max-width: 260px; }
+  #trips .trip-featured { min-height: 340px !important; }
+}
