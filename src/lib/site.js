@@ -67,7 +67,7 @@ export const shareBtn = (label = "Share this guide") =>
 export const planLink = (pg) => (pg.path === "plan-my-trip.html" ? "#enquire" : pg.u("plan-my-trip.html")); // the form lives only on Plan my trip (slim homepage, 15 Nov)
 
 export function header(pg) {
-  const tiles = C.TRIPS.map(([s, n, img, [a, b]]) => `\n          <a class="dd-tile" href="${pg.u("trips/" + s + ".html")}" aria-label="${n}: ${a} ${b}"><span class="ph"><img data-src="${pg.img("thumb-" + img)}" alt="" width="400" height="300" decoding="async"${s === "business" ? ' class="warm"' : ""}></span><b class="dd-name">${n}${ARROW}</b><span class="dd-sub">${a} ${b}</span></a>`).join("");
+  const tiles = C.TRIPS.map(([s, n, img, [a, b]]) => `\n          <a class="dd-tile${s === "hotels" ? " dd-featured" : ""}" href="${pg.u("trips/" + s + ".html")}" aria-label="${n}: ${a} ${b}"><span class="ph"><img data-src="${pg.img("thumb-" + img)}" alt="" width="400" height="300" decoding="async"${s === "business" ? ' class="warm"' : ""}></span><b class="dd-name">${n}${ARROW}</b><span class="dd-sub">${a} ${b}</span></a>`).join("");
   const extra = (C.MENU_EXTRA || []).map((m) => `\n          <a class="dd-tile" href="${pg.u(m.href)}" aria-label="${m.name}: ${m.lines[0]} ${m.lines[1]}"><span class="ph"><img data-src="${pg.img(m.thumb)}" alt="" width="400" height="300" decoding="async"></span><b class="dd-name">${m.name}${ARROW}</b><span class="dd-sub">${m.lines[0]} ${m.lines[1]}</span></a>`).join("");
   const pl = planLink(pg), dp = pl === "#enquire" ? " data-plan" : "";
   return `<a class="skip" href="#main">Skip to content</a>
