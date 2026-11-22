@@ -24,7 +24,7 @@
   --on-dark: #F6F3ED; --on-dark-muted: #D3CFC6; --on-dark-sand: #E7DCC5;
   --footer-ink: #111111;
   --s-4: 4px; --s-8: 8px; --s-12: 12px; --s-16: 16px; --s-24: 24px; --s-32: 32px; --s-40: 40px; --s-56: 56px; --s-80: 80px; --s-120: 120px;
-  --margin: 24px; --label-head: 16px; --head-body: 16px; --body-btn: 32px; --block: 24px; --small-gap: 12px; --card-pad: 24px; --overlap: 96px;
+  --margin: 24px; --section: 56px; --intro-content: 28px; --body-btn: 24px; --label-head: 16px; --head-body: 16px; --body-btn: 32px; --block: 24px; --small-gap: 12px; --card-pad: 24px; --overlap: 96px;
   --logo-h: 28px; --logo-slim: 22px; --header-top: 32px; --header-bottom: 24px; --header-slim: 64px;
   --r-card: 20px; --r-small: 14px; --r-pill: 999px;
   --shadow-sm: 0 1px 2px rgba(0,0,0,.06), 0 2px 8px rgba(0,0,0,.05);
@@ -44,7 +44,7 @@
   color-scheme: light;
 }
 @media (min-width: 768px) { :root { --margin: 40px; --card-pad: 32px; --section: 72px; --intro-content: 36px; } }
-@media (min-width: 1024px) { :root { --section: 88px; --intro-content: 48px; --margin: 64px; --head-body: 24px; --block: 32px; --card-pad: 40px; --overlap: 160px; --logo-h: 34px; --logo-slim: 25px; --header-top: 40px; --header-slim: 72px; --fs-body: 17px; --lh-body: 1.55; --fs-lead: 19px; } }
+@media (min-width: 1024px) { :root { --section: 88px; --intro-content: 48px; --body-btn: 32px; --margin: 64px; --head-body: 24px; --block: 32px; --card-pad: 40px; --overlap: 160px; --logo-h: 34px; --logo-slim: 25px; --header-top: 40px; --header-slim: 72px; --fs-body: 17px; --lh-body: 1.55; --fs-lead: 19px; } }
 :root { --content: 1200px; --col-left: max(var(--margin), calc((100% - var(--content)) / 2)); --hero-min: 16px; --hero-x: max(var(--hero-min), calc(var(--col-left) - 56px)); --hero-top: 16px; --fs-caption: 14px; --fs-label: 12px; --head-stat: 44px; }
 /* Tablet and desktop type scale (13 Nov): hero is the only big moment. Phones keep their sizes. */
 @media (min-width: 768px) { :root { --head-hero: clamp(64px, 6.5vw, 96px); --head-section: clamp(48px, 4.4vw, 64px); --head-panel: clamp(32px, 2.8vw, 40px); --head-stat: 40px; } }
@@ -2050,7 +2050,6 @@ html { overflow-x: clip; }
    RESPONSIVE ART DIRECTION
    Consolidated 22 Nov 2026. These are live rules, not a preview override.
    ====================================================================== */
-:root { --section: 56px; --intro-content: 28px; }
 @media (min-width: 768px) { :root { --section: 72px; --intro-content: 36px; } }
 @media (min-width: 1024px) { :root { --section: 88px; --intro-content: 48px; } }
 @media (min-width: 1280px) { :root { --section: 96px; --intro-content: 56px; } }
