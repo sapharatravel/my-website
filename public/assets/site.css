@@ -2866,3 +2866,14 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 }
 
 /* Production refresh: publish the reviews progress-line controls from main. */
+
+
+/* Review preview: centre only the homepage hero message and primary action. */
+body.home .hero.hd > .col {
+  width: min(100%, 860px);
+  margin-inline: auto;
+  text-align: center;
+}
+body.home .hero.hd > .col .lead { margin-inline: auto; }
+body.home .hero.hd > .col .actions { justify-content: center; }
+body.home .hero.hd > .col .actions .hero-cta { margin-inline: auto; }
