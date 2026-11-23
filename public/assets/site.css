@@ -2650,3 +2650,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
     padding-right: clamp(40px, 4vw, 88px);
   }
 }
+
+
+/* Temporary visual test: uppercase Kensington on the homepage hero only. */
+body.home .hero .display { text-transform: uppercase; }
