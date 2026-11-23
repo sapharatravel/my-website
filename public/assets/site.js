@@ -341,13 +341,13 @@
   else window.addEventListener("load", function () { load(); start(); });
 })();
 
-/* Homepage reviews (23 Nov 2026): match the hero slider's 6-second line-fill timing.
-   Pauses while hovered, focused or while the tab is hidden; no auto-rotation with reduced motion. Lines and sideways swipe change it by hand. */
+/* Homepage reviews: advance on the exact completion of the 6-second progress-line animation.
+   Pauses while hovered, focused or while the tab is hidden; no auto-rotation with reduced motion. */
 (function () {
   var box = document.querySelector("[data-proof]"); if (!box) return;
   var slides = box.querySelectorAll(".proof-slide"), dots = box.querySelectorAll(".proof-dot");
   if (slides.length < 2) return;
-  var i = 0, timer = null, hover = false, focus = false, seen = false;
+  var i = 0, hover = false, focus = false, seen = false, running = false;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var bar = box.querySelector(".proof-dots"), DUR = 6000;
   if (bar) bar.style.setProperty("--proof-dur", DUR + "ms");
@@ -355,7 +355,7 @@
     if (!bar) return;
     bar.classList.remove("is-run");
     void bar.offsetWidth;
-    if (timer) bar.classList.add("is-run");
+    if (running) bar.classList.add("is-run");
   }
   function show(n) {
     i = (n + slides.length) % slides.length;
@@ -368,12 +368,13 @@
     restartFill();
   }
   function sync() {
-    if (timer) clearInterval(timer);
-    timer = null;
+    running = !reduce && seen && !hover && !focus && !document.hidden;
     if (bar) bar.classList.remove("is-run");
-    if (!reduce && seen && !hover && !focus && !document.hidden) timer = setInterval(function () { show(i + 1); }, DUR);
     restartFill();
   }
+  if (bar) bar.addEventListener("animationend", function (e) {
+    if (e.animationName === "hsFill" && e.pseudoElement === "::after" && running && dots[i] === e.target) show(i + 1);
+  });
   dots.forEach(function (d, k) { d.addEventListener("click", function () { show(k); sync(); }); });
   box.addEventListener("mouseenter", function () { hover = true; sync(); });
   box.addEventListener("mouseleave", function () { hover = false; sync(); });
@@ -381,11 +382,13 @@
   box.addEventListener("focusout", function (e) { if (!box.contains(e.relatedTarget)) { focus = false; sync(); } });
   document.addEventListener("visibilitychange", sync);
   var x0 = null, y0 = null, wrap = box.querySelector(".proof-slides");
-  wrap.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
-  wrap.addEventListener("touchend", function (e) {
-    if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) { show(i + (dx < 0 ? 1 : -1)); sync(); }
-  }, { passive: true });
+  if (wrap) {
+    wrap.addEventListener("touchstart", function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+    wrap.addEventListener("touchend", function (e) {
+      if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.5) { show(i + (dx < 0 ? 1 : -1)); sync(); }
+    }, { passive: true });
+  }
   /* only start rotating once the reviews have been on screen */
   if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { es.forEach(function (e) { seen = e.isIntersecting; sync(); }); }, { threshold: .4 }).observe(box);
   else { seen = true; sync(); }
