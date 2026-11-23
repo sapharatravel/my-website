@@ -371,3 +371,64 @@
   if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { es.forEach(function (e) { seen = e.isIntersecting; sync(); }); }, { threshold: .4 }).observe(box);
   else { seen = true; sync(); }
 })();
+
+
+/* Homepage: accessible, manually controlled booking-step tabs. */
+(function () {
+  var root = document.querySelector("[data-how-process]");
+  if (!root) return;
+  var tabs = Array.prototype.slice.call(root.querySelectorAll("[data-how-step]"));
+  var panel = root.querySelector("#how-panel");
+  var title = root.querySelector("[data-how-title]");
+  var description = root.querySelector("[data-how-description]");
+  var number = root.querySelector("[data-how-number]");
+  var footnote = root.querySelector("[data-how-footnote]");
+  var image = root.querySelector("[data-how-image]");
+  var caption = root.querySelector("[data-how-caption]");
+  if (!tabs.length || !panel || !title || !description || !image) return;
+  var steps = [
+    { title: "Tell us your plans", description: "Tell us where you’d like to go, when you want to travel and who’s coming along. If you have a budget, a hotel in mind or a few must-haves, share those too. If you’re still deciding, that’s absolutely fine.", footnote: "It all starts with a conversation.", image: "/img/st-card-honeymoon.webp", alt: "A beautiful setting for a special holiday", caption: "01 · Your trip starts here" },
+    { title: "Explore your options", description: "We’ll put together a thoughtful shortlist of hotels and stays that suit your plans. We compare the details that matter, including room type, meal plan, cancellation terms and what’s included, so you can choose with confidence.", footnote: "Handpicked options, clearly compared.", image: "/img/st-hotel-suite.webp", alt: "A comfortable hotel suite, ready for a stay", caption: "02 · Options worth considering" },
+    { title: "Make it yours", description: "Found somewhere you love? We’ll take care of the booking and pass your requests to the hotel. From room preferences to special touches, we’ll check what can be arranged and confirm the details with you.", footnote: "Nothing is booked until you’re happy.", image: "/img/st-howwework-kl.webp", alt: "Kuala Lumpur skyline at golden hour", caption: "03 · The details, taken care of" },
+    { title: "You’re ready to go", description: "We’ll send your booking confirmation and the details you need for your trip. And our support doesn’t stop when you check in. If you need us while you’re away, you can reach our team on WhatsApp.", footnote: "A real team, still here when you travel.", image: "/img/st-hotel-balcony.webp", alt: "A peaceful hotel balcony overlooking the destination", caption: "04 · We're with you along the way" }
+  ];
+  function select(index, moveFocus) {
+    var step = steps[index];
+    tabs.forEach(function (tab, i) {
+      var active = i === index;
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.setAttribute("tabindex", active ? "0" : "-1");
+    });
+    if (moveFocus) tabs[index].focus();
+    number.innerHTML = "0" + (index + 1) + " <span>/ 04</span>";
+    title.textContent = step.title;
+    description.textContent = step.description;
+    footnote.textContent = step.footnote;
+    panel.setAttribute("aria-labelledby", tabs[index].id);
+    caption.textContent = step.caption;
+    if (image.getAttribute("src") !== step.image) {
+      image.classList.add("is-changing");
+      var next = new Image();
+      next.onload = function () {
+        image.src = step.image;
+        image.alt = step.alt;
+        image.classList.remove("is-changing");
+      };
+      next.onerror = function () { image.classList.remove("is-changing"); };
+      next.src = step.image;
+    }
+  }
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener("click", function () { select(index, false); });
+    tab.addEventListener("keydown", function (event) {
+      var next = index;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % tabs.length;
+      else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index + tabs.length - 1) % tabs.length;
+      else if (event.key === "Home") next = 0;
+      else if (event.key === "End") next = tabs.length - 1;
+      else return;
+      event.preventDefault();
+      select(next, true);
+    });
+  });
+})();
