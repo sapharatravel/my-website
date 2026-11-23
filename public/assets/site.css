@@ -2869,5 +2869,5 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 
 /* Homepage desktop hero: keep the copy vertically centred on the left content edge. */
 @media (min-width: 768px) {
-  body.home .hero.hd .col { align-self: center; padding: 0; }
+  body.home .hero.hd .col { align-self: center; margin-left: 0; margin-right: auto; padding: 0; text-align: left; }
 }
