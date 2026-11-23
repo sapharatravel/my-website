@@ -2603,7 +2603,7 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 #how.how-home .how-intro { align-items: center; text-align: center; max-width: 760px; margin-inline: auto; }
 #how.how-home .how-intro > .label { margin-bottom: 4px; }
 #how.how-home .how-process { max-width: 1200px; margin: var(--intro-content) auto 0; min-width: 0; }
-#how.how-home .how-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; width: fit-content; max-width: 100%; margin: 0 auto 28px; padding: 5px; border-radius: var(--r-pill); background: #E9E6E0; }
+#how.how-home .how-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; width: fit-content; max-width: 100%; margin: 0 auto 28px; padding: 5px; border-radius: var(--r-pill); background: #fff; }
 #how.how-home .how-tab { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-width: 0; min-height: 48px; padding: 0 19px; border: 0; border-radius: var(--r-pill); background: transparent; color: #69665F; font: 500 14px/1.25 var(--body); text-align: center; cursor: pointer; transition: background 180ms var(--ease), color 180ms var(--ease), box-shadow 180ms var(--ease); }
 #how.how-home .how-tab[aria-selected="true"] { background: var(--ink); color: #fff; box-shadow: 0 2px 7px rgba(0,0,0,.12); }
 #how.how-home .how-tab-num { color: inherit; opacity: .58; font-size: 11px; font-variant-numeric: tabular-nums; letter-spacing: .06em; }
