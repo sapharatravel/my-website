@@ -37,7 +37,7 @@ ${noindex ? '<meta name="robots" content="noindex, nofollow">\n' : ""}
 <link rel="preload" as="font" type="font/woff2" href="${pg.u("assets/fonts/inter-500-latin.woff2")}" crossorigin>
 <link rel="preconnect" href="https://use.typekit.net" crossorigin>
 <link rel="stylesheet" href="https://use.typekit.net/swo1kcy.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://use.typekit.net/swo1kcy.css"></noscript>
-<link rel="stylesheet" href="${pg.u("assets/site.css")}?v=${assetV("site.css")}">${planForm ? `\n<link rel="stylesheet" href="${pg.u("assets/plan-form.css")}?v=${assetV("plan-form.css")}">` : ""}${ldHtml ? "\n" + ldHtml : ""}`;
+<link rel="stylesheet" href="${pg.u("assets/site.css")}?v=${assetV("site.css")}">${planForm ? `\n<link rel="preload" as="style" href="${pg.u("assets/plan-form.css")}?v=${assetV("plan-form.css")}"><link rel="stylesheet" href="${pg.u("assets/plan-form.css")}?v=${assetV("plan-form.css")}" media="print" onload="this.media=String.fromCharCode(97,108,108)"><noscript><link rel="stylesheet" href="${pg.u("assets/plan-form.css")}?v=${assetV("plan-form.css")}"></noscript>` : ""}${ldHtml ? "\n" + ldHtml : ""}`;
 ---
 <html lang="en-GB">
 <head>
