@@ -655,7 +655,7 @@ main { padding-bottom: 0; }
 .gcard:active .gphoto { transform: scale(.985); }
 .gtext { display: flex; flex-direction: column; gap: var(--s-4); }
 .gk { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
-.gcard h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; letter-spacing: .04em; line-height: 1.02; font-size: var(--head-card-sign); }
+.gcard h3 { font-family: var(--display); font-weight: 600; letter-spacing: 0; line-height: var(--head-lh); font-size: var(--head-card-sign); } /* 23 Nov 2026 (Huzaifa): same Kensington as the homepage headings (Compressed Demi, no capitals); was Compressed Regular in capitals */
 .gline { font-size: 15px; color: var(--grey); max-width: 34ch; margin-top: var(--s-4); text-wrap: pretty; }
 .gflag { margin-top: 9cqi; width: 9cqi; height: 6cqi; min-width: 26px; min-height: 17px; border-radius: 3px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.25); display: block; }
 .gflag svg { width: 100%; height: 100%; display: block; }
@@ -1389,10 +1389,10 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 @media (min-width: 1024px) { .sf-wrap { --sf-inset: var(--hero-x); --sf-r: 32px; --sf-pad-x: 56px; --sf-pad-top: 80px; } }
 @media (min-width: 1280px) { .sf-wrap { --sf-pad-x: 72px; --sf-pad-top: 88px; } }
 @media (min-width: 1600px) { .sf-wrap { --sf-pad-x: 96px; --sf-pad-top: 96px; } }
-.sf { position: relative; isolation: isolate; overflow: hidden; background: var(--sand-deep); border-radius: var(--sf-r); color: var(--ink);
+.sf { position: relative; isolation: isolate; overflow: hidden; background: var(--sand); /* 23 Nov 2026 (Huzaifa): same sand as the sections (was --sand-deep) */ border-radius: var(--sf-r); color: var(--ink);
   padding: var(--sf-pad-top) var(--sf-pad-x) 0; max-width: calc(var(--content) + 2 * var(--margin) + 240px); margin-inline: auto; }
 .sf > * { position: relative; z-index: 1; }
-.sf .sf-sky { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: clamp(220px, 26vw, 420px); z-index: 0; color: #D5C5A6; pointer-events: none;
+.sf .sf-sky { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: clamp(220px, 26vw, 420px); z-index: 0; color: var(--sand-deep); pointer-events: none; /* 23 Nov 2026: one step darker than the new sand panel, as #D5C5A6 was on sand-deep */
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.18) 45%, #000 80%); mask-image: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.18) 45%, #000 80%); }
 .sf-top { display: grid; gap: var(--s-40); }
 .sf-brand .logo { height: 34px; width: auto; display: block; }
@@ -2150,7 +2150,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 .flow, .final-band .flow { box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 .hd-cards { box-shadow: 0 10px 30px -12px rgba(0,0,0,.25); }
 /* Footer edge to edge (editorial preview): no inset card, content lines up with the page columns */
-.sf-wrap { padding: 0; box-shadow: none; background: var(--sand-deep); }
+.sf-wrap { padding: 0; box-shadow: inset 0 1px 0 rgba(221,212,195,.75); background: var(--sand); } /* 23 Nov 2026 (Huzaifa): same sand as the sections; the hairline (as on .sand) keeps it apart from a sand band above */
 .sf { border-radius: 0; max-width: none; padding: var(--sf-pad-top) max(var(--margin), calc((100% - var(--content)) / 2)) calc(24px + env(safe-area-inset-bottom, 0px)); }
 /* Mobile polish (editorial preview) */
 @media (max-width: 767px) {
