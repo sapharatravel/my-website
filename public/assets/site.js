@@ -21,32 +21,38 @@
   /* if Kensington can't load (for example inside a Claude preview), use the normal-size system fallback instead of the size-matched one */
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTimeout(function () { if (!document.fonts.check('600 40px "kensington"')) root.classList.add("no-kensington"); }, 1200); });
 
-  /* icons */
-  var ICONS = {
-    "Honeymoon": '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10.5 5.5 12 4l1.5 1.5L12 7z"/>',
-    "Beach and island": '<path d="M4 11a8 8 0 0 1 16 0z"/><path d="M12 11v8"/><path d="M3 21c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0"/>',
-    "Family holiday": '<circle cx="6.5" cy="6.5" r="2.5"/><path d="M3 20v-5a3.5 3.5 0 0 1 7 0v5"/><circle cx="14" cy="6.5" r="2.5"/><path d="M10.5 20v-5a3.5 3.5 0 0 1 7 0v5"/><circle cx="20" cy="11.5" r="1.6"/><path d="M18 20v-3a2 2 0 0 1 4 0v3"/>',
-    "Multi-city": '<path d="M3 21h18"/><path d="M5 21V9h5v12"/><path d="M10 21V4h5v17"/><path d="M15 21v-9h4v9"/><path d="M12 8h1M12 11h1M12 14h1M7 12h1M7 15h1"/>',
-    "Umrah hotels": '<path d="M12 3v2"/><path d="M7 13c0-3.2 2.6-4.6 5-7 2.4 2.4 5 3.8 5 7"/><path d="M5 13h14v8H5z"/><path d="M10.5 21v-3a1.5 1.5 0 0 1 3 0v3"/>',
-    "Business travel": '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/><path d="M3 12.5h18"/>',
-    "Hotel only": '<path d="M3 6v14"/><path d="M3 15h18v5"/><path d="M21 15v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="12" r="1.8"/>',
-    "Something else": '<path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M12 8.5v5M9.5 11h5"/>',
-    "transfers": '<path d="M5 11l1.6-4.2A1.5 1.5 0 0 1 8 6h8a1.5 1.5 0 0 1 1.4.8L19 11"/><rect x="3" y="11" width="18" height="6" rx="1.5"/><path d="M6 17v2M18 17v2"/>',
-    "guides": '<path d="M5 21V4"/><path d="M5 4h11l-2 3.5L16 11H5"/>',
-    "excursions": '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
-    "hotel": '<path d="M6 4h3l1.5 4.5-2 1.5a10 10 0 0 0 5.5 5.5l1.5-2L20 15v3a2 2 0 0 1-2 2A15 15 0 0 1 4 6a2 2 0 0 1 2-2z"/>',
-    "chat": '<path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M7 9h10M7 12h6"/>',
-    "flights": '<path d="M2.5 13.5 10 11V5.5a2 2 0 0 1 4 0V11l7.5 2.5V15L14 13.5V18l2 1.5V21l-4-1-4 1v-1.5L10 18v-4.5L2.5 15z"/>',
-    "team": '<circle cx="6" cy="8" r="2.2"/><circle cx="12" cy="7" r="2.4"/><circle cx="18" cy="8" r="2.2"/><path d="M2.5 19a3.5 3.5 0 0 1 7 0M8 19a4 4 0 0 1 8 0M14.5 19a3.5 3.5 0 0 1 7 0"/>',
-    "invoice": '<path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 11h6M9 14h6M9 17h4"/>',
-    "people": '<circle cx="9" cy="8" r="3"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M15 4.5h5.5a1 1 0 0 1 1 1V9a1 1 0 0 1-1 1H18l-2 1.6V10h-1a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1z"/>',
-    "fee": '<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.4"/><path d="M10 16l6-6"/>',
-    "paylater": '<rect x="3" y="5" width="13" height="13" rx="2"/><path d="M3 9.5h13M7 3v4M12 3v4"/><circle cx="17" cy="16.5" r="4.5"/><path d="M17 14.5v2.2l1.4 1"/>',
-    "shield": '<path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="m9 12 2 2 4-4"/>',
-    "compass": '<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
-    "pin": '<path d="M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/>'
+  /* Icons are sourced from src/data/content.json and exposed by Base.astro.
+     Keep labels as aliases only; the SVG artwork and drawing style live in one place. */
+  var ICONS = window.SAPHARA_ICONS || {};
+  var ICON_ALIASES = {
+    "Honeymoon": "honeymoon",
+    "Beach and island": "beach",
+    "Family holiday": "family",
+    "Multi-city": "multi-city",
+    "Umrah hotels": "umrah",
+    "Business travel": "business",
+    "Hotel only": "hotel",
+    "Something else": "something-else",
+    "transfers": "transfers",
+    "guides": "guides",
+    "excursions": "excursions",
+    "hotel": "hotel",
+    "chat": "chat",
+    "flights": "flights",
+    "team": "team",
+    "invoice": "invoice",
+    "people": "people",
+    "fee": "fee",
+    "paylater": "paylater",
+    "shield": "shield",
+    "compass": "compass",
+    "pin": "pin"
   };
-  function svg(n) { return '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">' + (ICONS[n] || "") + '</svg>'; }
+  function svg(n) {
+    var key = ICON_ALIASES[n] || n;
+    var paths = ICONS[key];
+    return paths ? '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + paths + '</svg>' : '';
+  }
   document.querySelectorAll("[data-ico]").forEach(function (el) { el.outerHTML = svg(el.getAttribute("data-ico")); });
 
   /* images fade in over their blurred placeholder */
