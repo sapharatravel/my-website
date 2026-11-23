@@ -2711,3 +2711,33 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
   #how.how-home .how-tabs::before, #how.how-home .how-tab { transition: none !important; }
   #how.how-home .how-image img { transform: none !important; }
 }
+
+/* Exact timing and layout for the booking-step switcher. */
+#how.how-home .how-tabs { position:relative; isolation:isolate; }
+#how.how-home .how-tabs::before { content:none !important; }
+#how.how-home .how-tab-pill {
+  position:absolute; z-index:0; top:0; left:0; display:block; pointer-events:none;
+  border-radius:var(--r-pill); background:var(--ink);
+  transform:translate3d(0,0,0);
+  transition:transform 250ms cubic-bezier(.22,1,.36,1), width 250ms cubic-bezier(.22,1,.36,1), height 250ms cubic-bezier(.22,1,.36,1);
+  will-change:transform,width;
+}
+#how.how-home .how-tab { position:relative; z-index:1; background:transparent !important; box-shadow:none !important; transition:color 180ms ease; }
+#how.how-home .how-tab[aria-selected="true"] { color:#fff; }
+#how.how-home .how-tab:not([aria-selected="true"]) { color:#69665F; }
+#how.how-home .how-copy, #how.how-home .how-image { transition:none !important; }
+#how.how-home .how-copy.is-out [data-how-number],
+#how.how-home .how-copy.is-out [data-how-title],
+#how.how-home .how-copy.is-out [data-how-description],
+#how.how-home .how-copy.is-out [data-how-footnote],
+#how.how-home .how-image.is-out img,
+#how.how-home .how-image.is-out figcaption { opacity:0 !important; transition:opacity 200ms ease-out !important; }
+#how.how-home .how-image img { transition:none; }
+@media (max-width:900px) {
+  #how.how-home .how-tabs { position:relative; }
+  #how.how-home .how-tab-pill { border-radius:12px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  #how.how-home .how-tab-pill { transition:none !important; }
+  #how.how-home .how-copy.is-out *, #how.how-home .how-image.is-out * { transition:none !important; }
+}
