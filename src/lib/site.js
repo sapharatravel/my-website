@@ -4,6 +4,7 @@ import { join as joinPath } from "node:path";
 // Shared building blocks for every page. Ported one-for-one from tools/site_lib.py and tools/build_site.py
 // so the Astro build outputs the same markup as the prototype. Content lives in src/data/content.json.
 import C from "../data/content.json";
+import ICONS from "../data/icons.json";
 import IMGS from "../data/img-sizes.json";
 
 export const PROTOTYPE = false; // true keeps every page out of search engines; false is the live build (set 14 Nov 2026 for launch)
@@ -39,7 +40,7 @@ export const PLUS = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><pa
 export const IG = '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>';
 const CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>';
 
-export const ico = (n) => `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${C.ICO[n]}</svg>`;
+export const ico = (n) => `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[n] || ""}</svg>`;
 export const waGlyph = (cls = "wai") => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${C.WA_PATH}</svg>`;
 export const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;");
 
