@@ -2873,6 +2873,7 @@ body.home .hero.hd { align-items: center; }
 body.home .hero.hd > .col {
   width: min(100%, 1040px);
   margin-inline: auto;
+  padding-block: 0;
   text-align: center;
 }
 body.home .hero.hd > .col .lead { margin-inline: auto; }
