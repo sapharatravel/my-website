@@ -2792,3 +2792,72 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
   body.home #pay-later.pl-home .pl2-copy { min-width: 0; }
   body.home #pay-later.pl-home .pl2-card { width: 100%; max-width: none; }
 }
+
+
+/* 23 Nov 2026: bring the booking journey typography and alignment into the
+   same visual system as the other homepage sections. */
+#how.how-home .how-intro {
+  max-width: none;
+  margin-inline: 0;
+  align-items: flex-start;
+  text-align: left;
+}
+#how.how-home .how-process { max-width: none; }
+#how.how-home .how-tabs {
+  width: 100%;
+  margin-inline: 0;
+  margin-bottom: 24px;
+}
+#how.how-home .how-tab {
+  min-height: 52px;
+  padding-inline: 16px;
+  font-size: 16px;
+  line-height: 1.35;
+}
+#how.how-home .how-tab-num { font-size: 12px; }
+#how.how-home .how-copy { padding: clamp(32px, 4vw, 56px); }
+#how.how-home .how-description {
+  font-size: var(--fs-lead);
+  line-height: 1.65;
+}
+#how.how-home .how-footnote {
+  font-size: 15px;
+  line-height: 1.5;
+}
+#how.how-home .how-image figcaption {
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+@media (max-width: 900px) {
+  #how.how-home .how-tabs { margin-bottom: 18px; }
+  #how.how-home .how-tab { font-size: 15px; }
+  #how.how-home .how-description { font-size: 16px; }
+}
+@media (max-width: 767px) {
+  #how.how-home .how-intro { max-width: none; }
+  #how.how-home .how-tabs { margin-bottom: 14px; }
+  #how.how-home .how-tab {
+    min-height: 50px;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  #how.how-home .how-tab-num { font-size: 11px; }
+  #how.how-home .how-copy {
+    height: auto;
+    min-height: 0;
+    padding: 28px 24px;
+  }
+  #how.how-home .how-title { font-size: clamp(32px, 8vw, 40px); }
+  #how.how-home .how-description {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  #how.how-home .how-footnote {
+    margin-top: 20px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 359px) {
+  #how.how-home .how-tab { font-size: 13px; padding-inline: 8px; }
+}
