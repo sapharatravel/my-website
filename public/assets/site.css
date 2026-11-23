@@ -2288,11 +2288,14 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.2
 .proof-slide:not(.is-on) { opacity: 0; visibility: hidden; }
 .proof-slide.is-on { transition-delay: 0s; }
 .proof-band.sand .proof-mark { color: var(--accent); }
-.proof-dots { display: flex; justify-content: center; gap: 0; margin-top: var(--s-8); }
-.proof-dot { width: 44px; height: 44px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
-.proof-dot::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--rule); transition: background 300ms, transform 300ms; }
-.proof-dot.is-on::before { background: var(--ink); transform: scale(1.2); }
-.proof-dot:focus-visible { outline: 2px solid var(--ink); outline-offset: -8px; border-radius: 50%; }
+.proof-dots { display: flex; justify-content: center; gap: 4px; margin-top: var(--s-8); }
+.proof-dot { position: relative; width: 56px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; }
+.proof-dot::before, .proof-dot::after { content: ""; position: absolute; left: 6px; right: 6px; top: 50%; height: 3px; margin-top: -1.5px; border-radius: 2px; }
+.proof-dot::before { background: var(--rule); }
+.proof-dot::after { background: var(--ink); transform: scaleX(0); transform-origin: left center; }
+.proof-dot.is-done::after, .proof-dot.is-on::after { transform: scaleX(1); }
+.proof-dots.is-run .proof-dot.is-on::after { animation: hsFill var(--proof-dur, 6000ms) linear both; }
+.proof-dot:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
 @media (prefers-reduced-motion: reduce) { .proof-slide { transition: none; } }
 .proof-band .proof-tp { margin-top: var(--s-16); }
 
