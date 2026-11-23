@@ -68,7 +68,7 @@ h1, h2, h3, .hx { margin: 0; }
 .band.continue { padding-top: 0; }
 .col { width: 100%; max-width: calc(var(--content) + 2 * var(--margin)); margin-inline: auto; padding-left: max(var(--margin), env(safe-area-inset-left, 0px)); padding-right: max(var(--margin), env(safe-area-inset-right, 0px)); }
 .white { background: var(--paper); }
-.sand { background: var(--sand); box-shadow: inset 0 1px 0 rgba(221,212,195,.75), inset 0 -1px 0 rgba(221,212,195,.75); }
+.sand { background: var(--sand); }
 
 /* type */
 .label { font-family: var(--mono); font-size: 12.5px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); line-height: 1.4; }
@@ -2150,7 +2150,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 .flow, .final-band .flow { box-shadow: 0 1px 2px rgba(0,0,0,.06); }
 .hd-cards { box-shadow: 0 10px 30px -12px rgba(0,0,0,.25); }
 /* Footer edge to edge (editorial preview): no inset card, content lines up with the page columns */
-.sf-wrap { padding: 0; box-shadow: inset 0 1px 0 rgba(221,212,195,.75); background: var(--sand); } /* 23 Nov 2026 (Huzaifa): same sand as the sections; the hairline (as on .sand) keeps it apart from a sand band above */
+.sf-wrap { padding: 0; background: var(--sand); } /* 23 Nov 2026: no inset shadow or divider on the footer surround */
 .sf { border-radius: 0; max-width: none; padding: var(--sf-pad-top) max(var(--margin), calc((100% - var(--content)) / 2)) calc(24px + env(safe-area-inset-bottom, 0px)); }
 /* Mobile polish (editorial preview) */
 @media (max-width: 767px) {
