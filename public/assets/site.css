@@ -2743,10 +2743,10 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 }
 
 
-/* Booking-step transition: fade out in place, pause on the dark panel, then bring
-   the complete image layer up into view. Timing follows Huzaifa's frame review. */
+/* Booking-step transition: fade out in place against white, then bring
+   the next image into view. */
 #how.how-home .how-image {
-  background: #0d0b1c;
+  background: #fff;
   overflow: hidden;
 }
 #how.how-home .how-image.is-out img,
