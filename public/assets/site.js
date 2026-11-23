@@ -485,12 +485,16 @@
       panel.classList.remove("is-out");
       frame.classList.remove("is-out");
 
-      // Visual appears first, then counter/title, then paragraph.
-      enter(image, [{opacity:0},{opacity:1}], 420, 0);
-      enter(caption, [{opacity:0},{opacity:1}], 350, 0);
+      // Image leads with a restrained rise; the counter and title follow,
+      // then the supporting copy and final reassurance.
+      enter(image, [
+        {opacity:0, transform:"translateY(18px) scale(1.015)"},
+        {opacity:1, transform:"translateY(0) scale(1)"}
+      ], 450, 0);
+      enter(caption, [{opacity:0,transform:"translateY(6px)"},{opacity:1,transform:"translateY(0)"}], 350, 0);
       enter(number, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 70);
       enter(title, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 70);
-      enter(description, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 150);
+      enter(description, [{opacity:0,transform:"translateY(10px)"},{opacity:1,transform:"translateY(0)"}], 340, 150);
       enter(footnote, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 220);
     }, 240);
   }
