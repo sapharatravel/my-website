@@ -2877,3 +2877,8 @@ body.home .hero.hd > .col {
 body.home .hero.hd > .col .lead { margin-inline: auto; }
 body.home .hero.hd > .col .actions { justify-content: center; }
 body.home .hero.hd > .col .actions .hero-cta { margin-inline: auto; }
+
+/* Instagram cover direction: crisp uppercase hero copy with light tracking. */
+body.home .hero.hd h1 { text-transform: uppercase; letter-spacing: .02em; }
+body.home .hero.hd .lead { text-transform: uppercase; letter-spacing: .04em; max-width: 48ch; }
+body.home .hero.hd .hero-cta .split-label { text-transform: uppercase; letter-spacing: .04em; }
