@@ -341,20 +341,39 @@
   else window.addEventListener("load", function () { load(); start(); });
 })();
 
-/* Homepage reviews (22 Nov 2026, mobile audit, Huzaifa): the three Trustpilot reviews rotate every 7 seconds.
-   Pauses while hovered, while anything inside has keyboard focus and while the tab is hidden; no auto-rotation with reduced motion. Dots and a sideways swipe change it by hand. */
+/* Homepage reviews (23 Nov 2026): match the hero slider's 6-second line-fill timing.
+   Pauses while hovered, focused or while the tab is hidden; no auto-rotation with reduced motion. Lines and sideways swipe change it by hand. */
 (function () {
   var box = document.querySelector("[data-proof]"); if (!box) return;
   var slides = box.querySelectorAll(".proof-slide"), dots = box.querySelectorAll(".proof-dot");
   if (slides.length < 2) return;
   var i = 0, timer = null, hover = false, focus = false, seen = false;
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var bar = box.querySelector(".proof-dots"), DUR = 6000;
+  if (bar) bar.style.setProperty("--proof-dur", DUR + "ms");
+  function restartFill() {
+    if (!bar) return;
+    bar.classList.remove("is-run");
+    void bar.offsetWidth;
+    if (timer) bar.classList.add("is-run");
+  }
   function show(n) {
     i = (n + slides.length) % slides.length;
     slides.forEach(function (s, k) { s.classList.toggle("is-on", k === i); if (k === i) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
-    dots.forEach(function (d, k) { d.classList.toggle("is-on", k === i); d.setAttribute("aria-pressed", k === i ? "true" : "false"); });
+    dots.forEach(function (d, k) {
+      d.classList.toggle("is-on", k === i);
+      d.classList.toggle("is-done", k < i);
+      d.setAttribute("aria-pressed", k === i ? "true" : "false");
+    });
+    restartFill();
   }
-  function sync() { if (timer) clearInterval(timer); timer = null; if (!reduce && seen && !hover && !focus && !document.hidden) timer = setInterval(function () { show(i + 1); }, 7000); }
+  function sync() {
+    if (timer) clearInterval(timer);
+    timer = null;
+    if (bar) bar.classList.remove("is-run");
+    if (!reduce && seen && !hover && !focus && !document.hidden) timer = setInterval(function () { show(i + 1); }, DUR);
+    restartFill();
+  }
   dots.forEach(function (d, k) { d.addEventListener("click", function () { show(k); sync(); }); });
   box.addEventListener("mouseenter", function () { hover = true; sync(); });
   box.addEventListener("mouseleave", function () { hover = false; sync(); });
