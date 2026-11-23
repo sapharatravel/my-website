@@ -21,39 +21,26 @@
   /* if Kensington can't load (for example inside a Claude preview), use the normal-size system fallback instead of the size-matched one */
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTimeout(function () { if (!document.fonts.check('600 40px "kensington"')) root.classList.add("no-kensington"); }, 1200); });
 
-  /* Icons are sourced from src/data/content.json and exposed by Base.astro.
-     Keep labels as aliases only; the SVG artwork and drawing style live in one place. */
-  var ICONS = window.SAPHARA_ICONS || {};
-  var ICON_ALIASES = {
-    "Honeymoon": "honeymoon",
-    "Beach and island": "beach",
-    "Family holiday": "family",
-    "Multi-city": "multi-city",
-    "Umrah hotels": "umrah",
-    "Business travel": "business",
-    "Hotel only": "hotel",
-    "Something else": "something-else",
-    "transfers": "transfers",
-    "guides": "guides",
-    "excursions": "excursions",
-    "hotel": "hotel",
-    "chat": "chat",
-    "flights": "flights",
-    "team": "team",
-    "invoice": "invoice",
-    "people": "people",
-    "fee": "fee",
-    "paylater": "paylater",
-    "shield": "shield",
-    "compass": "compass",
-    "pin": "pin"
-  };
-  function svg(n) {
-    var key = ICON_ALIASES[n] || n;
-    var paths = ICONS[key];
-    return paths ? '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + paths + '</svg>' : '';
+  /* Client-rendered icons use the same cached JSON library as server-rendered SVGs. */
+  var iconTargets = document.querySelectorAll("[data-ico]");
+  if (iconTargets.length) {
+    fetch("/assets/icons.json")
+      .then(function (response) { if (!response.ok) throw new Error("Icon library unavailable"); return response.json(); })
+      .then(function (icons) {
+        var aliases = {
+          "Honeymoon": "honeymoon", "Beach and island": "beach", "Family holiday": "family",
+          "Multi-city": "multi-city", "Umrah hotels": "umrah", "Business travel": "business",
+          "Hotel only": "hotel", "Something else": "something-else"
+        };
+        iconTargets.forEach(function (el) {
+          var name = el.getAttribute("data-ico");
+          var paths = icons[aliases[name] || name];
+          if (!paths) return;
+          el.outerHTML = '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + paths + '</svg>';
+        });
+      })
+      .catch(function () { /* Keep the page usable if the optional icon asset cannot load. */ });
   }
-  document.querySelectorAll("[data-ico]").forEach(function (el) { el.outerHTML = svg(el.getAttribute("data-ico")); });
 
   /* images fade in over their blurred placeholder */
   document.querySelectorAll("img.fade").forEach(function (im) {
