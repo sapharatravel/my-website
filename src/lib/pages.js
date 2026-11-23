@@ -260,7 +260,7 @@ function destDetail(pg, d, g) {
 // ---------- guides ----------
 export function guidesIndex() {
   const pg = new Page("guides/index.html");
-  let body = photoHero(pg, "guides/guide-sarajevo.webp", "Sarajevo from above", ["Field notes.", "From our own trips."], "Our Instagram guides, written up in full: halal food, where to pray, what to see and where to stay. Notes from our own trips: where we ate, prayed and stayed. Opening times and menus change, so check the latest before you go.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Guides", "guides/index.html"]]);
+  let body = photoHero(pg, "guide-hero-sarajevo", "Sarajevo from above", ["Field notes.", "From our own trips."], "Our Instagram guides, written up in full: halal food, where to pray, what to see and where to stay. Notes from our own trips: where we ate, prayed and stayed. Opening times and menus change, so check the latest before you go.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Guides", "guides/index.html"]]);
   body += band("white after-head", '<h2 class="sr-only">All guides</h2><div class="gcards">' + C.GUIDES.map((g) => gcard(pg, g)).join("") + "</div>");
   body += band("sand", `<div class="saved-note">${IG}<span>New guides appear on Instagram first.</span><a href="https://www.instagram.com/sapharatravel/">Follow @sapharatravel</a></div>`);
   return { path: pg.path, title: "Muslim-friendly travel guides | Saphara Travel", desc: "Our guides to halal food, mosques and things to do, written from our own trips and checked before we publish. Sarajevo, Malta and New York.", hero: true, body };
@@ -273,9 +273,10 @@ export function guidePage(slug) {
   const g = C.GUIDES.find((x) => x.slug === slug);
   const gb = C.GUIDE_BODY[slug];
   const pg = new Page(`guides/${slug}.html`);
-  // hero in the homepage style (14 Nov, Huzaifa); the Instagram cover style stays on the share images only
+  // hero in the homepage style (14 Nov, Huzaifa); the Instagram cover style stays on the share images only.
+  // 22 Nov 2026: own hero set (guide-hero-*, tools/images/crisp.cjs), landscape on desktop and a 9:16 crop on phones, instead of the 4:5 card photo stretched full width.
   const kind = g.label.startsWith("Halal") ? "A halal food guide." : "A Muslim-friendly guide.";
-  const head = photoHero(pg, "guides/" + g.img, `A view from our trip to ${g.name}`, [g.name + ".", kind], g.line, null, "", 6.3, shareBtn());
+  const head = photoHero(pg, "guide-hero-" + g.img.replace(/^guide-|\.webp$/g, ""), `A view from our trip to ${g.name}`, [g.name + ".", kind], g.line, null, "", 6.3, shareBtn());
   const note = `<div class="saved-note rv">${IG}<span>Saved this on Instagram? Here's the full guide.</span><a href="https://www.instagram.com/sapharatravel/">@sapharatravel</a></div>`;
   let body = head + crumbBar(pg, [["Guides", "guides/index.html"], [g.name, `guides/${slug}.html`]]);
   body += band("white", note + '<div class="intro" style="margin-top:var(--s-40)"><h2 class="display d-l">' + beats(["Quick facts."]) + "</h2><p>" + g.line + '</p></div><dl class="facts rv" style="margin-top:var(--intro-content)">' + gb.facts.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("") + "</dl>");

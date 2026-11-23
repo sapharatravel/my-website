@@ -209,9 +209,20 @@ export const beats = (lines, toneLast = false) => lines.map((l, i) => `<span cla
 // ---------- responsive images (21 Nov 2026) ----------
 // Smaller copies live in img/r/ and are listed in src/data/img-sizes.json (made by tools/images/responsive.py).
 // `sizes` says how wide each kind of photo shows, so the browser picks the right copy. Order matters: first match wins.
+// 22 Nov 2026: st-* rules added from measured widths at 390, 1440 and 1920px (before, they all fell to the default, which
+// asked for files about 1.5x too big on desktop). Photos now go up to 1600px (tools/images/crisp.cjs).
 const SIZES = [
+  [/^st-hero-/, "100vw"],
+  [/^st-(panel-|family-phiphi|multi-westbay|hotel-balcony)/, "(min-width: 1024px) 37vw, 75vw"],
+  [/^st-business-doha/, "(min-width: 1024px) 38vw, 92vw"],
+  [/^st-why-(room|mosque|beach)/, "(min-width: 1024px) 28vw, 90vw"],
+  [/^st-(why-|reviews-mayabay)/, "(min-width: 1024px) 44vw, 100vw"],
+  [/^st-(reviews-maldives|howwework-kl)/, "(min-width: 1024px) 20vw, 75vw"],
+  [/^st-reviews-praslin/, "(min-width: 1024px) 29vw, (min-width: 768px) 45vw, 64px"],
+  [/^st-(dest-|madinah-|langkawi-|dubai-alfahidi)/, "(min-width: 1920px) 560px, (min-width: 1024px) 34vw, (min-width: 768px) 50vw, 56vw"], // two per row on phones
+  [/^st-/, "(min-width: 1920px) 560px, (min-width: 1024px) 34vw, (min-width: 768px) 50vw, 100vw"],
   [/^dest-/, "(min-width: 1440px) 340px, (min-width: 1024px) 24vw, 50vw"],
-  [/^guides\/guide-/, "(min-width: 1440px) 400px, (min-width: 768px) 33vw, 90vw"],
+  [/^guides\/guide-/, "(min-width: 1920px) 470px, (min-width: 1440px) 410px, (min-width: 768px) 33vw, 90vw"],
   [/^trip-/, "(min-width: 1440px) 420px, (min-width: 1024px) 31vw, (min-width: 768px) 48vw, 92vw"],
   [/^hero-/, "100vw"],
 ];
@@ -228,7 +239,10 @@ export const responsiveImgs = (html) => html.replace(/<img\b([^>]*?)\ssrc="((?:\
   if (/\ssrcset=/.test(a + b)) return all;
   const ss = srcsetFor(pre, name);
   if (!ss) return all;
-  const sz = (SIZES.find(([re]) => re.test(name)) || [null, SIZES_DEFAULT])[1];
+  let sz = (SIZES.find(([re]) => re.test(name)) || [null, SIZES_DEFAULT])[1];
+  // 22 Nov 2026: lazy photos get sizes="auto" first, so Chrome and Edge use the real width on that page (the same photo is a
+  // big card on one page and a small one on another). Browsers without it (Safari for now) use the list after it.
+  if (/\sloading="lazy"/.test(a + b)) sz = "auto, " + sz;
   return `<img${a} src="${pre}img/${name}" srcset="${ss}" sizes="${sz}"${b}>`;
 });
 /** Hero photo. A destination hero set (IMGS.heroes) gets a landscape set from 768px and a portrait crop on phones. */
