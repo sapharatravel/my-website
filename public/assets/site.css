@@ -2779,3 +2779,16 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
     transition: none !important;
   }
 }
+
+
+/* 23 Nov 2026: Reserve now section uses the full desktop content width, aligned with the other homepage sections */
+@media (min-width: 1024px) {
+  body.home #pay-later.pl-home .pl2 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    justify-content: stretch;
+    column-gap: clamp(48px, 6vw, 96px);
+    width: 100%;
+  }
+  body.home #pay-later.pl-home .pl2-copy { min-width: 0; }
+  body.home #pay-later.pl-home .pl2-card { width: 100%; max-width: none; }
+}
