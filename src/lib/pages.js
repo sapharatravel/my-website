@@ -344,7 +344,7 @@ export function reviewsPage() {
 // ---------- FAQ ----------
 export function faqPage() {
   const pg = new Page("faq.html");
-  let body = photoHero(pg, "page-hero-faq", "A covered balcony looking out over a calm sea", ["Frequently asked.", "Honestly answered."], "Still wondering about something? Ask us on WhatsApp.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["FAQ", "faq.html"]]);
+  let body = photoHero(pg, "page-hero-faq", "A covered balcony looking out over a calm sea", ["Frequently asked.", "Honestly answered."], "Still wondering about something? Ask us on WhatsApp.", "Ask us on WhatsApp", "", null, split("Ask us on " + waGlyph("wa-glyph") + "WhatsApp", waMark("faq"))) + crumbBar(pg, [["FAQ", "faq.html"]]);
   body += band("white after-head", `<div class="prose" style="max-width:860px"><h2>Booking with us</h2>${faq(C.FAQ_Q1)}<h2>Money and protection</h2>${faq(C.FAQ_Q2)}<h2>While you're away</h2>${faq(C.FAQ_Q3)}</div>`);
   body += cta(pg, ["Still wondering?"], "Ask us anything on WhatsApp. A real person replies.", "Ask us on WhatsApp", { cls: "white continue", href: waMark("faq") });
   return { path: pg.path, title: "Questions about booking with Saphara Travel", desc: "How booking with us works: fees, payment, halal checks, Umrah, ATOL protection on flights and packages, and what happens after you message.", hero: true, body };
