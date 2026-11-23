@@ -2590,7 +2590,7 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 @media (max-width: 767px) { .marquee-track .mq-ritz-carlton img { height: 64px; max-width: 200px; } }
 
 /* Large screens only: widen the header row without changing the site's content grid. */
-@media (min-width: 1600px) {
+@media (min-width: 1400px) {
   .header .col {
     max-width: none;
     padding-left: clamp(40px, 4vw, 88px);
