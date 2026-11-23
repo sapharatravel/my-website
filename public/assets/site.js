@@ -461,7 +461,7 @@
       frame.classList.remove("is-out");
 
       // Visual appears first, then counter/title, then paragraph.
-      enter(image, [{opacity:0,transform:"translateY(18px)"},{opacity:1,transform:"translateY(0)"}], 450, 0);
+      enter(image, [{opacity:0},{opacity:1}], 420, 0);
       enter(caption, [{opacity:0},{opacity:1}], 350, 0);
       enter(number, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 70);
       enter(title, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 70);
