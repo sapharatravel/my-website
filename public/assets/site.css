@@ -2878,6 +2878,9 @@ body.home .hero.hd > .col {
 body.home .hero.hd > .col .lead { margin-inline: auto; }
 body.home .hero.hd > .col .actions { justify-content: center; }
 body.home .hero.hd > .col .actions .hero-cta { margin-inline: auto; }
+body.home .hero.hd::after {
+  background: radial-gradient(ellipse 72% 62% at 50% 50%, rgba(18,15,20,.72) 0%, rgba(18,15,20,.48) 42%, rgba(18,15,20,.12) 78%, transparent 100%);
+}
 
 /* Instagram cover direction: stacked, uppercase headline with more scale. */
 body.home .hero.hd h1 {
@@ -2888,5 +2891,4 @@ body.home .hero.hd h1 {
   letter-spacing: .02em;
 }
 body.home .hero.hd h1 .tone { order: -1; }
-body.home .hero.hd .lead { text-transform: uppercase; letter-spacing: .04em; max-width: 48ch; }
 body.home .hero.hd .hero-cta .split-label { text-transform: uppercase; letter-spacing: .04em; }
