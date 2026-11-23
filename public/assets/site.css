@@ -2864,3 +2864,5 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 @media (max-width: 359px) {
   #how.how-home .how-tab { font-size: 13px; padding-inline: 8px; }
 }
+
+/* Production refresh: publish the reviews progress-line controls from main. */
