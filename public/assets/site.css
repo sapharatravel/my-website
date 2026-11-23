@@ -20,8 +20,8 @@
 :root {
   --weight-demi: 600; --weight-regular: 400; --head-lh: 1.05; --head-hero: clamp(58px, 16vw, 140px); --head-section: clamp(50px, 12.5vw, 100px); --head-panel: clamp(40px, 10vw, 64px); --head-step: 28px; --head-question: 34px; --head-closer: 38px; --head-stat: 44px; --sign-dest: clamp(28px, 7.5vw, 40px); --ls-sign-dest: .04em; --sign-strip: 24px; --ls-sign-strip: .08em; --fs-display-min: 22px; --ls-display-min: .07em; --btn-dark: linear-gradient(180deg, #2B2925 0%, #111111 100%); --btn-dark-hover: linear-gradient(180deg, #34312C 0%, #111111 100%); --btn-dark-pressed: #111111; --btn-dark-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 1px 2px rgba(86,60,30,.06), 0 2px 8px rgba(86,60,30,.05); --btn-dark-shadow-hover: inset 0 1px 0 rgba(255,255,255,.14), 0 4px 12px rgba(86,60,30,.08), 0 1px 2px rgba(86,60,30,.05); --btn-dark-shadow-pressed: inset 0 1px 0 rgba(255,255,255,.04), 0 1px 2px rgba(86,60,30,.06); --btn-light: linear-gradient(180deg, #FFFFFF 0%, #F7F4EF 100%); --btn-light-hover: linear-gradient(180deg, #FFFFFF 0%, #F7F4EF 100%); --btn-light-pressed: #F7F4EF; --btn-light-shadow: inset 0 1px 0 rgba(255,255,255,.9), 0 1px 2px rgba(86,60,30,.06), 0 2px 8px rgba(86,60,30,.05); --btn-light-shadow-hover: inset 0 1px 0 #FFFFFF, 0 4px 12px rgba(86,60,30,.08), 0 1px 2px rgba(86,60,30,.05); --btn-light-shadow-pressed: 0 1px 2px rgba(0,0,0,.2);
   --paper: #FFFFFF; --linen: #F7F4EF; --cream: #F7F4EF; --sand: #F7F4EF; --sand-deep: #EAE6DF;
-  --ink: #111111; --rust: #000000; --gold: #6B6457; --tone: #8A8070; --black: #000000; --grey: #66604F; --rule: #DDD4C3; --accent: #C9B48A;
-  --on-dark: #F6F3ED; --on-dark-muted: #D3CFC6; --on-dark-gold: #E7DCC5;
+  --ink: #111111; --rust: #000000; --gold: #6B6457; --tone: #8A8070; --black: #000000; --grey: #66604F; --rule: #EAE6DF; --accent: #111111;
+  --on-dark: #F7F4EF; --on-dark-muted: #D3CFC6; --on-dark-gold: #F7F4EF;
   --s-4: 4px; --s-8: 8px; --s-12: 12px; --s-16: 16px; --s-24: 24px; --s-32: 32px; --s-40: 40px; --s-56: 56px; --s-80: 80px; --s-120: 120px;
   --margin: 24px; --section: 80px; --label-head: 16px; --head-body: 16px; --body-btn: 32px; --block: 24px; --intro-content: 40px; --small-gap: 12px; --card-pad: 24px; --overlap: 96px;
   --logo-h: 28px; --logo-slim: 22px; --header-top: 32px; --header-bottom: 24px; --header-slim: 64px;
@@ -1685,7 +1685,7 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .final-band .toggle .sw-track { background: var(--f-line); }
 .final-band .stepper button { background: var(--f-card); box-shadow: inset 0 0 0 1px var(--f-line); }
 .final-band .field::placeholder { color: #7A7262; }
-.final-band .field:focus { background: #FAF5EB; outline-color: var(--rust); }
+.final-band .field:focus { background: #F7F4EF; outline-color: var(--rust); }
 .final-band .fstep h3:focus-visible, .final-band .fstep .fstep-q:focus-visible { outline-color: var(--rust); }
 .final-band .fstep .sub { color: #5E5747; }
 
