@@ -135,25 +135,7 @@ export function home() {
   // Bands: names white, reviews sand, trips white, pay later sand, destinations white, how it works sand, FAQ white, More sand.
   void moment;
   // 22 Nov 2026 (late night, Huzaifa: "tighter and easy to digest"): homepage How it works uses shorter steps; Why Saphara keeps the full version.
-  const howHome = how.replace('<section class="band sand" id="how">', '<section class="band sand how-home" id="how">')
-    .replace("<p>Four steps, all in one WhatsApp chat.</p>", "<p>Four steps, one WhatsApp chat.</p>")
-    // 22 Nov 2026 (late night, Huzaifa): the phone graphic is replaced by WhatsApp-style chat bubbles.
-    .replace(/<div class="phone-wrap" data-bubbles>[\s\S]*?<\/div>\s*<\/div>(?=\s*<ol class="steps">)/, `<div class="wa-chat" data-bubbles>
-        <div class="wa-top" aria-hidden="true"><span class="wa-av">S</span><span class="wa-who"><b>SAPHARA</b><small>WhatsApp</small></span></div>
-        <div class="wa-msgs" role="img" aria-label="Example messages: a couple asks about a Zanzibar honeymoon, Saphara sends options, and later sorts a room that wasn't ready">
-          <p class="bub wa them">Salaam. Honeymoon in Zanzibar in March?<span class="wa-t">10:02</span></p>
-          <p class="bub wa us">Congratulations. Here are three villas we'd book, compared like for like.<span class="wa-t">10:14 <span class="wa-ticks">\u2713\u2713</span></span></p>
-          <p class="wa-day" aria-hidden="true">March</p>
-          <p class="bub wa them">We've landed but the room isn't ready.<span class="wa-t">11:40</span></p>
-          <p class="bub wa us">Spoken to the hotel. Ready by 1pm, and the pool is yours till then.<span class="wa-t">11:46 <span class="wa-ticks">\u2713\u2713</span></span></p>
-        </div>
-      </div>`)
-    .replace(/<ol class="steps">[\s\S]*?<\/ol>/, `<ol class="steps">
-        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M4 5.5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H10l-4.5 3.5V16.5H4a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1Z"/><path d="M7.5 10h9M7.5 13h5.5"/></svg></span><span class="n">01</span><h3>Tell us the trip</h3><p>Where, when and who's coming.</p></li>
-        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M3 18.5V7M3 14h18v4.5M21 14v-2.5a3 3 0 0 0-3-3h-6.5V14"/><circle cx="7" cy="10.8" r="1.8"/></svg></span><span class="n">02</span><h3>Pick a hotel</h3><p>Two or three we'd book ourselves, compared like for like.</p></li>
-        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span><span class="n">03</span><h3>We book it</h3><p>Your requests passed to the hotel and confirmed.</p></li>
-        <li><span class="step-ico" aria-hidden="true"><svg class="ico" viewBox="0 0 24 24"><path d="M21 16.5v-1.8l-7.5-4.6V5a1.5 1.5 0 0 0-3 0v5.1L3 14.7v1.8l7.5-2.2v4.4l-2 1.5V21l3.5-1 3.5 1v-.8l-2-1.5v-4.4z"/></svg></span><span class="n">04</span><h3>We stay with you</h3><p>On WhatsApp until you're home.</p></li>
-      </ol>`);
+  const howHome = how.replace('<section class="band sand" id="how">', '<section class="band sand how-home" id="how">');
   const body = toPlan(join(hero, hotelNames, heroProof(pg, "sand"),
     trips.replace('<section class="band sand" id="trips">', '<section class="band white" id="trips">'),
     payLaterHome, destinations, howHome,

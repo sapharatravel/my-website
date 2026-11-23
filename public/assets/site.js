@@ -371,3 +371,116 @@
   if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { es.forEach(function (e) { seen = e.isIntersecting; sync(); }); }, { threshold: .4 }).observe(box);
   else { seen = true; sync(); }
 })();
+
+
+/* Homepage: reference-matched tab switcher with a measured sliding pill and timed content swap. */
+(function () {
+  var root = document.querySelector("[data-how-process]");
+  if (!root || root.dataset.motionReady) return;
+  root.dataset.motionReady = "true";
+  var tabsWrap = root.querySelector(".how-tabs");
+  var tabs = Array.prototype.slice.call(root.querySelectorAll("[data-how-step]"));
+  var panel = root.querySelector("#how-panel");
+  var title = root.querySelector("[data-how-title]");
+  var description = root.querySelector("[data-how-description]");
+  var number = root.querySelector("[data-how-number]");
+  var footnote = root.querySelector("[data-how-footnote]");
+  var frame = root.querySelector(".how-image");
+  var image = root.querySelector("[data-how-image]");
+  var caption = root.querySelector("[data-how-caption]");
+  if (!tabsWrap || !tabs.length || !panel || !title || !description || !image || !frame) return;
+
+  var steps = [
+    { title:"Tell us your plans", description:"Tell us where you’d like to go, when you want to travel and who’s coming along. If you have a budget, a hotel in mind or a few must-haves, share those too. If you’re still deciding, that’s absolutely fine.", footnote:"It all starts with a conversation.", image:"/img/st-card-honeymoon.webp", alt:"A beautiful setting for a special holiday", caption:"01 · Your trip starts here" },
+    { title:"Explore your options", description:"We’ll put together a thoughtful shortlist of hotels and stays that suit your plans. We compare the details that matter, including room type, meal plan, cancellation terms and what’s included, so you can choose with confidence.", footnote:"Handpicked options, clearly compared.", image:"/img/st-hotel-suite.webp", alt:"A comfortable hotel suite, ready for a stay", caption:"02 · Options worth considering" },
+    { title:"Make it yours", description:"Found somewhere you love? We’ll take care of the booking and pass your requests to the hotel. From room preferences to special touches, we’ll check what can be arranged and confirm the details with you.", footnote:"Nothing is booked until you’re happy.", image:"/img/st-howwework-kl.webp", alt:"Kuala Lumpur skyline at golden hour", caption:"03 · The details, taken care of" },
+    { title:"You’re ready to go", description:"We’ll send your booking confirmation and the details you need for your trip. And our support doesn’t stop when you check in. If you need us while you’re away, you can reach our team on WhatsApp.", footnote:"A real team, still here when you travel.", image:"/img/st-hotel-balcony.webp", alt:"A peaceful hotel balcony overlooking the destination", caption:"04 · We're with you along the way" }
+  ];
+  var active = 0, timer = 0, generation = 0, indicator, motion = [];
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  steps.forEach(function (step) { var preload = new Image(); preload.src = step.image; });
+
+  indicator = document.createElement("span");
+  indicator.className = "how-tab-pill";
+  indicator.setAttribute("aria-hidden", "true");
+  tabsWrap.insertBefore(indicator, tabsWrap.firstChild);
+
+  function positionPill(index, instant) {
+    var tab = tabs[index], wrapRect = tabsWrap.getBoundingClientRect(), tabRect = tab.getBoundingClientRect();
+    if (instant) indicator.style.transition = "none";
+    indicator.style.width = tabRect.width + "px";
+    indicator.style.height = tabRect.height + "px";
+    indicator.style.transform = "translate3d(" + (tabRect.left - wrapRect.left) + "px," + (tabRect.top - wrapRect.top) + "px,0)";
+    if (instant) { indicator.offsetHeight; indicator.style.removeProperty("transition"); }
+  }
+  function cancelMotion() {
+    window.clearTimeout(timer);
+    motion.forEach(function (a) { try { a.cancel(); } catch (e) {} });
+    motion = [];
+    panel.classList.remove("is-out");
+    frame.classList.remove("is-out");
+    image.style.opacity = "";
+  }
+  function updateContent(index) {
+    var step = steps[index];
+    number.innerHTML = "0" + (index + 1) + " <span>/ 04</span>";
+    title.textContent = step.title;
+    description.textContent = step.description;
+    footnote.textContent = step.footnote;
+    caption.textContent = step.caption;
+    image.src = step.image;
+    image.alt = step.alt;
+    panel.setAttribute("aria-labelledby", tabs[index].id);
+  }
+  function enter(el, keyframes, duration, delay) {
+    if (!el || !el.animate) return;
+    motion.push(el.animate(keyframes, { duration:duration, delay:delay, easing:"cubic-bezier(.22,1,.36,1)", fill:"both" }));
+  }
+  function select(index, focus) {
+    if (index === active) { if (focus) tabs[index].focus(); return; }
+    active = index;
+    var token = ++generation;
+    tabs.forEach(function (tab, i) {
+      var on = i === index;
+      tab.setAttribute("aria-selected", on ? "true" : "false");
+      tab.setAttribute("tabindex", on ? "0" : "-1");
+    });
+    if (focus) tabs[index].focus();
+    cancelMotion();
+    positionPill(index, false);
+
+    if (reduce) { updateContent(index); return; }
+
+    // Old copy and photograph clear together. The cards themselves never move.
+    panel.classList.add("is-out");
+    frame.classList.add("is-out");
+    timer = window.setTimeout(function () {
+      if (token !== generation) return;
+      updateContent(index);
+      panel.classList.remove("is-out");
+      frame.classList.remove("is-out");
+
+      // Visual appears first, then counter/title, then paragraph.
+      enter(image, [{opacity:0},{opacity:1}], 420, 0);
+      enter(caption, [{opacity:0},{opacity:1}], 350, 0);
+      enter(number, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 70);
+      enter(title, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 70);
+      enter(description, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 150);
+      enter(footnote, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 220);
+    }, 240);
+  }
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener("click", function () { select(index, false); });
+    tab.addEventListener("keydown", function (event) {
+      var next = index;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") next = (index + 1) % tabs.length;
+      else if (event.key === "ArrowLeft" || event.key === "ArrowUp") next = (index + tabs.length - 1) % tabs.length;
+      else if (event.key === "Home") next = 0;
+      else if (event.key === "End") next = tabs.length - 1;
+      else return;
+      event.preventDefault(); select(next, true);
+    });
+  });
+  window.addEventListener("resize", function () { positionPill(active, true); }, {passive:true});
+  positionPill(0, true);
+})();

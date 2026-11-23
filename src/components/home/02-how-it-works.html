@@ -1,26 +1,29 @@
-<!-- 3 HOW IT WORKS: the process -->
-<section class="band sand" id="how">
+<!-- Homepage: interactive four-step booking journey. The tab labels and panel remain usable at every viewport. -->
+<section class="band sand how-home" id="how" aria-labelledby="how-title">
   <div class="col">
-    <div class="how">
-      <div class="intro">
-        <h2 class="display d-l" style="--fit:4.5"><span class="beat">How booking</span> <span class="beat tone">with SAPHARA works.</span></h2>
-        <p>Four steps, all in one WhatsApp chat.</p>
+    <div class="intro how-intro">
+      <h2 class="display d-l" id="how-title"><span class="beat">How bookings work</span><span class="beat tone">with SAPHARA.</span></h2>
+      <p>Four simple steps. One team looking after the details, from your first message to your journey home.</p>
+    </div>
+    <div class="how-process" data-how-process>
+      <div class="how-tabs" role="tablist" aria-label="Steps to booking with Saphara">
+        <button class="how-tab" type="button" role="tab" id="how-tab-1" aria-controls="how-panel" aria-selected="true" tabindex="0" data-how-step="0"><span class="how-tab-num">01</span><span>Tell us your plans</span></button>
+        <button class="how-tab" type="button" role="tab" id="how-tab-2" aria-controls="how-panel" aria-selected="false" tabindex="-1" data-how-step="1"><span class="how-tab-num">02</span><span>Explore your options</span></button>
+        <button class="how-tab" type="button" role="tab" id="how-tab-3" aria-controls="how-panel" aria-selected="false" tabindex="-1" data-how-step="2"><span class="how-tab-num">03</span><span>Make it yours</span></button>
+        <button class="how-tab" type="button" role="tab" id="how-tab-4" aria-controls="how-panel" aria-selected="false" tabindex="-1" data-how-step="3"><span class="how-tab-num">04</span><span>You're ready to go</span></button>
       </div>
-      <div class="phone-wrap" data-bubbles>
-        <div class="phone" data-move><img class="fade" src="img/phone-bg.webp" alt="" width="400" height="776" loading="lazy" decoding="async"><span class="lqip" style="background-image:url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAnABQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwC3H4tu8gmGEhfvDaQW+nNbsPiLTZbczbiu3qpHzV55Db3EmGWPg9GLDFbwsYTaBQTG+BlkABNXByaPPqV4QdrnSf8ACT6UOsrg+nlniiuYWxiCgZlIHTmin73Yj63AxNGaVrzy4QXQH5yeAK6IOfu1lW2pxRlYP3YRPlBUY59OOtaLNljjis6Mly6HJjVJTuyYHHAoqMnOD7UVqc9zmmRYmEhRJJB0AGAO341t2bmS3RznlR1NFFcuG2uejmHwosDpRRRXSeWf/9k=)"></span></div>
-        <div class="bubbles" role="img" aria-label="Example messages: a couple asks about a Zanzibar honeymoon, Saphara sends options, and later sorts a room that wasn't ready">
-          <p class="bub them">Salaam. Honeymoon in Zanzibar in March?</p>
-          <p class="bub us">Congratulations. Here are three villas we'd book, compared like for like.</p>
-          <p class="bub them">We've landed but the room isn't ready.</p>
-          <p class="bub us">Spoken to the hotel. Ready by 1pm, and the pool is yours till then.</p>
+      <div class="how-feature">
+        <div class="how-copy" id="how-panel" role="tabpanel" aria-labelledby="how-tab-1" tabindex="0" aria-live="polite">
+          <p class="how-index" data-how-number>01 <span>/ 04</span></p>
+          <h3 class="how-title" data-how-title>Tell us your plans</h3>
+          <p class="how-description" data-how-description>Tell us where you'd like to go, when you want to travel and who's coming along. If you have a budget, a hotel in mind or a few must-haves, share those too. If you're still deciding, that's absolutely fine.</p>
+          <p class="how-footnote" data-how-footnote>It all starts with a conversation.</p>
         </div>
+        <figure class="how-image">
+          <img src="/img/st-card-honeymoon.webp" data-how-image alt="A beautiful setting for a special holiday" width="1200" height="900" loading="lazy" decoding="async">
+          <figcaption data-how-caption>01 · Your trip starts here</figcaption>
+        </figure>
       </div>
-      <ol class="steps">
-        <li><span class="n">01</span><h3>Tell us the trip</h3><p>Where, roughly when and who's coming.</p></li>
-        <li><span class="n">02</span><h3>Choose from options</h3><p>Two or three hotels we'd book ourselves, compared like for like.</p></li>
-        <li><span class="n">03</span><h3>We book and brief the hotel</h3><p>Your requests passed on and confirmed, everything in one place.</p></li>
-        <li><span class="n">04</span><h3>We stay with you</h3><p>On WhatsApp throughout your stay, and after you're home.</p></li>
-      </ol>
     </div>
   </div>
 </section>
