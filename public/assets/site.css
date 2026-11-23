@@ -2869,9 +2869,20 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 
 
 /* Review preview: centre the homepage hero message on its image. */
-body.home .hero.hd { align-items: center; }
+@media (min-width: 768px) {
+  body.home .hero.hd {
+    align-items: center;
+    --head-hero: clamp(72px, 8vw, 184px);
+    --btn-h: clamp(52px, 2.35vw, 72px);
+    --btn-fs: clamp(16px, .75vw, 21px);
+    --btn-pad: clamp(24px, 1.2vw, 40px);
+    --btn-arrow: clamp(42px, 2vw, 56px);
+    --btn-gap: clamp(12px, .5vw, 18px);
+  }
+  body.home .hero.hd .lead { font-size: clamp(18px, 1.2vw, 28px); }
+}
 body.home .hero.hd > .col {
-  width: min(100%, 1040px);
+  width: min(100%, 1280px);
   margin-inline: auto;
   padding-block: 0;
   text-align: center;
@@ -2885,7 +2896,7 @@ body.home .hero.hd::after {
 
 /* Instagram cover direction: stacked, uppercase headline with more scale. */
 body.home .hero.hd h1 {
-  --tier: clamp(40px, 8vw, 112px);
+  --tier: var(--head-hero);
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
