@@ -2675,3 +2675,39 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 @media (prefers-reduced-motion: reduce) {
   #how.how-home .how-copy, #how.how-home .how-image img, #how.how-home .how-tab { transition: none !important; }
 }
+
+
+/* Choreographed tab motion inspired by the Republic Marketing feature switcher. */
+#how.how-home .how-tabs { position: relative; isolation: isolate; }
+#how.how-home .how-tabs::before {
+  content: ""; position: absolute; z-index: -1; left: 5px; top: 5px;
+  width: calc((100% - 20px) / 4); height: calc(100% - 10px);
+  border-radius: var(--r-pill); background: var(--ink);
+  transform: translate3d(var(--how-tab-x, 0), var(--how-tab-y, 0), 0);
+  transition: transform 720ms cubic-bezier(.22, 1, .36, 1);
+  will-change: transform;
+}
+#how.how-home .how-tab { position: relative; z-index: 1; background: transparent !important; box-shadow: none !important; transition: color 420ms ease, transform 420ms cubic-bezier(.22,1,.36,1); }
+#how.how-home .how-tab[aria-selected="true"] { color: #fff; }
+#how.how-home .how-tab:not([aria-selected="true"]) { color: #69665F; }
+#how.how-home .how-tab:active { transform: scale(.97); }
+#how.how-home .how-image { isolation: isolate; }
+#how.how-home .how-image img { will-change: transform, opacity; }
+#how.how-home .how-image img.how-image-next {
+  position: absolute; z-index: 2; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; will-change: clip-path, transform, opacity;
+}
+#how.how-home .how-copy [data-how-number],
+#how.how-home .how-copy [data-how-title],
+#how.how-home .how-copy [data-how-description],
+#how.how-home .how-copy [data-how-footnote] { will-change: transform, opacity, filter; }
+@media (max-width: 900px) {
+  #how.how-home .how-tabs::before {
+    width: calc((100% - 15px) / 2); height: 48px;
+    border-radius: 12px; transition: transform 680ms cubic-bezier(.22,1,.36,1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #how.how-home .how-tabs::before, #how.how-home .how-tab { transition: none !important; }
+  #how.how-home .how-image img { transform: none !important; }
+}
