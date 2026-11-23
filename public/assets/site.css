@@ -2597,3 +2597,54 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
     padding-right: clamp(40px, 4vw, 88px);
   }
 }
+
+
+/* Homepage booking journey: interactive step tabs, with a paired editorial image. */
+#how.how-home .how-intro { align-items: center; text-align: center; max-width: 760px; margin-inline: auto; }
+#how.how-home .how-intro > .label { margin-bottom: 4px; }
+#how.how-home .how-process { max-width: 1200px; margin: var(--intro-content) auto 0; min-width: 0; }
+#how.how-home .how-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; width: fit-content; max-width: 100%; margin: 0 auto 28px; padding: 5px; border-radius: var(--r-pill); background: #E9E6E0; }
+#how.how-home .how-tab { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-width: 0; min-height: 48px; padding: 0 19px; border: 0; border-radius: var(--r-pill); background: transparent; color: #69665F; font: 500 14px/1.25 var(--body); text-align: center; cursor: pointer; transition: background 180ms var(--ease), color 180ms var(--ease), box-shadow 180ms var(--ease); }
+#how.how-home .how-tab[aria-selected="true"] { background: var(--ink); color: #fff; box-shadow: 0 2px 7px rgba(0,0,0,.12); }
+#how.how-home .how-tab-num { color: inherit; opacity: .58; font-size: 11px; font-variant-numeric: tabular-nums; letter-spacing: .06em; }
+#how.how-home .how-feature { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, .95fr); gap: 16px; align-items: stretch; }
+#how.how-home .how-copy { display: flex; flex-direction: column; justify-content: center; min-width: 0; min-height: 390px; padding: clamp(32px, 5vw, 64px); border-radius: var(--r-card); background: var(--paper); }
+#how.how-home .how-index { margin: 0 0 22px; color: var(--tone); font-size: 13px; letter-spacing: .12em; font-variant-numeric: tabular-nums; }
+#how.how-home .how-index span { color: #AAA49A; }
+#how.how-home .how-title { max-width: 12em; font-family: var(--display); font-size: clamp(34px, 3.5vw, 48px); font-weight: 600; line-height: 1.08; letter-spacing: 0; text-wrap: balance; }
+#how.how-home .how-description { max-width: 36em; margin-top: 18px; color: var(--grey); font-size: var(--fs-lead); line-height: 1.7; }
+#how.how-home .how-footnote { display: flex; align-items: center; gap: 10px; margin-top: 28px; color: var(--tone); font-size: 13px; }
+#how.how-home .how-footnote::before { width: 26px; height: 1px; background: var(--accent); content: ""; }
+#how.how-home .how-image { position: relative; min-width: 0; min-height: 390px; margin: 0; overflow: hidden; border-radius: var(--r-card); background: var(--sand-deep); }
+#how.how-home .how-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 220ms var(--ease), transform 500ms var(--ease); }
+#how.how-home .how-image img.is-changing { opacity: .2; transform: scale(1.015); }
+#how.how-home .how-image::after { position: absolute; inset: 45% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.42)); content: ""; pointer-events: none; }
+#how.how-home .how-image figcaption { position: absolute; z-index: 1; right: 22px; bottom: 20px; left: 22px; color: #fff; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+#how.how-home .how-tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+@media (max-width: 900px) {
+  #how.how-home .how-tabs { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); border-radius: 16px; }
+  #how.how-home .how-tab { justify-content: flex-start; padding-inline: 15px; }
+  #how.how-home .how-feature { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); }
+  #how.how-home .how-copy, #how.how-home .how-image { min-height: 340px; }
+}
+@media (max-width: 767px) {
+  #how.how-home .how-intro { text-align: left; align-items: flex-start; }
+  #how.how-home .how-tabs { margin-bottom: 12px; padding: 4px; gap: 4px; }
+  #how.how-home .how-tab { min-height: 48px; gap: 7px; padding: 8px 10px; border-radius: 12px; font-size: 12px; }
+  #how.how-home .how-tab-num { font-size: 10px; }
+  #how.how-home .how-feature { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  #how.how-home .how-copy { min-height: 0; padding: 30px 25px; border-radius: var(--r-small); }
+  #how.how-home .how-index { margin-bottom: 17px; }
+  #how.how-home .how-title { font-size: clamp(32px, 9vw, 42px); }
+  #how.how-home .how-description { margin-top: 14px; font-size: 15px; line-height: 1.65; }
+  #how.how-home .how-footnote { margin-top: 20px; }
+  #how.how-home .how-image { min-height: 0; aspect-ratio: 16 / 10; border-radius: var(--r-small); }
+  #how.how-home .how-image figcaption { right: 16px; bottom: 15px; left: 16px; }
+}
+@media (max-width: 359px) {
+  #how.how-home .how-tab { font-size: 11px; padding-inline: 8px; }
+  #how.how-home .how-copy { padding: 26px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #how.how-home .how-tab, #how.how-home .how-image img { transition: none; }
+}
