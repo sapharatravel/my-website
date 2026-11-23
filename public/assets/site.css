@@ -2866,3 +2866,21 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 }
 
 /* Production refresh: publish the reviews progress-line controls from main. */
+
+
+/* Preserve the site's standard split CTA geometry while removing the centered hero concept. */
+body.home .hero.hd .actions .hero-cta {
+  min-height: var(--btn-h);
+  padding: calc((var(--btn-h) - var(--btn-arrow)) / 2) var(--btn-pad) calc((var(--btn-h) - var(--btn-arrow)) / 2) var(--btn-pad);
+}
+body.home .hero.hd .actions .hero-cta .split-label { font-size: var(--btn-fs); font-weight: 500; letter-spacing: 0; text-transform: none; }
+
+/* Navigation Plan my trip: white at rest, dark on hover. */
+body.home .header .hsplit { background: #fff; color: var(--ink); box-shadow: var(--btn-light-shadow); --arrow-bg: var(--ink); --arrow-fg: #fff; }
+body.home .header .hsplit .split-label { background: transparent; color: var(--ink); box-shadow: none; }
+body.home .header .hsplit .split-arrow { background: var(--btn-dark); color: #fff; box-shadow: var(--btn-dark-shadow); }
+@media (hover: hover) {
+  body.home .header .hsplit:hover { background: var(--btn-dark-hover); color: #fff; box-shadow: var(--btn-dark-shadow-hover); }
+  body.home .header .hsplit:hover .split-label,
+  body.home .header .hsplit:hover .split-arrow { background: var(--btn-dark-hover); color: #fff; box-shadow: none; }
+}
