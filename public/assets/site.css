@@ -2868,9 +2868,10 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 /* Production refresh: publish the reviews progress-line controls from main. */
 
 
-/* Review preview: centre only the homepage hero message and primary action. */
+/* Review preview: centre the homepage hero message on its image. */
+body.home .hero.hd { align-items: center; }
 body.home .hero.hd > .col {
-  width: min(100%, 860px);
+  width: min(100%, 1040px);
   margin-inline: auto;
   text-align: center;
 }
@@ -2878,7 +2879,14 @@ body.home .hero.hd > .col .lead { margin-inline: auto; }
 body.home .hero.hd > .col .actions { justify-content: center; }
 body.home .hero.hd > .col .actions .hero-cta { margin-inline: auto; }
 
-/* Instagram cover direction: crisp uppercase hero copy with light tracking. */
-body.home .hero.hd h1 { text-transform: uppercase; letter-spacing: .02em; }
+/* Instagram cover direction: stacked, uppercase headline with more scale. */
+body.home .hero.hd h1 {
+  --tier: clamp(68px, 7.5vw, 112px);
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+body.home .hero.hd h1 .tone { order: -1; }
 body.home .hero.hd .lead { text-transform: uppercase; letter-spacing: .04em; max-width: 48ch; }
 body.home .hero.hd .hero-cta .split-label { text-transform: uppercase; letter-spacing: .04em; }
