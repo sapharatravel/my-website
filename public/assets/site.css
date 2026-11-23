@@ -2885,11 +2885,14 @@ body.home .hero.hd::after {
 
 /* Instagram cover direction: stacked, uppercase headline with more scale. */
 body.home .hero.hd h1 {
-  --tier: clamp(68px, 7.5vw, 112px);
+  --tier: clamp(40px, 8vw, 112px);
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
   letter-spacing: .02em;
 }
 body.home .hero.hd h1 .tone { order: -1; }
-body.home .hero.hd .hero-cta .split-label { text-transform: uppercase; letter-spacing: .04em; }
+/* Keep both homepage actions in the site's standard 52px split-button shape. */
+body.home .hero.hd .actions .hero-cta { min-height: 52px; padding: 0; }
+body.home .header .hsplit .split-label { background: #fff; color: var(--ink); box-shadow: var(--btn-light-shadow); }
+body.home .header .hsplit .split-arrow { background: var(--btn-dark); color: #fff; box-shadow: var(--btn-dark-shadow); }
