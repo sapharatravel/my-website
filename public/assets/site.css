@@ -2873,3 +2873,9 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
   body.home .hero.hd h1 { --tier: clamp(78px, 7vw, 152px); }
   body.home .hero.hd .col { max-width: min(1400px, calc(100% - 32px)); }
 }
+
+/* 23 Nov 2026: Use one size for section-level display headings. Let long headings wrap instead of shrinking to fit one line. */
+section h2.display.d-l,
+#how.how-home h2.display.d-l {
+  font-size: var(--head-section);
+}
