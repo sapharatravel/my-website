@@ -1,1885 +1,1837 @@
 {
- "REG_OFFICE": "",
- "GUIDES": [
-  {
-   "slug": "sarajevo",
-   "name": "Sarajevo",
-   "flag": "ba",
-   "label": "Muslim-friendly guide to",
-   "title": "Sarajevo",
-   "t": "24cqi",
-   "img": "guide-sarajevo.webp",
-   "line": "Halal food, mosques, cafes and a sunset view over the city, from our own trip.",
-   "card": "Halal food, mosques and cafes, from our own trip."
-  },
-  {
-   "slug": "malta",
-   "name": "Malta",
-   "flag": "mt",
-   "label": "Muslim-friendly guide to",
-   "title": "Malta",
-   "t": "37cqi",
-   "img": "guide-malta.webp",
-   "line": "Restaurants with halal menus, the mosque in Paola and highlights of Malta and Gozo.",
-   "card": "Halal menus, the mosque in Paola, and Gozo."
-  },
-  {
-   "slug": "new-york",
-   "name": "New York",
-   "flag": "us",
-   "label": "Halal-friendly guide to food in",
-   "title": "New York",
-   "t": "23cqi",
-   "img": "guide-nyc.webp",
-   "line": "Where we ate in Brooklyn, Manhattan and beyond, at places listed as halal.",
-   "card": "Where we ate in Brooklyn and Manhattan."
-  }
- ],
- "DESTS": [
-  {
-   "slug": "zanzibar",
-   "name": "Zanzibar",
-   "country": "Tanzania",
-   "code": "ZNZ",
-   "img": "st-dest-zanzibar.webp",
-   "alt": "A white sandbar and island in turquoise water off Zanzibar",
-   "flight": "13h · 1 stop",
-   "flight_long": "About 13 hours with one stop.",
-   "intro": "White sand, warm water and dhows on the horizon, with Stone Town's old streets a short drive away.",
-   "suits": "Honeymooners, couples and slow beach holidays",
-   "best": "June to October, and December to February",
-   "why": [
-    [
-     "Quiet beaches",
-     "Long, calm stretches of sand on the north and east coasts."
-    ],
-    [
-     "Stone Town",
-     "Old streets, markets and the call to prayer, an easy day trip from the beach."
-    ],
-    [
-     "Honeymoon villas",
-     "Private pools and quiet rooms, if you ask the right hotel."
-    ]
-   ],
-   "trips": [
-    "honeymoons",
-    "beach-and-island"
-   ],
-   "city": "Zanzibar",
-   "title": "Muslim-friendly Zanzibar holidays and hotels | Saphara Travel",
-   "page": {
-    "hero": "dest-hero-zanzibar",
-    "hero_alt": "A bicycle by a carved wooden door in Stone Town, Zanzibar",
-    "checked": [
-     "2026-11-21",
-     "21 November 2026"
-    ],
-    "facts": [
-     [
-      "Flight time",
-      "About 13 hours with one stop from Manchester."
-     ],
-     [
-      "Best time to go",
-      "June to October, and December to February."
-     ],
-     [
-      "Time difference",
-      "Three hours ahead of home in winter, two in summer."
-     ],
-     [
-      "Money",
-      "Tanzanian shillings. Hotels and trips are often priced in US dollars."
-     ],
-     [
-      "Entry",
-      "A visa and Zanzibar's own travel insurance. Details below."
-     ],
-     [
-      "Suits",
-      "Honeymooners, couples and slow beach holidays"
-     ],
-     [
-      "Prayer",
-      "A mostly Muslim island. You'll hear the adhan across Stone Town."
-     ],
-     [
-      "Food and alcohol",
-      "We check each hotel and tell you plainly."
-     ]
-    ],
-    "facts_note": "Flight times are approximate and depend on the route and airline.",
-    "areas": {
-     "head": [
-      "Where to stay."
-     ],
-     "intro": "The coast you pick matters more than you'd think. On the east coast the tide goes out a long way, so the sea can be a walk away for part of the day. The north stays swimmable.",
-     "items": [
-      {
-       "name": "Kendwa",
-       "where": "North-west coast",
-       "best": "swimming at any time of day",
-       "line": "A long, soft beach where the water stays deep close to shore. Sunsets over the sea.",
-       "note": "Tide: hardly changes the swimming."
-      },
-      {
-       "name": "Nungwi",
-       "where": "Northern tip",
-       "best": "first visits, boat trips and sunsets",
-       "line": "Livelier, with more places to eat and dhows coming and going. Busy in parts, so where the hotel sits on the beach matters.",
-       "note": "Tide: small, swimmable most of the day."
-      },
-      {
-       "name": "Matemwe and Pongwe",
-       "where": "North-east coast",
-       "best": "quiet stays for couples",
-       "line": "Calm villages, palm-lined sand and the closest beaches to Mnemba Atoll for snorkelling.",
-       "note": "Tide: plan your swims around high tide."
-      },
-      {
-       "name": "Paje and Jambiani",
-       "where": "South-east coast",
-       "best": "kitesurfing and beach cafes",
-       "line": "Wide white beaches and a shallow turquoise lagoon. Lovely at high tide; at low tide you walk out across the sand.",
-       "note": "Tide: big. The sea goes out a long way."
-      },
-      {
-       "name": "Michamvi",
-       "where": "East coast peninsula",
-       "best": "sunsets on the east side",
-       "line": "A narrow strip with the ocean on one side and a calm bay on the other, so you can watch the sun go down over the water.",
-       "note": "Tide: big on both sides."
-      },
-      {
-       "name": "Stone Town",
-       "where": "West coast, near the airport",
-       "best": "a night or two of history and food",
-       "line": "Narrow streets, carved doors, markets and mosques. Most people stay one or two nights, then head to the beach.",
-       "note": "A short drive from the airport."
+  "REG_OFFICE": "",
+  "GUIDES": [
+    {
+      "slug": "sarajevo",
+      "name": "Sarajevo",
+      "flag": "ba",
+      "label": "Muslim-friendly guide to",
+      "title": "Sarajevo",
+      "t": "24cqi",
+      "img": "guide-sarajevo.webp",
+      "line": "Halal food, mosques, cafes and a sunset view over the city, from our own trip.",
+      "card": "Halal food, mosques and cafes, from our own trip."
+    },
+    {
+      "slug": "malta",
+      "name": "Malta",
+      "flag": "mt",
+      "label": "Muslim-friendly guide to",
+      "title": "Malta",
+      "t": "37cqi",
+      "img": "guide-malta.webp",
+      "line": "Restaurants with halal menus, the mosque in Paola and highlights of Malta and Gozo.",
+      "card": "Halal menus, the mosque in Paola, and Gozo."
+    },
+    {
+      "slug": "new-york",
+      "name": "New York",
+      "flag": "us",
+      "label": "Halal-friendly guide to food in",
+      "title": "New York",
+      "t": "23cqi",
+      "img": "guide-nyc.webp",
+      "line": "Where we ate in Brooklyn, Manhattan and beyond, at places listed as halal.",
+      "card": "Where we ate in Brooklyn and Manhattan."
+    }
+  ],
+  "DESTS": [
+    {
+      "slug": "zanzibar",
+      "name": "Zanzibar",
+      "country": "Tanzania",
+      "code": "ZNZ",
+      "img": "st-dest-zanzibar.webp",
+      "alt": "A white sandbar and island in turquoise water off Zanzibar",
+      "flight": "13h · 1 stop",
+      "flight_long": "About 13 hours with one stop.",
+      "intro": "White sand, warm water and dhows on the horizon, with Stone Town's old streets a short drive away.",
+      "suits": "Honeymooners, couples and slow beach holidays",
+      "best": "June to October, and December to February",
+      "why": [
+        [
+          "Quiet beaches",
+          "Long, calm stretches of sand on the north and east coasts."
+        ],
+        [
+          "Stone Town",
+          "Old streets, markets and the call to prayer, an easy day trip from the beach."
+        ],
+        [
+          "Honeymoon villas",
+          "Private pools and quiet rooms, if you ask the right hotel."
+        ]
+      ],
+      "trips": [
+        "honeymoons",
+        "beach-and-island"
+      ],
+      "city": "Zanzibar",
+      "title": "Muslim-friendly Zanzibar holidays and hotels | Saphara Travel",
+      "page": {
+        "hero": "dest-hero-zanzibar",
+        "hero_alt": "A bicycle by a carved wooden door in Stone Town, Zanzibar",
+        "checked": [
+          "2026-11-21",
+          "21 November 2026"
+        ],
+        "facts": [
+          [
+            "Flight time",
+            "About 13 hours with one stop from Manchester."
+          ],
+          [
+            "Best time to go",
+            "June to October, and December to February."
+          ],
+          [
+            "Time difference",
+            "Three hours ahead of home in winter, two in summer."
+          ],
+          [
+            "Money",
+            "Tanzanian shillings. Hotels and trips are often priced in US dollars."
+          ],
+          [
+            "Entry",
+            "A visa and Zanzibar's own travel insurance. Details below."
+          ],
+          [
+            "Suits",
+            "Honeymooners, couples and slow beach holidays"
+          ],
+          [
+            "Prayer",
+            "A mostly Muslim island. You'll hear the adhan across Stone Town."
+          ],
+          [
+            "Food and alcohol",
+            "We check each hotel and tell you plainly."
+          ]
+        ],
+        "facts_note": "Flight times are approximate and depend on the route and airline.",
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "intro": "The coast you pick matters more than you'd think. On the east coast the tide goes out a long way, so the sea can be a walk away for part of the day. The north stays swimmable.",
+          "items": [
+            {
+              "name": "Kendwa",
+              "where": "North-west coast",
+              "best": "swimming at any time of day",
+              "line": "A long, soft beach where the water stays deep close to shore. Sunsets over the sea.",
+              "note": "Tide: hardly changes the swimming."
+            },
+            {
+              "name": "Nungwi",
+              "where": "Northern tip",
+              "best": "first visits, boat trips and sunsets",
+              "line": "Livelier, with more places to eat and dhows coming and going. Busy in parts, so where the hotel sits on the beach matters.",
+              "note": "Tide: small, swimmable most of the day."
+            },
+            {
+              "name": "Matemwe and Pongwe",
+              "where": "North-east coast",
+              "best": "quiet stays for couples",
+              "line": "Calm villages, palm-lined sand and the closest beaches to Mnemba Atoll for snorkelling.",
+              "note": "Tide: plan your swims around high tide."
+            },
+            {
+              "name": "Paje and Jambiani",
+              "where": "South-east coast",
+              "best": "kitesurfing and beach cafes",
+              "line": "Wide white beaches and a shallow turquoise lagoon. Lovely at high tide; at low tide you walk out across the sand.",
+              "note": "Tide: big. The sea goes out a long way."
+            },
+            {
+              "name": "Michamvi",
+              "where": "East coast peninsula",
+              "best": "sunsets on the east side",
+              "line": "A narrow strip with the ocean on one side and a calm bay on the other, so you can watch the sun go down over the water.",
+              "note": "Tide: big on both sides."
+            },
+            {
+              "name": "Stone Town",
+              "where": "West coast, near the airport",
+              "best": "a night or two of history and food",
+              "line": "Narrow streets, carved doors, markets and mosques. Most people stay one or two nights, then head to the beach.",
+              "note": "A short drive from the airport."
+            }
+          ],
+          "foot": "Tides change every day and are biggest around the full and new moon."
+        },
+        "week": {
+          "head": [
+            "A week in Zanzibar."
+          ],
+          "intro": "A sample plan to show how a trip can flow: two nights in Stone Town, then five on the beach. We shape it around your dates, your pace and your hotel.",
+          "handle_head": "What we sort for you",
+          "handle": [
+            "Airport and hotel transfers",
+            "A private guide in Stone Town",
+            "Requests to the hotel, from a honeymoon set-up to a quiet room",
+            "Questions about meat, alcohol and privacy, asked before you book"
+          ],
+          "days": [
+            [
+              "Day 1",
+              "Arrive and slow down",
+              [
+                "Land and transfer to your Stone Town hotel, a short drive away.",
+                "Freshen up, pray and rest.",
+                "Walk to Forodhani Gardens near sunset for the evening food stalls by the water."
+              ]
+            ],
+            [
+              "Day 2",
+              "Stone Town on foot",
+              [
+                "A morning walk with a private guide: the Old Fort, the carved doors and the narrow lanes.",
+                "Darajani Market for spices, fruit and the morning bustle.",
+                "An afternoon boat to Prison Island to see the giant tortoises.",
+                "Maghrib by the sea, then dinner in town."
+              ]
+            ],
+            [
+              "Day 3",
+              "Spices, forest, then the coast",
+              [
+                "A spice farm tour on the way out of town: cloves, cinnamon, vanilla and fresh fruit.",
+                "Jozani Forest to see the red colobus monkeys.",
+                "Check in at your beach hotel in the afternoon."
+              ]
+            ],
+            [
+              "Day 4",
+              "Nothing planned",
+              [
+                "Breakfast, the pool, the beach. That's the plan.",
+                "On the east coast, check the tide times and swim at high water.",
+                "A quiet dinner, or an early night."
+              ]
+            ],
+            [
+              "Day 5",
+              "Out on the water",
+              [
+                "A snorkelling trip to Mnemba Atoll, where you may see dolphins on the way out.",
+                "Or a dhow day with a sandbank stop and lunch on the boat."
+              ]
+            ],
+            [
+              "Day 6",
+              "Your choice",
+              [
+                "A sunset dhow cruise, a spa afternoon or a first kitesurfing lesson in Paje.",
+                "If it's a Friday, ask us about Jumu'ah near your hotel."
+              ]
+            ],
+            [
+              "Day 7",
+              "Last full day",
+              [
+                "A slow morning, a long lunch and one more swim.",
+                "Pick up spices or a kanga cloth to take home."
+              ]
+            ],
+            [
+              "Day 8",
+              "Home",
+              [
+                "We can ask the hotel for a late check-out.",
+                "Allow about an hour or more to reach the airport from the north and east coasts."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "intro": "The practical bits, in one place.",
+          "items": [
+            [
+              "flights",
+              "Getting there",
+              [
+                "There are no direct flights from Manchester. Most routes change once, in Doha, Dubai, Muscat or Istanbul.",
+                "The airport is just outside Stone Town. Transfers to the north and east coasts take about an hour or more."
+              ]
+            ],
+            [
+              "shield",
+              "Visa and insurance",
+              [
+                "British passport holders need a visa. The e-visa is the easiest way: apply online before you fly.",
+                "Your passport needs at least six months left from the day you arrive, and a blank page.",
+                "If you land in Zanzibar first, you also need the government's inbound travel insurance from the Zanzibar Insurance Corporation, even if you have your own policy. Buy it only from the official site, <a href=\"https://www.visitzanzibar.go.tz\">visitzanzibar.go.tz</a>.",
+                "Rules change, so check <a href=\"https://www.gov.uk/foreign-travel-advice/tanzania/entry-requirements\">GOV.UK</a> before you travel."
+              ]
+            ],
+            [
+              "fee",
+              "Money",
+              [
+                "The local currency is the Tanzanian shilling.",
+                "Hotels, transfers and trips are often priced in US dollars.",
+                "Keep some small notes for markets, tips and taxis."
+              ]
+            ],
+            [
+              "beach",
+              "Weather",
+              [
+                "June to October is dry, sunny and a little cooler.",
+                "December to February is hot and humid, and it's the busiest time.",
+                "The long rains fall in April and May, when some hotels close. Shorter rains come around November."
+              ]
+            ],
+            [
+              "pray",
+              "Prayer and Ramadan",
+              [
+                "There are masjids across Stone Town and in the villages. Ask your hotel for the qibla and a prayer mat, or we can request one before you arrive.",
+                "In Ramadan, many cafes and restaurants outside hotels close in the day and open after sunset. Hotels serve guests as normal.",
+                "Ramadan 2027 is expected to begin around 8 February, depending on the moon sighting."
+              ]
+            ],
+            [
+              "people",
+              "Dress and manners",
+              [
+                "Modest dress is expected in Stone Town and the villages, for men and women.",
+                "Keep swimwear for the beach and the pool.",
+                "A few words go a long way: jambo (hello), asante (thank you), karibu (welcome)."
+              ]
+            ]
+          ],
+          "foot": "Entry details checked against GOV.UK travel advice on 21 November 2026. Rules, prices and opening times change."
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Is Zanzibar good for a Muslim honeymoon?",
+              "For many couples, yes. It's a mostly Muslim island with quiet villas, private pools and long beaches. Many resorts serve alcohol and cater to international guests, so we check each hotel and tell you plainly what to expect."
+            ],
+            [
+              "Is the food halal?",
+              "Most people on the island are Muslim, but resorts cater to international guests, so it's best not to assume. We ask each hotel about its meat and kitchens before you book and tell you what we find."
+            ],
+            [
+              "Which side of the island should we stay on?",
+              "If you want to swim whenever you like, the north: Kendwa or Nungwi. If you'd rather have quiet, wide beaches and don't mind planning around the tide, the east. Splitting your stay between the two works well."
+            ],
+            [
+              "What do we need before we fly?",
+              "A visa (the e-visa is easiest), a passport with at least six months left, and Zanzibar's government travel insurance if you land there first. Rules change, so check GOV.UK before you travel."
+            ],
+            [
+              "Can we add another stop?",
+              "Yes. Stone Town and a beach is the classic pairing, and a stopover in Doha or Dubai works well on the way. Tell us what you have in mind."
+            ]
+          ]
+        },
+        "cta": "Tell us when you'd like to go and who's coming. We'll suggest the right coast and hotels, compared like for like."
       }
-     ],
-     "foot": "Tides change every day and are biggest around the full and new moon."
     },
-    "week": {
-     "head": [
-      "A week in Zanzibar."
-     ],
-     "intro": "A sample plan to show how a trip can flow: two nights in Stone Town, then five on the beach. We shape it around your dates, your pace and your hotel.",
-     "handle_head": "What we sort for you",
-     "handle": [
-      "Airport and hotel transfers",
-      "A private guide in Stone Town",
-      "Requests to the hotel, from a honeymoon set-up to a quiet room",
-      "Questions about meat, alcohol and privacy, asked before you book"
-     ],
-     "days": [
-      [
-       "Day 1",
-       "Arrive and slow down",
-       [
-        "Land and transfer to your Stone Town hotel, a short drive away.",
-        "Freshen up, pray and rest.",
-        "Walk to Forodhani Gardens near sunset for the evening food stalls by the water."
-       ]
+    {
+      "slug": "doha",
+      "name": "Doha",
+      "country": "Qatar",
+      "code": "DOH",
+      "img": "st-dest-doha.webp",
+      "alt": "A spiral minaret at dusk in Doha",
+      "flight": "7h direct",
+      "flight_long": "About 7 hours direct.",
+      "intro": "Desert, sea and some of the best hotels in the Gulf, about seven hours from Manchester.",
+      "suits": "Families, couples, stopovers and business trips",
+      "best": "November to March",
+      "why": [
+        [
+          "Easy for families",
+          "Short transfers, big pools and everything close by."
+        ],
+        [
+          "A good stopover",
+          "Break up a long trip with a night or two on the way."
+        ],
+        [
+          "Beach or city",
+          "Resorts on the coast or hotels in town, compared side by side."
+        ]
       ],
-      [
-       "Day 2",
-       "Stone Town on foot",
-       [
-        "A morning walk with a private guide: the Old Fort, the carved doors and the narrow lanes.",
-        "Darajani Market for spices, fruit and the morning bustle.",
-        "An afternoon boat to Prison Island to see the giant tortoises.",
-        "Maghrib by the sea, then dinner in town."
-       ]
+      "trips": [
+        "family-holidays",
+        "business"
       ],
-      [
-       "Day 3",
-       "Spices, forest, then the coast",
-       [
-        "A spice farm tour on the way out of town: cloves, cinnamon, vanilla and fresh fruit.",
-        "Jozani Forest to see the red colobus monkeys.",
-        "Check in at your beach hotel in the afternoon."
-       ]
-      ],
-      [
-       "Day 4",
-       "Nothing planned",
-       [
-        "Breakfast, the pool, the beach. That's the plan.",
-        "On the east coast, check the tide times and swim at high water.",
-        "A quiet dinner, or an early night."
-       ]
-      ],
-      [
-       "Day 5",
-       "Out on the water",
-       [
-        "A snorkelling trip to Mnemba Atoll, where you may see dolphins on the way out.",
-        "Or a dhow day with a sandbank stop and lunch on the boat."
-       ]
-      ],
-      [
-       "Day 6",
-       "Your choice",
-       [
-        "A sunset dhow cruise, a spa afternoon or a first kitesurfing lesson in Paje.",
-        "If it's a Friday, ask us about Jumu'ah near your hotel."
-       ]
-      ],
-      [
-       "Day 7",
-       "Last full day",
-       [
-        "A slow morning, a long lunch and one more swim.",
-        "Pick up spices or a kanga cloth to take home."
-       ]
-      ],
-      [
-       "Day 8",
-       "Home",
-       [
-        "We can ask the hotel for a late check-out.",
-        "Allow about an hour or more to reach the airport from the north and east coasts."
-       ]
-      ]
-     ]
+      "city": "Doha",
+      "title": "Muslim-friendly Doha holidays and hotels | Saphara Travel",
+      "hero": "dest-hero-doha",
+      "hero_alt": "A quiet lane in Souq Waqif, Doha"
     },
-    "tips": {
-     "head": [
-      "Before you go."
-     ],
-     "intro": "The practical bits, in one place.",
-     "items": [
-      [
-       "flights",
-       "Getting there",
-       [
-        "There are no direct flights from Manchester. Most routes change once, in Doha, Dubai, Muscat or Istanbul.",
-        "The airport is just outside Stone Town. Transfers to the north and east coasts take about an hour or more."
-       ]
+    {
+      "slug": "dubai",
+      "name": "Dubai",
+      "country": "UAE",
+      "code": "DXB",
+      "img": "st-dubai-alfahidi.webp",
+      "alt": "A quiet lane of traditional buildings in Al Fahidi, Dubai",
+      "hero": "dest-hero-dubai",
+      "hero_alt": "The Dubai skyline and Burj Khalifa at sunset, seen across the water",
+      "flight": "7h direct",
+      "flight_long": "About 7 hours direct.",
+      "intro": "Beach resorts, city hotels and Ras Al Khaimah an hour up the coast for something quieter.",
+      "suits": "Families, couples and short winter sun",
+      "best": "November to March",
+      "why": [
+        [
+          "Winter sun",
+          "Warm and dry when the UK isn't."
+        ],
+        [
+          "Ras Al Khaimah",
+          "Quieter beach resorts about an hour from Dubai."
+        ],
+        [
+          "Family friendly",
+          "Big resorts with kids' clubs and easy transfers."
+        ]
       ],
-      [
-       "shield",
-       "Visa and insurance",
-       [
-        "British passport holders need a visa. The e-visa is the easiest way: apply online before you fly.",
-        "Your passport needs at least six months left from the day you arrive, and a blank page.",
-        "If you land in Zanzibar first, you also need the government's inbound travel insurance from the Zanzibar Insurance Corporation, even if you have your own policy. Buy it only from the official site, <a href=\"https://www.visitzanzibar.go.tz\">visitzanzibar.go.tz</a>.",
-        "Rules change, so check <a href=\"https://www.gov.uk/foreign-travel-advice/tanzania/entry-requirements\">GOV.UK</a> before you travel."
-       ]
+      "trips": [
+        "family-holidays",
+        "beach-and-island"
       ],
-      [
-       "fee",
-       "Money",
-       [
-        "The local currency is the Tanzanian shilling.",
-        "Hotels, transfers and trips are often priced in US dollars.",
-        "Keep some small notes for markets, tips and taxis."
-       ]
-      ],
-      [
-       "beach",
-       "Weather",
-       [
-        "June to October is dry, sunny and a little cooler.",
-        "December to February is hot and humid, and it's the busiest time.",
-        "The long rains fall in April and May, when some hotels close. Shorter rains come around November."
-       ]
-      ],
-      [
-       "pray",
-       "Prayer and Ramadan",
-       [
-        "There are masjids across Stone Town and in the villages. Ask your hotel for the qibla and a prayer mat, or we can request one before you arrive.",
-        "In Ramadan, many cafes and restaurants outside hotels close in the day and open after sunset. Hotels serve guests as normal.",
-        "Ramadan 2027 is expected to begin around 8 February, depending on the moon sighting."
-       ]
-      ],
-      [
-       "people",
-       "Dress and manners",
-       [
-        "Modest dress is expected in Stone Town and the villages, for men and women.",
-        "Keep swimwear for the beach and the pool.",
-        "A few words go a long way: jambo (hello), asante (thank you), karibu (welcome)."
-       ]
-      ]
-     ],
-     "foot": "Entry details checked against GOV.UK travel advice on 21 November 2026. Rules, prices and opening times change."
+      "city": "Dubai",
+      "title": "Muslim-friendly Dubai holidays and hotels | Saphara Travel"
     },
-    "faq": {
-     "head": [
-      "Questions."
-     ],
-     "items": [
-      [
-       "Is Zanzibar good for a Muslim honeymoon?",
-       "For many couples, yes. It's a mostly Muslim island with quiet villas, private pools and long beaches. Many resorts serve alcohol and cater to international guests, so we check each hotel and tell you plainly what to expect."
+    {
+      "slug": "oman",
+      "name": "Oman",
+      "country": "Oman",
+      "code": "MCT",
+      "img": "st-dest-oman.webp",
+      "alt": "A terraced village on Jebel Akhdar in Oman",
+      "flight": "7h direct",
+      "flight_long": "About 7 hours direct to Muscat.",
+      "intro": "Mountains, wadis and a calm coastline, with Muscat's mosques and souqs close by.",
+      "suits": "Families, couples and slower trips",
+      "best": "October to April",
+      "why": [
+        [
+          "Muscat and the coast",
+          "City hotels or beach resorts a short drive from the old town."
+        ],
+        [
+          "Wadis and mountains",
+          "Day trips inland with a driver, if you'd like one."
+        ],
+        [
+          "Room to slow down",
+          "Calmer than the big Gulf cities, with space to unwind."
+        ]
       ],
-      [
-       "Is the food halal?",
-       "Most people on the island are Muslim, but resorts cater to international guests, so it's best not to assume. We ask each hotel about its meat and kitchens before you book and tell you what we find."
+      "trips": [
+        "family-holidays",
+        "honeymoons"
       ],
-      [
-       "Which side of the island should we stay on?",
-       "If you want to swim whenever you like, the north: Kendwa or Nungwi. If you'd rather have quiet, wide beaches and don't mind planning around the tide, the east. Splitting your stay between the two works well."
-      ],
-      [
-       "What do we need before we fly?",
-       "A visa (the e-visa is easiest), a passport with at least six months left, and Zanzibar's government travel insurance if you land there first. Rules change, so check GOV.UK before you travel."
-      ],
-      [
-       "Can we add another stop?",
-       "Yes. Stone Town and a beach is the classic pairing, and a stopover in Doha or Dubai works well on the way. Tell us what you have in mind."
-      ]
-     ]
+      "city": "Muscat",
+      "title": "Muslim-friendly Oman holidays and hotels | Saphara Travel",
+      "hero": "dest-hero-oman",
+      "hero_alt": "The Mutrah corniche in Muscat below the mountains"
     },
-    "cta": "Tell us when you'd like to go and who's coming. We'll suggest the right coast and hotels, compared like for like."
-   }
-  },
-  {
-   "slug": "doha",
-   "name": "Doha",
-   "country": "Qatar",
-   "code": "DOH",
-   "img": "st-dest-doha.webp",
-   "alt": "A spiral minaret at dusk in Doha",
-   "flight": "7h direct",
-   "flight_long": "About 7 hours direct.",
-   "intro": "Desert, sea and some of the best hotels in the Gulf, about seven hours from Manchester.",
-   "suits": "Families, couples, stopovers and business trips",
-   "best": "November to March",
-   "why": [
-    [
-     "Easy for families",
-     "Short transfers, big pools and everything close by."
-    ],
-    [
-     "A good stopover",
-     "Break up a long trip with a night or two on the way."
-    ],
-    [
-     "Beach or city",
-     "Resorts on the coast or hotels in town, compared side by side."
-    ]
-   ],
-   "trips": [
-    "family-holidays",
-    "business"
-   ],
-   "city": "Doha",
-   "title": "Muslim-friendly Doha holidays and hotels | Saphara Travel",
-   "hero": "dest-hero-doha",
-   "hero_alt": "A quiet lane in Souq Waqif, Doha"
-  },
-  {
-   "slug": "dubai",
-   "name": "Dubai",
-   "country": "UAE",
-   "code": "DXB",
-   "img": "st-dubai-alfahidi.webp",
-   "alt": "A quiet lane of traditional buildings in Al Fahidi, Dubai",
-   "hero": "dest-hero-dubai",
-   "hero_alt": "The Dubai skyline and Burj Khalifa at sunset, seen across the water",
-   "flight": "7h direct",
-   "flight_long": "About 7 hours direct.",
-   "intro": "Beach resorts, city hotels and Ras Al Khaimah an hour up the coast for something quieter.",
-   "suits": "Families, couples and short winter sun",
-   "best": "November to March",
-   "why": [
-    [
-     "Winter sun",
-     "Warm and dry when the UK isn't."
-    ],
-    [
-     "Ras Al Khaimah",
-     "Quieter beach resorts about an hour from Dubai."
-    ],
-    [
-     "Family friendly",
-     "Big resorts with kids' clubs and easy transfers."
-    ]
-   ],
-   "trips": [
-    "family-holidays",
-    "beach-and-island"
-   ],
-   "city": "Dubai",
-   "title": "Muslim-friendly Dubai holidays and hotels | Saphara Travel"
-  },
-  {
-   "slug": "oman",
-   "name": "Oman",
-   "country": "Oman",
-   "code": "MCT",
-   "img": "st-dest-oman.webp",
-   "alt": "A terraced village on Jebel Akhdar in Oman",
-   "flight": "7h direct",
-   "flight_long": "About 7 hours direct to Muscat.",
-   "intro": "Mountains, wadis and a calm coastline, with Muscat's mosques and souqs close by.",
-   "suits": "Families, couples and slower trips",
-   "best": "October to April",
-   "why": [
-    [
-     "Muscat and the coast",
-     "City hotels or beach resorts a short drive from the old town."
-    ],
-    [
-     "Wadis and mountains",
-     "Day trips inland with a driver, if you'd like one."
-    ],
-    [
-     "Room to slow down",
-     "Calmer than the big Gulf cities, with space to unwind."
-    ]
-   ],
-   "trips": [
-    "family-holidays",
-    "honeymoons"
-   ],
-   "city": "Muscat",
-   "title": "Muslim-friendly Oman holidays and hotels | Saphara Travel",
-   "hero": "dest-hero-oman",
-   "hero_alt": "The Mutrah corniche in Muscat below the mountains"
-  },
-  {
-   "slug": "makkah-and-madinah",
-   "name": "Makkah and Madinah",
-   "country": "Saudi Arabia",
-   "code": "JED · MED",
-   "img": "st-madinah-nabawi.webp",
-   "alt": "Masjid an-Nabawi in Madinah at golden hour",
-   "hero": "dest-hero-makkah",
-   "hero_alt": "Masjid an-Nabawi in Madinah at golden hour",
-   "flight": "6h 30m to Jeddah",
-   "flight_long": "About 6 and a half hours direct to Jeddah. For Madinah, via Jeddah or one stop.",
-   "intro": "Hotels in Makkah and Madinah for Umrah, chosen for the walk to the Haram and the people you're travelling with.",
-   "suits": "Umrah, families and travellers with elderly parents",
-   "best": "Year round; quieter outside Ramadan and school holidays",
-   "why": [
-    [
-     "Walking distance",
-     "Ask us and we'll tell you how many minutes' walk each hotel is from the Haram."
-    ],
-    [
-     "Driver and ziyarah contacts",
-     "Trusted people we can put you in touch with."
-    ],
-    [
-     "Flights",
-     "We help you find a good flight itinerary, but we don't book the flights."
-    ]
-   ],
-   "trips": [
-    "hotels",
-    "family-holidays"
-   ],
-   "city": "Jeddah · Madinah",
-   "short": "Makkah &amp; Madinah",
-   "title": "Umrah hotels in Makkah and Madinah | Saphara Travel"
-  },
-  {
-   "slug": "kuala-lumpur",
-   "name": "Kuala Lumpur",
-   "country": "Malaysia",
-   "code": "KUL",
-   "img": "st-dest-kuala-lumpur.webp",
-   "warm": true,
-   "alt": "Masjid Jamek in Kuala Lumpur",
-   "flight": "15h · 1 stop",
-   "flight_long": "About 15 hours with one stop.",
-   "intro": "Malaysia's capital: city hotels, mosques and markets, with Langkawi a short flight away.",
-   "suits": "City breaks, families and stopovers",
-   "best": "Year round, with short tropical showers",
-   "why": [
-    [
-     "A good first stop",
-     "A few nights in the city before Langkawi or the beach."
-    ],
-    [
-     "City hotels",
-     "Rooms with a view of the towers, if that matters to you."
-    ],
-    [
-     "Easy to combine",
-     "Langkawi and the islands are a short flight away."
-    ]
-   ],
-   "trips": [
-    "family-holidays",
-    "business"
-   ],
-   "city": "Kuala Lumpur",
-   "title": "Muslim-friendly Kuala Lumpur holidays | Saphara Travel",
-   "hero": "dest-hero-kuala-lumpur",
-   "hero_alt": "The Sultan Abdul Samad Building in Kuala Lumpur"
-  },
-  {
-   "slug": "langkawi",
-   "name": "Langkawi",
-   "country": "Malaysia",
-   "code": "LGK",
-   "img": "st-langkawi-skybridge.webp",
-   "alt": "The Langkawi Sky Bridge above the rainforest",
-   "hero": "dest-hero-langkawi",
-   "hero_alt": "The Langkawi Sky Bridge curving over the rainforest",
-   "flight": "17h · 2 stops",
-   "flight_long": "About 17 hours, with a stop in the Gulf and a short flight from Kuala Lumpur.",
-   "intro": "Rainforest down to the sea, quiet beaches and pool villas, with Kuala Lumpur on the way.",
-   "suits": "Honeymooners, couples and families",
-   "best": "November to April",
-   "why": [
-    [
-     "Pool villas",
-     "Private pools in the trees or on the beach."
-    ],
-    [
-     "City and island",
-     "A few nights in Kuala Lumpur first is easy to add."
-    ],
-    [
-     "Halal food",
-     "Malaysia makes eating halal straightforward; we still check each hotel."
-    ]
-   ],
-   "trips": [
-    "honeymoons",
-    "beach-and-island"
-   ],
-   "city": "Langkawi",
-   "title": "Muslim-friendly Langkawi holidays and villas | Saphara Travel"
-  },
-  {
-   "slug": "maldives",
-   "name": "Maldives",
-   "country": "Maldives",
-   "code": "MLE",
-   "img": "st-dest-maldives.webp",
-   "alt": "A turquoise lagoon and overwater villas in the Maldives",
-   "flight": "12h · 1 stop",
-   "flight_long": "About 12 hours with one stop from Manchester.",
-   "intro": "Clear lagoons, private-island resorts and overwater villas, with the right island making all the difference.",
-   "suits": "Honeymooners, couples and families",
-   "best": "November to April",
-   "why": [
-    [
-     "Private-island stays",
-     "A choice of islands and resorts, each with its own feel."
-    ],
-    [
-     "Overwater villas",
-     "Private pools, sea views and direct access to the lagoon at selected resorts."
-    ],
-    [
-     "Honeymoons and families",
-     "Quiet adults-focused resorts or islands with family facilities."
-    ]
-   ],
-   "trips": [
-    "honeymoons",
-    "beach-and-island",
-    "family-holidays"
-   ],
-   "city": "Malé · resort islands",
-   "title": "Muslim-friendly Maldives holidays and resorts | Saphara Travel"
-  }
- ],
- "RESORT_PLACES": [
-  {
-   "name": "Maldives",
-   "country": "Maldives",
-   "code": "MLE",
-   "img": "st-dest-maldives.webp",
-   "alt": "An island ringed by reef in the Maldives",
-   "flight": "12h · 1 stop",
-   "flight_long": "About 12 hours with one stop.",
-   "city": "Malé"
-  },
-  {
-   "name": "Seychelles",
-   "country": "Seychelles",
-   "code": "SEZ",
-   "img": "st-dest-seychelles.webp",
-   "alt": "A palm-lined lane on La Digue in the Seychelles",
-   "flight": "13h · 1 stop",
-   "flight_long": "About 13 hours with one stop.",
-   "city": "Mahé"
-  },
-  {
-   "name": "Zanzibar",
-   "country": "Tanzania",
-   "code": "ZNZ",
-   "img": "st-dest-zanzibar.webp",
-   "alt": "A white sandbar and island in turquoise water off Zanzibar",
-   "flight": "13h · 1 stop",
-   "flight_long": "About 13 hours with one stop.",
-   "slug": "zanzibar",
-   "city": "Zanzibar"
-  }
- ],
- "TRIP_PAGES": {
-  "honeymoons": {
-   "name": "Honeymoons",
-   "trip": "Honeymoon",
-   "img": "page-hero-honeymoons",
-   "alt": "Steps from an overwater villa down into a clear lagoon",
-   "title": "Muslim-friendly honeymoons | Saphara Travel",
-   "desc": "Honeymoons planned around the two of you: private villas, quiet rooms and set-ups confirmed with the hotel. We check food, alcohol and privacy for you.",
-   "lead": "Your honeymoon, planned around the two of you. We find the room, ask the hotel for the details that matter and get them confirmed before you land.",
-   "arrange": [
-    [
-     "hotel",
-     "The right room",
-     "The room type chosen for you, not the cheapest one on the list."
-    ],
-    [
-     "heart",
-     "Honeymoon set-up",
-     "Set-ups, quiet rooms and early check-in, asked for and confirmed."
-    ],
-    [
-     "flights",
-     "Flights and transfers",
-     "Flights, transfers and private guides if you'd like them."
-    ],
-    [
-     "map",
-     "Two places, one trip",
-     "A city and then a beach, planned as one trip."
-    ],
-    [
-     "chat",
-     "On WhatsApp throughout",
-     "We stay with you while you're away, and after you're home."
-    ],
-    [
-     "transfers",
-     "Arrival sorted",
-     "A driver waiting, and the room ready as early as the hotel can manage."
-    ]
-   ],
-   "checks": [
-    "Whether the villa or pool is genuinely private",
-    "Halal kitchen, halal meat on request, or neither",
-    "Alcohol at the pool or on the beach",
-    "Modest swimwear rules",
-    "Adults-only areas",
-    "How long the transfer really takes"
-   ],
-   "dests": [
-    "zanzibar",
-    "langkawi",
-    "oman"
-   ],
-   "guide": "malta",
-   "faq": [
-    [
-     "Can you arrange a surprise set-up?",
-     "Yes. Tell us what you have in mind and we'll ask the hotel and confirm what they can do before you travel."
-    ],
-    [
-     "Can we split our stay between two hotels?",
-     "Yes. A city and a beach, or two islands, planned as one trip with the transfers between them."
-    ],
-    [
-     "Do you only do luxury?",
-     "No. We find the right hotel for your budget and tell you honestly what you get for it."
-    ]
-   ],
-   "cta": [
-    "Ready when you are."
-   ],
-   "btn": "Plan a honeymoon"
-  },
-  "beach-and-island": {
-   "name": "Beach & Island",
-   "trip": "Beach and island",
-   "img": "page-hero-beach",
-   "alt": "A longtail boat in a turquoise bay below limestone cliffs",
-   "title": "Muslim-friendly beach and island holidays | Saphara Travel",
-   "desc": "Beach and island resorts we've booked before, compared like for like, with the transfers sorted. We check the beach, the food and what's included.",
-   "lead": "Beach and island resorts we've booked before, with the transfers sorted and the room chosen properly. Tell us how you like to spend the day and we'll find the place that fits.",
-   "arrange": [
-    [
-     "beach",
-     "Resorts and villas",
-     "Compared like for like, so you can see the real difference."
-    ],
-    [
-     "transfers",
-     "Every transfer",
-     "Seaplane, speedboat or road, and how long each really takes."
-    ],
-    [
-     "compass",
-     "Days out",
-     "Excursions and boat trips if you want them, nothing if you don't."
-    ],
-    [
-     "hotel",
-     "Room choice",
-     "Beach access, pool views or quiet corners, asked for by name."
-    ],
-    [
-     "chat",
-     "On WhatsApp throughout",
-     "If the room isn't right, message us and we deal with the hotel."
-    ],
-    [
-     "paylater",
-     "Book now, pay later",
-     "On eligible free cancellation rates, nothing upfront: no payment, no deposit until closer to your dates."
-    ]
-   ],
-   "checks": [
-    "Private, shared or public beach",
-    "How busy the beach gets",
-    "Board basis and what's really included",
-    "Food and alcohol at the resort",
-    "Transfer time door to door",
-    "Resort fees and deposits"
-   ],
-   "dests": [
-    "zanzibar",
-    "dubai",
-    "langkawi"
-   ],
-   "resorts": true,
-   "guide": "malta",
-   "faq": [
-    [
-     "Is all inclusive worth it?",
-     "Sometimes. We compare the same room on different board bases so you can see the real difference."
-    ],
-    [
-     "Which islands are quieter?",
-     "Tell us what quiet means to you and we'll suggest a few places that fit."
-    ],
-    [
-     "Can you check the beach before we book?",
-     "Yes. We ask the hotel and tell you what we find, including whether the beach is shared."
-    ]
-   ],
-   "cta": [
-    "Sea view, sorted."
-   ],
-   "btn": "Plan a beach trip"
-  },
-  "family-holidays": {
-   "name": "Family Holidays",
-   "trip": "Family holiday",
-   "img": "page-hero-family",
-   "alt": "Granite boulders and clear water at Anse Source d'Argent, Seychelles",
-   "title": "Muslim-friendly family holidays | Saphara Travel",
-   "desc": "Family holidays with the right rooms, the right pool and an easy transfer. Connecting rooms requested with the hotel, and food checked for halal needs.",
-   "lead": "Family holidays with the right rooms, the right pool and an easy transfer. We ask the questions you'd ask if you had the time, then book what works for everyone.",
-   "arrange": [
-    [
-     "family",
-     "The right rooms",
-     "Family rooms, suites and connecting rooms, requested with the hotel."
-    ],
-    [
-     "hotel",
-     "Cots and extra beds",
-     "Arranged in advance, not on arrival."
-    ],
-    [
-     "transfers",
-     "Transfers that fit",
-     "Sized for your family and your luggage."
-    ],
-    [
-     "beach",
-     "Pools and shade",
-     "Kids' pools, shade and kids' clubs, checked before you book."
-    ],
-    [
-     "chat",
-     "On WhatsApp throughout",
-     "We stay with you while you're away, and after you're home."
-    ],
-    [
-     "flights",
-     "Flights if you need them",
-     "Or hotels around flights you've already booked."
-    ]
-   ],
-   "checks": [
-    "Connecting or family rooms",
-    "Kids' pools and shade",
-    "Kids' clubs and ages",
-    "Food for fussy eaters and halal needs",
-    "Walking distance to the beach",
-    "Lifts and walking distances"
-   ],
-   "dests": [
-    "doha",
-    "dubai",
-    "oman"
-   ],
-   "guide": "malta",
-   "faq": [
-    [
-     "Can you guarantee connecting rooms?",
-     "Some hotels can only request connecting rooms, not guarantee them. We'll tell you which before you book."
-    ],
-    [
-     "Can grandparents join?",
-     "Yes. We plan rooms and transfers around everyone, including how far everyone can comfortably walk."
-    ],
-    [
-     "Do you book family Umrah trips?",
-     "We book the hotels in Makkah and Madinah and share driver and ziyarah contacts. We don't book Umrah flights."
-    ]
-   ],
-   "cta": [
-    "Room for everyone."
-   ],
-   "btn": "Plan a family trip"
-  },
-  "hotels": {
-   "name": "Hotel Only",
-   "trip": "Hotel only",
-   "img": "page-hero-hotels",
-   "alt": "A bright hotel suite with a sea view",
-   "title": "Hotel bookings and price checks | Saphara Travel",
-   "desc": "Already booked your flights? We book the hotel, transfers and tours around them, and we'll compare any hotel price you've found, like for like.",
-   "lead": "Already booked your flights? We'll book the hotel, the transfer and the tours around them. Found a hotel yourself? Send it over: second opinions are free.",
-   "arrange": [
-    [
-     "hotel",
-     "Hotel-only bookings",
-     "Anywhere, with your requests asked for and confirmed."
-    ],
-    [
-     "transfers",
-     "Airport transfers",
-     "A driver waiting when you land."
-    ],
-    [
-     "compass",
-     "Guides and excursions",
-     "Private guides and day trips if you want them."
-    ],
-    [
-     "fee",
-     "No service fee",
-     "The price we quote is the price you pay."
-    ],
-    [
-     "paylater",
-     "Book now, pay later",
-     "On eligible free cancellation rates, nothing upfront: no payment, no deposit until closer to your dates."
-    ],
-    [
-     "chat",
-     "On WhatsApp throughout",
-     "If something isn't right, we deal with the hotel."
-    ]
-   ],
-   "checks": [
-    "Room type",
-    "Board basis",
-    "Cancellation terms",
-    "Transfers",
-    "Resort fees",
-    "Deposits"
-   ],
-   "dests": [
-    "makkah-and-madinah",
-    "doha",
-    "kuala-lumpur"
-   ],
-   "guide": "new-york",
-   "faq": [
-    [
-     "Can you book a hotel I've found online?",
-     "Usually, yes. Send us the link and the price and we'll compare it like for like."
-    ],
-    [
-     "Do I pay now?",
-     "On all bookings with free cancellation, we don't take any payment or deposit until closer to your travel dates, before the free cancellation period ends. Non-refundable rates are paid when you book."
-    ],
-    [
-     "Is a hotel-only booking ATOL protected?",
-     "No. Hotel-only bookings and other services without a flight aren't covered by ATOL."
-    ]
-   ],
-   "cta": [
-    "Got your flights?",
-    "We've got the rest."
-   ],
-   "btn": "Plan a hotel stay"
-  },
-  "business": {
-   "name": "Business Travel",
-   "trip": "Business travel",
-   "img": "page-hero-business",
-   "alt": "Arched windows framing the Doha skyline at the Museum of Islamic Art",
-   "warm": true,
-   "title": "Business travel bookings | Saphara Travel",
-   "desc": "Hotels and flights for staff and clients, team and group trips, one point of contact on WhatsApp and an invoice for every booking.",
-   "lead": "Hotels and flights for staff and clients, handled by people you can actually message. One point of contact, and an invoice for every booking.",
-   "arrange": [
-    [
-     "flights",
-     "Hotels and flights",
-     "For business trips, booked and confirmed."
-    ],
-    [
-     "team",
-     "Team and group trips",
-     "Several travellers, one plan."
-    ],
-    [
-     "transfers",
-     "Transfers",
-     "Drivers at arrivals, sorted in advance."
-    ],
-    [
-     "people",
-     "One point of contact",
-     "The same people on WhatsApp from booking to return."
-    ],
-    [
-     "invoice",
-     "An invoice for every booking",
-     "Clear and easy to file."
-    ],
-    [
-     "chat",
-     "Changes at short notice",
-     "Message us and we'll sort it with the hotel or airline."
-    ]
-   ],
-   "checks": [
-    "Location for your meetings",
-    "Workspace and wifi",
-    "Breakfast times",
-    "Late check-out",
-    "Airport distance",
-    "Cancellation terms"
-   ],
-   "dests": [
-    "doha",
-    "dubai",
-    "kuala-lumpur"
-   ],
-   "guide": "new-york",
-   "faq": [
-    [
-     "Can you book for several travellers at once?",
-     "Yes. Send us the names as they appear on passports, the dates and where they need to be."
-    ],
-    [
-     "How do invoices work?",
-     "You get an invoice for every booking."
-    ],
-    [
-     "Can you handle last-minute changes?",
-     "Message us on WhatsApp and we'll do what the hotel or airline allows."
-    ]
-   ],
-   "cta": [
-    "Business trips.",
-    "Minus the admin."
-   ],
-   "btn": "Plan business travel"
-  },
-  "multi-city": {
-   "name": "Multi-City",
-   "trip": "Multi-city",
-   "img": "page-hero-multicity",
-   "alt": "Old Town shophouses in Phuket",
-   "title": "Multi-city trips and packages | Saphara Travel",
-   "desc": "Multi-city trips planned as one: flights, hotels and transfers for every leg, booked together and looked after on WhatsApp.",
-   "lead": "Tokyo, Kyoto and Osaka, or a city and then a beach. We put the whole route together: the flights, a hotel in each place and the transfers in between, booked as one trip.",
-   "arrange": [
-    [
-     "flights",
-     "Flights for every leg",
-     "Out, between cities and home, timed around your hotels."
-    ],
-    [
-     "hotel",
-     "A hotel in each city",
-     "Chosen for where you'll spend your days, compared like for like."
-    ],
-    [
-     "transfers",
-     "Transfers in between",
-     "Airports, stations and hotels joined up, so each move is easy."
-    ],
-    [
-     "map",
-     "The route worked out",
-     "How many nights where, and the easiest order to do it in."
-    ],
-    [
-     "shield",
-     "ATOL on flights and packages",
-     "Flights and flight-inclusive packages we book are ATOL protected by the ATOL holder we book them with, and you'll receive an ATOL Certificate. Hotels and other services booked without a flight aren't covered by ATOL."
-    ],
-    [
-     "chat",
-     "On WhatsApp throughout",
-     "One chat for the whole trip, while you're away and after you're home."
-    ]
-   ],
-   "checks": [
-    "Enough time between landing and check-in",
-    "Early check-in or late check-out on travel days",
-    "Halal food near each hotel",
-    "Mosques and prayer spaces nearby",
-    "Luggage between cities",
-    "How long each transfer really takes"
-   ],
-   "dests": [
-    "doha",
-    "dubai",
-    "kuala-lumpur"
-   ],
-   "guide": "new-york",
-   "faq": [
-    [
-     "Can you book the flights as well as the hotels?",
-     "Yes. We book the flights, the hotels and the transfers together so the whole trip fits. Flights and flight-inclusive packages we book are ATOL protected by the ATOL holder we book them with, and you'll receive an ATOL Certificate. Hotel-only bookings and other services without a flight aren't covered by ATOL."
-    ],
-    [
-     "Do you only plan places on this website?",
-     "No. Tell us the cities you have in mind, Japan for example, and we'll work out the route with you."
-    ],
-    [
-     "What if a flight changes during the trip?",
-     "Message us on WhatsApp. We'll look at the hotels and transfers either side and sort what we can with them."
-    ]
-   ],
-   "cta": [
-    "Got a route in mind?"
-   ],
-   "btn": "Plan a multi-city trip"
-  }
- },
- "RPIMG": {
-  "honeymoons": [
-   "st-panel-honeymoon.webp",
-   "A shaded path through granite boulders to the beach"
+    {
+      "slug": "makkah-and-madinah",
+      "name": "Makkah and Madinah",
+      "country": "Saudi Arabia",
+      "code": "JED · MED",
+      "img": "st-madinah-nabawi.webp",
+      "alt": "Masjid an-Nabawi in Madinah at golden hour",
+      "hero": "dest-hero-makkah",
+      "hero_alt": "Masjid an-Nabawi in Madinah at golden hour",
+      "flight": "6h 30m to Jeddah",
+      "flight_long": "About 6 and a half hours direct to Jeddah. For Madinah, via Jeddah or one stop.",
+      "intro": "Hotels in Makkah and Madinah for Umrah, chosen for the walk to the Haram and the people you're travelling with.",
+      "suits": "Umrah, families and travellers with elderly parents",
+      "best": "Year round; quieter outside Ramadan and school holidays",
+      "why": [
+        [
+          "Walking distance",
+          "Ask us and we'll tell you how many minutes' walk each hotel is from the Haram."
+        ],
+        [
+          "Driver and ziyarah contacts",
+          "Trusted people we can put you in touch with."
+        ],
+        [
+          "Flights",
+          "We help you find a good flight itinerary, but we don't book the flights."
+        ]
+      ],
+      "trips": [
+        "hotels",
+        "family-holidays"
+      ],
+      "city": "Jeddah · Madinah",
+      "short": "Makkah &amp; Madinah",
+      "title": "Umrah hotels in Makkah and Madinah | Saphara Travel"
+    },
+    {
+      "slug": "kuala-lumpur",
+      "name": "Kuala Lumpur",
+      "country": "Malaysia",
+      "code": "KUL",
+      "img": "st-dest-kuala-lumpur.webp",
+      "warm": true,
+      "alt": "Masjid Jamek in Kuala Lumpur",
+      "flight": "15h · 1 stop",
+      "flight_long": "About 15 hours with one stop.",
+      "intro": "Malaysia's capital: city hotels, mosques and markets, with Langkawi a short flight away.",
+      "suits": "City breaks, families and stopovers",
+      "best": "Year round, with short tropical showers",
+      "why": [
+        [
+          "A good first stop",
+          "A few nights in the city before Langkawi or the beach."
+        ],
+        [
+          "City hotels",
+          "Rooms with a view of the towers, if that matters to you."
+        ],
+        [
+          "Easy to combine",
+          "Langkawi and the islands are a short flight away."
+        ]
+      ],
+      "trips": [
+        "family-holidays",
+        "business"
+      ],
+      "city": "Kuala Lumpur",
+      "title": "Muslim-friendly Kuala Lumpur holidays | Saphara Travel",
+      "hero": "dest-hero-kuala-lumpur",
+      "hero_alt": "The Sultan Abdul Samad Building in Kuala Lumpur"
+    },
+    {
+      "slug": "langkawi",
+      "name": "Langkawi",
+      "country": "Malaysia",
+      "code": "LGK",
+      "img": "st-langkawi-skybridge.webp",
+      "alt": "The Langkawi Sky Bridge above the rainforest",
+      "hero": "dest-hero-langkawi",
+      "hero_alt": "The Langkawi Sky Bridge curving over the rainforest",
+      "flight": "17h · 2 stops",
+      "flight_long": "About 17 hours, with a stop in the Gulf and a short flight from Kuala Lumpur.",
+      "intro": "Rainforest down to the sea, quiet beaches and pool villas, with Kuala Lumpur on the way.",
+      "suits": "Honeymooners, couples and families",
+      "best": "November to April",
+      "why": [
+        [
+          "Pool villas",
+          "Private pools in the trees or on the beach."
+        ],
+        [
+          "City and island",
+          "A few nights in Kuala Lumpur first is easy to add."
+        ],
+        [
+          "Halal food",
+          "Malaysia makes eating halal straightforward; we still check each hotel."
+        ]
+      ],
+      "trips": [
+        "honeymoons",
+        "beach-and-island"
+      ],
+      "city": "Langkawi",
+      "title": "Muslim-friendly Langkawi holidays and villas | Saphara Travel"
+    },
+    {
+      "slug": "maldives",
+      "name": "Maldives",
+      "country": "Maldives",
+      "code": "MLE",
+      "img": "st-dest-maldives.webp",
+      "alt": "A turquoise lagoon and overwater villas in the Maldives",
+      "flight": "12h · 1 stop",
+      "flight_long": "About 12 hours with one stop from Manchester.",
+      "intro": "Clear lagoons, private-island resorts and overwater villas, with the right island making all the difference.",
+      "suits": "Honeymooners, couples and families",
+      "best": "November to April",
+      "why": [
+        [
+          "Private-island stays",
+          "A choice of islands and resorts, each with its own feel."
+        ],
+        [
+          "Overwater villas",
+          "Private pools, sea views and direct access to the lagoon at selected resorts."
+        ],
+        [
+          "Honeymoons and families",
+          "Quiet adults-focused resorts or islands with family facilities."
+        ]
+      ],
+      "trips": [
+        "honeymoons",
+        "beach-and-island",
+        "family-holidays"
+      ],
+      "city": "Malé · resort islands",
+      "title": "Muslim-friendly Maldives holidays and resorts | Saphara Travel"
+    }
   ],
-  "beach-and-island": [
-   "st-panel-beach.webp",
-   "A headland at sunset in Phuket"
+  "RESORT_PLACES": [
+    {
+      "name": "Maldives",
+      "country": "Maldives",
+      "code": "MLE",
+      "img": "st-dest-maldives.webp",
+      "alt": "An island ringed by reef in the Maldives",
+      "flight": "12h · 1 stop",
+      "flight_long": "About 12 hours with one stop.",
+      "city": "Malé"
+    },
+    {
+      "name": "Seychelles",
+      "country": "Seychelles",
+      "code": "SEZ",
+      "img": "st-dest-seychelles.webp",
+      "alt": "A palm-lined lane on La Digue in the Seychelles",
+      "flight": "13h · 1 stop",
+      "flight_long": "About 13 hours with one stop.",
+      "city": "Mahé"
+    },
+    {
+      "name": "Zanzibar",
+      "country": "Tanzania",
+      "code": "ZNZ",
+      "img": "st-dest-zanzibar.webp",
+      "alt": "A white sandbar and island in turquoise water off Zanzibar",
+      "flight": "13h · 1 stop",
+      "flight_long": "About 13 hours with one stop.",
+      "slug": "zanzibar",
+      "city": "Zanzibar"
+    }
   ],
-  "family-holidays": [
-   "st-family-phiphi.webp",
-   "The Phi Phi islands from above, with turquoise bays between the cliffs"
+  "TRIP_PAGES": {
+    "honeymoons": {
+      "name": "Honeymoons",
+      "trip": "Honeymoon",
+      "img": "page-hero-honeymoons",
+      "alt": "Steps from an overwater villa down into a clear lagoon",
+      "title": "Muslim-friendly honeymoons | Saphara Travel",
+      "desc": "Honeymoons planned around the two of you: private villas, quiet rooms and set-ups confirmed with the hotel. We check food, alcohol and privacy for you.",
+      "lead": "Your honeymoon, planned around the two of you. We find the room, ask the hotel for the details that matter and get them confirmed before you land.",
+      "arrange": [
+        [
+          "hotel",
+          "The right room",
+          "The room type chosen for you, not the cheapest one on the list."
+        ],
+        [
+          "heart",
+          "Honeymoon set-up",
+          "Set-ups, quiet rooms and early check-in, asked for and confirmed."
+        ],
+        [
+          "flights",
+          "Flights and transfers",
+          "Flights, transfers and private guides if you'd like them."
+        ],
+        [
+          "map",
+          "Two places, one trip",
+          "A city and then a beach, planned as one trip."
+        ],
+        [
+          "chat",
+          "On WhatsApp throughout",
+          "We stay with you while you're away, and after you're home."
+        ],
+        [
+          "transfers",
+          "Arrival sorted",
+          "A driver waiting, and the room ready as early as the hotel can manage."
+        ]
+      ],
+      "checks": [
+        "Whether the villa or pool is genuinely private",
+        "Halal kitchen, halal meat on request, or neither",
+        "Alcohol at the pool or on the beach",
+        "Modest swimwear rules",
+        "Adults-only areas",
+        "How long the transfer really takes"
+      ],
+      "dests": [
+        "zanzibar",
+        "langkawi",
+        "oman"
+      ],
+      "guide": "malta",
+      "faq": [
+        [
+          "Can you arrange a surprise set-up?",
+          "Yes. Tell us what you have in mind and we'll ask the hotel and confirm what they can do before you travel."
+        ],
+        [
+          "Can we split our stay between two hotels?",
+          "Yes. A city and a beach, or two islands, planned as one trip with the transfers between them."
+        ],
+        [
+          "Do you only do luxury?",
+          "No. We find the right hotel for your budget and tell you honestly what you get for it."
+        ]
+      ],
+      "cta": [
+        "Ready when you are."
+      ],
+      "btn": "Plan a honeymoon"
+    },
+    "beach-and-island": {
+      "name": "Beach & Island",
+      "trip": "Beach and island",
+      "img": "page-hero-beach",
+      "alt": "A longtail boat in a turquoise bay below limestone cliffs",
+      "title": "Muslim-friendly beach and island holidays | Saphara Travel",
+      "desc": "Beach and island resorts we've booked before, compared like for like, with the transfers sorted. We check the beach, the food and what's included.",
+      "lead": "Beach and island resorts we've booked before, with the transfers sorted and the room chosen properly. Tell us how you like to spend the day and we'll find the place that fits.",
+      "arrange": [
+        [
+          "beach",
+          "Resorts and villas",
+          "Compared like for like, so you can see the real difference."
+        ],
+        [
+          "transfers",
+          "Every transfer",
+          "Seaplane, speedboat or road, and how long each really takes."
+        ],
+        [
+          "compass",
+          "Days out",
+          "Excursions and boat trips if you want them, nothing if you don't."
+        ],
+        [
+          "hotel",
+          "Room choice",
+          "Beach access, pool views or quiet corners, asked for by name."
+        ],
+        [
+          "chat",
+          "On WhatsApp throughout",
+          "If the room isn't right, message us and we deal with the hotel."
+        ],
+        [
+          "paylater",
+          "Book now, pay later",
+          "On eligible free cancellation rates, nothing upfront: no payment, no deposit until closer to your dates."
+        ]
+      ],
+      "checks": [
+        "Private, shared or public beach",
+        "How busy the beach gets",
+        "Board basis and what's really included",
+        "Food and alcohol at the resort",
+        "Transfer time door to door",
+        "Resort fees and deposits"
+      ],
+      "dests": [
+        "zanzibar",
+        "dubai",
+        "langkawi"
+      ],
+      "resorts": true,
+      "guide": "malta",
+      "faq": [
+        [
+          "Is all inclusive worth it?",
+          "Sometimes. We compare the same room on different board bases so you can see the real difference."
+        ],
+        [
+          "Which islands are quieter?",
+          "Tell us what quiet means to you and we'll suggest a few places that fit."
+        ],
+        [
+          "Can you check the beach before we book?",
+          "Yes. We ask the hotel and tell you what we find, including whether the beach is shared."
+        ]
+      ],
+      "cta": [
+        "Sea view, sorted."
+      ],
+      "btn": "Plan a beach trip"
+    },
+    "family-holidays": {
+      "name": "Family Holidays",
+      "trip": "Family holiday",
+      "img": "page-hero-family",
+      "alt": "Granite boulders and clear water at Anse Source d'Argent, Seychelles",
+      "title": "Muslim-friendly family holidays | Saphara Travel",
+      "desc": "Family holidays with the right rooms, the right pool and an easy transfer. Connecting rooms requested with the hotel, and food checked for halal needs.",
+      "lead": "Family holidays with the right rooms, the right pool and an easy transfer. We ask the questions you'd ask if you had the time, then book what works for everyone.",
+      "arrange": [
+        [
+          "family",
+          "The right rooms",
+          "Family rooms, suites and connecting rooms, requested with the hotel."
+        ],
+        [
+          "hotel",
+          "Cots and extra beds",
+          "Arranged in advance, not on arrival."
+        ],
+        [
+          "transfers",
+          "Transfers that fit",
+          "Sized for your family and your luggage."
+        ],
+        [
+          "beach",
+          "Pools and shade",
+          "Kids' pools, shade and kids' clubs, checked before you book."
+        ],
+        [
+          "chat",
+          "On WhatsApp throughout",
+          "We stay with you while you're away, and after you're home."
+        ],
+        [
+          "flights",
+          "Flights if you need them",
+          "Or hotels around flights you've already booked."
+        ]
+      ],
+      "checks": [
+        "Connecting or family rooms",
+        "Kids' pools and shade",
+        "Kids' clubs and ages",
+        "Food for fussy eaters and halal needs",
+        "Walking distance to the beach",
+        "Lifts and walking distances"
+      ],
+      "dests": [
+        "doha",
+        "dubai",
+        "oman"
+      ],
+      "guide": "malta",
+      "faq": [
+        [
+          "Can you guarantee connecting rooms?",
+          "Some hotels can only request connecting rooms, not guarantee them. We'll tell you which before you book."
+        ],
+        [
+          "Can grandparents join?",
+          "Yes. We plan rooms and transfers around everyone, including how far everyone can comfortably walk."
+        ],
+        [
+          "Do you book family Umrah trips?",
+          "We book the hotels in Makkah and Madinah and share driver and ziyarah contacts. We don't book Umrah flights."
+        ]
+      ],
+      "cta": [
+        "Room for everyone."
+      ],
+      "btn": "Plan a family trip"
+    },
+    "hotels": {
+      "name": "Hotel Only",
+      "trip": "Hotel only",
+      "img": "page-hero-hotels",
+      "alt": "A bright hotel suite with a sea view",
+      "title": "Hotel bookings and price checks | Saphara Travel",
+      "desc": "Already booked your flights? We book the hotel, transfers and tours around them, and we'll compare any hotel price you've found, like for like.",
+      "lead": "Already booked your flights? We'll book the hotel, the transfer and the tours around them. Found a hotel yourself? Send it over: second opinions are free.",
+      "arrange": [
+        [
+          "hotel",
+          "Hotel-only bookings",
+          "Anywhere, with your requests asked for and confirmed."
+        ],
+        [
+          "transfers",
+          "Airport transfers",
+          "A driver waiting when you land."
+        ],
+        [
+          "compass",
+          "Guides and excursions",
+          "Private guides and day trips if you want them."
+        ],
+        [
+          "fee",
+          "No service fee",
+          "The price we quote is the price you pay."
+        ],
+        [
+          "paylater",
+          "Book now, pay later",
+          "On eligible free cancellation rates, nothing upfront: no payment, no deposit until closer to your dates."
+        ],
+        [
+          "chat",
+          "On WhatsApp throughout",
+          "If something isn't right, we deal with the hotel."
+        ]
+      ],
+      "checks": [
+        "Room type",
+        "Board basis",
+        "Cancellation terms",
+        "Transfers",
+        "Resort fees",
+        "Deposits"
+      ],
+      "dests": [
+        "makkah-and-madinah",
+        "doha",
+        "kuala-lumpur"
+      ],
+      "guide": "new-york",
+      "faq": [
+        [
+          "Can you book a hotel I've found online?",
+          "Usually, yes. Send us the link and the price and we'll compare it like for like."
+        ],
+        [
+          "Do I pay now?",
+          "On all bookings with free cancellation, we don't take any payment or deposit until closer to your travel dates, before the free cancellation period ends. Non-refundable rates are paid when you book."
+        ],
+        [
+          "Is a hotel-only booking ATOL protected?",
+          "No. Hotel-only bookings and other services without a flight aren't covered by ATOL."
+        ]
+      ],
+      "cta": [
+        "Got your flights?",
+        "We've got the rest."
+      ],
+      "btn": "Plan a hotel stay"
+    },
+    "business": {
+      "name": "Business Travel",
+      "trip": "Business travel",
+      "img": "page-hero-business",
+      "alt": "Arched windows framing the Doha skyline at the Museum of Islamic Art",
+      "warm": true,
+      "title": "Business travel bookings | Saphara Travel",
+      "desc": "Hotels and flights for staff and clients, team and group trips, one point of contact on WhatsApp and an invoice for every booking.",
+      "lead": "Hotels and flights for staff and clients, handled by people you can actually message. One point of contact, and an invoice for every booking.",
+      "arrange": [
+        [
+          "flights",
+          "Hotels and flights",
+          "For business trips, booked and confirmed."
+        ],
+        [
+          "team",
+          "Team and group trips",
+          "Several travellers, one plan."
+        ],
+        [
+          "transfers",
+          "Transfers",
+          "Drivers at arrivals, sorted in advance."
+        ],
+        [
+          "people",
+          "One point of contact",
+          "The same people on WhatsApp from booking to return."
+        ],
+        [
+          "invoice",
+          "An invoice for every booking",
+          "Clear and easy to file."
+        ],
+        [
+          "chat",
+          "Changes at short notice",
+          "Message us and we'll sort it with the hotel or airline."
+        ]
+      ],
+      "checks": [
+        "Location for your meetings",
+        "Workspace and wifi",
+        "Breakfast times",
+        "Late check-out",
+        "Airport distance",
+        "Cancellation terms"
+      ],
+      "dests": [
+        "doha",
+        "dubai",
+        "kuala-lumpur"
+      ],
+      "guide": "new-york",
+      "faq": [
+        [
+          "Can you book for several travellers at once?",
+          "Yes. Send us the names as they appear on passports, the dates and where they need to be."
+        ],
+        [
+          "How do invoices work?",
+          "You get an invoice for every booking."
+        ],
+        [
+          "Can you handle last-minute changes?",
+          "Message us on WhatsApp and we'll do what the hotel or airline allows."
+        ]
+      ],
+      "cta": [
+        "Business trips.",
+        "Minus the admin."
+      ],
+      "btn": "Plan business travel"
+    },
+    "multi-city": {
+      "name": "Multi-City",
+      "trip": "Multi-city",
+      "img": "page-hero-multicity",
+      "alt": "Old Town shophouses in Phuket",
+      "title": "Multi-city trips and packages | Saphara Travel",
+      "desc": "Multi-city trips planned as one: flights, hotels and transfers for every leg, booked together and looked after on WhatsApp.",
+      "lead": "Tokyo, Kyoto and Osaka, or a city and then a beach. We put the whole route together: the flights, a hotel in each place and the transfers in between, booked as one trip.",
+      "arrange": [
+        [
+          "flights",
+          "Flights for every leg",
+          "Out, between cities and home, timed around your hotels."
+        ],
+        [
+          "hotel",
+          "A hotel in each city",
+          "Chosen for where you'll spend your days, compared like for like."
+        ],
+        [
+          "transfers",
+          "Transfers in between",
+          "Airports, stations and hotels joined up, so each move is easy."
+        ],
+        [
+          "map",
+          "The route worked out",
+          "How many nights where, and the easiest order to do it in."
+        ],
+        [
+          "shield",
+          "ATOL on flights and packages",
+          "Flights and flight-inclusive packages we book are ATOL protected by the ATOL holder we book them with, and you'll receive an ATOL Certificate. Hotels and other services booked without a flight aren't covered by ATOL."
+        ],
+        [
+          "chat",
+          "On WhatsApp throughout",
+          "One chat for the whole trip, while you're away and after you're home."
+        ]
+      ],
+      "checks": [
+        "Enough time between landing and check-in",
+        "Early check-in or late check-out on travel days",
+        "Halal food near each hotel",
+        "Mosques and prayer spaces nearby",
+        "Luggage between cities",
+        "How long each transfer really takes"
+      ],
+      "dests": [
+        "doha",
+        "dubai",
+        "kuala-lumpur"
+      ],
+      "guide": "new-york",
+      "faq": [
+        [
+          "Can you book the flights as well as the hotels?",
+          "Yes. We book the flights, the hotels and the transfers together so the whole trip fits. Flights and flight-inclusive packages we book are ATOL protected by the ATOL holder we book them with, and you'll receive an ATOL Certificate. Hotel-only bookings and other services without a flight aren't covered by ATOL."
+        ],
+        [
+          "Do you only plan places on this website?",
+          "No. Tell us the cities you have in mind, Japan for example, and we'll work out the route with you."
+        ],
+        [
+          "What if a flight changes during the trip?",
+          "Message us on WhatsApp. We'll look at the hotels and transfers either side and sort what we can with them."
+        ]
+      ],
+      "cta": [
+        "Got a route in mind?"
+      ],
+      "btn": "Plan a multi-city trip"
+    }
+  },
+  "RPIMG": {
+    "honeymoons": [
+      "st-panel-honeymoon.webp",
+      "A shaded path through granite boulders to the beach"
+    ],
+    "beach-and-island": [
+      "st-panel-beach.webp",
+      "A headland at sunset in Phuket"
+    ],
+    "family-holidays": [
+      "st-family-phiphi.webp",
+      "The Phi Phi islands from above, with turquoise bays between the cliffs"
+    ],
+    "hotels": [
+      "st-hotel-balcony.webp",
+      "A white bed beside a balcony with a sea view"
+    ],
+    "business": [
+      "st-panel-business.webp",
+      "A marble arched corridor in Muscat"
+    ],
+    "multi-city": [
+      "st-multi-westbay.webp",
+      "The Doha skyline across the water from a quiet beach"
+    ]
+  },
+  "TRIP_HEADS": {
+    "honeymoons": [
+      [
+        "Made for two."
+      ],
+      [
+        "The quiet details.",
+        "Checked first."
+      ],
+      [
+        "Where couples go."
+      ]
+    ],
+    "beach-and-island": [
+      [
+        "Beach days.",
+        "Booked properly."
+      ],
+      [
+        "We read the small print."
+      ],
+      [
+        "Islands we know."
+      ]
+    ],
+    "family-holidays": [
+      [
+        "Everyone sorted."
+      ],
+      [
+        "What parents ask.",
+        "We ask first."
+      ],
+      [
+        "Easy with kids."
+      ]
+    ],
+    "hotels": [
+      [
+        "Just the hotel.",
+        "Or a bit more."
+      ],
+      [
+        "Compared like for like."
+      ],
+      [
+        "Where we book most."
+      ]
+    ],
+    "business": [
+      null,
+      [
+        "Location first.",
+        "Then the rest."
+      ],
+      [
+        "Where teams go."
+      ]
+    ],
+    "multi-city": [
+      [
+        "Every leg.",
+        "Booked together."
+      ],
+      [
+        "The joins.",
+        "Checked first."
+      ],
+      [
+        "Cities to combine."
+      ]
+    ]
+  },
+  "DEST_ICONS": {
+    "zanzibar": [
+      "beach",
+      "map",
+      "heart"
+    ],
+    "doha": [
+      "family",
+      "flights",
+      "hotel"
+    ],
+    "dubai": [
+      "beach",
+      "map",
+      "family"
+    ],
+    "oman": [
+      "map",
+      "compass",
+      "hotel"
+    ],
+    "makkah-and-madinah": [
+      "pin",
+      "people",
+      "flights"
+    ],
+    "kuala-lumpur": [
+      "flights",
+      "hotel",
+      "map"
+    ],
+    "langkawi": [
+      "hotel",
+      "map",
+      "heart"
+    ],
+    "maldives": [
+      "hotel",
+      "beach",
+      "heart"
+    ]
+  },
+  "TRIPS": [
+    [
+      "honeymoons",
+      "Honeymoons",
+      "st-card-honeymoon.webp",
+      [
+        "Just married.",
+        "Do not disturb."
+      ]
+    ],
+    [
+      "beach-and-island",
+      "Beach & Island",
+      "st-card-beach.webp",
+      [
+        "Beach and island resorts.",
+        "Transfers sorted."
+      ]
+    ],
+    [
+      "family-holidays",
+      "Family Holidays",
+      "st-family-lazio.webp",
+      [
+        "Connecting rooms.",
+        "Not just connecting flights."
+      ]
+    ],
+    [
+      "multi-city",
+      "Multi-City",
+      "st-card-multicity.webp",
+      [
+        "Multi-city trips.",
+        "Planned as one."
+      ]
+    ],
+    [
+      "hotels",
+      "Hotel Only",
+      "st-hotel-suite.webp",
+      [
+        "Got your flights?",
+        "We'll do the rest."
+      ]
+    ],
+    [
+      "business",
+      "Business Travel",
+      "st-card-business.webp",
+      [
+        "Business trips.",
+        "Minus the admin."
+      ]
+    ]
   ],
-  "hotels": [
-   "st-hotel-balcony.webp",
-   "A white bed beside a balcony with a sea view"
+  "FLAGS": {
+    "ba": "<svg viewBox=\"0 0 30 20\"><rect width=\"30\" height=\"20\" fill=\"#002F6C\"/><path d=\"M9 0h13v20z\" fill=\"#FECB00\"/><circle cx=\"7.2\" cy=\"1.4\" r=\".85\" fill=\"#fff\"/><circle cx=\"9.2\" cy=\"4.25\" r=\".85\" fill=\"#fff\"/><circle cx=\"11.2\" cy=\"7.1\" r=\".85\" fill=\"#fff\"/><circle cx=\"13.2\" cy=\"9.950000000000001\" r=\".85\" fill=\"#fff\"/><circle cx=\"15.2\" cy=\"12.8\" r=\".85\" fill=\"#fff\"/><circle cx=\"17.2\" cy=\"15.65\" r=\".85\" fill=\"#fff\"/><circle cx=\"19.2\" cy=\"18.5\" r=\".85\" fill=\"#fff\"/></svg>",
+    "mt": "<svg viewBox=\"0 0 30 20\"><rect width=\"15\" height=\"20\" fill=\"#fff\"/><rect x=\"15\" width=\"15\" height=\"20\" fill=\"#CF142B\"/><rect x=\"3\" y=\"2.5\" width=\"3\" height=\"3\" fill=\"#C9C9C9\"/></svg>",
+    "us": "<svg viewBox=\"0 0 30 20\"><rect width=\"30\" height=\"20\" fill=\"#fff\"/><rect y=\"0.00\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"3.08\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"6.15\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"9.23\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"12.31\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"15.38\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"18.46\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect width=\"13\" height=\"10.8\" fill=\"#3C3B6E\"/></svg>"
+  },
+  "WA_PATH": "<path fill=\"currentColor\" d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z\"/>",
+  "DESC_OVERRIDES": {
+    "destinations/makkah-and-madinah.html": "Umrah hotels in Makkah and Madinah, chosen for the walk to the Haram and who's travelling. Driver and ziyarah contacts too. We don't book Umrah flights.",
+    "guides/new-york.html": "Where we ate in New York, from Brooklyn to Manhattan, at places listed as halal: our own picks from our own trip, with the details to check before you go.",
+    "cookies.html": "This website doesn't use cookies, so there's nothing to accept or decline. If that ever changes, this page will say so first.",
+    "destinations/zanzibar.html": "Zanzibar beach resorts and Stone Town stays, about 13 hours from Manchester with one stop. We check the food, alcohol and privacy at each resort for you.",
+    "destinations/doha.html": "Desert, sea and some of the best hotels in the Gulf, about seven hours direct from Manchester. City and beach hotels in Doha, looked after on WhatsApp.",
+    "destinations/dubai.html": "Beach resorts and city hotels in Dubai, about seven hours direct from Manchester, with quieter Ras Al Khaimah an hour up the coast.",
+    "destinations/oman.html": "Mountains, wadis and a calm coastline, with Muscat's mosques and souqs close by. Hotels in Oman, about seven hours direct from Manchester to Muscat.",
+    "destinations/kuala-lumpur.html": "City hotels, mosques and markets in Malaysia's capital, about 15 hours from Manchester with one stop, and easy to pair with a few days in Langkawi.",
+    "destinations/langkawi.html": "Rainforest down to the sea, quiet beaches and pool villas in Langkawi, with Kuala Lumpur on the way. Villas compared like for like before you book.",
+    "guides/sarajevo.html": "Where to eat halal, where to pray and what to do in Sarajevo, from our own trip: cafes and desserts, the old town, Gazi Husrev-beg Mosque and more.",
+    "guides/malta.html": "Restaurants with halal menus around Sliema, St Julian's and Msida, the mosque in Paola, and the best of Malta and Gozo, from our own trip."
+  },
+  "SKYLINE": "<svg class=\"skyline\" viewBox=\"0 0 1440 220\" preserveAspectRatio=\"xMidYMax slice\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"currentColor\"><rect x=\"60\" y=\"150\" width=\"150\" height=\"86\"/><rect x=\"186\" y=\"140\" width=\"120\" height=\"96\"/><rect x=\"204\" y=\"124\" width=\"90\" height=\"112\"/><rect x=\"220\" y=\"110\" width=\"62\" height=\"126\"/><rect x=\"230\" y=\"96\" width=\"42\" height=\"140\"/><path d=\"M234 96V72h34v24Z\"/><path d=\"M306 236V112l5-6h10l5 6v124Z\"/><rect x=\"309\" y=\"98\" width=\"14\" height=\"8\"/><rect x=\"326\" y=\"176\" width=\"46\" height=\"60\"/><path d=\"M402 236v-38a36 36 0 0 1 72 0v38Z\"/><rect x=\"436\" y=\"150\" width=\"4\" height=\"12\"/><circle cx=\"438\" cy=\"148\" r=\"3\"/><path d=\"M382 236V122l4-14 4 14V236Z\"/><rect x=\"379\" y=\"144\" width=\"14\" height=\"4\" rx=\"1\"/><rect x=\"380\" y=\"174\" width=\"12\" height=\"3\" rx=\"1\"/><circle cx=\"386\" cy=\"104\" r=\"2.5\"/><path d=\"M486 236V134l4-14 4 14V236Z\"/><rect x=\"483\" y=\"156\" width=\"14\" height=\"4\" rx=\"1\"/><rect x=\"484\" y=\"186\" width=\"12\" height=\"3\" rx=\"1\"/><circle cx=\"490\" cy=\"116\" r=\"2.5\"/><path d=\"M548 214h92q-8 13-34 13h-26q-24 0-32-13Z\"/><path d=\"M592 212V140l2-2 3 2v72Z\"/><path d=\"M594 140q34 26 40 70h-38Z\"/><path d=\"M590 154q-20 22-30 56h28Z\" opacity=\".85\"/><rect x=\"690\" y=\"172\" width=\"26\" height=\"64\"/><rect x=\"722\" y=\"150\" width=\"30\" height=\"86\"/><rect x=\"758\" y=\"182\" width=\"34\" height=\"54\"/><rect x=\"798\" y=\"128\" width=\"28\" height=\"108\"/><path d=\"M836 236q22-74 0-150h50q-22 76 0 150Z\"/><rect x=\"896\" y=\"160\" width=\"30\" height=\"76\"/><path d=\"M936 236V100q0-44 27-62 27 18 27 62v136Z\"/><rect x=\"961.5\" y=\"8\" width=\"3\" height=\"32\" rx=\"1.5\"/><rect x=\"998\" y=\"140\" width=\"24\" height=\"96\"/><path d=\"M1028 236V104l14-12 14 12v132Z\"/><path d=\"M1066 236V76l14-14 14 14v160Z\"/><path d=\"M1100 236V76l14-14 14 14v160Z\"/><rect x=\"1136\" y=\"120\" width=\"30\" height=\"116\"/><rect x=\"1172\" y=\"154\" width=\"36\" height=\"82\"/><path d=\"M1214 236V112l12-18 12 18v124Z\"/><rect x=\"1246\" y=\"142\" width=\"28\" height=\"94\"/><rect x=\"1280\" y=\"172\" width=\"44\" height=\"64\"/><rect x=\"1330\" y=\"132\" width=\"24\" height=\"104\"/><rect x=\"1360\" y=\"184\" width=\"60\" height=\"52\"/></g><g fill=\"none\" stroke=\"var(--sand-deep)\" stroke-width=\"1.6\" stroke-linecap=\"round\"><path d=\"M72 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M88 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M104 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M120 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M136 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M152 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M168 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M184 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M70 172h6\" /><path d=\"M85 172h6\" /><path d=\"M100 172h6\" /><path d=\"M115 172h6\" /><path d=\"M130 172h6\" /><path d=\"M145 172h6\" /><path d=\"M160 172h6\" /><path d=\"M175 172h6\" /><path d=\"M190 172h6\" /><path d=\"M241 86q10-9 20 0\" /><path d=\"M190 162h18M198 150h8\" /><path d=\"M309 120h14\" /><path d=\"M309 132h14\" /><path d=\"M309 144h14\" /><path d=\"M309 156h14\" /><path d=\"M309 168h14\" /><path d=\"M309 180h14\" /><path d=\"M309 192h14\" /><path d=\"M414 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M430 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M446 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M462 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M694 182h18\" /><path d=\"M694 193h18\" /><path d=\"M694 204h18\" /><path d=\"M694 215h18\" /><path d=\"M694 226h18\" /><path d=\"M726 160h22\" /><path d=\"M726 171h22\" /><path d=\"M726 182h22\" /><path d=\"M726 193h22\" /><path d=\"M726 204h22\" /><path d=\"M726 215h22\" /><path d=\"M726 226h22\" /><path d=\"M762 192h26\" /><path d=\"M762 203h26\" /><path d=\"M762 214h26\" /><path d=\"M762 225h26\" /><path d=\"M802 138h20\" /><path d=\"M802 149h20\" /><path d=\"M802 160h20\" /><path d=\"M802 171h20\" /><path d=\"M802 182h20\" /><path d=\"M802 193h20\" /><path d=\"M802 204h20\" /><path d=\"M802 215h20\" /><path d=\"M802 226h20\" /><path d=\"M839.6 97h42.8\" /><path d=\"M840.25 108h41.5\" /><path d=\"M840.9 119h40.2\" /><path d=\"M841.55 130h38.9\" /><path d=\"M846.2 141h29.6\" /><path d=\"M846.85 152h28.3\" /><path d=\"M847.5 163h27.0\" /><path d=\"M846.85 174h28.3\" /><path d=\"M846.2 185h29.6\" /><path d=\"M841.55 196h38.9\" /><path d=\"M840.9 207h40.2\" /><path d=\"M840.25 218h41.5\" /><path d=\"M839.6 229h42.8\" /><path d=\"M900 168h22\" /><path d=\"M900 178h22\" /><path d=\"M900 188h22\" /><path d=\"M900 198h22\" /><path d=\"M900 208h22\" /><path d=\"M900 218h22\" /><path d=\"M900 228h22\" /><path d=\"M940 88l23-16 23 16\" /><path d=\"M940 106l23-16 23 16\" /><path d=\"M940 124l23-16 23 16\" /><path d=\"M940 142l23-16 23 16\" /><path d=\"M940 160l23-16 23 16\" /><path d=\"M940 178l23-16 23 16\" /><path d=\"M940 196l23-16 23 16\" /><path d=\"M940 214l23-16 23 16\" /><path d=\"M940 232l23-16 23 16\" /><path d=\"M1032 112h20\" /><path d=\"M1032 122h20\" /><path d=\"M1032 132h20\" /><path d=\"M1032 142h20\" /><path d=\"M1032 152h20\" /><path d=\"M1032 162h20\" /><path d=\"M1032 172h20\" /><path d=\"M1032 182h20\" /><path d=\"M1032 192h20\" /><path d=\"M1032 202h20\" /><path d=\"M1032 212h20\" /><path d=\"M1032 222h20\" /><path d=\"M1070 86h20\" /><path d=\"M1070 95h20\" /><path d=\"M1070 104h20\" /><path d=\"M1070 113h20\" /><path d=\"M1070 122h20\" /><path d=\"M1070 131h20\" /><path d=\"M1070 140h20\" /><path d=\"M1070 149h20\" /><path d=\"M1070 158h20\" /><path d=\"M1070 167h20\" /><path d=\"M1070 176h20\" /><path d=\"M1070 185h20\" /><path d=\"M1070 194h20\" /><path d=\"M1070 203h20\" /><path d=\"M1070 212h20\" /><path d=\"M1070 221h20\" /><path d=\"M1104 86h20\" /><path d=\"M1104 95h20\" /><path d=\"M1104 104h20\" /><path d=\"M1104 113h20\" /><path d=\"M1104 122h20\" /><path d=\"M1104 131h20\" /><path d=\"M1104 140h20\" /><path d=\"M1104 149h20\" /><path d=\"M1104 158h20\" /><path d=\"M1104 167h20\" /><path d=\"M1104 176h20\" /><path d=\"M1104 185h20\" /><path d=\"M1104 194h20\" /><path d=\"M1104 203h20\" /><path d=\"M1104 212h20\" /><path d=\"M1104 221h20\" /><path d=\"M1140 129h22\" /><path d=\"M1140 139h22\" /><path d=\"M1140 149h22\" /><path d=\"M1140 159h22\" /><path d=\"M1140 169h22\" /><path d=\"M1140 179h22\" /><path d=\"M1140 189h22\" /><path d=\"M1140 199h22\" /><path d=\"M1140 209h22\" /><path d=\"M1140 219h22\" /><path d=\"M1140 229h22\" /><path d=\"M1176 163h28\" /><path d=\"M1176 173h28\" /><path d=\"M1176 183h28\" /><path d=\"M1176 193h28\" /><path d=\"M1176 203h28\" /><path d=\"M1176 213h28\" /><path d=\"M1176 223h28\" /><path d=\"M1250 151h20\" /><path d=\"M1250 161h20\" /><path d=\"M1250 171h20\" /><path d=\"M1250 181h20\" /><path d=\"M1250 191h20\" /><path d=\"M1250 201h20\" /><path d=\"M1250 211h20\" /><path d=\"M1250 221h20\" /><path d=\"M1334 141h16\" /><path d=\"M1334 151h16\" /><path d=\"M1334 161h16\" /><path d=\"M1334 171h16\" /><path d=\"M1334 181h16\" /><path d=\"M1334 191h16\" /><path d=\"M1334 201h16\" /><path d=\"M1334 211h16\" /><path d=\"M1334 221h16\" /></g><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\".6\"><path d=\"M0 212h540M650 212h790M80 220h300M700 220h400M1180 220h220\" /></g></svg>",
+  "TRIP_LINES": {
+    "honeymoons": "Set-ups and quiet rooms, confirmed with the hotel.",
+    "beach-and-island": "Resorts we've booked before, transfers sorted.",
+    "family-holidays": "The right rooms, the right pool, an easy transfer.",
+    "hotels": "Hotels, transfers and tours around your flights.",
+    "business": "Staff and client trips, one point of contact.",
+    "multi-city": "Flights, hotels and transfers for every leg, booked together."
+  },
+  "FIT": {
+    "honeymoons": 3.9,
+    "beach-and-island": 5,
+    "family-holidays": 7.1,
+    "hotels": 7.6,
+    "business": 4.5
+  },
+  "GUIDE_BODY": {
+    "sarajevo": {
+      "facts": [
+        [
+          "Halal food",
+          "Widely available; some places also serve alcohol"
+        ],
+        [
+          "Mosques",
+          "Throughout the city, including Gazi Husrev-beg"
+        ],
+        [
+          "Alcohol",
+          "Served in some restaurants and bars"
+        ],
+        [
+          "Dress",
+          "Relaxed; cover up for mosque visits"
+        ],
+        [
+          "When to go",
+          "Late spring and early autumn"
+        ],
+        [
+          "Suits",
+          "Couples and families"
+        ],
+        [
+          "Pace",
+          "Slow and walkable"
+        ],
+        [
+          "Last checked",
+          "14 November 2026"
+        ]
+      ],
+      "sections": [
+        [
+          "Where to eat",
+          "Places we ate on our trip. Check halal status with each place before you go, and ask about cross-contamination if some also serve alcohol.",
+          [
+            [
+              "ETA Burger",
+              "smash burgers"
+            ],
+            [
+              "Klopa",
+              "modern, casual dishes"
+            ],
+            [
+              "Ćevabdžinica Željo",
+              "for ćevapi"
+            ],
+            [
+              "Buregdžinica Bosna",
+              "for burek"
+            ],
+            [
+              "burgrs",
+              "smash burgers too"
+            ],
+            [
+              "Pekara Imaret",
+              "pizzas and sweet pastries"
+            ],
+            [
+              "Brunch SA",
+              "brunch and good coffee"
+            ]
+          ]
+        ],
+        [
+          "Cafes and desserts",
+          "",
+          [
+            [
+              "Caffe Ayna",
+              "a must-visit"
+            ],
+            [
+              "Kamarija",
+              "views over the city"
+            ],
+            [
+              "Baklava Dućan",
+              "traditional Bosnian desserts"
+            ],
+            [
+              "Ramis Pastry",
+              "pastries and local sweets"
+            ],
+            [
+              "La Soul Cafe",
+              "coffee, with burgers too"
+            ],
+            [
+              "Sweets&Co",
+              "pretty desserts"
+            ]
+          ]
+        ],
+        [
+          "Places to visit",
+          "",
+          [
+            [
+              "Baščaršija",
+              "the Ottoman old town"
+            ],
+            [
+              "Yellow Fortress",
+              "a sunset view over the city"
+            ],
+            [
+              "Latin Bridge",
+              "where Franz Ferdinand was assassinated in 1914"
+            ],
+            [
+              "Tunnel of Hope Museum",
+              "the city's wartime history"
+            ],
+            [
+              "Trebević cable car",
+              "views over Sarajevo"
+            ]
+          ]
+        ],
+        [
+          "Things to do",
+          "",
+          [
+            [
+              "Lukomir",
+              "a day trip to the mountain village"
+            ],
+            [
+              "Vrelo Bosne",
+              "a walk through the park"
+            ],
+            [
+              "Jumu'ah",
+              "at Gazi Husrev-beg Mosque"
+            ],
+            [
+              "Neretva",
+              "rafting near Konjic"
+            ],
+            [
+              "Ferhadija",
+              "a stroll along the old street"
+            ]
+          ]
+        ],
+        [
+          "Where to pray",
+          "",
+          [
+            [
+              "Gazi Husrev-beg Mosque",
+              ""
+            ],
+            [
+              "Emperor's Mosque",
+              ""
+            ],
+            [
+              "King Fahd Mosque",
+              ""
+            ],
+            [
+              "Ali Pasha's Mosque",
+              ""
+            ],
+            [
+              "Ilidža Central Mosque",
+              "very modern"
+            ]
+          ]
+        ]
+      ]
+    },
+    "malta": {
+      "facts": [
+        [
+          "Halal food",
+          "Several restaurants with halal menus, mostly around Sliema, St Julian's and Msida"
+        ],
+        [
+          "Mosque",
+          "Mariam Al-Batool Mosque, Paola"
+        ],
+        [
+          "Alcohol",
+          "Common in restaurants and hotels"
+        ],
+        [
+          "Dress",
+          "Relaxed; cover up in churches and the mosque"
+        ],
+        [
+          "When to go",
+          "Spring and autumn"
+        ],
+        [
+          "Suits",
+          "Couples, families and first-timers"
+        ],
+        [
+          "Getting around",
+          "Small and easy, with ferries to Gozo"
+        ],
+        [
+          "Last checked",
+          "14 November 2026"
+        ]
+      ],
+      "sections": [
+        [
+          "Where to eat",
+          "Places listed as halal, or with a halal menu. Check with each place before you go, and ask about cross-contamination where alcohol is served too.",
+          [
+            [
+              "Shakinah, Msida",
+              "listed as halal"
+            ],
+            [
+              "Hugo's Burger Bar, St Julian's",
+              "ask which items are halal"
+            ],
+            [
+              "Hassan Fatayer & Falafel, Sliema",
+              "run by two Syrian brothers"
+            ],
+            [
+              "Kebab Ji, Sliema",
+              "Lebanese"
+            ],
+            [
+              "Sharma Ethnic Cuisines, St Julian's",
+              "mixed cuisine"
+            ],
+            [
+              "Middle East Muse, San Ġiljan",
+              "Turkish"
+            ]
+          ]
+        ],
+        [
+          "Cafes and desserts",
+          "",
+          [
+            [
+              "Lot 61 Coffee Roasters, Valletta",
+              ""
+            ],
+            [
+              "Fontanella Tea Garden, Mdina",
+              "a must-visit, with views across the island"
+            ],
+            [
+              "Debbie's Cafe, Mellieħa",
+              ""
+            ],
+            [
+              "Sea View Cafe, Mellieħa",
+              ""
+            ],
+            [
+              "Terryberry Tearoom, St Paul's Bay",
+              ""
+            ]
+          ]
+        ],
+        [
+          "Places to visit",
+          "",
+          [
+            [
+              "Comino",
+              "by boat, for clear water"
+            ],
+            [
+              "Upper Barrakka Gardens",
+              "views over the Grand Harbour"
+            ],
+            [
+              "Għajn Tuffieħa Bay",
+              "for the views"
+            ],
+            [
+              "Mdina",
+              "the old walled city"
+            ],
+            [
+              "Blue Grotto",
+              "sea caves on the south coast"
+            ],
+            [
+              "Gozo",
+              "the salt pans and the Citadel"
+            ]
+          ]
+        ],
+        [
+          "Where to pray",
+          "Mariam Al-Batool Mosque in Paola, around 15 to 20 minutes from Valletta, has a prayer hall, wudu area and Islamic centre. Jumu'ah is held there; arrive early for a space inside. A prayer app helps with times and qibla, and a travel prayer mat is worth packing.",
+          []
+        ]
+      ]
+    },
+    "new-york": {
+      "facts": [
+        [
+          "Flight time",
+          "About 8 hours direct from Manchester"
+        ],
+        [
+          "Halal food",
+          "Plenty, across all five boroughs"
+        ],
+        [
+          "Getting around",
+          "Subway, walking and the odd cab"
+        ],
+        [
+          "Suits",
+          "Couples, families and first-timers"
+        ],
+        [
+          "When to go",
+          "Spring and autumn"
+        ],
+        [
+          "Dress",
+          "Anything goes"
+        ],
+        [
+          "Budget",
+          "Plan for city prices"
+        ],
+        [
+          "Last checked",
+          "14 November 2026"
+        ]
+      ],
+      "sections": [
+        [
+          "Brunch and cafes",
+          "Places we ate at that are listed as halal. Opening times, menus and halal status change, so check before you go.",
+          [
+            [
+              "Atelier December, Brooklyn",
+              "brunch: try the pistachio pancake"
+            ],
+            [
+              "Cafe Juliet, Staten Island",
+              "the farmer's breakfast platter and cardamom pancakes"
+            ],
+            [
+              "Moe's Doughs, Brooklyn",
+              "doughnuts; try the apple fritter"
+            ]
+          ]
+        ],
+        [
+          "Dinner",
+          "",
+          [
+            [
+              "Miraj Grill, Manhattan",
+              "Persian grill and family platters"
+            ],
+            [
+              "Pizza Loves Sauce, Manhattan",
+              "pizza by the slice and garlic knots"
+            ],
+            [
+              "Rooh's Smoked Meat Steak House, West Hempstead",
+              "barbecue, steaks and brisket"
+            ],
+            [
+              "Stack'd Burger, Brooklyn",
+              "Palestinian-owned; burgers, wings and loaded fries"
+            ],
+            [
+              "Up A Notch food truck, Brooklyn",
+              "combo over rice and smash burgers"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "WHY_ITEMS": [
+    [
+      "people",
+      "Your call is important to us. So we answer it.",
+      "You talk to us directly, not a call centre."
+    ],
+    [
+      "fee",
+      "No service fee",
+      "The price we quote is the price you pay."
+    ],
+    [
+      "paylater",
+      "Book now, pay later",
+      "On eligible free cancellation rates, nothing upfront: no payment, no deposit until closer to your dates."
+    ],
+    [
+      "hotel",
+      "We deal with the hotel",
+      "Special requests, changes and any problems."
+    ],
+    [
+      "chat",
+      "We stay on board after you land.",
+      "On WhatsApp throughout your stay, and after you're home."
+    ],
+    [
+      "shield",
+      "ATOL protection on flights and packages",
+      "Hotel-only bookings aren't covered."
+    ]
   ],
-  "business": [
-   "st-panel-business.webp",
-   "A marble arched corridor in Muscat"
+  "FAQ_Q1": [
+    [
+      "Why use Saphara instead of booking it myself?",
+      "You can book it yourself. What we add is the part booking sites don't do: we compare a few hotels we'd book ourselves, ask the hotel for your requests and get them confirmed, and stay on WhatsApp while you're away. There's no service fee for any of it."
+    ],
+    [
+      "Can you beat a price I've found?",
+      "Sometimes, not always. Send us the hotel and the price and we'll compare it like for like: the same room, board basis, cancellation terms and extras. If we can get a better rate, we'll tell you. If we can't, we'll tell you that too."
+    ],
+    [
+      "Do you charge a fee?",
+      "No. We don't charge a service fee, and the price we quote is the price you pay, with no hidden fees."
+    ],
+    [
+      "How do you make money if there's no service fee?",
+      "The rates we get from hotels and suppliers include our margin, so you pay the price we quote and nothing extra."
+    ],
+    [
+      "Are the hotels you recommend halal?",
+      "We don't call a hotel halal unless we've checked. A resort in a Muslim-majority country isn't automatically halal, so for each hotel we look at the kitchen, whether alcohol is served, the beach and pools, and prayer space. Then we tell you plainly."
+    ],
+    [
+      "Are all your hotels halal or alcohol-free?",
+      "No. We check each hotel and tell you plainly what it offers."
+    ],
+    [
+      "Can you help with Umrah?",
+      "Yes, with the hotels. We book hotels in Makkah and Madinah, share trusted contacts for drivers and ziyarah, and help you find a good flight itinerary. We don't book Umrah flights. Travelling with elderly parents or young children? Tell us and we'll put the walk to the Haram first."
+    ],
+    [
+      "Do you only do hotels, or full holidays?",
+      "Both. Hotel-only stays, and full trips with flights, transfers, private guides and multi-centre itineraries."
+    ],
+    [
+      "I've already booked my flights. Can you still help?",
+      "Yes. We can arrange hotels, airport transfers, tour guides and excursions around flights you've already booked."
+    ],
+    [
+      "Where are you based?",
+      "Saphara Travel Group Ltd is registered in England and Wales (company number 16336079). We work with clients across the UK, over WhatsApp."
+    ]
   ],
-  "multi-city": [
-   "st-multi-westbay.webp",
-   "The Doha skyline across the water from a quiet beach"
+  "FAQ_Q2": [
+    [
+      "Is my booking ATOL protected?",
+      "Flights and flight-inclusive packages we book are ATOL protected by the ATOL holder we book them with, and you'll receive an ATOL Certificate. Hotel-only bookings and other services without a flight aren't covered by ATOL."
+    ],
+    [
+      "How does payment work?",
+      "On all bookings with free cancellation, we don't take any payment or deposit until closer to your travel dates, before the free cancellation period ends. Non-refundable rates are paid when you book. Payments are made securely, and we accept American Express on some bookings, so mention it when you enquire."
+    ]
+  ],
+  "FAQ_Q3": [
+    [
+      "What happens after I send a message?",
+      "We'll get back to you as soon as we can, with a few options compared like for like. Bigger trips can take a few days. Nothing is booked until you've chosen and said yes."
+    ],
+    [
+      "What if something goes wrong while I'm away?",
+      "Message us on WhatsApp. We're with you throughout your stay, and after you're home, and we'll take it up with the hotel for you."
+    ],
+    [
+      "Do you arrange business travel?",
+      "Yes. Hotels and flights for staff and clients, team and group trips, one point of contact on WhatsApp, and an invoice for every booking."
+    ]
+  ],
+  "LEGAL": [
+    [
+      "privacy.html",
+      "Privacy policy | Saphara Travel",
+      "Privacy policy",
+      "<p class=\"updated\">Last updated: 14 November 2026</p>\n<p>This policy explains what personal information Saphara Travel collects, why, and what your rights are. We keep it simple, and we only collect what we need to plan and book your travel.</p>\n<h2>1. Who we are</h2>\n<p>Saphara Travel is a trading name of Saphara Travel Group Ltd (\"STG\"), a company registered in England and Wales, company number 16336079. <span class=\"reg-office\">Registered office: [REGISTERED OFFICE ADDRESS].</span></p>\n<p>We're the controller of your personal information. We're registered with the Information Commissioner's Office (ICO), registration reference ZB974796.</p>\n<p>Questions about your data: hello@sapharatravel.co.uk.</p>\n<h2>2. What we collect</h2>\n<h3>When you visit our website</h3>\n<ul>\n<li>Our website doesn't use cookies and doesn't store anything you type into the trip form. The form builds a message on your device, which opens in WhatsApp (or your email app) for you to send.</li>\n<li>We may use privacy-friendly analytics that count visits without cookies and without identifying you.</li>\n<li>Like all websites, our hosting provider processes basic technical data (such as your IP address and browser type) to deliver and protect the site.</li>\n<li>Our headline font is loaded from Adobe Fonts, the only third-party font service we use. Adobe receives your IP address to serve the font.</li>\n</ul>\n<h3>When you contact us or book</h3>\n<ul>\n<li>Names, phone number, email address and messages you send us.</li>\n<li>Trip details: destinations, dates, who's travelling, budget, room and meal preferences.</li>\n<li>Details needed to book: names as on passports, dates of birth, children's ages, and where needed passport details and copies.</li>\n<li>Requests that may reveal sensitive information, such as dietary requirements (including halal food), health or mobility needs, or religious requirements such as Umrah travel.</li>\n<li>Payment records: amounts, dates and payment references. We don't see or store card details. If you pay a supplier directly by card, you enter your card details on the supplier's secure payment page.</li>\n<li>Your feedback, reviews and complaints.</li>\n</ul>\n<h2>3. Why we use it, and our legal basis</h2>\n<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Why</th><th scope=\"col\">Legal basis</th></tr></thead><tbody><tr><td>Answering enquiries, preparing quotes and booking your trip</td><td>Taking steps at your request before a contract, and performing our contract with you</td></tr><tr><td>Passing your details to hotels, airlines and other suppliers to make and manage your booking</td><td>Performing our contract with you</td></tr><tr><td>Using sensitive information you choose to give us (such as health, dietary or religious requirements) to arrange your booking</td><td>Your explicit consent, which you can withdraw at any time (this may limit what we can arrange)</td></tr><tr><td>Keeping accounts and records, and meeting legal and tax obligations</td><td>Legal obligation</td></tr><tr><td>Looking after you during your trip and dealing with problems or complaints</td><td>Performing our contract, and our legitimate interest in helping you</td></tr><tr><td>Asking for a review or feedback after your trip, and occasionally telling past clients about similar trips</td><td>Our legitimate interest. You can opt out at any time</td></tr><tr><td>Protecting our business, for example against fraud</td><td>Our legitimate interest</td></tr></tbody></table></div>\n<p>We never sell your personal information.</p>\n<h2>4. Who we share it with</h2>\n<p>We only share what's needed, with:</p>\n<ul>\n<li><b>Travel suppliers:</b> hotels, airlines, ATOL-holding travel companies, transfer and excursion providers, and the booking platforms and wholesalers we book through. Many are outside the UK.</li>\n<li><b>Service providers who help us run the business:</b> WhatsApp (Meta), email and file storage (Google, IONOS), our task and booking tools, our bank and card providers, our website host, and invoicing tools. They act on our instructions.</li>\n<li><b>Professional advisers, insurers and authorities,</b> where needed (for example HMRC, the ICO, or the Civil Aviation Authority if an ATOL holder fails), or where the law requires it.</li>\n</ul>\n<h2>5. Transfers outside the UK</h2>\n<p>Booking travel abroad means sending your details to hotels and suppliers in the country you're visiting, which is necessary to perform your booking. Some of our service providers also store data outside the UK, for example in the United States. Where they do, we rely on safeguards recognised under UK law, such as the UK-US data bridge or the ICO's international data transfer agreement.</p>\n<h2>6. How long we keep it</h2>\n<ul>\n<li>Booking, payment and accounting records: 6 years after the end of the financial year of your trip, as required for tax and accounting.</li>\n<li>Passport copies and similar identity documents: deleted within 3 months of your return, unless we need them for a claim or complaint.</li>\n<li>Enquiries that don't lead to a booking: up to 2 years, so we can help if you come back.</li>\n<li>Messages in WhatsApp and email are kept in line with the above.</li>\n</ul>\n<h2>7. Your rights</h2>\n<p>You have the right to:</p>\n<ul>\n<li>access the personal information we hold about you</li>\n<li>ask us to correct it</li>\n<li>ask us to delete it (unless we need to keep it by law)</li>\n<li>object to, or ask us to restrict, how we use it</li>\n<li>withdraw consent where we rely on it</li>\n<li>ask us to transfer it to you or another organisation.</li>\n</ul>\n<p>To use any of these rights, email hello@sapharatravel.co.uk. We'll reply within one month.</p>\n<h2>8. Keeping it safe</h2>\n<p>We use password-protected accounts with two-step verification where available, limit access to the people who need it, and only share what's needed.</p>\n<h2>9. Complaints</h2>\n<p>If you're unhappy with how we've handled your information, please contact us first so we can put it right. You can also complain to the Information Commissioner's Office: ico.org.uk, 0303 123 1113.</p>\n<h2>10. Changes to this policy</h2>\n<p>We may update this policy from time to time. The date at the top shows when it last changed.</p>",
+      "How Saphara Travel handles your information. Our trip request form doesn't store anything; it opens WhatsApp with your message."
+    ],
+    [
+      "booking-terms.html",
+      "Booking terms | Saphara Travel",
+      "Booking terms",
+      "<p class=\"updated\">Last updated: 14 November 2026</p>\n<p>These terms apply to every booking you make with Saphara Travel. Please read them before you confirm a booking. By confirming a booking with us (by WhatsApp, email or any other way), you agree to them on behalf of everyone in your party.</p>\n<h2>1. About us</h2>\n<p>Saphara Travel is a trading name of Saphara Travel Group Ltd (\"STG\"), a company registered in England and Wales, company number 16336079. <span class=\"reg-office\">Registered office: [REGISTERED OFFICE ADDRESS].</span></p>\n<p>Contact: hello@sapharatravel.co.uk or WhatsApp +44 7887 353457.</p>\n<p>In these terms, \"STG\", \"we\", \"us\" and \"our\" mean Saphara Travel Group Ltd. \"You\" means the person making the booking (the lead name) and everyone travelling on the booking.</p>\n<h2>2. What we do and who your contract is with</h2>\n<p>We arrange travel for our clients. The type of booking decides who your contract is with and which terms apply. We'll always tell you which applies before you book.</p>\n<p><b>2.1 Hotels and other services without a flight</b> (for example hotel stays, airport transfers, private guides and excursions). There are two ways to book these, and we'll confirm which applies before you book:</p>\n<ul>\n<li><b>You pay us (bank transfer, or American Express where accepted).</b> Your contract is with us. We buy the service from hotels and other suppliers and are responsible for arranging it as booked.</li>\n<li><b>You pay the supplier directly by card, using a secure payment link we send you.</b> We act as your agent and arrange the booking for you, and your contract for the service is with the supplier named on the payment link and confirmation. The supplier's terms apply, and we're paid a commission by the supplier, not by you.</li>\n</ul>\n<p>Either way, the hotel's or supplier's own rules (for example check-in times, house rules and dress codes) also apply during your stay.</p>\n<p><b>2.2 Flights and flight-inclusive packages.</b> We sell flights and flight-inclusive packages as an agent for ATOL-holding travel companies. For these bookings your contract is with that company, and its booking conditions apply alongside these terms. We'll give you its name, its ATOL number and its booking conditions before you book, and your ATOL Certificate as soon as you pay. See section 10 and our <a href=\"atol-and-financial-protection.html\">ATOL and financial protection page</a>.</p>\n<p><b>2.3 If you book your own flights.</b> Many clients book their own flights directly with an airline and ask us to arrange the hotel and transfers. In that case your flights aren't part of your booking with us, we aren't responsible for them, and they aren't covered by our ATOL arrangements. We're happy to suggest a good flight itinerary, but you book and pay for the flights yourself.</p>\n<p><b>2.4 Umrah.</b> For Umrah trips we arrange hotels and can put you in touch with drivers and ziyarah providers. We can help you find a good flight itinerary, but we don't book Umrah flights. Contacts we pass on are independent providers, not our suppliers, and any arrangement you make with them is between you and them.</p>\n<h2>3. Quotes and prices</h2>\n<ul>\n<li>We don't charge a service fee. The price we quote is the price you pay for what's quoted, unless something you ask us to change affects it.</li>\n<li>Quotes are based on availability and prices at the time we check them. They aren't guaranteed until your booking is confirmed, and prices can change until then.</li>\n<li>Each quote shows what's included, such as the room type, board basis, cancellation terms and any transfers. Anything not listed isn't included.</li>\n<li>Some hotels charge local taxes, tourism fees, resort fees or deposits that are paid directly at the hotel. We'll tell you about any we're aware of, but the hotel sets these and they can change.</li>\n<li>Where we compare a price you've found elsewhere, we compare like for like and tell you honestly what we find. We only describe a price as cheaper when the booking is genuinely the same.</li>\n</ul>\n<h2>4. Confirming your booking</h2>\n<ul>\n<li>Your booking is confirmed when we send you written confirmation (by WhatsApp or email) that it's been made with the hotel or supplier.</li>\n<li>Please check your confirmation straight away, including names (exactly as on passports), dates, room types and board basis, and tell us of any mistake within 24 hours. Some suppliers charge to correct details later.</li>\n<li>The lead name must be at least 18 years old and must have the authority of everyone in the party to book on their behalf.</li>\n</ul>\n<h2>5. Paying for your booking</h2>\n<p><b>5.1 Free cancellation bookings.</b> On all free cancellation bookings, we don't take any payment or deposit when you book. We secure the room and rate for you, and you pay the full balance closer to your travel dates, before the free cancellation period ends. We'll tell you the exact payment date when you book and remind you before it's due.</p>\n<p><b>5.2 If payment isn't received in time.</b> If we haven't received full payment by the payment date, we may cancel the booking before the free cancellation period ends, so neither of us is charged. We'll try to contact you first.</p>\n<p><b>5.3 Non-refundable bookings.</b> Non-refundable rates must be paid in full when you book.</p>\n<p><b>5.4 Flights and packages.</b> These are paid according to the ATOL holder's booking conditions, which we'll give you before you book.</p>\n<p><b>5.5 How to pay.</b> You can pay us by bank transfer to our company account, and we accept American Express on some bookings. Alternatively, for some hotel bookings you can pay the supplier directly by card through a secure payment link we send you (see section 2.1). We don't add card surcharges. Please ask about payment options when you enquire.</p>\n<p><b>5.6 Business clients.</b> We can agree different payment terms in writing with business clients.</p>\n<h2>6. If you change or cancel your booking</h2>\n<ul>\n<li>Ask us by WhatsApp or email. A change or cancellation takes effect when we confirm it in writing.</li>\n<li><b>Free cancellation bookings:</b> you can cancel free of charge until the free cancellation deadline shown on your confirmation. As you won't usually have paid yet, there's nothing to refund. If you have paid, we'll refund you in full.</li>\n<li><b>After the deadline, or on non-refundable rates:</b> the hotel's or supplier's cancellation charges apply, which can be up to 100% of the price. We'll pass on any refund we receive from the supplier.</li>\n<li><b>Changes:</b> we'll try to make any change you ask for, but it depends on availability and the supplier's rules. Some changes are treated as a cancellation and a new booking. You pay any difference in price and any charges the supplier makes. We don't charge our own fee for changes.</li>\n<li><b>No-shows and unused services:</b> if you don't arrive or don't use part of your booking, no refund is usually due.</li>\n<li><b>No cooling-off period:</b> the 14-day right to cancel under consumer law doesn't apply to accommodation, transport and leisure services booked for specific dates. Your cancellation rights are those set out in this section.</li>\n<li><b>Flights and packages:</b> the ATOL holder's booking conditions apply.</li>\n</ul>\n<h2>7. If we or a supplier change or cancel your booking</h2>\n<ul>\n<li>Occasionally a hotel or supplier changes or cancels a booking, for example if it overbooks, closes or carries out work. If that happens, we'll tell you as soon as we can and offer you a comparable alternative where one is available, or a full refund of what you've paid for the affected service.</li>\n<li>If a significant change is made before you travel, you can choose to accept it or cancel the affected service for a full refund.</li>\n<li>We aren't responsible for changes or cancellations caused by events outside our and our suppliers' control, such as extreme weather, natural disasters, war, terrorism, civil unrest, epidemics, government action or industrial action. In those cases we'll still help you, and pass on any refund we receive.</li>\n</ul>\n<h2>8. Special requests and hotel information</h2>\n<ul>\n<li>We'll pass on your special requests (for example connecting rooms, a high floor, early check-in, a room facing the Haram, honeymoon touches, cots or dietary needs) and ask the hotel to confirm them. Unless the hotel confirms a request in writing, it can't be guaranteed, and it isn't part of your contract.</li>\n<li>Information we give about hotels, including halal food, alcohol, pools, dress codes, distances and facilities, is based on what the hotel or reliable sources tell us when we check. Hotels can change their facilities and policies. If something matters to you, tell us and we'll ask the hotel to confirm it in writing before you book.</li>\n<li>Room types, views and facilities are as described by the hotel. Star ratings are the local rating or the supplier's rating, and standards vary between countries.</li>\n<li>Flight times and other travel times we give are approximate.</li>\n</ul>\n<h2>9. Your responsibilities</h2>\n<ul>\n<li><b>Passports, visas and health:</b> you're responsible for having a valid passport (many countries require at least six months' validity), any visas or travel authorisations, and any vaccinations or health documents needed for every country you visit or pass through, including Umrah visas. Check the latest advice on gov.uk (foreign travel advice). We can point you in the right direction, but we can't accept responsibility if you're refused travel or entry.</li>\n<li><b>Travel insurance:</b> we strongly recommend comprehensive travel insurance from the moment you book, covering cancellation, medical costs and repatriation.</li>\n<li><b>Accurate information:</b> give us correct names, dates and details, and tell us about anything we need to know, such as mobility needs or the ages of children.</li>\n<li><b>Behaviour:</b> follow the rules of hotels, transport providers and local laws. A supplier may refuse service if a member of your party behaves unacceptably, and no refund will be due.</li>\n</ul>\n<h2>10. ATOL protection</h2>\n<p>Flights and flight-inclusive packages we sell are ATOL protected by the ATOL holder we book them with. You'll receive an ATOL Certificate as soon as you pay, showing the ATOL holder's name and ATOL number. Please read it carefully: it tells you what's protected and who to contact if something goes wrong. Hotel-only bookings and other services without a flight aren't covered by ATOL.</p>\n<h2>11. Our liability to you</h2>\n<ul>\n<li>For hotel and other non-flight bookings you pay us for, we'll arrange them with reasonable skill and care.</li>\n<li>For bookings you pay the supplier for directly, we act as your agent: our responsibility is to make the booking correctly and pass on information accurately, and the supplier is responsible for providing the service.</li>\n<li>For flights and packages sold as an agent, our responsibility is to make the booking correctly and pass on information accurately. The ATOL holder is responsible for providing the travel arrangements.</li>\n<li>We aren't liable for any loss caused by your own actions, by a third party unconnected with the services we provide, or by events outside our and our suppliers' control (see section 7).</li>\n<li>We aren't liable for business losses, or for losses that weren't foreseeable when you booked.</li>\n<li>Nothing in these terms limits our liability for death or personal injury caused by our negligence, for fraud, or for anything else that can't be limited by law, and nothing affects your statutory rights.</li>\n</ul>\n<h2>12. If something goes wrong</h2>\n<ul>\n<li><b>During your trip:</b> tell us on WhatsApp straight away, and tell the hotel or supplier too. Most problems can be fixed quickly on the spot, and we'll do what we can with the hotel. If you don't tell us at the time, it may limit what we can do afterwards.</li>\n<li><b>Refunds or compensation offered at the hotel:</b> hotel staff sometimes offer a refund, credit or compensation when something goes wrong. Your booking is paid through us or our booking suppliers, not to the hotel directly, so any refund has to come back through that same chain, and we can only pass on what we actually receive. To protect your refund:\n<ul>\n<li>Contact us on WhatsApp before you accept any offer, check out early or move hotels, so we can deal with the hotel and our supplier straight away.</li>\n<li>Ask the hotel to confirm any offer in writing, by email from the hotel or on hotel letterhead. It should name the guest, the booking dates, what went wrong, the amount or nights to be refunded and the name of the manager agreeing it. Send us a copy straight away.</li>\n<li>A verbal promise from hotel staff isn't binding on us or our suppliers, and refunds can't be guaranteed without written confirmation.</li>\n<li>We'll pursue the refund for you, and pass it on as soon as we receive it. It can take several weeks to come through the supplier. If the supplier refunds less than the hotel promised, or nothing, we'll tell you why and keep pursuing it where it's reasonable to do so. We aren't responsible for paying a refund we haven't received, unless we're at fault ourselves.</li>\n<li>If you paid the supplier directly by card, any refund goes back to your card from that supplier.</li>\n<li>This doesn't affect your legal rights if the service you booked with us wasn't provided as agreed.</li>\n</ul></li>\n<li><b>After your trip:</b> if you're still not happy, email hello@sapharatravel.co.uk within 28 days of returning, with your booking details and any photos or documents. We'll acknowledge your complaint within 5 working days and aim to give you a full reply within 28 days.</li>\n<li><b>Flights and packages:</b> the ATOL holder's complaints procedure also applies.</li>\n</ul>\n<h2>13. Data protection</h2>\n<p>We use your personal information to make and manage your booking, as explained in our <a href=\"privacy.html\">privacy policy</a>. We share it with hotels, transport providers and other suppliers only as needed to provide your booking, including suppliers outside the UK.</p>\n<h2>14. General</h2>\n<ul>\n<li>These terms, your confirmation and any written confirmations from us form the whole agreement between us.</li>\n<li>If any part of these terms is found to be invalid, the rest still applies.</li>\n<li>These terms are governed by the law of England and Wales, and the courts of England and Wales have jurisdiction. If you live in Scotland or Northern Ireland, you can also bring proceedings in your local courts.</li>\n</ul>",
+      "How booking with Saphara Travel works: who your contract is with, paying, changes, cancellations and what happens if something goes wrong."
+    ],
+    [
+      "atol-and-financial-protection.html",
+      "ATOL and financial protection | Saphara Travel",
+      "ATOL and financial protection",
+      "<p class=\"updated\">Last updated: 14 November 2026</p>\n<h2>Flights and flight-inclusive packages</h2>\n<p>Flights and flight-inclusive packages we sell are ATOL protected by the ATOL holder we book them with.</p>\n<p>When you book, we act as an agent for that ATOL holder. Before you pay, we'll tell you which company it is and give you its booking conditions. As soon as you pay, you'll receive an ATOL Certificate, which shows the ATOL holder's name and ATOL number and lists the protected parts of your booking.</p>\n<p>Please check your ATOL Certificate as soon as you receive it. It explains what's protected, how to get help if something goes wrong and who to contact. You can find out more about ATOL protection at caa.co.uk.</p>\n<h2>Hotels and other services without a flight</h2>\n<p>Hotel-only bookings and other services booked without a flight, such as airport transfers, private guides and excursions, aren't covered by ATOL.</p>\n<p>On all free cancellation bookings, we don't take any payment until closer to your travel dates, so there's no money held for long.</p>\n<h2>Booking your own flights</h2>\n<p>If you've booked your own flights and we arrange your hotel, transfers or tours, your flights aren't part of a booking with us and aren't covered by our ATOL arrangements. Check the protection your airline or flight seller provides.</p>\n<h2>Travel insurance</h2>\n<p>ATOL doesn't cover everything, for example illness, missed flights or changes of plan. We strongly recommend comprehensive travel insurance from the moment you book.</p>\n<h2>Questions</h2>\n<p>Ask us on WhatsApp or email hello@sapharatravel.co.uk.</p>",
+      "How ATOL protection works on flights and flight-inclusive packages we book, and what isn't covered."
+    ],
+    [
+      "cookies.html",
+      "Cookies | Saphara Travel",
+      "Cookies",
+      "<p class=\"updated\">Last updated: 14 November 2026</p>\n<h2>The short version</h2>\n<p>Our website doesn't set any cookies, so there's no cookie banner to click through.</p>\n<h2>The detail</h2>\n<ul>\n<li><b>No cookies from us.</b> We don't use cookies or similar tracking technologies to follow you or show you adverts.</li>\n<li><b>No form storage.</b> The trip form builds your message on your own device and opens it in WhatsApp or your email app. Nothing you type is saved on our website.</li>\n<li><b>Analytics.</b> We may use privacy-friendly analytics that count page visits without cookies and without identifying you.</li>\n<li><b>Fonts.</b> Our headline font is loaded from Adobe Fonts, the only third-party font service we use. Adobe receives your IP address to serve the font. It doesn't set cookies for this. Every other font is served from our own site.</li>\n<li><b>Other websites.</b> If you follow a link to another site, such as WhatsApp, Instagram, Trustpilot or a partner booking site, that site may use its own cookies under its own policy. Some links on our site are affiliate links, which may use cookies on the partner's site to record that you came from us.</li>\n</ul>\n<h2>Questions</h2>\n<p>Email hello@sapharatravel.co.uk. See also our <a href=\"privacy.html\">privacy policy</a>.</p>",
+      "This website doesn't use cookies."
+    ],
+    [
+      "website-terms.html",
+      "Website terms of use | Saphara Travel",
+      "Website terms of use",
+      "<p class=\"updated\">Last updated: 14 November 2026</p>\n<p>These terms cover your use of sapharatravel.co.uk. Bookings are covered separately by our <a href=\"booking-terms.html\">booking terms and conditions</a>.</p>\n<h2>1. About us</h2>\n<p>This website is run by Saphara Travel Group Ltd (\"STG\"), trading as Saphara Travel, a company registered in England and Wales, company number 16336079. <span class=\"reg-office\">Registered office: [REGISTERED OFFICE ADDRESS].</span> Contact: hello@sapharatravel.co.uk.</p>\n<h2>2. Information on this site</h2>\n<ul>\n<li>The information on this site, including destination details, flight times, best times to visit, hotel information and our travel guides, is for general guidance. We check it carefully, but it can change and we can't guarantee it's always complete or up to date.</li>\n<li>Flight times are approximate and depend on the route and airline.</li>\n<li>Examples on the site, such as the worked price comparison and sample itineraries, are illustrations of how we work, not offers or real bookings.</li>\n<li>Prices and availability are only confirmed when we send you a quote and confirm your booking.</li>\n<li>Halal food, alcohol and other details in our guides and hotel information are based on what we found when we last checked. Always confirm anything that matters to you before you travel. We're happy to check for you.</li>\n</ul>\n<h2>3. Using the site</h2>\n<p>You may use this site for personal, non-commercial purposes. Please don't misuse it, try to gain unauthorised access to it, or copy large parts of it.</p>\n<h2>4. Our content</h2>\n<p>The text, design, logo, guides and photography on this site belong to us or are used with permission. You may share links to our pages, but please don't copy our content or images without asking.</p>\n<h2>5. Links and affiliate links</h2>\n<ul>\n<li>Our site links to other websites, such as WhatsApp, Instagram and Trustpilot. We're not responsible for their content or how they use your information.</li>\n<li>Some links are affiliate links, clearly labelled as such. If you buy through them, we may earn a small commission at no extra cost to you. This never affects what we recommend.</li>\n</ul>\n<h2>6. Reviews</h2>\n<p>Reviews shown on our site come from real clients on Trustpilot. We show them as written, though we may shorten long reviews without changing their meaning.</p>\n<h2>7. Liability</h2>\n<p>We provide this site as it is. We aren't liable for any loss caused by relying on general information on the site without confirming it with us, or by the site being unavailable. Nothing here limits liability that can't be limited by law.</p>\n<h2>8. Changes</h2>\n<p>We may update the site and these terms at any time. The date at the top shows when the terms last changed.</p>\n<h2>9. Law</h2>\n<p>These terms are governed by the law of England and Wales.</p>",
+      "The terms for using the Saphara Travel website. Bookings are covered by our booking terms."
+    ]
+  ],
+  "TRIP_STORIES": [],
+  "MENU_EXTRA": [
+    {
+      "name": "Umrah",
+      "href": "destinations/makkah-and-madinah.html",
+      "thumb": "thumb-st-madinah-nabawi.webp",
+      "lines": [
+        "Umrah hotels.",
+        "Makkah and Madinah."
+      ]
+    }
   ]
- },
- "TRIP_HEADS": {
-  "honeymoons": [
-   [
-    "Made for two."
-   ],
-   [
-    "The quiet details.",
-    "Checked first."
-   ],
-   [
-    "Where couples go."
-   ]
-  ],
-  "beach-and-island": [
-   [
-    "Beach days.",
-    "Booked properly."
-   ],
-   [
-    "We read the small print."
-   ],
-   [
-    "Islands we know."
-   ]
-  ],
-  "family-holidays": [
-   [
-    "Everyone sorted."
-   ],
-   [
-    "What parents ask.",
-    "We ask first."
-   ],
-   [
-    "Easy with kids."
-   ]
-  ],
-  "hotels": [
-   [
-    "Just the hotel.",
-    "Or a bit more."
-   ],
-   [
-    "Compared like for like."
-   ],
-   [
-    "Where we book most."
-   ]
-  ],
-  "business": [
-   null,
-   [
-    "Location first.",
-    "Then the rest."
-   ],
-   [
-    "Where teams go."
-   ]
-  ],
-  "multi-city": [
-   [
-    "Every leg.",
-    "Booked together."
-   ],
-   [
-    "The joins.",
-    "Checked first."
-   ],
-   [
-    "Cities to combine."
-   ]
-  ]
- },
- "DEST_ICONS": {
-  "zanzibar": [
-   "beach",
-   "map",
-   "heart"
-  ],
-  "doha": [
-   "family",
-   "flights",
-   "hotel"
-  ],
-  "dubai": [
-   "beach",
-   "map",
-   "family"
-  ],
-  "oman": [
-   "map",
-   "compass",
-   "hotel"
-  ],
-  "makkah-and-madinah": [
-   "pin",
-   "people",
-   "flights"
-  ],
-  "kuala-lumpur": [
-   "flights",
-   "hotel",
-   "map"
-  ],
-  "langkawi": [
-   "hotel",
-   "map",
-   "heart"
-  ],
-  "maldives": [
-   "hotel",
-   "beach",
-   "heart"
-  ]
- },
- "TRIPS": [
-  [
-   "honeymoons",
-   "Honeymoons",
-   "st-card-honeymoon.webp",
-   [
-    "Just married.",
-    "Do not disturb."
-   ]
-  ],
-  [
-   "beach-and-island",
-   "Beach & Island",
-   "st-card-beach.webp",
-   [
-    "Beach and island resorts.",
-    "Transfers sorted."
-   ]
-  ],
-  [
-   "family-holidays",
-   "Family Holidays",
-   "st-family-lazio.webp",
-   [
-    "Connecting rooms.",
-    "Not just connecting flights."
-   ]
-  ],
-  [
-   "multi-city",
-   "Multi-City",
-   "st-card-multicity.webp",
-   [
-    "Multi-city trips.",
-    "Planned as one."
-   ]
-  ],
-  [
-   "hotels",
-   "Hotel Only",
-   "st-hotel-suite.webp",
-   [
-    "Got your flights?",
-    "We'll do the rest."
-   ]
-  ],
-  [
-   "business",
-   "Business Travel",
-   "st-card-business.webp",
-   [
-    "Business trips.",
-    "Minus the admin."
-   ]
-  ]
- ],
- "ICO": {
-    "hotel": "<path d=\"M3 6v14\"/><path d=\"M3 15h18v5\"/><path d=\"M21 15v-2a3 3 0 0 0-3-3h-7v5\"/><circle cx=\"7\" cy=\"12\" r=\"1.8\"/>",
-    "chat": "<path d=\"M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z\"/><path d=\"M7 9h10M7 12h6\"/>",
-    "flights": "<path d=\"M2.5 13.5 10 11V5.5a2 2 0 0 1 4 0V11l7.5 2.5V15L14 13.5V18l2 1.5V21l-4-1-4 1v-1.5L10 18v-4.5L2.5 15z\"/>",
-    "heart": "<circle cx=\"9\" cy=\"14\" r=\"5\"/><circle cx=\"15\" cy=\"14\" r=\"5\"/><path d=\"M10.5 5.5 12 4l1.5 1.5L12 7z\"/>",
-    "transfers": "<path d=\"M5 11l1.6-4.2A1.5 1.5 0 0 1 8 6h8a1.5 1.5 0 0 1 1.4.8L19 11\"/><rect x=\"3\" y=\"11\" width=\"18\" height=\"6\" rx=\"1.5\"/><path d=\"M6 17v2M18 17v2\"/>",
-    "map": "<path d=\"M5 21V4\"/><path d=\"M5 4h11l-2 3.5L16 11H5\"/>",
-    "beach": "<path d=\"M4 11a8 8 0 0 1 16 0z\"/><path d=\"M12 11v8\"/><path d=\"M3 21c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0\"/>",
-    "family": "<circle cx=\"6.5\" cy=\"6.5\" r=\"2.5\"/><path d=\"M3 20v-5a3.5 3.5 0 0 1 7 0v5\"/><circle cx=\"14\" cy=\"6.5\" r=\"2.5\"/><path d=\"M10.5 20v-5a3.5 3.5 0 0 1 7 0v5\"/><circle cx=\"20\" cy=\"11.5\" r=\"1.6\"/><path d=\"M18 20v-3a2 2 0 0 1 4 0v3\"/>",
-    "people": "<circle cx=\"9\" cy=\"8\" r=\"3\"/><path d=\"M3.5 20a5.5 5.5 0 0 1 11 0\"/><path d=\"M15 4.5h5.5a1 1 0 0 1 1 1V9a1 1 0 0 1-1 1H18l-2 1.6V10h-1a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1z\"/>",
-    "fee": "<path d=\"M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z\"/><circle cx=\"7.5\" cy=\"7.5\" r=\"1.4\"/><path d=\"M10 16l6-6\"/>",
-    "paylater": "<rect x=\"3\" y=\"5\" width=\"13\" height=\"13\" rx=\"2\"/><path d=\"M3 9.5h13M7 3v4M12 3v4\"/><circle cx=\"17\" cy=\"16.5\" r=\"4.5\"/><path d=\"M17 14.5v2.2l1.4 1\"/>",
-    "shield": "<path d=\"M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z\"/><path d=\"m9 12 2 2 4-4\"/>",
-    "invoice": "<path d=\"M6 3h9l4 4v14H6z\"/><path d=\"M15 3v4h4M9 11h6M9 14h6M9 17h4\"/>",
-    "team": "<circle cx=\"6\" cy=\"8\" r=\"2.2\"/><circle cx=\"12\" cy=\"7\" r=\"2.4\"/><circle cx=\"18\" cy=\"8\" r=\"2.2\"/><path d=\"M2.5 19a3.5 3.5 0 0 1 7 0M8 19a4 4 0 0 1 8 0M14.5 19a3.5 3.5 0 0 1 7 0\"/>",
-    "compass": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15.5 8.5-2 5-5 2 2-5z\"/>",
-    "pin": "<path d=\"M12 21s-6-5.3-6-11a6 6 0 0 1 12 0c0 5.7-6 11-6 11z\"/><circle cx=\"12\" cy=\"10\" r=\"2.2\"/>",
-    "pray": "<path d=\"M12 3v2\"/><path d=\"M7 13c0-3.2 2.6-4.6 5-7 2.4 2.4 5 3.8 5 7\"/><path d=\"M5 13h14v8H5z\"/><path d=\"M10.5 21v-3a1.5 1.5 0 0 1 3 0v3\"/>",
-    "compare": "<rect x=\"3\" y=\"4\" width=\"7.5\" height=\"16\" rx=\"1.5\"/><rect x=\"13.5\" y=\"4\" width=\"7.5\" height=\"16\" rx=\"1.5\"/><path d=\"M5.5 8.5h2.5M5.5 12h2.5M16 8.5h2.5M16 12h2.5\"/>",
-    "dining": "<path d=\"M6.5 3v5.5a2.5 2.5 0 0 0 5 0V3M9 3v18\"/><path d=\"M17.5 21V3c-2 1.5-3 4-3 7.5V13h3\"/>",
-    "lounge": "<path d=\"M5 11V8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v3\"/><path d=\"M3 13a2 2 0 0 1 4 0v1h10v-1a2 2 0 0 1 4 0v5H3z\"/><path d=\"M5 18v2M19 18v2\"/>",
-    "pool": "<path d=\"M8 15V6a2 2 0 0 1 4 0M14 15V6a2 2 0 0 1 4 0\"/><path d=\"M8 9h6M8 12.5h6\"/><path d=\"M3 19c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0\"/>",
-    "honeymoon": "<circle cx=\"9\" cy=\"14\" r=\"5\"/><circle cx=\"15\" cy=\"14\" r=\"5\"/><path d=\"M10.5 5.5 12 4l1.5 1.5L12 7z\"/>",
-    "multi-city": "<path d=\"M3 21h18\"/><path d=\"M5 21V9h5v12M10 21V4h5v17M15 21v-9h4v9\"/><path d=\"M12 8h1M12 11h1M12 14h1M7 12h1M7 15h1\"/>",
-    "umrah": "<path d=\"M12 3v2\"/><path d=\"M7 13c0-3.2 2.6-4.6 5-7 2.4 2.4 5 3.8 5 7\"/><path d=\"M5 13h14v8H5z\"/><path d=\"M10.5 21v-3a1.5 1.5 0 0 1 3 0v3\"/>",
-    "business": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 12.5h18\"/>",
-    "something-else": "<path d=\"M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z\"/><path d=\"M7 9h10M7 12h6\"/>",
-    "guides": "<path d=\"M5 21V4\"/><path d=\"M5 4h11l-2 3.5L16 11H5\"/>",
-    "excursions": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m15.5 8.5-2 5-5 2 2-5z\"/>",
-    "mosque": "<path d=\"M3 20h18M5 20v-7h14v7M4 13c0-4.5 3.6-7 8-9 4.4 2 8 4.5 8 9\"/><path d=\"M10 20v-4a2 2 0 0 1 4 0v4M12 4V2\"/>",
-    "halal": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"m7.5 12 3 3 6-6\"/>",
-    "alcohol-free": "<path d=\"M8 3h8l-1 7-2 2v8M11 20h4M7 3l10 18\"/>",
-    "private-pool": "<path d=\"M8 15V6a2 2 0 0 1 4 0M14 15V6a2 2 0 0 1 4 0\"/><path d=\"M8 9h6M8 12.5h6\"/><path d=\"M3 19c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0\"/>",
-    "beachfront": "<path d=\"M4 11a8 8 0 0 1 16 0z\"/><path d=\"M12 11v8\"/><path d=\"M3 21c1.5-1 3-1 4.5 0s3 1 4.5 0 3-1 4.5 0 3 1 4.5 0\"/>",
-    "city": "<path d=\"M3 21h18M5 21V9h5v12M10 21V4h5v17M15 21v-9h4v9\"/><path d=\"M7 12h1M7 15h1M12 8h1M12 11h1M12 14h1M17 15h1\"/>",
-    "mountain": "<path d=\"m2 20 7-13 4 7 3-5 6 11H2z\"/><path d=\"m7 11 2 2 2-1M14 12l2 2 2-1\"/>",
-    "solo": "<circle cx=\"12\" cy=\"7\" r=\"3.5\"/><path d=\"M5 21v-2a7 7 0 0 1 14 0v2\"/>",
-    "luxury": "<path d=\"m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z\"/><path d=\"m19 16 .9 2.1L22 19l-2.1.9L19 22l-.9-2.1L16 19l2.1-.9z\"/>",
-    "spa": "<path d=\"M12 21c-5-2-8-6-8-11 5 0 8 3 8 8 0-5 3-8 8-8 0 5-3 9-8 11z\"/><path d=\"M12 18V8\"/>",
-    "breakfast": "<path d=\"M6.5 3v5.5a2.5 2.5 0 0 0 5 0V3M9 3v18\"/><path d=\"M17.5 21V3c-2 1.5-3 4-3 7.5V13h3\"/>",
-    "car": "<path d=\"M5 11l1.6-4.2A1.5 1.5 0 0 1 8 6h8a1.5 1.5 0 0 1 1.4.8L19 11\"/><rect x=\"3\" y=\"11\" width=\"18\" height=\"6\" rx=\"1.5\"/><path d=\"M6 17v2M18 17v2\"/>",
-    "clock": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>",
-    "calendar": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"16\" rx=\"2\"/><path d=\"M7 3v4M17 3v4M3 10h18\"/>",
-    "star": "<path d=\"m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z\"/>",
-    "search": "<circle cx=\"10.8\" cy=\"10.8\" r=\"6.8\"/><path d=\"m16 16 5 5\"/>",
-    "check": "<path d=\"m5 12.5 4.5 4.5L19 7.5\"/>",
-    "arrow-right": "<path d=\"M4 12h16M13 5l7 7-7 7\"/>"
-  },
- "FLAGS": {
-  "ba": "<svg viewBox=\"0 0 30 20\"><rect width=\"30\" height=\"20\" fill=\"#002F6C\"/><path d=\"M9 0h13v20z\" fill=\"#FECB00\"/><circle cx=\"7.2\" cy=\"1.4\" r=\".85\" fill=\"#fff\"/><circle cx=\"9.2\" cy=\"4.25\" r=\".85\" fill=\"#fff\"/><circle cx=\"11.2\" cy=\"7.1\" r=\".85\" fill=\"#fff\"/><circle cx=\"13.2\" cy=\"9.950000000000001\" r=\".85\" fill=\"#fff\"/><circle cx=\"15.2\" cy=\"12.8\" r=\".85\" fill=\"#fff\"/><circle cx=\"17.2\" cy=\"15.65\" r=\".85\" fill=\"#fff\"/><circle cx=\"19.2\" cy=\"18.5\" r=\".85\" fill=\"#fff\"/></svg>",
-  "mt": "<svg viewBox=\"0 0 30 20\"><rect width=\"15\" height=\"20\" fill=\"#fff\"/><rect x=\"15\" width=\"15\" height=\"20\" fill=\"#CF142B\"/><rect x=\"3\" y=\"2.5\" width=\"3\" height=\"3\" fill=\"#C9C9C9\"/></svg>",
-  "us": "<svg viewBox=\"0 0 30 20\"><rect width=\"30\" height=\"20\" fill=\"#fff\"/><rect y=\"0.00\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"3.08\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"6.15\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"9.23\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"12.31\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"15.38\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"18.46\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect width=\"13\" height=\"10.8\" fill=\"#3C3B6E\"/></svg>"
- },
- "WA_PATH": "<path fill=\"currentColor\" d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z\"/>",
- "DESC_OVERRIDES": {
-  "destinations/makkah-and-madinah.html": "Umrah hotels in Makkah and Madinah, chosen for the walk to the Haram and who's travelling. Driver and ziyarah contacts too. We don't book Umrah flights.",
-  "guides/new-york.html": "Where we ate in New York, from Brooklyn to Manhattan, at places listed as halal: our own picks from our own trip, with the details to check before you go.",
-  "cookies.html": "This website doesn't use cookies, so there's nothing to accept or decline. If that ever changes, this page will say so first.",
-  "destinations/zanzibar.html": "Zanzibar beach resorts and Stone Town stays, about 13 hours from Manchester with one stop. We check the food, alcohol and privacy at each resort for you.",
-  "destinations/doha.html": "Desert, sea and some of the best hotels in the Gulf, about seven hours direct from Manchester. City and beach hotels in Doha, looked after on WhatsApp.",
-  "destinations/dubai.html": "Beach resorts and city hotels in Dubai, about seven hours direct from Manchester, with quieter Ras Al Khaimah an hour up the coast.",
-  "destinations/oman.html": "Mountains, wadis and a calm coastline, with Muscat's mosques and souqs close by. Hotels in Oman, about seven hours direct from Manchester to Muscat.",
-  "destinations/kuala-lumpur.html": "City hotels, mosques and markets in Malaysia's capital, about 15 hours from Manchester with one stop, and easy to pair with a few days in Langkawi.",
-  "destinations/langkawi.html": "Rainforest down to the sea, quiet beaches and pool villas in Langkawi, with Kuala Lumpur on the way. Villas compared like for like before you book.",
-  "guides/sarajevo.html": "Where to eat halal, where to pray and what to do in Sarajevo, from our own trip: cafes and desserts, the old town, Gazi Husrev-beg Mosque and more.",
-  "guides/malta.html": "Restaurants with halal menus around Sliema, St Julian's and Msida, the mosque in Paola, and the best of Malta and Gozo, from our own trip."
- },
- "SKYLINE": "<svg class=\"skyline\" viewBox=\"0 0 1440 220\" preserveAspectRatio=\"xMidYMax slice\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"currentColor\"><rect x=\"60\" y=\"150\" width=\"150\" height=\"86\"/><rect x=\"186\" y=\"140\" width=\"120\" height=\"96\"/><rect x=\"204\" y=\"124\" width=\"90\" height=\"112\"/><rect x=\"220\" y=\"110\" width=\"62\" height=\"126\"/><rect x=\"230\" y=\"96\" width=\"42\" height=\"140\"/><path d=\"M234 96V72h34v24Z\"/><path d=\"M306 236V112l5-6h10l5 6v124Z\"/><rect x=\"309\" y=\"98\" width=\"14\" height=\"8\"/><rect x=\"326\" y=\"176\" width=\"46\" height=\"60\"/><path d=\"M402 236v-38a36 36 0 0 1 72 0v38Z\"/><rect x=\"436\" y=\"150\" width=\"4\" height=\"12\"/><circle cx=\"438\" cy=\"148\" r=\"3\"/><path d=\"M382 236V122l4-14 4 14V236Z\"/><rect x=\"379\" y=\"144\" width=\"14\" height=\"4\" rx=\"1\"/><rect x=\"380\" y=\"174\" width=\"12\" height=\"3\" rx=\"1\"/><circle cx=\"386\" cy=\"104\" r=\"2.5\"/><path d=\"M486 236V134l4-14 4 14V236Z\"/><rect x=\"483\" y=\"156\" width=\"14\" height=\"4\" rx=\"1\"/><rect x=\"484\" y=\"186\" width=\"12\" height=\"3\" rx=\"1\"/><circle cx=\"490\" cy=\"116\" r=\"2.5\"/><path d=\"M548 214h92q-8 13-34 13h-26q-24 0-32-13Z\"/><path d=\"M592 212V140l2-2 3 2v72Z\"/><path d=\"M594 140q34 26 40 70h-38Z\"/><path d=\"M590 154q-20 22-30 56h28Z\" opacity=\".85\"/><rect x=\"690\" y=\"172\" width=\"26\" height=\"64\"/><rect x=\"722\" y=\"150\" width=\"30\" height=\"86\"/><rect x=\"758\" y=\"182\" width=\"34\" height=\"54\"/><rect x=\"798\" y=\"128\" width=\"28\" height=\"108\"/><path d=\"M836 236q22-74 0-150h50q-22 76 0 150Z\"/><rect x=\"896\" y=\"160\" width=\"30\" height=\"76\"/><path d=\"M936 236V100q0-44 27-62 27 18 27 62v136Z\"/><rect x=\"961.5\" y=\"8\" width=\"3\" height=\"32\" rx=\"1.5\"/><rect x=\"998\" y=\"140\" width=\"24\" height=\"96\"/><path d=\"M1028 236V104l14-12 14 12v132Z\"/><path d=\"M1066 236V76l14-14 14 14v160Z\"/><path d=\"M1100 236V76l14-14 14 14v160Z\"/><rect x=\"1136\" y=\"120\" width=\"30\" height=\"116\"/><rect x=\"1172\" y=\"154\" width=\"36\" height=\"82\"/><path d=\"M1214 236V112l12-18 12 18v124Z\"/><rect x=\"1246\" y=\"142\" width=\"28\" height=\"94\"/><rect x=\"1280\" y=\"172\" width=\"44\" height=\"64\"/><rect x=\"1330\" y=\"132\" width=\"24\" height=\"104\"/><rect x=\"1360\" y=\"184\" width=\"60\" height=\"52\"/></g><g fill=\"none\" stroke=\"var(--sand-deep)\" stroke-width=\"1.6\" stroke-linecap=\"round\"><path d=\"M72 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M88 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M104 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M120 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M136 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M152 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M168 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M184 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M70 172h6\" /><path d=\"M85 172h6\" /><path d=\"M100 172h6\" /><path d=\"M115 172h6\" /><path d=\"M130 172h6\" /><path d=\"M145 172h6\" /><path d=\"M160 172h6\" /><path d=\"M175 172h6\" /><path d=\"M190 172h6\" /><path d=\"M241 86q10-9 20 0\" /><path d=\"M190 162h18M198 150h8\" /><path d=\"M309 120h14\" /><path d=\"M309 132h14\" /><path d=\"M309 144h14\" /><path d=\"M309 156h14\" /><path d=\"M309 168h14\" /><path d=\"M309 180h14\" /><path d=\"M309 192h14\" /><path d=\"M414 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M430 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M446 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M462 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M694 182h18\" /><path d=\"M694 193h18\" /><path d=\"M694 204h18\" /><path d=\"M694 215h18\" /><path d=\"M694 226h18\" /><path d=\"M726 160h22\" /><path d=\"M726 171h22\" /><path d=\"M726 182h22\" /><path d=\"M726 193h22\" /><path d=\"M726 204h22\" /><path d=\"M726 215h22\" /><path d=\"M726 226h22\" /><path d=\"M762 192h26\" /><path d=\"M762 203h26\" /><path d=\"M762 214h26\" /><path d=\"M762 225h26\" /><path d=\"M802 138h20\" /><path d=\"M802 149h20\" /><path d=\"M802 160h20\" /><path d=\"M802 171h20\" /><path d=\"M802 182h20\" /><path d=\"M802 193h20\" /><path d=\"M802 204h20\" /><path d=\"M802 215h20\" /><path d=\"M802 226h20\" /><path d=\"M839.6 97h42.8\" /><path d=\"M840.25 108h41.5\" /><path d=\"M840.9 119h40.2\" /><path d=\"M841.55 130h38.9\" /><path d=\"M846.2 141h29.6\" /><path d=\"M846.85 152h28.3\" /><path d=\"M847.5 163h27.0\" /><path d=\"M846.85 174h28.3\" /><path d=\"M846.2 185h29.6\" /><path d=\"M841.55 196h38.9\" /><path d=\"M840.9 207h40.2\" /><path d=\"M840.25 218h41.5\" /><path d=\"M839.6 229h42.8\" /><path d=\"M900 168h22\" /><path d=\"M900 178h22\" /><path d=\"M900 188h22\" /><path d=\"M900 198h22\" /><path d=\"M900 208h22\" /><path d=\"M900 218h22\" /><path d=\"M900 228h22\" /><path d=\"M940 88l23-16 23 16\" /><path d=\"M940 106l23-16 23 16\" /><path d=\"M940 124l23-16 23 16\" /><path d=\"M940 142l23-16 23 16\" /><path d=\"M940 160l23-16 23 16\" /><path d=\"M940 178l23-16 23 16\" /><path d=\"M940 196l23-16 23 16\" /><path d=\"M940 214l23-16 23 16\" /><path d=\"M940 232l23-16 23 16\" /><path d=\"M1032 112h20\" /><path d=\"M1032 122h20\" /><path d=\"M1032 132h20\" /><path d=\"M1032 142h20\" /><path d=\"M1032 152h20\" /><path d=\"M1032 162h20\" /><path d=\"M1032 172h20\" /><path d=\"M1032 182h20\" /><path d=\"M1032 192h20\" /><path d=\"M1032 202h20\" /><path d=\"M1032 212h20\" /><path d=\"M1032 222h20\" /><path d=\"M1070 86h20\" /><path d=\"M1070 95h20\" /><path d=\"M1070 104h20\" /><path d=\"M1070 113h20\" /><path d=\"M1070 122h20\" /><path d=\"M1070 131h20\" /><path d=\"M1070 140h20\" /><path d=\"M1070 149h20\" /><path d=\"M1070 158h20\" /><path d=\"M1070 167h20\" /><path d=\"M1070 176h20\" /><path d=\"M1070 185h20\" /><path d=\"M1070 194h20\" /><path d=\"M1070 203h20\" /><path d=\"M1070 212h20\" /><path d=\"M1070 221h20\" /><path d=\"M1104 86h20\" /><path d=\"M1104 95h20\" /><path d=\"M1104 104h20\" /><path d=\"M1104 113h20\" /><path d=\"M1104 122h20\" /><path d=\"M1104 131h20\" /><path d=\"M1104 140h20\" /><path d=\"M1104 149h20\" /><path d=\"M1104 158h20\" /><path d=\"M1104 167h20\" /><path d=\"M1104 176h20\" /><path d=\"M1104 185h20\" /><path d=\"M1104 194h20\" /><path d=\"M1104 203h20\" /><path d=\"M1104 212h20\" /><path d=\"M1104 221h20\" /><path d=\"M1140 129h22\" /><path d=\"M1140 139h22\" /><path d=\"M1140 149h22\" /><path d=\"M1140 159h22\" /><path d=\"M1140 169h22\" /><path d=\"M1140 179h22\" /><path d=\"M1140 189h22\" /><path d=\"M1140 199h22\" /><path d=\"M1140 209h22\" /><path d=\"M1140 219h22\" /><path d=\"M1140 229h22\" /><path d=\"M1176 163h28\" /><path d=\"M1176 173h28\" /><path d=\"M1176 183h28\" /><path d=\"M1176 193h28\" /><path d=\"M1176 203h28\" /><path d=\"M1176 213h28\" /><path d=\"M1176 223h28\" /><path d=\"M1250 151h20\" /><path d=\"M1250 161h20\" /><path d=\"M1250 171h20\" /><path d=\"M1250 181h20\" /><path d=\"M1250 191h20\" /><path d=\"M1250 201h20\" /><path d=\"M1250 211h20\" /><path d=\"M1250 221h20\" /><path d=\"M1334 141h16\" /><path d=\"M1334 151h16\" /><path d=\"M1334 161h16\" /><path d=\"M1334 171h16\" /><path d=\"M1334 181h16\" /><path d=\"M1334 191h16\" /><path d=\"M1334 201h16\" /><path d=\"M1334 211h16\" /><path d=\"M1334 221h16\" /></g><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\".6\"><path d=\"M0 212h540M650 212h790M80 220h300M700 220h400M1180 220h220\" /></g></svg>",
- "TRIP_LINES": {
-  "honeymoons": "Set-ups and quiet rooms, confirmed with the hotel.",
-  "beach-and-island": "Resorts we've booked before, transfers sorted.",
-  "family-holidays": "The right rooms, the right pool, an easy transfer.",
-  "hotels": "Hotels, transfers and tours around your flights.",
-  "business": "Staff and client trips, one point of contact.",
-  "multi-city": "Flights, hotels and transfers for every leg, booked together."
- },
- "FIT": {
-  "honeymoons": 3.9,
-  "beach-and-island": 5.0,
-  "family-holidays": 7.1,
-  "hotels": 7.6,
-  "business": 4.5
- },
- "GUIDE_BODY": {
-  "sarajevo": {
-   "facts": [
-    [
-     "Halal food",
-     "Widely available; some places also serve alcohol"
-    ],
-    [
-     "Mosques",
-     "Throughout the city, including Gazi Husrev-beg"
-    ],
-    [
-     "Alcohol",
-     "Served in some restaurants and bars"
-    ],
-    [
-     "Dress",
-     "Relaxed; cover up for mosque visits"
-    ],
-    [
-     "When to go",
-     "Late spring and early autumn"
-    ],
-    [
-     "Suits",
-     "Couples and families"
-    ],
-    [
-     "Pace",
-     "Slow and walkable"
-    ],
-    [
-     "Last checked",
-     "14 November 2026"
-    ]
-   ],
-   "sections": [
-    [
-     "Where to eat",
-     "Places we ate on our trip. Check halal status with each place before you go, and ask about cross-contamination if some also serve alcohol.",
-     [
-      [
-       "ETA Burger",
-       "smash burgers"
-      ],
-      [
-       "Klopa",
-       "modern, casual dishes"
-      ],
-      [
-       "Ćevabdžinica Željo",
-       "for ćevapi"
-      ],
-      [
-       "Buregdžinica Bosna",
-       "for burek"
-      ],
-      [
-       "burgrs",
-       "smash burgers too"
-      ],
-      [
-       "Pekara Imaret",
-       "pizzas and sweet pastries"
-      ],
-      [
-       "Brunch SA",
-       "brunch and good coffee"
-      ]
-     ]
-    ],
-    [
-     "Cafes and desserts",
-     "",
-     [
-      [
-       "Caffe Ayna",
-       "a must-visit"
-      ],
-      [
-       "Kamarija",
-       "views over the city"
-      ],
-      [
-       "Baklava Dućan",
-       "traditional Bosnian desserts"
-      ],
-      [
-       "Ramis Pastry",
-       "pastries and local sweets"
-      ],
-      [
-       "La Soul Cafe",
-       "coffee, with burgers too"
-      ],
-      [
-       "Sweets&Co",
-       "pretty desserts"
-      ]
-     ]
-    ],
-    [
-     "Places to visit",
-     "",
-     [
-      [
-       "Baščaršija",
-       "the Ottoman old town"
-      ],
-      [
-       "Yellow Fortress",
-       "a sunset view over the city"
-      ],
-      [
-       "Latin Bridge",
-       "where Franz Ferdinand was assassinated in 1914"
-      ],
-      [
-       "Tunnel of Hope Museum",
-       "the city's wartime history"
-      ],
-      [
-       "Trebević cable car",
-       "views over Sarajevo"
-      ]
-     ]
-    ],
-    [
-     "Things to do",
-     "",
-     [
-      [
-       "Lukomir",
-       "a day trip to the mountain village"
-      ],
-      [
-       "Vrelo Bosne",
-       "a walk through the park"
-      ],
-      [
-       "Jumu'ah",
-       "at Gazi Husrev-beg Mosque"
-      ],
-      [
-       "Neretva",
-       "rafting near Konjic"
-      ],
-      [
-       "Ferhadija",
-       "a stroll along the old street"
-      ]
-     ]
-    ],
-    [
-     "Where to pray",
-     "",
-     [
-      [
-       "Gazi Husrev-beg Mosque",
-       ""
-      ],
-      [
-       "Emperor's Mosque",
-       ""
-      ],
-      [
-       "King Fahd Mosque",
-       ""
-      ],
-      [
-       "Ali Pasha's Mosque",
-       ""
-      ],
-      [
-       "Ilidža Central Mosque",
-       "very modern"
-      ]
-     ]
-    ]
-   ]
-  },
-  "malta": {
-   "facts": [
-    [
-     "Halal food",
-     "Several restaurants with halal menus, mostly around Sliema, St Julian's and Msida"
-    ],
-    [
-     "Mosque",
-     "Mariam Al-Batool Mosque, Paola"
-    ],
-    [
-     "Alcohol",
-     "Common in restaurants and hotels"
-    ],
-    [
-     "Dress",
-     "Relaxed; cover up in churches and the mosque"
-    ],
-    [
-     "When to go",
-     "Spring and autumn"
-    ],
-    [
-     "Suits",
-     "Couples, families and first-timers"
-    ],
-    [
-     "Getting around",
-     "Small and easy, with ferries to Gozo"
-    ],
-    [
-     "Last checked",
-     "14 November 2026"
-    ]
-   ],
-   "sections": [
-    [
-     "Where to eat",
-     "Places listed as halal, or with a halal menu. Check with each place before you go, and ask about cross-contamination where alcohol is served too.",
-     [
-      [
-       "Shakinah, Msida",
-       "listed as halal"
-      ],
-      [
-       "Hugo's Burger Bar, St Julian's",
-       "ask which items are halal"
-      ],
-      [
-       "Hassan Fatayer & Falafel, Sliema",
-       "run by two Syrian brothers"
-      ],
-      [
-       "Kebab Ji, Sliema",
-       "Lebanese"
-      ],
-      [
-       "Sharma Ethnic Cuisines, St Julian's",
-       "mixed cuisine"
-      ],
-      [
-       "Middle East Muse, San Ġiljan",
-       "Turkish"
-      ]
-     ]
-    ],
-    [
-     "Cafes and desserts",
-     "",
-     [
-      [
-       "Lot 61 Coffee Roasters, Valletta",
-       ""
-      ],
-      [
-       "Fontanella Tea Garden, Mdina",
-       "a must-visit, with views across the island"
-      ],
-      [
-       "Debbie's Cafe, Mellieħa",
-       ""
-      ],
-      [
-       "Sea View Cafe, Mellieħa",
-       ""
-      ],
-      [
-       "Terryberry Tearoom, St Paul's Bay",
-       ""
-      ]
-     ]
-    ],
-    [
-     "Places to visit",
-     "",
-     [
-      [
-       "Comino",
-       "by boat, for clear water"
-      ],
-      [
-       "Upper Barrakka Gardens",
-       "views over the Grand Harbour"
-      ],
-      [
-       "Għajn Tuffieħa Bay",
-       "for the views"
-      ],
-      [
-       "Mdina",
-       "the old walled city"
-      ],
-      [
-       "Blue Grotto",
-       "sea caves on the south coast"
-      ],
-      [
-       "Gozo",
-       "the salt pans and the Citadel"
-      ]
-     ]
-    ],
-    [
-     "Where to pray",
-     "Mariam Al-Batool Mosque in Paola, around 15 to 20 minutes from Valletta, has a prayer hall, wudu area and Islamic centre. Jumu'ah is held there; arrive early for a space inside. A prayer app helps with times and qibla, and a travel prayer mat is worth packing.",
-     []
-    ]
-   ]
-  },
-  "new-york": {
-   "facts": [
-    [
-     "Flight time",
-     "About 8 hours direct from Manchester"
-    ],
-    [
-     "Halal food",
-     "Plenty, across all five boroughs"
-    ],
-    [
-     "Getting around",
-     "Subway, walking and the odd cab"
-    ],
-    [
-     "Suits",
-     "Couples, families and first-timers"
-    ],
-    [
-     "When to go",
-     "Spring and autumn"
-    ],
-    [
-     "Dress",
-     "Anything goes"
-    ],
-    [
-     "Budget",
-     "Plan for city prices"
-    ],
-    [
-     "Last checked",
-     "14 November 2026"
-    ]
-   ],
-   "sections": [
-    [
-     "Brunch and cafes",
-     "Places we ate at that are listed as halal. Opening times, menus and halal status change, so check before you go.",
-     [
-      [
-       "Atelier December, Brooklyn",
-       "brunch: try the pistachio pancake"
-      ],
-      [
-       "Cafe Juliet, Staten Island",
-       "the farmer's breakfast platter and cardamom pancakes"
-      ],
-      [
-       "Moe's Doughs, Brooklyn",
-       "doughnuts; try the apple fritter"
-      ]
-     ]
-    ],
-    [
-     "Dinner",
-     "",
-     [
-      [
-       "Miraj Grill, Manhattan",
-       "Persian grill and family platters"
-      ],
-      [
-       "Pizza Loves Sauce, Manhattan",
-       "pizza by the slice and garlic knots"
-      ],
-      [
-       "Rooh's Smoked Meat Steak House, West Hempstead",
-       "barbecue, steaks and brisket"
-      ],
-      [
-       "Stack'd Burger, Brooklyn",
-       "Palestinian-owned; burgers, wings and loaded fries"
-      ],
-      [
-       "Up A Notch food truck, Brooklyn",
-       "combo over rice and smash burgers"
-      ]
-     ]
-    ]
-   ]
-  }
- },
- "WHY_ITEMS": [
-  [
-   "people",
-   "Your call is important to us. So we answer it.",
-   "You talk to us directly, not a call centre."
-  ],
-  [
-   "fee",
-   "No service fee",
-   "The price we quote is the price you pay."
-  ],
-  [
-   "paylater",
-   "Book now, pay later",
-   "On eligible free cancellation rates, nothing upfront: no payment, no deposit until closer to your dates."
-  ],
-  [
-   "hotel",
-   "We deal with the hotel",
-   "Special requests, changes and any problems."
-  ],
-  [
-   "chat",
-   "We stay on board after you land.",
-   "On WhatsApp throughout your stay, and after you're home."
-  ],
-  [
-   "shield",
-   "ATOL protection on flights and packages",
-   "Hotel-only bookings aren't covered."
-  ]
- ],
- "FAQ_Q1": [
-  [
-   "Why use Saphara instead of booking it myself?",
-   "You can book it yourself. What we add is the part booking sites don't do: we compare a few hotels we'd book ourselves, ask the hotel for your requests and get them confirmed, and stay on WhatsApp while you're away. There's no service fee for any of it."
-  ],
-  [
-   "Can you beat a price I've found?",
-   "Sometimes, not always. Send us the hotel and the price and we'll compare it like for like: the same room, board basis, cancellation terms and extras. If we can get a better rate, we'll tell you. If we can't, we'll tell you that too."
-  ],
-  [
-   "Do you charge a fee?",
-   "No. We don't charge a service fee, and the price we quote is the price you pay, with no hidden fees."
-  ],
-  [
-   "How do you make money if there's no service fee?",
-   "The rates we get from hotels and suppliers include our margin, so you pay the price we quote and nothing extra."
-  ],
-  [
-   "Are the hotels you recommend halal?",
-   "We don't call a hotel halal unless we've checked. A resort in a Muslim-majority country isn't automatically halal, so for each hotel we look at the kitchen, whether alcohol is served, the beach and pools, and prayer space. Then we tell you plainly."
-  ],
-  [
-   "Are all your hotels halal or alcohol-free?",
-   "No. We check each hotel and tell you plainly what it offers."
-  ],
-  [
-   "Can you help with Umrah?",
-   "Yes, with the hotels. We book hotels in Makkah and Madinah, share trusted contacts for drivers and ziyarah, and help you find a good flight itinerary. We don't book Umrah flights. Travelling with elderly parents or young children? Tell us and we'll put the walk to the Haram first."
-  ],
-  [
-   "Do you only do hotels, or full holidays?",
-   "Both. Hotel-only stays, and full trips with flights, transfers, private guides and multi-centre itineraries."
-  ],
-  [
-   "I've already booked my flights. Can you still help?",
-   "Yes. We can arrange hotels, airport transfers, tour guides and excursions around flights you've already booked."
-  ],
-  [
-   "Where are you based?",
-   "Saphara Travel Group Ltd is registered in England and Wales (company number 16336079). We work with clients across the UK, over WhatsApp."
-  ]
- ],
- "FAQ_Q2": [
-  [
-   "Is my booking ATOL protected?",
-   "Flights and flight-inclusive packages we book are ATOL protected by the ATOL holder we book them with, and you'll receive an ATOL Certificate. Hotel-only bookings and other services without a flight aren't covered by ATOL."
-  ],
-  [
-   "How does payment work?",
-   "On all bookings with free cancellation, we don't take any payment or deposit until closer to your travel dates, before the free cancellation period ends. Non-refundable rates are paid when you book. Payments are made securely, and we accept American Express on some bookings, so mention it when you enquire."
-  ]
- ],
- "FAQ_Q3": [
-  [
-   "What happens after I send a message?",
-   "We'll get back to you as soon as we can, with a few options compared like for like. Bigger trips can take a few days. Nothing is booked until you've chosen and said yes."
-  ],
-  [
-   "What if something goes wrong while I'm away?",
-   "Message us on WhatsApp. We're with you throughout your stay, and after you're home, and we'll take it up with the hotel for you."
-  ],
-  [
-   "Do you arrange business travel?",
-   "Yes. Hotels and flights for staff and clients, team and group trips, one point of contact on WhatsApp, and an invoice for every booking."
-  ]
- ],
- "LEGAL": [
-  [
-   "privacy.html",
-   "Privacy policy | Saphara Travel",
-   "Privacy policy",
-   "<p class=\"updated\">Last updated: 14 November 2026</p>\n<p>This policy explains what personal information Saphara Travel collects, why, and what your rights are. We keep it simple, and we only collect what we need to plan and book your travel.</p>\n<h2>1. Who we are</h2>\n<p>Saphara Travel is a trading name of Saphara Travel Group Ltd (\"STG\"), a company registered in England and Wales, company number 16336079. <span class=\"reg-office\">Registered office: [REGISTERED OFFICE ADDRESS].</span></p>\n<p>We're the controller of your personal information. We're registered with the Information Commissioner's Office (ICO), registration reference ZB974796.</p>\n<p>Questions about your data: hello@sapharatravel.co.uk.</p>\n<h2>2. What we collect</h2>\n<h3>When you visit our website</h3>\n<ul>\n<li>Our website doesn't use cookies and doesn't store anything you type into the trip form. The form builds a message on your device, which opens in WhatsApp (or your email app) for you to send.</li>\n<li>We may use privacy-friendly analytics that count visits without cookies and without identifying you.</li>\n<li>Like all websites, our hosting provider processes basic technical data (such as your IP address and browser type) to deliver and protect the site.</li>\n<li>Our headline font is loaded from Adobe Fonts, the only third-party font service we use. Adobe receives your IP address to serve the font.</li>\n</ul>\n<h3>When you contact us or book</h3>\n<ul>\n<li>Names, phone number, email address and messages you send us.</li>\n<li>Trip details: destinations, dates, who's travelling, budget, room and meal preferences.</li>\n<li>Details needed to book: names as on passports, dates of birth, children's ages, and where needed passport details and copies.</li>\n<li>Requests that may reveal sensitive information, such as dietary requirements (including halal food), health or mobility needs, or religious requirements such as Umrah travel.</li>\n<li>Payment records: amounts, dates and payment references. We don't see or store card details. If you pay a supplier directly by card, you enter your card details on the supplier's secure payment page.</li>\n<li>Your feedback, reviews and complaints.</li>\n</ul>\n<h2>3. Why we use it, and our legal basis</h2>\n<div class=\"table-wrap\"><table><thead><tr><th scope=\"col\">Why</th><th scope=\"col\">Legal basis</th></tr></thead><tbody><tr><td>Answering enquiries, preparing quotes and booking your trip</td><td>Taking steps at your request before a contract, and performing our contract with you</td></tr><tr><td>Passing your details to hotels, airlines and other suppliers to make and manage your booking</td><td>Performing our contract with you</td></tr><tr><td>Using sensitive information you choose to give us (such as health, dietary or religious requirements) to arrange your booking</td><td>Your explicit consent, which you can withdraw at any time (this may limit what we can arrange)</td></tr><tr><td>Keeping accounts and records, and meeting legal and tax obligations</td><td>Legal obligation</td></tr><tr><td>Looking after you during your trip and dealing with problems or complaints</td><td>Performing our contract, and our legitimate interest in helping you</td></tr><tr><td>Asking for a review or feedback after your trip, and occasionally telling past clients about similar trips</td><td>Our legitimate interest. You can opt out at any time</td></tr><tr><td>Protecting our business, for example against fraud</td><td>Our legitimate interest</td></tr></tbody></table></div>\n<p>We never sell your personal information.</p>\n<h2>4. Who we share it with</h2>\n<p>We only share what's needed, with:</p>\n<ul>\n<li><b>Travel suppliers:</b> hotels, airlines, ATOL-holding travel companies, transfer and excursion providers, and the booking platforms and wholesalers we book through. Many are outside the UK.</li>\n<li><b>Service providers who help us run the business:</b> WhatsApp (Meta), email and file storage (Google, IONOS), our task and booking tools, our bank and card providers, our website host, and invoicing tools. They act on our instructions.</li>\n<li><b>Professional advisers, insurers and authorities,</b> where needed (for example HMRC, the ICO, or the Civil Aviation Authority if an ATOL holder fails), or where the law requires it.</li>\n</ul>\n<h2>5. Transfers outside the UK</h2>\n<p>Booking travel abroad means sending your details to hotels and suppliers in the country you're visiting, which is necessary to perform your booking. Some of our service providers also store data outside the UK, for example in the United States. Where they do, we rely on safeguards recognised under UK law, such as the UK-US data bridge or the ICO's international data transfer agreement.</p>\n<h2>6. How long we keep it</h2>\n<ul>\n<li>Booking, payment and accounting records: 6 years after the end of the financial year of your trip, as required for tax and accounting.</li>\n<li>Passport copies and similar identity documents: deleted within 3 months of your return, unless we need them for a claim or complaint.</li>\n<li>Enquiries that don't lead to a booking: up to 2 years, so we can help if you come back.</li>\n<li>Messages in WhatsApp and email are kept in line with the above.</li>\n</ul>\n<h2>7. Your rights</h2>\n<p>You have the right to:</p>\n<ul>\n<li>access the personal information we hold about you</li>\n<li>ask us to correct it</li>\n<li>ask us to delete it (unless we need to keep it by law)</li>\n<li>object to, or ask us to restrict, how we use it</li>\n<li>withdraw consent where we rely on it</li>\n<li>ask us to transfer it to you or another organisation.</li>\n</ul>\n<p>To use any of these rights, email hello@sapharatravel.co.uk. We'll reply within one month.</p>\n<h2>8. Keeping it safe</h2>\n<p>We use password-protected accounts with two-step verification where available, limit access to the people who need it, and only share what's needed.</p>\n<h2>9. Complaints</h2>\n<p>If you're unhappy with how we've handled your information, please contact us first so we can put it right. You can also complain to the Information Commissioner's Office: ico.org.uk, 0303 123 1113.</p>\n<h2>10. Changes to this policy</h2>\n<p>We may update this policy from time to time. The date at the top shows when it last changed.</p>",
-   "How Saphara Travel handles your information. Our trip request form doesn't store anything; it opens WhatsApp with your message."
-  ],
-  [
-   "booking-terms.html",
-   "Booking terms | Saphara Travel",
-   "Booking terms",
-   "<p class=\"updated\">Last updated: 14 November 2026</p>\n<p>These terms apply to every booking you make with Saphara Travel. Please read them before you confirm a booking. By confirming a booking with us (by WhatsApp, email or any other way), you agree to them on behalf of everyone in your party.</p>\n<h2>1. About us</h2>\n<p>Saphara Travel is a trading name of Saphara Travel Group Ltd (\"STG\"), a company registered in England and Wales, company number 16336079. <span class=\"reg-office\">Registered office: [REGISTERED OFFICE ADDRESS].</span></p>\n<p>Contact: hello@sapharatravel.co.uk or WhatsApp +44 7887 353457.</p>\n<p>In these terms, \"STG\", \"we\", \"us\" and \"our\" mean Saphara Travel Group Ltd. \"You\" means the person making the booking (the lead name) and everyone travelling on the booking.</p>\n<h2>2. What we do and who your contract is with</h2>\n<p>We arrange travel for our clients. The type of booking decides who your contract is with and which terms apply. We'll always tell you which applies before you book.</p>\n<p><b>2.1 Hotels and other services without a flight</b> (for example hotel stays, airport transfers, private guides and excursions). There are two ways to book these, and we'll confirm which applies before you book:</p>\n<ul>\n<li><b>You pay us (bank transfer, or American Express where accepted).</b> Your contract is with us. We buy the service from hotels and other suppliers and are responsible for arranging it as booked.</li>\n<li><b>You pay the supplier directly by card, using a secure payment link we send you.</b> We act as your agent and arrange the booking for you, and your contract for the service is with the supplier named on the payment link and confirmation. The supplier's terms apply, and we're paid a commission by the supplier, not by you.</li>\n</ul>\n<p>Either way, the hotel's or supplier's own rules (for example check-in times, house rules and dress codes) also apply during your stay.</p>\n<p><b>2.2 Flights and flight-inclusive packages.</b> We sell flights and flight-inclusive packages as an agent for ATOL-holding travel companies. For these bookings your contract is with that company, and its booking conditions apply alongside these terms. We'll give you its name, its ATOL number and its booking conditions before you book, and your ATOL Certificate as soon as you pay. See section 10 and our <a href=\"atol-and-financial-protection.html\">ATOL and financial protection page</a>.</p>\n<p><b>2.3 If you book your own flights.</b> Many clients book their own flights directly with an airline and ask us to arrange the hotel and transfers. In that case your flights aren't part of your booking with us, we aren't responsible for them, and they aren't covered by our ATOL arrangements. We're happy to suggest a good flight itinerary, but you book and pay for the flights yourself.</p>\n<p><b>2.4 Umrah.</b> For Umrah trips we arrange hotels and can put you in touch with drivers and ziyarah providers. We can help you find a good flight itinerary, but we don't book Umrah flights. Contacts we pass on are independent providers, not our suppliers, and any arrangement you make with them is between you and them.</p>\n<h2>3. Quotes and prices</h2>\n<ul>\n<li>We don't charge a service fee. The price we quote is the price you pay for what's quoted, unless something you ask us to change affects it.</li>\n<li>Quotes are based on availability and prices at the time we check them. They aren't guaranteed until your booking is confirmed, and prices can change until then.</li>\n<li>Each quote shows what's included, such as the room type, board basis, cancellation terms and any transfers. Anything not listed isn't included.</li>\n<li>Some hotels charge local taxes, tourism fees, resort fees or deposits that are paid directly at the hotel. We'll tell you about any we're aware of, but the hotel sets these and they can change.</li>\n<li>Where we compare a price you've found elsewhere, we compare like for like and tell you honestly what we find. We only describe a price as cheaper when the booking is genuinely the same.</li>\n</ul>\n<h2>4. Confirming your booking</h2>\n<ul>\n<li>Your booking is confirmed when we send you written confirmation (by WhatsApp or email) that it's been made with the hotel or supplier.</li>\n<li>Please check your confirmation straight away, including names (exactly as on passports), dates, room types and board basis, and tell us of any mistake within 24 hours. Some suppliers charge to correct details later.</li>\n<li>The lead name must be at least 18 years old and must have the authority of everyone in the party to book on their behalf.</li>\n</ul>\n<h2>5. Paying for your booking</h2>\n<p><b>5.1 Free cancellation bookings.</b> On all free cancellation bookings, we don't take any payment or deposit when you book. We secure the room and rate for you, and you pay the full balance closer to your travel dates, before the free cancellation period ends. We'll tell you the exact payment date when you book and remind you before it's due.</p>\n<p><b>5.2 If payment isn't received in time.</b> If we haven't received full payment by the payment date, we may cancel the booking before the free cancellation period ends, so neither of us is charged. We'll try to contact you first.</p>\n<p><b>5.3 Non-refundable bookings.</b> Non-refundable rates must be paid in full when you book.</p>\n<p><b>5.4 Flights and packages.</b> These are paid according to the ATOL holder's booking conditions, which we'll give you before you book.</p>\n<p><b>5.5 How to pay.</b> You can pay us by bank transfer to our company account, and we accept American Express on some bookings. Alternatively, for some hotel bookings you can pay the supplier directly by card through a secure payment link we send you (see section 2.1). We don't add card surcharges. Please ask about payment options when you enquire.</p>\n<p><b>5.6 Business clients.</b> We can agree different payment terms in writing with business clients.</p>\n<h2>6. If you change or cancel your booking</h2>\n<ul>\n<li>Ask us by WhatsApp or email. A change or cancellation takes effect when we confirm it in writing.</li>\n<li><b>Free cancellation bookings:</b> you can cancel free of charge until the free cancellation deadline shown on your confirmation. As you won't usually have paid yet, there's nothing to refund. If you have paid, we'll refund you in full.</li>\n<li><b>After the deadline, or on non-refundable rates:</b> the hotel's or supplier's cancellation charges apply, which can be up to 100% of the price. We'll pass on any refund we receive from the supplier.</li>\n<li><b>Changes:</b> we'll try to make any change you ask for, but it depends on availability and the supplier's rules. Some changes are treated as a cancellation and a new booking. You pay any difference in price and any charges the supplier makes. We don't charge our own fee for changes.</li>\n<li><b>No-shows and unused services:</b> if you don't arrive or don't use part of your booking, no refund is usually due.</li>\n<li><b>No cooling-off period:</b> the 14-day right to cancel under consumer law doesn't apply to accommodation, transport and leisure services booked for specific dates. Your cancellation rights are those set out in this section.</li>\n<li><b>Flights and packages:</b> the ATOL holder's booking conditions apply.</li>\n</ul>\n<h2>7. If we or a supplier change or cancel your booking</h2>\n<ul>\n<li>Occasionally a hotel or supplier changes or cancels a booking, for example if it overbooks, closes or carries out work. If that happens, we'll tell you as soon as we can and offer you a comparable alternative where one is available, or a full refund of what you've paid for the affected service.</li>\n<li>If a significant change is made before you travel, you can choose to accept it or cancel the affected service for a full refund.</li>\n<li>We aren't responsible for changes or cancellations caused by events outside our and our suppliers' control, such as extreme weather, natural disasters, war, terrorism, civil unrest, epidemics, government action or industrial action. In those cases we'll still help you, and pass on any refund we receive.</li>\n</ul>\n<h2>8. Special requests and hotel information</h2>\n<ul>\n<li>We'll pass on your special requests (for example connecting rooms, a high floor, early check-in, a room facing the Haram, honeymoon touches, cots or dietary needs) and ask the hotel to confirm them. Unless the hotel confirms a request in writing, it can't be guaranteed, and it isn't part of your contract.</li>\n<li>Information we give about hotels, including halal food, alcohol, pools, dress codes, distances and facilities, is based on what the hotel or reliable sources tell us when we check. Hotels can change their facilities and policies. If something matters to you, tell us and we'll ask the hotel to confirm it in writing before you book.</li>\n<li>Room types, views and facilities are as described by the hotel. Star ratings are the local rating or the supplier's rating, and standards vary between countries.</li>\n<li>Flight times and other travel times we give are approximate.</li>\n</ul>\n<h2>9. Your responsibilities</h2>\n<ul>\n<li><b>Passports, visas and health:</b> you're responsible for having a valid passport (many countries require at least six months' validity), any visas or travel authorisations, and any vaccinations or health documents needed for every country you visit or pass through, including Umrah visas. Check the latest advice on gov.uk (foreign travel advice). We can point you in the right direction, but we can't accept responsibility if you're refused travel or entry.</li>\n<li><b>Travel insurance:</b> we strongly recommend comprehensive travel insurance from the moment you book, covering cancellation, medical costs and repatriation.</li>\n<li><b>Accurate information:</b> give us correct names, dates and details, and tell us about anything we need to know, such as mobility needs or the ages of children.</li>\n<li><b>Behaviour:</b> follow the rules of hotels, transport providers and local laws. A supplier may refuse service if a member of your party behaves unacceptably, and no refund will be due.</li>\n</ul>\n<h2>10. ATOL protection</h2>\n<p>Flights and flight-inclusive packages we sell are ATOL protected by the ATOL holder we book them with. You'll receive an ATOL Certificate as soon as you pay, showing the ATOL holder's name and ATOL number. Please read it carefully: it tells you what's protected and who to contact if something goes wrong. Hotel-only bookings and other services without a flight aren't covered by ATOL.</p>\n<h2>11. Our liability to you</h2>\n<ul>\n<li>For hotel and other non-flight bookings you pay us for, we'll arrange them with reasonable skill and care.</li>\n<li>For bookings you pay the supplier for directly, we act as your agent: our responsibility is to make the booking correctly and pass on information accurately, and the supplier is responsible for providing the service.</li>\n<li>For flights and packages sold as an agent, our responsibility is to make the booking correctly and pass on information accurately. The ATOL holder is responsible for providing the travel arrangements.</li>\n<li>We aren't liable for any loss caused by your own actions, by a third party unconnected with the services we provide, or by events outside our and our suppliers' control (see section 7).</li>\n<li>We aren't liable for business losses, or for losses that weren't foreseeable when you booked.</li>\n<li>Nothing in these terms limits our liability for death or personal injury caused by our negligence, for fraud, or for anything else that can't be limited by law, and nothing affects your statutory rights.</li>\n</ul>\n<h2>12. If something goes wrong</h2>\n<ul>\n<li><b>During your trip:</b> tell us on WhatsApp straight away, and tell the hotel or supplier too. Most problems can be fixed quickly on the spot, and we'll do what we can with the hotel. If you don't tell us at the time, it may limit what we can do afterwards.</li>\n<li><b>Refunds or compensation offered at the hotel:</b> hotel staff sometimes offer a refund, credit or compensation when something goes wrong. Your booking is paid through us or our booking suppliers, not to the hotel directly, so any refund has to come back through that same chain, and we can only pass on what we actually receive. To protect your refund:\n<ul>\n<li>Contact us on WhatsApp before you accept any offer, check out early or move hotels, so we can deal with the hotel and our supplier straight away.</li>\n<li>Ask the hotel to confirm any offer in writing, by email from the hotel or on hotel letterhead. It should name the guest, the booking dates, what went wrong, the amount or nights to be refunded and the name of the manager agreeing it. Send us a copy straight away.</li>\n<li>A verbal promise from hotel staff isn't binding on us or our suppliers, and refunds can't be guaranteed without written confirmation.</li>\n<li>We'll pursue the refund for you, and pass it on as soon as we receive it. It can take several weeks to come through the supplier. If the supplier refunds less than the hotel promised, or nothing, we'll tell you why and keep pursuing it where it's reasonable to do so. We aren't responsible for paying a refund we haven't received, unless we're at fault ourselves.</li>\n<li>If you paid the supplier directly by card, any refund goes back to your card from that supplier.</li>\n<li>This doesn't affect your legal rights if the service you booked with us wasn't provided as agreed.</li>\n</ul></li>\n<li><b>After your trip:</b> if you're still not happy, email hello@sapharatravel.co.uk within 28 days of returning, with your booking details and any photos or documents. We'll acknowledge your complaint within 5 working days and aim to give you a full reply within 28 days.</li>\n<li><b>Flights and packages:</b> the ATOL holder's complaints procedure also applies.</li>\n</ul>\n<h2>13. Data protection</h2>\n<p>We use your personal information to make and manage your booking, as explained in our <a href=\"privacy.html\">privacy policy</a>. We share it with hotels, transport providers and other suppliers only as needed to provide your booking, including suppliers outside the UK.</p>\n<h2>14. General</h2>\n<ul>\n<li>These terms, your confirmation and any written confirmations from us form the whole agreement between us.</li>\n<li>If any part of these terms is found to be invalid, the rest still applies.</li>\n<li>These terms are governed by the law of England and Wales, and the courts of England and Wales have jurisdiction. If you live in Scotland or Northern Ireland, you can also bring proceedings in your local courts.</li>\n</ul>",
-   "How booking with Saphara Travel works: who your contract is with, paying, changes, cancellations and what happens if something goes wrong."
-  ],
-  [
-   "atol-and-financial-protection.html",
-   "ATOL and financial protection | Saphara Travel",
-   "ATOL and financial protection",
-   "<p class=\"updated\">Last updated: 14 November 2026</p>\n<h2>Flights and flight-inclusive packages</h2>\n<p>Flights and flight-inclusive packages we sell are ATOL protected by the ATOL holder we book them with.</p>\n<p>When you book, we act as an agent for that ATOL holder. Before you pay, we'll tell you which company it is and give you its booking conditions. As soon as you pay, you'll receive an ATOL Certificate, which shows the ATOL holder's name and ATOL number and lists the protected parts of your booking.</p>\n<p>Please check your ATOL Certificate as soon as you receive it. It explains what's protected, how to get help if something goes wrong and who to contact. You can find out more about ATOL protection at caa.co.uk.</p>\n<h2>Hotels and other services without a flight</h2>\n<p>Hotel-only bookings and other services booked without a flight, such as airport transfers, private guides and excursions, aren't covered by ATOL.</p>\n<p>On all free cancellation bookings, we don't take any payment until closer to your travel dates, so there's no money held for long.</p>\n<h2>Booking your own flights</h2>\n<p>If you've booked your own flights and we arrange your hotel, transfers or tours, your flights aren't part of a booking with us and aren't covered by our ATOL arrangements. Check the protection your airline or flight seller provides.</p>\n<h2>Travel insurance</h2>\n<p>ATOL doesn't cover everything, for example illness, missed flights or changes of plan. We strongly recommend comprehensive travel insurance from the moment you book.</p>\n<h2>Questions</h2>\n<p>Ask us on WhatsApp or email hello@sapharatravel.co.uk.</p>",
-   "How ATOL protection works on flights and flight-inclusive packages we book, and what isn't covered."
-  ],
-  [
-   "cookies.html",
-   "Cookies | Saphara Travel",
-   "Cookies",
-   "<p class=\"updated\">Last updated: 14 November 2026</p>\n<h2>The short version</h2>\n<p>Our website doesn't set any cookies, so there's no cookie banner to click through.</p>\n<h2>The detail</h2>\n<ul>\n<li><b>No cookies from us.</b> We don't use cookies or similar tracking technologies to follow you or show you adverts.</li>\n<li><b>No form storage.</b> The trip form builds your message on your own device and opens it in WhatsApp or your email app. Nothing you type is saved on our website.</li>\n<li><b>Analytics.</b> We may use privacy-friendly analytics that count page visits without cookies and without identifying you.</li>\n<li><b>Fonts.</b> Our headline font is loaded from Adobe Fonts, the only third-party font service we use. Adobe receives your IP address to serve the font. It doesn't set cookies for this. Every other font is served from our own site.</li>\n<li><b>Other websites.</b> If you follow a link to another site, such as WhatsApp, Instagram, Trustpilot or a partner booking site, that site may use its own cookies under its own policy. Some links on our site are affiliate links, which may use cookies on the partner's site to record that you came from us.</li>\n</ul>\n<h2>Questions</h2>\n<p>Email hello@sapharatravel.co.uk. See also our <a href=\"privacy.html\">privacy policy</a>.</p>",
-   "This website doesn't use cookies."
-  ],
-  [
-   "website-terms.html",
-   "Website terms of use | Saphara Travel",
-   "Website terms of use",
-   "<p class=\"updated\">Last updated: 14 November 2026</p>\n<p>These terms cover your use of sapharatravel.co.uk. Bookings are covered separately by our <a href=\"booking-terms.html\">booking terms and conditions</a>.</p>\n<h2>1. About us</h2>\n<p>This website is run by Saphara Travel Group Ltd (\"STG\"), trading as Saphara Travel, a company registered in England and Wales, company number 16336079. <span class=\"reg-office\">Registered office: [REGISTERED OFFICE ADDRESS].</span> Contact: hello@sapharatravel.co.uk.</p>\n<h2>2. Information on this site</h2>\n<ul>\n<li>The information on this site, including destination details, flight times, best times to visit, hotel information and our travel guides, is for general guidance. We check it carefully, but it can change and we can't guarantee it's always complete or up to date.</li>\n<li>Flight times are approximate and depend on the route and airline.</li>\n<li>Examples on the site, such as the worked price comparison and sample itineraries, are illustrations of how we work, not offers or real bookings.</li>\n<li>Prices and availability are only confirmed when we send you a quote and confirm your booking.</li>\n<li>Halal food, alcohol and other details in our guides and hotel information are based on what we found when we last checked. Always confirm anything that matters to you before you travel. We're happy to check for you.</li>\n</ul>\n<h2>3. Using the site</h2>\n<p>You may use this site for personal, non-commercial purposes. Please don't misuse it, try to gain unauthorised access to it, or copy large parts of it.</p>\n<h2>4. Our content</h2>\n<p>The text, design, logo, guides and photography on this site belong to us or are used with permission. You may share links to our pages, but please don't copy our content or images without asking.</p>\n<h2>5. Links and affiliate links</h2>\n<ul>\n<li>Our site links to other websites, such as WhatsApp, Instagram and Trustpilot. We're not responsible for their content or how they use your information.</li>\n<li>Some links are affiliate links, clearly labelled as such. If you buy through them, we may earn a small commission at no extra cost to you. This never affects what we recommend.</li>\n</ul>\n<h2>6. Reviews</h2>\n<p>Reviews shown on our site come from real clients on Trustpilot. We show them as written, though we may shorten long reviews without changing their meaning.</p>\n<h2>7. Liability</h2>\n<p>We provide this site as it is. We aren't liable for any loss caused by relying on general information on the site without confirming it with us, or by the site being unavailable. Nothing here limits liability that can't be limited by law.</p>\n<h2>8. Changes</h2>\n<p>We may update the site and these terms at any time. The date at the top shows when the terms last changed.</p>\n<h2>9. Law</h2>\n<p>These terms are governed by the law of England and Wales.</p>",
-   "The terms for using the Saphara Travel website. Bookings are covered by our booking terms."
-  ]
- ],
- "TRIP_STORIES": [],
- "MENU_EXTRA": [
-  {
-   "name": "Umrah",
-   "href": "destinations/makkah-and-madinah.html",
-   "thumb": "thumb-st-madinah-nabawi.webp",
-   "lines": [
-    "Umrah hotels.",
-    "Makkah and Madinah."
-   ]
-  }
- ]
 }
