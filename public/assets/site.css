@@ -2640,3 +2640,13 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
     transform: scale(1.04);
   }
 }
+
+/* Large desktop navigation: let the header use the full viewport while page content keeps its normal 1200px grid. */
+@media (min-width: 1600px) {
+  .header > .col {
+    width: 100%;
+    max-width: none;
+    padding-left: clamp(40px, 4vw, 88px);
+    padding-right: clamp(40px, 4vw, 88px);
+  }
+}
