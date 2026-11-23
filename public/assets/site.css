@@ -2897,7 +2897,7 @@ body.home .hero.hd::after {
 /* Instagram cover direction: stacked, uppercase headline with more scale. */
 body.home .hero.hd h1 {
   --tier: var(--head-hero);
-  --fit: 5.25;
+  --fit: 7.6;
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
