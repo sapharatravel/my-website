@@ -2897,3 +2897,8 @@ body.home .hero.hd .actions .hero-cta { min-height: 52px; padding: 0; }
 body.home .header .hsplit { background: #fff; color: var(--ink); box-shadow: var(--btn-light-shadow); --arrow-bg: var(--ink); --arrow-fg: #fff; }
 body.home .header .hsplit .split-label { background: transparent; color: var(--ink); box-shadow: none; }
 body.home .header .hsplit .split-arrow { background: var(--btn-dark); color: #fff; box-shadow: var(--btn-dark-shadow); }
+@media (hover: hover) {
+  body.home .header .hsplit:hover { background: var(--btn-dark-hover); color: #fff; box-shadow: var(--btn-dark-shadow-hover); }
+  body.home .header .hsplit:hover .split-label,
+  body.home .header .hsplit:hover .split-arrow { background: var(--btn-dark-hover); color: #fff; box-shadow: none; }
+}
