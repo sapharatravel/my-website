@@ -373,43 +373,95 @@
 })();
 
 
-/* Homepage: accessible booking tabs with coordinated, preloaded crossfades. */
+/* Homepage: fluid, choreographed booking-step transitions. */
 (function () {
   var root = document.querySelector("[data-how-process]");
-  if (!root) return;
+  if (!root || root.dataset.motionReady) return;
+  root.dataset.motionReady = "true";
   var tabs = Array.prototype.slice.call(root.querySelectorAll("[data-how-step]"));
   var panel = root.querySelector("#how-panel");
   var title = root.querySelector("[data-how-title]");
   var description = root.querySelector("[data-how-description]");
   var number = root.querySelector("[data-how-number]");
   var footnote = root.querySelector("[data-how-footnote]");
+  var frame = root.querySelector(".how-image");
   var image = root.querySelector("[data-how-image]");
   var caption = root.querySelector("[data-how-caption]");
-  if (!tabs.length || !panel || !title || !description || !image) return;
+  if (!tabs.length || !panel || !title || !description || !image || !frame) return;
   var steps = [
     { title: "Tell us your plans", description: "Tell us where you’d like to go, when you want to travel and who’s coming along. If you have a budget, a hotel in mind or a few must-haves, share those too. If you’re still deciding, that’s absolutely fine.", footnote: "It all starts with a conversation.", image: "/img/st-card-honeymoon.webp", alt: "A beautiful setting for a special holiday", caption: "01 · Your trip starts here" },
     { title: "Explore your options", description: "We’ll put together a thoughtful shortlist of hotels and stays that suit your plans. We compare the details that matter, including room type, meal plan, cancellation terms and what’s included, so you can choose with confidence.", footnote: "Handpicked options, clearly compared.", image: "/img/st-hotel-suite.webp", alt: "A comfortable hotel suite, ready for a stay", caption: "02 · Options worth considering" },
     { title: "Make it yours", description: "Found somewhere you love? We’ll take care of the booking and pass your requests to the hotel. From room preferences to special touches, we’ll check what can be arranged and confirm the details with you.", footnote: "Nothing is booked until you’re happy.", image: "/img/st-howwework-kl.webp", alt: "Kuala Lumpur skyline at golden hour", caption: "03 · The details, taken care of" },
     { title: "You’re ready to go", description: "We’ll send your booking confirmation and the details you need for your trip. And our support doesn’t stop when you check in. If you need us while you’re away, you can reach our team on WhatsApp.", footnote: "A real team, still here when you travel.", image: "/img/st-hotel-balcony.webp", alt: "A peaceful hotel balcony overlooking the destination", caption: "04 · We're with you along the way" }
   ];
-  var active = 0, transitionTimer;
-  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var imageCache = {};
-  steps.forEach(function (step) {
-    var preload = new Image();
-    preload.src = step.image;
-    imageCache[step.image] = preload;
-  });
-  function paint(index) {
+  var active = 0, pending = 0, overlay = null, animations = [];
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var cache = {};
+  steps.forEach(function (step) { var preload = new Image(); preload.src = step.image; cache[step.image] = preload; });
+
+  function moveIndicator(index) {
+    var compact = window.matchMedia("(max-width: 900px)").matches;
+    root.style.setProperty("--how-tab-x", compact ? (index % 2) * 100 + "%" : index * 100 + "%");
+    root.style.setProperty("--how-tab-y", compact ? Math.floor(index / 2) * 100 + "%" : "0%");
+  }
+  function cancelMotion() {
+    animations.forEach(function (animation) { try { animation.cancel(); } catch (e) {} });
+    animations = [];
+    if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+    overlay = null;
+    window.clearTimeout(pending);
+    panel.classList.remove("is-changing");
+  }
+  function updateCopy(index) {
     var step = steps[index];
     number.innerHTML = "0" + (index + 1) + " <span>/ 04</span>";
     title.textContent = step.title;
     description.textContent = step.description;
     footnote.textContent = step.footnote;
-    panel.setAttribute("aria-labelledby", tabs[index].id);
     caption.textContent = step.caption;
-    image.src = step.image;
-    image.alt = step.alt;
+    panel.setAttribute("aria-labelledby", tabs[index].id);
+  }
+  function animateCopy() {
+    var pieces = [number, title, description, footnote];
+    pieces.forEach(function (el, i) {
+      if (!el || !el.animate) return;
+      animations.push(el.animate(
+        [{ opacity: 0, transform: "translate3d(0, 22px, 0)", filter: "blur(5px)" },
+         { opacity: 1, transform: "translate3d(0, 0, 0)", filter: "blur(0)" }],
+        { duration: 680, delay: i * 75, easing: "cubic-bezier(.16, 1, .3, 1)", fill: "both" }
+      ));
+    });
+  }
+  function animateImage(step) {
+    if (reduce || !frame.animate) {
+      image.src = step.image; image.alt = step.alt; return;
+    }
+    var next = document.createElement("img");
+    next.className = "how-image-next";
+    next.src = step.image;
+    next.alt = step.alt;
+    next.width = 1200; next.height = 900;
+    next.decoding = "async";
+    frame.appendChild(next);
+    overlay = next;
+    var reveal = next.animate(
+      [{ clipPath: "inset(0 0 0 100%)", transform: "scale(1.09)", opacity: .9 },
+       { clipPath: "inset(0 0 0 0%)", transform: "scale(1)", opacity: 1 }],
+      { duration: 920, easing: "cubic-bezier(.76, 0, .24, 1)", fill: "forwards" }
+    );
+    var old = image.animate(
+      [{ transform: "scale(1)", opacity: 1 }, { transform: "scale(1.055)", opacity: .72 }],
+      { duration: 900, easing: "cubic-bezier(.22, 1, .36, 1)", fill: "forwards" }
+    );
+    animations.push(reveal, old);
+    reveal.onfinish = function () {
+      if (overlay !== next) return;
+      image.src = step.image; image.alt = step.alt;
+      image.style.transform = "scale(1)";
+      image.style.opacity = "1";
+      next.remove();
+      overlay = null;
+    };
   }
   function select(index, moveFocus) {
     if (index === active && !moveFocus) return;
@@ -420,17 +472,26 @@
       tab.setAttribute("tabindex", selected ? "0" : "-1");
     });
     if (moveFocus) tabs[index].focus();
-    window.clearTimeout(transitionTimer);
-    if (reducedMotion) { paint(index); return; }
-    panel.classList.add("is-changing");
-    image.classList.add("is-changing");
-    transitionTimer = window.setTimeout(function () {
-      paint(index);
-      requestAnimationFrame(function () {
-        panel.classList.remove("is-changing");
-        image.classList.remove("is-changing");
-      });
-    }, 190);
+    moveIndicator(index);
+    cancelMotion();
+    if (reduce) {
+      updateCopy(index); image.src = steps[index].image; image.alt = steps[index].alt;
+      return;
+    }
+    var outgoing = [number, title, description, footnote];
+    outgoing.forEach(function (el, i) {
+      if (!el || !el.animate) return;
+      animations.push(el.animate(
+        [{ opacity: 1, transform: "translate3d(0,0,0)", filter: "blur(0)" },
+         { opacity: 0, transform: "translate3d(0,-13px,0)", filter: "blur(3px)" }],
+        { duration: 190, delay: i * 18, easing: "cubic-bezier(.4,0,1,1)", fill: "forwards" }
+      ));
+    });
+    animateImage(steps[index]);
+    pending = window.setTimeout(function () {
+      updateCopy(index);
+      animateCopy();
+    }, 145);
   }
   tabs.forEach(function (tab, index) {
     tab.addEventListener("click", function () { select(index, false); });
@@ -441,8 +502,9 @@
       else if (event.key === "Home") next = 0;
       else if (event.key === "End") next = tabs.length - 1;
       else return;
-      event.preventDefault();
-      select(next, true);
+      event.preventDefault(); select(next, true);
     });
   });
+  window.addEventListener("resize", function () { moveIndicator(active); }, { passive: true });
+  moveIndicator(0);
 })();
