@@ -549,6 +549,40 @@
    ],
    "city": "Langkawi",
    "title": "Muslim-friendly Langkawi holidays and villas | Saphara Travel"
+  },
+  {
+   "slug": "maldives",
+   "name": "Maldives",
+   "country": "Maldives",
+   "code": "MLE",
+   "img": "st-dest-maldives.webp",
+   "alt": "A turquoise lagoon and overwater villas in the Maldives",
+   "flight": "12h · 1 stop",
+   "flight_long": "About 12 hours with one stop from Manchester.",
+   "intro": "Clear lagoons, private-island resorts and overwater villas, with the right island making all the difference.",
+   "suits": "Honeymooners, couples and families",
+   "best": "November to April",
+   "why": [
+    [
+     "Private-island stays",
+     "A choice of islands and resorts, each with its own feel."
+    ],
+    [
+     "Overwater villas",
+     "Private pools, sea views and direct access to the lagoon at selected resorts."
+    ],
+    [
+     "Honeymoons and families",
+     "Quiet adults-focused resorts or islands with family facilities."
+    ]
+   ],
+   "trips": [
+    "honeymoons",
+    "beach-and-island",
+    "family-holidays"
+   ],
+   "city": "Malé · resort islands",
+   "title": "Muslim-friendly Maldives holidays and resorts | Saphara Travel"
   }
  ],
  "RESORT_PLACES": [
@@ -1161,6 +1195,11 @@
   "langkawi": [
    "hotel",
    "map",
+   "heart"
+  ],
+  "maldives": [
+   "hotel",
+   "beach",
    "heart"
   ]
  },
