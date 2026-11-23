@@ -15,13 +15,17 @@
 /
   Cache-Control: public, max-age=0, must-revalidate
 
-# Site files that keep the same name when they change: re-check each day
+# Versioned code assets use content-derived ?v= hashes in their URLs, so they can be cached for a year
 /assets/site.css
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 /assets/site.js
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
+/assets/plan-form.css
+  Cache-Control: public, max-age=31536000, immutable
+/assets/plan-form.js
+  Cache-Control: public, max-age=31536000, immutable
 /assets/price-check.js
-  Cache-Control: public, max-age=86400, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 /site.webmanifest
   Cache-Control: public, max-age=86400
 
