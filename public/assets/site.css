@@ -2866,3 +2866,8 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 }
 
 /* Production refresh: publish the reviews progress-line controls from main. */
+
+/* Homepage desktop hero: keep the copy vertically centred on the left content edge. */
+@media (min-width: 768px) {
+  body.home .hero.hd .col { align-self: center; padding: 0; }
+}

@@ -132,8 +132,8 @@
     document.querySelectorAll("[data-bubbles]").forEach(function (w) { w.querySelectorAll(".bub").forEach(function (b) { b.classList.add("wait"); }); bIO.observe(w); });
   }
 
-  /* scroll loop: progress line, hero softening, gentle photo movement (parallax only on large screens with a mouse) */
-  var progress = document.getElementById("progress"), heroPic = hero && hero.querySelector("picture"), heroCol = hero && hero.querySelector(".col");
+  /* scroll loop: progress line, gentle hero image zoom, photo movement (parallax only on large screens with a mouse) */
+  var progress = document.getElementById("progress"), heroPic = hero && hero.querySelector("picture");
   /* hero video: load after the page, the right size for the screen; not for reduced motion or data saver */
   var heroVid = hero && hero.querySelector(".hero-video");
   if (heroVid) {
@@ -166,7 +166,7 @@
     if (reduce) return;
     if (progress) progress.style.transform = "scaleX(" + (docH > 0 ? clamp(y / docH, 0, 1) : 0).toFixed(4) + ")";
     var hp = clamp(y / hh, 0, 1);
-    if (hero && heroPic && hp < 1) { heroPic.style.transform = "scale(" + (1 + hp * .04).toFixed(4) + ")"; if (heroVid) heroVid.style.transform = heroPic.style.transform; heroCol.style.opacity = (1 - hp * .8).toFixed(3); }
+    if (hero && heroPic && hp < 1) { heroPic.style.transform = "scale(" + (1 + hp * .04).toFixed(4) + ")"; if (heroVid) heroVid.style.transform = heroPic.style.transform; }
     if (ring) ring.style.rotate = (y * .1).toFixed(1) + "deg";
     moveRects.forEach(function (item) {
       /* Phones and tablets: photos stay still (mobile audit 22 Nov 2026). Desktop parallax retains its existing movement. */
