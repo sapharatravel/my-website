@@ -2871,3 +2871,9 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 @media (min-width: 768px) {
   body.home .hero.hd .col { align-self: center; margin-left: 0; margin-right: auto; padding: 0; text-align: left; }
 }
+
+/* Let the homepage headline grow with desktop viewports without losing the laptop height cap. */
+@media (min-width: 1024px) {
+  body.home .hero.hd h1 { --tier: clamp(78px, 7vw, 152px); }
+  body.home .hero.hd .col { max-width: min(1400px, calc(100% - 32px)); }
+}
