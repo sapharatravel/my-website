@@ -64,11 +64,13 @@
   var nearEnd = { form: false, footer: false };
   var endIO = new IntersectionObserver(function (es) { es.forEach(function (e) { nearEnd[e.target.id === "footer" ? "footer" : "form"] = e.isIntersecting; }); update(); }, { rootMargin: "0px 0px -15% 0px" });
   ["enquire", "footer"].forEach(function (id) { var el = document.getElementById(id); if (el) endIO.observe(el); });
-  function update() {
-    var y = window.scrollY;
-    hdr.classList.toggle("slim", y > 8);
-    var past = hero ? hero.getBoundingClientRect().bottom < 0 : y > 420;
+  function update(yValue, heroBottomValue) {
+    /* Read geometry before changing classes, so the header update cannot force a synchronous layout. */
+    var y = typeof yValue === "number" ? yValue : window.scrollY;
+    var heroBottom = typeof heroBottomValue === "number" ? heroBottomValue : (hero ? hero.getBoundingClientRect().bottom : 0);
+    var past = hero ? heroBottom < 0 : y > 420;
     var on = past && !nearEnd.form && !nearEnd.footer && window.innerWidth < 1024;
+    hdr.classList.toggle("slim", y > 8);
     hdr.classList.toggle("bar-on", on);
     if (sticky) { sticky.classList.toggle("on", on); sticky.querySelectorAll("a").forEach(function (a) { a.tabIndex = on ? 0 : -1; }); }
   }
@@ -161,20 +163,23 @@
   var ticking = false, vh = window.innerHeight;
   function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
   function frame() {
-    ticking = false; update();
-    if (reduce) return;
+    ticking = false;
+    /* Collect all layout measurements before the frame's style writes. */
     var y = window.scrollY, docH = document.documentElement.scrollHeight - vh;
+    var hh = hero ? hero.offsetHeight : 1, heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+    var par = bigMouse.matches, moveRects = [];
+    if (!reduce && par) movers.forEach(function (m) { if (m.on) moveRects.push({ m: m, r: m.el.getBoundingClientRect() }); });
+    update(y, heroBottom);
+    if (reduce) return;
     if (progress) progress.style.transform = "scaleX(" + (docH > 0 ? clamp(y / docH, 0, 1) : 0).toFixed(4) + ")";
-    var hh = hero ? hero.offsetHeight : 1, hp = clamp(y / hh, 0, 1);
+    var hp = clamp(y / hh, 0, 1);
     if (hero && heroPic && hp < 1) { heroPic.style.transform = "scale(" + (1 + hp * .04).toFixed(4) + ")"; if (heroVid) heroVid.style.transform = heroPic.style.transform; heroCol.style.opacity = (1 - hp * .8).toFixed(3); }
     if (ring) ring.style.rotate = (y * .1).toFixed(1) + "deg";
-    var par = bigMouse.matches;
-    movers.forEach(function (m) {
-      /* Phones and tablets: photos stay still (mobile audit 22 Nov 2026). The scale-on-scroll made every card photo grow and shrink while you scrolled or swiped. LOCKED: parallax in photo cards is for desktop with a mouse only. */
-      if (!m.on || !par) return;
-      var r = m.el.getBoundingClientRect();
+    moveRects.forEach(function (item) {
+      /* Phones and tablets: photos stay still (mobile audit 22 Nov 2026). Desktop parallax retains its existing movement. */
+      var m = item.m, r = item.r;
       var c = clamp(((r.top + r.height / 2) - vh / 2) / (vh / 2 + r.height / 2), -1, 1);
-      m.img.style.transform = par ? "translate3d(0," + (c * r.height * .06).toFixed(1) + "px,0) scale(1.14)" : "scale(" + (1 + Math.abs(c) * .06).toFixed(4) + ")";
+      m.img.style.transform = "translate3d(0," + (c * r.height * .06).toFixed(1) + "px,0) scale(1.14)";
     });
   }
   window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }, { passive: true });
