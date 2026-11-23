@@ -461,13 +461,13 @@
       frame.classList.remove("is-out");
 
       // Visual appears first, then counter/title, then paragraph.
-      enter(image, [{opacity:0},{opacity:1}], 350, 150);
-      enter(caption, [{opacity:0},{opacity:1}], 350, 150);
-      enter(number, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 200);
+      enter(image, [{opacity:0,transform:"translateY(18px)"},{opacity:1,transform:"translateY(0)"}], 450, 0);
+      enter(caption, [{opacity:0},{opacity:1}], 350, 0);
+      enter(number, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 70);
       enter(title, [{opacity:0,transform:"translateY(8px)",color:"#AAA49A"},{opacity:1,transform:"translateY(0)",color:""}], 300, 200);
-      enter(description, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 300);
-      enter(footnote, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 350);
-    }, 250);
+      enter(description, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 150);
+      enter(footnote, [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}], 300, 220);
+    }, 240);
   }
   tabs.forEach(function (tab, index) {
     tab.addEventListener("click", function () { select(index, false); });
