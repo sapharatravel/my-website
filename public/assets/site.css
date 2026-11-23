@@ -2879,3 +2879,25 @@ section h2.display.d-l,
 #how.how-home h2.display.d-l {
   font-size: var(--head-section);
 }
+
+/* 23 Nov 2026: On the homepage, match the unscrolled nav CTA to the hero CTA.
+   Keep the header's slim/bar-on state styles and opacity/transform transition intact. */
+body.home .header:not(.slim) .hsplit {
+  min-height: var(--btn-h);
+  padding: calc((var(--btn-h) - var(--btn-arrow)) / 2) calc((var(--btn-h) - var(--btn-arrow)) / 2) calc((var(--btn-h) - var(--btn-arrow)) / 2) var(--btn-pad);
+  gap: var(--btn-gap);
+  background: var(--btn-light);
+  color: var(--ink);
+  box-shadow: var(--btn-light-shadow);
+  --arrow-bg: var(--btn-dark);
+  --arrow-fg: #fff;
+  --arrow-sh: inset 0 1px 0 rgba(255,255,255,.14);
+}
+body.home .header:not(.slim) .hsplit .split-label { padding: 0; font-size: var(--btn-fs); color: var(--ink); }
+body.home .header:not(.slim) .hsplit .split-arrow { width: var(--btn-arrow); height: var(--btn-arrow); }
+body.home .header:not(.slim) .hsplit .split-arrow svg { width: var(--btn-icon); height: var(--btn-icon); }
+@media (hover: hover) {
+  body.home .header:not(.slim) .hsplit:hover { background: var(--btn-light-hover); box-shadow: var(--btn-light-shadow-hover); }
+}
+body.home .header:not(.slim) .hsplit:active { background: var(--btn-light-pressed); box-shadow: var(--btn-light-shadow-pressed); }
+body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dark-gold); }
