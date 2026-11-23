@@ -428,6 +428,11 @@
     description.textContent = step.description;
     footnote.textContent = step.footnote;
     caption.textContent = step.caption;
+    // This image is swapped by the tab switcher. Remove the static responsive
+    // srcset added at build time, otherwise the browser may keep showing its
+    // original currentSrc even after image.src changes.
+    image.removeAttribute("srcset");
+    image.removeAttribute("sizes");
     image.src = step.image;
     image.alt = step.alt;
     panel.setAttribute("aria-labelledby", tabs[index].id);
