@@ -242,8 +242,8 @@ function destDetail(pg, d, g) {
 // ---------- guides ----------
 export function guidesIndex() {
   const pg = new Page("guides/index.html");
-  let body = photoHero(pg, "guide-hero-sarajevo", "Sarajevo from above", ["Field notes.", "From our own trips."], "Our Instagram guides, written up in full: halal food, where to pray, what to see and where to stay. Notes from our own trips: where we ate, prayed and stayed. Opening times and menus change, so check the latest before you go.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Guides", "guides/index.html"]]);
-  body += band("white after-head", '<h2 class="sr-only">All guides</h2><div class="gcards">' + C.GUIDES.map((g) => gcard(pg, g)).join("") + "</div>");
+  let body = photoHero(pg, "guide-hero-sarajevo", "Sarajevo from above", ["Field notes.", "From our own trips."], "Our Instagram guides, written up in full: halal food, where to pray, what to see and where to stay. Notes from our own trips: where we ate, prayed and stayed. Opening times and menus change, so check the latest before you go.", "Explore the guides", "", null, split("Explore the guides", "#guide-list")) + crumbBar(pg, [["Guides", "guides/index.html"]]);
+  body += band("white after-head", '<h2 class="sr-only">All guides</h2><div class="gcards" id="guide-list">' + C.GUIDES.map((g) => gcard(pg, g)).join("") + "</div>");
   body += band("sand", `<div class="saved-note">${IG}<span>New guides appear on Instagram first.</span><a href="https://www.instagram.com/sapharatravel/">Follow @sapharatravel</a></div>`);
   return { path: pg.path, title: "Muslim-friendly travel guides | Saphara Travel", desc: "Our guides to halal food, mosques and things to do, written from our own trips and checked before we publish. Sarajevo, Malta and New York.", hero: true, body };
 }
@@ -364,7 +364,7 @@ export function planMyTrip() {
 // ---------- price check ----------
 export function priceCheckPage() {
   const pg = new Page("price-check.html");
-  let body = photoHero(pg, "page-hero-pricecheck", "An infinity pool with palm trees by the sea", ["Already found a hotel?", "Second opinions are free."], "Send it over and we'll compare it like for like, and tell you honestly if we can get you a better rate.", "Plan my trip", "", "6.6", split("Check my price", "#check")) + crumbBar(pg, [["Price check", "price-check.html"]]);
+  let body = photoHero(pg, "page-hero-pricecheck", "An infinity pool with palm trees by the sea", ["Already found a hotel?", "Second opinions are free."], "Send it over and we'll compare it like for like, and tell you honestly if we can get you a better rate.", "Check my price", "", "6.6", split("Check my price", "#check")) + crumbBar(pg, [["Price check", "price-check.html"]]);
   const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
   body += band("white after-head", `<div class="pc-layout">
 <form class="pc-form pc-card rv" id="pcForm" novalidate aria-labelledby="pcFormTitle">
@@ -420,7 +420,7 @@ export function priceCheckPage() {
 // ---------- travel essentials ----------
 export function travelEssentials() {
   const pg = new Page("travel-essentials.html");
-  let body = photoHero(pg, "page-hero-essentials", "A sheltered lagoon with sandy beaches near Muscat, Oman", ["The useful extras.", "Booked in a few taps."], "Two services we recommend. They're affiliate links: if you book through them we may earn a small commission, at no extra cost to you.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Travel essentials", "travel-essentials.html"]]);
+  let body = photoHero(pg, "page-hero-essentials", "A sheltered lagoon with sandy beaches near Muscat, Oman", ["The useful extras.", "Booked in a few taps."], "Two services we recommend. They're affiliate links: if you book through them we may earn a small commission, at no extra cost to you.", "", "", null, "") + crumbBar(pg, [["Travel essentials", "travel-essentials.html"]]);
   body += band("white after-head", '<h2 class="sr-only">Affiliate links</h2><div class="aff-list"><div class="aff rv"><span class="tag">Affiliate link</span><h3>Tours and activities</h3><p>Day trips, guided tours and tickets through Viator. Book what you like, at no extra cost to you.</p><a class="textlink" href="#" rel="sponsored nofollow">Browse tours on Viator <span aria-hidden="true">→</span></a></div><div class="aff rv"><span class="tag">Affiliate link</span><h3>eSIMs for travel</h3><p>Mobile data abroad without hunting for a local SIM, through Airalo.</p><a class="textlink" href="#" rel="sponsored nofollow">Get an eSIM from Airalo <span aria-hidden="true">→</span></a></div></div><p class="small-print">These are affiliate links: we may earn a small commission if you buy through them, at no extra cost to you. It doesn\'t change what we recommend.</p>');
   return { path: pg.path, title: "Travel essentials | Saphara Travel", desc: "Tours, activities and travel eSIMs we recommend. Affiliate links, clearly labelled.", hero: true, body };
 }
@@ -440,7 +440,7 @@ export const LEGAL_PATHS = C.LEGAL.map((l) => l[0]);
 // ---------- thank you and 404 ----------
 export function thankYou() {
   const pg = new Page("thank-you.html");
-  const body = photoHero(pg, "page-hero-thanks", "A shaded resort terrace looking out to sea", ["You're checked in.", "The hard bit's ours."], "We'll get back to you on WhatsApp as soon as we can. If your message didn't send, you can WhatsApp us on +44 7887 353457 or email hello@sapharatravel.co.uk.", "Plan my trip", "", null, split("Read a guide while you wait", pg.u("guides/index.html"))) + crumbBar(pg, [["Thank you", "thank-you.html"]])
+  const body = photoHero(pg, "page-hero-thanks", "A shaded resort terrace looking out to sea", ["You're checked in.", "The hard bit's ours."], "We'll get back to you on WhatsApp as soon as we can. If your message didn't send, you can WhatsApp us on +44 7887 353457 or email hello@sapharatravel.co.uk.", "", "", null, split("Read a guide while you wait", pg.u("guides/index.html"))) + crumbBar(pg, [["Thank you", "thank-you.html"]])
   return { path: pg.path, title: "Thank you | Saphara Travel", desc: "Your trip request is on its way.", hero: true, body };
 }
 export function notFound() {
