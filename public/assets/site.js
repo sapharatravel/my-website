@@ -373,7 +373,7 @@
 })();
 
 
-/* Homepage: accessible, manually controlled booking-step tabs. */
+/* Homepage: accessible booking tabs with coordinated, preloaded crossfades. */
 (function () {
   var root = document.querySelector("[data-how-process]");
   if (!root) return;
@@ -392,31 +392,45 @@
     { title: "Make it yours", description: "Found somewhere you love? We’ll take care of the booking and pass your requests to the hotel. From room preferences to special touches, we’ll check what can be arranged and confirm the details with you.", footnote: "Nothing is booked until you’re happy.", image: "/img/st-howwework-kl.webp", alt: "Kuala Lumpur skyline at golden hour", caption: "03 · The details, taken care of" },
     { title: "You’re ready to go", description: "We’ll send your booking confirmation and the details you need for your trip. And our support doesn’t stop when you check in. If you need us while you’re away, you can reach our team on WhatsApp.", footnote: "A real team, still here when you travel.", image: "/img/st-hotel-balcony.webp", alt: "A peaceful hotel balcony overlooking the destination", caption: "04 · We're with you along the way" }
   ];
-  function select(index, moveFocus) {
+  var active = 0, transitionTimer;
+  var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var imageCache = {};
+  steps.forEach(function (step) {
+    var preload = new Image();
+    preload.src = step.image;
+    imageCache[step.image] = preload;
+  });
+  function paint(index) {
     var step = steps[index];
-    tabs.forEach(function (tab, i) {
-      var active = i === index;
-      tab.setAttribute("aria-selected", active ? "true" : "false");
-      tab.setAttribute("tabindex", active ? "0" : "-1");
-    });
-    if (moveFocus) tabs[index].focus();
     number.innerHTML = "0" + (index + 1) + " <span>/ 04</span>";
     title.textContent = step.title;
     description.textContent = step.description;
     footnote.textContent = step.footnote;
     panel.setAttribute("aria-labelledby", tabs[index].id);
     caption.textContent = step.caption;
-    if (image.getAttribute("src") !== step.image) {
-      image.classList.add("is-changing");
-      var next = new Image();
-      next.onload = function () {
-        image.src = step.image;
-        image.alt = step.alt;
+    image.src = step.image;
+    image.alt = step.alt;
+  }
+  function select(index, moveFocus) {
+    if (index === active && !moveFocus) return;
+    active = index;
+    tabs.forEach(function (tab, i) {
+      var selected = i === index;
+      tab.setAttribute("aria-selected", selected ? "true" : "false");
+      tab.setAttribute("tabindex", selected ? "0" : "-1");
+    });
+    if (moveFocus) tabs[index].focus();
+    window.clearTimeout(transitionTimer);
+    if (reducedMotion) { paint(index); return; }
+    panel.classList.add("is-changing");
+    image.classList.add("is-changing");
+    transitionTimer = window.setTimeout(function () {
+      paint(index);
+      requestAnimationFrame(function () {
+        panel.classList.remove("is-changing");
         image.classList.remove("is-changing");
-      };
-      next.onerror = function () { image.classList.remove("is-changing"); };
-      next.src = step.image;
-    }
+      });
+    }, 190);
   }
   tabs.forEach(function (tab, index) {
     tab.addEventListener("click", function () { select(index, false); });
