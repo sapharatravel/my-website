@@ -2893,7 +2893,12 @@ body.home .hero.hd h1 {
 }
 body.home .hero.hd h1 .tone { order: -1; }
 /* Keep both homepage actions in the site's standard 52px split-button shape. */
-body.home .hero.hd .actions .hero-cta { min-height: 52px; padding: 0; }
+/* Match the site-wide split button sizing and restore its full interior padding. */
+body.home .hero.hd .actions .hero-cta {
+  min-height: var(--btn-h);
+  padding: calc((var(--btn-h) - var(--btn-arrow)) / 2) var(--btn-pad) calc((var(--btn-h) - var(--btn-arrow)) / 2) var(--btn-pad);
+}
+body.home .hero.hd .actions .hero-cta .split-label { font-size: var(--btn-fs); font-weight: 500; letter-spacing: 0; text-transform: none; }
 body.home .header .hsplit { background: #fff; color: var(--ink); box-shadow: var(--btn-light-shadow); --arrow-bg: var(--ink); --arrow-fg: #fff; }
 body.home .header .hsplit .split-label { background: transparent; color: var(--ink); box-shadow: none; }
 body.home .header .hsplit .split-arrow { background: var(--btn-dark); color: #fff; box-shadow: var(--btn-dark-shadow); }
