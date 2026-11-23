@@ -2741,3 +2741,41 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
   #how.how-home .how-tab-pill { transition:none !important; }
   #how.how-home .how-copy.is-out *, #how.how-home .how-image.is-out * { transition:none !important; }
 }
+
+
+/* Booking-step transition: fade out in place, pause on the dark panel, then bring
+   the complete image layer up into view. Timing follows Huzaifa's frame review. */
+#how.how-home .how-image {
+  background: #0d0b1c;
+  overflow: hidden;
+}
+#how.how-home .how-image.is-out img,
+#how.how-home .how-image.is-out figcaption {
+  opacity: 0 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: opacity 140ms ease-out !important;
+}
+#how.how-home .how-copy.is-out [data-how-number],
+#how.how-home .how-copy.is-out [data-how-title],
+#how.how-home .how-copy.is-out [data-how-description],
+#how.how-home .how-copy.is-out [data-how-footnote] {
+  opacity: 0 !important;
+  transform: none !important;
+  filter: none !important;
+  transition: opacity 140ms ease-out !important;
+}
+#how.how-home .how-image img {
+  transform: none;
+  filter: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  #how.how-home .how-image.is-out img,
+  #how.how-home .how-image.is-out figcaption,
+  #how.how-home .how-copy.is-out [data-how-number],
+  #how.how-home .how-copy.is-out [data-how-title],
+  #how.how-home .how-copy.is-out [data-how-description],
+  #how.how-home .how-copy.is-out [data-how-footnote] {
+    transition: none !important;
+  }
+}
