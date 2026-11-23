@@ -2868,50 +2868,14 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 /* Production refresh: publish the reviews progress-line controls from main. */
 
 
-/* Review preview: centre the homepage hero message on its image. */
-@media (min-width: 768px) {
-  body.home .hero.hd {
-    align-items: center;
-    --head-hero: clamp(72px, 10vw, 248px);
-    --btn-h: clamp(52px, 2.35vw, 72px);
-    --btn-fs: clamp(16px, .75vw, 21px);
-    --btn-pad: clamp(24px, 1.2vw, 40px);
-    --btn-arrow: clamp(42px, 2vw, 56px);
-    --btn-gap: clamp(12px, .5vw, 18px);
-  }
-  body.home .hero.hd .lead { font-size: clamp(18px, 1.2vw, 28px); }
-}
-body.home .hero.hd > .col {
-  width: min(100%, 1560px);
-  max-width: 1560px;
-  margin-inline: auto;
-  padding-block: 0;
-  text-align: center;
-}
-body.home .hero.hd > .col .lead { margin-inline: auto; }
-body.home .hero.hd > .col .actions { justify-content: center; }
-body.home .hero.hd > .col .actions .hero-cta { margin-inline: auto; }
-body.home .hero.hd::after {
-  background: radial-gradient(ellipse 72% 62% at 50% 50%, rgba(18,15,20,.72) 0%, rgba(18,15,20,.48) 42%, rgba(18,15,20,.12) 78%, transparent 100%);
-}
-
-/* Instagram cover direction: stacked, uppercase headline with more scale. */
-body.home .hero.hd h1 {
-  --tier: var(--head-hero);
-  --fit: 7.6;
-  display: flex;
-  flex-direction: column;
-  text-transform: uppercase;
-  letter-spacing: .02em;
-}
-body.home .hero.hd h1 .tone { order: -1; }
-/* Keep both homepage actions in the site's standard 52px split-button shape. */
-/* Match the site-wide split button sizing and restore its full interior padding. */
+/* Preserve the site's standard split CTA geometry while removing the centered hero concept. */
 body.home .hero.hd .actions .hero-cta {
   min-height: var(--btn-h);
   padding: calc((var(--btn-h) - var(--btn-arrow)) / 2) var(--btn-pad) calc((var(--btn-h) - var(--btn-arrow)) / 2) var(--btn-pad);
 }
 body.home .hero.hd .actions .hero-cta .split-label { font-size: var(--btn-fs); font-weight: 500; letter-spacing: 0; text-transform: none; }
+
+/* Navigation Plan my trip: white at rest, dark on hover. */
 body.home .header .hsplit { background: #fff; color: var(--ink); box-shadow: var(--btn-light-shadow); --arrow-bg: var(--ink); --arrow-fg: #fff; }
 body.home .header .hsplit .split-label { background: transparent; color: var(--ink); box-shadow: none; }
 body.home .header .hsplit .split-arrow { background: var(--btn-dark); color: #fff; box-shadow: var(--btn-dark-shadow); }
