@@ -313,3 +313,12 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf .rv-sec .sum .k { font-size: 11px; }
   .pf .rv-sec-h { min-height: 44px; }
 }
+
+
+/* Final homepage form card: restore readable contrast over the black call to action */
+.final-band .pf .pf-card { background: #fff; color: var(--ink); }
+.final-band .pf .pf-card .q { color: var(--ink); }
+.final-band .pf .pf-card .pf-lead { color: var(--grey); }
+.final-band .pf .pf-welcome > ol { background: var(--cream); border: 1px solid var(--rule); }
+.final-band .pf .pf-welcome li::before { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
+.final-band .pf .pf-welcome li span { color: var(--grey); }
