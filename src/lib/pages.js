@@ -430,7 +430,8 @@ export function priceCheckPage() {
       </ul>
     </div>
   </div>`);
-  body += band("pc-later-band", `<div class="pc-later"><span class="pc-later-icon">${ico("paylater")}</span><div class="pc-later-copy"><h2 class="display d-l"><span class="beat">Free cancellation.</span> <span class="beat tone">Pay later.</span></h2><p>Our free-cancellation hotel rates are pay later, so you can reserve your stay without paying upfront. We'll confirm the hotel's payment date and cancellation deadline before you book.</p></div><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div>`);
+  const payLaterCheck = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#check">').replace("Plan my trip", "Check my price");
+  body += payLaterCheck;
   return { path: pg.path, title: "Free hotel price check | Saphara Travel", desc: "Found a hotel you like? Get a free hotel price check from Saphara. We compare the same room, dates, board and cancellation terms, then reply on WhatsApp.", hero: true, body };
 }
 
