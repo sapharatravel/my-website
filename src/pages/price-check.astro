@@ -4,3 +4,26 @@ import { priceCheckPage } from "../lib/pages.js";
 const p = priceCheckPage();
 ---
 <Base path={p.path} title={p.title} desc={p.desc} hero={p.hero} og={p.og}><Fragment set:html={p.body} /></Base>
+
+<style is:global>
+  @media (max-width: 767px) {
+    .pc-fallback, .pc2, .pc-screenshot, .pc-detail-grid {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) !important;
+      width: 100%; min-width: 0; max-width: 100%;
+    }
+    .pc-fallback > *, .pc2 > *, .pc-screenshot > *, .pc-detail-grid > *,
+    #pcForm, #pcForm fieldset, #pcForm .fq, #pcForm details, #pcForm .pc-money {
+      min-width: 0; max-width: 100%; box-sizing: border-box;
+    }
+    #pcForm { width: 100%; }
+    #pcForm .pc-row { display: grid; grid-template-columns: minmax(0, 1fr); }
+    #pcForm .pc-row-sm { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    #pcForm .field { width: 100%; min-width: 0; max-width: 100%; box-sizing: border-box; font-size: 16px; }
+    #pcForm input[type="date"] { display: block; }
+    #pcForm legend, #pcForm label, #pcForm summary { white-space: normal; max-width: 100%; }
+    #pcForm .pc-actions .split { max-width: 100%; }
+    .pcx-wrap, .pc-detail-photo { min-width: 0; max-width: 100%; }
+    .pc-detail-photo img { max-width: 100%; }
+  }
+</style>
