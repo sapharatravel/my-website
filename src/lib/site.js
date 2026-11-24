@@ -315,7 +315,7 @@ export function tripCard(pg, slug, name, img, lines, line) {
   <div class="body"><h3><span>${lines[0]}</span> <span>${lines[1]}</span></h3><p>${line}</p><span class="go">${name} ${arrow}</span></div></a>`;
 }
 
-const destInner = (pg, d) => `<img class="fade${d.warm ? " warm" : ""}" src="${pg.img(d.img)}" alt="${d.alt}" width="800" height="1066" loading="lazy" decoding="async"><span class="pin">${ico("pin")}${d.country}</span><span class="code">${d.code}</span><h3>${d.short || d.name}</h3><span class="time">${ico("flights")}${d.flight}</span>`;
+const destInner = (pg, d) => `<img class="fade${d.warm ? " warm" : ""}" src="${pg.img(d.img)}" alt="${d.alt}" width="800" height="1066" loading="lazy" decoding="async"><span class="code">${d.code}</span><h3>${d.short || d.name}</h3><span class="time">${ico("flights")}${d.flight}</span>`;
 export const destCard = (pg, d) => `<a class="pcard dest rv" href="${pg.u("destinations/" + d.slug + ".html")}" data-move aria-label="${d.name}, ${d.country}. ${d.flight_long}">${destInner(pg, d)}</a>`;
 export const placeCard = (pg, d) => (d.slug ? destCard(pg, d) : `<div class="pcard dest rv" aria-label="${d.name}, ${d.country}. ${d.flight_long}">${destInner(pg, d)}</div>`);
 
