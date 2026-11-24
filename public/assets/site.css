@@ -2900,3 +2900,25 @@ body.home .header:not(.slim) .hsplit .split-arrow svg { width: var(--btn-icon); 
 }
 body.home .header:not(.slim) .hsplit:active { background: var(--btn-light-pressed); box-shadow: var(--btn-light-shadow-pressed); }
 body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dark-gold); }
+
+
+/* Homepage refinement: floating trip planner and evenly spaced destination arches */
+#enquire > .col { max-width: 1040px; padding: clamp(24px, 5vw, 64px); background: #fff; border-radius: var(--r-card); box-shadow: var(--shadow-lg); }
+#enquire .intro { max-width: 780px; }
+#enquire .intro h2 { font-size: clamp(54px, 5.6vw, 78px); }
+#destinations .dest-head { display: block; }
+#destinations .dest-head > .intro { max-width: 960px; }
+#destinations .dest-head > .intro p { margin-top: var(--s-16); }
+#destinations .dest-actions { justify-content: flex-start; margin-top: var(--s-24); }
+#destinations .dest { align-items: center; gap: var(--s-12); padding: var(--s-24) var(--s-16) 30px; }
+#destinations .dest .pin { align-self: center; margin: 0; text-align: center; }
+#destinations .dest h3 { margin: 0; text-align: center; font-size: clamp(27px, 6.8vw, 52px); }
+#destinations .dest .time { align-self: center; margin: 0; justify-content: center; text-align: center; }
+@media (min-width: 1024px) {
+  #destinations .dest { padding-inline: var(--s-24); }
+  #destinations .dest h3 { font-size: 54px; }
+}
+@media (max-width: 767px) {
+  #enquire > .col { padding: 24px 16px; }
+  #enquire .intro h2 { font-size: clamp(42px, 10vw, 58px); }
+}
