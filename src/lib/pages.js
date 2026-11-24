@@ -405,7 +405,7 @@ export function priceCheckPage() {
       <div class="fq"><label for="pc-board">Board</label><select class="field" id="pc-board"><option value="">Not sure</option><option value="Room only">Room only</option><option>Breakfast</option><option value="Half board">Half board</option><option value="Full board">Full board</option><option value="All inclusive">All inclusive</option></select></div>
     </div>
   </details>
-  <div class="actions pc-actions"><button class="split" type="submit"><span class="split-label">Continue on ${waGlyph()}WhatsApp</span><span class="split-arrow">${arrow}</span></button><p class="caption">Review your message before it opens in WhatsApp.</p></div>
+  <div class="actions pc-actions"><button class="split" type="submit"><span class="split-label">${waGlyph()}Send via WhatsApp</span><span class="split-arrow">${arrow}</span></button><p class="caption">Review your message before it opens in WhatsApp.</p></div>
   <p class="small-print" id="pcSent" hidden role="status">WhatsApp should now be open with your message. If it didn't open, message us on +44 7887 353457 and paste the details.</p>
 </form>
 </div>
