@@ -6,7 +6,7 @@
   var kids = $("pc-children"), agesWrap = $("pcAgesWrap");
   function syncAges() { agesWrap.hidden = !(+kids.value > 0); }
   kids.addEventListener("input", syncAges); syncAges();
-  var required = [["pc-hotel", "Slight delay. Just add the hotel name."], ["pc-in", "Slight delay. Just add your check-in date."], ["pc-out", "Slight delay. Just add your check-out date."], ["pc-price", "Slight delay. Just add the price you found."]];
+  var required = [["pc-hotel", "Please enter the hotel name."], ["pc-in", "Please add your check-in date."], ["pc-out", "Please add your check-out date."], ["pc-price", "Please add the price you found."]];
   function fmtDate(v) { if (!v) return ""; var d = new Date(v + "T12:00:00"); return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }); }
   function nights() { var a = $("pc-in").value, b = $("pc-out").value; if (!a || !b) return ""; var n = Math.round((new Date(b) - new Date(a)) / 864e5); return n > 0 ? " (" + n + (n === 1 ? " night)" : " nights)") : ""; }
   // 21 Nov 2026: "£2,340" rather than "GBP 2340" when the price is a plain number
@@ -28,7 +28,7 @@
     e.preventDefault();
     var first = null;
     required.forEach(function (r) { var el = $(r[0]), er = $(r[0] + "-e"), bad = !el.value.trim(); er.hidden = !bad; er.textContent = bad ? r[1] : ""; el.setAttribute("aria-invalid", bad ? "true" : "false"); if (bad && !first) first = el; });
-    if ($("pc-in").value && $("pc-out").value && $("pc-out").value <= $("pc-in").value) { var eo = $("pc-out-e"); eo.hidden = false; eo.textContent = "Slight delay. Just check your check-out date is after check-in."; $("pc-out").setAttribute("aria-invalid", "true"); if (!first) first = $("pc-out"); }
+    if ($("pc-in").value && $("pc-out").value && $("pc-out").value <= $("pc-in").value) { var eo = $("pc-out-e"); eo.hidden = false; eo.textContent = "Check-out must be after check-in."; $("pc-out").setAttribute("aria-invalid", "true"); if (!first) first = $("pc-out"); }
     if (first) { first.focus(); return; }
     var url = "https://wa.me/447887353457?text=" + encodeURIComponent(message());
     $("pcSent").hidden = false;
