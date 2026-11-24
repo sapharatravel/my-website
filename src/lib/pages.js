@@ -391,7 +391,7 @@ export function priceCheckPage() {
   <fieldset class="pc-group"><legend><span class="pc-n">3</span>The price you found</legend>
     <div class="pc-row">
       <div class="fq"><label for="pc-price">Total price for the stay</label><div class="pc-money"><select class="field" id="pc-currency" aria-label="Currency"><option>GBP</option><option>USD</option><option>EUR</option><option>SAR</option><option>AED</option><option>QAR</option></select><input class="field" id="pc-price" type="text" inputmode="decimal" maxlength="12" placeholder="For the whole stay" aria-describedby="pc-price-e"></div><p class="err" id="pc-price-e" role="alert" hidden></p></div>
-      <div class="fq"><label for="pc-where">Where you found it <span class="opt">(optional)</span></label><input class="field" id="pc-where" type="text" maxlength="60" placeholder="A website or app"></div>
+      <div class="fq"><label for="pc-where">Where you found it <span class="opt">(optional)</span></label><select class="field" id="pc-where"><option value="">Select a booking site</option><option>Booking.com</option><option>Expedia</option><option>Hotels.com</option><option>Agoda</option><option>Trip.com</option><option>The hotel’s website</option><option>Google Hotels</option><option>Other</option><option>Not sure</option></select></div>
     </div>
   </fieldset>
   <details class="pc-more">
