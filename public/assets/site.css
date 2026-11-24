@@ -3035,3 +3035,19 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
     height: 70px; max-height: 70px; max-width: 180px;
   }
 }
+
+
+/* Destination arches: keep the stagger graceful and the copy spacing consistent. */
+@media (min-width: 1024px) {
+  #destinations .dests { column-gap: clamp(18px, 1.8vw, 24px); row-gap: 40px; }
+  #destinations .dests > :nth-child(even) { margin-top: 40px; }
+}
+#destinations .dest { gap: 14px; }
+#destinations .dest h3 { margin: 0; line-height: .96; }
+#destinations .dest .time { margin: 0; }
+#destinations .dest .pin { top: 18px; left: 18px; }
+@media (max-width: 767px) {
+  #destinations .dests { gap: 16px; }
+  #destinations .dest { gap: 12px; }
+  #destinations .dest .pin { top: 12px; left: 12px; }
+}
