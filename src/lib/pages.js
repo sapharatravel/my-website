@@ -364,22 +364,22 @@ export function planMyTrip() {
 // ---------- price check ----------
 export function priceCheckPage() {
   const pg = new Page("price-check.html");
-  let body = photoHero(pg, "page-hero-pricecheck", "An infinity pool with palm trees by the sea", ["Already found a hotel?", "Second opinions are free."], "Send it over and we'll compare it like for like, and tell you honestly if we can get you a better rate.", "Check my price", "", "6.6", split("Check my price", "#check")) + crumbBar(pg, [["Price check", "price-check.html"]]);
+  let body = photoHero(pg, "page-hero-pricecheck", "An infinity pool with palm trees by the sea", ["Found a hotel?", "Let’s check the price."], "Send us the link or details for a free hotel price check. We'll compare the same room, dates, board and cancellation terms, then tell you honestly if we can beat the rate.", "Check my price", "", "6.6", split("Check my price", "#check")) + crumbBar(pg, [["Price check", "price-check.html"]]);
   const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
   body += band("white after-head", `<div class="pc-layout">
 <form class="pc-form pc-card rv" id="pcForm" novalidate aria-labelledby="pcFormTitle">
   <h2 class="display d-l" id="pcFormTitle">Check my price.</h2>
-  <p class="pc-intro">Four details and we'll take it from there. Your message opens in WhatsApp, ready to send. Nothing is stored on this website.</p>
+  <p class="pc-intro">Add the hotel, dates and price you found. Your message opens in WhatsApp for you to review and send. This website doesn't store your details.</p>
   <fieldset class="pc-group"><legend><span class="pc-n">1</span>The Hotel</legend>
     <div class="pc-row">
-      <div class="fq"><label for="pc-hotel">Hotel Name</label><input class="field" id="pc-hotel" type="text" maxlength="120" autocomplete="off" placeholder="As it's listed" aria-describedby="pc-hotel-e"><p class="err" id="pc-hotel-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-hotel">Hotel name</label><input class="field" id="pc-hotel" type="text" maxlength="120" autocomplete="off" placeholder="As it's listed" aria-describedby="pc-hotel-e"><p class="err" id="pc-hotel-e" role="alert" hidden></p></div>
       <div class="fq"><label for="pc-dest">Destination <span class="opt">(optional)</span></label><input class="field" id="pc-dest" type="text" maxlength="80" placeholder="For example Zanzibar"></div>
     </div>
   </fieldset>
   <fieldset class="pc-group"><legend><span class="pc-n">2</span>Your Stay</legend>
     <div class="pc-row">
-      <div class="fq"><label for="pc-in">Check-In</label><input class="field" id="pc-in" type="date" aria-describedby="pc-in-e"><p class="err" id="pc-in-e" role="alert" hidden></p></div>
-      <div class="fq"><label for="pc-out">Check-Out</label><input class="field" id="pc-out" type="date" aria-describedby="pc-out-e"><p class="err" id="pc-out-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-in">Check-in date</label><input class="field" id="pc-in" type="date" aria-describedby="pc-in-e"><p class="err" id="pc-in-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-out">Check-out date</label><input class="field" id="pc-out" type="date" aria-describedby="pc-out-e"><p class="err" id="pc-out-e" role="alert" hidden></p></div>
     </div>
     <div class="pc-row pc-row-sm">
       <div class="fq"><label for="pc-adults">Adults</label><input class="field" id="pc-adults" type="number" min="1" max="20" value="2" inputmode="numeric"></div>
@@ -388,33 +388,33 @@ export function priceCheckPage() {
     </div>
     <div class="fq" id="pcAgesWrap" hidden><label for="pc-ages">Children's Ages <span class="opt">(optional)</span></label><input class="field" id="pc-ages" type="text" maxlength="60" placeholder="For example 4 and 7"></div>
   </fieldset>
-  <fieldset class="pc-group"><legend><span class="pc-n">3</span>The Price You Found</legend>
+  <fieldset class="pc-group"><legend><span class="pc-n">3</span>The price you found</legend>
     <div class="pc-row">
-      <div class="fq"><label for="pc-price">Total Price</label><div class="pc-money"><select class="field" id="pc-currency" aria-label="Currency"><option>GBP</option><option>USD</option><option>EUR</option><option>SAR</option><option>AED</option><option>QAR</option></select><input class="field" id="pc-price" type="text" inputmode="decimal" maxlength="12" placeholder="For the whole stay" aria-describedby="pc-price-e"></div><p class="err" id="pc-price-e" role="alert" hidden></p></div>
-      <div class="fq"><label for="pc-where">Where You Found It <span class="opt">(optional)</span></label><input class="field" id="pc-where" type="text" maxlength="60" placeholder="A website or app"></div>
+      <div class="fq"><label for="pc-price">Total price for the stay</label><div class="pc-money"><select class="field" id="pc-currency" aria-label="Currency"><option>GBP</option><option>USD</option><option>EUR</option><option>SAR</option><option>AED</option><option>QAR</option></select><input class="field" id="pc-price" type="text" inputmode="decimal" maxlength="12" placeholder="For the whole stay" aria-describedby="pc-price-e"></div><p class="err" id="pc-price-e" role="alert" hidden></p></div>
+      <div class="fq"><label for="pc-where">Where you found it <span class="opt">(optional)</span></label><input class="field" id="pc-where" type="text" maxlength="60" placeholder="A website or app"></div>
     </div>
   </fieldset>
   <details class="pc-more">
     <summary>Add room, board and link <span class="opt">(optional, helps us match it exactly)</span></summary>
     <div class="pc-row">
-      <div class="fq"><label for="pc-room">Room Type</label><input class="field" id="pc-room" type="text" maxlength="80" placeholder="As shown where you found it"></div>
-      <div class="fq"><label for="pc-board">Board</label><select class="field" id="pc-board"><option value="">Not Sure</option><option value="Room only">Room Only</option><option>Breakfast</option><option value="Half board">Half Board</option><option value="Full board">Full Board</option><option value="All inclusive">All Inclusive</option></select></div>
+      <div class="fq"><label for="pc-room">Room type</label><input class="field" id="pc-room" type="text" maxlength="80" placeholder="As shown where you found it"></div>
+      <div class="fq"><label for="pc-board">Board</label><select class="field" id="pc-board"><option value="">Not sure</option><option value="Room only">Room only</option><option>Breakfast</option><option value="Half board">Half board</option><option value="Full board">Full board</option><option value="All inclusive">All inclusive</option></select></div>
     </div>
     <div class="fq"><label for="pc-link">Link</label><input class="field" id="pc-link" type="url" maxlength="400" placeholder="Paste the link if you have it"></div>
   </details>
-  <div class="actions pc-actions"><button class="split" type="submit"><span class="split-label">Send on ${waGlyph()}WhatsApp</span><span class="split-arrow">${arrow}</span></button><p class="caption">Send your screenshot in the same chat.</p></div>
+  <div class="actions pc-actions"><button class="split" type="submit"><span class="split-label">Send on ${waGlyph()}WhatsApp</span><span class="split-arrow">${arrow}</span></button><p class="caption">If you have a screenshot, add it to the chat too.</p></div>
   <p class="small-print" id="pcSent" hidden role="status">WhatsApp should now be open with your message. If it didn't open, message us on +44 7887 353457 and paste the details.</p>
 </form>
 <aside class="pc-side">
-  <div class="pc-quick"><p class="pc-k">Only have a screenshot?</p><p>Send it straight to us on WhatsApp and we'll do the rest.</p>${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}</div>
-  <div class="pc-how"><p class="pc-k">How it works</p><ol><li><b>Send the hotel and price</b><span>The form or a screenshot, whichever is easier.</span></li><li><b>We compare like for like</b><span>Same room, board, dates and cancellation terms.</span></li><li><b>We tell you honestly</b><span>If we can do better, we say so. If we can't, we say that too.</span></li></ol></div>
+  <div class="pc-quick"><p class="pc-k">Only have a screenshot?</p><p>Send it to us on WhatsApp and we'll do the price check for you.</p>${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}</div>
+  <div class="pc-how"><p class="pc-k">How it works</p><ol><li><b>Send the hotel and price</b><span>Fill in the form or send a screenshot, whichever is easier.</span></li><li><b>We compare like for like</b><span>Same room, board, dates and cancellation terms.</span></li><li><b>We tell you honestly</b><span>If we can beat the price, we'll say so. If we can't, we'll tell you.</span></li></ol></div>
   <div class="pc-what"><p class="pc-k">What we compare</p>${chips(["Room type", "Board basis", "Cancellation terms", "Transfers", "Resort fees", "Deposits"])}</div>
 </aside>
 </div>
 <script src="assets/price-check.js?v=${assetV("price-check.js")}" defer></script>`, "check");
   const example = (priceCheck.match(/<div class="pc-example pcx-home rv"[\s\S]*?<p class="pcx-more">[^<]*<\/p>\s*<\/div>/) || [""])[0].split("pcxTitle").join("pcxTitle2");
-  body += band("pc-band pc-result", `<div class="pc2"><div class="intro"><h2 class="display d-l">${beats(["What you get back."])}</h2><p>We reply on WhatsApp with a plain comparison like this one: the price you found, what we found, and what's different.</p><p class="pc-fine">We can't beat every price and we won't promise to. It's a free second opinion from people with access to good rates.</p><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div><div class="pcx-wrap">${example}</div></div>`);
-  return { path: pg.path, title: "Hotel price check | Saphara Travel", desc: "Found a hotel already? Send it over and we'll compare it like for like and tell you honestly if we can get a better rate.", hero: true, body };
+  body += band("pc-band pc-result", `<div class="pc2"><div class="intro"><h2 class="display d-l">${beats(["What you get back."])}</h2><p>We'll send a clear, like-for-like comparison on WhatsApp: the price you found, the price we found, and any differences.</p><p class="pc-fine">We can't beat every price and we won't promise to. It's a free second opinion from people with access to good rates.</p><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div><div class="pcx-wrap">${example}</div></div>`);
+  return { path: pg.path, title: "Free hotel price check | Saphara Travel", desc: "Found a hotel you like? Get a free hotel price check from Saphara. We compare the same room, dates, board and cancellation terms, then reply on WhatsApp.", hero: true, body };
 }
 
 // ---------- travel essentials ----------
