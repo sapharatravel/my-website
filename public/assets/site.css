@@ -3083,7 +3083,7 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
 .pc-later { display:grid; grid-template-columns:56px minmax(0,1fr) auto; gap:var(--s-24); align-items:center; }
 .pc-later-icon { display:grid; width:56px; height:56px; place-items:center; border-radius:50%; background:var(--sand-deep); color:var(--ink); }
 .pc-later-icon .ico { width:26px; height:26px; }
-.pc-later-copy h2 { color:#fff; }
+.pc-later-copy h2 { color:#fff; font-size:var(--head-section); }
 .pc-later-copy h2 .tone { color:#BFE6CC; }
 .pc-later-copy > p:last-child { max-width:66ch; margin:var(--s-8) 0 0; color:rgba(255,255,255,.8); }
 .pc-later .actions { margin:0; }
