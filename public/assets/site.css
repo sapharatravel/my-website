@@ -3001,3 +3001,24 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
     height: 46px; max-height: 46px; max-width: 66px;
   }
 }
+
+
+/* Fine tune compact IHG and ALL Accor marks at desktop and mobile sizes. */
+.hd-wrap + .strip .marquee-track .mq-logo.mq-ihg,
+.hd-wrap + .strip .marquee-track .mq-logo.mq-accor { height: 80px; }
+.hd-wrap + .strip .marquee-track .mq-logo.mq-ihg img {
+  height: 70px; max-height: 70px; max-width: 210px;
+}
+.hd-wrap + .strip .marquee-track .mq-logo.mq-accor img {
+  height: 62px; max-height: 62px; max-width: 76px;
+}
+@media (max-width: 767px) {
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg,
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-accor { height: 62px; }
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg img {
+    height: 54px; max-height: 54px; max-width: 170px;
+  }
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-accor img {
+    height: 50px; max-height: 50px; max-width: 68px;
+  }
+}
