@@ -2922,3 +2922,12 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   #enquire > .col { padding: 24px 16px; }
   #enquire .intro h2 { font-size: clamp(42px, 10vw, 58px); }
 }
+
+
+/* Enquiry section contrast: white band with a black floating call to action */
+#enquire.form-wrap { background: #fff; --notch: #fff; }
+#enquire > .col { background: #111; color: #fff; }
+#enquire .intro { color: #fff; }
+#enquire .intro h2, #enquire .intro h2 .beat { color: #fff; }
+#enquire .intro h2 .tone { color: #d8cbb3; }
+#enquire .intro p { color: rgba(255,255,255,.82); }
