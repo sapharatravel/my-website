@@ -371,7 +371,6 @@ export function priceCheckPage() {
     <h2 class="display d-l" id="pcFormTitle"><span class="beat">No screenshot?</span> <span class="beat tone">Share the details.</span></h2>
     <p class="pc-intro">Tell us what you remember about the hotel offer. Estimates are fine, and you can leave optional details blank. Your message opens in WhatsApp for you to review and send.</p>
     <div class="pc-how"><p class="pc-k">How it works</p><ol><li><b>Send a screenshot or details</b><span>Start with a screenshot, or use the form if you don't have one.</span></li><li><b>We compare like for like</b><span>Same room, board, dates and cancellation terms.</span></li><li><b>We tell you honestly</b><span>If we can beat the price, we'll say so. If we can't, we'll tell you.</span></li></ol></div>
-    <div class="pc-what"><p class="pc-k">What we compare</p>${chips(["Room type", "Board basis", "Cancellation terms", "Transfers", "Resort fees", "Deposits"])}</div>
   </div>
 <form class="pc-form pc-card rv" id="pcForm" novalidate aria-labelledby="pcFormTitle">
   <div class="pc-form-head"><b>Share the offer details</b><span>Required fields marked *</span></div>
@@ -410,6 +409,7 @@ export function priceCheckPage() {
   <p class="small-print" id="pcSent" hidden role="status">WhatsApp should now be open with your message. If it didn't open, message us on +44 7887 353457 and paste the details.</p>
 </form>
 </div>
+<div class="pc-what pc-what-after"><p class="pc-k">What we compare</p>${chips(["Room type", "Board basis", "Cancellation terms", "Transfers", "Resort fees", "Deposits"])}</div>
 <script src="assets/price-check.js?v=${assetV("price-check.js")}" defer></script>`, "check");
   const example = (priceCheck.match(/<div class="pc-example pcx-home rv"[\s\S]*?<p class="pcx-more">[^<]*<\/p>\s*<\/div>/) || [""])[0]
     .split("pcxTitle").join("pcxTitle2")
