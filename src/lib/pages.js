@@ -126,7 +126,7 @@ export function home() {
   // 22 Nov 2026 (mobile audit, Huzaifa): the full-width sand pay later banner replaces the declaration (declaration parked in 06-declaration.html); reviews move up under the hotel names and rotate.
   // Order: hero, hotel names, reviews, trips, pay later, destinations, big photo, FAQ, A little more, form. Bands: names white, reviews sand, trips white, pay later sand, destinations white, FAQ sand, More white.
   // Phones drop the "Due today" card so the banner stays short.
-  const payLaterHome = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home pc-price-paylater" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#enquire" data-plan>');
+  const payLaterHome = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#enquire" data-plan>');
   void declaration;
   // Superseded the same day: 22 Nov 2026 (later, Huzaifa): reordered so the trip cards and the destination arches are not side by side.
   // Flow: what we arrange (trips), why it costs you nothing extra (declaration), where we know (destinations), a client's words, the big photo with its call to action, questions answered, more to read, then the form.
@@ -430,7 +430,7 @@ export function priceCheckPage() {
       </ul>
     </div>
   </div>`);
-  const payLaterCheck = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#check">').replace("Plan my trip", "Check my price");
+  const payLaterCheck = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home pc-price-paylater" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#check">').replace("Plan my trip", "Check my price");
   body += payLaterCheck;
   return { path: pg.path, title: "Free hotel price check | Saphara Travel", desc: "Found a hotel you like? Get a free hotel price check from Saphara. We compare the same room, dates, board and cancellation terms, then reply on WhatsApp.", hero: true, body };
 }
