@@ -3049,3 +3049,7 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   #destinations .dests { gap: 16px; }
   .dest { gap: 12px; }
 }
+
+
+/* Location labels are removed from every destination arch, including rendered and cached templates. */
+.dest .pin { display: none !important; }
