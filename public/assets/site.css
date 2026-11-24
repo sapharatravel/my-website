@@ -2980,3 +2980,24 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
     height: 32px; max-height: 32px; max-width: 148px;
   }
 }
+
+
+/* Give naturally compact IHG and ALL Accor marks enough visual weight while preserving their aspect ratios. */
+.hd-wrap + .strip .marquee-track .mq-logo.mq-ihg,
+.hd-wrap + .strip .marquee-track .mq-logo.mq-accor { height: 64px; }
+.hd-wrap + .strip .marquee-track .mq-logo.mq-ihg img {
+  height: 52px; max-height: 52px; max-width: 190px;
+}
+.hd-wrap + .strip .marquee-track .mq-logo.mq-accor img {
+  height: 54px; max-height: 54px; max-width: 76px;
+}
+@media (max-width: 767px) {
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg,
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-accor { height: 54px; }
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg img {
+    height: 44px; max-height: 44px; max-width: 160px;
+  }
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-accor img {
+    height: 46px; max-height: 46px; max-width: 66px;
+  }
+}
