@@ -709,11 +709,11 @@ window.UK_AIRPORTS = [
     cur = -1;
     var el = h("section", { class: "pf-welcome", "aria-labelledby": "pf-w" }, [
       h("h3", { class: "q", id: "pf-w", tabindex: "-1", text: "Four quick steps." }),
-      h("p", { class: "pf-lead", text: "Mostly taps. You'll see your trip request before anything opens in WhatsApp." }),
+      h("p", { class: "pf-lead", text: "Just a few taps. You'll see your trip request before WhatsApp opens." }),
       h("ol", null, [
-        h("li", null, [h("div", null, [h("b", { text: "The trip. " }), h("span", { text: "What kind, and where if you know." })])]),
+        h("li", null, [h("div", null, [h("b", { text: "The trip. " }), h("span", { text: "What kind of trip, and where if you know." })])]),
         h("li", null, [h("div", null, [h("b", { text: "When and who. " }), h("span", { text: "Rough dates are fine." })])]),
-        h("li", null, [h("div", null, [h("b", { text: "Flights and budget. " }), h("span", { text: "Only if you want to say." })])]),
+        h("li", null, [h("div", null, [h("b", { text: "Flights and budget. " }), h("span", { text: "Share these if you know them." })])]),
         h("li", null, [h("div", null, [h("b", { text: "Your details. " }), h("span", { text: "Your name and email." })])])
       ]),
       h("div", { class: "foot" }, [h("button", { type: "button", class: "btn btn-primary btn-block", html: "Start" + ARROW, onclick: function () { show(0, 1); } }), h("p", { class: "pf-small", text: "Not sure about anything yet? That's fine. Every question has a “not sure” answer." })])
