@@ -70,13 +70,13 @@ const join = (...parts) => parts.join("\n");
 // 21 Nov 2026 (Huzaifa): no photo used twice on the homepage; Reviews, Business and FAQs got their own photos (IMAGES.md).
 // 22 Nov 2026 (evening, Huzaifa, Cloudflare preview review): "A little more about SAPHARA." with three cards replaces "Still deciding?".
 const MORE_CARDS = [
-  ["reviews.html", "st-reviews-praslin.webp", "Client Reviews", "Read what travellers have said after booking with Saphara."],
-  ["why-saphara.html", "st-card-multicity.webp", "How We Work", "A small team, honest hotel comparisons and support on WhatsApp."],
-  ["guides/index.html", "guides/guide-malta.webp", "Travel Guides", "Practical notes on where to eat, pray, stay and explore."],
+  ["reviews.html", "st-reviews-praslin.webp", "Client Reviews", "Read what travellers say about their holidays with Saphara."],
+  ["why-saphara.html", "st-card-multicity.webp", "How We Work", "See how we compare hotels, handle requests and support you on WhatsApp."],
+  ["guides/index.html", "guides/guide-malta.webp", "Travel Guides", "Muslim-friendly travel guides with tips on where to eat, pray, stay and explore."],
 ];
 const CARD_ARROW = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 function moreCards(pg) {
-  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">A little more about SAPHARA.</h2><p>Useful things to look through while you\'re deciding.</p></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
+  return `<section class="band white more-band" id="more" aria-labelledby="moreH"><div class="col"><div class="intro"><h2 class="display d-l" id="moreH">${beats(["Want to know more?", "Have a look around."], true)}</h2><p>Explore our reviews, how we work and Muslim-friendly travel guides while you plan.</p></div><ul class="more-cards">${MORE_CARDS.map(([h, img, t, d]) => `<li><a class="more-card rv" href="${pg.u(h)}"><img src="${pg.img(img)}" alt="" loading="lazy" decoding="async"><span class="mc-tx"><span class="mc-t">${t}</span><span class="mc-d">${d}</span></span><span class="mc-a">${CARD_ARROW}</span></a></li>`).join("")}</ul></div></section>`;
 }
 // Proof under the hero (16 Nov 2026, Huzaifa): the Trustpilot line and one real review, lifted from the reviews block so the wording can't drift.
 // Reviews under the hotel names (22 Nov 2026 audit, Huzaifa): the three real Trustpilot reviews rotate, lifted from the reviews block so the wording can't drift.
@@ -119,7 +119,7 @@ export function home() {
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
   void guides;
   // 16 Nov 2026 (Huzaifa): proof under the hero, then the FAQ teaser and the check-in form ("Bismillah. Let's plan it.") back at the end, with a WhatsApp button.
-  const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
+  const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span> <span class="beat tone">Let's plan your trip\.<\/span><\/h2>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
   // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
   // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
   // 22 Nov 2026 (Huzaifa): the pay later block replaced the declaration; 22 Nov 2026 (evening, Cloudflare preview review): the declaration is back. Pay later stays in 03b-pay-later.html (Why Saphara).

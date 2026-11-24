@@ -143,8 +143,8 @@ export function footer(pg) {
   <div class="sf-top">
     <div class="sf-brand">
       <img class="logo" src="${pg.img("saphara-logo-dark.svg")}" alt="Saphara Travel" width="120" height="35" loading="lazy">
-      <p class="sf-closer"><span class="beat">Safe travels.</span> <span class="beat">And send pictures.</span></p>
-      <p class="sf-statement">We take the stress out of booking hotels and holidays. We speak to the hotel for you, compare prices like for like, and we're there if anything goes wrong.</p>
+      <p class="sf-closer"><span class="beat">Safe travels.</span> <span class="beat tone">Send us a picture.</span></p>
+      <p class="sf-statement">We help make hotel and holiday bookings easier. We speak with hotels for you, compare prices like for like and stay in touch on WhatsApp while you're away.</p>
       <div class="sf-cta"><a class="split" href="${pl}"${pl === "#enquire" ? " data-plan" : ""}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
     </div>
     <nav class="sf-nav" aria-label="Footer">
@@ -155,7 +155,7 @@ export function footer(pg) {
     </nav>
     <div class="sf-help">
       <h2 class="sf-h">Help and contact</h2>
-      <p>Already booked, or away right now? Message us on WhatsApp and we'll get back to you as soon as we can.</p>
+      <p>Already booked, or away right now? Message us on WhatsApp. We'll get back to you as soon as we can.</p>
       <ul class="sf-contact">
         <li><a href="${waMark("help")}"><span class="ic">${waGlyph()}</span><span class="nw">WhatsApp +44 7887 353457</span></a></li>
         <li><a href="mailto:hello@sapharatravel.co.uk"><span class="ic">${MAIL}</span>hello@sapharatravel.co.uk</a></li>
