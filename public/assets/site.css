@@ -201,6 +201,7 @@ button.split { border: 0; font: inherit; cursor: pointer; -webkit-appearance: no
 .hero picture img { width: 100%; height: 100%; object-fit: cover; transform-origin: 55% 45%; }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(48,28,10,0) 40%, rgba(48,28,10,.26) 54%, rgba(44,24,8,.5) 74%, rgba(40,22,8,.68) 100%); }
 .hero .col { padding-bottom: max(var(--s-40), calc(env(safe-area-inset-bottom, 0px) + var(--s-24))); }
+.hero-pill { display: inline-flex; align-items: center; width: fit-content; margin: 0 0 var(--s-16); padding: 10px 22px; border-radius: var(--r-pill); background: var(--cream); color: var(--ink); font-size: 14px; font-weight: 600; letter-spacing: .08em; line-height: 1; text-transform: uppercase; box-shadow: var(--shadow-sm); }
 .hero .label { color: #fff; text-shadow: 0 1px 12px rgba(40,22,8,.55); }
 .hero h1 .tone { color: var(--on-dark-gold); }
 .hero h1 { margin-top: 0; --tier: var(--head-hero); text-shadow: 0 2px 24px rgba(40,22,8,.25); }
