@@ -3022,3 +3022,16 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
     height: 50px; max-height: 50px; max-width: 68px;
   }
 }
+
+
+/* IHG's logo artwork has extra built-in whitespace, so give it a taller box for equal visible weight. */
+.hd-wrap + .strip .marquee-track .mq-logo.mq-ihg { height: 100px; }
+.hd-wrap + .strip .marquee-track .mq-logo.mq-ihg img {
+  height: 92px; max-height: 92px; max-width: 220px;
+}
+@media (max-width: 767px) {
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg { height: 78px; }
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg img {
+    height: 70px; max-height: 70px; max-width: 180px;
+  }
+}
