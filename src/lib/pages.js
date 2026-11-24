@@ -417,7 +417,7 @@ export function priceCheckPage() {
     .replace("Worked example", "Illustrative worked example");
   body += band("pc-band pc-result", `<div class="pc2"><div class="intro"><h2 class="display d-l">${beats(["What you get back."])}</h2><p>We'll send a clear, like-for-like comparison on WhatsApp: the price you found, the price we found, and any differences.</p><p class="pc-fine">We can't beat every price and we won't promise to. It's a free second opinion from people with access to good rates.</p><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div><div class="pcx-wrap">${example}</div></div>`);
   body += band("sand pc-detail-band", `<div class="pc-detail">
-    <header class="pc-detail-head"><p class="label">A fair hotel price check</p><h2 class="display d-l"><span class="beat">The small print matters.</span> <span class="beat tone">We'll check it for you.</span></h2><p>We compare more than the headline price, so you can see whether each hotel offer really matches.</p></header>
+    <header class="pc-detail-head"><h2 class="display d-l"><span class="beat">The small print matters.</span> <span class="beat tone">We'll check it for you.</span></h2><p>We compare more than the headline price, so you can see whether each hotel offer really matches.</p></header>
     <div class="pc-detail-grid">
       <figure class="pc-detail-photo"><img src="${pg.img("st-hotel-suite.webp")}" alt="A bright hotel suite with a seating area and large windows" width="1600" height="2000" loading="lazy" decoding="async"><figcaption><span class="pc-detail-photo-icon">${ico("hotel")}</span><span><b>One fair comparison</b><small>Every detail checked against your hotel offer</small></span></figcaption></figure>
       <ul class="pc-detail-list">
@@ -430,7 +430,7 @@ export function priceCheckPage() {
       </ul>
     </div>
   </div>`);
-  body += band("pc-later-band", `<div class="pc-later"><span class="pc-later-icon">${ico("paylater")}</span><div class="pc-later-copy"><p class="label">A little more breathing room</p><h2 class="display d-m"><span class="beat">Free cancellation.</span> <span class="beat tone">Pay later.</span></h2><p>Our free-cancellation hotel rates are pay later, so you can reserve your stay without paying upfront. We'll confirm the hotel's payment date and cancellation deadline before you book.</p></div><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div>`);
+  body += band("pc-later-band", `<div class="pc-later"><span class="pc-later-icon">${ico("paylater")}</span><div class="pc-later-copy"><h2 class="display d-m"><span class="beat">Free cancellation.</span> <span class="beat tone">Pay later.</span></h2><p>Our free-cancellation hotel rates are pay later, so you can reserve your stay without paying upfront. We'll confirm the hotel's payment date and cancellation deadline before you book.</p></div><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div>`);
   return { path: pg.path, title: "Free hotel price check | Saphara Travel", desc: "Found a hotel you like? Get a free hotel price check from Saphara. We compare the same room, dates, board and cancellation terms, then reply on WhatsApp.", hero: true, body };
 }
 
