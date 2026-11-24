@@ -322,3 +322,17 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .pf-welcome > ol { background: var(--cream); border: 1px solid var(--rule); }
 .final-band .pf .pf-welcome li::before { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
 .final-band .pf .pf-welcome li span { color: var(--grey); }
+
+/* Homepage enquiry form: keep all copy legible on the light form card */
+.final-band .pf .pf-card,
+.final-band .pf .pf-card :is(.q, h3, label, legend, .gq > .ql, .pf-welcome li b, .pf-welcome li strong) {
+  color: var(--ink);
+}
+.final-band .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .pf-welcome li span, .ap-group, .ap-opt .txt small, .ap-empty, .sum .k) {
+  color: var(--grey);
+}
+.final-band .pf .pf-card .pf-steps li.on { color: var(--ink); }
+.final-band .pf .pf-card :is(input, select, textarea, .field) { color: var(--ink); }
+.final-band .pf .pf-card :is(input, select, textarea, .field)::placeholder { color: #625C50; opacity: 1; }
+.final-band .pf .pf-card select.field { color: var(--ink); }
+.final-band .pf .pf-card .pf-welcome li::before { background: #fff; color: var(--ink); }
