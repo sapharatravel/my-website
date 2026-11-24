@@ -3309,3 +3309,14 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   .pc-screenshot,.pc-fallback { padding:18px; }
   .pc-what-after .chips li { min-height:38px; padding:7px 12px; }
 }
+
+
+
+/* Keep comparison points compact even when shared chip styles use grid sizing. */
+.pc-what-after .chips { display:flex !important; }
+.pc-what-after .chips > li {
+  flex:0 0 auto !important;
+  width:auto !important;
+  max-width:100%;
+  grid-column:auto !important;
+}
