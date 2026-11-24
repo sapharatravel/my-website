@@ -366,10 +366,15 @@ export function priceCheckPage() {
   const pg = new Page("price-check.html");
   let body = photoHero(pg, "page-hero-pricecheck", "An infinity pool with palm trees by the sea", ["Found a hotel?", "Let’s check the price."], "Send us a screenshot of the hotel offer for a free price check. We'll compare the same room, dates, board and cancellation terms, then tell you honestly if we can beat the rate. No screenshot? Share the details below.", "Send a screenshot", "", "6.6", split("Send a screenshot", waMark("screenshot"))) + crumbBar(pg, [["Price check", "price-check.html"]]);
   const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
-  body += band("white after-head", `<section class="pc-screenshot" id="screenshot-check" aria-labelledby="pcScreenshotTitle"><div><h2 class="display d-l" id="pcScreenshotTitle"><span class="beat">Have a screenshot?</span> <span class="beat tone">We'll take it from here.</span></h2><p>Send us a screenshot showing the hotel, dates and total price. We'll check the offer and compare it like for like.</p></div><div class="pc-screenshot-action">${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}<p>WhatsApp opens so you can attach the image and send it to us.</p></div></section><div class="pc-layout">
+  body += band("white after-head", `<section class="pc-screenshot" id="screenshot-check" aria-labelledby="pcScreenshotTitle"><div><h2 class="display d-l" id="pcScreenshotTitle"><span class="beat">Have a screenshot?</span> <span class="beat tone">We'll take it from here.</span></h2><p>Send us a screenshot showing the hotel, dates and total price. We'll check the offer and compare it like for like.</p><div class="pc-upload-cue"><span class="pc-upload-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"></rect><circle cx="8.5" cy="9" r="1.5"></circle><path d="m21 15-5-5L5 20"></path></svg></span><span><b>Attach your screenshot in WhatsApp</b><small>Hotel, dates and total price help us compare it fairly</small></span></div></div><div class="pc-screenshot-action">${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}<p>WhatsApp opens so you can attach the image and send it to us.</p></div></section><div class="pc-fallback">
+  <div class="pc-fallback-copy">
+    <h2 class="display d-l" id="pcFormTitle"><span class="beat">No screenshot?</span> <span class="beat tone">Share the details.</span></h2>
+    <p class="pc-intro">Tell us what you remember about the hotel offer. Estimates are fine, and you can leave optional details blank. Your message opens in WhatsApp for you to review and send.</p>
+    <div class="pc-how"><p class="pc-k">How it works</p><ol><li><b>Send a screenshot or details</b><span>Start with a screenshot, or use the form if you don't have one.</span></li><li><b>We compare like for like</b><span>Same room, board, dates and cancellation terms.</span></li><li><b>We tell you honestly</b><span>If we can beat the price, we'll say so. If we can't, we'll tell you.</span></li></ol></div>
+    <div class="pc-what"><p class="pc-k">What we compare</p>${chips(["Room type", "Board basis", "Cancellation terms", "Transfers", "Resort fees", "Deposits"])}</div>
+  </div>
 <form class="pc-form pc-card rv" id="pcForm" novalidate aria-labelledby="pcFormTitle">
-  <h2 class="display d-l" id="pcFormTitle"><span class="beat">No screenshot?</span> <span class="beat tone">Share the details.</span></h2>
-  <p class="pc-intro">Tell us what you remember about the hotel offer. Estimates are fine, and you can leave optional details blank. Your message opens in WhatsApp for you to review and send.</p>
+  <div class="pc-form-head"><b>Share the offer details</b><span>Required fields marked *</span></div>
   <fieldset class="pc-group"><legend><span class="pc-n">1</span>The Hotel</legend>
     <div class="pc-row">
       <div class="fq"><label for="pc-hotel">Hotel name</label><input class="field" id="pc-hotel" type="text" maxlength="120" autocomplete="off" placeholder="As it's listed" aria-describedby="pc-hotel-e"><p class="err" id="pc-hotel-e" role="alert" hidden></p></div>
@@ -404,10 +409,6 @@ export function priceCheckPage() {
   <div class="actions pc-actions"><button class="split" type="submit"><span class="split-label">Continue on ${waGlyph()}WhatsApp</span><span class="split-arrow">${arrow}</span></button><p class="caption">Review your message before it opens in WhatsApp.</p></div>
   <p class="small-print" id="pcSent" hidden role="status">WhatsApp should now be open with your message. If it didn't open, message us on +44 7887 353457 and paste the details.</p>
 </form>
-<aside class="pc-side">
-  <div class="pc-how"><p class="pc-k">How it works</p><ol><li><b>Send a screenshot or details</b><span>Start with a screenshot, or use the form if you don't have one.</span></li><li><b>We compare like for like</b><span>Same room, board, dates and cancellation terms.</span></li><li><b>We tell you honestly</b><span>If we can beat the price, we'll say so. If we can't, we'll tell you.</span></li></ol></div>
-  <div class="pc-what"><p class="pc-k">What we compare</p>${chips(["Room type", "Board basis", "Cancellation terms", "Transfers", "Resort fees", "Deposits"])}</div>
-</aside>
 </div>
 <script src="assets/price-check.js?v=${assetV("price-check.js")}" defer></script>`, "check");
   const example = (priceCheck.match(/<div class="pc-example pcx-home rv"[\s\S]*?<p class="pcx-more">[^<]*<\/p>\s*<\/div>/) || [""])[0]
