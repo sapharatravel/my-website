@@ -126,7 +126,7 @@ export function home() {
   // 22 Nov 2026 (mobile audit, Huzaifa): the full-width sand pay later banner replaces the declaration (declaration parked in 06-declaration.html); reviews move up under the hotel names and rotate.
   // Order: hero, hotel names, reviews, trips, pay later, destinations, big photo, FAQ, A little more, form. Bands: names white, reviews sand, trips white, pay later sand, destinations white, FAQ sand, More white.
   // Phones drop the "Due today" card so the banner stays short.
-  const payLaterHome = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#enquire" data-plan>');
+  const payLaterHome = payLater.replace('<section class="band white" id="pay-later">', '<section class="band sand pl-home pc-price-paylater" id="pay-later">').replace('<a class="split light" href="#enquire" data-plan>', '<a class="split" href="#enquire" data-plan>');
   void declaration;
   // Superseded the same day: 22 Nov 2026 (later, Huzaifa): reordered so the trip cards and the destination arches are not side by side.
   // Flow: what we arrange (trips), why it costs you nothing extra (declaration), where we know (destinations), a client's words, the big photo with its call to action, questions answered, more to read, then the form.
@@ -416,7 +416,7 @@ export function priceCheckPage() {
     .split("pcxTitle").join("pcxTitle2")
     .replace("Worked example", "Illustrative worked example");
   body += band("pc-band pc-result", `<div class="pc2"><div class="intro"><h2 class="display d-l">${beats(["What you get back."])}</h2><p>We'll send a clear, like-for-like comparison on WhatsApp: the price you found, the price we found, and any differences.</p><p class="pc-fine">We can't beat every price and we won't promise to. It's a free second opinion from people with access to good rates.</p><div class="actions"><a class="split light" href="#check"><span class="split-label">Check my price</span><span class="split-arrow">${arrow}</span></a></div></div><div class="pcx-wrap">${example}</div></div>`);
-  body += band("sand pc-detail-band", `<div class="pc-detail">
+  body += band("white pc-detail-band", `<div class="pc-detail">
     <header class="pc-detail-head"><h2 class="display d-l"><span class="beat">The small print matters.</span> <span class="beat tone">We'll check it for you.</span></h2><p>We compare more than the headline price, so you can see whether each hotel offer really matches.</p></header>
     <div class="pc-detail-grid">
       <figure class="pc-detail-photo"><img src="${pg.img("st-hotel-suite.webp")}" alt="A bright hotel suite with a seating area and large windows" width="1600" height="2000" loading="lazy" decoding="async"><figcaption><span class="pc-detail-photo-icon">${ico("hotel")}</span><span><b>One fair comparison</b><small>Every detail checked against your hotel offer</small></span></figcaption></figure>
