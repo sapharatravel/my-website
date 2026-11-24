@@ -1046,7 +1046,7 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(20,12,4,
 @media (max-width: 767px) {
   .hero .actions { flex-direction: row; flex-wrap: nowrap; align-items: stretch; gap: var(--s-8); width: 100%; }
   .hero .actions > * { flex: 1 1 0; min-width: 0; }
-  .hero .actions .split { justify-content: space-between; padding-left: 18px; gap: var(--s-8); }
+  .hero .actions .split:not(.hero-cta) { justify-content: space-between; padding-left: 18px; gap: var(--s-8); }
   .hero .actions .btn { padding: 0 var(--s-12); gap: 6px; }
   .hero .actions .split-label, .hero .actions .btn { font-size: 15px; }
 }
@@ -2329,9 +2329,7 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.2
 @media (max-width: 767px) { .marquee-track { gap: 40px; } .marquee-track .mq-logo img { height: 32px; } .marquee-track .mq-word { font-size: 18px; } }
 /* Hero fills the whole screen on laptops and desktops (MacBook) */
 @media (min-width: 1024px) { body.home .hd-wrap { --hd-h: 100svh; } body.home .hero.hd { min-height: 100svh; } }
-/* The hero button: light cream pill, a touch larger, so it stands out on the photo */
-.hero.hd .actions .hero-cta .split-label { font-weight: 600; }
-@media (min-width: 768px) { .hero.hd .actions .hero-cta { min-height: 56px; padding-left: 26px; } }
+/* The home hero CTA inherits the shared split-button sizing, padding and arrow alignment. */
 /* Trips and pay later read as two sections: the trip cards no longer hang over into the sand band */
 body.home #trips .overlap { margin-bottom: 0; }
 body.home #pay-later.pl-home { padding-top: var(--section); }
