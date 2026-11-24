@@ -2953,3 +2953,30 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   .strip .marquee-track .mq-the-chedi img { height: 30px; max-height: 30px; }
   .strip .marquee-track .mq-jumeirah img { height: 28px; max-height: 28px; }
 }
+
+/* Homepage hotel logo slider: centred title, balanced logos and a seamless loop */
+.hd-wrap + .strip { padding-block: 32px 40px; }
+.hd-wrap + .strip .col { display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.hd-wrap + .strip .strip-label {
+  width: 100%; margin: 0; text-align: center; color: var(--grey);
+  font-family: var(--body); font-size: 14px; font-weight: 500;
+  letter-spacing: .04em; line-height: 1.4; text-transform: none;
+}
+.hd-wrap + .strip .marquee { width: 100%; flex: none; }
+.hd-wrap + .strip .marquee-track {
+  align-items: center; gap: 64px; animation-duration: 45s; will-change: transform;
+}
+.hd-wrap + .strip .marquee-track .mq-logo { display: inline-flex; flex: none; height: 56px; align-items: center; }
+.hd-wrap + .strip .marquee-track .mq-logo img {
+  display: block; width: auto; height: 40px; max-height: 40px; max-width: 180px;
+  object-fit: contain; filter: brightness(0); opacity: 1;
+}
+@media (max-width: 767px) {
+  .hd-wrap + .strip { padding-block: 24px; }
+  .hd-wrap + .strip .col { gap: 12px; }
+  .hd-wrap + .strip .marquee-track { gap: 36px; animation-duration: 38s; }
+  .hd-wrap + .strip .marquee-track .mq-logo { height: 44px; }
+  .hd-wrap + .strip .marquee-track .mq-logo img {
+    height: 32px; max-height: 32px; max-width: 148px;
+  }
+}
