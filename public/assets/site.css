@@ -3055,7 +3055,7 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
 .dest .pin { display: none !important; }
 
 /* Price check page: detail checklist and pay-later benefit, responsive at phone, tablet and desktop widths */
-.pc-detail-band { background:var(--sand); }
+.pc-detail-band { background:var(--paper); }
 .pc-detail-head { max-width:800px; margin:0 0 var(--s-40); text-align:left; }
 .pc-detail-head h2 .beat,.pc-later-copy h2 .beat { display:block; }
 .pc-detail-head h2 .tone { color:var(--tone); }
@@ -3116,4 +3116,13 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   .pc-later-icon { width:40px; height:40px; }
   .pc-later .actions { grid-column:1 / -1; }
   .pc-later .split { width:100%; }
+}
+
+
+/* Price check: keep the pay-later block's band spacing and desktop columns in step with the homepage. */
+#pay-later.pl-home.pc-price-paylater { padding-block:var(--section); }
+@media (min-width:1024px) {
+  #pay-later.pl-home.pc-price-paylater .pl2 { grid-template-columns:minmax(0,1fr) minmax(0,1fr); justify-content:stretch; column-gap:clamp(48px,6vw,96px); width:100%; }
+  #pay-later.pl-home.pc-price-paylater .pl2-copy { min-width:0; }
+  #pay-later.pl-home.pc-price-paylater .pl2-card { width:100%; max-width:none; }
 }
