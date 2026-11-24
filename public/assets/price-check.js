@@ -19,8 +19,7 @@
     var ad = +v("pc-adults") || 0, ch = +v("pc-children") || 0;
     L.push("Guests: " + ad + (ad === 1 ? " adult" : " adults") + (ch ? ", " + ch + (ch === 1 ? " child" : " children") + (v("pc-ages") ? " (" + (/[ ,&]|and/.test(v("pc-ages")) ? "ages " : "age ") + v("pc-ages") + ")" : "") : "") + " · " + (v("pc-rooms") || "1") + (v("pc-rooms") === "1" || !v("pc-rooms") ? " room" : " rooms"));
     if (v("pc-room") || v("pc-board")) L.push((v("pc-room") ? "Room: " + v("pc-room") : "") + (v("pc-room") && v("pc-board") ? " · " : "") + (v("pc-board") ? "Board: " + v("pc-board") : ""));
-    L.push("Price found: " + money(v("pc-currency"), v("pc-price")) + (v("pc-where") ? " on " + v("pc-where") : ""));
-    if (v("pc-link")) L.push("Link: " + v("pc-link"));
+    L.push("Price found: " + money("GBP", v("pc-price")) + (v("pc-where") ? " on " + v("pc-where") : ""));
     L.push("I'll send a screenshot in this chat.");
     return L.join("\n");
   }
