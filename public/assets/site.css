@@ -2931,3 +2931,25 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
 #enquire .intro h2, #enquire .intro h2 .beat { color: #fff; }
 #enquire .intro h2 .tone { color: #d8cbb3; }
 #enquire .intro p { color: rgba(255,255,255,.82); }
+
+
+/* Homepage mobile tidy up: smaller ownership badge and a calmer, evenly spaced hotel logo strip */
+.marquee-track .mq-logo img { filter: brightness(0); opacity: 1; }
+.marquee-track .mq-the-chedi img { filter: none; }
+.marquee-track .mq-raffles img { height: 44px; max-width: 150px; }
+.marquee-track .mq-ihg img, .marquee-track .mq-accor img { height: 48px; max-width: 120px; }
+.marquee-track .mq-marriott img { height: 34px; max-width: 190px; }
+.marquee-track .mq-the-chedi img { height: 30px; max-width: 140px; }
+@media (max-width: 767px) {
+  body.home .hero-pill { margin-bottom: 12px; padding: 8px 14px; font-size: 11.5px; letter-spacing: .07em; }
+  .strip { padding-block: 24px; }
+  .strip .marquee-track { gap: 36px; }
+  .strip .marquee-track .mq-logo, .strip .marquee-track .mq-word { height: 44px; }
+  .strip .marquee-track .mq-logo img { height: 30px; max-height: 30px; max-width: 136px; }
+  .strip .marquee-track .mq-raffles img, .strip .marquee-track .mq-mandarin-oriental img,
+  .strip .marquee-track .mq-kempinski img, .strip .marquee-track .mq-ritz-carlton img { height: 36px; max-height: 36px; }
+  .strip .marquee-track .mq-ihg img, .strip .marquee-track .mq-accor img { height: 38px; max-height: 38px; }
+  .strip .marquee-track .mq-marriott img { height: 30px; max-height: 30px; }
+  .strip .marquee-track .mq-the-chedi img { height: 30px; max-height: 30px; }
+  .strip .marquee-track .mq-jumeirah img { height: 28px; max-height: 28px; }
+}
