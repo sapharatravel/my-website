@@ -3336,3 +3336,11 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   #check .pc-upload-cue > span:last-child { min-width:0; overflow-wrap:anywhere; }
 }
 @media (max-width:359px) { #pcForm .pc-row.pc-row-sm { grid-template-columns:minmax(0,1fr); } }
+
+/* Price check: give the optional room and board disclosure comfortable touch spacing. */
+#pcForm .pc-more summary { padding-block:14px; gap:8px 10px; box-sizing:border-box; }
+#pcForm .pc-more summary::before { flex:none; }
+@media (max-width:767px) {
+  #pcForm .pc-more summary { padding-block:16px; }
+  #pcForm .pc-more summary .opt { flex-basis:100%; line-height:1.5; }
+}
