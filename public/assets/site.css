@@ -288,7 +288,7 @@ button.split { border: 0; font: inherit; cursor: pointer; -webkit-appearance: no
 @media (min-width: 1024px) { .dests { grid-template-columns: repeat(4, 1fr); gap: var(--s-24); } }
 .dest { aspect-ratio: 3 / 4.4; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--s-16); text-decoration: none; box-shadow: var(--shadow-md); transition: transform var(--t-fast) var(--ease); }
 @media (min-width: 1024px) { .dest { padding: var(--s-24); } }
-.dest::after { background: linear-gradient(180deg, rgba(20,12,4,.18) 0%, rgba(20,12,4,0) 22%, rgba(20,12,4,0) 38%, rgba(20,12,4,.6) 68%, rgba(20,12,4,.88) 100%); }
+.dest::after { border-radius: inherit; background: linear-gradient(180deg, rgba(20,12,4,.18) 0%, rgba(20,12,4,0) 22%, rgba(20,12,4,0) 38%, rgba(20,12,4,.6) 68%, rgba(20,12,4,.88) 100%); }
 .dest .region { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 .dest h3 { font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: clamp(28px, 7.5vw, 40px); letter-spacing: .04em; line-height: 1; margin-top: var(--s-8); }
 .dest .time { margin-top: var(--s-8); font-size: var(--fs-caption); font-variant-numeric: tabular-nums; }
@@ -2117,9 +2117,6 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 /* 3 Varied layouts (desktop) */
 @media (min-width: 1024px) {
   /* trip types keep the tall expanding row (hover opens a card) */
-  /* destinations staggered */
-  #destinations .dests { align-items: start; }
-  #destinations .dests > :nth-child(even) { margin-top: 56px; }
   /* declaration: the headline stays pinned while the receipt scrolls past */
   #why .decl-wrap { align-items: start; }
   #why .decl-wrap > .intro { position: sticky; top: calc(var(--header-slim) + 32px); }
@@ -3069,8 +3066,8 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
 .dest h3 { margin: 0; line-height: .96; }
 .dest .time { margin: 0; }
 @media (min-width: 1024px) {
-  #destinations .dests { column-gap: clamp(18px, 1.8vw, 24px); row-gap: 40px; }
-  #destinations .dests > :nth-child(even) { margin-top: 40px; }
+  .dests--staggered { align-items: start; column-gap: clamp(18px, 1.8vw, 24px); row-gap: 40px; }
+  .dests--staggered > :nth-child(even) { margin-top: 40px; }
 }
 @media (max-width: 767px) {
   #destinations .dests { gap: 16px; }
@@ -3422,3 +3419,18 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   .why6 > div { padding:16px; gap:12px; }
   #pay-later.pl-home { padding-block:var(--section); }
 }
+
+
+/* Destination links in the desktop dropdown and phone menu. */
+.dd-panel.ddb.dd-destinations { width: min(650px, calc(100% - 2 * var(--margin))); grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.dd:not(.open) > .dd-panel { pointer-events: none; }
+.dd-destinations .ddb-row { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; min-height: 56px; }
+.dd-destinations .ddb-row .ph { display: grid; place-items: center; width: 40px; height: 40px; }
+.dd-destinations .ddb-row .country-flag { width: 24px; height: 18px; }
+.dd-destinations [aria-current="page"] { background: var(--sand); }
+.mm-destinations { border-bottom: 1px solid var(--rule); }
+.mm-destinations > summary { display: flex; align-items: center; justify-content: space-between; min-height: 56px; color: var(--ink); font: 600 20px/1 var(--body); list-style: none; cursor: pointer; }
+.mm-destinations > summary::-webkit-details-marker { display: none; }
+.mm-destinations > summary svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
+.mm-destinations[open] > summary svg { transform: rotate(180deg); }
+.mm-destinations .ddb-foot { margin-top: 8px; }
