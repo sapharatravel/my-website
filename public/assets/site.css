@@ -3511,18 +3511,24 @@ body.home #destinations .dest :is(.code, .time) {
   box-shadow: inset 0 0 0 1px rgba(255,248,228,.32),
     inset 0 1px 0 rgba(255,250,230,.12), 0 8px 32px rgba(13,17,12,.12);
 }
-@supports ((backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px))) {
+@supports ((backdrop-filter: blur(7px)) or (-webkit-backdrop-filter: blur(7px))) {
   body.home .hero .hero-pill,
   body.home #destinations .dest :is(.code, .time) {
-    background: linear-gradient(135deg, rgba(241,224,194,.25), rgba(36,33,23,.23)), rgba(27,24,18,.65);
-    -webkit-backdrop-filter: blur(15px) saturate(.92);
-    backdrop-filter: blur(15px) saturate(.92);
+    background: linear-gradient(135deg, rgba(253,243,223,.12), rgba(36,33,23,.10)), rgba(27,24,18,.44);
+    -webkit-backdrop-filter: blur(7px) saturate(.92);
+    backdrop-filter: blur(7px) saturate(.92);
+  }
+  /* Airport codes often sit over sky, so use a pale tint and dark lettering. */
+  body.home #destinations .dest .code {
+    background: rgba(255,248,235,.58);
+    color: #201b15;
   }
 }
 @media (prefers-reduced-transparency: reduce) {
   body.home .hero .hero-pill,
   body.home #destinations .dest :is(.code, .time) {
     background: #4a4539;
+    color: #fffaf2;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
   }
