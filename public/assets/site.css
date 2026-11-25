@@ -3358,3 +3358,20 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   #check .pc-screenshot-action .split-label { font-size:15px; }
   #check .pc-screenshot-action > p { font-size:12px; line-height:1.5; }
 }
+
+/* Phone-only consistency: intrinsic sizing and shared CTA rhythm. */
+@media (max-width:767px) {
+  .col, .split-cols > *, .actions > *, .pc-screenshot-action, .pc-fallback-copy { min-width:0; }
+  .actions, .pc-screenshot-action { max-width:100%; }
+  .split, .btn { box-sizing:border-box; max-width:100%; min-width:0; min-height:44px; white-space:normal; }
+  .split .split-label { min-width:0; white-space:normal; line-height:1.25; overflow-wrap:break-word; padding-block:8px; }
+  .split .split-arrow { flex-shrink:0; }
+  .btn { line-height:1.25; padding-block:10px; }
+  #check .pc-screenshot h2, #check .pc-fallback-copy h2 { font-size:var(--head-panel); line-height:1.05; overflow-wrap:break-word; }
+  #check .pc-fallback { padding:clamp(12px,4vw,24px); }
+  #check .pc-form.pc-card { padding:clamp(12px,4vw,24px); }
+  #pcForm .pc-more { padding-inline:12px; }
+  #pcForm .pc-more summary { min-height:52px; padding-block:16px; }
+  #pcForm .pc-more summary .opt { margin:0; }
+  .prose.legal .table-wrap { max-width:100%; overscroll-behavior-x:contain; }
+}
