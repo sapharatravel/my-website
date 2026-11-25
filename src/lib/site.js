@@ -126,6 +126,7 @@ export function header(pg) {
 </header>
 <div class="mmenu" id="mmenu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
   <div class="mm-top"><img src="${pg.img("saphara-logo-dark.svg")}" alt="Saphara Travel" width="120" height="35"><button class="mm-close" type="button" aria-label="Close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="mm-actions"><a class="textlink" href="${waMark("menu")}">${waGlyph()}WhatsApp us</a><a class="split" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
   <nav aria-label="Menu">
     <a class="mm-pc" href="${pg.u("price-check.html")}"><span class="mm-tag">Free</span> Price check</a>
     <div class="mm-trips"><span>Trips</span><div class="mm-sub">${C.TRIPS.map(([s2, n2, img2, [a2, b2]]) => mmTrip(pg.u("trips/" + s2 + ".html"), pg.img("thumb-" + img2), n2, a2 + " " + b2)).join("")}${(C.MENU_EXTRA || []).map((m) => mmTrip(pg.u(m.href), pg.img(m.thumb), m.name, m.lines[0] + " " + m.lines[1])).join("")}</div></div>
@@ -135,7 +136,6 @@ export function header(pg) {
     </details>
     <a href="${pg.u("guides/index.html")}">Guides</a><a href="${pg.u("why-saphara.html")}">Why Saphara</a>
   </nav>
-  <div class="mm-actions"><a class="textlink" href="${waMark("menu")}">${waGlyph()}WhatsApp us</a><a class="split" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
 </div>`;
 }
 
