@@ -40,6 +40,7 @@
       "slug": "zanzibar",
       "name": "Zanzibar",
       "country": "Tanzania",
+      "flag": "tz",
       "code": "ZNZ",
       "img": "st-dest-zanzibar.webp",
       "alt": "A white sandbar and island in turquoise water off Zanzibar",
@@ -342,6 +343,7 @@
       "slug": "doha",
       "name": "Doha",
       "country": "Qatar",
+      "flag": "qa",
       "code": "DOH",
       "img": "st-dest-doha.webp",
       "alt": "A spiral minaret at dusk in Doha",
@@ -377,6 +379,7 @@
       "slug": "dubai",
       "name": "Dubai",
       "country": "UAE",
+      "flag": "ae",
       "code": "DXB",
       "img": "st-dubai-alfahidi.webp",
       "alt": "A quiet lane of traditional buildings in Al Fahidi, Dubai",
@@ -412,6 +415,7 @@
       "slug": "oman",
       "name": "Oman",
       "country": "Oman",
+      "flag": "om",
       "code": "MCT",
       "img": "st-dest-oman.webp",
       "alt": "A terraced village on Jebel Akhdar in Oman",
@@ -447,6 +451,7 @@
       "slug": "makkah-and-madinah",
       "name": "Makkah and Madinah",
       "country": "Saudi Arabia",
+      "flag": "sa",
       "code": "JED · MED",
       "img": "st-madinah-nabawi.webp",
       "alt": "Masjid an-Nabawi in Madinah at golden hour",
@@ -483,6 +488,7 @@
       "slug": "kuala-lumpur",
       "name": "Kuala Lumpur",
       "country": "Malaysia",
+      "flag": "my",
       "code": "KUL",
       "img": "st-dest-kuala-lumpur.webp",
       "warm": true,
@@ -519,6 +525,7 @@
       "slug": "langkawi",
       "name": "Langkawi",
       "country": "Malaysia",
+      "flag": "my",
       "code": "LGK",
       "img": "st-langkawi-skybridge.webp",
       "alt": "The Langkawi Sky Bridge above the rainforest",
@@ -554,6 +561,7 @@
       "slug": "maldives",
       "name": "Maldives",
       "country": "Maldives",
+      "flag": "mv",
       "code": "MLE",
       "img": "st-dest-maldives.webp",
       "alt": "A turquoise lagoon and overwater villas in the Maldives",
@@ -589,6 +597,7 @@
     {
       "name": "Maldives",
       "country": "Maldives",
+      "flag": "mv",
       "code": "MLE",
       "img": "st-dest-maldives.webp",
       "alt": "An island ringed by reef in the Maldives",
@@ -599,6 +608,7 @@
     {
       "name": "Seychelles",
       "country": "Seychelles",
+      "flag": "sc",
       "code": "SEZ",
       "img": "st-dest-seychelles.webp",
       "alt": "A palm-lined lane on La Digue in the Seychelles",
@@ -609,6 +619,7 @@
     {
       "name": "Zanzibar",
       "country": "Tanzania",
+      "flag": "tz",
       "code": "ZNZ",
       "img": "st-dest-zanzibar.webp",
       "alt": "A white sandbar and island in turquoise water off Zanzibar",
@@ -1259,11 +1270,6 @@
       ]
     ]
   ],
-  "FLAGS": {
-    "ba": "<svg viewBox=\"0 0 30 20\"><rect width=\"30\" height=\"20\" fill=\"#002F6C\"/><path d=\"M9 0h13v20z\" fill=\"#FECB00\"/><circle cx=\"7.2\" cy=\"1.4\" r=\".85\" fill=\"#fff\"/><circle cx=\"9.2\" cy=\"4.25\" r=\".85\" fill=\"#fff\"/><circle cx=\"11.2\" cy=\"7.1\" r=\".85\" fill=\"#fff\"/><circle cx=\"13.2\" cy=\"9.950000000000001\" r=\".85\" fill=\"#fff\"/><circle cx=\"15.2\" cy=\"12.8\" r=\".85\" fill=\"#fff\"/><circle cx=\"17.2\" cy=\"15.65\" r=\".85\" fill=\"#fff\"/><circle cx=\"19.2\" cy=\"18.5\" r=\".85\" fill=\"#fff\"/></svg>",
-    "mt": "<svg viewBox=\"0 0 30 20\"><rect width=\"15\" height=\"20\" fill=\"#fff\"/><rect x=\"15\" width=\"15\" height=\"20\" fill=\"#CF142B\"/><rect x=\"3\" y=\"2.5\" width=\"3\" height=\"3\" fill=\"#C9C9C9\"/></svg>",
-    "us": "<svg viewBox=\"0 0 30 20\"><rect width=\"30\" height=\"20\" fill=\"#fff\"/><rect y=\"0.00\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"3.08\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"6.15\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"9.23\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"12.31\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"15.38\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect y=\"18.46\" width=\"30\" height=\"1.54\" fill=\"#B22234\"/><rect width=\"13\" height=\"10.8\" fill=\"#3C3B6E\"/></svg>"
-  },
   "WA_PATH": "<path fill=\"currentColor\" d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z\"/>",
   "DESC_OVERRIDES": {
     "destinations/makkah-and-madinah.html": "Umrah hotels in Makkah and Madinah, chosen for the walk to the Haram and who's travelling. Driver and ziyarah contacts too. We don't book Umrah flights.",

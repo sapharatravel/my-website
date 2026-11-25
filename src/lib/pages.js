@@ -1,5 +1,5 @@
 // Page bodies, ported from build() in tools/build_site.py. Each function returns { path, title, desc, hero, og, body }.
-import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, destCard, placeCard, gcard, ico, igStrip } from "./site.js";
+import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, countryFlag, destCard, placeCard, gcard, ico, igStrip } from "./site.js";
 
 import hero from "../components/home/00-hero.html?raw";
 import hotelNames from "../components/home/01-hotel-names.html?raw";
@@ -192,7 +192,7 @@ export function destinationPage(slug) {
   const pg = new Page(`destinations/${slug}.html`);
   const g = d.page || null; // the fuller destination template (21 Nov 2026); destinations without `page` keep the short layout
   const fromMan = " From Manchester.";
-  const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--ink)">${d.code}</span><span>${d.flight_long}${fromMan}</span></div>`;
+  const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span class="dest-airport">${countryFlag(pg, d.flag, d.country)}${d.code}</span><span>${d.flight_long}${fromMan}</span></div>`;
   let body = photoHero(pg, (g && g.hero) || d.hero || d.img, (g && g.hero_alt) || d.hero_alt || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
   body += crumbBar(pg, [["Destinations", "destinations/index.html"], [d.name, `destinations/${slug}.html`]]);
   let facts = (g && g.facts) || [["Flight time", d.flight_long + fromMan], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
