@@ -647,6 +647,11 @@ main { padding-bottom: 0; }
 /* ---------- guides: cards and headers that echo our Instagram covers (BRAND-BRIDGE.md) ---------- */
 .gcards { display: grid; gap: var(--s-24); }
 @media (min-width: 768px) { .gcards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+#guide-list { gap: var(--s-40) var(--s-32); }
+#guide-list .gcard { gap: var(--s-24); }
+#guide-list .gtext { gap: var(--s-12); }
+#guide-list .gcard h3 { font-size: clamp(44px, 4vw, 56px); }
+#guide-list .gline { margin-top: 0; }
 /* guide cards: plain photo, words underneath (destination card shape and type); the cover style is kept for guide heroes and share images */
 .gitem { display: flex; flex-direction: column; }
 .gcard { display: flex; flex-direction: column; gap: var(--s-16); color: var(--ink); text-decoration: none; -webkit-tap-highlight-color: transparent; }
