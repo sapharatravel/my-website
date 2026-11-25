@@ -297,7 +297,18 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf .groups > .err, .pf .groups > .pf-disc, .pf .groups > .linkbtn, .pf .groups > .wa-preview, .pf .groups > .pf-pass-mob, .pf .g-you > * { grid-column: 1 / -1; }
   .pf .g-trip { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
   .pf .g-you { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
-  .pf .pf-review { gap: var(--s-16) var(--s-24); }
+  .pf .groups.pf-review {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    gap: var(--s-16) var(--s-32);
+  }
+  .pf .groups.pf-review > .pf-pass-mob {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+  }
+  .pf .groups.pf-review > :is(.rv-sec, .linkbtn, .wa-preview) {
+    grid-column: 2;
+    min-width: 0;
+  }
   .pf .tile { min-height: 52px; padding-block: var(--s-8); }
   .pf .gq { gap: var(--s-8); }
   .pf .foot { margin-top: var(--s-24); }
