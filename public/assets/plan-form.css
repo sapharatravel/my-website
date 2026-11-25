@@ -338,10 +338,12 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .pf-card .pf-welcome li::before { background: #fff; color: var(--ink); }
 
 /* Mobile enquiry: keep the panel inside the viewport and give the welcome steps breathing room. */
-@media (max-width: 767px) {
+@media (max-width: 599px) {
   #enquire.form-wrap > .col { width: calc(100% - 32px); max-width: 100%; margin-inline: auto; padding: 24px 12px !important; box-sizing: border-box; box-shadow: none !important; }
   #enquire.form-wrap > .col > .intro { margin-bottom: 20px; padding-inline: 8px; }
-  #enquire.form-wrap > .col > .intro h2 { font-size: clamp(30px, 8vw, 40px); line-height: 1.08; }
+  #enquire.form-wrap > .col > .intro h2 { font-size: clamp(40px, 12vw, 58px); line-height: 1.02; text-align: center; margin-inline: auto; }
+  #enquire.form-wrap > .col > .intro h2 .beat { display: block; }
+  #enquire.form-wrap > .col > .intro h2 .tone { font-size: .88em; margin-top: 4px; text-wrap: balance; }
   #enquire.form-wrap > .col > .intro p { font-size: 15px; line-height: 1.5; margin-top: 12px; }
   .pf { min-width: 0; width: 100%; --head-question: 28px; }
   .pf .pf-card { box-sizing: border-box; width: 100%; padding: 20px 16px; color: var(--ink); box-shadow: none; }
