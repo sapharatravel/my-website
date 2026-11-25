@@ -3502,3 +3502,28 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
     line-height: 1.45;
   }
 }
+
+/* Warm frosted badges over homepage photography. */
+body.home .hero .hero-pill,
+body.home #destinations .dest :is(.code, .time) {
+  color: #fffaf2;
+  background: #4a4539;
+  box-shadow: inset 0 0 0 1px rgba(255,248,228,.32),
+    inset 0 1px 0 rgba(255,250,230,.12), 0 8px 32px rgba(13,17,12,.12);
+}
+@supports ((backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px))) {
+  body.home .hero .hero-pill,
+  body.home #destinations .dest :is(.code, .time) {
+    background: linear-gradient(135deg, rgba(241,224,194,.25), rgba(36,33,23,.23)), rgba(27,24,18,.65);
+    -webkit-backdrop-filter: blur(15px) saturate(.92);
+    backdrop-filter: blur(15px) saturate(.92);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body.home .hero .hero-pill,
+  body.home #destinations .dest :is(.code, .time) {
+    background: #4a4539;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}

@@ -1,5 +1,5 @@
 // Page bodies, ported from build() in tools/build_site.py. Each function returns { path, title, desc, hero, og, body }.
-import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, countryFlag, destCard, placeCard, gcard, ico, igStrip } from "./site.js";
+import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, countryFlag, destCard, placeCard, gcard, ico, igStrip, srcsetFor } from "./site.js";
 
 import hero from "../components/home/00-hero.html?raw";
 import hotelNames from "../components/home/01-hotel-names.html?raw";
@@ -119,7 +119,9 @@ export function home() {
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
   void guides;
   // 16 Nov 2026 (Huzaifa): proof under the hero, then the FAQ teaser and the check-in form ("Bismillah. Let's plan it.") back at the end, with a WhatsApp button.
-  const finalCta = enquiry.replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
+  const enquiryPhoto = "st-moment-d.webp";
+  const finalCta = enquiry.replace('<section class="band sand form-wrap" id="enquire">', `<section class="band final-band form-wrap" id="enquire">
+  <img class="enquiry-photo" src="${pg.img(enquiryPhoto)}" srcset="${srcsetFor("", enquiryPhoto)}" sizes="(max-width: 850px) 850px, 100vw" width="1920" height="1080" alt="" loading="lazy" decoding="async">`);
   // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
   // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
   // 22 Nov 2026 (Huzaifa): the pay later block replaced the declaration; 22 Nov 2026 (evening, Cloudflare preview review): the declaration is back. Pay later stays in 03b-pay-later.html (Why Saphara).
