@@ -2007,8 +2007,21 @@ html { overflow-x: clip; }
   .hd-wrap > .hd-calm-m { margin-top: var(--s-16); }
   /* the photos crossfade on their own; no dots on phones (they floated mid-photo and were 28px targets) */
   .hero .hs-dots { display: none; }
-  /* full-width Plan my trip button */
   .hero.hd .actions .split { flex: 1 1 auto; width: 100%; justify-content: space-between; }
+  body.home .hero.hd h1.display {
+    font-size: clamp(42px, 12.75vw, 70px);
+    text-wrap: balance;
+  }
+  body.home .hero.hd .lead {
+    max-width: 38ch;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  body.home .hero.hd .actions .split {
+    flex: 0 1 auto;
+    width: fit-content;
+    max-width: 100%;
+  }
   /* header: logo and menu only (WhatsApp is in the hero, the sticky bar and the menu) */
   .header .hwa { display: none; }
 }
