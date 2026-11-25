@@ -2601,6 +2601,12 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
     padding-right: var(--site-edge-right);
   }
 
+  /* Keep the homepage hero content on the same edges as the navigation. */
+  body.home .hero.hd {
+    padding-left: var(--site-edge-left);
+    padding-right: var(--site-edge-right);
+  }
+
   .dd-panel.ddb {
     left: auto;
     right: var(--site-edge-right);
