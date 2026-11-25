@@ -2096,6 +2096,12 @@ html .header.slim .logo.logo-dark, html body:not(.home) .header .logo.logo-dark 
 html .header.slim .hwa, html .header.slim .mbtn, html body:not(.home) .header .hwa, html body:not(.home) .header .mbtn { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px rgba(0,0,0,.14); }
 html .header.slim .hsplit, html body:not(.home) .header .hsplit { background: var(--ink); color: #fff; --arrow-bg: var(--sand); --arrow-fg: var(--ink); }
 html .header.slim .hsplit .split-label, html body:not(.home) .header .hsplit .split-label { color: #fff; }
+@media (hover: hover) {
+  html .header.slim .hsplit:hover,
+  html body:not(.home) .header .hsplit:hover { background: var(--btn-dark-hover); }
+}
+html .header.slim .hsplit:active,
+html body:not(.home) .header .hsplit:active { background: var(--btn-dark-pressed); }
 html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-btn, html body:not(.home) .header .dd-btn { color: var(--ink); }
 /* Desktop: the homepage photo runs to the top of the screen, under the clear header */
 @media (min-width: 768px) {
