@@ -383,3 +383,14 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf :is(input,select,textarea) { min-width:0; max-width:100%; font-size:16px; }
   .pf .foot .btn { min-height:48px; line-height:1.25; }
 }
+
+/* Mobile enquiry: one full-width dark section, one inset form card. */
+@media (max-width: 767px) {
+  #enquire.form-wrap { padding-block: 24px 40px; }
+  #enquire.form-wrap > .col { width:100%; max-width:100%; border-radius:0; padding:32px max(20px, env(safe-area-inset-left, 0px)) !important; }
+  #enquire.form-wrap > .col > .intro { padding:0; margin:0 auto 24px; text-align:center; }
+  #enquire.form-wrap > .col > .intro h2 { font-size:clamp(44px,12vw,58px); }
+  #enquire.form-wrap > .col > .intro p { text-align:center; margin:12px auto 0; max-width:36ch; }
+  #enquire.form-wrap .pf .pf-card { padding:24px 16px; }
+  #enquire.form-wrap .pf .pf-welcome > ol { padding:14px 0; border:0; background:transparent; }
+}
