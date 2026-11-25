@@ -88,6 +88,15 @@ export function header(pg) {
           <a class="ddb-promo" href="${pg.u("price-check.html")}"><span class="nl-free">Free</span><b>Found a hotel already?</b><span class="ddb-p">Send us the hotel and price. We'll compare the same room, dates and terms, and tell you honestly if we can do better.</span><span class="ddb-cta">Get a free price check${ARROW}</span></a>
           <div class="ddb-foot"><a class="dd-all" href="${pg.u("trips/index.html")}">See all trips${ARROW}</a></div>
         </div>`;
+  const destIndex = pg.u("destinations/index.html");
+  const destLinks = C.DESTS.map((d) => {
+    const path = "destinations/" + d.slug + ".html";
+    const current = pg.path === path ? ' aria-current="page"' : "";
+    const country = d.name === d.country ? "" : `<span>${esc(d.country)}</span>`;
+    return `<a class="ddb-row" href="${pg.u(path)}"${current}><span class="ph">${countryFlag(pg, d.flag)}</span><span class="ddb-tx"><b>${esc(d.name)}</b>${country}</span></a>`;
+  }).join("");
+  const allDestinations = `<a class="dd-all" href="${destIndex}">See all destinations${ARROW}</a>`;
+  const chevron = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
   const pl = planLink(pg), dp = pl === "#enquire" ? " data-plan" : "";
   return `<a class="skip" href="#main">Skip to content</a>
 <header class="header" id="hdr">
@@ -99,9 +108,15 @@ export function header(pg) {
     <div class="hnav">
       <nav class="desk-links" aria-label="Main">
         <a class="nl nl-pc" href="${pg.u("price-check.html")}"><span class="nl-free">Free</span> Price check</a>
-        <div class="dd"><button class="nl dd-btn" type="button" aria-expanded="false" aria-controls="tripsMenu">Trips<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="dd"><button class="nl dd-btn" type="button" aria-expanded="false" aria-controls="tripsMenu">Trips${chevron}</button>
         ${ddPanel}</div>
-        <a class="nl" href="${pg.u("destinations/index.html")}">Destinations</a><a class="nl" href="${pg.u("guides/index.html")}">Guides</a><a class="nl" href="${pg.u("why-saphara.html")}">Why Saphara</a>
+        <div class="dd"><button class="nl dd-btn" type="button" aria-expanded="false" aria-controls="destinationsMenu">Destinations${chevron}</button>
+          <div class="dd-panel ddb dd-destinations" id="destinationsMenu" role="region" aria-label="Destinations">
+            ${destLinks}
+            <div class="ddb-foot">${allDestinations}</div>
+          </div>
+        </div>
+        <a class="nl" href="${pg.u("guides/index.html")}">Guides</a><a class="nl" href="${pg.u("why-saphara.html")}">Why Saphara</a>
       </nav>
       <a class="hwa" href="${waMark("header")}" aria-label="WhatsApp us">${waGlyph("")}</a>
       <a class="split hsplit" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a>
@@ -114,7 +129,11 @@ export function header(pg) {
   <nav aria-label="Menu">
     <a class="mm-pc" href="${pg.u("price-check.html")}"><span class="mm-tag">Free</span> Price check</a>
     <div class="mm-trips"><span>Trips</span><div class="mm-sub">${C.TRIPS.map(([s2, n2, img2, [a2, b2]]) => mmTrip(pg.u("trips/" + s2 + ".html"), pg.img("thumb-" + img2), n2, a2 + " " + b2)).join("")}${(C.MENU_EXTRA || []).map((m) => mmTrip(pg.u(m.href), pg.img(m.thumb), m.name, m.lines[0] + " " + m.lines[1])).join("")}</div></div>
-    <a href="${pg.u("destinations/index.html")}">Destinations</a><a href="${pg.u("guides/index.html")}">Guides</a><a href="${pg.u("why-saphara.html")}">Why Saphara</a>
+    <details class="mm-destinations">
+      <summary>Destinations${chevron}</summary>
+      <div class="dd-destinations">${destLinks}<div class="ddb-foot">${allDestinations}</div></div>
+    </details>
+    <a href="${pg.u("guides/index.html")}">Guides</a><a href="${pg.u("why-saphara.html")}">Why Saphara</a>
   </nav>
   <div class="mm-actions"><a class="textlink" href="${waMark("menu")}">${waGlyph()}WhatsApp us</a><a class="split" href="${pl}"${dp}><span class="split-label">Plan my trip</span><span class="split-arrow">${ARROW}</span></a></div>
 </div>`;
