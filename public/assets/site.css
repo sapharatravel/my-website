@@ -819,7 +819,7 @@ main { padding-bottom: 0; }
 .mm-top img { height: var(--logo-h); width: auto; }
 .mm-close { width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--sand); color: var(--ink); display: grid; place-items: center; cursor: pointer; box-shadow: inset 0 0 0 1px var(--rule); }
 .mm-close svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.8; fill: none; stroke-linecap: round; }
-.mmenu nav > a, .mm-trips > span { display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid var(--rule); font: 600 22px/1 var(--body); text-decoration: none; color: var(--ink); }
+.mmenu nav > a, .mm-trips > span { display: flex; align-items: center; min-height: 56px; border-bottom: 1px solid var(--rule); font: 600 20px/1 var(--body); text-decoration: none; color: var(--ink); }
 .mm-trips > span { border-bottom: 0; }
 .mm-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--s-16); padding-bottom: var(--s-12); border-bottom: 1px solid var(--rule); }
 .mm-sub a { display: flex; align-items: center; min-height: 44px; font-size: 16px; text-decoration: none; color: var(--ink); }
@@ -2249,7 +2249,7 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.2
 .mm-trip-img { width: 56px; height: 56px; border-radius: 12px; overflow: hidden; background: var(--sand-deep); }
 .mm-trip-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .mm-trip-copy { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.mm-trip-copy b { font: 600 20px/1.05 var(--display); color: var(--ink); }
+.mm-trip-copy b { font: 600 18px/1.05 var(--display); color: var(--ink); }
 .mm-trip-copy small { font-size: 13.5px; line-height: 1.35; color: var(--grey); }
 .mm-trip-card:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 12px; }
 
