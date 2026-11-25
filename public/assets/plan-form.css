@@ -338,7 +338,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .pf-card .pf-welcome li::before { background: #fff; color: var(--ink); }
 
 /* Mobile enquiry: keep the panel inside the viewport and give the welcome steps breathing room. */
-@media (max-width: 599px) {
+@media (max-width: 767px) {
   #enquire.form-wrap > .col { width: calc(100% - 32px); max-width: 100%; margin-inline: auto; padding: 24px 12px !important; box-sizing: border-box; box-shadow: none !important; }
   #enquire.form-wrap > .col > .intro { margin-bottom: 20px; padding-inline: 8px; }
   #enquire.form-wrap > .col > .intro h2 { font-size: clamp(40px, 12vw, 58px); line-height: 1.02; text-align: center; margin-inline: auto; }
@@ -366,7 +366,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 }
 
 /* Dedicated plan-my-trip page shares the homepage enquiry styling on phones. */
-@media (max-width: 599px) {
+@media (max-width: 767px) {
   #enquire.form-wrap:not(.final-band) .pf .pf-card { background: #fff; color: var(--ink); }
   #enquire.form-wrap:not(.final-band) .pf .pf-card :is(.q, h3, label, legend, .gq > .ql, .pf-welcome li b, .pf-welcome li strong) { color: var(--ink); }
   #enquire.form-wrap:not(.final-band) .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .pf-welcome li span, .sum .k) { color: var(--grey); }
@@ -375,4 +375,11 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.form-wrap:not(.final-band) .pf .pf-welcome li::before { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
   #enquire.form-wrap:not(.final-band) .pf .pf-card :is(input, select, textarea, .field) { color: var(--ink); }
   #enquire.form-wrap:not(.final-band) .pf .pf-card :is(input, select, textarea, .field)::placeholder { color: #625C50; opacity: 1; }
+}
+
+/* Prevent intrinsic field and grid widths from expanding phone layouts. */
+@media (max-width: 767px) {
+  .pf :is(.pf-panel,.groups,.gq,.fq,.grid2,.dates2,.room,.room-row,.foot,.pf-review,.pf-disc-body) { min-width:0; max-width:100%; }
+  .pf :is(input,select,textarea) { min-width:0; max-width:100%; font-size:16px; }
+  .pf .foot .btn { min-height:48px; line-height:1.25; }
 }
