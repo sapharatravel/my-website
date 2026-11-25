@@ -661,11 +661,12 @@ body.home #enquire.final-band > .col > .intro h2 .tone {
 }
 body.home #enquire.final-band .pf .pf-card:has(.pf-welcome:not([inert])) {
   background: #3b4137;
-  box-shadow: inset 0 0 0 1px rgba(255,248,228,.36),
+  box-shadow: inset 0 0 0 1px rgba(255,248,228,.52),
     inset 0 1px 0 rgba(255,250,230,.13), 0 12px 32px rgba(13,17,12,.23);
 }
 body.home #enquire.final-band .pf .pf-welcome:not([inert]) :is(.q, .pf-lead, .pf-small) {
   color: #fff9ef;
+  text-shadow: 0 1px 3px rgba(15,19,15,.85);
 }
 body.home #enquire.final-band .pf .pf-welcome:not([inert]) .btn-block {
   box-shadow: inset 0 0 0 1px rgba(255,248,228,.45);
@@ -673,11 +674,11 @@ body.home #enquire.final-band .pf .pf-welcome:not([inert]) .btn-block {
 body.home #enquire.final-band .pf .pf-welcome .btn-block:focus-visible {
   outline-color: #fff9ef;
 }
-@supports ((backdrop-filter: blur(19px)) or (-webkit-backdrop-filter: blur(19px))) {
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
   body.home #enquire.final-band .pf .pf-card:has(.pf-welcome:not([inert])) {
-    background: linear-gradient(120deg, rgba(55,48,33,.70), rgba(26,42,40,.52));
-    -webkit-backdrop-filter: blur(19px) saturate(.95);
-    backdrop-filter: blur(19px) saturate(.95);
+    background: linear-gradient(120deg, rgba(42,35,25,.52), rgba(38,43,33,.44) 55%, rgba(26,42,40,.28));
+    -webkit-backdrop-filter: blur(10px) saturate(.95);
+    backdrop-filter: blur(10px) saturate(.95);
   }
 }
 @media (max-width: 767px) {
