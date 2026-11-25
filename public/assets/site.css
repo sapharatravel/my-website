@@ -3032,11 +3032,11 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
 }
 @media (max-width: 767px) {
   .hd-wrap + .strip { padding-block: 24px; }
-  .hd-wrap + .strip .col { gap: 12px; }
+  .hd-wrap + .strip .col { gap: 22px; }
   .hd-wrap + .strip .marquee-track { gap: 36px; animation-duration: 38s; }
-  .hd-wrap + .strip .marquee-track .mq-logo { height: 44px; }
+  .hd-wrap + .strip .marquee-track .mq-logo { height: 52px; }
   .hd-wrap + .strip .marquee-track .mq-logo img {
-    height: 32px; max-height: 32px; max-width: 148px;
+    height: 40px; max-height: 40px; max-width: 175px;
   }
 }
 
@@ -3078,7 +3078,7 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
     height: 54px; max-height: 54px; max-width: 170px;
   }
   .hd-wrap + .strip .marquee-track .mq-logo.mq-accor img {
-    height: 50px; max-height: 50px; max-width: 68px;
+    height: 56px; max-height: 56px; max-width: 76px;
   }
 }
 
@@ -3089,9 +3089,9 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   height: 92px; max-height: 92px; max-width: 220px;
 }
 @media (max-width: 767px) {
-  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg { height: 78px; }
+  .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg { height: 84px; }
   .hd-wrap + .strip .marquee-track .mq-logo.mq-ihg img {
-    height: 70px; max-height: 70px; max-width: 180px;
+    height: 76px; max-height: 76px; max-width: 196px;
   }
 }
 
