@@ -391,10 +391,19 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf .foot .btn { min-height:48px; line-height:1.25; }
 }
 
-/* Mobile enquiry: one full-width dark section, one inset form card. */
+/* Align the dedicated trip planner with the content edges of the page. */
+#enquire.form-wrap:not(.final-band) {
+  padding-left: max(var(--margin), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--margin), env(safe-area-inset-right, 0px));
+}
+#enquire.form-wrap:not(.final-band) > .col {
+  /* Override the 1040px cap in the shared enquiry markup. */
+  width: 100%;
+  max-width: var(--content) !important;
+}
+
+/* Mobile enquiry typography and spacing. */
 @media (max-width: 767px) {
-  #enquire.form-wrap { padding-block: 24px 40px; }
-  #enquire.form-wrap > .col { width:100%; max-width:100%; border-radius:0; padding:32px max(20px, env(safe-area-inset-left, 0px)) !important; }
   #enquire.form-wrap > .col > .intro { padding:0; margin:0 auto 24px; text-align:center; }
   #enquire.form-wrap > .col > .intro h2 { font-size:clamp(44px,12vw,58px); }
   #enquire.form-wrap > .col > .intro p { text-align:center; margin:12px auto 0; max-width:36ch; }
@@ -402,10 +411,12 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.form-wrap .pf .pf-welcome > ol { padding:14px 0; border:0; background:transparent; }
 }
 
-/* Approved shared mobile enquiry design; identical on every instance. */
+/* The homepage enquiry remains a full-width band on phones. */
 @media (max-width: 767px) {
-  #enquire.form-wrap { background:#111; border-radius:0 !important; box-shadow:none !important; padding:0; }
-  #enquire.form-wrap > .col { background:transparent; border-radius:0 !important; box-shadow:none !important; width:100%; max-width:100%; margin:0; padding:32px 20px !important; }
+  #enquire.final-band { background:#111; border-radius:0 !important; box-shadow:none !important; padding:0; }
+  #enquire.final-band > .col { background:transparent; border-radius:0 !important; box-shadow:none !important; width:100%; max-width:100%; margin:0; padding:32px 20px !important; }
+  #enquire.form-wrap:not(.final-band) { padding-block: 24px 40px; }
+  #enquire.form-wrap:not(.final-band) > .col { padding: 24px clamp(8px, calc(8px + (100vw - 320px) / 8), 20px) !important; }
   #enquire.form-wrap > .col > .intro { max-width:100%; margin:0 auto 24px; }
   #enquire.form-wrap .final-wa-link, #enquire.form-wrap .final-wa { display:none; }
   #enquire.form-wrap .pf { width:100%; max-width:none; margin-inline:auto; grid-template-columns:minmax(0,1fr); }
@@ -414,4 +425,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.form-wrap .pf .pf-welcome > ol { background:transparent; border:0; padding:14px 0; }
   #enquire.form-wrap .pf :is(.tile,.chip,.field,.stepper,.ap-btn,.pf-seg) { background:var(--f-tile, var(--cream)); }
   #enquire.form-wrap .pf :is(.tile,.chip)[aria-pressed="true"] { background:var(--ink); color:#fff; }
+}
+@media (max-width: 374px) {
+  #enquire.form-wrap:not(.final-band) .pf .pf-card { padding-inline: 12px; }
 }
