@@ -119,7 +119,7 @@ export function home() {
   const toPlan = (h) => h.replace(/href="#enquire" data-trip="([^"]+)"/g, (m, t) => `href="${pg.u("plan-my-trip.html")}?trip=${t.replace(/ /g, "+")}"`).replace(/href="#enquire"( data-plan)?/g, `href="${pg.u("plan-my-trip.html")}"`);
   void guides;
   // 16 Nov 2026 (Huzaifa): proof under the hero, then the FAQ teaser and the check-in form ("Bismillah. Let's plan it.") back at the end, with a WhatsApp button.
-  const finalCta = enquiry.replace(/(<h2 class="display d-l"><span class="beat">Bismillah\.<\/span> <span class="beat tone">Let's plan your trip\.<\/span><\/h2>[\s\S]*?<\/p>)(\s*<\/div>)/, `$1<p class="final-wa-link mob-only">Prefer to chat? <a class="textlink" href="${waMark("final")}">${waGlyph("wa-glyph")}WhatsApp us</a></p><div class="actions final-wa not-mob">${split(waGlyph("wa-glyph") + "WhatsApp us", waMark("final"), true)}</div>$2`).replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
+  const finalCta = enquiry.replace('class="band sand form-wrap"', 'class="band final-band form-wrap"');
   // 21 Nov 2026 (Huzaifa): comparison section added after destinations; bands re-alternate white and sand.
   // 21 Nov 2026 (later): comparison section parked (component kept in 06b-compare.html); bands alternate white and sand again.
   // 22 Nov 2026 (Huzaifa): the pay later block replaced the declaration; 22 Nov 2026 (evening, Cloudflare preview review): the declaration is back. Pay later stays in 03b-pay-later.html (Why Saphara).
