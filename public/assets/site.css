@@ -1435,7 +1435,14 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .sf .sf-legal p { max-width: 46em; }
 @media (max-width: 767px) {
   .sf-closer { font-size: 32px; }
-  .sf-cta .split { width: 100%; } .sf-cta .split .split-label { flex: 1; justify-content: flex-start; }
+  .sf-cta .split {
+    --btn-h: 44px;
+    --btn-arrow: 32px;
+    --btn-icon: 16px;
+    --btn-pad: 16px;
+    --btn-gap: 10px;
+    max-width: 100%;
+  }
   .sf-top { gap: var(--s-32); }
   .sf-nav, .sf-help { padding-top: var(--s-32); border-top: 1px solid rgba(78,72,57,.18); }
   .sf-nav { gap: var(--s-16); }
