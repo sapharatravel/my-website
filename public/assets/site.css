@@ -2587,13 +2587,31 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 .marquee-track .mq-ritz-carlton img { height: 62px; max-width: 200px; }
 @media (max-width: 767px) { .marquee-track .mq-ritz-carlton img { height: 64px; max-width: 200px; } }
 
-/* Large screens only: widen the header row without changing the site's content grid. */
+/* Align the site header and footer near the edges on wide screens. */
 @media (min-width: 1400px) {
-  .header .col {
-    max-width: none;
-    padding-left: clamp(40px, 4vw, 88px);
-    padding-right: clamp(40px, 4vw, 88px);
+  :root {
+    --site-edge-left: max(40px, env(safe-area-inset-left, 0px));
+    --site-edge-right: max(40px, env(safe-area-inset-right, 0px));
   }
+
+  .header .col,
+  body:has(.hero, .ghero) .header .col {
+    max-width: none;
+    padding-left: var(--site-edge-left);
+    padding-right: var(--site-edge-right);
+  }
+
+  .dd-panel.ddb {
+    left: auto;
+    right: var(--site-edge-right);
+  }
+
+  .sf {
+    padding-left: var(--site-edge-left);
+    padding-right: var(--site-edge-right);
+  }
+
+  .sf-help { justify-self: end; }
 }
 
 
