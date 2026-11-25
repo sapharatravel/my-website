@@ -3623,6 +3623,12 @@ body.home #destinations .dest :is(.code, .time) {
     column-gap: var(--s-32);
   }
 }
+@media (max-width: 767px) {
+  #check .pc-example-photo {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 78px;
+  }
+}
 @media (max-width: 479px) {
   #check .pc-screenshot-graphic { padding: 8px 4px; }
   #check .pc-example-card { grid-column-start: 3; }
