@@ -368,7 +368,27 @@ export function priceCheckPage() {
   const pg = new Page("price-check.html");
   let body = photoHero(pg, "page-hero-pricecheck", "An infinity pool with palm trees by the sea", ["Found a hotel?", "Let’s check the price."], "Send us a screenshot of the hotel offer for a free price check. We'll compare the same room, dates, board and cancellation terms, then tell you honestly if we can beat the rate. No screenshot? Share the details below.", "Send a screenshot", "", "6.6", split("Send a screenshot", waMark("screenshot"))) + crumbBar(pg, [["Price check", "price-check.html"]]);
   const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>';
-  body += band("white after-head", `<section class="pc-screenshot" id="screenshot-check" aria-labelledby="pcScreenshotTitle"><div><h2 class="display d-l" id="pcScreenshotTitle"><span class="beat">Have a screenshot?</span> <span class="beat tone">We'll take it from here.</span></h2><p>Send us the hotel, dates and total price in a screenshot. We'll compare the offer like for like.</p></div><div class="pc-screenshot-action">${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}<p>Attach your screenshot when WhatsApp opens.</p></div></section><div class="pc-fallback">
+  body += band("white after-head", `<section class="pc-screenshot" id="screenshot-check" aria-labelledby="pcScreenshotTitle">
+  <div class="pc-screenshot-copy">
+    <h2 class="display d-l" id="pcScreenshotTitle"><span class="beat">Have a screenshot?</span> <span class="beat tone">We'll take it from here.</span></h2>
+    <p>Send us the hotel, dates and total price in a screenshot. We'll compare the offer like for like.</p>
+    <div class="pc-screenshot-action">${split(waGlyph("wa-glyph") + "Send a screenshot", waMark("screenshot"), true)}<p>Attach your screenshot when WhatsApp opens.</p></div>
+  </div>
+  <!-- Photo: Fairmont Doha, Fairmont King Sea View room. -->
+  <figure class="pc-screenshot-graphic">
+    <img class="pc-example-photo" src="${pg.img("price-check-fairmont-doha.webp")}" width="840" height="696" alt="" loading="lazy" decoding="async">
+    <span class="pc-example-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9" r="1.2"/><path d="m4 16 4-4 4 4 4-5 5 5"/></svg></span>
+    <figcaption class="pc-example-card">
+      <span class="pc-example-label">Example booking</span>
+      <strong class="pc-example-name">Fairmont Doha</strong>
+      <span class="pc-example-room">King Sea View · 2 adults</span>
+      <dl class="pc-example-details">
+        <div><dt class="pc-example-label">Dates</dt><dd>14–19 June</dd></div>
+        <div><dt class="pc-example-label">Total</dt><dd>£2,460</dd></div>
+      </dl>
+    </figcaption>
+  </figure>
+</section><div class="pc-fallback">
   <div class="pc-fallback-copy">
     <h2 class="display d-l" id="pcFormTitle"><span class="beat">No screenshot?</span> <span class="beat tone">Share the details.</span></h2>
     <p class="pc-intro">Fill in the details below and we'll check the price for you. Estimates are fine.</p>
