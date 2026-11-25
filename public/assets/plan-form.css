@@ -587,3 +587,45 @@ dialog.sheet .ap-opt[aria-selected="true"] {
   color: var(--paper);
 }
 dialog.sheet .ap-opt[aria-selected="true"] .txt small { color: var(--paper); }
+
+/* Phone layouts keep navigation close to the active planner step. */
+@media (max-width: 767px) {
+  #enquire.form-wrap .pf .pf-top { margin-bottom: 4px; }
+  #enquire.form-wrap .pf .pf-steps { margin-bottom: 12px; }
+  #enquire.form-wrap .pf .groups {
+    margin-top: 16px;
+    gap: 16px;
+  }
+  #enquire.form-wrap .pf .g-trip > .grid2 { gap: 8px; }
+  #enquire.form-wrap .pf .g-trip .tile-with-icon {
+    min-height: 54px;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+  }
+  #enquire.form-wrap .pf .g-trip .tile-icon {
+    width: 24px;
+    height: 24px;
+  }
+  #enquire.form-wrap .pf .g-trip .tile-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+  #enquire.form-wrap .pf .g-trip .tile-with-icon::after {
+    top: 4px;
+    right: 4px;
+    width: 13px;
+    height: 13px;
+  }
+  #enquire.form-wrap .pf .pf-panel:not([inert]) > .foot {
+    position: sticky;
+    z-index: 3;
+    bottom: 0;
+    margin-top: 12px;
+    padding: 8px 0 max(8px, env(safe-area-inset-bottom, 0px));
+    background: var(--f-card);
+  }
+}
