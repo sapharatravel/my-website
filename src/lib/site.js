@@ -315,11 +315,15 @@ export function tripCard(pg, slug, name, img, lines, line) {
   <div class="body"><h3><span>${lines[0]}</span> <span>${lines[1]}</span></h3><p>${line}</p><span class="go">${name} ${arrow}</span></div></a>`;
 }
 
-const destInner = (pg, d) => `<img class="fade${d.warm ? " warm" : ""}" src="${pg.img(d.img)}" alt="${d.alt}" width="800" height="1066" loading="lazy" decoding="async"><span class="code">${d.code}</span><h3>${d.short || d.name}</h3><span class="time">${ico("flights")}${d.flight}</span>`;
+export const countryFlag = (pg, code, country = "") => code
+  ? `<img class="country-flag" src="${pg.u("assets/flags/" + code + ".svg")}" width="20" height="15" alt="${esc(country)}">`
+  : "";
+
+const destInner = (pg, d) => `<img class="fade${d.warm ? " warm" : ""}" src="${pg.img(d.img)}" alt="${d.alt}" width="800" height="1066" loading="lazy" decoding="async"><span class="code">${countryFlag(pg, d.flag)}${d.code}</span><h3>${d.short || d.name}</h3><span class="time">${ico("flights")}${d.flight}</span>`;
 export const destCard = (pg, d) => `<a class="pcard dest rv" href="${pg.u("destinations/" + d.slug + ".html")}" data-move aria-label="${d.name}, ${d.country}. ${d.flight_long}">${destInner(pg, d)}</a>`;
 export const placeCard = (pg, d) => (d.slug ? destCard(pg, d) : `<div class="pcard dest rv" aria-label="${d.name}, ${d.country}. ${d.flight_long}">${destInner(pg, d)}</div>`);
 
-export const gcard = (pg, g) => `<div class="gitem rv"><a class="gcard" href="${pg.u("guides/" + g.slug + ".html")}"><span class="gphoto"><img src="${pg.img("guides/" + g.img)}" alt="" width="960" height="1200" loading="lazy" decoding="async"></span><span class="gtext"><span class="gk">Guide</span><h3>${g.name}</h3><span class="gline">${g.card || g.line}</span></span></a></div>`;
+export const gcard = (pg, g) => `<div class="gitem rv"><a class="gcard" href="${pg.u("guides/" + g.slug + ".html")}"><span class="gphoto"><img src="${pg.img("guides/" + g.img)}" alt="" width="960" height="1200" loading="lazy" decoding="async"></span><span class="gtext"><span class="gk">${countryFlag(pg, g.flag)}Guide</span><h3>${g.name}</h3><span class="gline">${g.card || g.line}</span></span></a></div>`;
 
 export { C };
 
