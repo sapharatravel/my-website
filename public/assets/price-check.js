@@ -12,7 +12,14 @@
   // 21 Nov 2026: "£2,340" rather than "GBP 2340" when the price is a plain number
   function money(cur, raw) { var sym = { GBP: "£", USD: "$", EUR: "€" }[cur]; var n = Number(String(raw).replace(/[£$€,\s]/g, "")); if (!raw || isNaN(n)) return (cur ? cur + " " : "") + raw; var s = n.toLocaleString("en-GB", { maximumFractionDigits: 2 }); return sym ? sym + s : cur + " " + s; }
   // check-in can't be in the past; check-out follows check-in
-  (function () { var t = new Date(); var iso = new Date(t.getTime() - t.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); $("pc-in").min = iso; $("pc-out").min = iso; $("pc-in").addEventListener("change", function () { if ($("pc-in").value) $("pc-out").min = $("pc-in").value; }); })();
+  (function () { var t = new Date(); var iso = new Date(t.getTime() - t.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); $("pc-in").min = iso; $("pc-out").min = iso; $("pc-in").addEventListener("change", function () { $("pc-out").min = $("pc-in").value || iso; }); })();
+  function fieldError(id, message) {
+    var el = $(id), error = $(id + "-e");
+    error.hidden = !message;
+    error.textContent = message;
+    el.setAttribute("aria-invalid", message ? "true" : "false");
+    return message ? el : null;
+  }
   function message() {
     var v = function (id) { return ($(id).value || "").trim(); };
     var L = ["Salaams, could you check this hotel price for me?", "Ref: " + ref, "Hotel: " + v("pc-hotel") + (v("pc-dest") ? " · " + v("pc-dest") : ""), "Dates: " + fmtDate(v("pc-in")) + " to " + fmtDate(v("pc-out")) + nights()];
@@ -26,9 +33,20 @@
   f.addEventListener("submit", function (e) {
     e.preventDefault();
     var first = null;
-    required.forEach(function (r) { var el = $(r[0]), er = $(r[0] + "-e"), bad = !el.value.trim(); er.hidden = !bad; er.textContent = bad ? r[1] : ""; el.setAttribute("aria-invalid", bad ? "true" : "false"); if (bad && !first) first = el; });
+    required.forEach(function (entry) {
+      var id = entry[0], el = $(id), value = el.value.trim(), error = "";
+      if (!value) error = entry[1];
+      else if (id === "pc-in" && el.validity.rangeUnderflow) error = "Check-in must be today or later.";
+      else if (id === "pc-price") {
+        var amount = value.replace(/[£,\s]/g, "");
+        if (!/^\d+(?:\.\d{1,2})?$/.test(amount) || !Number.isFinite(Number(amount)) || Number(amount) <= 0) error = "Enter a price greater than £0.";
+      }
+      var invalid = fieldError(id, error);
+      if (!first && invalid) first = invalid;
+    });
     if ($("pc-in").value && $("pc-out").value && $("pc-out").value <= $("pc-in").value) { var eo = $("pc-out-e"); eo.hidden = false; eo.textContent = "Check-out must be after check-in."; $("pc-out").setAttribute("aria-invalid", "true"); if (!first) first = $("pc-out"); }
     if (first) { first.focus(); return; }
+    if (!f.reportValidity()) return;
     var url = "https://wa.me/447887353457?text=" + encodeURIComponent(message());
     $("pcSent").hidden = false;
     // In-app browsers (Instagram, Facebook) often block new windows: fall back to opening WhatsApp in the same tab
