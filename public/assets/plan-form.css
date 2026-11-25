@@ -336,3 +336,29 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .pf-card :is(input, select, textarea, .field)::placeholder { color: #625C50; opacity: 1; }
 .final-band .pf .pf-card select.field { color: var(--ink); }
 .final-band .pf .pf-card .pf-welcome li::before { background: #fff; color: var(--ink); }
+
+/* Mobile enquiry: keep the panel inside the viewport and give the welcome steps breathing room. */
+@media (max-width: 767px) {
+  #enquire.form-wrap > .col { width: calc(100% - 32px); max-width: 100%; margin-inline: auto; padding: 24px 12px !important; box-sizing: border-box; box-shadow: none !important; }
+  #enquire.form-wrap > .col > .intro { margin-bottom: 20px; padding-inline: 8px; }
+  #enquire.form-wrap > .col > .intro h2 { font-size: clamp(30px, 8vw, 40px); line-height: 1.08; }
+  #enquire.form-wrap > .col > .intro p { font-size: 15px; line-height: 1.5; margin-top: 12px; }
+  .pf { min-width: 0; width: 100%; --head-question: 28px; }
+  .pf .pf-card { box-sizing: border-box; width: 100%; padding: 20px 16px; color: var(--ink); box-shadow: none; }
+  .pf .swap-box { margin-inline: 0; padding-inline: 0; min-width: 0; }
+  .pf .pf-welcome .pf-lead { font-size: 15px; line-height: 1.45; margin-top: 8px; }
+  .pf .pf-welcome > ol { box-sizing: border-box; padding: 14px 12px; margin-top: 16px; gap: 12px; border-radius: var(--r-small); background: var(--cream); }
+  .pf .pf-welcome li { grid-template-columns: 28px minmax(0,1fr); align-items: start; gap: 10px; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
+  .pf .pf-welcome li::before { background: #fff; color: var(--ink); }
+  .pf .foot { margin-top: 20px; }
+  .pf .btn { white-space: normal; max-width: 100%; box-sizing: border-box; }
+  .pf .field { box-sizing: border-box; max-width: 100%; }
+  .pf .room-row { flex-wrap: wrap; gap: 8px; }
+  .pf .room { padding: 12px; }
+  .pf .groups { gap: 24px; }
+}
+@media (max-width: 374px) {
+  #enquire.form-wrap > .col { width: calc(100% - 24px); padding-inline: 8px !important; }
+  .pf .pf-card { padding-inline: 12px; }
+  .pf .dates2, .pf .grid2.can-stack { grid-template-columns: minmax(0,1fr); }
+}
