@@ -647,6 +647,11 @@ main { padding-bottom: 0; }
 /* ---------- guides: cards and headers that echo our Instagram covers (BRAND-BRIDGE.md) ---------- */
 .gcards { display: grid; gap: var(--s-24); }
 @media (min-width: 768px) { .gcards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+#guide-list { gap: var(--s-40) var(--s-32); }
+#guide-list .gcard { gap: var(--s-24); }
+#guide-list .gtext { gap: var(--s-12); }
+#guide-list .gcard h3 { font-size: clamp(44px, 4vw, 56px); }
+#guide-list .gline { margin-top: 0; }
 /* guide cards: plain photo, words underneath (destination card shape and type); the cover style is kept for guide heroes and share images */
 .gitem { display: flex; flex-direction: column; }
 .gcard { display: flex; flex-direction: column; gap: var(--s-16); color: var(--ink); text-decoration: none; -webkit-tap-highlight-color: transparent; }
@@ -696,9 +701,9 @@ main { padding-bottom: 0; }
 @media (hover: hover) { .crumbs a:hover { text-decoration: underline; text-decoration-color: var(--accent); } }
 .crumbs span[aria-hidden] { color: var(--accent); }
 .page-head { padding: calc(var(--logo-h) + var(--header-top) + var(--header-bottom) + var(--s-16)) 0 var(--section); }
-.page-head .crumbs { margin-bottom: var(--s-16); }
+.page-head .crumbs { margin-bottom: var(--s-32); }
 .band.after-head { padding-top: 0; }
-.crumbs-bar { padding-top: var(--s-16); }
+.crumbs-bar { padding-block: var(--s-16); }
 .cards3 { display: grid; gap: var(--small-gap); }
 @media (min-width: 768px) { .cards3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-24); } }
 @media (min-width: 1024px) { .cards3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -823,7 +828,7 @@ main { padding-bottom: 0; }
 .mm-trips > span { border-bottom: 0; }
 .mm-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--s-16); padding-bottom: var(--s-12); border-bottom: 1px solid var(--rule); }
 .mm-sub a { display: flex; align-items: center; min-height: 44px; font-size: 16px; text-decoration: none; color: var(--ink); }
-.mm-actions { display: flex; flex-wrap: wrap; gap: var(--s-12); align-items: center; margin-top: var(--s-32); }
+.mm-actions { display: flex; flex-wrap: wrap; gap: var(--s-12); align-items: center; margin-bottom: var(--s-12); }
 .mm-actions .textlink { min-height: 44px; display: inline-flex; align-items: center; }
 html.mm-open, html.mm-open body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .mmenu { transition: none; transform: none; } }
@@ -2096,6 +2101,14 @@ html .header.slim .logo.logo-dark, html body:not(.home) .header .logo.logo-dark 
 html .header.slim .hwa, html .header.slim .mbtn, html body:not(.home) .header .hwa, html body:not(.home) .header .mbtn { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px rgba(0,0,0,.14); }
 html .header.slim .hsplit, html body:not(.home) .header .hsplit { background: var(--ink); color: #fff; --arrow-bg: var(--sand); --arrow-fg: var(--ink); }
 html .header.slim .hsplit .split-label, html body:not(.home) .header .hsplit .split-label { color: #fff; }
+@media (hover: hover) {
+  html .header.slim .hsplit:hover,
+  html body:not(.home) .header .hsplit:hover { background: var(--btn-dark-hover); }
+}
+html .header.slim .hsplit:active,
+html body:not(.home) .header .hsplit:active { background: var(--btn-dark-pressed); }
+html .header.slim .hsplit:focus-visible,
+html body:not(.home) .header .hsplit:focus-visible { outline-color: var(--ink); }
 html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-btn, html body:not(.home) .header .dd-btn { color: var(--ink); }
 /* Desktop: the homepage photo runs to the top of the screen, under the clear header */
 @media (min-width: 768px) {
@@ -2288,7 +2301,7 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.2
 .proof-dots { display: flex; justify-content: center; gap: 4px; margin-top: var(--s-8); }
 .proof-dot { position: relative; width: 56px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; }
 .proof-dot::before, .proof-dot::after { content: ""; position: absolute; left: 6px; right: 6px; top: 50%; height: 3px; margin-top: -1.5px; border-radius: 2px; }
-.proof-dot::before { background: var(--rule); }
+.proof-dot::before { background: var(--tone); }
 .proof-dot::after { background: var(--ink); transform: scaleX(0); transform-origin: left center; }
 .proof-dot.is-done::after, .proof-dot.is-on::after { transform: scaleX(1); }
 .proof-dots.is-run .proof-dot.is-on::after { animation: hsFill var(--proof-dur, 6000ms) linear both; }
@@ -2582,7 +2595,7 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
   .actions .split .split-label, .sf-cta .split .split-label { white-space: normal; line-height: 1.25; padding-block: 8px; min-width: 0; text-align: left; }
 }
 /* 22 Nov 2026 (mobile test): on the smallest phones (under 360px) page headings shrink a touch so joined last words ("financial protection") stay inside the margins. */
-@media (max-width: 359px) { h1.display { font-size: min(58px, 16.5vw); } }
+@media (max-width: 359px) { h1.display:not(.hero h1) { font-size: min(58px, 16.5vw); } }
 /* 22 Nov 2026 (Huzaifa): The Ritz-Carlton logo (lion and crown lockup, from the Adobe Stock folder) replaces the typed name in the hotel strip. */
 .marquee-track .mq-ritz-carlton img { height: 62px; max-width: 200px; }
 @media (max-width: 767px) { .marquee-track .mq-ritz-carlton img { height: 64px; max-width: 200px; } }
@@ -2895,6 +2908,10 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 @media (min-width: 1024px) {
   body.home .hero.hd h1 { --tier: clamp(78px, 7vw, 152px); }
   body.home .hero.hd .col { max-width: min(1400px, calc(100% - 32px)); }
+}
+
+@media (min-width: 1400px) {
+  body.home .hero.hd { padding-inline: var(--col-left); }
 }
 
 /* 23 Nov 2026: Use one size for section-level display headings. Let long headings wrap instead of shrinking to fit one line. */
