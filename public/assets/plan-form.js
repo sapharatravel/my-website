@@ -652,9 +652,6 @@ window.UK_AIRPORTS = [
     box._sw = [a1, a2, a3];
     after(a1, 200, function () { if (old.parentNode === box) box.removeChild(old); });
     after(a2, 500, function () { box.style.overflow = ""; box._sw = null; });
-    /* keep the top of the form in view, below the fixed header */
-    var top = box.getBoundingClientRect().top, head = 96;
-    if (top < head) window.scrollTo({ top: window.scrollY + top - head, behavior: "smooth" });
   }
 
   /* ---------- contact details: full name and email required; a note is optional and folded away ---------- */
@@ -702,27 +699,33 @@ window.UK_AIRPORTS = [
     STEPS.forEach(function (s, j) { ol.appendChild(h("li", { class: j < i ? "done" : j === i ? "on" : "", "aria-current": j === i ? "step" : null }, [h("span", { text: s.label })])); });
     return [top, ol];
   }
-  function mount(el, dir) { K.swap(stage, el, dir); var f = el.querySelector(".q"); if (f && dir !== 0) f.focus({ preventScroll: true }); live(); }
+  function mount(el, dir) {
+    K.swap(stage, el, dir);
+    if (dir) {
+      el.querySelector(".q").focus({ preventScroll: true });
+      var header = document.querySelector(".header");
+      var clearance = (header ? header.getBoundingClientRect().bottom : 0) + 16;
+      var top = stage.getBoundingClientRect().top;
+      if (top < clearance || top > window.innerHeight / 2) {
+        window.scrollBy({ top: top - clearance, behavior: "instant" });
+      }
+    }
+    live();
+  }
   function gq(label, kids, opt) { var g = h("div", { class: "gq" }, [h("span", { class: "ql" }, [label, opt ? h("span", { class: "opt", text: " (optional)" }) : null])]); kids.forEach(function (k) { if (k) g.appendChild(k); }); return g; }
 
-  function welcome() {
+  function welcome(dir) {
     cur = -1;
     var el = h("section", { class: "pf-welcome", "aria-labelledby": "pf-w" }, [
-      h("h3", { class: "q", id: "pf-w", tabindex: "-1", text: "Four quick steps." }),
-      h("p", { class: "pf-lead", text: "Just a few taps. You'll see your trip request before WhatsApp opens." }),
-      h("ol", null, [
-        h("li", null, [h("div", null, [h("b", { text: "The trip. " }), h("span", { text: "What kind of trip, and where if you know." })])]),
-        h("li", null, [h("div", null, [h("b", { text: "When and who. " }), h("span", { text: "Rough dates are fine." })])]),
-        h("li", null, [h("div", null, [h("b", { text: "Flights and budget. " }), h("span", { text: "Share these if you know them." })])]),
-        h("li", null, [h("div", null, [h("b", { text: "Your details. " }), h("span", { text: "Your name and email." })])])
-      ]),
-      h("div", { class: "foot" }, [h("button", { type: "button", class: "btn btn-primary btn-block", html: "Start" + ARROW, onclick: function () { show(0, 1); } }), h("p", { class: "pf-small", text: "Not sure about anything yet? That's fine. Every question has a “not sure” answer." })])
+      h("h3", { class: "q", id: "pf-w", tabindex: "-1", text: "Start your trip request" }),
+      h("p", { class: "pf-lead", text: "Rough details are fine. Review your request before sending it on WhatsApp. We’ll reply there with your options." }),
+      h("div", { class: "foot" }, [h("button", { type: "button", class: "btn btn-primary btn-block", html: "Start" + ARROW, onclick: function () { show(0, 1); } })])
     ]);
-    mount(el, 0);
+    mount(el, dir);
   }
 
   function show(i, dir) {
-    if (i < 0) { welcome(); return; }
+    if (i < 0) { welcome(dir); return; }
     cur = i; var st = STEPS[i], el = h("section", { class: "pf-panel", "aria-labelledby": "pf-h-" + st.id }), parts = {}, nextBtn;
     header(i).forEach(function (n) { el.appendChild(n); });
     var groups = h("div", { class: "groups g-" + st.id }), check = function () { return true; };

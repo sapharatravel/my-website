@@ -207,7 +207,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 @media (min-width: 1024px) {
   .pf { max-width: none; grid-template-columns: minmax(0, 640px) minmax(0, 400px); justify-content: center; column-gap: var(--s-56); }
   .pf .pf-aside { display: flex; flex-direction: column; gap: var(--s-8); position: sticky; top: calc(var(--header-slim) + var(--s-24)); }
-  .pf .pf-aside .next-steps { margin-top: var(--s-24); }
 }
 @media (min-width: 1360px) { .pf .pf-pass-mob { display: none; } }
 .pf .pf-top { display: flex; align-items: center; justify-content: space-between; min-height: 44px; margin-bottom: var(--s-8); }
@@ -235,10 +234,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .pf .pf-disc[open] > summary::after { transform: rotate(45deg); }
 .pf .pf-disc-body { padding-bottom: var(--s-24); }
 .pf .pf-welcome .pf-lead { color: var(--grey); margin-top: var(--s-12); font-size: 17px; }
-.pf .pf-welcome ol { list-style: none; padding: 0; margin: var(--s-24) 0 0; display: flex; flex-direction: column; gap: var(--s-12); counter-reset: w; }
-.pf .pf-welcome li { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: var(--s-12); align-items: baseline; counter-increment: w; }
-.pf .pf-welcome li::before { content: counter(w); width: 28px; height: 28px; border-radius: 50%; background: var(--cream); display: grid; place-items: center; font-size: 13px; font-weight: 600; }
-.pf .pf-welcome li span { color: var(--grey); }
 .pf .pf-small { font-size: 14px; color: var(--grey); }
 .pf .pf-center { text-align: center; align-self: center; }
 .pf .pf-alt { display: flex; justify-content: center; gap: var(--s-24); flex-wrap: wrap; }
@@ -251,13 +246,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .pf .bp { color: var(--ink); }
 .pf .bp dd { overflow-wrap: anywhere; white-space: normal; }
 #enquire > .col > .intro { margin-bottom: var(--s-24); }
-#enquire .next-steps .ns-h { color: var(--on-dark-gold); }
-#enquire .next-steps span { color: var(--on-dark-muted); }
-#enquire .next-steps li::before { color: var(--ink); }
-
-@media (min-width: 1024px) and (max-width: 1359px) {
-  #enquire .ns-mob { display: block; }
-}
 .pf .pf-aside .pass-wrap { --notch: var(--ink); }
 
 /* homepage closing band: black band, sand card, form only (no pass or next steps), as the old form */
@@ -276,6 +264,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .rv-sec, .final-band .pf .rv-sec-h, .final-band .pf .sum li, .final-band .pf .pf-disc { border-color: var(--f-line); }
 /* Paragraphs in the form card use the card width (the site-wide 31em cap broke short lines early on desktop, 22 Nov 2026) */
 .pf .pf-card p { max-width: none; }
+.pf .pf-card .pf-welcome .pf-lead { max-width: 42ch; }
 
 /* Desktop (22 Nov 2026, Huzaifa: "use the full width of the page so the user isn't required to scroll down to click the next buttons"):
    the form takes the page width, and each step's groups sit side by side so Continue stays on screen. */
@@ -298,12 +287,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf .foot { margin-top: var(--s-24); }
   .pf .foot:has(> .btn-block:only-child) { flex-direction: row; justify-content: flex-end; }
   .pf .foot > .btn-block:only-child { width: auto; min-width: 280px; }
-  /* welcome: heading, intro and Start on the left, the four steps on the right */
-  .pf .pf-welcome { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "h ol" "lead ol" "foot ol"; grid-template-rows: auto auto 1fr; column-gap: var(--s-56); align-items: start; }
-  .pf .pf-welcome > .q { grid-area: h; }
-  .pf .pf-welcome > .pf-lead { grid-area: lead; text-wrap: balance; }
-  .pf .pf-welcome > ol { grid-area: ol; margin: 0; align-self: center; padding: var(--s-24); border-radius: var(--r-small); background: color-mix(in srgb, var(--cream) 45%, transparent); gap: var(--s-16); }
-  .pf .pf-welcome > .foot { grid-area: foot; align-self: end; }
   .pf .pf-welcome > .foot > .btn-block { width: 100%; }
   .pf .pf-disc-body > .fq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: var(--s-24) var(--s-32); align-items: start; }
   .pf .pf-disc-body > .fq > .fq { margin: 0; }
@@ -326,16 +309,13 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .pf-card { background: #fff; color: var(--ink); }
 .final-band .pf .pf-card .q { color: var(--ink); }
 .final-band .pf .pf-card .pf-lead { color: var(--grey); }
-.final-band .pf .pf-welcome > ol { background: var(--cream); border: 1px solid var(--rule); }
-.final-band .pf .pf-welcome li::before { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
-.final-band .pf .pf-welcome li span { color: var(--grey); }
 
 /* Homepage enquiry form: keep all copy legible on the light form card */
 .final-band .pf .pf-card,
-.final-band .pf .pf-card :is(.q, h3, label, legend, .gq > .ql, .pf-welcome li b, .pf-welcome li strong) {
+.final-band .pf .pf-card :is(.q, h3, label, legend, .gq > .ql) {
   color: var(--ink);
 }
-.final-band .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .pf-welcome li span, .ap-group, .ap-opt .txt small, .ap-empty, .sum .k) {
+.final-band .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .ap-group, .ap-opt .txt small, .ap-empty, .sum .k) {
   color: var(--grey);
 }
 .final-band .pf .pf-card .pf-steps li.on { color: var(--ink); }
@@ -355,10 +335,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf { min-width: 0; width: 100%; --head-question: 28px; }
   .pf .pf-card { box-sizing: border-box; width: 100%; padding: 20px 16px; color: var(--ink); box-shadow: none; }
   .pf .swap-box { margin-inline: 0; padding-inline: 0; min-width: 0; }
-  .pf .pf-welcome .pf-lead { font-size: 15px; line-height: 1.45; margin-top: 8px; }
-  .pf .pf-welcome > ol { box-sizing: border-box; padding: 14px 12px; margin-top: 16px; gap: 12px; border-radius: var(--r-small); background: var(--cream); }
-  .pf .pf-welcome li { grid-template-columns: 28px minmax(0,1fr); align-items: start; gap: 10px; font-size: 14px; line-height: 1.45; overflow-wrap: anywhere; }
-  .pf .pf-welcome li::before { background: #fff; color: var(--ink); }
   .pf .foot { margin-top: 20px; }
   .pf .btn { white-space: normal; max-width: 100%; box-sizing: border-box; }
   .pf .field { box-sizing: border-box; max-width: 100%; }
@@ -375,11 +351,9 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 /* Dedicated plan-my-trip page shares the homepage enquiry styling on phones. */
 @media (max-width: 767px) {
   #enquire.form-wrap .pf .pf-card { background: #fff; color: var(--ink); }
-  #enquire.form-wrap .pf .pf-card :is(.q, h3, label, legend, .gq > .ql, .pf-welcome li b, .pf-welcome li strong) { color: var(--ink); }
-  #enquire.form-wrap .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .pf-welcome li span, .sum .k) { color: var(--grey); }
+  #enquire.form-wrap .pf .pf-card :is(.q, h3, label, legend, .gq > .ql) { color: var(--ink); }
+  #enquire.form-wrap .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .sum .k) { color: var(--grey); }
   #enquire.form-wrap .pf .pf-card .pf-steps li.on { color: var(--ink); }
-  #enquire.form-wrap .pf .pf-welcome > ol { background: var(--cream); border: 1px solid var(--rule); }
-  #enquire.form-wrap .pf .pf-welcome li::before { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
   #enquire.form-wrap .pf .pf-card :is(input, select, textarea, .field) { color: var(--ink); }
   #enquire.form-wrap .pf .pf-card :is(input, select, textarea, .field)::placeholder { color: #625C50; opacity: 1; }
 }
@@ -408,7 +382,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.form-wrap > .col > .intro h2 { font-size:clamp(44px,12vw,58px); }
   #enquire.form-wrap > .col > .intro p { text-align:center; margin:12px auto 0; max-width:36ch; }
   #enquire.form-wrap .pf .pf-card { padding:24px 16px; }
-  #enquire.form-wrap .pf .pf-welcome > ol { padding:14px 0; border:0; background:transparent; }
 }
 
 /* The homepage enquiry remains a full-width band on phones. */
@@ -422,7 +395,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.form-wrap .pf { width:100%; max-width:none; margin-inline:auto; grid-template-columns:minmax(0,1fr); }
   #enquire.form-wrap .pf .pf-card { background:#fff; border-radius:var(--r-card); box-shadow:none; padding:24px 16px; }
   #enquire.form-wrap .pf .pf-aside { display:none; }
-  #enquire.form-wrap .pf .pf-welcome > ol { background:transparent; border:0; padding:14px 0; }
   #enquire.form-wrap .pf :is(.tile,.chip,.field,.stepper,.ap-btn,.pf-seg) { background:var(--f-tile, var(--cream)); }
   #enquire.form-wrap .pf :is(.tile,.chip)[aria-pressed="true"] { background:var(--ink); color:#fff; }
 }

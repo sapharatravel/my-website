@@ -355,8 +355,8 @@ export function planMyTrip() {
   const pg = new Page("plan-my-trip.html");
   const head = photoHero(pg, "page-hero-plan", "Palm trees on a wide beach at sunset", ["Bismillah.", "Let's plan it."], "A few quick questions. Your trip request builds as you go, then opens in WhatsApp, ready to send. On eligible free cancellation rates there's nothing to pay&nbsp;upfront.", "Plan my trip", "", null, "") + crumbBar(pg, [["Plan my trip", "plan-my-trip.html"]]);
   const form = enquiry
-    .replace(/(<section class="band sand form-wrap" id="enquire">\s*<div class="col">\s*)<div class="intro">[\s\S]*?<\/div>\s*/, "$1")
-        .replace('<div class="pf" id="planForm">', '<h2 class="sr-only">Your trip request</h2><div class="pf" id="planForm">');
+    .replace(/<div class="intro"[^>]*>[\s\S]*?<\/div>\s*/, "")
+    .replace('<div class="pf" id="planForm">', '<h2 class="sr-only">Your trip request</h2><div class="pf" id="planForm">');
   const body = head + form + "\n" + band("white", intro(["Prefer to talk?"], 'Message us on WhatsApp with where, roughly when and who\'s coming, or email <a href="mailto:hello@sapharatravel.co.uk">hello@sapharatravel.co.uk</a>. Nothing you type in the form is stored on our website; it opens WhatsApp with your message written out.', null, '<div class="actions" style="margin-top:var(--body-btn)">' + split("Message us on " + waGlyph() + "WhatsApp", waMark("talk")) + "</div>"));
   return { path: pg.path, title: "Plan a Muslim-friendly trip | Saphara Travel", desc: "Tell us where, when and who's coming in a few quick questions. Your trip request opens in WhatsApp, ready to send. Nothing is booked until you say yes.", hero: true, body };
 }
