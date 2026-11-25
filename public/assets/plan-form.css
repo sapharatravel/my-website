@@ -183,7 +183,12 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 }
 @container (max-width: 300px) {
   .pf .bp-header, .pf .bp-grid { padding: var(--s-16); }
+  .pf .bp-route { grid-template-columns: minmax(0, 1fr) 20px minmax(0, 1fr); gap: var(--s-8); }
+  .pf .bp-plane { width: 20px; height: 20px; }
   .pf .bp-route .code { font-size: 38px; }
+  .pf .bp-route small { font-size: 11px; letter-spacing: 0; }
+  .pf .bp-grid { column-gap: var(--s-12); }
+  .pf .bp dd { font-size: 14px; }
 }
 .pf .sum { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .pf .sum li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-4) var(--s-12); align-items: center; padding: var(--s-12) 0; border-bottom: 1px solid var(--rule); }
