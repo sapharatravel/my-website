@@ -3533,3 +3533,112 @@ body.home #destinations .dest :is(.code, .time) {
     backdrop-filter: none;
   }
 }
+
+/* The Price Check example sits to the right of the copy on wide screens. */
+#check .pc-screenshot-copy .pc-screenshot-action { margin-top: var(--s-24); }
+#check .pc-screenshot-graphic {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: min(100%, 470px);
+  align-self: center;
+  justify-self: center;
+  margin: 0;
+  padding: 14px 5px;
+}
+#check .pc-example-photo {
+  grid-area: 1 / 1 / 2 / 12;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: 50% 56%;
+  border-radius: var(--r-small);
+  transform: rotate(-6deg);
+  outline: 1px solid rgba(255,248,228,.27);
+}
+#check .pc-example-card,
+#check .pc-example-icon {
+  background: #35372f;
+  border: 1px solid rgba(255,248,228,.45);
+  box-shadow: 0 12px 26px rgba(0,0,0,.32);
+}
+#check .pc-example-card {
+  grid-area: 1 / 5 / 2 / -1;
+  align-self: end;
+  justify-self: end;
+  width: min(100%, 272px);
+  padding: clamp(11px, 1.3vw, 18px);
+  border-radius: var(--r-small);
+  color: #fff9ef;
+}
+#check .pc-example-icon {
+  position: absolute;
+  bottom: 17px;
+  right: calc(min(62%, 272px) + 12px);
+  display: grid;
+  place-items: center;
+  width: 39px;
+  height: 39px;
+  border-radius: 11px;
+  color: #fff9ef;
+}
+#check .pc-example-icon svg { width: 20px; height: 20px; }
+#check .pc-example-name {
+  display: block;
+  margin: 2px 0;
+  font: 600 clamp(27px, 2.6vw, 38px)/1.05 var(--display);
+}
+#check .pc-example-label {
+  display: block;
+  color: #fff0d9;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+#check .pc-example-room { display: block; font-size: 12px; }
+#check .pc-example-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 17px;
+  margin: 9px 0 0;
+  padding-top: 7px;
+  border-top: 1px solid rgba(255,248,228,.35);
+}
+#check .pc-example-details dd { margin: 0; font-size: 14px; font-weight: 600; }
+@supports ((backdrop-filter: blur(10px)) or (-webkit-backdrop-filter: blur(10px))) {
+  #check .pc-example-card,
+  #check .pc-example-icon {
+    background: linear-gradient(135deg, rgba(45,40,31,.70), rgba(22,30,27,.60));
+    -webkit-backdrop-filter: blur(10px) saturate(.95);
+    backdrop-filter: blur(10px) saturate(.95);
+  }
+}
+@media (min-width: 1024px) {
+  #check .pc-screenshot {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    column-gap: var(--s-32);
+  }
+}
+@media (max-width: 767px) {
+  #check .pc-example-photo {
+    aspect-ratio: 16 / 10;
+    margin-bottom: 78px;
+  }
+}
+@media (max-width: 479px) {
+  #check .pc-screenshot-graphic { padding: 8px 4px; }
+  #check .pc-example-card { grid-column-start: 3; }
+  #check .pc-example-icon { display: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  #check .pc-example-card,
+  #check .pc-example-icon {
+    background: #35372f;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
