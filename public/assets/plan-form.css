@@ -629,3 +629,69 @@ dialog.sheet .ap-opt[aria-selected="true"] .txt small { color: var(--paper); }
     background: var(--f-card);
   }
 }
+
+/* The homepage keeps its existing planner layout over the Seychelles photo. */
+body.home #enquire.final-band {
+  isolation: isolate;
+  background: #354641;
+}
+body.home #enquire.final-band .enquiry-photo,
+body.home #enquire.final-band::before {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+body.home #enquire.final-band .enquiry-photo {
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+body.home #enquire.final-band::before {
+  content: "";
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(13,25,22,.72), rgba(20,28,20,.52) 30%, rgba(20,28,20,.12) 70%);
+}
+body.home #enquire.final-band > .col > .intro h2 .beat {
+  color: #fffaf0;
+}
+body.home #enquire.final-band > .col > .intro h2 .tone {
+  color: #f4e4c5;
+}
+body.home #enquire.final-band .pf .pf-card:has(.pf-welcome:not([inert])) {
+  background: #3b4137;
+  box-shadow: inset 0 0 0 1px rgba(255,248,228,.36),
+    inset 0 1px 0 rgba(255,250,230,.13), 0 12px 32px rgba(13,17,12,.23);
+}
+body.home #enquire.final-band .pf .pf-welcome:not([inert]) :is(.q, .pf-lead, .pf-small) {
+  color: #fff9ef;
+}
+body.home #enquire.final-band .pf .pf-welcome:not([inert]) .btn-block {
+  box-shadow: inset 0 0 0 1px rgba(255,248,228,.45);
+}
+body.home #enquire.final-band .pf .pf-welcome .btn-block:focus-visible {
+  outline-color: #fff9ef;
+}
+@supports ((backdrop-filter: blur(19px)) or (-webkit-backdrop-filter: blur(19px))) {
+  body.home #enquire.final-band .pf .pf-card:has(.pf-welcome:not([inert])) {
+    background: linear-gradient(120deg, rgba(55,48,33,.70), rgba(26,42,40,.52));
+    -webkit-backdrop-filter: blur(19px) saturate(.95);
+    backdrop-filter: blur(19px) saturate(.95);
+  }
+}
+@media (max-width: 767px) {
+  body.home #enquire.final-band .enquiry-photo {
+    object-position: 48% 55%;
+  }
+  body.home #enquire.final-band::before {
+    background: linear-gradient(180deg, rgba(13,26,22,.65), rgba(20,28,20,.40) 52%, rgba(20,28,20,.20));
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  body.home #enquire.final-band .pf .pf-card:has(.pf-welcome:not([inert])) {
+    background: #3b4137;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
