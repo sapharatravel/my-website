@@ -468,8 +468,12 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 #enquire.form-wrap:not(.final-band) .pf :is(.field, .ap-btn) {
   background-color: var(--paper);
 }
-@media (min-width: 1024px) {
-  #enquire.form-wrap:not(.final-band) .pf-welcome .foot {
-    justify-content: flex-start;
-  }
+#enquire.form-wrap:not(.final-band) .pf-welcome .foot {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+#enquire.form-wrap:not(.final-band) .pf-welcome .foot .btn-block {
+  width: fit-content;
+  min-width: 120px;
+  min-height: 48px;
 }
