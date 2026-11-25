@@ -696,9 +696,9 @@ main { padding-bottom: 0; }
 @media (hover: hover) { .crumbs a:hover { text-decoration: underline; text-decoration-color: var(--accent); } }
 .crumbs span[aria-hidden] { color: var(--accent); }
 .page-head { padding: calc(var(--logo-h) + var(--header-top) + var(--header-bottom) + var(--s-16)) 0 var(--section); }
-.page-head .crumbs { margin-bottom: var(--s-16); }
+.page-head .crumbs { margin-bottom: var(--s-32); }
 .band.after-head { padding-top: 0; }
-.crumbs-bar { padding-top: var(--s-16); }
+.crumbs-bar { padding-block: var(--s-16); }
 .cards3 { display: grid; gap: var(--small-gap); }
 @media (min-width: 768px) { .cards3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-24); } }
 @media (min-width: 1024px) { .cards3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
