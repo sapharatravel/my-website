@@ -435,13 +435,14 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   text-align: left;
 }
 #enquire.final-band > .col > .intro > p { display: none; }
-#enquire.final-band .pf {
+#enquire.form-wrap .pf {
   width: 100%;
   max-width: none;
+  grid-template-columns: minmax(0, 1fr);
   --f-card: #f5eee2;
   --f-tile: var(--paper);
 }
-#enquire.final-band .pf .pf-card {
+#enquire.form-wrap .pf .pf-card {
   background: var(--f-card);
   box-shadow: none;
 }
@@ -454,4 +455,21 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
     align-items: center;
   }
   #enquire.final-band > .col > .intro { margin: 0; }
+}
+
+/* The dedicated planner shows the boarding pass from review onwards. */
+#enquire.form-wrap:not(.final-band) .pf .pf-aside { display: none; }
+#enquire.form-wrap:not(.final-band) .pf .pf-pass-mob {
+  display: block;
+  width: 100%;
+  max-width: 640px;
+  --notch: var(--f-card);
+}
+#enquire.form-wrap:not(.final-band) .pf :is(.field, .ap-btn) {
+  background-color: var(--paper);
+}
+@media (min-width: 1024px) {
+  #enquire.form-wrap:not(.final-band) .pf-welcome .foot {
+    justify-content: flex-start;
+  }
 }
