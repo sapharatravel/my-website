@@ -3469,3 +3469,29 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
 .mm-destinations > summary svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
 .mm-destinations[open] > summary svg { transform: rotate(180deg); }
 .mm-destinations .ddb-foot { margin-top: 8px; }
+
+/* Mobile homepage: make review and destination text easier to read. */
+@media (max-width: 767px) {
+  .proof-band .proof .proof-slide blockquote {
+    font-size: clamp(36px, 9.8vw, 44px);
+    line-height: 1.08;
+  }
+  .proof-band .proof figcaption { font-size: 15px; }
+  .proof-band .proof-slide { transition: none; }
+
+  .dest h3,
+  #destinations .dest h3 {
+    font-size: clamp(32px, 8.6vw, 40px);
+    line-height: 1;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+  .dest .time { font-size: 14px; }
+
+  #more .more-card .mc-t { font-size: 25px; }
+  #more .more-card .mc-d {
+    display: block;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+}
