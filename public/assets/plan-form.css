@@ -389,7 +389,13 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.final-band { background:#111; border-radius:0 !important; box-shadow:none !important; padding:0; }
   #enquire.final-band > .col { background:transparent; border-radius:0 !important; box-shadow:none !important; width:100%; max-width:100%; margin:0; padding:32px 20px !important; }
   #enquire.form-wrap:not(.final-band) { padding-block: 24px 40px; }
-  #enquire.form-wrap:not(.final-band) > .col { padding: 24px clamp(8px, calc(8px + (100vw - 320px) / 8), 20px) !important; }
+  #enquire.form-wrap:not(.final-band) > .col {
+    padding: 0 !important;
+    background: transparent !important;
+  }
+  #enquire.form-wrap:not(.final-band) .pf .pf-card {
+    box-shadow: inset 0 0 0 1px var(--rule);
+  }
   #enquire.form-wrap > .col > .intro { max-width:100%; margin:0 auto 24px; }
   #enquire.form-wrap .final-wa-link, #enquire.form-wrap .final-wa { display:none; }
   #enquire.form-wrap .pf { width:100%; max-width:none; margin-inline:auto; grid-template-columns:minmax(0,1fr); }
