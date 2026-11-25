@@ -457,7 +457,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.final-band > .col > .intro { margin: 0; }
 }
 
-/* The dedicated planner shows the boarding pass from review onwards. */
+/* The dedicated planner shows the pass on wide welcome screens and at review. */
 #enquire.form-wrap:not(.final-band) .pf .pf-aside { display: none; }
 #enquire.form-wrap:not(.final-band) .pf .pf-pass-mob {
   display: block;
@@ -476,4 +476,16 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   width: fit-content;
   min-width: 120px;
   min-height: 48px;
+}
+
+@media (min-width: 1200px) {
+  #enquire.form-wrap:not(.final-band) .pf:has(.pf-welcome:not([inert])) {
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: var(--s-40);
+    align-items: center;
+  }
+  #enquire.form-wrap:not(.final-band) .pf:has(.pf-welcome:not([inert])) .pf-aside {
+    display: block;
+    position: static;
+  }
 }
