@@ -489,3 +489,56 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
     position: static;
   }
 }
+
+/* Keep interactive boundaries distinct from the warm form card at every width. */
+#enquire.form-wrap .pf,
+dialog.sheet {
+  --pf-control-edge: #857865;
+  --pf-secondary-ink: #514838;
+}
+#enquire.form-wrap .pf :is(.tile, .chip, .field, .ap-btn),
+#enquire.form-wrap .pf :is(.stepper, .room-row) button,
+dialog.sheet :is(.field, .sheet-close) {
+  background-color: var(--paper);
+  border: 1px solid var(--pf-control-edge);
+  color: var(--ink);
+}
+#enquire.form-wrap .pf :is(.tile, .field) {
+  box-shadow: none;
+}
+#enquire.form-wrap .pf .field.invalid { border-color: var(--err); }
+#enquire.form-wrap .pf :is(.tile, .chip):is([aria-pressed="true"], [aria-checked="true"]) {
+  background-color: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+#enquire.form-wrap .pf .tile:is([aria-pressed="true"], [aria-checked="true"]) small {
+  color: var(--paper);
+}
+@media (hover: hover) {
+  #enquire.form-wrap .pf :is(.tile, .chip, .ap-btn):not([aria-pressed="true"], [aria-checked="true"]):hover {
+    background-color: #eae1d0;
+  }
+}
+#enquire.form-wrap .pf :is(button, input, select, textarea, summary, a):focus-visible,
+dialog.sheet :is(button, input):focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+#enquire.form-wrap .pf .pf-card :is(.pf-steps li, .pf-count, .pf-back, .opt, .sum .k, .sum .v.muted, .ap-btn.empty .code),
+dialog.sheet :is(.ap-group, .ap-empty) {
+  color: var(--pf-secondary-ink);
+}
+#enquire.form-wrap .pf .pf-card .pf-steps li.on { color: var(--ink); }
+#enquire.form-wrap .pf .pf-steps li::before { background: var(--pf-control-edge); }
+#enquire.form-wrap .pf .pf-steps li:is(.done, .on)::before { background: var(--ink); }
+#enquire.form-wrap .pf .pf-card .field::placeholder,
+dialog.sheet .field::placeholder {
+  color: var(--pf-secondary-ink);
+  opacity: 1;
+}
+dialog.sheet .ap-opt[aria-selected="true"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+dialog.sheet .ap-opt[aria-selected="true"] .txt small { color: var(--paper); }
