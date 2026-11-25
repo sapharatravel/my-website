@@ -200,7 +200,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 
 /* layout: the step card, and on desktop the trip pass and next steps beside it (plan my trip page) */
 .pf { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s-32); max-width: 640px; margin-inline: auto; align-items: start; }
-.pf .pf-card { background: #fff; border-radius: var(--r-card); padding: var(--card-pad) var(--s-16); box-shadow: var(--shadow-lg); min-width: 0; }
+.pf .pf-card { background: #fff; color: var(--ink); container-type: inline-size; border-radius: var(--r-card); padding: var(--card-pad) var(--s-16); box-shadow: var(--shadow-lg); min-width: 0; }
 @media (min-width: 400px) { .pf .pf-card { padding-inline: var(--s-24); } }
 @media (min-width: 768px) { .pf .pf-card { padding: var(--card-pad); } }
 .pf .pf-aside { display: none; }
@@ -208,6 +208,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf { max-width: none; grid-template-columns: minmax(0, 640px) minmax(0, 400px); justify-content: center; column-gap: var(--s-56); }
   .pf .pf-aside { display: flex; flex-direction: column; gap: var(--s-8); position: sticky; top: calc(var(--header-slim) + var(--s-24)); }
   .pf .pf-aside .next-steps { margin-top: var(--s-24); }
+  .pf .pf-aside .pass-wrap { --notch: var(--ink); }
 }
 @media (min-width: 1360px) { .pf .pf-pass-mob { display: none; } }
 .pf .pf-top { display: flex; align-items: center; justify-content: space-between; min-height: 44px; margin-bottom: var(--s-8); }
@@ -218,7 +219,8 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .pf .pf-steps li::before { content: ""; height: 3px; border-radius: 2px; background: var(--cream); transition: background-color 300ms; }
 .pf .pf-steps li.done::before, .pf .pf-steps li.on::before { background: var(--ink); }
 .pf .pf-steps li.on { color: var(--ink); font-weight: 500; }
-.pf .pf-steps li span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pf .pf-steps li span { overflow-wrap: anywhere; }
+.pf .q { scroll-margin-top: calc(var(--header-slim) + var(--s-24)); }
 .pf .q:focus-visible { outline: 2px solid var(--ink); outline-offset: 6px; border-radius: 6px; }
 .pf .pf-sent-h .beat { display: block; }
 .pf .groups { margin-top: var(--s-24); display: flex; flex-direction: column; gap: var(--s-32); }
@@ -247,6 +249,16 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .pf .rv-sec-h button { background: none; border: 0; min-height: 44px; font: 500 14.5px var(--body); color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; cursor: pointer; }
 .pf .rv-sec .sum li { grid-template-columns: minmax(0, 1fr); }
 .pf .pf-pass-mob { --notch: #fff; }
+.pf .pass { color: var(--ink); }
+.pf .pass dd { overflow-wrap: anywhere; white-space: normal; }
+#enquire > .col > .intro { margin-bottom: var(--s-24); }
+#enquire .next-steps .ns-h { color: var(--on-dark-gold); }
+#enquire .next-steps span { color: var(--on-dark-muted); }
+#enquire .next-steps li::before { color: var(--ink); }
+
+@media (min-width: 1024px) and (max-width: 1359px) {
+  #enquire .ns-mob { display: block; }
+}
 .pf .pf-aside .pass-wrap { --notch: var(--sand); }
 
 /* homepage closing band: black band, sand card, form only (no pass or next steps), as the old form */
@@ -272,16 +284,14 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf { max-width: 1320px; grid-template-columns: minmax(0, 1fr) 360px; column-gap: var(--s-40); }
   .final-band .pf { max-width: 1200px; grid-template-columns: minmax(0, 1fr); }
   .pf .pf-card { padding: var(--s-32) var(--s-40) var(--s-40); }
-  /* one header row: Back, the step bar, Step x of 4 */
-  .pf .pf-panel { position: relative; }
   .pf .pf-top { margin-bottom: var(--s-16); }
-  .pf .pf-steps { position: absolute; top: 4px; left: 120px; right: 120px; margin: 0; }
   .pf .sub { margin-top: var(--s-4); }
+}
+
+@container (min-width: 700px) {
   .pf .groups { margin-top: var(--s-16); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-24) var(--s-40); align-items: start; }
   .pf .groups > .err, .pf .groups > .pf-disc, .pf .groups > .linkbtn, .pf .groups > .wa-preview, .pf .groups > .pf-pass-mob, .pf .g-you > * { grid-column: 1 / -1; }
   .pf .g-trip { grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); }
-  .pf .g-trip > .grid2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .pf .g-trip > .grid2 .tile.wide { grid-column: auto; }
   .pf .g-you { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
   .pf .pf-review { gap: var(--s-16) var(--s-24); }
   .pf .tile { min-height: 52px; padding-block: var(--s-8); }
@@ -296,8 +306,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   .pf .pf-welcome > ol { grid-area: ol; margin: 0; align-self: center; padding: var(--s-24); border-radius: var(--r-small); background: color-mix(in srgb, var(--cream) 45%, transparent); gap: var(--s-16); }
   .pf .pf-welcome > .foot { grid-area: foot; align-self: end; }
   .pf .pf-welcome > .foot > .btn-block { width: 100%; }
-  .pf .g-extras > .gq:last-of-type .grid2 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .pf .g-extras > .gq:last-of-type .grid2 .tile.wide { grid-column: span 3; }
   .pf .pf-disc-body > .fq { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr) minmax(0, 1.2fr); gap: var(--s-24) var(--s-32); align-items: start; }
   .pf .pf-disc-body > .fq > .fq { margin: 0; }
 }
