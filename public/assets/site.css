@@ -3375,3 +3375,23 @@ body.home .header:not(.slim) .hsplit:focus-visible { outline-color: var(--on-dar
   #pcForm .pc-more summary .opt { margin:0; }
   .prose.legal .table-wrap { max-width:100%; overscroll-behavior-x:contain; }
 }
+
+/* Shared phone component rhythm; preserve listing grids and carousel behaviour. */
+@media (max-width: 767px) {
+  .band .intro, .band .intro > * { min-width:0; max-width:100%; }
+  .band .intro > p { overflow-wrap:break-word; }
+  .price-card { padding:24px 20px; gap:24px; grid-template-columns:minmax(0,1fr); }
+  .price-card > *, .pc-main, .pc-side { min-width:0; }
+  .price-card .intro .display { font-size:var(--head-panel); }
+  .faq { width:100%; gap:12px; }
+  .faq summary { padding:16px; min-height:64px; gap:12px; line-height:1.4; }
+  .faq summary > .ico { flex-shrink:0; }
+  .faq .ans { padding:0 16px 20px; overflow-wrap:break-word; }
+  .pcard, .gitem, .gcard, .gtext { min-width:0; }
+  .tcard .body { padding:20px; }
+  .tcard h3 { font-size:30px; }
+  .gcard { gap:16px; }
+  .gtext { gap:4px; }
+  .why6 > div { padding:16px; gap:12px; }
+  #pay-later.pl-home { padding-block:var(--section); }
+}
