@@ -536,7 +536,7 @@ dialog.sheet :is(.field, .sheet-close) {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-@media (max-width: 479px) {
+@container (max-width: 420px) {
   #enquire.form-wrap .pf .tile-with-icon {
     flex-direction: column;
     align-items: flex-start;
