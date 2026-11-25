@@ -206,6 +206,11 @@ button.split { border: 0; font: inherit; cursor: pointer; -webkit-appearance: no
 .hero h1 .tone { color: var(--on-dark-gold); }
 .hero h1 { margin-top: 0; --tier: var(--head-hero); text-shadow: 0 2px 24px rgba(40,22,8,.25); }
 .hero h1 span { display: block; }
+@media (max-width: 767px) {
+  .hero h1.display {
+    font-size: max(clamp(38px, 11.25vw, 64px), min(var(--tier), calc(100cqi / (var(--fit, .01) * var(--fit-k, 1)))));
+  }
+}
 .hero .lead { margin-top: var(--head-body); color: #fff; max-width: 36ch; text-shadow: 0 1px 12px rgba(40,22,8,.4); }
 .hero .actions { margin-top: var(--body-btn); flex-direction: column; align-items: flex-start; }
 @media (min-width: 768px) { .hero .actions { flex-direction: row; } }
