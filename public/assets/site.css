@@ -250,6 +250,7 @@ button.split { border: 0; font: inherit; cursor: pointer; -webkit-appearance: no
 @media (min-width: 1024px) { .trip { min-height: 480px; } }
 .trip::after { background: linear-gradient(180deg, rgba(30,18,6,0) 24%, rgba(30,18,6,.58) 52%, rgba(30,18,6,.86) 100%); }
 .trip .body { padding: var(--card-pad); display: flex; flex-direction: column; }
+.trip-details { display: contents; }
 .trip .label { color: #fff; }
 .trip h3 { margin-top: var(--label-head); }
 .trip p { margin-top: var(--head-body); }
@@ -783,17 +784,49 @@ main { padding-bottom: 0; }
 /* ---------- Calm accordion (approved 13 Nov): built on details, one open at a time ---------- */
 .faq details { overflow: hidden; }
 .faq summary:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; border-radius: var(--r-small); }
-/* ---------- Expanding trip cards, desktop with a mouse only (approved 13 Nov) ---------- */
+/* Keep the text at its final width while the card moves around it. */
 @media (min-width: 1024px) and (hover: hover) {
-  .trips.xp { display: flex; gap: var(--s-16); }
-  .trips.xp .trip { flex: 1 1 0; min-width: 0; min-height: 560px; transition: flex-grow 380ms var(--ease), transform var(--t-fast) var(--ease); }
-  .trips.xp .trip.on { flex-grow: 1.9; }
-  .trips.xp .trip p, .trips.xp .trip .actions { max-height: 0; opacity: 0; margin-top: 0; overflow: hidden; transition: max-height 340ms var(--ease), opacity 220ms var(--ease), margin-top 340ms var(--ease); }
-  .trips.xp .trip .actions { padding: 4px; margin-inline: -4px; }
-  .trips.xp .trip.on p { max-height: 120px; opacity: 1; margin-top: var(--head-body); transition-delay: 120ms; }
-  .trips.xp .trip.on .actions { max-height: 80px; opacity: 1; margin-top: var(--s-24); transition-delay: 160ms; }
+  .trips.xp {
+    --trip-gap: var(--s-16);
+    --trip-open: 1.9;
+    --trip-ease: cubic-bezier(.25, .65, .25, 1);
+    display: flex;
+    gap: var(--trip-gap);
+    container-type: inline-size;
+  }
+  .trips.xp .trip { flex: 1 1 0; min-width: 0; min-height: 560px; overflow: clip; }
+  .trips.xp .trip.on { flex-grow: var(--trip-open); }
+  .trips.xp .trip .body { display: grid; grid-template-columns: minmax(0, 1fr); align-items: end; }
+  .trips.xp .trip-name, .trips.xp .trip-details { grid-area: 1 / 1; }
+  .trips.xp .trip-details {
+    display: block;
+    /* Five panels, with four gaps and one expanded panel. */
+    width: calc((100cqi - 4 * var(--trip-gap)) * var(--trip-open) / (4 + var(--trip-open)) - 2 * var(--card-pad));
+    container-type: inline-size;
+    opacity: 0;
+  }
+  #trips .trips.xp .trip .trip-name { font-size: 28px; }
+  #trips .trips.xp .trip h3 { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; }
+  .trips.xp .trip .actions { margin-top: var(--s-24); }
+  .trips.xp .trip:not(.on) .trip-details a { pointer-events: none; }
+  .trips.xp .trip.on .trip-name { opacity: 0; }
+  .trips.xp .trip.on .trip-details { opacity: 1; }
 }
-@media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: reduce) { .trips.xp .trip, .trips.xp .trip p, .trips.xp .trip .actions { transition: none; } }
+@media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .js .trips.xp .trip {
+    transition: flex-grow 520ms var(--trip-ease), opacity 600ms var(--ease), transform 600ms var(--ease);
+    transition-delay: 0s, calc(var(--i, 0) * 70ms), calc(var(--i, 0) * 70ms);
+  }
+  .trips.xp .trip-name { transition: opacity 190ms var(--trip-ease) 120ms; }
+  .trips.xp .trip-details { transform: translateY(8px); transition: opacity 150ms var(--trip-ease), transform 220ms var(--trip-ease); }
+  .trips.xp .trip.on .trip-name { transition-delay: 0s; }
+  .trips.xp .trip.on .trip-details {
+    transform: none;
+    transition-duration: 310ms;
+    transition-delay: 170ms;
+  }
+  .trips.xp .trip.on:focus-within .trip-details { transition-delay: 0s; }
+}
 /* ---------- Arch-topped destination cards (approved 13 Nov, sparingly: destination cards and the rust panel only) ---------- */
 .dest { border-radius: 50% 50% var(--r-card) var(--r-card) / 34% 34% var(--r-card) var(--r-card); }
 .dest .code { top: var(--s-16); left: 0; right: 0; margin-inline: auto; width: fit-content; }
@@ -1599,8 +1632,6 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 /* Five trip cards on the homepage (15 Nov 2026): where the cards sit two per row, the odd one out spans the full width */
 @media (max-width: 767px) { .trips .trip:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 16 / 10; } }
 @media (min-width: 1024px) and (hover: none) { .trips .trip:last-child:nth-child(odd) { grid-column: 1 / -1; } }
-/* Five expanding cards: closed cards keep a readable 20px headline that may wrap, instead of shrinking to fit one line */
-@media (min-width: 1024px) and (hover: hover) { .trips.xp .trip:not(.on) h3 { font-size: 20px; line-height: 1.05; } .trips.xp .trip:not(.on) h3 .beat { display: block; } }
 
 /* ---------- Conversion fixes (16 Nov 2026, Huzaifa) ---------- */
 /* Phones: WhatsApp first in the homepage hero; tablet and desktop keep Plan my trip first */
@@ -1628,11 +1659,6 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 /* Trip cards: the short trip name everywhere; on desktop with a mouse the full headline, line and button appear when a card opens (16 Nov) */
 #trips .trip .trip-name { display: block; font: 600 clamp(22px, 6vw, 28px)/1.05 var(--display); letter-spacing: 0; color: #fff; }
 #trips .trip h3 { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-@media (min-width: 1024px) and (hover: hover) {
-  #trips .trips.xp .trip .trip-name { font-size: 28px; }
-  #trips .trips.xp .trip.on .trip-name { display: none; }
-  #trips .trips.xp .trip.on h3 { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; }
-}
 
 /* Nothing to declare: card on the content's right edge, each row explained in plain words */
 @media (min-width: 1024px) {

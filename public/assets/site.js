@@ -251,13 +251,40 @@
       });
     });
   })();
-  /* expanding trip cards: desktop with a mouse only */
+  /* Expand on deliberate hover or keyboard focus. */
   (function () {
     var t = document.querySelector(".trips"); if (!t) return;
-    var mq = window.matchMedia("(min-width: 1024px) and (hover: hover)"), cards = Array.prototype.slice.call(t.querySelectorAll(".trip"));
-    function on(c) { cards.forEach(function (x) { x.classList.toggle("on", x === c); }); }
-    function setup() { t.classList.toggle("xp", mq.matches); if (mq.matches && !t.querySelector(".trip.on")) on(cards[0]); }
-    cards.forEach(function (c) { c.addEventListener("mouseenter", function () { if (mq.matches) on(c); }); c.addEventListener("focusin", function () { if (mq.matches) on(c); }); });
+    var mq = window.matchMedia("(min-width: 1024px) and (hover: hover)");
+    var rm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var cards = Array.prototype.slice.call(t.querySelectorAll(".trip"));
+    var active = cards[0], pending, timer;
+    if (!active) return;
+    function cancelHover() { clearTimeout(timer); pending = null; }
+    function activate(card) {
+      cancelHover();
+      active.classList.remove("on");
+      active = card;
+      active.classList.add("on");
+    }
+    function setup() {
+      cancelHover();
+      t.classList.toggle("xp", mq.matches);
+      if (mq.matches) activate(t.querySelector(".trip:focus-within") || active);
+    }
+    t.addEventListener("pointermove", function (e) {
+      if (!mq.matches || e.pointerType === "touch" || t.querySelector(":focus-visible")) return;
+      var card = e.target.closest(".trip");
+      if (!card || card === active) { cancelHover(); return; }
+      if (card === pending) return;
+      cancelHover();
+      if (rm.matches) { activate(card); return; }
+      pending = card;
+      timer = setTimeout(function () { activate(card); }, 65);
+    });
+    t.addEventListener("pointerleave", cancelHover);
+    cards.forEach(function (card) {
+      card.addEventListener("focusin", function () { if (mq.matches) activate(card); });
+    });
     if (mq.addEventListener) mq.addEventListener("change", setup); setup();
   })();
   /* phone and tablet menu: dialog sheet, Escape closes, focus stays inside */
