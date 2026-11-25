@@ -462,7 +462,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 #enquire.form-wrap:not(.final-band) .pf .pf-pass-mob {
   display: block;
   width: 100%;
-  max-width: 640px;
+  max-width: 600px;
   --notch: var(--f-card);
 }
 #enquire.form-wrap:not(.final-band) .pf :is(.field, .ap-btn) {
