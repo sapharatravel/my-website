@@ -367,14 +367,14 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 
 /* Dedicated plan-my-trip page shares the homepage enquiry styling on phones. */
 @media (max-width: 767px) {
-  #enquire.form-wrap:not(.final-band) .pf .pf-card { background: #fff; color: var(--ink); }
-  #enquire.form-wrap:not(.final-band) .pf .pf-card :is(.q, h3, label, legend, .gq > .ql, .pf-welcome li b, .pf-welcome li strong) { color: var(--ink); }
-  #enquire.form-wrap:not(.final-band) .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .pf-welcome li span, .sum .k) { color: var(--grey); }
-  #enquire.form-wrap:not(.final-band) .pf .pf-card .pf-steps li.on { color: var(--ink); }
-  #enquire.form-wrap:not(.final-band) .pf .pf-welcome > ol { background: var(--cream); border: 1px solid var(--rule); }
-  #enquire.form-wrap:not(.final-band) .pf .pf-welcome li::before { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
-  #enquire.form-wrap:not(.final-band) .pf .pf-card :is(input, select, textarea, .field) { color: var(--ink); }
-  #enquire.form-wrap:not(.final-band) .pf .pf-card :is(input, select, textarea, .field)::placeholder { color: #625C50; opacity: 1; }
+  #enquire.form-wrap .pf .pf-card { background: #fff; color: var(--ink); }
+  #enquire.form-wrap .pf .pf-card :is(.q, h3, label, legend, .gq > .ql, .pf-welcome li b, .pf-welcome li strong) { color: var(--ink); }
+  #enquire.form-wrap .pf .pf-card :is(.pf-lead, .pf-small, .hint, .sub, .pf-count, .pf-back, .pf-steps li, .opt, .pf-welcome li span, .sum .k) { color: var(--grey); }
+  #enquire.form-wrap .pf .pf-card .pf-steps li.on { color: var(--ink); }
+  #enquire.form-wrap .pf .pf-welcome > ol { background: var(--cream); border: 1px solid var(--rule); }
+  #enquire.form-wrap .pf .pf-welcome li::before { background: #fff; color: var(--ink); box-shadow: inset 0 0 0 1px var(--rule); }
+  #enquire.form-wrap .pf .pf-card :is(input, select, textarea, .field) { color: var(--ink); }
+  #enquire.form-wrap .pf .pf-card :is(input, select, textarea, .field)::placeholder { color: #625C50; opacity: 1; }
 }
 
 /* Prevent intrinsic field and grid widths from expanding phone layouts. */
@@ -393,4 +393,18 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.form-wrap > .col > .intro p { text-align:center; margin:12px auto 0; max-width:36ch; }
   #enquire.form-wrap .pf .pf-card { padding:24px 16px; }
   #enquire.form-wrap .pf .pf-welcome > ol { padding:14px 0; border:0; background:transparent; }
+}
+
+/* Approved shared mobile enquiry design; identical on every instance. */
+@media (max-width: 767px) {
+  #enquire.form-wrap { background:#111; border-radius:0 !important; box-shadow:none !important; padding:0; }
+  #enquire.form-wrap > .col { background:transparent; border-radius:0 !important; box-shadow:none !important; width:100%; max-width:100%; margin:0; padding:32px 20px !important; }
+  #enquire.form-wrap > .col > .intro { max-width:100%; margin:0 auto 24px; }
+  #enquire.form-wrap .final-wa-link, #enquire.form-wrap .final-wa { display:none; }
+  #enquire.form-wrap .pf { width:100%; max-width:none; margin-inline:auto; grid-template-columns:minmax(0,1fr); }
+  #enquire.form-wrap .pf .pf-card { background:#fff; border-radius:var(--r-card); box-shadow:none; padding:24px 16px; }
+  #enquire.form-wrap .pf .pf-aside { display:none; }
+  #enquire.form-wrap .pf .pf-welcome > ol { background:transparent; border:0; padding:14px 0; }
+  #enquire.form-wrap .pf :is(.tile,.chip,.field,.stepper,.ap-btn,.pf-seg) { background:var(--f-tile, var(--cream)); }
+  #enquire.form-wrap .pf :is(.tile,.chip)[aria-pressed="true"] { background:var(--ink); color:#fff; }
 }
