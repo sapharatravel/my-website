@@ -124,48 +124,66 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .ap-empty { padding: var(--s-24) var(--s-16); color: var(--grey); }
 .pf .wa-preview { background: var(--linen); border-radius: var(--r-small); padding: var(--s-16); font-size: 14.5px; white-space: pre-wrap; line-height: 1.5; overflow-wrap: anywhere; margin: 0; font-family: var(--body); }
 .pf .wa-preview::before { content: "Your WhatsApp message"; display: block; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin-bottom: var(--s-8); }
-.pf .pass-wrap { container-type: inline-size; --notch: var(--sand); }
-.pf .bp { border-radius: 20px; filter: drop-shadow(0 14px 16px rgba(86,60,30,.12)) drop-shadow(0 2px 3px rgba(86,60,30,.05)); display: grid; position: relative; }
-.pf .bp-main { padding: var(--s-24); background: #fff; border-radius: 20px 20px 0 0; min-width: 0; }
-.pf .bp-top { display: flex; justify-content: space-between; align-items: baseline; gap: var(--s-12); }
-.pf .bp-brand { font-family: var(--display); font-weight: 600; text-transform: uppercase; font-size: 18px; letter-spacing: .08em; }
-.pf .bp dt, .pf .bp-kind { font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
-.pf .bp-route { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: end; gap: var(--s-8); margin-top: var(--s-24); }
-.pf .bp-route .end { display: flex; flex-direction: column; gap: var(--s-4); min-width: 0; }
-.pf .bp-route .end.to { text-align: right; align-items: flex-end; }
-.pf .bp-route .code { font-family: var(--display); font-weight: 600; font-size: 64px; line-height: .9; letter-spacing: .02em; }
-.pf .bp-route small { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--grey); max-width: 16ch; }
-.pf .bp-route .arc { width: 100%; height: 44px; align-self: center; margin-bottom: 18px; overflow: visible; }
-.pf .bp-route .arc path { fill: none; stroke: var(--accent); stroke-width: 2; stroke-dasharray: 1 6; stroke-linecap: round; }
-.pf .bp dl { margin: 0; }
-.pf .bp dd { margin: var(--s-4) 0 0; font-family: var(--display); font-weight: 400; text-transform: uppercase; font-size: 20px; letter-spacing: .04em; line-height: 1.05; min-height: 21px; overflow-wrap: anywhere; }
-.pf .bp dd:empty::before { content: ""; display: inline-block; width: 18px; height: 2px; background: currentColor; opacity: .2; vertical-align: middle; }
-.pf .bp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-16) var(--s-12); margin-top: var(--s-24); padding-top: var(--s-16); border-top: 1px solid var(--rule); }
-.pf .bp-perf { position: relative; height: 0; border-top: 2px dashed var(--rule); margin-inline: var(--s-16); }
-.pf .bp-perf::before, .pf .bp-perf::after { content: ""; position: absolute; top: -12px; width: 22px; height: 22px; border-radius: 50%; background: var(--notch); }
-.pf .bp-perf::before { left: -28px; }
-.pf .bp-perf::after { right: -28px; }
-.pf .bp-stub { padding: var(--s-16) var(--s-24) var(--s-24); display: grid; grid-template-columns: 1fr auto; gap: var(--s-12) var(--s-16); align-items: end; background: #fff; border-radius: 0 0 20px 20px; }
-.pf .bp-stub dl { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-12); }
-.pf .bism { font-size: 9.5px; letter-spacing: .5em; text-transform: uppercase; color: var(--grey); margin-right: -.5em; }
-@container (max-width: 300px) {
-  .pf .bp-main { padding: var(--s-16); }
-  .pf .bp-route { margin-top: var(--s-16); }
-  .pf .bp-route .code { font-size: 46px; }
-  .pf .bp-route small { font-size: 9.5px; letter-spacing: .04em; }
-  .pf .bp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-12) var(--s-8); }
-  .pf .bp dd { font-size: 17px; }
-  .pf .bp-stub { padding: var(--s-12) var(--s-16) var(--s-16); grid-template-columns: 1fr; }
+.pf .pass-wrap {
+  container-type: inline-size;
+  width: 100%;
+  max-width: 440px;
+  --bp-header: #30291f;
+  --bp-accent: #e7dcc5;
 }
-@container (min-width: 470px) {
-  .pf .bp { grid-template-columns: minmax(0, 1fr) 0 150px; }
-  .pf .bp-main { border-radius: 20px 0 0 20px; }
-  .pf .bp-perf { height: auto; border-top: 0; border-left: 2px dashed var(--rule); margin: var(--s-16) 0; }
-  .pf .bp-perf::before, .pf .bp-perf::after { left: -12px; right: auto; }
-  .pf .bp-perf::before { top: -28px; }
-  .pf .bp-perf::after { top: auto; bottom: -28px; }
-  .pf .bp-stub { grid-template-columns: 1fr; align-content: space-between; padding: var(--s-24) var(--s-16); border-radius: 0 20px 20px 0; }
-  .pf .bp-stub dl { grid-template-columns: 1fr; }
+.pf .bp { display: grid; background: var(--bp-header); border-radius: var(--r-card); color: var(--ink); }
+.pf .bp-header { padding: var(--s-24); color: #fff; }
+.pf .bp-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: var(--s-8); }
+.pf .bp-brand { font: 600 23px/1 var(--display); letter-spacing: .1em; text-transform: uppercase; }
+.pf .bp dt, .pf .bp-kind { font: 600 11px/1.4 var(--body); letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.pf .bp-header .bp-kind, .pf .bp-route small { color: var(--bp-accent); }
+.pf .bp-route {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 28px minmax(0, 1fr);
+  align-items: center;
+  gap: var(--s-12);
+  margin-top: var(--s-24);
+}
+.pf .bp-route .end { display: grid; min-width: 0; gap: var(--s-4); }
+.pf .bp-route .end.to { text-align: right; }
+.pf .bp-route .code { font: 600 50px/.95 var(--display); letter-spacing: .02em; }
+.pf .bp-route small { font-size: 12px; overflow-wrap: anywhere; }
+.pf .bp-plane { width: 24px; height: 24px; justify-self: center; fill: currentColor; transform: rotate(90deg); }
+.pf .bp-main { background: var(--paper); border-radius: var(--r-small); margin: 0 var(--s-12) var(--s-12); padding: 0; min-width: 0; }
+.pf .bp-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-16);
+  margin: 0;
+  padding: var(--s-24);
+  border-top: 0;
+}
+.pf .bp-name { grid-column: 1 / -1; }
+.pf .bp dd { margin: var(--s-4) 0 0; font-weight: 600; overflow-wrap: anywhere; }
+.pf .bp dd:empty::before { content: "—"; color: var(--grey); }
+.pf .bp-perf { position: relative; margin: 0; border-top: 1px dashed var(--gold); }
+.pf .bp-perf::before, .pf .bp-perf::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bp-header);
+}
+.pf .bp-perf::before { left: -8px; }
+.pf .bp-perf::after { right: -8px; }
+.pf .bp-stub { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: var(--s-4); padding: var(--s-16); text-align: center; }
+.pf .bp-stub b { color: var(--ink); letter-spacing: .12em; font-variant-numeric: tabular-nums; }
+.pf .bp-stripes {
+  width: min(100%, 112px);
+  height: 14px;
+  margin-top: var(--s-4);
+  background: repeating-linear-gradient(90deg, var(--bp-header) 0 2px, transparent 2px 4px, var(--bp-header) 4px 5px, transparent 5px 8px, var(--bp-header) 8px 11px, transparent 11px 13px);
+}
+@container (max-width: 300px) {
+  .pf .bp-header, .pf .bp-grid { padding: var(--s-16); }
+  .pf .bp-route .code { font-size: 38px; }
 }
 .pf .sum { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
 .pf .sum li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s-4) var(--s-12); align-items: center; padding: var(--s-12) 0; border-bottom: 1px solid var(--rule); }
@@ -203,12 +221,9 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .pf .pf-card { background: #fff; color: var(--ink); container-type: inline-size; border-radius: var(--r-card); padding: var(--card-pad) var(--s-16); box-shadow: var(--shadow-lg); min-width: 0; }
 @media (min-width: 400px) { .pf .pf-card { padding-inline: var(--s-24); } }
 @media (min-width: 768px) { .pf .pf-card { padding: var(--card-pad); } }
-.pf .pf-aside { display: none; }
 @media (min-width: 1024px) {
   .pf { max-width: none; grid-template-columns: minmax(0, 640px) minmax(0, 400px); justify-content: center; column-gap: var(--s-56); }
-  .pf .pf-aside { display: flex; flex-direction: column; gap: var(--s-8); position: sticky; top: calc(var(--header-slim) + var(--s-24)); }
 }
-@media (min-width: 1360px) { .pf .pf-pass-mob { display: none; } }
 .pf .pf-top { display: flex; align-items: center; justify-content: space-between; min-height: 44px; margin-bottom: var(--s-8); }
 .pf .pf-count { font-size: 13px; font-weight: 500; color: var(--grey); font-variant-numeric: tabular-nums; }
 .pf .pf-back { background: none; border: 0; padding: 0 var(--s-8) 0 0; min-height: 44px; font: 500 15px var(--body); color: var(--grey); cursor: pointer; display: inline-flex; align-items: center; gap: var(--s-8); }
@@ -242,15 +257,12 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .pf .rv-sec-h h4 { font: 600 22px/1 var(--display); margin: 0; }
 .pf .rv-sec-h button { background: none; border: 0; min-height: 44px; font: 500 14.5px var(--body); color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 4px; cursor: pointer; }
 .pf .rv-sec .sum li { grid-template-columns: minmax(0, 1fr); }
-.pf .pf-pass-mob { --notch: #fff; }
 .pf .bp { color: var(--ink); }
 .pf .bp dd { overflow-wrap: anywhere; white-space: normal; }
 #enquire > .col > .intro { margin-bottom: var(--s-24); }
-.pf .pf-aside .pass-wrap { --notch: var(--paper); }
 
 /* homepage closing band: black band, sand card, form only (no pass or next steps), as the old form */
 .final-band .pf { max-width: 720px; grid-template-columns: minmax(0, 1fr); }
-.final-band .pf .pf-aside { display: none; }
 .final-band .pf .pf-card { background: var(--f-card); box-shadow: 0 32px 64px -24px rgba(40,14,0,.55), 0 2px 6px rgba(40,14,0,.12); }
 .final-band .pf :is(.tile, .chip, .field, .stepper, .ap-btn, .pf-seg) { background: var(--f-tile); }
 @media (hover: hover) { .final-band .pf :is(.tile, .chip):not([aria-pressed="true"]):hover { background: var(--f-tile-hover); } }
@@ -258,7 +270,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 .final-band .pf .tile.quiet:not([aria-pressed="true"]) { background: transparent; }
 .final-band .pf .stepper button, .final-band .pf .room-row button { background: var(--f-card); box-shadow: inset 0 0 0 1px var(--f-line); }
 .final-band .pf .room, .final-band .pf .wa-preview, .final-band .pf .note { background: #FAF5EB; }
-.final-band .pf .pf-pass-mob { --notch: var(--f-card); }
 .final-band .pf .pf-steps li::before { background: var(--f-tile); }
 .final-band .pf .pf-steps li.done::before, .final-band .pf .pf-steps li.on::before { background: var(--ink); }
 .final-band .pf .rv-sec, .final-band .pf .rv-sec-h, .final-band .pf .sum li, .final-band .pf .pf-disc { border-color: var(--f-line); }
@@ -294,7 +305,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
 /* small laptops: the form takes the whole width; the trip pass appears in the review instead of beside the form */
 @media (min-width: 1024px) and (max-width: 1359px) {
   .pf { grid-template-columns: minmax(0, 1fr); max-width: 1100px; }
-  .pf .pf-aside { display: none; }
 }
 @media (min-width: 1024px) {
   .pf .mtile { min-height: 46px; }
@@ -396,7 +406,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.form-wrap .final-wa-link, #enquire.form-wrap .final-wa { display:none; }
   #enquire.form-wrap .pf { width:100%; max-width:none; margin-inline:auto; grid-template-columns:minmax(0,1fr); }
   #enquire.form-wrap .pf .pf-card { background:#fff; border-radius:var(--r-card); box-shadow:none; padding:24px 16px; }
-  #enquire.form-wrap .pf .pf-aside { display:none; }
   #enquire.form-wrap .pf :is(.tile,.chip,.field,.stepper,.ap-btn,.pf-seg) { background:var(--f-tile, var(--cream)); }
   #enquire.form-wrap .pf :is(.tile,.chip)[aria-pressed="true"] { background:var(--ink); color:#fff; }
 }
@@ -457,14 +466,7 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   #enquire.final-band > .col > .intro { margin: 0; }
 }
 
-/* The dedicated planner shows the pass on wide welcome screens and at review. */
-#enquire.form-wrap:not(.final-band) .pf .pf-aside { display: none; }
-#enquire.form-wrap:not(.final-band) .pf .pf-pass-mob {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  --notch: var(--f-card);
-}
+/* Dedicated planner inputs use a white surface. */
 #enquire.form-wrap:not(.final-band) .pf :is(.field, .ap-btn) {
   background-color: var(--paper);
 }
@@ -478,17 +480,6 @@ dialog.sheet::backdrop { background: rgba(17,17,17,.4); }
   min-height: 48px;
 }
 
-@media (min-width: 1200px) {
-  #enquire.form-wrap:not(.final-band) .pf:has(.pf-welcome:not([inert])) {
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: var(--s-40);
-    align-items: center;
-  }
-  #enquire.form-wrap:not(.final-band) .pf:has(.pf-welcome:not([inert])) .pf-aside {
-    display: block;
-    position: static;
-  }
-}
 
 /* Keep interactive boundaries distinct from the warm form card at every width. */
 #enquire.form-wrap .pf,

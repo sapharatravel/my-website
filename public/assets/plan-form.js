@@ -578,10 +578,13 @@ window.UK_AIRPORTS = [
   /* ---------- trip pass (the boarding pass summary). Departure shows the chosen airport's IATA code ---------- */
   function pass() {
     var el = h("div", { class: "pass-wrap" });
-    el.innerHTML = '<div class="bp" aria-hidden="true"><div class="bp-main"><div class="bp-top"><span class="bp-brand">Saphara</span><span class="bp-kind">Your trip request</span></div>' +
-      '<div class="bp-route"><div class="end"><b class="code" data-f="from">UK</b><small data-f="fromName">UK airport</small></div><svg class="arc" viewBox="0 0 120 44" preserveAspectRatio="none"><path d="M4 40 Q60 -8 116 40"/></svg><div class="end to"><b class="code" data-f="to">?</b><small data-f="toName">Where to?</small></div></div>' +
-      '<dl class="bp-grid"><div><dt>When</dt><dd data-f="when"></dd></div><div><dt>Travellers</dt><dd data-f="trav"></dd></div><div><dt>Trip</dt><dd data-f="trip"></dd></div><div><dt>Budget</dt><dd data-f="budget"></dd></div><div><dt>Board</dt><dd data-f="board"></dd></div><div><dt>Nights</dt><dd data-f="nights"></dd></div></dl></div>' +
-      '<div class="bp-perf"></div><div class="bp-stub"><dl><div><dt>Ref</dt><dd data-f="ref"></dd></div><div><dt>Name</dt><dd data-f="name"></dd></div></dl><span class="bism">Bismillah</span></div></div>';
+    el.innerHTML = '<div class="bp" aria-hidden="true"><div class="bp-header">' +
+      '<div class="bp-top"><span class="bp-brand">Saphara</span><span class="bp-kind">Trip request</span></div>' +
+      '<div class="bp-route"><div class="end"><b class="code" data-f="from">UK</b><small data-f="fromName">UK airport</small></div>' +
+      '<svg class="bp-plane" viewBox="0 0 24 24" focusable="false"><path d="M2.5 13.5 10 11V5.5a2 2 0 0 1 4 0V11l7.5 2.5V15L14 13.5V18l2 1.5V21l-4-1-4 1v-1.5L10 18v-4.5L2.5 15z"/></svg>' +
+      '<div class="end to"><b class="code" data-f="to">?</b><small data-f="toName">Where to?</small></div></div></div>' +
+      '<div class="bp-main"><dl class="bp-grid"><div class="bp-name"><dt>Traveller</dt><dd data-f="name"></dd></div><div><dt>When</dt><dd data-f="when"></dd></div><div><dt>Travellers</dt><dd data-f="trav"></dd></div><div><dt>Trip</dt><dd data-f="trip"></dd></div><div><dt>Budget</dt><dd data-f="budget"></dd></div><div><dt>Board</dt><dd data-f="board"></dd></div><div><dt>Nights</dt><dd data-f="nights"></dd></div></dl>' +
+      '<div class="bp-perf"></div><div class="bp-stub"><span class="bp-kind">Request reference</span><b data-f="ref"></b><span class="bp-stripes"></span></div></div></div>';
     return el;
   }
   function paintPass(el, s) {
@@ -700,12 +703,11 @@ window.UK_AIRPORTS = [
   "use strict";
   var root = document.getElementById("planForm"); if (!root) return;
   var K = window.PlanKit, h = K.h, S = K.newState();
-  var stage = document.getElementById("pfStage"), passDesk = K.pass(); document.getElementById("pfPass").appendChild(passDesk);
+  var stage = document.getElementById("pfStage");
   var STEPS = [{ id: "trip", label: "Trip" }, { id: "when", label: "When" }, { id: "extras", label: "Budget" }, { id: "you", label: "Details" }];
   var cur = -1, fromReview = false, ARROW = ' <span aria-hidden="true">&rarr;</span>';
   var EMAIL = "hello@sapharatravel.co.uk";
 
-  function live() { K.paintPass(passDesk, S); }
   function hotelOnly() { return S.type === "Hotel only"; }
 
   function header(i) {
@@ -725,7 +727,6 @@ window.UK_AIRPORTS = [
         window.scrollBy({ top: top - clearance, behavior: "instant" });
       }
     }
-    live();
   }
   function gq(label, kids, opt) { var g = h("div", { class: "gq" }, [h("span", { class: "ql" }, [label, opt ? h("span", { class: "opt", text: " (optional)" }) : null])]); kids.forEach(function (k) { if (k) g.appendChild(k); }); return g; }
 
@@ -747,8 +748,8 @@ window.UK_AIRPORTS = [
     if (st.id === "trip") {
       el.appendChild(h("h3", { class: "q", id: "pf-h-trip", tabindex: "-1", text: "What are you planning?" }));
       var destBox = h("div", { hidden: !S.type || null });
-      parts.type = K.tiles(K.TYPES.map(function (t) { return { v: t.v, label: t.label, icon: t.icon, wide: t.v === "Not sure yet" }; }), function () { return S.type; }, function (v) { S.type = v; }, { label: "Trip type", onPick: function () { var was = destBox.hidden; K.reveal(destBox, true); parts.dest.paint(); live(); if (was) setTimeout(function () { destBox.scrollIntoView({ behavior: K.reduce ? "auto" : "smooth", block: "nearest" }); }, 360); } });
-      parts.dest = K.destination(S, live, { label: false });
+      parts.type = K.tiles(K.TYPES.map(function (t) { return { v: t.v, label: t.label, icon: t.icon, wide: t.v === "Not sure yet" }; }), function () { return S.type; }, function (v) { S.type = v; }, { label: "Trip type", onPick: function () { var was = destBox.hidden; K.reveal(destBox, true); parts.dest.paint(); if (was) setTimeout(function () { destBox.scrollIntoView({ behavior: K.reduce ? "auto" : "smooth", block: "nearest" }); }, 360); } });
+      parts.dest = K.destination(S, null, { label: false });
       destBox.appendChild(gq("Where would you like to go?", [parts.dest]));
       groups.appendChild(parts.type); groups.appendChild(destBox);
       parts.err = h("p", { class: "err", role: "alert", hidden: true }); groups.appendChild(parts.err);
@@ -757,10 +758,10 @@ window.UK_AIRPORTS = [
     if (st.id === "when") {
       el.appendChild(h("h3", { class: "q", id: "pf-h-when", tabindex: "-1", text: "When, and who's coming?" }));
       var whoBox = gq("Who's travelling?", []);
-      parts.dates = K.dateDetails(S, live);
-      parts.modes = K.dateModes(S, function () { parts.dates.paint(); K.reveal(whoBox, !!S.dateMode); live(); });
+      parts.dates = K.dateDetails(S);
+      parts.modes = K.dateModes(S, function () { parts.dates.paint(); K.reveal(whoBox, !!S.dateMode); });
       groups.appendChild(gq("When are you thinking?", [parts.modes, parts.dates]));
-      parts.who = K.travellers(S, live); whoBox.appendChild(parts.who); whoBox.hidden = !S.dateMode;
+      parts.who = K.travellers(S); whoBox.appendChild(parts.who); whoBox.hidden = !S.dateMode;
       groups.appendChild(whoBox);
       check = function () { var e = K.validate(S); if (!S.dateMode) K.reveal(whoBox, true); if (e.dates) { parts.dates.showError(e.dates); return false; } if (e.ages) { parts.who.showError(e.ages); return false; } if (e.rooms) { parts.who.showError(e.rooms, "rooms"); return false; } return true; };
     }
@@ -769,19 +770,19 @@ window.UK_AIRPORTS = [
       el.appendChild(h("p", { class: "sub", text: hotelOnly() ? "Optional, but it helps us suggest the right hotels." : "Both optional, but they help us suggest the right hotels." }));
       if (!hotelOnly()) {
         var apBox = h("div", { hidden: S.flights !== "need" || null }), note = h("p", { class: "note", text: "We can help you find a good flight itinerary for Umrah, but we don't book Umrah flights.", hidden: !(S.type === "Umrah" && S.flights === "need") || null });
-        parts.flights = K.tiles([{ v: "need", label: "Not Yet" }, { v: "booked", label: "Already Booked" }], function () { return S.flights; }, function (v) { S.flights = v; }, { label: "Flights", toggle: true, onPick: function () { K.reveal(apBox, S.flights === "need"); K.reveal(note, S.type === "Umrah" && S.flights === "need"); live(); } });
-        apBox.appendChild(gq("Which airport would you fly from?", [K.airportButton(S, live)]));
+        parts.flights = K.tiles([{ v: "need", label: "Not Yet" }, { v: "booked", label: "Already Booked" }], function () { return S.flights; }, function (v) { S.flights = v; }, { label: "Flights", toggle: true, onPick: function () { K.reveal(apBox, S.flights === "need"); K.reveal(note, S.type === "Umrah" && S.flights === "need"); } });
+        apBox.appendChild(gq("Which airport would you fly from?", [K.airportButton(S)]));
         groups.appendChild(gq("Have you booked flights?", [parts.flights, note, apBox]));
       }
-      groups.appendChild(gq(hotelOnly() ? "Rough budget for the whole stay" : "Rough budget for the whole trip", [h("p", { class: "hint", text: "Everyone included. A rough idea is fine." }), K.tiles(K.BUDGETS.map(function (b) { return { v: b.v, label: b.label, wide: b.v === "Not sure yet" }; }), function () { return S.budget; }, function (v) { S.budget = v; live(); }, { label: "Budget", toggle: true })]));
-      var disc = h("details", { class: "pf-disc" }, [h("summary", { text: "Hotel preferences (optional)" }), h("div", { class: "pf-disc-body" }, [K.prefs(S, live)])]);
+      groups.appendChild(gq(hotelOnly() ? "Rough budget for the whole stay" : "Rough budget for the whole trip", [h("p", { class: "hint", text: "Everyone included. A rough idea is fine." }), K.tiles(K.BUDGETS.map(function (b) { return { v: b.v, label: b.label, wide: b.v === "Not sure yet" }; }), function () { return S.budget; }, function (v) { S.budget = v; }, { label: "Budget", toggle: true })]));
+      var disc = h("details", { class: "pf-disc" }, [h("summary", { text: "Hotel preferences (optional)" }), h("div", { class: "pf-disc-body" }, [K.prefs(S)])]);
       if (S.stars || S.board || S.extras.length) disc.open = true;
       groups.appendChild(disc);
     }
     if (st.id === "you") {
       el.appendChild(h("h3", { class: "q", id: "pf-h-you", tabindex: "-1", text: "How can we reach you?" }));
       el.appendChild(h("p", { class: "sub", text: "We'll reply on WhatsApp and send your options by email." }));
-      parts.contact = K.contact(S, live, { onDone: function () { nextBtn.click(); } });
+      parts.contact = K.contact(S, null, { onDone: function () { nextBtn.click(); } });
       groups.appendChild(parts.contact);
       check = function () { return !parts.contact.showErrors(K.validate(S)); };
     }
