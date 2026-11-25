@@ -496,15 +496,53 @@ dialog.sheet {
   --pf-control-edge: #857865;
   --pf-secondary-ink: #514838;
 }
-#enquire.form-wrap .pf :is(.tile, .chip, .field, .ap-btn),
+#enquire.form-wrap .pf :is(.field, .ap-btn),
 #enquire.form-wrap .pf :is(.stepper, .room-row) button,
 dialog.sheet :is(.field, .sheet-close) {
   background-color: var(--paper);
   border: 1px solid var(--pf-control-edge);
   color: var(--ink);
 }
-#enquire.form-wrap .pf :is(.tile, .field) {
+#enquire.form-wrap .pf :is(.tile, .chip) {
+  background-color: var(--paper);
+  border: 0;
   box-shadow: none;
+  color: var(--ink);
+}
+#enquire.form-wrap .pf .field { box-shadow: none; }
+#enquire.form-wrap .pf .tile-with-icon {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--s-12);
+}
+#enquire.form-wrap .pf .tile-icon {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--f-card);
+  color: var(--ink);
+}
+#enquire.form-wrap .pf .tile-icon:empty { display: none; }
+#enquire.form-wrap .pf .tile-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+@media (max-width: 479px) {
+  #enquire.form-wrap .pf .tile-with-icon {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s-8);
+    padding-inline: var(--s-12);
+  }
 }
 #enquire.form-wrap .pf .field.invalid { border-color: var(--err); }
 #enquire.form-wrap .pf :is(.tile, .chip):is([aria-pressed="true"], [aria-checked="true"]) {

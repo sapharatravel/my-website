@@ -66,15 +66,15 @@ window.UK_AIRPORTS = [
 
   /* ---------- options ---------- */
   var TYPES = [
-    { v: "Honeymoon", label: "Honeymoon", phrase: "a honeymoon" },
-    { v: "Beach and island", label: "Beach & Island", phrase: "a beach holiday" },
-    { v: "Family holiday", label: "Family Holiday", phrase: "a family holiday" },
-    { v: "Multi-city", label: "Multi-City", phrase: "a multi-city trip" },
-    { v: "Umrah", label: "Umrah", phrase: "Umrah" },
-    { v: "Hotel only", label: "Hotel Only", phrase: "a hotel stay" },
-    { v: "Business travel", label: "Business Travel", phrase: "business travel" },
-    { v: "Something else", label: "Something Else", phrase: "a trip" },
-    { v: "Not sure yet", label: "Not Sure Yet", phrase: "a trip" }
+    { v: "Honeymoon", label: "Honeymoon", icon: "honeymoon", phrase: "a honeymoon" },
+    { v: "Beach and island", label: "Beach & Island", icon: "beach", phrase: "a beach holiday" },
+    { v: "Family holiday", label: "Family Holiday", icon: "family", phrase: "a family holiday" },
+    { v: "Multi-city", label: "Multi-City", icon: "multi-city", phrase: "a multi-city trip" },
+    { v: "Umrah", label: "Umrah", icon: "umrah", phrase: "Umrah" },
+    { v: "Hotel only", label: "Hotel Only", icon: "hotel", phrase: "a hotel stay" },
+    { v: "Business travel", label: "Business Travel", icon: "business", phrase: "business travel" },
+    { v: "Something else", label: "Something Else", icon: "something-else", phrase: "a trip" },
+    { v: "Not sure yet", label: "Not Sure Yet", icon: "compass", phrase: "a trip" }
   ];
   /* Suggested ranges: the brief's five plus a split at the top, because honeymoons and family trips to the Maldives or Mauritius often pass £8,000. */
   var BUDGETS = [
@@ -251,13 +251,28 @@ window.UK_AIRPORTS = [
   var WA_SVG = '<svg class="wai" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z"/></svg>';
   var CHEV = '<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
 
+  var tripIcons;
+  function tripIcon(name) {
+    var icon = h("span", { class: "tile-icon", "aria-hidden": "true" });
+    if (!tripIcons) {
+      tripIcons = fetch("/assets/icons.json").then(function (response) {
+        if (!response.ok) throw new Error("Icon library unavailable");
+        return response.json();
+      }).catch(function () { return {}; });
+    }
+    tripIcons.then(function (icons) {
+      if (icons[name]) icon.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + icons[name] + '</svg>';
+    });
+    return icon;
+  }
+
   /* option tiles. opts.multi: toggles values in an array; opts.onPick fires after a single choice (used to move on) */
   function tiles(list, get, set, opts) {
     opts = opts || {};
     var wrap = h("div", { class: opts.cls || "grid2", role: "group", "aria-label": opts.label || null });
     function paint() { var cur = get(); Array.prototype.forEach.call(wrap.children, function (b) { var v = b.getAttribute("data-v"); b.setAttribute("aria-pressed", String(opts.multi ? cur.indexOf(v) > -1 : cur === v)); }); }
     list.forEach(function (o) {
-      var b = h("button", { type: "button", class: (opts.tileCls || "tile") + (o.wide ? " wide" : ""), "data-v": o.v, "aria-pressed": "false" }, [o.label]);
+      var b = h("button", { type: "button", class: (opts.tileCls || "tile") + (o.wide ? " wide" : "") + (o.icon ? " tile-with-icon" : ""), "data-v": o.v, "aria-pressed": "false" }, o.icon ? [tripIcon(o.icon), h("span", { text: o.label })] : [o.label]);
       if (o.sub) { b.appendChild(h("small", { text: o.sub })); }
       b.addEventListener("click", function () {
         if (opts.multi) { var cur = get().slice(), i = cur.indexOf(o.v); if (i > -1) cur.splice(i, 1); else cur.push(o.v); set(cur); }
@@ -732,7 +747,7 @@ window.UK_AIRPORTS = [
     if (st.id === "trip") {
       el.appendChild(h("h3", { class: "q", id: "pf-h-trip", tabindex: "-1", text: "What are you planning?" }));
       var destBox = h("div", { hidden: !S.type || null });
-      parts.type = K.tiles(K.TYPES.map(function (t) { return { v: t.v, label: t.label, wide: t.v === "Not sure yet" }; }), function () { return S.type; }, function (v) { S.type = v; }, { label: "Trip type", onPick: function () { var was = destBox.hidden; K.reveal(destBox, true); parts.dest.paint(); live(); if (was) setTimeout(function () { destBox.scrollIntoView({ behavior: K.reduce ? "auto" : "smooth", block: "nearest" }); }, 360); } });
+      parts.type = K.tiles(K.TYPES.map(function (t) { return { v: t.v, label: t.label, icon: t.icon, wide: t.v === "Not sure yet" }; }), function () { return S.type; }, function (v) { S.type = v; }, { label: "Trip type", onPick: function () { var was = destBox.hidden; K.reveal(destBox, true); parts.dest.paint(); live(); if (was) setTimeout(function () { destBox.scrollIntoView({ behavior: K.reduce ? "auto" : "smooth", block: "nearest" }); }, 360); } });
       parts.dest = K.destination(S, live, { label: false });
       destBox.appendChild(gq("Where would you like to go?", [parts.dest]));
       groups.appendChild(parts.type); groups.appendChild(destBox);
