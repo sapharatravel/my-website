@@ -3722,6 +3722,25 @@ body.home #destinations .dest :is(.code, .time) {
 }
 
 /* Destination guides */
+@media (max-width: 767px) {
+  .destination-page .hero { max-height: none; }
+  .destination-page .hero > .col {
+    padding-top: calc(var(--logo-h) + var(--header-top) + var(--header-bottom) + var(--s-16));
+  }
+  .destination-page .hero::after {
+    background: linear-gradient(90deg, rgba(21, 16, 11, .48), rgba(21, 16, 11, .16)),
+      linear-gradient(180deg, rgba(27, 21, 15, .16) 5%, rgba(27, 21, 15, .24) 46%, rgba(27, 21, 15, .82) 100%);
+  }
+}
+@media (min-width: 768px) {
+  .destination-page .hero {
+    height: auto;
+    min-height: min(78vh, 720px);
+    min-height: min(78svh, 720px);
+  }
+  .destination-page .hero > .col { padding-top: var(--s-24); }
+}
+
 .destination-meta {
   display: flex;
   flex-wrap: wrap;

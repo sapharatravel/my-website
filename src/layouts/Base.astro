@@ -19,7 +19,7 @@ const isHome = path === "index.html";
 const ldHtml = noindex ? "" : ldScript([isHome && travelAgencyLd(), isHome && websiteLd(), breadcrumbLd(body, path, canon), ld]);
 // The Plan my trip form (Concept C, 22 Nov 2026) loads its own styles and script, only on pages that have it.
 const planForm = body.includes('id="planForm"');
-const bodyClass = (hero ? "has-hero" : "no-hero") + (path === "index.html" ? " home" : "");
+const bodyClass = (hero ? "has-hero" : "no-hero") + (isHome ? " home" : "") + (path.startsWith("destinations/") ? " destination-page" : "");
 const head = `<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>${esc(title)}</title>
