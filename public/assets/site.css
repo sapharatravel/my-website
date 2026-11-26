@@ -3965,3 +3965,9 @@ html:has(.destination-contents) {
   .destination-sights { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-32); }
   .destination-photo--feature figcaption { inset: auto 12px 12px; }
 }
+
+@media (max-width: 359px) {
+  .destination-page .sticky .split { padding-inline: var(--s-8); }
+  .destination-page .sticky .split-label { justify-content: center; }
+  .destination-page .sticky .split-arrow { display: none; }
+}

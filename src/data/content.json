@@ -205,13 +205,8 @@
               "note": "A short drive from the airport.",
               "photo": [
                 "stay-stone-town",
-                "A narrow street between old buildings in Stone Town, Zanzibar",
-                {
-                  "artist": "This Photo was taken by Timothy A. Gonsalves. Feel free to use my photos, but please mention me as the author. I would much appreciate if you send me an email tagooty@yahoo.com or write on my talk page, for my information. Please contact me before commercial use. Please do not upload an edited image here without consulting me. I would like to make corrections only at my own source to ensure that the changes improve the image and are preserved.Otherwise you may upload an edited image with a new name. Please use one of the templates derivative or extract.",
-                  "file": "https://commons.wikimedia.org/wiki/File:Narrow_Street_Stone_Town_Zanzibar_Oct26_A7CR_14404.jpg",
-                  "license": "CC BY-SA 4.0",
-                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
-                }
+                "A carved wooden doorway in Stone Town, Zanzibar",
+                null
               ]
             }
           ],
@@ -339,9 +334,9 @@
         },
         "cta": "Tell us when you'd like to go and who's coming. We'll suggest the right coast and hotels, compared like for like.",
         "photo": [
-          "zanzibar-mnemba",
-          "Aerial view of Mnemba Island and the surrounding turquoise reef",
-          "Compare beach areas before you pick a base for trips out to the reef."
+          "stay-zanzibar-resort",
+          "Palm trees and resort grounds on Zanzibar’s south coast",
+          "A south-coast stay can mean longer drives for some excursions."
         ],
         "season": {
           "periods": [
@@ -366,9 +361,9 @@
         "sights": {
           "heading": "Things to see and do.",
           "photo": [
-            "zanzibar-stone-town",
-            "A carved wooden door in Stone Town, Zanzibar",
-            "Look for Zanzibar’s carved doors as you wander through Stone Town."
+            "zanzibar-mnemba",
+            "Aerial view of Mnemba Island and the surrounding turquoise reef",
+            "Mnemba and the surrounding reef off Zanzibar’s north-east coast."
           ],
           "items": [
             [
