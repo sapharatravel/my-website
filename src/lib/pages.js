@@ -185,26 +185,31 @@ export function destinationsIndex() {
   const pg = new Page("destinations/index.html");
   let body = photoHero(pg, "page-hero-destinations", "An island ringed by reef in the Maldives", ["Pick a place.", "We'll handle the rest."], "Places our clients go back to, from Zanzibar and Langkawi to Makkah and Madinah. Flight times are from Manchester and approximate.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Destinations", "destinations/index.html"]]);
   body += band("white after-head", '<h2 class="sr-only">All destinations</h2><div class="dests dests--staggered" style="margin-top:0">' + C.DESTS.map((d) => destCard(pg, d)).join("") + "</div>");
+  body += band("sand destination-copy", intro(["Choose your next trip."]) + why([
+    ["beach", "Island or coast?", 'Compare <a href="/destinations/zanzibar">Zanzibar’s beach areas</a> with <a href="/destinations/maldives">Maldives resort islands</a> if you’re choosing between time ashore and time on the reef.'],
+    ["multi-city", "City and beach", 'Start in <a href="/destinations/kuala-lumpur">Kuala Lumpur</a> and finish with a few days on <a href="/destinations/langkawi">Langkawi’s coast</a>.'],
+    ["umrah", "Planning Umrah", 'Our <a href="/destinations/makkah-and-madinah">Makkah and Madinah hotel guide</a> explains what to check about walking routes, gates and room access.'],
+  ]), "choosing-a-destination");
   body += cta(pg, ["Somewhere else?", "Ask us."], "These are the places we're asked about most, not the only ones. Tell us where you're thinking.", "Plan my trip");
-  return { path: pg.path, title: "Muslim-friendly destinations | Saphara Travel", desc: "Zanzibar, Doha, Dubai, Oman, Makkah and Madinah, Kuala Lumpur and Langkawi: hotels and trips booked and looked after on WhatsApp.", hero: true, body };
+  return { path: pg.path, title: "Muslim-friendly destinations | Saphara Travel", desc: "Zanzibar, Doha, Dubai, Oman, Makkah and Madinah, Kuala Lumpur, Langkawi and the Maldives. Compare where to stay, what to do and how to plan your trip.", hero: true, body };
 }
 
 export function destinationPage(slug) {
   const d = D[slug];
   const pg = new Page(`destinations/${slug}.html`);
-  const g = d.page || null; // the fuller destination template (21 Nov 2026); destinations without `page` keep the short layout
-  const fromMan = " From Manchester.";
-  const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span class="dest-airport">${countryFlag(pg, d.flag, d.country)}${d.code}</span><span>${d.flight_long}${fromMan}</span></div>`;
+  const g = d.page;
+  const flightFromManchester = `From Manchester: ${d.flight_long[0].toLowerCase()}${d.flight_long.slice(1)}`;
+  const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span class="dest-airport">${countryFlag(pg, d.flag, d.country)}${d.code}</span><span>${flightFromManchester}</span></div>`;
   let body = photoHero(pg, (g && g.hero) || d.hero || d.img, (g && g.hero_alt) || d.hero_alt || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
   body += crumbBar(pg, [["Destinations", "destinations/index.html"], [d.name, `destinations/${slug}.html`]]);
-  let facts = (g && g.facts) || [["Flight time", d.flight_long + fromMan], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
+  let facts = (g && g.facts) || [["Flight time", flightFromManchester], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
   if (slug === "makkah-and-madinah") facts = facts.filter((f) => f[0] !== "Food and alcohol");
   const checked = g && g.checked ? `<p class="updated dp-checked">Last checked: ${g.checked[1]}</p>` : "";
   const factsNote = (g && g.facts_note) || "Flight times are approximate and depend on the route and airline.";
   body += band("white", intro(["Good to know."], g && g.facts_intro ? g.facts_intro : "", null, checked) + '<dl class="facts rv" style="margin-top:var(--intro-content)">' + facts.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("") + `</dl><p class="small-print">${factsNote}</p>`);
   const whyHead = slug === "makkah-and-madinah" ? ["How we help."] : [d.name.length < 10 ? `Why ${d.name}.` : "Why go."];
   body += band("sand", intro(whyHead) + '<div class="why6 dest-why" style="margin-top:var(--intro-content)">' + d.why.map(([a, b], k) => `<div class="rv">${ico(C.DEST_ICONS[slug][k])}<div><h3>${a}</h3><p>${b}</p></div></div>`).join("") + "</div>");
-  if (g) body += destDetail(pg, d, g);
+  if (g) body += destDetail(pg, g);
   body += band("white", intro(["Trips that suit it."]) + '<div class="cards3" style="margin-top:var(--intro-content)">' + C.TRIPS.filter(([s]) => d.trips.includes(s)).map(([s, n, img, l]) => tripCard(pg, s, n, img, l, "")).join("") + "</div>");
   body += cta(pg, [d.name.length < 10 ? `${d.name}, sorted.` : "Sorted."], (g && g.cta) || "Tell us when you'd like to go and who's coming, and we'll send options compared like for like.", "Plan my trip", { cls: "white continue" });
   const q = "?dest=" + d.name.replace(/ /g, "+") + (slug === "makkah-and-madinah" ? "&amp;trip=Umrah+hotels" : "");
@@ -214,15 +219,15 @@ export function destinationPage(slug) {
 }
 
 /**
- * The fuller destination sections (21 Nov 2026, Zanzibar first). Each block shows only if its data is in the
- * destination's `page` object in content.json:
+ * Optional blocks in each destination's `page` object in content.json:
  *   areas  Where to stay: one card per area (name, where, best for, a line, and a tide or practical note)
- *   week   A sample week, day by day, in the style of our client itineraries (a theme per day, a few plain lines)
+ *   week   A sample itinerary, day by day
+ *   photo  A destination image and caption alongside the itinerary
  *   tips   Before you go: short grouped notes (getting there, entry, money, prayer, Ramadan...)
  *   faq    Questions people ask about the place
  * Bands keep alternating white and sand after "Why ...".
  */
-function destDetail(pg, d, g) {
+function destDetail(pg, g) {
   let out = "";
   if (g.areas) {
     const cards = g.areas.items.map((a) => `<article class="area rv"><div class="area-top"><h3>${a.name}</h3><p class="area-where">${ico("pin")}${a.where}</p></div><p class="area-best"><span>Best for</span> ${a.best}</p><p class="area-line">${a.line}</p>${a.note ? `<p class="area-note">${a.note}</p>` : ""}</article>`).join("");
@@ -230,15 +235,23 @@ function destDetail(pg, d, g) {
   }
   if (g.week) {
     const days = g.week.days.map(([, t, items], i) => `<li class="day rv"><p class="day-n"><small>Day</small> ${i + 1}</p><div class="day-b"><h3>${t}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></li>`).join("");
-    const side = `<div class="sticky-col">${intro(g.week.head, g.week.intro)}${g.week.handle ? `<div class="week-handle rv"><p class="pc-k">${g.week.handle_head}</p>${chips(g.week.handle)}</div>` : ""}</div>`;
-    out += band("sand", `<div class="split-cols week">${side}<ol class="days">${days}</ol></div>`, "sample-week");
+    const photo = g.photo && destinationPhoto(pg, g.photo);
+    const side = `<div class="sticky-col">${intro(g.week.head, g.week.intro)}${photo || ""}${g.week.handle ? `<div class="week-handle rv"><p class="pc-k">${g.week.handle_head}</p>${chips(g.week.handle)}</div>` : ""}</div>`;
+    out += band("sand", `<div class="split-cols week destination-copy">${side}<ol class="days">${days}</ol></div>`, "sample-week");
   }
   if (g.tips) {
     const blocks = g.tips.items.map(([icon, h, items]) => `<div class="tip rv">${ico(icon)}<div><h3>${h}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></div>`).join("");
-    out += band("white", intro(g.tips.head, g.tips.intro) + `<div class="tips">${blocks}</div>` + (g.tips.foot ? `<p class="small-print">${g.tips.foot}</p>` : ""), "before-you-go");
+    out += band("white", intro(g.tips.head, g.tips.intro) + `<div class="tips destination-copy">${blocks}</div>` + (g.tips.foot ? `<p class="small-print destination-copy">${g.tips.foot}</p>` : ""), "before-you-go");
   }
-  if (g.faq) out += band("sand", intro(g.faq.head) + `<div style="margin-top:var(--intro-content)">${faq(g.faq.items)}</div>`, "questions");
+  if (g.faq) out += band("sand", intro(g.faq.head) + `<div class="destination-copy" style="margin-top:var(--intro-content)">${faq(g.faq.items)}</div>`, "questions");
   return out;
+}
+
+function destinationPhoto(pg, [stem, alt, caption]) {
+  return `<figure class="destination-photo rv">
+    <img src="${pg.img(`destinations/${stem}.webp`)}" alt="${alt}" width="960" height="600" loading="lazy" decoding="async">
+    <figcaption>${caption}</figcaption>
+  </figure>`;
 }
 
 // ---------- guides ----------

@@ -1980,7 +1980,7 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .area-line { font-size: 15px; color: var(--grey); line-height: 1.5; }
 .area-note { margin-top: auto; padding-top: var(--s-12); border-top: 1px solid var(--rule); font-size: 14px; line-height: 1.45; }
 /* A sample week: intro and what we sort on the left (sticky on desktop), one white card per day */
-.week .intro + .week-handle { margin-top: var(--s-32); }
+.week .intro + .week-handle, .week .destination-photo + .week-handle { margin-top: var(--s-32); }
 .week-handle .chips { grid-template-columns: minmax(0, 1fr); }
 .week-handle .chips li { background: #fff; }
 .days { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--small-gap); counter-reset: none; }
@@ -2007,6 +2007,18 @@ body { font-feature-settings: "cv11" 1; } /* single-storey a: a touch warmer nex
 .tip li { font-size: 15px; line-height: 1.5; color: var(--grey); }
 .tip a, .area a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; overflow-wrap: anywhere; }
 .tips + .small-print, .areas + .small-print { margin-top: var(--s-24); }
+
+#choosing-a-destination .why6 { margin-top: var(--intro-content); }
+.destination-photo { margin: var(--s-24) 0 0; }
+.destination-photo img { display: block; width: 100%; height: auto; border-radius: var(--r-card); }
+.destination-photo figcaption { margin-top: var(--s-8); font-size: var(--fs-caption); color: var(--grey); }
+.destination-copy a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
 
 /* Instagram strip: it can never push the page sideways (1px overflow on /atol-and-financial-protection at 360px, 21 Nov 2026) */
 .igstrip { overflow-x: clip; }
