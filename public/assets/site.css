@@ -815,7 +815,7 @@ main { padding-bottom: 0; }
     align-items: end;
   }
   .trips.xp .trip-name, .trips.xp .trip-details { grid-area: 1 / 1; }
-  .trips.xp .trip-details { display: block; opacity: 0; }
+  .trips.xp .trip-details { display: block; opacity: 0; z-index: 1; }
   #trips .trips.xp .trip .trip-name {
     font-size: clamp(20px, 2.4cqi, 28px);
     max-width: calc(var(--trip-narrow-width) - 2 * var(--trip-inset));
