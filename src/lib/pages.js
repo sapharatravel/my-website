@@ -199,17 +199,19 @@ export function destinationPage(slug) {
   const pg = new Page(`destinations/${slug}.html`);
   const g = d.page;
   const flightFromManchester = `From Manchester: ${d.flight_long[0].toLowerCase()}${d.flight_long.slice(1)}`;
-  const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span class="dest-airport">${countryFlag(pg, d.flag, d.country)}${d.code}</span><span>${flightFromManchester}</span></div>`;
-  let body = photoHero(pg, (g && g.hero) || d.hero || d.img, (g && g.hero_alt) || d.hero_alt || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
+  const meta = `<div class="destination-meta"><span class="dest-airport">${countryFlag(pg, d.flag, d.country)}${d.code}</span><span>${flightFromManchester}</span></div>`;
+  let body = photoHero(pg, (g && g.hero) || d.hero || d.img, (g && g.hero_alt) || d.hero_alt || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan your ${d.name} trip` : "Plan this trip", meta);
   body += crumbBar(pg, [["Destinations", "destinations/index.html"], [d.name, `destinations/${slug}.html`]]);
+  if (g) body += destinationContents(g);
   let facts = (g && g.facts) || [["Flight time", flightFromManchester], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
   if (slug === "makkah-and-madinah") facts = facts.filter((f) => f[0] !== "Food and alcohol");
   const checked = g && g.checked ? `<p class="updated dp-checked">Last checked: ${g.checked[1]}</p>` : "";
   const factsNote = (g && g.facts_note) || "Flight times are approximate and depend on the route and airline.";
-  body += band("white", intro(["Good to know."], g && g.facts_intro ? g.facts_intro : "", null, checked) + '<dl class="facts rv" style="margin-top:var(--intro-content)">' + facts.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("") + `</dl><p class="small-print">${factsNote}</p>`);
+  body += band("white", intro(["Good to know."], g?.facts_intro, null, checked) + `<dl class="facts destination-facts rv" style="--facts-wide:${facts.length === 8 ? 4 : 3}">` + facts.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("") + `</dl><p class="small-print">${factsNote}</p>`, "quick-facts");
   const whyHead = slug === "makkah-and-madinah" ? ["How we help."] : [d.name.length < 10 ? `Why ${d.name}.` : "Why go."];
   body += band("sand", intro(whyHead) + '<div class="why6 dest-why" style="margin-top:var(--intro-content)">' + d.why.map(([a, b], k) => `<div class="rv">${ico(C.DEST_ICONS[slug][k])}<div><h3>${a}</h3><p>${b}</p></div></div>`).join("") + "</div>");
   if (g) body += destDetail(pg, g);
+  if (g?.related) body += destinationRelated(pg, g.related);
   body += band("white", intro(["Trips that suit it."]) + '<div class="cards3" style="margin-top:var(--intro-content)">' + C.TRIPS.filter(([s]) => d.trips.includes(s)).map(([s, n, img, l]) => tripCard(pg, s, n, img, l, "")).join("") + "</div>");
   body += cta(pg, [d.name.length < 10 ? `${d.name}, sorted.` : "Sorted."], (g && g.cta) || "Tell us when you'd like to go and who's coming, and we'll send options compared like for like.", "Plan my trip", { cls: "white continue" });
   const q = "?dest=" + d.name.replace(/ /g, "+") + (slug === "makkah-and-madinah" ? "&amp;trip=Umrah+hotels" : "");
@@ -218,38 +220,72 @@ export function destinationPage(slug) {
   return { path: pg.path, title: d.title || `${d.name} holidays and hotels | Saphara Travel`, desc: `${d.name}: ${d.intro} ${d.flight_long}`, hero: true, body, og: g && g.og ? g.og : undefined };
 }
 
-/**
- * Optional blocks in each destination's `page` object in content.json:
- *   areas  Where to stay: one card per area (name, where, best for, a line, and a tide or practical note)
- *   week   A sample itinerary, day by day
- *   photo  A destination image and caption alongside the itinerary
- *   tips   Before you go: short grouped notes (getting there, entry, money, prayer, Ramadan...)
- *   faq    Questions people ask about the place
- * Bands keep alternating white and sand after "Why ...".
- */
+function destinationContents(g) {
+  const sections = [
+    [true, "quick-facts", "Quick facts"],
+    [g.season, "best-time-to-visit", "When to go"],
+    [g.areas, "where-to-stay", "Where to stay"],
+    [g.sights, "things-to-see-and-do", "Things to see and do"],
+    [g.week, "sample-week", "Itinerary"],
+    [g.tips, "before-you-go", "Before you go"],
+    [g.faq, "questions", "FAQs"],
+    [g.related, "related-destinations", "Related guides"],
+  ];
+  return `<nav class="col destination-contents" aria-label="On this page"><ul>${sections
+    .filter(([content]) => content)
+    .map(([, id, label]) => `<li><a href="#${id}">${label}</a></li>`).join("")}</ul></nav>`;
+}
+
+function destinationSeason({ periods, source }) {
+  const [href, label] = source;
+  const cards = periods.map(([title, copy]) => ["calendar", title, copy]);
+  return band("white destination-copy", intro(["Best time to visit."]) + why(cards) +
+    `<p class="small-print"><a href="${href}">${label}</a></p>`, "best-time-to-visit");
+}
+
+function destinationSights(pg, { heading, photo, items }) {
+  const cards = items.map(([icon, title, copy]) => `<article class="destination-sight rv">
+    ${ico(icon)}<div><h3>${title}</h3><p>${copy}</p></div>
+  </article>`).join("");
+  return band("sand destination-copy", intro([heading]) + `<div class="destination-sights">
+    ${destinationPhoto(pg, photo, true)}
+    <div class="destination-sight-list">${cards}</div>
+  </div>`, "things-to-see-and-do");
+}
+
+function destinationRelated(pg, related) {
+  const links = related.map(([slug, copy]) => {
+    const other = D[slug];
+    return `<li>${countryFlag(pg, other.flag)}<div><h3><a href="${pg.u(`destinations/${slug}.html`)}">${other.name}</a></h3><p>${copy}</p></div></li>`;
+  }).join("");
+  return band("sand destination-copy", intro(["Related destination guides."]) +
+    `<ul class="destination-related">${links}</ul><p class="small-print"><a href="${pg.u("destinations/index.html")}">Browse all destination guides</a></p>`, "related-destinations");
+}
+
 function destDetail(pg, g) {
-  let out = "";
+  let out = g.season ? destinationSeason(g.season) : "";
   if (g.areas) {
     const cards = g.areas.items.map((a) => `<article class="area rv"><div class="area-top"><h3>${a.name}</h3><p class="area-where">${ico("pin")}${a.where}</p></div><p class="area-best"><span>Best for</span> ${a.best}</p><p class="area-line">${a.line}</p>${a.note ? `<p class="area-note">${a.note}</p>` : ""}</article>`).join("");
     out += band("white", intro(g.areas.head, g.areas.intro) + `<div class="areas">${cards}</div>` + (g.areas.foot ? `<p class="small-print">${g.areas.foot}</p>` : ""), "where-to-stay");
   }
+  if (g.sights) out += destinationSights(pg, g.sights);
   if (g.week) {
     const days = g.week.days.map(([, t, items], i) => `<li class="day rv"><p class="day-n"><small>Day</small> ${i + 1}</p><div class="day-b"><h3>${t}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></li>`).join("");
     const photo = g.photo && destinationPhoto(pg, g.photo);
     const side = `<div class="sticky-col">${intro(g.week.head, g.week.intro)}${photo || ""}${g.week.handle ? `<div class="week-handle rv"><p class="pc-k">${g.week.handle_head}</p>${chips(g.week.handle)}</div>` : ""}</div>`;
-    out += band("sand", `<div class="split-cols week destination-copy">${side}<ol class="days">${days}</ol></div>`, "sample-week");
+    out += band(g.sights ? "white" : "sand", `<div class="split-cols week destination-copy">${side}<ol class="days">${days}</ol></div>`, "sample-week");
   }
   if (g.tips) {
     const blocks = g.tips.items.map(([icon, h, items]) => `<div class="tip rv">${ico(icon)}<div><h3>${h}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></div>`).join("");
-    out += band("white", intro(g.tips.head, g.tips.intro) + `<div class="tips destination-copy">${blocks}</div>` + (g.tips.foot ? `<p class="small-print destination-copy">${g.tips.foot}</p>` : ""), "before-you-go");
+    out += band(g.sights ? "sand" : "white", intro(g.tips.head, g.tips.intro) + `<div class="tips destination-copy">${blocks}</div>` + (g.tips.foot ? `<p class="small-print destination-copy">${g.tips.foot}</p>` : ""), "before-you-go");
   }
-  if (g.faq) out += band("sand", intro(g.faq.head) + `<div class="destination-copy" style="margin-top:var(--intro-content)">${faq(g.faq.items)}</div>`, "questions");
+  if (g.faq) out += band(g.sights ? "white" : "sand", intro(g.faq.head) + `<div class="destination-copy" style="margin-top:var(--intro-content)">${faq(g.faq.items)}</div>`, "questions");
   return out;
 }
 
-function destinationPhoto(pg, [stem, alt, caption]) {
-  return `<figure class="destination-photo rv">
-    <img src="${pg.img(`destinations/${stem}.webp`)}" alt="${alt}" width="960" height="600" loading="lazy" decoding="async">
+function destinationPhoto(pg, [stem, alt, caption], feature = false) {
+  return `<figure class="destination-photo${feature ? " destination-photo--feature" : ""} rv">
+    <img src="${pg.img(`destinations/${stem}.webp`)}" alt="${alt}" width="960" height="${feature ? 720 : 600}" loading="lazy" decoding="async">
     <figcaption>${caption}</figcaption>
   </figure>`;
 }

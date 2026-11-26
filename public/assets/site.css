@@ -3720,3 +3720,143 @@ body.home #destinations .dest :is(.code, .time) {
     backdrop-filter: none;
   }
 }
+
+/* Destination guides */
+.destination-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  gap: 6px 12px;
+  margin-top: var(--s-16);
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 248, 228, .32);
+  border-radius: var(--r-small);
+  color: #fffaf2;
+  background: #353129;
+  font-size: var(--fs-caption);
+}
+.destination-meta .dest-airport { flex: none; }
+
+.destination-contents ul,
+.destination-related {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-8);
+  padding: 0;
+}
+.destination-contents ul { margin: 0; }
+.destination-contents a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-pill);
+  background: var(--sand);
+  color: var(--ink);
+  font-size: var(--fs-caption);
+  text-decoration: none;
+}
+.destination-contents a:hover { text-decoration: underline; }
+.destination-contents + #quick-facts { padding-top: var(--s-40); }
+
+.destination-facts { margin-top: var(--intro-content); }
+@media (max-width: 359px) {
+  .destination-facts { grid-template-columns: minmax(0, 1fr); }
+}
+@media (min-width: 1024px) {
+  .destination-facts { grid-template-columns: repeat(var(--facts-wide), minmax(0, 1fr)); }
+}
+
+#sample-week.white .day { background: var(--sand); }
+
+#best-time-to-visit + #where-to-stay { padding-top: 0; }
+#best-time-to-visit .small-print,
+#related-destinations .small-print { margin-top: var(--s-16); }
+
+.destination-sights {
+  display: grid;
+  gap: var(--s-24);
+  align-items: start;
+}
+.destination-sight-list {
+  display: grid;
+  gap: var(--small-gap);
+}
+.destination-sight {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: var(--s-12);
+  padding: var(--s-16);
+  border-radius: var(--r-card);
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.destination-sight .ico { width: 24px; height: 24px; margin-top: 2px; stroke-width: 1.5; }
+.destination-sight h3,
+.destination-related h3 { font: 600 clamp(23px, 2.4vw, 31px)/1.15 var(--display); }
+.destination-sight p,
+.destination-related p { margin-top: var(--s-4); font-size: 15px; color: var(--grey); }
+
+.destination-photo--feature {
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  margin: 0;
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+.destination-photo--feature img { aspect-ratio: 4 / 3; object-fit: cover; }
+.destination-photo--feature figcaption {
+  position: absolute;
+  inset: auto 8px 8px;
+  margin: 0;
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 248, 228, .32);
+  border-radius: var(--r-small);
+  color: #fffaf2;
+  background: #353129;
+}
+
+@supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+  .destination-meta,
+  .destination-photo--feature figcaption {
+    background: linear-gradient(135deg, rgba(50, 43, 34, .82), rgba(22, 20, 16, .74));
+    -webkit-backdrop-filter: blur(8px) saturate(.92);
+    backdrop-filter: blur(8px) saturate(.92);
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .destination-meta,
+  .destination-photo--feature figcaption {
+    background: #353129;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+.destination-related { margin-bottom: 0; }
+.destination-related li {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: var(--s-12);
+  flex: 1 1 245px;
+  min-width: 0;
+  padding: var(--s-16);
+  border-radius: var(--r-card);
+  background: #fff;
+}
+.destination-related .country-flag { margin-top: 5px; }
+
+@media (min-width: 600px) {
+  .destination-sight-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .destination-sight { padding: var(--s-24); }
+}
+@media (min-width: 1024px) {
+  .destination-sights { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s-32); }
+  .destination-photo--feature figcaption { inset: auto 12px 12px; }
+}

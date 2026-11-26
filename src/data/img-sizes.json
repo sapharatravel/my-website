@@ -687,6 +687,54 @@
   }
  },
  "photos": {
+  "destinations/zanzibar-stone-town.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/doha-fanar.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/dubai-fahidi.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/oman-shuraija.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/makkah-hotel-corridor.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/kl-masjid-jamek.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/langkawi-rainforest-stay.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/maldives-island-aerial.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
   "business-doha-mia.webp": {
    "full": 1200,
    "h": 800,
