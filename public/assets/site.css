@@ -830,10 +830,8 @@ main { padding-bottom: 0; }
     overflow: visible;
     clip: auto;
     white-space: normal;
-    font-size: min(var(--tier), calc((var(--trip-wide-width) - 2 * var(--trip-inset)) / (var(--fit) * var(--fit-k, 1))));
+    font-size: clamp(28px, 2.2vw, 34px);
   }
-  .trips.xp .trip h3 .beat { white-space: nowrap; }
-  html.no-kensington .trips.xp .trip h3 { --fit-k: 1.9; }
   .trips.xp .trip .actions { margin-top: var(--s-24); }
   .trips.xp .trip:not(.on) .trip-details a { pointer-events: none; }
   .trips.xp .trip.on .trip-name { opacity: 0; }
