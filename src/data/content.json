@@ -72,14 +72,10 @@
       "page": {
         "hero": "dest-hero-zanzibar",
         "hero_alt": "A bicycle by a carved wooden door in Stone Town, Zanzibar",
-        "checked": [
-          "2026-11-21",
-          "21 November 2026"
-        ],
         "facts": [
           [
-            "Flight time",
-            "About 13 hours with one stop from Manchester."
+            "How long to stay",
+            "About a week for town and beach"
           ],
           [
             "Best time to go",
@@ -110,7 +106,6 @@
             "We check each hotel and tell you plainly."
           ]
         ],
-        "facts_note": "Flight times are approximate and depend on the route and airline.",
         "areas": {
           "head": [
             "Where to stay."
@@ -122,42 +117,97 @@
               "where": "North-west coast",
               "best": "swimming at any time of day",
               "line": "A long, soft beach where the water stays deep close to shore. Sunsets over the sea.",
-              "note": "Tide: hardly changes the swimming."
+              "note": "Tide: hardly changes the swimming.",
+              "photo": [
+                "stay-kendwa",
+                "Soft sand and turquoise water at Kendwa Beach, Zanzibar",
+                {
+                  "artist": "Zoheb",
+                  "file": "https://commons.wikimedia.org/wiki/File:Kendwa_Beach_(Sunset_Kendwa_Hotel).JPG",
+                  "license": "CC BY-SA 3.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/3.0"
+                }
+              ]
             },
             {
               "name": "Nungwi",
               "where": "Northern tip",
               "best": "first visits, boat trips and sunsets",
               "line": "Livelier, with more places to eat and dhows coming and going. Busy in parts, so where the hotel sits on the beach matters.",
-              "note": "Tide: small, swimmable most of the day."
+              "note": "Tide: small, swimmable most of the day.",
+              "photo": [
+                "stay-nungwi",
+                "The beach and clear sea at Nungwi, Zanzibar",
+                {
+                  "artist": "Niceley",
+                  "file": "https://commons.wikimedia.org/wiki/File:Nungwi-Beach-Zanzibar.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
             },
             {
               "name": "Matemwe and Pongwe",
               "where": "North-east coast",
               "best": "quiet stays for couples",
               "line": "Calm villages, palm-lined sand and the closest beaches to Mnemba Atoll for snorkelling.",
-              "note": "Tide: plan your swims around high tide."
+              "note": "Tide: plan your swims around high tide.",
+              "photo": [
+                "stay-matemwe",
+                "Palm-lined beach on the Matemwe coast of Zanzibar",
+                {
+                  "artist": "Olivier Lejade from France",
+                  "file": "https://commons.wikimedia.org/wiki/File:Beach_at_Matemwe.jpg",
+                  "license": "CC BY-SA 2.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+                }
+              ]
             },
             {
               "name": "Paje and Jambiani",
               "where": "South-east coast",
               "best": "kitesurfing and beach cafes",
               "line": "Wide white beaches and a shallow turquoise lagoon. Lovely at high tide; at low tide you walk out across the sand.",
-              "note": "Tide: big. The sea goes out a long way."
+              "note": "Tide: big. The sea goes out a long way.",
+              "photo": [
+                "stay-paje",
+                "Paje Beach on Zanzibar’s south-east coast at low tide",
+                {
+                  "artist": "Matt Kieffer from London, United Kingdom",
+                  "file": "https://commons.wikimedia.org/wiki/File:Paje_beach_at_low_tide.jpg",
+                  "license": "CC BY-SA 2.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+                }
+              ]
             },
             {
               "name": "Michamvi",
               "where": "East coast peninsula",
               "best": "sunsets on the east side",
               "line": "A narrow strip with the ocean on one side and a calm bay on the other, so you can watch the sun go down over the water.",
-              "note": "Tide: big on both sides."
+              "note": "Tide: big on both sides.",
+              "photo": [
+                "stay-michamvi",
+                "The Rock Restaurant off Pingwe on the Michamvi peninsula",
+                {
+                  "artist": "Rod Waddington",
+                  "file": "https://commons.wikimedia.org/wiki/File:The_Rock_Restaurant,_Zanzibar_(53801362304).jpg",
+                  "license": "CC BY-SA 2.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+                }
+              ]
             },
             {
               "name": "Stone Town",
               "where": "West coast, near the airport",
               "best": "a night or two of history and food",
               "line": "Narrow streets, carved doors, markets and mosques. Most people stay one or two nights, then head to the beach.",
-              "note": "A short drive from the airport."
+              "note": "A short drive from the airport.",
+              "photo": [
+                "stay-stone-town",
+                "A carved wooden doorway in Stone Town, Zanzibar",
+                null
+              ]
             }
           ],
           "foot": "Tides change every day and are biggest around the full and new moon."
@@ -166,82 +216,62 @@
           "head": [
             "A week in Zanzibar."
           ],
-          "intro": "A sample plan to show how a trip can flow: two nights in Stone Town, then five on the beach. We shape it around your dates, your pace and your hotel.",
-          "handle_head": "What we sort for you",
-          "handle": [
-            "Airport and hotel transfers",
-            "A private guide in Stone Town",
-            "Requests to the hotel, from a honeymoon set-up to a quiet room",
-            "Questions about meat, alcohol and privacy, asked before you book"
-          ],
+          "intro": "Spend two nights in Stone Town, then slow the pace on the coast. Use the first clear morning for a boat trip.",
           "days": [
             [
               "Day 1",
-              "Arrive and slow down",
+              "Arrive in Stone Town",
               [
-                "Land and transfer to your Stone Town hotel, a short drive away.",
-                "Freshen up, pray and rest.",
-                "Walk to Forodhani Gardens near sunset for the evening food stalls by the water."
+                "Leave the afternoon free after the flight. Head to Forodhani Gardens at dusk if you have the energy."
               ]
             ],
             [
               "Day 2",
-              "Stone Town on foot",
+              "A full day in town",
               [
-                "A morning walk with a private guide: the Old Fort, the carved doors and the narrow lanes.",
-                "Darajani Market for spices, fruit and the morning bustle.",
-                "An afternoon boat to Prison Island to see the giant tortoises.",
-                "Maghrib by the sea, then dinner in town."
+                "Start with a guided walk, then leave the afternoon open for a museum, a coffee or a boat outing."
               ]
             ],
             [
               "Day 3",
-              "Spices, forest, then the coast",
+              "Move to the coast",
               [
-                "A spice farm tour on the way out of town: cloves, cinnamon, vanilla and fresh fruit.",
-                "Jozani Forest to see the red colobus monkeys.",
-                "Check in at your beach hotel in the afternoon."
+                "Ask your driver to include either a spice farm or Jozani Forest on the transfer. Doing one leaves time for a swim after check-in."
               ]
             ],
             [
               "Day 4",
-              "Nothing planned",
+              "A beach day",
               [
-                "Breakfast, the pool, the beach. That's the plan.",
-                "On the east coast, check the tide times and swim at high water.",
-                "A quiet dinner, or an early night."
+                "Spend the whole day close to the hotel. On the east coast, put your swim at high tide."
               ]
             ],
             [
               "Day 5",
-              "Out on the water",
+              "Leave a window for the water",
               [
-                "A snorkelling trip to Mnemba Atoll, where you may see dolphins on the way out.",
-                "Or a dhow day with a sandbank stop and lunch on the boat."
+                "Book a dhow or snorkelling trip for a suitable forecast. Keep tomorrow free in case the operator moves it."
               ]
             ],
             [
               "Day 6",
-              "Your choice",
+              "Choose your pace",
               [
-                "A sunset dhow cruise, a spa afternoon or a first kitesurfing lesson in Paje.",
-                "If it's a Friday, ask us about Jumu'ah near your hotel."
+                "Try a short kitesurfing lesson around Paje or use the day for a spa visit and lunch."
               ]
             ],
             [
               "Day 7",
-              "Last full day",
+              "One last morning outdoors",
               [
-                "A slow morning, a long lunch and one more swim.",
-                "Pick up spices or a kanga cloth to take home."
+                "Keep the last full day flexible. Save shopping for the morning if you still want to pick up spices or cloth."
               ]
             ],
             [
               "Day 8",
-              "Home",
+              "Return to the airport",
               [
-                "We can ask the hotel for a late check-out.",
-                "Allow about an hour or more to reach the airport from the north and east coasts."
+                "Check out with time for the road transfer. Ask about a day room if you have a late flight."
               ]
             ]
           ]
@@ -250,64 +280,38 @@
           "head": [
             "Before you go."
           ],
-          "intro": "The practical bits, in one place.",
+          "intro": "",
           "items": [
             [
-              "flights",
-              "Getting there",
-              [
-                "There are no direct flights from Manchester. Most routes change once, in Doha, Dubai, Muscat or Istanbul.",
-                "The airport is just outside Stone Town. Transfers to the north and east coasts take about an hour or more."
-              ]
-            ],
-            [
               "shield",
-              "Visa and insurance",
+              "Entry and insurance",
               [
-                "British passport holders need a visa. The e-visa is the easiest way: apply online before you fly.",
-                "Your passport needs at least six months left from the day you arrive, and a blank page.",
-                "If you land in Zanzibar first, you also need the government's inbound travel insurance from the Zanzibar Insurance Corporation, even if you have your own policy. Buy it only from the official site, <a href=\"https://www.visitzanzibar.go.tz\">visitzanzibar.go.tz</a>.",
-                "Rules change, so check <a href=\"https://www.gov.uk/foreign-travel-advice/tanzania/entry-requirements\">GOV.UK</a> before you travel."
+                "Check <a href=\"https://www.gov.uk/foreign-travel-advice/tanzania/entry-requirements\">UK advice for Tanzania</a> for the visa, passport and Zanzibar insurance requirements. Use <a href=\"https://www.visitzanzibar.go.tz\">Zanzibar’s official site</a> for the island policy."
               ]
             ],
             [
-              "fee",
-              "Money",
+              "transfers",
+              "Transfers between coasts",
               [
-                "The local currency is the Tanzanian shilling.",
-                "Hotels, transfers and trips are often priced in US dollars.",
-                "Keep some small notes for markets, tips and taxis."
-              ]
-            ],
-            [
-              "beach",
-              "Weather",
-              [
-                "June to October is dry, sunny and a little cooler.",
-                "December to February is hot and humid, and it's the busiest time.",
-                "The long rains fall in April and May, when some hotels close. Shorter rains come around November."
+                "Ask for the road transfer time from your exact hotel. Keep changeover day light if you’re crossing the island."
               ]
             ],
             [
               "pray",
-              "Prayer and Ramadan",
+              "Food and prayer during Ramadan",
               [
-                "There are masjids across Stone Town and in the villages. Ask your hotel for the qibla and a prayer mat, or we can request one before you arrive.",
-                "In Ramadan, many cafes and restaurants outside hotels close in the day and open after sunset. Hotels serve guests as normal.",
-                "Ramadan 2027 is expected to begin around 8 February, depending on the moon sighting."
+                "Ask your resort what it serves in the daytime and where the nearest mosque is. Some independent cafés keep different hours in Ramadan."
               ]
             ],
             [
               "people",
-              "Dress and manners",
+              "What to pack",
               [
-                "Modest dress is expected in Stone Town and the villages, for men and women.",
-                "Keep swimwear for the beach and the pool.",
-                "A few words go a long way: jambo (hello), asante (thank you), karibu (welcome)."
+                "Bring a light layer that covers shoulders and knees for Stone Town. Keep swimwear to the beach and pool."
               ]
             ]
           ],
-          "foot": "Entry details checked against GOV.UK travel advice on 21 November 2026. Rules, prices and opening times change."
+          "foot": "Entry information was last checked on 21 November 2026. Check official advice again near departure."
         },
         "faq": {
           "head": [
@@ -315,28 +319,89 @@
           ],
           "items": [
             [
-              "Is Zanzibar good for a Muslim honeymoon?",
-              "For many couples, yes. It's a mostly Muslim island with quiet villas, private pools and long beaches. Many resorts serve alcohol and cater to international guests, so we check each hotel and tell you plainly what to expect."
+              "Can I swim from every beach at low tide?",
+              "No. The sea retreats much further on parts of the east coast. Check the hotel’s beach at both tides if swimming is central to the trip."
             ],
             [
-              "Is the food halal?",
-              "Most people on the island are Muslim, but resorts cater to international guests, so it's best not to assume. We ask each hotel about its meat and kitchens before you book and tell you what we find."
+              "Can you help arrange a private guide and airport transfer?",
+              "Yes. Tell us how many bags and passengers you have and whether you want a guide for Stone Town or just transport between hotels."
             ],
             [
-              "Which side of the island should we stay on?",
-              "If you want to swim whenever you like, the north: Kendwa or Nungwi. If you'd rather have quiet, wide beaches and don't mind planning around the tide, the east. Splitting your stay between the two works well."
-            ],
-            [
-              "What do we need before we fly?",
-              "A visa (the e-visa is easiest), a passport with at least six months left, and Zanzibar's government travel insurance if you land there first. Rules change, so check GOV.UK before you travel."
-            ],
-            [
-              "Can we add another stop?",
-              "Yes. Stone Town and a beach is the classic pairing, and a stopover in Doha or Dubai works well on the way. Tell us what you have in mind."
+              "Is a private pool always screened?",
+              "It depends on the villa. Ask whether the pool is visible from pathways, neighbouring decks or upper floors."
             ]
           ]
         },
-        "cta": "Tell us when you'd like to go and who's coming. We'll suggest the right coast and hotels, compared like for like."
+        "cta": "Tell us when you'd like to go and who's coming. We'll suggest the right coast and hotels, compared like for like.",
+        "photo": [
+          "stay-zanzibar-resort",
+          "Palm trees and resort grounds on Zanzibar’s south coast",
+          "A south-coast stay can mean longer drives for some excursions."
+        ],
+        "season": {
+          "periods": [
+            [
+              "June to October",
+              "The drier, slightly cooler stretch is a good choice for a first visit, especially if you want Stone Town walks as well as beach time."
+            ],
+            [
+              "December to February",
+              "Warmer and more humid. Book early if you’re travelling over the Christmas or New Year holidays."
+            ],
+            [
+              "April and May",
+              "The long rains can interrupt boat trips and some hotels close. Check opening dates and keep your plans flexible."
+            ]
+          ],
+          "source": [
+            "https://www.meteo.go.tz/index.php/ten_days_forecasts",
+            "Tanzania Meteorological Authority forecasts"
+          ]
+        },
+        "sights": {
+          "heading": "Things to see and do.",
+          "photo": [
+            "zanzibar-mnemba",
+            "Aerial view of Mnemba Island and the surrounding turquoise reef",
+            "Mnemba and the surrounding reef off Zanzibar’s north-east coast."
+          ],
+          "items": [
+            [
+              "map",
+              "Walk Stone Town",
+              "Start with the Old Fort and the lanes around Darajani Market. Read the <a href=\"https://whc.unesco.org/en/list/173/\">UNESCO guide to Stone Town</a> for the history behind the buildings."
+            ],
+            [
+              "dining",
+              "Visit a spice farm",
+              "Set aside a morning to see how cloves, cinnamon and vanilla grow. Taking a tour between your town and beach stays saves a separate drive."
+            ],
+            [
+              "excursions",
+              "Explore Jozani Forest",
+              "A guided walk is a chance to see the Zanzibar red colobus and learn about the forest. Keep your distance from wildlife."
+            ],
+            [
+              "beach",
+              "Plan a day on the water",
+              "Choose a snorkelling trip or dhow outing around the wind and tide. If swimming straight from the beach matters most, compare Kendwa and the east coast in <a href=\"#where-to-stay\">where to stay</a>."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "oman",
+            "Pair Stone Town and the beach with a few days of souqs, mosques and coastal walks in Muscat."
+          ],
+          [
+            "maldives",
+            "Compare a Zanzibar beach base with a Maldives resort if swimming and snorkelling are the main plans."
+          ],
+          [
+            "doha",
+            "See what fits into a short city stopover if your flights connect through Qatar."
+          ]
+        ]
       }
     },
     {
@@ -373,7 +438,242 @@
       "city": "Doha",
       "title": "Muslim-friendly Doha holidays and hotels | Saphara Travel",
       "hero": "dest-hero-doha",
-      "hero_alt": "A quiet lane in Souq Waqif, Doha"
+      "hero_alt": "A quiet lane in Souq Waqif, Doha",
+      "page": {
+        "lead": "Start in the lanes of Souq Waqif, spend a day by the water and leave time for a desert trip. Doha works as a short stopover or a holiday in its own right.",
+        "photo": [
+          "doha-museum",
+          "Arches at Doha’s Museum of Islamic Art",
+          "The Museum of Islamic Art looks across the Corniche to Doha’s skyline."
+        ],
+        "facts": [
+          [
+            "How long to stay",
+            "Two nights for a stopover"
+          ],
+          [
+            "Best time to go",
+            "November to March"
+          ],
+          [
+            "Suits",
+            "Families, couples, stopovers and business trips"
+          ],
+          [
+            "Halal food",
+            "Widely available. Ask about preparation and alcohol service at your hotel."
+          ],
+          [
+            "Prayer",
+            "Mosques across the city, including Fanar by Souq Waqif."
+          ],
+          [
+            "Money",
+            "Qatari riyal (QAR)."
+          ]
+        ],
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "items": [
+            {
+              "name": "Souq Waqif and Msheireb",
+              "where": "Central Doha",
+              "best": "a short stopover on foot",
+              "line": "Stay near the market, Msheireb’s streets and the Corniche. This is a good base if you’re fitting the city into two nights.",
+              "note": "Ask for a quieter room away from the market lanes.",
+              "photo": [
+                "stay-msheireb",
+                "Architecture along Abdullah Bin Thani Street in Msheireb, central Doha",
+                {
+                  "artist": "bobbyqat @ Mapillary.com",
+                  "file": "https://commons.wikimedia.org/wiki/File:Musheireb_downtown_on_Abdullah_Bin_Thani_Street_in_2021.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "West Bay",
+              "where": "North of the Corniche",
+              "best": "work trips and skyline views",
+              "line": "High-rise hotels put you near offices and the Exhibition and Convention Centre. Pick the hotel around where you actually need to be.",
+              "note": "Ask whether the rate includes beach access if that matters.",
+              "photo": [
+                "stay-west-bay",
+                "West Bay’s towers seen from the coast in Doha",
+                null
+              ]
+            },
+            {
+              "name": "Katara and the coast",
+              "where": "North of West Bay",
+              "best": "beach time with city outings",
+              "line": "Stay on the coast if the pool and beach will do most of the work. If you’re looking at Banana Island or Salwa, allow for the boat or road transfer when you plan city days.",
+              "note": "Check pool rules, shade and transport for the exact resort.",
+              "photo": [
+                "stay-katara",
+                "The lighthouse at Katara Beach in Doha",
+                {
+                  "artist": "Isabell Schulz @ Flickr.com",
+                  "file": "https://commons.wikimedia.org/wiki/File:Replica_lighthouse_on_Katara_Beach.jpg",
+                  "license": "CC BY-SA 2.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/2.0"
+                }
+              ]
+            }
+          ]
+        },
+        "week": {
+          "head": [
+            "Two days in Doha."
+          ],
+          "intro": "This works with two nights and at least one full day. Use your flight times to decide whether the second day can stretch beyond the city.",
+          "days": [
+            [
+              "Day 1",
+              "Start near the Corniche",
+              [
+                "Drop your bags and keep the market, mosque and museum in the same part of the day. End with dinner near the hotel so you’re not crossing the city twice."
+              ]
+            ],
+            [
+              "Day 2",
+              "Choose Katara or the desert",
+              [
+                "Keep a coastal morning if you’re flying out later that day. Save the Inland Sea for a free half-day with a generous buffer before the flight."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "items": [
+            [
+              "transfers",
+              "Airport to hotel",
+              [
+                "For a short stopover, check that the flight times give you two useful days. An early landing may mean waiting for your room."
+              ]
+            ],
+            [
+              "dining",
+              "Food and alcohol",
+              [
+                "Licensed venues, including some hotel restaurants, can serve alcohol. Tell us if you’d like an alcohol-free minibar or a hotel with no bar."
+              ]
+            ],
+            [
+              "shield",
+              "Before you fly",
+              [
+                "Check the <a href=\"https://www.gov.uk/foreign-travel-advice/qatar\">latest UK travel advice for Qatar</a>, including entry requirements for your passport, before booking or travelling.",
+                "Check mosque and attraction visitor hours around Friday prayers and public holidays."
+              ]
+            ],
+            [
+              "people",
+              "Dress and getting around",
+              [
+                "Dress modestly in public and check the venue’s rules at mosques. Use the metro for stops close to stations and allow for heat or walking distances when planning the last stretch."
+              ]
+            ]
+          ],
+          "foot": "Visitor information checked on 26 November 2026. See <a href=\"https://visitqatar.com/intl-en/things-to-do/art-culture/museums/museum-of-islamic-art\">Visit Qatar’s Museum of Islamic Art guide</a> for current visitor information.",
+          "intro": ""
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Can I use a hotel room after an overnight flight?",
+              "Ask for guaranteed early check-in or book the previous night if you need to sleep as soon as you land. Confirm which option the hotel can honour."
+            ],
+            [
+              "What should I tell you about a Doha meeting or exhibition?",
+              "Send the venue address, timings and room count. We can use those to compare <a href=\"/trips/business\">business hotels and team stays</a>."
+            ],
+            [
+              "What if we want a resort day during a city stay?",
+              "Check day passes for your dates and whether beach, pool and changing facilities are included. Reserve time for the journey back."
+            ]
+          ]
+        },
+        "cta": "Tell us whether Doha is your whole trip or a stop on the way. We’ll help you choose a base around your timings.",
+        "season": {
+          "periods": [
+            [
+              "November to March",
+              "The most comfortable stretch for the Corniche, evenings at Souq Waqif and a trip into the desert. Bring a light layer for breezy evenings."
+            ],
+            [
+              "April and October",
+              "Consider these shoulder months for a resort stay. Plan walks and outdoor trips for earlier or later in the day."
+            ],
+            [
+              "Summer",
+              "Build the day around air-conditioned museums and indoor stops. Check how much shade your hotel has if you’re travelling with children."
+            ]
+          ],
+          "source": [
+            "https://visitqatar.com/intl-en/about-qatar/climate",
+            "Visit Qatar’s climate guide"
+          ]
+        },
+        "sights": {
+          "heading": "Things to see and do.",
+          "photo": [
+            "doha-fanar",
+            "The spiral minaret of Fanar in Doha at dusk",
+            "Fanar’s spiral minaret is easy to spot from Souq Waqif."
+          ],
+          "items": [
+            [
+              "mosque",
+              "Souq Waqif and Fanar",
+              "Explore the market and make time for the <a href=\"https://visitqatar.com/intl-en/things-to-do/art-culture/mosques/sheikh-abdulla-bin-zaid-almahmoud\">Fanar Islamic Cultural Centre</a>. It’s a working mosque, so check visitor times."
+            ],
+            [
+              "city",
+              "Museum of Islamic Art and MIA Park",
+              "Give the galleries at least part of a morning. Follow with a walk in the park for a view across the water."
+            ],
+            [
+              "pin",
+              "Katara and the waterfront",
+              "Walk between Katara’s cultural venues and the waterfront. Check the programme if you want to catch an exhibition."
+            ],
+            [
+              "excursions",
+              "Khor Al Adaid, the Inland Sea",
+              "Set aside a separate half-day or longer for a guided desert outing. <a href=\"https://visitqatar.com/intl-en/things-to-do/adventure-sports/desert/khor-al-adaid\">Visit Qatar’s Inland Sea guide</a> covers the terrain and getting there."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "zanzibar",
+            "Continue to Stone Town and Zanzibar’s beaches if you’re building in a Gulf stopover."
+          ],
+          [
+            "dubai",
+            "Compare Dubai’s Creek, city hotels and beaches with a short visit to Qatar."
+          ],
+          [
+            "kuala-lumpur",
+            "See how to spend a few days in Malaysia’s capital before heading to the islands."
+          ],
+          [
+            "makkah-and-madinah",
+            "If Doha is part of your flight itinerary, find out what to check when booking your Umrah hotels."
+          ]
+        ]
+      }
     },
     {
       "slug": "dubai",
@@ -409,7 +709,245 @@
         "beach-and-island"
       ],
       "city": "Dubai",
-      "title": "Muslim-friendly Dubai holidays and hotels | Saphara Travel"
+      "title": "Muslim-friendly Dubai holidays and hotels | Saphara Travel",
+      "page": {
+        "lead": "Spend a morning by Dubai Creek, then switch to a beachfront hotel or head up the coast to Ras Al Khaimah. The right base depends on how often you want to leave the resort.",
+        "photo": [
+          "dubai-creek",
+          "Traditional abra boats on Dubai Creek in warm evening light",
+          "An abra crossing links the two sides of Dubai Creek."
+        ],
+        "facts": [
+          [
+            "How long to stay",
+            "Three nights for a first visit"
+          ],
+          [
+            "Best time to go",
+            "November to March"
+          ],
+          [
+            "Suits",
+            "Families, couples and short winter sun"
+          ],
+          [
+            "Halal food",
+            "Widely available. Alcohol service varies by venue and hotel."
+          ],
+          [
+            "Prayer",
+            "Mosques across the city. Ask your hotel about a nearby masjid and Friday prayer arrangements."
+          ],
+          [
+            "Money",
+            "UAE dirham (AED)."
+          ]
+        ],
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "items": [
+            {
+              "name": "Al Fahidi and Dubai Creek",
+              "where": "Bur Dubai and Deira",
+              "best": "markets and older Dubai",
+              "line": "Base yourself near the Creek for neighbourhood restaurants, souqs and short abra crossings.",
+              "note": "Choose a room away from busy streets if you’re a light sleeper.",
+              "photo": [
+                "stay-al-fahidi",
+                "A traditional lane in Dubai’s Al Fahidi Historic Neighbourhood",
+                {
+                  "artist": "Sarkar.abhik",
+                  "file": "https://commons.wikimedia.org/wiki/File:Al_Fahidi_Historic_Neighbourhood_-_Dubai.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "Jumeirah",
+              "where": "Dubai’s coast",
+              "best": "beach time with city outings",
+              "line": "Pick a beachfront hotel if you’ll spend much of the trip by the sea, or stay a few streets inland and visit the public beaches.",
+              "note": "Ask whether beach and pool access are included in your room rate.",
+              "photo": [
+                "stay-jumeirah",
+                "Sand and water along Jumeirah Beach in Dubai",
+                {
+                  "artist": "Studio Sarah Lou",
+                  "file": "https://commons.wikimedia.org/wiki/File:Jumeirah_Beach_(7576420938).jpg",
+                  "license": "CC BY 2.0",
+                  "license_url": "https://creativecommons.org/licenses/by/2.0"
+                }
+              ]
+            },
+            {
+              "name": "Ras Al Khaimah",
+              "where": "North of Dubai",
+              "best": "a resort-focused break",
+              "line": "It suits a slower stay with more time by the pool. If you want to see Dubai’s sights too, consider sleeping in both places.",
+              "note": "Check the transfer time from your actual arrival airport.",
+              "photo": [
+                "stay-ras-al-khaimah",
+                "The beach and Gulf waters at Ras Al Khaimah",
+                {
+                  "artist": "Aumars",
+                  "file": "https://commons.wikimedia.org/wiki/File:Beach_at_Ras_al-Khaimah_01.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            }
+          ]
+        },
+        "week": {
+          "head": [
+            "Three days around Dubai."
+          ],
+          "intro": "Build each day around one part of Dubai. If Ras Al Khaimah is on the plan, treat it as a second stay.",
+          "days": [
+            [
+              "Day 1",
+              "Keep the first day around the Creek",
+              [
+                "Explore Al Fahidi before lunch, then cross to Deira. If you arrive late, keep the first afternoon on one side."
+              ]
+            ],
+            [
+              "Day 2",
+              "Make the beach the main plan",
+              [
+                "Pick one part of the Jumeirah coast. Leave time to change and travel before an evening reservation."
+              ]
+            ],
+            [
+              "Day 3",
+              "Choose the skyline or the quieter coast",
+              [
+                "Keep your room in Dubai for a Downtown day. If you want a resort break in Ras Al Khaimah, transfer after breakfast and give it more than one night."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "items": [
+            [
+              "car",
+              "Getting around",
+              [
+                "Dubai is spread out. Plan days around one part of the city, and check the route from your hotel to the places you’ll actually visit."
+              ]
+            ],
+            [
+              "pool",
+              "Pools and privacy",
+              [
+                "A villa with a private pool can still be overlooked. Ask about the exact unit, balcony sightlines and whether all guests on your booking can access the facilities."
+              ]
+            ],
+            [
+              "shield",
+              "Before you fly",
+              [
+                "Check the <a href=\"https://www.gov.uk/foreign-travel-advice/united-arab-emirates\">latest UK travel advice for the UAE</a>, including entry requirements for your passport, before booking or travelling.",
+                "Use beachwear at the pool or beach and bring a layer for public spaces and mosque visits."
+              ]
+            ],
+            [
+              "pray",
+              "Prayer and dress",
+              [
+                "Ask about prayer rooms when planning a mall visit or a day out. Bring clothes suitable for mosque visits and keep swimwear to the beach and pool."
+              ]
+            ]
+          ],
+          "foot": "Visitor information checked on 26 November 2026. See <a href=\"https://www.visitdubai.com/en/explore-dubai/dubai-neighbourhoods/jumeirah\">Visit Dubai’s Jumeirah guide</a> for current visitor information.",
+          "intro": ""
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Can I use the beach before my room is ready?",
+              "Ask whether the hotel lets arriving guests use the beach or pool before check-in and whether it has somewhere to change and store bags."
+            ],
+            [
+              "Should I book a hotel with a private beach?",
+              "It can help with young children or a short stay. Compare the hotel’s opening hours, shade and facilities with a public beach you can reach easily."
+            ],
+            [
+              "Can you check a specific pool villa?",
+              "Yes. Send the exact category if you’ve found one, including whether other villas or floors overlook the pool."
+            ]
+          ]
+        },
+        "season": {
+          "periods": [
+            [
+              "November to March",
+              "Pick this stretch if you want to spend much of the trip outside, between the beach, the Creek and a desert outing. Compare hotel rates over school holidays."
+            ],
+            [
+              "Spring and autumn",
+              "Plan the beach early and keep museum or shopping time for the hottest part of the day."
+            ],
+            [
+              "Summer",
+              "Choose a hotel you’ll enjoy spending time in and keep outdoor plans short or late in the day."
+            ]
+          ],
+          "source": [
+            "https://www.visitdubai.com/en/articles/dubai-in-march-weather-guide",
+            "Visit Dubai’s March travel guide"
+          ]
+        },
+        "sights": {
+          "heading": "Things to see and do.",
+          "photo": [
+            "dubai-fahidi",
+            "A narrow lane lined with traditional buildings in Dubai’s Al Fahidi neighbourhood",
+            "Give Al Fahidi and Dubai Creek a morning of their own."
+          ],
+          "items": [
+            [
+              "map",
+              "Explore Al Fahidi on foot",
+              "Spend a morning in the lanes before the day heats up. The <a href=\"https://www.visitdubai.com/en/articles/dubai-cultural-walking-tour\">Old Dubai walking route</a> links the historic district and nearby sights."
+            ],
+            [
+              "transfers",
+              "Cross Dubai Creek by abra",
+              "Use the <a href=\"https://www.visitdubai.com/en/places-to-visit/abra-creek-crossing\">abra routes</a> to connect Bur Dubai and the Deira souqs. Check boarding access if anyone has limited mobility."
+            ],
+            [
+              "beach",
+              "Kite Beach and Jumeirah",
+              "Go in the morning for a swim or a walk along the coast. If you’re combining this with Jumeirah Mosque, check visitor hours before setting out."
+            ],
+            [
+              "city",
+              "Downtown or a slower coastal stay",
+              "Choose Downtown for the skyline or set aside extra nights for Ras Al Khaimah. Allow a separate travel day if you plan to change hotels."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "doha",
+            "Compare Dubai with Doha if you want an easy city break with an old market, museums and time on the coast."
+          ],
+          [
+            "oman",
+            "Add or compare a quieter trip around Muscat with a few days in the mountains."
+          ]
+        ]
+      }
     },
     {
       "slug": "oman",
@@ -445,7 +983,247 @@
       "city": "Muscat",
       "title": "Muslim-friendly Oman holidays and hotels | Saphara Travel",
       "hero": "dest-hero-oman",
-      "hero_alt": "The Mutrah corniche in Muscat below the mountains"
+      "hero_alt": "The Mutrah corniche in Muscat below the mountains",
+      "page": {
+        "lead": "Start with Muscat’s mosques, souqs and coastline. Add Jebel Akhdar for cooler mountain air and terraced villages, or stay by the sea and take day trips inland.",
+        "photo": [
+          "oman-coast",
+          "A rocky breakwater on the Muscat coast at sunset",
+          "Leave an evening free for a walk along Muscat’s waterfront."
+        ],
+        "facts": [
+          [
+            "How long to stay",
+            "Four to six nights for coast and mountains"
+          ],
+          [
+            "Best time to go",
+            "October to April"
+          ],
+          [
+            "Suits",
+            "Families, couples and slower trips"
+          ],
+          [
+            "Halal food",
+            "Widely available. Some hotels have licensed bars or restaurants."
+          ],
+          [
+            "Prayer",
+            "Mosques in Muscat and throughout Oman. Check visitor hours if you want to tour the Grand Mosque."
+          ],
+          [
+            "Money",
+            "Omani rial (OMR)."
+          ]
+        ],
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "items": [
+            {
+              "name": "Qurum and Shatti Al Qurum",
+              "where": "Central Muscat coast",
+              "best": "beach walks and city access",
+              "line": "Use Qurum as a base for the Grand Mosque, Royal Opera House and Mutrah. Mandarin Oriental, Muscat is on the Shatti Al Qurum waterfront.",
+              "note": "Check whether you want a city hotel near the beach or a resort where you’ll spend most of the day.",
+              "photo": [
+                "stay-qurum",
+                "Qurum Beach on the coast of Muscat, Oman",
+                {
+                  "artist": "Alexey Komarov",
+                  "file": "https://commons.wikimedia.org/wiki/File:Qurum_Beach_in_Muscat_2019-11-30.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "Muscat Bay and Bandar Jissah",
+              "where": "East of central Muscat",
+              "best": "a resort stay with city day trips",
+              "line": "The rocky coastline and sheltered bays are the reason to stay here. Plan city sightseeing on one or two days.",
+              "note": "Compare the time and cost of taxis or private transfers.",
+              "photo": [
+                "stay-muscat-bay",
+                "Palm trees along the coast near Bandar Jissah, Oman",
+                {
+                  "artist": "\"dronepicr\"",
+                  "file": "https://commons.wikimedia.org/wiki/File:Aerial_view_of_Turtle_Beach_in_Bandar_Jissah,_Oman_(53696857787).jpg",
+                  "license": "CC BY 2.0",
+                  "license_url": "https://creativecommons.org/licenses/by/2.0"
+                }
+              ]
+            },
+            {
+              "name": "Jebel Akhdar",
+              "where": "Al Hajar Mountains",
+              "best": "mountain walks and a cooler change of pace",
+              "line": "Stay above the terraces and villages for a night or two. It pairs well with either end of a Muscat stay.",
+              "note": "Confirm the mountain road’s vehicle requirements with your driver or hotel.",
+              "photo": [
+                "stay-jebel-akhdar",
+                "Al Aqar village on Jebel Akhdar in Oman",
+                null
+              ]
+            }
+          ]
+        },
+        "week": {
+          "head": [
+            "Four days in Oman."
+          ],
+          "intro": "Use Muscat as a base before a night or two in the mountains. The pace leaves time for the coast and a night away from the city.",
+          "days": [
+            [
+              "Day 1",
+              "Settle in by the sea",
+              [
+                "Keep your first afternoon near the hotel, especially if you’ve flown overnight."
+              ]
+            ],
+            [
+              "Day 2",
+              "Give Muscat a full day",
+              [
+                "Plan mosque and museum visits earlier, with Mutrah towards the end of the day."
+              ]
+            ],
+            [
+              "Day 3",
+              "Head for Jebel Akhdar",
+              [
+                "Set off after breakfast and allow time for the mountain road. Choose one short terrace walk before checking in."
+              ]
+            ],
+            [
+              "Day 4",
+              "Leave time for the drive back",
+              [
+                "Have a slow morning in the mountains. If you have a late flight, plan your return through Muscat with time for the airport."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "items": [
+            [
+              "transfers",
+              "Driving and transfers",
+              [
+                "If you want a wadi and a mountain day, put them on different days. Ask about road access and water conditions locally before setting out."
+              ]
+            ],
+            [
+              "pray",
+              "Mosques and dress",
+              [
+                "Bring clothing that covers shoulders and legs for mosque visits. Check the visitor schedule and dress requirements for the Grand Mosque directly."
+              ]
+            ],
+            [
+              "shield",
+              "Before you fly",
+              [
+                "Check the <a href=\"https://www.gov.uk/foreign-travel-advice/oman\">latest UK travel advice for Oman</a>, including entry requirements for your passport, before booking or travelling.",
+                "Pack a layer for mountain evenings, even when the coast is warm."
+              ]
+            ],
+            [
+              "halal",
+              "Food and hotel facilities",
+              [
+                "Halal food is widely available. Check individual hotel dining, alcohol and spa arrangements in advance if you have specific requirements."
+              ]
+            ]
+          ],
+          "foot": "Visitor information checked on 26 November 2026. See <a href=\"https://experienceoman.om/en/destinations/muscat/sultan-qaboos-grand-mosque/\">Experience Oman’s Grand Mosque guide</a> for current visitor information.",
+          "intro": ""
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Can I visit Jebel Akhdar as a day trip?",
+              "Yes, if you’re comfortable with the drive both ways. Staying overnight gives you time for sunset and an early walk without rushing."
+            ],
+            [
+              "Is it worth splitting a short stay between two Muscat hotels?",
+              "Usually one base is simpler for a short trip. A split makes more sense when you can spend a few proper beach days at the second hotel."
+            ],
+            [
+              "What should I ask for when booking a private driver?",
+              "Confirm the vehicle, stops, waiting time and return route, including the mountain road if Jebel Akhdar is part of the plan."
+            ]
+          ]
+        },
+        "season": {
+          "periods": [
+            [
+              "October to April",
+              "Plan a coast-and-mountains trip during the cooler part of the year. November to March is a good starting point for city walks and outdoor days in Muscat."
+            ],
+            [
+              "Spring in Jebel Akhdar",
+              "The rose season varies by year. Ask your hotel about the harvest if a terrace walk or a visit to a rose-water distillery matters to you."
+            ],
+            [
+              "Summer",
+              "Muscat gets hot and humid. Plan short coastal outings early and pack a layer if you’re staying high in the mountains."
+            ]
+          ],
+          "source": [
+            "https://experienceoman.om/en/weather",
+            "Experience Oman’s seasonal weather guide"
+          ]
+        },
+        "sights": {
+          "heading": "Things to see and do.",
+          "photo": [
+            "oman-shuraija",
+            "Terraced houses and steep mountain slopes around As Shuraija in Jebel Akhdar",
+            "Allow time for terrace walks and village views in Jebel Akhdar."
+          ],
+          "items": [
+            [
+              "mosque",
+              "Sultan Qaboos Grand Mosque",
+              "Make this a morning visit if you’re visiting the architecture. Review <a href=\"https://experienceoman.om/en/destinations/muscat/sultan-qaboos-grand-mosque/\">visitor hours and dress guidance</a> in advance."
+            ],
+            [
+              "map",
+              "Mutrah Corniche and souq",
+              "Walk the waterfront in the evening and leave enough time to step into the market lanes."
+            ],
+            [
+              "city",
+              "Royal Opera House Muscat",
+              "Check the <a href=\"https://www.rohmuscat.org.om/\">Royal Opera House programme</a> if a performance or a tour would suit your trip."
+            ],
+            [
+              "mountain",
+              "Jebel Akhdar terraces",
+              "Base yourself nearby if you want a short walk between villages. Ask your hotel or driver about the right vehicle and how steep or exposed the route is."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "zanzibar",
+            "See how Stone Town and the beach could fit with a few days in Muscat."
+          ],
+          [
+            "dubai",
+            "Compare a Muscat coast-and-mountains trip with Dubai’s beaches and busier city districts."
+          ]
+        ]
+      }
     },
     {
       "slug": "makkah-and-madinah",
@@ -461,7 +1239,7 @@
       "flight_long": "About 6 and a half hours direct to Jeddah. For Madinah, via Jeddah or one stop.",
       "intro": "Hotels in Makkah and Madinah for Umrah, chosen for the walk to the Haram and the people you're travelling with.",
       "suits": "Umrah, families and travellers with elderly parents",
-      "best": "Year round; quieter outside Ramadan and school holidays",
+      "best": "Cooler months for easier walking. Check Umrah dates before booking.",
       "why": [
         [
           "Walking distance",
@@ -482,7 +1260,250 @@
       ],
       "city": "Jeddah · Madinah",
       "short": "Makkah &amp; Madinah",
-      "title": "Umrah hotels in Makkah and Madinah | Saphara Travel"
+      "title": "Umrah hotels in Makkah and Madinah | Saphara Travel",
+      "page": {
+        "lead": "Choose Umrah hotels around the walk you’ll make several times a day. We can compare rooms near the Harams, check access for older relatives and share contacts for drivers and ziyarah.",
+        "photo": [
+          "makkah-hotel-corridor",
+          "An arched marble hotel corridor",
+          "Ask about lift changes and the step-free route from your room to the hotel exit."
+        ],
+        "facts": [
+          [
+            "How long to stay",
+            "Allow time for worship and the city transfer"
+          ],
+          [
+            "Best time to go",
+            "Cooler months for easier walking. Check Umrah dates before booking."
+          ],
+          [
+            "Suits",
+            "Umrah, families and travellers with elderly parents"
+          ],
+          [
+            "What we arrange",
+            "Hotel bookings in both cities, plus introductions to drivers and ziyarah contacts."
+          ],
+          [
+            "Flights",
+            "We can help you find a route. You book the Umrah flights yourself."
+          ],
+          [
+            "Money",
+            "Saudi riyal (SAR)."
+          ]
+        ],
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "items": [
+            {
+              "name": "Clock Tower and Ajyad",
+              "where": "Makkah, south of Masjid al-Haram",
+              "best": "being close to the Haram",
+              "line": "Compare the hotel entrance, lift changes and route to the gates. Rooms with similar map distances can involve very different walks.",
+              "note": "For Ramadan, ask how busy the lifts and the street outside get at prayer times.",
+              "photo": [
+                "stay-makkah",
+                "The Clock Tower and Masjid al-Haram in Makkah at dusk",
+                null
+              ]
+            },
+            {
+              "name": "Jabal Omar",
+              "where": "Makkah, west of Masjid al-Haram",
+              "best": "hotel choice near the Haram",
+              "line": "Compare the slope, crossing points and whether the hotel provides a shuttle on the dates you want.",
+              "note": "If anyone uses a wheelchair, ask for the step-free route before booking.",
+              "photo": [
+                "stay-jabal-hotel",
+                "The Conrad hotel in the Jabal Omar district of Makkah",
+                {
+                  "artist": "King Eliot",
+                  "file": "https://commons.wikimedia.org/wiki/File:Jabl_e_Omar_Conrad_Makkah.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "Central Madinah",
+              "where": "Around Masjid an-Nabawi",
+              "best": "regular prayers and trips back to the room",
+              "line": "Choose by the gates each person in your group will use. Ask about adjoining rooms, lift access and the walk from the hotel’s entrance.",
+              "note": "If your group will use different entrances, check both routes.",
+              "photo": [
+                "stay-madinah",
+                "The courtyard outside Masjid an-Nabawi in central Madinah",
+                {
+                  "artist": "Radosław Botev",
+                  "file": "https://commons.wikimedia.org/wiki/File:Masjid_al-Nabawi_2024_(10).jpg",
+                  "license": "CC BY 3.0 pl",
+                  "license_url": "https://creativecommons.org/licenses/by/3.0/pl/deed.en"
+                }
+              ]
+            }
+          ]
+        },
+        "week": {
+          "head": [
+            "A two-city Umrah stay."
+          ],
+          "intro": "Use this as a sequence and adapt the nights to your group. Start with the city that suits the flights you plan to book.",
+          "days": [
+            [
+              "Day 1",
+              "Arrival and check-in",
+              [
+                "Leave a buffer for the drive from the airport. Before travelling, confirm where to enter ihram for your own route with guidance you trust."
+              ]
+            ],
+            [
+              "Day 2",
+              "Time in Makkah",
+              [
+                "Keep the first full day for worship and rest. If you are travelling as a group, agree on a meeting point outside the Haram."
+              ]
+            ],
+            [
+              "Day 3",
+              "Travel between the cities",
+              [
+                "Compare a car transfer with the Haramain train, including the journeys to and from both stations and how much luggage your group has."
+              ]
+            ],
+            [
+              "Day 4",
+              "Time in Madinah",
+              [
+                "Leave the first morning free around prayers. Arrange ziyarah for another day if you want to make several visits without rushing."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "items": [
+            [
+              "hotel",
+              "Ask about the exact room",
+              [
+                "Check bedding, lift access, who the room sleeps and whether connecting rooms can be confirmed. Ask how breakfast or suhoor is handled when travelling in Ramadan."
+              ]
+            ],
+            [
+              "transfers",
+              "Compare the whole transfer",
+              [
+                "Ask how much luggage the driver or train can take. Check the road transfer at both ends before deciding between the train and a car."
+              ]
+            ],
+            [
+              "shield",
+              "Check official requirements",
+              [
+                "Check the <a href=\"https://www.gov.uk/foreign-travel-advice/saudi-arabia\">latest UK travel advice for Saudi Arabia</a>, including entry requirements for your passport, before booking or travelling.",
+                "Check <a href=\"https://www.nusuk.sa/umrah/\">Nusuk for Umrah guidance</a> and <a href=\"https://www.nusuk.sa/rawdah/\">Rawdah booking information</a> for your dates."
+              ]
+            ],
+            [
+              "pray",
+              "Plan around worship and rest",
+              [
+                "Give each person in the group the hotel address and a shared meeting point. If anyone needs step-free access, confirm the route from the hotel entrance to the gate."
+              ]
+            ]
+          ],
+          "foot": "Visitor information checked on 26 November 2026.",
+          "intro": ""
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Can we travel to Madinah first?",
+              "Yes. Compare the flights you plan to book, the city transfer and the dates you need near each Haram. We can check hotel options in either order."
+            ],
+            [
+              "Can we confirm adjoining rooms before we travel?",
+              "Ask us to request them at booking. We’ll tell you whether the hotel guarantees connecting rooms or treats them as a request."
+            ],
+            [
+              "Can you compare a room I’ve already found?",
+              "Yes. Send the dates, room type, board and cancellation terms so we can do a <a href=\"/price-check\">like-for-like hotel price check</a>."
+            ]
+          ]
+        },
+        "cta": "Send your dates, room numbers and any mobility needs. We’ll compare the hotels around the journeys you’ll make each day.",
+        "season": {
+          "periods": [
+            [
+              "Cooler months",
+              "Consider the cooler part of the year if you’ll be walking regularly to the Haram or travelling with older relatives. Allow time for queues and breaks in both cities."
+            ],
+            [
+              "Ramadan",
+              "Start with the hotel route, lift capacity and suhoor arrangements. Ask about the exact room and confirm which hotel facilities are included during Ramadan."
+            ],
+            [
+              "Around Hajj",
+              "Check whether the dates you’re considering are open for Umrah, and which visa or permit rules apply to you. Confirm through official channels before paying for flights or hotels."
+            ]
+          ],
+          "source": [
+            "https://www.nusuk.sa/umrah/",
+            "Official Umrah guidance from Nusuk"
+          ]
+        },
+        "sights": {
+          "heading": "Worship and ziyarah.",
+          "photo": [
+            "stay-quba",
+            "The exterior of Quba Mosque in Madinah",
+            "Quba Mosque is a separate visit from Masjid an-Nabawi.",
+            {
+              "artist": "Basheer Olakara",
+              "file": "https://commons.wikimedia.org/wiki/File:Masjid_al-Quba_(6171318123).jpg",
+              "license": "CC BY 2.0",
+              "license_url": "https://creativecommons.org/licenses/by/2.0"
+            }
+          ],
+          "items": [
+            [
+              "umrah",
+              "Masjid al-Haram, Makkah",
+              "Try the route from the hotel entrance to the gate you’ll use. Then decide how much time to allow at the busier prayer times."
+            ],
+            [
+              "mosque",
+              "Masjid an-Nabawi, Madinah",
+              "Plan around the gates your group will use. If visiting the Rawdah, check <a href=\"https://www.nusuk.sa/rawdah/\">Nusuk’s Rawdah booking guidance</a> separately."
+            ],
+            [
+              "pin",
+              "Quba Mosque",
+              "Consider a separate visit from your time at Masjid an-Nabawi. Ask about the route, where a car can drop you and how much walking is involved."
+            ],
+            [
+              "mountain",
+              "Uhud and other ziyarah visits",
+              "Leave space around prayers and rest. If you want to cover several sites together, ask us for driver or ziyarah contacts."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "doha",
+            "If you’re considering a separate stopover through Qatar, see what fits into two days and check your own flight timings."
+          ]
+        ]
+      }
     },
     {
       "slug": "kuala-lumpur",
@@ -519,7 +1540,240 @@
       "city": "Kuala Lumpur",
       "title": "Muslim-friendly Kuala Lumpur holidays | Saphara Travel",
       "hero": "dest-hero-kuala-lumpur",
-      "hero_alt": "The Sultan Abdul Samad Building in Kuala Lumpur"
+      "hero_alt": "The Sultan Abdul Samad Building in Kuala Lumpur",
+      "page": {
+        "lead": "Spend a few days between Kuala Lumpur’s mosques, markets and skyline before heading to the islands. Where you stay matters if you’re fitting the city around a short connection.",
+        "photo": [
+          "stay-kl-overview",
+          "Kuala Lumpur’s skyline in the morning haze",
+          "Allow time between Kuala Lumpur’s city centre and the airport."
+        ],
+        "facts": [
+          [
+            "How long to stay",
+            "Two or three nights in the city"
+          ],
+          [
+            "Best time to go",
+            "Year round, with short tropical showers"
+          ],
+          [
+            "Suits",
+            "City breaks, families and stopovers"
+          ],
+          [
+            "Halal food",
+            "Easy to find. Check halal certification for the exact restaurant where it matters to you."
+          ],
+          [
+            "Prayer",
+            "City mosques include Masjid Jamek and Masjid Negara. Ask your hotel about its closest surau or masjid."
+          ],
+          [
+            "Money",
+            "Malaysian ringgit (MYR)."
+          ]
+        ],
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "items": [
+            {
+              "name": "KLCC",
+              "where": "Central Kuala Lumpur",
+              "best": "a first visit with children",
+              "line": "Stay near KLCC Park and the Petronas Twin Towers if you want easy walks, plenty of food options and somewhere to pause between outings.",
+              "note": "Ask whether the room you’re booking has the tower view you want.",
+              "photo": [
+                "stay-klcc",
+                "The Petronas Twin Towers and Kuala Lumpur City Centre",
+                null
+              ]
+            },
+            {
+              "name": "Bukit Bintang",
+              "where": "Central shopping and dining district",
+              "best": "evenings out and short city stays",
+              "line": "There’s plenty within walking distance, with busy streets after dark. Check the specific location if you want halal meals close to the hotel.",
+              "note": "Choose a higher or quieter room if noise is a concern.",
+              "photo": [
+                "stay-bukit-bintang",
+                "The streets and buildings of Bukit Bintang in Kuala Lumpur",
+                {
+                  "artist": "Renek78",
+                  "file": "https://commons.wikimedia.org/wiki/File:Jalan_Bukit_Bintang_in_Kuala_Lumpur_during_Corona_virus_lockdown_2.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "KL Sentral and Brickfields",
+              "where": "South-west of the city centre",
+              "best": "rail connections and an early departure",
+              "line": "This is a useful base when getting to and from the airport by train matters more than staying beside the towers.",
+              "note": "Check the walk from the station to your hotel with luggage.",
+              "photo": [
+                "stay-brickfields",
+                "The Little India Fountain in Brickfields, Kuala Lumpur",
+                {
+                  "artist": "Shesmax",
+                  "file": "https://commons.wikimedia.org/wiki/File:Kuala_Lumpur._Brickfields._Little_India_Fountain._2019-12-14_09-25-26.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            }
+          ]
+        },
+        "week": {
+          "head": [
+            "Three days in Kuala Lumpur."
+          ],
+          "intro": "Use one day for the modern centre and one for the older streets. Keep a third morning for a short outing if you have time before the next flight.",
+          "days": [
+            [
+              "Day 1",
+              "An easy first day around KLCC",
+              [
+                "Drop your bags and spend the afternoon near the hotel and the park. Keep the first meal close by if you arrived overnight."
+              ]
+            ],
+            [
+              "Day 2",
+              "Old Kuala Lumpur",
+              [
+                "Group Masjid Jamek, Merdeka Square and Central Market in one walking route. Keep a café or museum in reserve for an afternoon shower."
+              ]
+            ],
+            [
+              "Day 3",
+              "An outing or a transfer morning",
+              [
+                "Go early to Batu Caves if your schedule allows. If you’re flying on, keep the morning near the hotel and leave time to reach the right terminal."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "items": [
+            [
+              "flights",
+              "Airport connections",
+              [
+                "If you’re connecting to the islands, confirm the terminal, airline and luggage rules. Allow extra time when tickets are booked separately."
+              ]
+            ],
+            [
+              "dining",
+              "Eating halal in the city",
+              [
+                "Halal choices are plentiful, but venues and certification vary. Check the exact outlet, especially at hotel buffets and mixed food courts."
+              ]
+            ],
+            [
+              "shield",
+              "Before you fly",
+              [
+                "Check the <a href=\"https://www.gov.uk/foreign-travel-advice/malaysia\">latest UK travel advice for Malaysia</a>, including entry requirements for your passport, before booking or travelling.",
+                "Keep a flexible afternoon option in case of a tropical downpour."
+              ]
+            ],
+            [
+              "transfers",
+              "Getting around the city",
+              [
+                "Check the nearest rail stop to your hotel and the walking route between them. Keep more time for a road transfer during busy periods or in heavy rain."
+              ]
+            ]
+          ],
+          "foot": "Visitor information checked on 26 November 2026. See <a href=\"https://www.malaysia.travel/explore/top-places-to-visit-in-kuala-lumpur\">Tourism Malaysia’s Kuala Lumpur guide</a> for current visitor information.",
+          "intro": ""
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Which airport terminal should I plan around?",
+              "Check the terminal on each ticket, especially when connecting to a domestic service. If you need to collect and re-check luggage, leave time for that too."
+            ],
+            [
+              "Is a tower-view room worth it?",
+              "If the view matters, compare the wording for the exact category. A city view can face a different direction from the towers."
+            ],
+            [
+              "Can I fit Singapore and Langkawi into the same trip?",
+              "Yes. Our <a href=\"/trips/multi-city\">multi-city planning page</a> explains how we put the stops together."
+            ]
+          ]
+        },
+        "season": {
+          "periods": [
+            [
+              "Year round",
+              "Kuala Lumpur is warm throughout the year. Set out early for parks and outdoor sights and leave an indoor option for a downpour."
+            ],
+            [
+              "When pairing with Langkawi",
+              "Choose dates for the island part first if beach weather matters most, then fit the city around it. See the <a href=\"/destinations/langkawi#best-time-to-visit\">best time to visit Langkawi</a>."
+            ],
+            [
+              "Festivals and school holidays",
+              "Give yourself more flexibility around public holidays and confirm the hours for the markets or attractions you’ve built into your plans."
+            ]
+          ],
+          "source": [
+            "https://ebrochures.malaysia.travel/en/kuala-lumpur/56-67-useful-information/",
+            "Tourism Malaysia’s Kuala Lumpur guide"
+          ]
+        },
+        "sights": {
+          "heading": "Things to see and do.",
+          "photo": [
+            "kl-masjid-jamek",
+            "Masjid Jamek and its domes where two rivers meet in Kuala Lumpur",
+            "Masjid Jamek sits near Merdeka Square in the historic centre."
+          ],
+          "items": [
+            [
+              "city",
+              "Petronas Twin Towers and KLCC Park",
+              "Visit the park for an outdoor view. If you want to go up the towers, check <a href=\"https://www.petronastwintowers.com.my/\">official ticket information</a> before committing to a time."
+            ],
+            [
+              "mosque",
+              "Masjid Jamek and Merdeka Square",
+              "Take a walk through the historic centre. Check <a href=\"https://www.malaysia.travel/explore/masjid-jamek\">Tourism Malaysia’s Masjid Jamek guide</a> before planning a visit around prayers."
+            ],
+            [
+              "dining",
+              "Central Market and the old city",
+              "Keep time for craft stalls and lunch in the surrounding streets. Check the individual food outlet for halal certification."
+            ],
+            [
+              "excursions",
+              "Batu Caves",
+              "Set aside a morning for the temple complex outside the centre. The main cave involves a long flight of steps. Bring appropriate clothing and check access if stairs are an issue."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "langkawi",
+            "Pair the city with Langkawi’s beaches and rainforest, with hotel choices at three different ends of the island."
+          ],
+          [
+            "doha",
+            "If your flights go through Qatar, consider adding a short city stay on one leg."
+          ]
+        ]
+      }
     },
     {
       "slug": "langkawi",
@@ -535,7 +1789,7 @@
       "flight_long": "About 17 hours, with a stop in the Gulf and a short flight from Kuala Lumpur.",
       "intro": "Rainforest down to the sea, quiet beaches and pool villas, with Kuala Lumpur on the way.",
       "suits": "Honeymooners, couples and families",
-      "best": "November to April",
+      "best": "November to March",
       "why": [
         [
           "Pool villas",
@@ -555,7 +1809,252 @@
         "beach-and-island"
       ],
       "city": "Langkawi",
-      "title": "Muslim-friendly Langkawi holidays and villas | Saphara Travel"
+      "title": "Muslim-friendly Langkawi holidays and villas | Saphara Travel",
+      "page": {
+        "lead": "A few days in Langkawi can mean a rainforest pool villa, long lunches by the sea and one morning out on the water. Choose your coast around how much you want to do between swims.",
+        "photo": [
+          "langkawi-dayang",
+          "Forest-covered islands and blue water around Dayang Bunting in Langkawi",
+          "Take to the water for a different view of Langkawi’s forested islands."
+        ],
+        "facts": [
+          [
+            "How long to stay",
+            "Three to five nights on the island"
+          ],
+          [
+            "Best time to go",
+            "November to March"
+          ],
+          [
+            "Suits",
+            "Honeymooners, couples and families"
+          ],
+          [
+            "Halal food",
+            "Easy to find locally. Check the kitchen and alcohol service with your specific resort."
+          ],
+          [
+            "Prayer",
+            "Ask your hotel about the nearest mosque and Jumu’ah arrangements."
+          ],
+          [
+            "Money",
+            "Malaysian ringgit (MYR)."
+          ]
+        ],
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "items": [
+            {
+              "name": "Pantai Cenang and Pantai Tengah",
+              "where": "South-west coast",
+              "best": "local meals and evenings on foot",
+              "line": "Cenang has more going on, while nearby Tengah is an option for a slightly slower base. Check whether you can walk from your hotel to the beach and restaurants.",
+              "note": "Ask about room position if you’re staying near the busiest stretch.",
+              "photo": [
+                "stay-cenang",
+                "Aerial view of Pantai Cenang beach at sunset in Langkawi",
+                {
+                  "artist": "C980040",
+                  "file": "https://commons.wikimedia.org/wiki/File:Pantai_Cenang_Beach_at_sunset.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "Datai Bay and the north-west",
+              "where": "Rainforest coast",
+              "best": "a quiet resort holiday",
+              "line": "Choose this part of the island if you’re happy to spend most days at your resort, with a driver for longer outings.",
+              "note": "For a pool villa, check who can see in from the paths and neighbouring balconies.",
+              "photo": [
+                "stay-datai",
+                "The Datai resort and rainforest on the north-west coast of Langkawi",
+                {
+                  "artist": "DataiOnline",
+                  "file": "https://commons.wikimedia.org/wiki/File:The_Datai_Langkawi_-_Resort_Overview.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "Tanjung Rhu",
+              "where": "North coast",
+              "best": "quiet beach days and mangrove trips",
+              "line": "Use the north as a base if you’d like beach time and a morning on the water around the Kilim mangroves.",
+              "note": "Check the resort’s beach access and how you’ll get to restaurants outside it.",
+              "photo": [
+                "stay-tanjung-rhu",
+                "Tanjung Rhu Beach and forested islands off Langkawi",
+                {
+                  "artist": "Tim Parkinson",
+                  "file": "https://commons.wikimedia.org/wiki/File:Tanjung_Rhu_Beach.jpg",
+                  "license": "CC BY 2.0",
+                  "license_url": "https://creativecommons.org/licenses/by/2.0"
+                }
+              ]
+            }
+          ]
+        },
+        "week": {
+          "head": [
+            "Four days in Langkawi."
+          ],
+          "intro": "Keep one clear morning for the cable car and another for a boat trip. A spare day lets you move either if the weather changes.",
+          "days": [
+            [
+              "Day 1",
+              "Get to know your coast",
+              [
+                "Spend the first afternoon near the hotel so you know where to swim and eat before filling the rest of the trip."
+              ]
+            ],
+            [
+              "Day 2",
+              "Go up to the SkyBridge",
+              [
+                "Use the best morning forecast. Put beach time after the cable car and swap the days if visibility is poor."
+              ]
+            ],
+            [
+              "Day 3",
+              "Take a morning out on the water",
+              [
+                "Choose Kilim or an island-hopping trip. One is enough for a short stay and leaves the afternoon free."
+              ]
+            ],
+            [
+              "Day 4",
+              "Leave a day for the resort",
+              [
+                "Spend it by the pool or use it to move an outing. Give yourself time for the transfer if you’re flying on the same day."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "items": [
+            [
+              "flights",
+              "Getting to the island",
+              [
+                "Check the flight from Kuala Lumpur or Singapore for your dates and allow time for a terminal change if connecting on separate tickets."
+              ]
+            ],
+            [
+              "private-pool",
+              "Booking a villa",
+              [
+                "Ask about the view into the pool from adjacent villas, upper floors and paths. For children, ask about steps and pool barriers too."
+              ]
+            ],
+            [
+              "shield",
+              "Before you fly",
+              [
+                "Check the <a href=\"https://www.gov.uk/foreign-travel-advice/malaysia\">latest UK travel advice for Malaysia</a>, including entry requirements for your passport, before booking or travelling.",
+                "Ask the resort which facilities or excursions are weather-dependent."
+              ]
+            ],
+            [
+              "transfers",
+              "Getting around Langkawi",
+              [
+                "Check the distance from the resort to restaurants and outings. Book transport ahead if you’re staying on a quieter part of the island or need a child seat."
+              ]
+            ]
+          ],
+          "foot": "Visitor information checked on 26 November 2026. See <a href=\"https://panoramalangkawi.com/visitor-information/\">Langkawi SkyCab visitor information</a> for current visitor information.",
+          "intro": ""
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Do I need to hire a car?",
+              "It depends where you’re staying. A taxi or pre-booked driver can be enough if trips are occasional. Confirm availability for late evenings and quieter resort areas."
+            ],
+            [
+              "Can my resort arrange an airport pick-up?",
+              "Ask whether it is included or costs extra. Share the flight number, luggage and any child seat needs."
+            ],
+            [
+              "How do I check a pool villa is private?",
+              "Ask which villa you are booking and what can be seen from nearby paths, balconies or upper floors."
+            ]
+          ]
+        },
+        "season": {
+          "periods": [
+            [
+              "November to March",
+              "Tourism Malaysia identifies this as the drier season. Choose it for a trip built around beach mornings, the cable car and time on the water."
+            ],
+            [
+              "April and the wetter months",
+              "Leave more flexibility for outdoor outings. Check local conditions before a boat trip and keep a resort or indoor option for wet spells."
+            ],
+            [
+              "Busy dates",
+              "Compare prices and room availability for festive periods and school holidays. If you have one outing you really want to do, leave a spare day so you can move it."
+            ]
+          ],
+          "source": [
+            "https://ebrochures.malaysia.travel/en/langkawi/28-getting-to-langkawi/",
+            "Tourism Malaysia’s Langkawi guide"
+          ]
+        },
+        "sights": {
+          "heading": "Things to see and do.",
+          "photo": [
+            "langkawi-rainforest-stay",
+            "A pool surrounded by tropical rainforest in Langkawi",
+            "For quiet days, compare rainforest villas with hotels closer to shops and restaurants."
+          ],
+          "items": [
+            [
+              "mountain",
+              "SkyCab and SkyBridge",
+              "Allow a clear morning for the views. The <a href=\"https://panoramalangkawi.com/visitor-information/\">official SkyCab visitor page</a> covers operation and the different tickets."
+            ],
+            [
+              "excursions",
+              "Kilim Karst Geoforest Park",
+              "Spend a morning on the water with a guide. Ask where the boat departs, whether it has shade and how easy it is to board."
+            ],
+            [
+              "beach",
+              "Cenang and Tengah",
+              "Use Cenang for a mix of beach time and places to eat, or choose Tengah for a slower afternoon."
+            ],
+            [
+              "map",
+              "Dayang Bunting Geoforest Park",
+              "Consider a separate island-hopping outing if you’d like to see the landscapes in <a href=\"https://www.malaysia.travel/explore/langkawi\">Tourism Malaysia’s Langkawi guide</a>. Check what’s included and the weather forecast before you set off."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "kuala-lumpur",
+            "Spend a few nights around the mosques, markets and parks of Kuala Lumpur before or after the island."
+          ],
+          [
+            "maldives",
+            "Compare a Langkawi villa with a Maldives resort if privacy, reef access or quieter resort days matter most."
+          ]
+        ]
+      }
     },
     {
       "slug": "maldives",
@@ -566,10 +2065,10 @@
       "img": "st-dest-maldives.webp",
       "alt": "A turquoise lagoon and overwater villas in the Maldives",
       "flight": "12h · 1 stop",
-      "flight_long": "About 12 hours with one stop from Manchester.",
+      "flight_long": "About 12 hours with one stop.",
       "intro": "Clear lagoons, private-island resorts and overwater villas, with the right island making all the difference.",
       "suits": "Honeymooners, couples and families",
-      "best": "November to April",
+      "best": "December to April for the core dry season",
       "why": [
         [
           "Private-island stays",
@@ -590,7 +2089,261 @@
         "family-holidays"
       ],
       "city": "Malé · resort islands",
-      "title": "Muslim-friendly Maldives holidays and resorts | Saphara Travel"
+      "title": "Muslim-friendly Maldives holidays and resorts | Saphara Travel",
+      "page": {
+        "lead": "Start with how you want to spend your days: snorkelling from the beach, swimming in a calm lagoon or taking it slowly in a pool villa. Then choose the island and the transfer that suit you.",
+        "photo": [
+          "maldives-lagoon",
+          "Steps from a villa leading down into a clear Maldivian lagoon",
+          "Check how you’ll get in and out of the water at the villa category you’re booking."
+        ],
+        "facts": [
+          [
+            "How long to stay",
+            "Five nights gives room for transfers and reef days"
+          ],
+          [
+            "Best time to go",
+            "December to April for the core dry season"
+          ],
+          [
+            "Suits",
+            "Honeymooners, couples and families"
+          ],
+          [
+            "Transfer",
+            "Depending on the island: speedboat, seaplane or a domestic flight with onward transfer."
+          ],
+          [
+            "Halal food and prayer",
+            "Confirm food preparation, alcohol service and prayer arrangements with the individual property."
+          ],
+          [
+            "Money",
+            "Maldivian rufiyaa (MVR). Ask which currency the resort bills in."
+          ]
+        ],
+        "areas": {
+          "head": [
+            "Where to stay."
+          ],
+          "items": [
+            {
+              "name": "Near Velana airport",
+              "where": "Malé-area resort islands",
+              "best": "a shorter transfer",
+              "line": "Start with resorts served by speedboat if you’re staying for only a few nights or travelling with young children.",
+              "note": "Check availability after your inbound flight lands and at the time you need to leave.",
+              "photo": [
+                "stay-kurumba",
+                "Aerial view of Kurumba Island near Velana airport in the Maldives",
+                {
+                  "artist": "PalawanOz",
+                  "file": "https://commons.wikimedia.org/wiki/File:Maldives_-_Kurumba_Island.jpg",
+                  "license": "Public domain",
+                  "license_url": ""
+                }
+              ]
+            },
+            {
+              "name": "An outer atoll resort",
+              "where": "Beyond the Malé area",
+              "best": "longer stays and time on the reef",
+              "line": "Look at the house reef, lagoon and how far you’ll be from dining and other facilities. Which matters most will change your shortlist.",
+              "note": "Price the seaplane or domestic transfer for everyone before comparing resort rates.",
+              "photo": [
+                "stay-baa-atoll",
+                "Aerial view of Landaa Giraavaru resort island in Baa Atoll",
+                {
+                  "artist": "Frédéric Ducarme",
+                  "file": "https://commons.wikimedia.org/wiki/File:Landaa_Giraavaru_vue_du_ciel.JPG",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            },
+            {
+              "name": "An inhabited island",
+              "where": "Local island guesthouses and hotels",
+              "best": "local food and a town you can walk around",
+              "line": "Consider this for a different pace and more time off the resort. Ask which beach is designated for swimming in tourist swimwear.",
+              "note": "Expect local dress norms in town and check ferry times before confirming onward connections.",
+              "photo": [
+                "stay-maafushi",
+                "A boat off the inhabited island of Maafushi, Maldives",
+                {
+                  "artist": "Buiobuione",
+                  "file": "https://commons.wikimedia.org/wiki/File:Buiobuione-Maldive-Maafushi-Kaafu-View.jpg",
+                  "license": "CC BY-SA 4.0",
+                  "license_url": "https://creativecommons.org/licenses/by-sa/4.0"
+                }
+              ]
+            }
+          ]
+        },
+        "week": {
+          "head": [
+            "Five nights on the island."
+          ],
+          "intro": "Start and end with transfer days. Keep the middle of the stay flexible for weather and time on the reef.",
+          "days": [
+            [
+              "Day 1",
+              "Arrive and reach the island",
+              [
+                "Allow time for the onward transfer. On arrival, confirm where to swim and what’s included in your meal plan."
+              ]
+            ],
+            [
+              "Day 2",
+              "Start close to shore",
+              [
+                "Spend your first full day in the lagoon. Find a safe entry point and ask the team about currents."
+              ]
+            ],
+            [
+              "Day 3",
+              "Make this your reef day",
+              [
+                "Choose the house reef or a guided boat trip, depending on the conditions and swimming confidence in your group."
+              ]
+            ],
+            [
+              "Day 4",
+              "Keep one day unplanned",
+              [
+                "Leave space for shade, a spa visit or a family activity. It also gives you a fallback if the reef trip moves."
+              ]
+            ],
+            [
+              "Day 5",
+              "One last swim",
+              [
+                "Reconfirm your departure transfer and any breakfast or room requests if you’re leaving early on day six."
+              ]
+            ]
+          ]
+        },
+        "tips": {
+          "head": [
+            "Before you go."
+          ],
+          "items": [
+            [
+              "transfers",
+              "Price the transfer first",
+              [
+                "Compare transfers, taxes and meal plans in the same quote. Ask what happens if your flight misses the last onward transfer."
+              ]
+            ],
+            [
+              "dining",
+              "Meals, alcohol and prayer",
+              [
+                "Alcohol is served at resorts. Ask about meat sourcing, kitchen preparation, minibar requests, the qibla and where to pray."
+              ]
+            ],
+            [
+              "shield",
+              "Before you fly",
+              [
+                "Check the <a href=\"https://www.gov.uk/foreign-travel-advice/maldives\">latest UK travel advice for the Maldives</a>, including entry requirements for your passport, before booking or travelling.",
+                "Check <a href=\"https://visitmaldives.com/en/maldives/travel-information\">official information on island transfers and local customs</a> when comparing resorts and inhabited islands."
+              ]
+            ],
+            [
+              "people",
+              "Travelling with children",
+              [
+                "Ask about the minimum age for overwater villas, pool barriers and how far your room is from dining. Check transfer timing before booking an early or late flight."
+              ]
+            ]
+          ],
+          "foot": "Visitor information checked on 26 November 2026.",
+          "intro": ""
+        },
+        "faq": {
+          "head": [
+            "Questions."
+          ],
+          "items": [
+            [
+              "Is a beach or overwater villa better?",
+              "A beach villa often gives children easier access to the sand. Compare overwater deck privacy, steps and age rules for the exact room you’re considering."
+            ],
+            [
+              "Does all-inclusive cover the transfer and every restaurant?",
+              "It depends on the rate and island. Ask for a <a href=\"/price-check\">like-for-like price check</a> that includes transfers, meals and cancellation terms."
+            ],
+            [
+              "What if the incoming flight lands after the last transfer?",
+              "Ask what options the resort offers. You may need a separate airport-area hotel or a different international flight."
+            ]
+          ]
+        },
+        "hero": "dest-hero-maldives",
+        "hero_alt": "Overwater pool villas beside a Maldivian lagoon at sunset",
+        "season": {
+          "periods": [
+            [
+              "December to April",
+              "Start with the core dry-season months if your trip is built around sunny lagoon days. Compare rates over festive periods and check what the transfer includes."
+            ],
+            [
+              "November and May",
+              "Treat these as transition months. Leave room to move an outing a day or two if conditions change."
+            ],
+            [
+              "Wetter months",
+              "Conditions vary by atoll. For snorkelling or diving, ask the property about typical reef access and sea conditions for your dates."
+            ]
+          ],
+          "source": [
+            "https://visitmaldives.com/en/maldives/travel-information",
+            "Visit Maldives’ guide to weather and transfers"
+          ]
+        },
+        "sights": {
+          "heading": "Things to see and do.",
+          "photo": [
+            "maldives-island-aerial",
+            "A small Maldivian island surrounded by a turquoise lagoon and deeper blue water",
+            "Look at the reef and the lagoon when deciding where to stay."
+          ],
+          "items": [
+            [
+              "beach",
+              "Swim from the beach or lagoon",
+              "Ask which parts of the island have a sandy entry, shade and safe swimming for children. The best beach and the quietest villa may be on different sides."
+            ],
+            [
+              "excursions",
+              "Snorkel the house reef",
+              "Check if you can reach the reef directly from shore or need a boat. The resort team can point you towards the best entry for the current conditions."
+            ],
+            [
+              "map",
+              "Visit an inhabited island",
+              "Ask about a local-island visit if you’d like time away from the resort. Dress modestly in town and check local swimwear rules."
+            ],
+            [
+              "compass",
+              "Take a boat trip",
+              "Ask the property about guided snorkelling or a sunset boat trip. Pick a day you can move if the wind changes."
+            ]
+          ]
+        },
+        "related": [
+          [
+            "zanzibar",
+            "Compare a Maldives resort with a Zanzibar trip that gives you markets, Stone Town and a beach stay."
+          ],
+          [
+            "langkawi",
+            "See what Langkawi offers if you’d like rainforest walks and a pool villa as well as time at the beach."
+          ]
+        ]
+      }
     }
   ],
   "RESORT_PLACES": [
@@ -1272,17 +3025,18 @@
   ],
   "WA_PATH": "<path fill=\"currentColor\" d=\"M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.2c0-.1-.2-.2-.4-.3Z\"/>",
   "DESC_OVERRIDES": {
-    "destinations/makkah-and-madinah.html": "Umrah hotels in Makkah and Madinah, chosen for the walk to the Haram and who's travelling. Driver and ziyarah contacts too. We don't book Umrah flights.",
+    "destinations/makkah-and-madinah.html": "Compare Umrah hotels in Makkah and Madinah by the walk to the Haram, step-free access and room layouts. Get help with hotels and driver contacts.",
     "guides/new-york.html": "Where we ate in New York, from Brooklyn to Manhattan, at places listed as halal: our own picks from our own trip, with the details to check before you go.",
     "cookies.html": "This website doesn't use cookies, so there's nothing to accept or decline. If that ever changes, this page will say so first.",
     "destinations/zanzibar.html": "Zanzibar beach resorts and Stone Town stays, about 13 hours from Manchester with one stop. We check the food, alcohol and privacy at each resort for you.",
-    "destinations/doha.html": "Desert, sea and some of the best hotels in the Gulf, about seven hours direct from Manchester. City and beach hotels in Doha, looked after on WhatsApp.",
-    "destinations/dubai.html": "Beach resorts and city hotels in Dubai, about seven hours direct from Manchester, with quieter Ras Al Khaimah an hour up the coast.",
-    "destinations/oman.html": "Mountains, wadis and a calm coastline, with Muscat's mosques and souqs close by. Hotels in Oman, about seven hours direct from Manchester to Muscat.",
-    "destinations/kuala-lumpur.html": "City hotels, mosques and markets in Malaysia's capital, about 15 hours from Manchester with one stop, and easy to pair with a few days in Langkawi.",
-    "destinations/langkawi.html": "Rainforest down to the sea, quiet beaches and pool villas in Langkawi, with Kuala Lumpur on the way. Villas compared like for like before you book.",
+    "destinations/doha.html": "Plan a Muslim-friendly Doha holiday or stopover. Compare Souq Waqif, West Bay and coastal hotels, plus halal food, mosques and a two-day itinerary.",
+    "destinations/dubai.html": "Plan a Muslim-friendly Dubai holiday. Compare Creek, Jumeirah and Ras Al Khaimah stays, with halal dining, beach days and practical hotel tips.",
+    "destinations/oman.html": "Plan a Muslim-friendly Oman holiday with stays in Muscat, on the coast or in Jebel Akhdar. Includes a four-day itinerary, mosque visits and transfer tips.",
+    "destinations/kuala-lumpur.html": "Compare KLCC, Bukit Bintang and KL Sentral for a Muslim-friendly Kuala Lumpur stay, with halal food, mosques and a three-day itinerary.",
+    "destinations/langkawi.html": "Plan a Muslim-friendly Langkawi holiday. Compare beach areas and rainforest pool villas, with halal dining tips, a four-day itinerary and a Kuala Lumpur pairing.",
     "guides/sarajevo.html": "Where to eat halal, where to pray and what to do in Sarajevo, from our own trip: cafes and desserts, the old town, Gazi Husrev-beg Mosque and more.",
-    "guides/malta.html": "Restaurants with halal menus around Sliema, St Julian's and Msida, the mosque in Paola, and the best of Malta and Gozo, from our own trip."
+    "guides/malta.html": "Restaurants with halal menus around Sliema, St Julian's and Msida, the mosque in Paola, and the best of Malta and Gozo, from our own trip.",
+    "destinations/maldives.html": "Compare Maldives resort and local island stays, villa privacy, halal dining and speedboat or seaplane transfers for a honeymoon or family holiday."
   },
   "SKYLINE": "<svg class=\"skyline\" viewBox=\"0 0 1440 220\" preserveAspectRatio=\"xMidYMax slice\" aria-hidden=\"true\" focusable=\"false\"><g fill=\"currentColor\"><rect x=\"60\" y=\"150\" width=\"150\" height=\"86\"/><rect x=\"186\" y=\"140\" width=\"120\" height=\"96\"/><rect x=\"204\" y=\"124\" width=\"90\" height=\"112\"/><rect x=\"220\" y=\"110\" width=\"62\" height=\"126\"/><rect x=\"230\" y=\"96\" width=\"42\" height=\"140\"/><path d=\"M234 96V72h34v24Z\"/><path d=\"M306 236V112l5-6h10l5 6v124Z\"/><rect x=\"309\" y=\"98\" width=\"14\" height=\"8\"/><rect x=\"326\" y=\"176\" width=\"46\" height=\"60\"/><path d=\"M402 236v-38a36 36 0 0 1 72 0v38Z\"/><rect x=\"436\" y=\"150\" width=\"4\" height=\"12\"/><circle cx=\"438\" cy=\"148\" r=\"3\"/><path d=\"M382 236V122l4-14 4 14V236Z\"/><rect x=\"379\" y=\"144\" width=\"14\" height=\"4\" rx=\"1\"/><rect x=\"380\" y=\"174\" width=\"12\" height=\"3\" rx=\"1\"/><circle cx=\"386\" cy=\"104\" r=\"2.5\"/><path d=\"M486 236V134l4-14 4 14V236Z\"/><rect x=\"483\" y=\"156\" width=\"14\" height=\"4\" rx=\"1\"/><rect x=\"484\" y=\"186\" width=\"12\" height=\"3\" rx=\"1\"/><circle cx=\"490\" cy=\"116\" r=\"2.5\"/><path d=\"M548 214h92q-8 13-34 13h-26q-24 0-32-13Z\"/><path d=\"M592 212V140l2-2 3 2v72Z\"/><path d=\"M594 140q34 26 40 70h-38Z\"/><path d=\"M590 154q-20 22-30 56h28Z\" opacity=\".85\"/><rect x=\"690\" y=\"172\" width=\"26\" height=\"64\"/><rect x=\"722\" y=\"150\" width=\"30\" height=\"86\"/><rect x=\"758\" y=\"182\" width=\"34\" height=\"54\"/><rect x=\"798\" y=\"128\" width=\"28\" height=\"108\"/><path d=\"M836 236q22-74 0-150h50q-22 76 0 150Z\"/><rect x=\"896\" y=\"160\" width=\"30\" height=\"76\"/><path d=\"M936 236V100q0-44 27-62 27 18 27 62v136Z\"/><rect x=\"961.5\" y=\"8\" width=\"3\" height=\"32\" rx=\"1.5\"/><rect x=\"998\" y=\"140\" width=\"24\" height=\"96\"/><path d=\"M1028 236V104l14-12 14 12v132Z\"/><path d=\"M1066 236V76l14-14 14 14v160Z\"/><path d=\"M1100 236V76l14-14 14 14v160Z\"/><rect x=\"1136\" y=\"120\" width=\"30\" height=\"116\"/><rect x=\"1172\" y=\"154\" width=\"36\" height=\"82\"/><path d=\"M1214 236V112l12-18 12 18v124Z\"/><rect x=\"1246\" y=\"142\" width=\"28\" height=\"94\"/><rect x=\"1280\" y=\"172\" width=\"44\" height=\"64\"/><rect x=\"1330\" y=\"132\" width=\"24\" height=\"104\"/><rect x=\"1360\" y=\"184\" width=\"60\" height=\"52\"/></g><g fill=\"none\" stroke=\"var(--sand-deep)\" stroke-width=\"1.6\" stroke-linecap=\"round\"><path d=\"M72 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M88 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M104 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M120 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M136 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M152 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M168 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M184 196v-10a4 4 0 0 1 8 0v10\" /><path d=\"M70 172h6\" /><path d=\"M85 172h6\" /><path d=\"M100 172h6\" /><path d=\"M115 172h6\" /><path d=\"M130 172h6\" /><path d=\"M145 172h6\" /><path d=\"M160 172h6\" /><path d=\"M175 172h6\" /><path d=\"M190 172h6\" /><path d=\"M241 86q10-9 20 0\" /><path d=\"M190 162h18M198 150h8\" /><path d=\"M309 120h14\" /><path d=\"M309 132h14\" /><path d=\"M309 144h14\" /><path d=\"M309 156h14\" /><path d=\"M309 168h14\" /><path d=\"M309 180h14\" /><path d=\"M309 192h14\" /><path d=\"M414 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M430 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M446 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M462 220v-12a4 4 0 0 1 8 0v12\" /><path d=\"M694 182h18\" /><path d=\"M694 193h18\" /><path d=\"M694 204h18\" /><path d=\"M694 215h18\" /><path d=\"M694 226h18\" /><path d=\"M726 160h22\" /><path d=\"M726 171h22\" /><path d=\"M726 182h22\" /><path d=\"M726 193h22\" /><path d=\"M726 204h22\" /><path d=\"M726 215h22\" /><path d=\"M726 226h22\" /><path d=\"M762 192h26\" /><path d=\"M762 203h26\" /><path d=\"M762 214h26\" /><path d=\"M762 225h26\" /><path d=\"M802 138h20\" /><path d=\"M802 149h20\" /><path d=\"M802 160h20\" /><path d=\"M802 171h20\" /><path d=\"M802 182h20\" /><path d=\"M802 193h20\" /><path d=\"M802 204h20\" /><path d=\"M802 215h20\" /><path d=\"M802 226h20\" /><path d=\"M839.6 97h42.8\" /><path d=\"M840.25 108h41.5\" /><path d=\"M840.9 119h40.2\" /><path d=\"M841.55 130h38.9\" /><path d=\"M846.2 141h29.6\" /><path d=\"M846.85 152h28.3\" /><path d=\"M847.5 163h27.0\" /><path d=\"M846.85 174h28.3\" /><path d=\"M846.2 185h29.6\" /><path d=\"M841.55 196h38.9\" /><path d=\"M840.9 207h40.2\" /><path d=\"M840.25 218h41.5\" /><path d=\"M839.6 229h42.8\" /><path d=\"M900 168h22\" /><path d=\"M900 178h22\" /><path d=\"M900 188h22\" /><path d=\"M900 198h22\" /><path d=\"M900 208h22\" /><path d=\"M900 218h22\" /><path d=\"M900 228h22\" /><path d=\"M940 88l23-16 23 16\" /><path d=\"M940 106l23-16 23 16\" /><path d=\"M940 124l23-16 23 16\" /><path d=\"M940 142l23-16 23 16\" /><path d=\"M940 160l23-16 23 16\" /><path d=\"M940 178l23-16 23 16\" /><path d=\"M940 196l23-16 23 16\" /><path d=\"M940 214l23-16 23 16\" /><path d=\"M940 232l23-16 23 16\" /><path d=\"M1032 112h20\" /><path d=\"M1032 122h20\" /><path d=\"M1032 132h20\" /><path d=\"M1032 142h20\" /><path d=\"M1032 152h20\" /><path d=\"M1032 162h20\" /><path d=\"M1032 172h20\" /><path d=\"M1032 182h20\" /><path d=\"M1032 192h20\" /><path d=\"M1032 202h20\" /><path d=\"M1032 212h20\" /><path d=\"M1032 222h20\" /><path d=\"M1070 86h20\" /><path d=\"M1070 95h20\" /><path d=\"M1070 104h20\" /><path d=\"M1070 113h20\" /><path d=\"M1070 122h20\" /><path d=\"M1070 131h20\" /><path d=\"M1070 140h20\" /><path d=\"M1070 149h20\" /><path d=\"M1070 158h20\" /><path d=\"M1070 167h20\" /><path d=\"M1070 176h20\" /><path d=\"M1070 185h20\" /><path d=\"M1070 194h20\" /><path d=\"M1070 203h20\" /><path d=\"M1070 212h20\" /><path d=\"M1070 221h20\" /><path d=\"M1104 86h20\" /><path d=\"M1104 95h20\" /><path d=\"M1104 104h20\" /><path d=\"M1104 113h20\" /><path d=\"M1104 122h20\" /><path d=\"M1104 131h20\" /><path d=\"M1104 140h20\" /><path d=\"M1104 149h20\" /><path d=\"M1104 158h20\" /><path d=\"M1104 167h20\" /><path d=\"M1104 176h20\" /><path d=\"M1104 185h20\" /><path d=\"M1104 194h20\" /><path d=\"M1104 203h20\" /><path d=\"M1104 212h20\" /><path d=\"M1104 221h20\" /><path d=\"M1140 129h22\" /><path d=\"M1140 139h22\" /><path d=\"M1140 149h22\" /><path d=\"M1140 159h22\" /><path d=\"M1140 169h22\" /><path d=\"M1140 179h22\" /><path d=\"M1140 189h22\" /><path d=\"M1140 199h22\" /><path d=\"M1140 209h22\" /><path d=\"M1140 219h22\" /><path d=\"M1140 229h22\" /><path d=\"M1176 163h28\" /><path d=\"M1176 173h28\" /><path d=\"M1176 183h28\" /><path d=\"M1176 193h28\" /><path d=\"M1176 203h28\" /><path d=\"M1176 213h28\" /><path d=\"M1176 223h28\" /><path d=\"M1250 151h20\" /><path d=\"M1250 161h20\" /><path d=\"M1250 171h20\" /><path d=\"M1250 181h20\" /><path d=\"M1250 191h20\" /><path d=\"M1250 201h20\" /><path d=\"M1250 211h20\" /><path d=\"M1250 221h20\" /><path d=\"M1334 141h16\" /><path d=\"M1334 151h16\" /><path d=\"M1334 161h16\" /><path d=\"M1334 171h16\" /><path d=\"M1334 181h16\" /><path d=\"M1334 191h16\" /><path d=\"M1334 201h16\" /><path d=\"M1334 211h16\" /><path d=\"M1334 221h16\" /></g><g fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" opacity=\".6\"><path d=\"M0 212h540M650 212h790M80 220h300M700 220h400M1180 220h220\" /></g></svg>",
   "TRIP_LINES": {

@@ -1,5 +1,5 @@
 // Page bodies, ported from build() in tools/build_site.py. Each function returns { path, title, desc, hero, og, body }.
-import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, countryFlag, destCard, placeCard, gcard, ico, igStrip, srcsetFor } from "./site.js";
+import { assetV, C, Page, WA, WA_BASE, waMark, IG, SITE, ORG_ID, cleanPath, waGlyph, split, planLink, crumbs, esc, beats, photoHero, shareBtn, pageHead, crumbBar, band, intro, why, rustPanel, chips, faq, cta, tripCard, countryFlag, destCard, placeCard, gcard, ico, igStrip, srcsetFor } from "./site.js";
 
 import hero from "../components/home/00-hero.html?raw";
 import hotelNames from "../components/home/01-hotel-names.html?raw";
@@ -185,26 +185,28 @@ export function destinationsIndex() {
   const pg = new Page("destinations/index.html");
   let body = photoHero(pg, "page-hero-destinations", "An island ringed by reef in the Maldives", ["Pick a place.", "We'll handle the rest."], "Places our clients go back to, from Zanzibar and Langkawi to Makkah and Madinah. Flight times are from Manchester and approximate.", "Plan my trip", "", null, undefined) + crumbBar(pg, [["Destinations", "destinations/index.html"]]);
   body += band("white after-head", '<h2 class="sr-only">All destinations</h2><div class="dests dests--staggered" style="margin-top:0">' + C.DESTS.map((d) => destCard(pg, d)).join("") + "</div>");
+  body += band("sand destination-copy", intro(["Choose your next trip."]) + why([
+    ["beach", "Island or coast?", 'Compare <a href="/destinations/zanzibar">Zanzibar’s beach areas</a> with <a href="/destinations/maldives">Maldives resort islands</a> if you’re choosing between time ashore and time on the reef.'],
+    ["multi-city", "City and beach", 'Start in <a href="/destinations/kuala-lumpur">Kuala Lumpur</a> and finish with a few days on <a href="/destinations/langkawi">Langkawi’s coast</a>.'],
+    ["umrah", "Planning Umrah", 'Our <a href="/destinations/makkah-and-madinah">Makkah and Madinah hotel guide</a> explains what to check about walking routes, gates and room access.'],
+  ]), "choosing-a-destination");
   body += cta(pg, ["Somewhere else?", "Ask us."], "These are the places we're asked about most, not the only ones. Tell us where you're thinking.", "Plan my trip");
-  return { path: pg.path, title: "Muslim-friendly destinations | Saphara Travel", desc: "Zanzibar, Doha, Dubai, Oman, Makkah and Madinah, Kuala Lumpur and Langkawi: hotels and trips booked and looked after on WhatsApp.", hero: true, body };
+  return { path: pg.path, title: "Muslim-friendly destinations | Saphara Travel", desc: "Zanzibar, Doha, Dubai, Oman, Makkah and Madinah, Kuala Lumpur, Langkawi and the Maldives. Compare where to stay, what to do and how to plan your trip.", hero: true, body };
 }
 
 export function destinationPage(slug) {
   const d = D[slug];
   const pg = new Page(`destinations/${slug}.html`);
-  const g = d.page || null; // the fuller destination template (21 Nov 2026); destinations without `page` keep the short layout
-  const fromMan = " From Manchester.";
-  const meta = `<div class="meta" style="margin-top:var(--s-16);display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:var(--fs-caption)"><span class="dest-airport">${countryFlag(pg, d.flag, d.country)}${d.code}</span><span>${d.flight_long}${fromMan}</span></div>`;
-  let body = photoHero(pg, (g && g.hero) || d.hero || d.img, (g && g.hero_alt) || d.hero_alt || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan a ${d.name} trip` : "Plan this trip", meta);
+  const g = d.page;
+  const flightFromManchester = `From Manchester: ${d.flight_long[0].toLowerCase()}${d.flight_long.slice(1)}`;
+  const meta = `<div class="destination-meta"><span class="dest-airport">${countryFlag(pg, d.flag, d.country)}${d.code}</span><span>${flightFromManchester}</span></div>`;
+  let body = photoHero(pg, (g && g.hero) || d.hero || d.img, (g && g.hero_alt) || d.hero_alt || d.alt, [d.short || d.name], (g && g.lead) || d.intro, d.name.length < 10 ? `Plan your ${d.name} trip` : "Plan this trip", meta);
   body += crumbBar(pg, [["Destinations", "destinations/index.html"], [d.name, `destinations/${slug}.html`]]);
-  let facts = (g && g.facts) || [["Flight time", d.flight_long + fromMan], ["Best time to go", d.best], ["Suits", d.suits], ["Food and alcohol", "We check each hotel and tell you plainly."]];
-  if (slug === "makkah-and-madinah") facts = facts.filter((f) => f[0] !== "Food and alcohol");
-  const checked = g && g.checked ? `<p class="updated dp-checked">Last checked: ${g.checked[1]}</p>` : "";
-  const factsNote = (g && g.facts_note) || "Flight times are approximate and depend on the route and airline.";
-  body += band("white", intro(["Good to know."], g && g.facts_intro ? g.facts_intro : "", null, checked) + '<dl class="facts rv" style="margin-top:var(--intro-content)">' + facts.map(([a, b]) => `<div><dt>${a}</dt><dd>${b}</dd></div>`).join("") + `</dl><p class="small-print">${factsNote}</p>`);
-  const whyHead = slug === "makkah-and-madinah" ? ["How we help."] : [d.name.length < 10 ? `Why ${d.name}.` : "Why go."];
-  body += band("sand", intro(whyHead) + '<div class="why6 dest-why" style="margin-top:var(--intro-content)">' + d.why.map(([a, b], k) => `<div class="rv">${ico(C.DEST_ICONS[slug][k])}<div><h3>${a}</h3><p>${b}</p></div></div>`).join("") + "</div>");
-  if (g) body += destDetail(pg, d, g);
+  if (g) body += destinationContents(g);
+  const facts = g?.facts || [["Flight time", flightFromManchester], ["Best time to go", d.best], ["Suits", d.suits]];
+  body += destinationFacts(facts);
+  if (g) body += destDetail(pg, g);
+  if (g?.related) body += destinationRelated(pg, g.related);
   body += band("white", intro(["Trips that suit it."]) + '<div class="cards3" style="margin-top:var(--intro-content)">' + C.TRIPS.filter(([s]) => d.trips.includes(s)).map(([s, n, img, l]) => tripCard(pg, s, n, img, l, "")).join("") + "</div>");
   body += cta(pg, [d.name.length < 10 ? `${d.name}, sorted.` : "Sorted."], (g && g.cta) || "Tell us when you'd like to go and who's coming, and we'll send options compared like for like.", "Plan my trip", { cls: "white continue" });
   const q = "?dest=" + d.name.replace(/ /g, "+") + (slug === "makkah-and-madinah" ? "&amp;trip=Umrah+hotels" : "");
@@ -213,32 +215,116 @@ export function destinationPage(slug) {
   return { path: pg.path, title: d.title || `${d.name} holidays and hotels | Saphara Travel`, desc: `${d.name}: ${d.intro} ${d.flight_long}`, hero: true, body, og: g && g.og ? g.og : undefined };
 }
 
-/**
- * The fuller destination sections (21 Nov 2026, Zanzibar first). Each block shows only if its data is in the
- * destination's `page` object in content.json:
- *   areas  Where to stay: one card per area (name, where, best for, a line, and a tide or practical note)
- *   week   A sample week, day by day, in the style of our client itineraries (a theme per day, a few plain lines)
- *   tips   Before you go: short grouped notes (getting there, entry, money, prayer, Ramadan...)
- *   faq    Questions people ask about the place
- * Bands keep alternating white and sand after "Why ...".
- */
-function destDetail(pg, d, g) {
-  let out = "";
-  if (g.areas) {
-    const cards = g.areas.items.map((a) => `<article class="area rv"><div class="area-top"><h3>${a.name}</h3><p class="area-where">${ico("pin")}${a.where}</p></div><p class="area-best"><span>Best for</span> ${a.best}</p><p class="area-line">${a.line}</p>${a.note ? `<p class="area-note">${a.note}</p>` : ""}</article>`).join("");
-    out += band("white", intro(g.areas.head, g.areas.intro) + `<div class="areas">${cards}</div>` + (g.areas.foot ? `<p class="small-print">${g.areas.foot}</p>` : ""), "where-to-stay");
-  }
-  if (g.week) {
-    const days = g.week.days.map(([, t, items], i) => `<li class="day rv"><p class="day-n"><small>Day</small> ${i + 1}</p><div class="day-b"><h3>${t}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></li>`).join("");
-    const side = `<div class="sticky-col">${intro(g.week.head, g.week.intro)}${g.week.handle ? `<div class="week-handle rv"><p class="pc-k">${g.week.handle_head}</p>${chips(g.week.handle)}</div>` : ""}</div>`;
-    out += band("sand", `<div class="split-cols week">${side}<ol class="days">${days}</ol></div>`, "sample-week");
-  }
-  if (g.tips) {
-    const blocks = g.tips.items.map(([icon, h, items]) => `<div class="tip rv">${ico(icon)}<div><h3>${h}</h3><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></div></div>`).join("");
-    out += band("white", intro(g.tips.head, g.tips.intro) + `<div class="tips">${blocks}</div>` + (g.tips.foot ? `<p class="small-print">${g.tips.foot}</p>` : ""), "before-you-go");
-  }
-  if (g.faq) out += band("sand", intro(g.faq.head) + `<div style="margin-top:var(--intro-content)">${faq(g.faq.items)}</div>`, "questions");
+const DESTINATION_FACT_ICONS = {
+  "Flight time": "flights", "Flight time from Manchester": "flights", "Best time to go": "calendar",
+  "Time difference": "clock", "How long to stay": "clock", Money: "fee", Entry: "shield", Suits: "people",
+  Prayer: "pray", "Halal food": "halal", "Food and alcohol": "dining", "Halal food and prayer": "halal",
+  "What we arrange": "hotel", Flights: "flights", Transfer: "transfers",
+};
+
+function destinationFacts(facts) {
+  const cells = facts.map(([label, value]) => `<div><dt>${ico(DESTINATION_FACT_ICONS[label] || "compass")}${label}</dt><dd>${value}</dd></div>`).join("");
+  return band("white", intro(["Good to know."]) + `<dl class="facts destination-facts rv">${cells}</dl>`, "quick-facts");
+}
+
+function destinationContents(g) {
+  const sections = [
+    [true, "quick-facts", "Quick facts"],
+    [g.season, "best-time-to-visit", "When to go"],
+    [g.areas, "where-to-stay", "Where to stay"],
+    [g.sights, "things-to-see-and-do", "Things to see and do"],
+    [g.week, "sample-week", "Itinerary"],
+    [g.tips, "before-you-go", "Before you go"],
+    [g.faq, "questions", "FAQs"],
+    [g.related, "related-destinations", "Related guides"],
+  ];
+  const links = `<ul>${sections.filter(([content]) => content)
+    .map(([, id, label]) => `<li><a href="#${id}">${label}</a></li>`).join("")}</ul>`;
+  return `<nav class="destination-contents" aria-label="On this page"><div class="col">
+    <div class="destination-contents-wide">${links}</div>
+    <details class="destination-contents-menu">
+      <summary>${ico("map")}<span>Jump to a section</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
+      ${links}
+    </details>
+  </div></nav>`;
+}
+
+function destinationSeason({ periods, source }) {
+  const [href, label] = source;
+  const cards = periods.map(([title, copy]) => ["calendar", title, copy]);
+  return band("white destination-copy", intro(["Best time to visit."]) + why(cards) +
+    `<p class="small-print"><a href="${href}">${label}</a></p>`, "best-time-to-visit");
+}
+
+function destinationSights(pg, { heading, photo, items }) {
+  const cards = items.map(([icon, title, copy]) => `<article class="destination-sight rv">
+    ${ico(icon)}<div><h3>${title}</h3><p>${copy}</p></div>
+  </article>`).join("");
+  return band("sand destination-copy", intro([heading]) + `<div class="destination-sights">
+    ${destinationPhoto(pg, photo, true)}
+    <div class="destination-sight-list">${cards}</div>
+  </div>`, "things-to-see-and-do");
+}
+
+function destinationRelated(pg, related) {
+  const cards = related.map(([slug, copy]) => `<li>${destCard(pg, D[slug])}<p>${copy}</p></li>`).join("");
+  return band("white destination-copy", intro(["Related destination guides."]) +
+    `<ul class="destination-related">${cards}</ul><p class="small-print"><a href="${pg.u("destinations/index.html")}">Browse all destination guides</a></p>`, "related-destinations");
+}
+
+function destinationPhotoCredit(credit) {
+  const { artist, file, license, license_url: licenseUrl } = credit;
+  const licenceLink = licenseUrl ? `<a href="${esc(licenseUrl)}">${esc(license)}</a>` : esc(license);
+  return `<a href="${esc(file)}">${esc(artist)}</a> · ${licenceLink} · cropped`;
+}
+
+function destinationAreas(pg, areas) {
+  const cards = areas.items.map(({ name, where, best, line, note, photo }) => {
+    const [file, alt, credit] = photo;
+    const attribution = `<figcaption class="area-credit">${credit ? destinationPhotoCredit(credit) : "Adobe Stock"}</figcaption>`;
+    return `<article class="area rv"><figure class="area-figure">
+      <img src="${pg.img(`destinations/${file}.webp`)}" alt="${alt}" width="800" height="500" loading="lazy" decoding="async">${attribution}
+    </figure><div class="area-copy"><div class="area-top"><h3>${name}</h3><p class="area-where">${ico("pin")}${where}</p></div>
+      <p class="area-best"><span>Best for</span> ${best}</p><p class="area-line">${line}</p>${note ? `<p class="area-note">${note}</p>` : ""}
+    </div></article>`;
+  }).join("");
+  return band("white", intro(areas.head, areas.intro) + `<div class="areas">${cards}</div>` +
+    (areas.foot ? `<p class="small-print">${areas.foot}</p>` : ""), "where-to-stay");
+}
+
+function destinationItinerary(week) {
+  const days = week.days.map(([, title, items], i) => `<li class="destination-day rv">
+    <p class="destination-day-number"><span>Day</span> ${i + 1}</p>
+    <h3>${title}</h3><ul>${items.map((item) => `<li>${item}</li>`).join("")}</ul>
+  </li>`).join("");
+  return band("white destination-copy", intro(week.head, week.intro) + `<ol class="destination-itinerary">${days}</ol>`, "sample-week");
+}
+
+function destinationTips(pg, tips, photo) {
+  const blocks = tips.items.map(([icon, title, items]) => `<li class="destination-tip rv">${ico(icon)}<div><h3>${title}</h3>${
+    items.map((item) => `<p>${item}</p>`).join("")
+  }</div></li>`).join("");
+  return band("sand destination-copy", intro(tips.head, tips.intro) + `<div class="destination-practical">
+    ${photo ? destinationPhoto(pg, photo) : ""}
+    <div><ul class="destination-tips">${blocks}</ul>${tips.foot ? `<p class="small-print">${tips.foot}</p>` : ""}</div>
+  </div>`, "before-you-go");
+}
+
+function destDetail(pg, g) {
+  let out = g.season ? destinationSeason(g.season) : "";
+  if (g.areas) out += destinationAreas(pg, g.areas);
+  if (g.sights) out += destinationSights(pg, g.sights);
+  if (g.week) out += destinationItinerary(g.week);
+  if (g.tips) out += destinationTips(pg, g.tips, g.photo);
+  if (g.faq) out += band("white", intro(g.faq.head) + `<div class="destination-copy">${faq(g.faq.items)}</div>`, "questions");
   return out;
+}
+
+function destinationPhoto(pg, [stem, alt, caption, credit], feature = false) {
+  return `<figure class="destination-photo${feature ? " destination-photo--feature" : ""} rv">
+    <img src="${pg.img(`destinations/${stem}.webp`)}" alt="${alt}" width="960" height="${feature ? 720 : 600}" loading="lazy" decoding="async">
+    <figcaption>${caption}${credit ? `<small class="destination-photo-credit">${destinationPhotoCredit(credit)}</small>` : ""}</figcaption>
+  </figure>`;
 }
 
 // ---------- guides ----------

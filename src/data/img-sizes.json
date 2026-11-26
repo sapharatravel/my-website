@@ -125,6 +125,16 @@
     ]
    }
   },
+  "dest-hero-maldives": {
+   "d": {
+    "ratio": [3, 2],
+    "w": [800, 1200, 1600]
+   },
+   "m": {
+    "ratio": [3, 4],
+    "w": [480, 750]
+   }
+  },
   "dest-hero-oman": {
    "d": {
     "w": [
@@ -677,6 +687,234 @@
   }
  },
  "photos": {
+  "destinations/stay-kendwa.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-nungwi.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-matemwe.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-paje.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-michamvi.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-stone-town.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-msheireb.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-west-bay.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-katara.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-al-fahidi.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-jumeirah.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-ras-al-khaimah.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-qurum.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-muscat-bay.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-jebel-akhdar.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-makkah.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-jabal-hotel.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-madinah.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-klcc.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-bukit-bintang.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-brickfields.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-cenang.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-datai.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-tanjung-rhu.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-kurumba.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-baa-atoll.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-maafushi.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-quba.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-kl-overview.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/stay-zanzibar-resort.webp": {
+   "full": 800,
+   "w": [
+    400
+   ]
+  },
+  "destinations/zanzibar-stone-town.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/doha-fanar.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/dubai-fahidi.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/oman-shuraija.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/makkah-hotel-corridor.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/kl-masjid-jamek.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/langkawi-rainforest-stay.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
+  "destinations/maldives-island-aerial.webp": {
+   "full": 960,
+   "w": [
+    480
+   ]
+  },
   "business-doha-mia.webp": {
    "full": 1200,
    "h": 800,
