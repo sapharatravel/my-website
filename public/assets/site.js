@@ -21,6 +21,29 @@
   /* if Kensington can't load (for example inside a Claude preview), use the normal-size system fallback instead of the size-matched one */
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTimeout(function () { if (!document.fonts.check('600 40px "kensington"')) root.classList.add("no-kensington"); }, 1200); });
 
+  var guideMenu = document.querySelector(".destination-contents-menu");
+  if (guideMenu) {
+    var guideSummary = guideMenu.querySelector("summary");
+    guideMenu.addEventListener("click", function (event) {
+      var link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+      guideMenu.open = false;
+      var section = document.getElementById(link.hash.slice(1));
+      if (section) {
+        section.setAttribute("tabindex", "-1");
+        section.focus({ preventScroll: true });
+      }
+    });
+    document.addEventListener("keydown", function (event) {
+      if (event.key !== "Escape" || !guideMenu.open) return;
+      guideMenu.open = false;
+      guideSummary.focus();
+    });
+    document.addEventListener("pointerdown", function (event) {
+      if (guideMenu.open && !guideMenu.contains(event.target)) guideMenu.open = false;
+    });
+  }
+
   /* Client-rendered icons use the same cached JSON library as server-rendered SVGs. */
   var iconTargets = document.querySelectorAll("[data-ico]");
   if (iconTargets.length) {
