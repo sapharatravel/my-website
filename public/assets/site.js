@@ -257,33 +257,39 @@
     var mq = window.matchMedia("(min-width: 1024px) and (hover: hover)");
     var rm = window.matchMedia("(prefers-reduced-motion: reduce)");
     var cards = Array.prototype.slice.call(t.querySelectorAll(".trip"));
-    var active = cards[0], pending, timer;
+    var active = cards[0], pending, frame;
     if (!active) return;
-    function cancelHover() { clearTimeout(timer); pending = null; }
-    function activate(card) {
+    function cancelHover() {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      pending = null;
+    }
+    function activate(card, animate) {
       cancelHover();
-      active.classList.remove("on");
+      if (animate && active !== card) t.classList.add("interacting");
+      if (active !== card) active.classList.remove("on");
       active = card;
       active.classList.add("on");
     }
     function setup() {
       cancelHover();
+      t.classList.remove("interacting");
       t.classList.toggle("xp", mq.matches);
       if (mq.matches) activate(t.querySelector(".trip:focus-within") || active);
     }
     t.addEventListener("pointermove", function (e) {
-      if (!mq.matches || e.pointerType === "touch" || t.querySelector(":focus-visible")) return;
+      if (!mq.matches || e.pointerType === "touch") return;
       var card = e.target.closest(".trip");
       if (!card || card === active) { cancelHover(); return; }
-      if (card === pending) return;
-      cancelHover();
-      if (rm.matches) { activate(card); return; }
+      if (card === pending || (t.contains(document.activeElement) && document.activeElement.matches(":focus-visible"))) return;
+      if (rm.matches) { activate(card, true); return; }
+      // Ignore hover changes caused solely by moving card boundaries.
       pending = card;
-      timer = setTimeout(function () { activate(card); }, 65);
+      if (!frame) frame = requestAnimationFrame(function () { activate(pending, true); });
     });
     t.addEventListener("pointerleave", cancelHover);
     cards.forEach(function (card) {
-      card.addEventListener("focusin", function () { if (mq.matches) activate(card); });
+      card.addEventListener("focusin", function () { if (mq.matches) activate(card, true); });
     });
     if (mq.addEventListener) mq.addEventListener("change", setup); setup();
   })();
