@@ -2696,6 +2696,12 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
     --site-edge-right: max(40px, env(safe-area-inset-right, 0px));
   }
 
+  body.home {
+    --home-gutter: clamp(40px, 2.5vw, 72px);
+    --site-edge-left: max(var(--home-gutter), env(safe-area-inset-left, 0px));
+    --site-edge-right: max(var(--home-gutter), env(safe-area-inset-right, 0px));
+  }
+
   .header .col,
   body:has(.hero, .ghero) .header .col {
     max-width: none;
@@ -2997,10 +3003,6 @@ body.home #pay-later.pl-home { padding-block: var(--section); }
 @media (min-width: 1024px) {
   body.home .hero.hd h1 { --tier: clamp(78px, 7vw, 152px); }
   body.home .hero.hd .col { max-width: min(1400px, calc(100% - 32px)); }
-}
-
-@media (min-width: 1400px) {
-  body.home .hero.hd { padding-inline: var(--col-left); }
 }
 
 /* 23 Nov 2026: Use one size for section-level display headings. Let long headings wrap instead of shrinking to fit one line. */
