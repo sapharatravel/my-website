@@ -251,13 +251,46 @@
       });
     });
   })();
-  /* expanding trip cards: desktop with a mouse only */
+  /* Expand on deliberate hover or keyboard focus. */
   (function () {
     var t = document.querySelector(".trips"); if (!t) return;
-    var mq = window.matchMedia("(min-width: 1024px) and (hover: hover)"), cards = Array.prototype.slice.call(t.querySelectorAll(".trip"));
-    function on(c) { cards.forEach(function (x) { x.classList.toggle("on", x === c); }); }
-    function setup() { t.classList.toggle("xp", mq.matches); if (mq.matches && !t.querySelector(".trip.on")) on(cards[0]); }
-    cards.forEach(function (c) { c.addEventListener("mouseenter", function () { if (mq.matches) on(c); }); c.addEventListener("focusin", function () { if (mq.matches) on(c); }); });
+    var mq = window.matchMedia("(min-width: 1024px) and (hover: hover)");
+    var rm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var cards = Array.prototype.slice.call(t.querySelectorAll(".trip"));
+    var active = cards[0], pending, frame;
+    if (!active) return;
+    function cancelHover() {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      pending = null;
+    }
+    function activate(card, animate) {
+      cancelHover();
+      if (animate && active !== card) t.classList.add("interacting");
+      if (active !== card) active.classList.remove("on");
+      active = card;
+      active.classList.add("on");
+    }
+    function setup() {
+      cancelHover();
+      t.classList.remove("interacting");
+      t.classList.toggle("xp", mq.matches);
+      if (mq.matches) activate(t.querySelector(".trip:focus-within") || active);
+    }
+    t.addEventListener("pointermove", function (e) {
+      if (!mq.matches || e.pointerType === "touch") return;
+      var card = e.target.closest(".trip");
+      if (!card || card === active) { cancelHover(); return; }
+      if (card === pending || (t.contains(document.activeElement) && document.activeElement.matches(":focus-visible"))) return;
+      if (rm.matches) { activate(card, true); return; }
+      // Ignore hover changes caused solely by moving card boundaries.
+      pending = card;
+      if (!frame) frame = requestAnimationFrame(function () { activate(pending, true); });
+    });
+    t.addEventListener("pointerleave", cancelHover);
+    cards.forEach(function (card) {
+      card.addEventListener("focusin", function () { if (mq.matches) activate(card, true); });
+    });
     if (mq.addEventListener) mq.addEventListener("change", setup); setup();
   })();
   /* phone and tablet menu: dialog sheet, Escape closes, focus stays inside */
