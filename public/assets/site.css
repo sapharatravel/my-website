@@ -837,12 +837,22 @@ main { padding-bottom: 0; }
   .trips.xp .trip.on .trip-name { opacity: 0; }
   .trips.xp .trip.on .trip-details { opacity: 1; }
 }
+@media (prefers-reduced-motion: no-preference) {
+  #trips .trips.trip-entering:not(.in) > .trip { opacity: 0; translate: 0 14px; }
+  #trips .trips.trip-entering.in > .trip {
+    animation: trip-enter 430ms cubic-bezier(.22, .72, .25, 1) calc(var(--i) * 48ms) backwards;
+  }
+  @keyframes trip-enter {
+    from { opacity: 0; translate: 0 14px; }
+    to { opacity: 1; translate: none; }
+  }
+  #trips .trip .split:is(:hover, :focus-visible) .split-arrow svg { transform: translate(2px, -2px) rotate(9deg); }
+}
 @media (min-width: 1024px) and (hover: hover) and (prefers-reduced-motion: no-preference) {
   .js .trips.xp .trip {
-    transition: flex-grow 330ms var(--trip-ease), opacity 600ms var(--ease), transform 600ms var(--ease);
-    transition-delay: 0s, calc(var(--i, 0) * 70ms), calc(var(--i, 0) * 70ms);
+    transition: flex-grow 330ms var(--trip-ease), transform var(--t-fast) var(--ease);
   }
-  .js #trips .trips.xp .trip > img { clip-path: none; transform: none; transition: opacity 350ms var(--ease); }
+  .js #trips .trips.xp .trip > img { transition: opacity 350ms var(--ease); }
   .trips.xp.interacting .trip-name { transition: opacity 145ms var(--trip-ease) 65ms; }
   .trips.xp .trip-details { transform: translateY(5px); }
   .trips.xp.interacting .trip-details { transition: opacity 105ms var(--trip-ease), transform 150ms var(--trip-ease); }

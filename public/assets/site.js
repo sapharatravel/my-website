@@ -251,14 +251,28 @@
       });
     });
   })();
-  /* Expand on deliberate hover or keyboard focus. */
+  /* Reveal the trip row once, then expand cards on hover or keyboard focus. */
   (function () {
-    var t = document.querySelector(".trips"); if (!t) return;
+    var t = document.querySelector("#trips .trips"); if (!t) return;
     var mq = window.matchMedia("(min-width: 1024px) and (hover: hover)");
     var rm = window.matchMedia("(prefers-reduced-motion: reduce)");
     var cards = Array.prototype.slice.call(t.querySelectorAll(".trip"));
     var active = cards[0], pending, frame;
     if (!active) return;
+    if (!rm.matches) {
+      cards.forEach(function (card, index) { card.style.setProperty("--i", index); });
+      var entrance = new IntersectionObserver(function (entries) {
+        if (!entries.some(function (entry) { return entry.intersectionRatio >= .25; })) return;
+        t.classList.add("in");
+        entrance.disconnect();
+      }, { threshold: .25 });
+      t.classList.add("trip-entering");
+      entrance.observe(t);
+      t.addEventListener("focusin", function () {
+        entrance.disconnect();
+        t.classList.remove("trip-entering");
+      }, { once: true });
+    }
     function cancelHover() {
       cancelAnimationFrame(frame);
       frame = 0;
