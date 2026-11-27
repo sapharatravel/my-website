@@ -240,7 +240,8 @@ button.split { border: 0; font: inherit; cursor: pointer; -webkit-appearance: no
 .pcard { position: relative; border-radius: var(--r-card); overflow: hidden; isolation: isolate; color: #fff; box-shadow: var(--shadow-lg); }
 /* 21 Nov 2026: the Saphara warm grade (sepia .22, saturate 1.12, hue-rotate -8deg, brightness 1.02) is now baked into every photo file (tools/images, grade.py), so the class no longer adds a CSS filter. */
 .warm { filter: none; }
-.pcard > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.pcard > .card-photo { display: contents; }
+:is(.pcard, .pcard > :where(.card-photo)) > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
 .pcard::after { content: ""; position: absolute; inset: 0; z-index: -1; }
 
 /* trip types */
@@ -1214,10 +1215,10 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(20,12,4,
 .dest .time { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; margin-top: var(--s-12); padding: 6px 12px 6px 9px; border-radius: var(--r-pill); background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.28); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); line-height: 1.2; }
 .dest .time .ico { width: 15px; height: 15px; fill: currentColor; stroke: none; transform: rotate(90deg); }
 .dest .pin, .dest h3, .dest .time { position: relative; z-index: 2; }
-.dest > img { transition: transform 700ms var(--ease); }
+:is(.dest, .dest > :where(.card-photo)) > img { transition: transform 700ms var(--ease); }
 @media (hover: hover) {
   .dest:hover { transform: translateY(-4px); }
-  .dest:hover > img { transform: scale(1.04); }
+  :is(.dest:hover, .dest:hover > :where(.card-photo)) > img { transform: scale(1.04); }
   .dest:hover::before { border-color: rgba(255,255,255,.6); }
 }
 @media (min-width: 1024px) { .dest { --inset: 12px; } .dest { padding: var(--s-24) calc(var(--s-24) + 4px) calc(var(--s-24) + 4px); } }
@@ -1239,8 +1240,8 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(20,12,4,
   .js .rv-text { transform: translateY(12px); transition-delay: calc(140ms + var(--i, 0) * 90ms); }
   .w > span { transition-duration: 560ms; transition-delay: calc(var(--wi, 0) * 40ms); }
   /* soft image reveals: photos settle from a slight zoom as their card arrives */
-  .js-motion .pcard.rv > img, .js-motion .biz-photo.rv > img { scale: 1.08; transition: scale 580ms var(--ease), opacity 500ms var(--ease); }
-  .js-motion .pcard.rv.in > img, .js-motion .biz-photo.rv.in > img { scale: 1; }
+  .js-motion :is(.pcard.rv, .pcard.rv > :where(.card-photo)) > img, .js-motion .biz-photo.rv > img { scale: 1.08; transition: scale 580ms var(--ease), opacity 500ms var(--ease); }
+  .js-motion :is(.pcard.rv.in, .pcard.rv.in > :where(.card-photo)) > img, .js-motion .biz-photo.rv.in > img { scale: 1; }
   /* the Cleared stamp lands on the declaration card */
   .js-motion .decl.rv .decl-stamp { opacity: 0; scale: 1.8; }
   .js-motion .decl.rv.in .decl-stamp { animation: stampLand 460ms cubic-bezier(.2,.9,.3,1.25) 420ms both; }
@@ -2234,7 +2235,7 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
   #trips .trips::-webkit-scrollbar, #destinations .dests::-webkit-scrollbar { display: none; }
   /* Cards in a swipe row are shown as they are: no per-card fade, rise or photo reveal, which only played as each card was swiped in */
   #trips .trips > .rv, #destinations .dests > .rv { opacity: 1; transform: none; transition: none; }
-  #trips .trips > .pcard > img, #destinations .dests > .pcard > img { clip-path: none; transform: none; }
+  #trips .trips > .pcard > img, #destinations .dests :is(.pcard, .pcard > :where(.card-photo)) > img { clip-path: none; transform: none; }
   #trips .trips > * { flex: 0 0 calc((100% - var(--margin)) * .78); scroll-snap-align: start; min-height: 0; }
   #destinations .dests > * { flex: 0 0 calc((100% - var(--margin)) * .6); scroll-snap-align: start; }
   #trips .trips .pcard.trip { aspect-ratio: 4 / 5; height: auto; }
@@ -2243,8 +2244,8 @@ html .header.slim .nl, html body:not(.home) .header .nl, html .header.slim .dd-b
 
 /* 5 Motion: photos open up as they come into view (reduced motion: no change) */
 @media (prefers-reduced-motion: no-preference) {
-  .js .pcard.rv > img { transition: clip-path 1100ms var(--ease), transform 1400ms var(--ease), opacity 600ms; }
-  .js .pcard.rv:not(.in) > img { clip-path: inset(14% 0 0 0); transform: scale(1.1); }
+  .js :is(.pcard.rv, .pcard.rv > :where(.card-photo)) > img { transition: clip-path 1100ms var(--ease), transform 1400ms var(--ease), opacity 600ms; }
+  .js :is(.pcard.rv:not(.in), .pcard.rv:not(.in) > :where(.card-photo)) > img { clip-path: inset(14% 0 0 0); transform: scale(1.1); }
   .js .moment h2, .js .moment p, .js .moment-link { animation: none; }
 }
 
@@ -2359,8 +2360,8 @@ body:not(.home) .hero::after { background: linear-gradient(180deg, rgba(0,0,0,.2
 .dest h3 { font-family: var(--display); font-weight: 600; text-transform: none; letter-spacing: 0; }
 /* Arch photos zoom in slowly on hover. Uses the separate scale property, because the scroll parallax writes an inline transform on the same image, which used to cancel the hover zoom. */
 @media (hover: hover) and (prefers-reduced-motion: no-preference) {
-  .dest > img, .js-motion .pcard.dest.rv.in > img { transition: transform 700ms var(--ease), scale 1600ms cubic-bezier(.2,.7,.2,1), opacity 500ms var(--ease); }
-  .dest:hover > img, .js-motion .pcard.dest.rv.in:hover > img { scale: 1.08; }
+  :is(.dest, .dest > :where(.card-photo)) > img, .js-motion :is(.pcard.dest.rv.in, .pcard.dest.rv.in > :where(.card-photo)) > img { transition: transform 700ms var(--ease), scale 1600ms cubic-bezier(.2,.7,.2,1), opacity 500ms var(--ease); }
+  :is(.dest:hover, .dest:hover > :where(.card-photo)) > img, .js-motion :is(.pcard.dest.rv.in:hover, .pcard.dest.rv.in:hover > :where(.card-photo)) > img { scale: 1.08; }
 }
 
 /* 22 Nov 2026 (mobile audit, Huzaifa): agreed fixes.
