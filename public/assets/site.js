@@ -19,7 +19,14 @@
   if (!root.lang) root.lang = "en-GB"; /* the build sets <html lang="en-GB"> directly */
 
   /* if Kensington can't load (for example inside a Claude preview), use the normal-size system fallback instead of the size-matched one */
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { setTimeout(function () { if (!document.fonts.check('600 40px "kensington"')) root.classList.add("no-kensington"); }, 1200); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () {
+    setTimeout(function () {
+      // The phone homepage loads its font stylesheet asynchronously, so keep its
+      // size-matched fallback available until Kensington is ready.
+      var mobileHome = document.body.classList.contains("home") && window.matchMedia("(width < 768px)").matches;
+      if (!mobileHome && !document.fonts.check('600 40px "kensington"')) root.classList.add("no-kensington");
+    }, 1200);
+  });
 
   /* Client-rendered icons use the same cached JSON library as server-rendered SVGs. */
   var iconTargets = document.querySelectorAll("[data-ico]");

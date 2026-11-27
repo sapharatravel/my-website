@@ -3,6 +3,7 @@ import { defineConfig } from "astro/config";
 import { readdirSync, statSync, writeFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { homeCriticalCss } from "./scripts/home-critical-css.mjs";
 
 // After the build, write sitemap.xml from the pages that were actually built, at the clean addresses the host serves
 // (privacy.html is served at /privacy, guides/index.html at /guides/). 404 and thank-you are left out.
@@ -29,5 +30,5 @@ export default defineConfig({
   trailingSlash: "ignore",
   compressHTML: false,
   devToolbar: { enabled: false },
-  integrations: [sitemap],
+  integrations: [homeCriticalCss, sitemap],
 });

@@ -9,5 +9,8 @@
   },
   "dependencies": {
     "astro": "7.4.12"
+  },
+  "devDependencies": {
+    "beasties": "^0.5.5"
   }
 }
