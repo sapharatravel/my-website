@@ -42,6 +42,20 @@
       .catch(function () { /* Keep the page usable if the optional icon asset cannot load. */ });
   }
 
+  var tripPhotos = document.querySelectorAll("img[data-trip-mobile-srcset]");
+  if (tripPhotos.length) {
+    var tripPhone = window.matchMedia("(width < 768px)");
+    tripPhotos.forEach(function (image) {
+      var originalSizes = image.sizes, originalSources = image.srcset;
+      function updateTripPhoto() {
+        image.sizes = tripPhone.matches ? "auto, 69vw" : originalSizes;
+        image.srcset = tripPhone.matches ? image.dataset.tripMobileSrcset : originalSources;
+      }
+      if (tripPhone.matches) updateTripPhoto();
+      tripPhone.addEventListener("change", updateTripPhoto);
+    });
+  }
+
   /* images fade in over their blurred placeholder */
   document.querySelectorAll("img.fade").forEach(function (im) {
     function done() { im.classList.add("loaded"); }
@@ -400,15 +414,41 @@
   var slides = hero.querySelectorAll(".hs-slide"), dots = hero.querySelectorAll(".hs-dot");
   if (slides.length < 2) return;
   var i = 0, timer = null, reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function load() {
-    hero.querySelectorAll("source[data-srcset]").forEach(function (s) { s.srcset = s.getAttribute("data-srcset"); s.removeAttribute("data-srcset"); });
-    hero.querySelectorAll("img[data-src]").forEach(function (im) { im.src = im.getAttribute("data-src"); im.removeAttribute("data-src"); });
+  var desktop = window.matchMedia("(min-width: 768px)"), requested = 0;
+  function load(slide) {
+    var source = slide.querySelector("source[data-srcset]"), image = slide.querySelector("img");
+    if (source) {
+      source.srcset = source.dataset.srcset;
+      delete source.dataset.srcset;
+    }
+    if (image.dataset.srcset) {
+      image.srcset = image.dataset.srcset;
+      delete image.dataset.srcset;
+    }
+    if (image.dataset.src) {
+      image.src = image.dataset.src;
+      delete image.dataset.src;
+    }
+    return image;
   }
-  function show(n) {
-    i = (n + slides.length) % slides.length;
+  function select(n) {
+    var index = (n + slides.length) % slides.length, request = ++requested;
+    var image = load(slides[index]);
+    if (desktop.matches || !image.decode) {
+      show(index);
+      return;
+    }
+    // Keep the existing photo visible until the requested mobile image can paint.
+    image.decode().then(function () {
+      if (request === requested) show(index);
+    }).catch(function () { /* Keep the current slide if the next image fails. */ });
+  }
+  function show(index) {
+    i = index;
     slides.forEach(function (s, k) { s.classList.toggle("is-on", k === i); if (k === i) s.removeAttribute("aria-hidden"); else s.setAttribute("aria-hidden", "true"); });
     dots.forEach(function (d, k) { d.classList.toggle("is-on", k === i); d.classList.toggle("is-done", k < i); d.setAttribute("aria-pressed", k === i ? "true" : "false"); });
     restartFill();
+    if (!desktop.matches && !reduce) load(slides[(i + 1) % slides.length]);
   }
   // 22 Nov 2026 (Huzaifa): the dots are lines; the current one fills over the slide's time while the slider runs.
   var bar = hero.querySelector(".hs-dots"), DUR = 6000;
@@ -416,14 +456,19 @@
   function restartFill() { if (!bar) return; bar.classList.remove("is-run"); void bar.offsetWidth; if (timer) bar.classList.add("is-run"); }
   // 22 Nov 2026 (evening): the slider also pauses while anything in the hero has keyboard focus, and while the tab is hidden.
   var focusPaused = false;
-  function start() { stop(); if (!reduce && !focusPaused && !document.hidden) timer = setInterval(function () { show(i + 1); }, DUR); restartFill(); }
+  function start() { stop(); if (!reduce && !focusPaused && !document.hidden) timer = setInterval(function () { select(i + 1); }, DUR); restartFill(); }
   function stop() { if (timer) clearInterval(timer); timer = null; if (bar) bar.classList.remove("is-run"); }
-  dots.forEach(function (d, k) { d.addEventListener("click", function () { load(); show(k); start(); }); });
+  dots.forEach(function (d, k) { d.addEventListener("click", function () { select(k); start(); }); });
   hero.addEventListener("focusin", function () { focusPaused = true; start(); });
   hero.addEventListener("focusout", function (e) { if (!hero.contains(e.relatedTarget)) { focusPaused = false; start(); } });
   document.addEventListener("visibilitychange", start);
-  if (document.readyState === "complete") { load(); start(); }
-  else window.addEventListener("load", function () { load(); start(); });
+  function ready() {
+    if (desktop.matches) slides.forEach(load);
+    else if (!reduce) load(slides[1]);
+    start();
+  }
+  if (document.readyState === "complete") ready();
+  else window.addEventListener("load", ready);
 })();
 
 /* Homepage reviews: advance on the exact completion of the 6-second progress-line animation.
@@ -494,6 +539,7 @@
   var footnote = root.querySelector("[data-how-footnote]");
   var frame = root.querySelector(".how-image");
   var image = root.querySelector("[data-how-image]");
+  var mobileSource = root.querySelector("[data-how-mobile-image]");
   var caption = root.querySelector("[data-how-caption]");
   if (!tabsWrap || !tabs.length || !panel || !title || !description || !image || !frame) return;
 
@@ -505,7 +551,15 @@
   ];
   var active = 0, timer = 0, generation = 0, indicator, motion = [];
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  steps.forEach(function (step) { var preload = new Image(); preload.src = step.image; });
+  function mobileImage(step) {
+    return step.image.replace("/img/", "/img/mobile/").replace(".webp", "-800.webp");
+  }
+  function preloadImage(url) {
+    var preload = new Image();
+    preload.src = url;
+  }
+  var phone = window.matchMedia("(width < 768px)");
+  if (!phone.matches) steps.forEach(function (step) { preloadImage(step.image); });
 
   indicator = document.createElement("span");
   indicator.className = "how-tab-pill";
@@ -540,6 +594,7 @@
     // original currentSrc even after image.src changes.
     image.removeAttribute("srcset");
     image.removeAttribute("sizes");
+    mobileSource.srcset = mobileImage(step);
     image.src = step.image;
     image.alt = step.alt;
     panel.setAttribute("aria-labelledby", tabs[index].id);
@@ -551,6 +606,7 @@
   function select(index, focus) {
     if (index === active) { if (focus) tabs[index].focus(); return; }
     active = index;
+    if (phone.matches) preloadImage(mobileImage(steps[index]));
     var token = ++generation;
     tabs.forEach(function (tab, i) {
       var on = i === index;

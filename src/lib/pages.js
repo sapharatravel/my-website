@@ -104,6 +104,17 @@ function heroProof(pg, bandClass = "white") {
   <p class="proof-tp"><b>Rated Excellent on Trustpilot</b><a class="textlink" href="${pg.u("reviews.html")}">Read our reviews <span aria-hidden="true">→</span></a></p>
 </figure></div></section>`;
 }
+// Keep the desktop trip accordion's images as direct children.
+function homeTripPhotos(html) {
+  return html.replace(/<img[^>]* src="img\/([^"]+)\.webp"[^>]*>/g, (img, name) =>
+    img.replace('<img ', `<img data-trip-mobile-srcset="img/mobile/${name}-360.webp 360w, img/mobile/${name}-540.webp 540w" `));
+}
+
+function homeDestinationPhotos(html) {
+  return html.replace(/<img[^>]* src="img\/([^"]+)\.webp"[^>]*>/g, (img, name) =>
+    `<picture class="card-photo"><source media="(width < 768px)" srcset="img/mobile/${name}-360.webp 360w, img/mobile/${name}-440.webp 440w" sizes="auto, 57vw">${img}</picture>`);
+}
+
 export function home() {
   const pg = new Page("index.html");
   const guides = `<!-- 4b GUIDES: the bridge from Instagram -->
@@ -139,8 +150,8 @@ export function home() {
   // 22 Nov 2026 (late night, Huzaifa: "tighter and easy to digest"): homepage How it works uses shorter steps; Why Saphara keeps the full version.
   const howHome = how.replace('<section class="band sand" id="how">', '<section class="band sand how-home" id="how">');
   const body = toPlan(join(hero, hotelNames, heroProof(pg, "sand"),
-    trips.replace('<section class="band sand" id="trips">', '<section class="band white" id="trips">'),
-    payLaterHome, destinations, howHome,
+    homeTripPhotos(trips).replace('<section class="band sand" id="trips">', '<section class="band white" id="trips">'),
+    payLaterHome, homeDestinationPhotos(destinations), howHome,
     faqTeaser,
     moreCards(pg).replace('class="band white more-band"', 'class="band sand more-band"'))) + "\n" + finalCta;
   return { path: pg.path, title: "Muslim-friendly holidays from the UK | Saphara Travel", desc: "Muslim-friendly holidays and honeymoons, arranged by a Muslim-owned UK travel company. Find hotels, plan your trip and get personal support from our team on WhatsApp.", hero: true, body };
